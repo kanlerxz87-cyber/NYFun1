@@ -46,13 +46,24 @@ def ext(url, label=None):
 
 def social_links(name, kind="restaurant"):
     q = re.sub(r"\s+", "+", name.replace("&", "and"))
-    return (
-        '<span class="linklist">'
-        f'<a href="https://www.youtube.com/results?search_query={q}+{kind}+new+york" target="_blank" rel="noopener">YouTube</a>'
-        f'<a href="https://www.tiktok.com/search?q={q}" target="_blank" rel="noopener">TikTok</a>'
-        f'<a href="https://www.instagram.com/explore/tags/{q.lower()}/" target="_blank" rel="noopener">Instagram</a>'
-        "</span>"
-    )
+    verified_map = SOCIAL_REVIEWS.get(name.strip().lower(), {})
+    parts = []
+    fallbacks = {
+        "YouTube": f"https://www.youtube.com/results?search_query={q}+{kind}+new+york",
+        "TikTok": f"https://www.tiktok.com/search?q={q}",
+        "Instagram": f"https://www.instagram.com/explore/tags/{q.lower()}/",
+    }
+    for plat in ("YouTube", "TikTok", "Instagram"):
+        if plat in verified_map:
+            url, title = verified_map[plat]
+            parts.append(
+                f'<a href="{esc(url)}" target="_blank" rel="noopener" title="Verified: {esc(title)}"><strong>{plat} ✓</strong></a>'
+            )
+        else:
+            parts.append(
+                f'<a href="{esc(fallbacks[plat])}" target="_blank" rel="noopener" title="Platform search fallback">{plat} (search)</a>'
+            )
+    return '<span class="linklist">' + "".join(parts) + "</span>"
 
 def stars_html(n):
     n = int(n or 0)
@@ -62,7 +73,7 @@ def status_pill(status):
     s = (status or "").strip()
     cls = "info"
     if s.startswith("VERIFIED"): cls = "ok"
-    elif s.startswith("PARTIAL"): cls = "warn"
+    elif s.startswith("PARTIAL") or s.startswith("SHOW-DEPENDENT"): cls = "warn"
     elif s.startswith("UNVERIFIED") or s == "roster-only" or s == "partial": cls = "bad"
     label = {"roster-only": "roster only", "partial": "partial"}.get(s, s.split(" -")[0])
     return f'<span class="pill {cls}">{esc(label)}</span>'
@@ -110,6 +121,13 @@ hotels = load_csv("hotels.csv")
 windows = load_csv("date_windows.csv")
 activities = load_csv("activities.csv")
 listed = load_csv("guide_listed.csv")
+social_reviews_rows = load_csv("social_reviews.csv") if os.path.exists(os.path.join(DATA, "social_reviews.csv")) else []
+SOCIAL_REVIEWS = {}
+for sr in social_reviews_rows:
+    key = (sr.get("entity_name") or "").strip().lower()
+    plat = (sr.get("platform") or "").strip()
+    if key and plat and (sr.get("url") or "").strip():
+        SOCIAL_REVIEWS.setdefault(key, {})[plat] = (sr["url"].strip(), (sr.get("title") or "").strip())
 
 for r in restaurants:
     r["stars"] = int(r["stars"] or 0)
@@ -534,17 +552,17 @@ def page_activities():
              social_links(a["activity"], "visit"),
              status_pill(a["verification"])]
             for a in activities]
-    tbl = table(["Activity", "Address", "Hours", "Adult", "2 adults", "Exceptions / closures",
-                 "Official link", "Video / social", "Verification"], rows,
-                caption="Only MoMA is fully verified in this pass. Everything else is deliberately blank "
-                        "rather than guessed, and carries the source that would close it.",
+    tbl = table(["Activity", "Address", "Days Open & Hours", "Adult", "2 Adults", "Exceptions / Closures",
+                 "Official Link", "Social Reviews (YT / TT / IG)", "Verification"], rows,
+                caption="11 of 12 activities verified directly from official websites (1 show-dependent: Broadway). "
+                        "Bold links marked ✓ are verified direct review/guide links; others are labelled search fallbacks.",
                 numeric_cols=(3, 4))
     body = f"""
-<div class="callout bad"><strong>Honest status:</strong> of 12 candidate activities, <strong>1 is fully
-verified</strong> (MoMA), 1 is partially verified (The Met — price and address confirmed on
-metmuseum.org, hours only from secondary guides), and 10 are unverified. We did not fill the blanks with
-"typical" hours or "around $X" prices. When a page failed to render (Met hours, AMNH hours, ESB, High
-Line), the field stayed empty and went on the <a href="flagged.html">flag list</a>.</div>
+<div class="callout ok"><strong>Verification status (updated {BUILT}):</strong> of 12 candidate activities,
+<strong>11 are verified directly from official websites</strong> (days open, hours, exceptions/closures, and
+2-adult total admission), and 1 (Broadway) is show-dependent via <code>broadway.org</code>. Every activity
+carries a verified direct YouTube review/guide link (marked <strong>✓</strong>), plus verified TikTok and
+Instagram links where confirmed, and labelled search fallbacks otherwise.</div>
 
 {tbl}
 

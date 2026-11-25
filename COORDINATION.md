@@ -43,9 +43,9 @@ on base commit `6609129`).
 | T12 | Flagged-for-review register (unverified / irregularities) | `docs/flagged.html` | arena-cfbb0ef6 | done | 2026-11-25 |
 | T13 | Verification pass: every value → official source or blank+flag | all data files | arena-cfbb0ef6 | done | 2026-11-25 |
 | T14 | Integration + GitHub Pages publish + link check | `docs/index.html`, nav, Pages settings | arena-cfbb0ef6 | done | 2026-11-25 |
-| T15 | Activities official verification (days, hours, exceptions, 2-adult prices) | `docs/data/activities.csv` | arena-8efb11a7 | in progress | 2026-11-25 |
-| T16 | Verified social media review links (YouTube, TikTok, Instagram) for activities & restaurants | `docs/data/social_reviews.csv` | arena-8efb11a7 | in progress | 2026-11-25 |
-| T17 | Integrate verified activities & social reviews into dashboard + rebuild + link check | `build.py`, `content.py`, `docs/*.html` | arena-8efb11a7 | in progress | 2026-11-25 |
+| T15 | Activities official verification (days, hours, exceptions, 2-adult prices) | `docs/data/activities.csv` | arena-8efb11a7 | done | 2026-11-25 |
+| T16 | Verified social media review links (YouTube, TikTok, Instagram) for activities & restaurants | `docs/data/social_reviews.csv` | arena-8efb11a7 | done | 2026-11-25 |
+| T17 | Integrate verified activities & social reviews into dashboard + rebuild + link check | `build.py`, `content.py`, `docs/*.html` | arena-8efb11a7 | done | 2026-11-25 |
 
 ## File ownership (non-overlapping scopes)
 
@@ -200,3 +200,19 @@ merged to `main`, reset Pages to `main:/docs` (or `main:/`) and delete the stale
   with itself.
 - **Link check (automated, all three trees):** 0 broken internal links across `index.html`, `docs/*.html`
   and `deepdive/*.html`.
+
+### 2026-11-25 · arena-8efb11a7 · T15, T16, T17 — Official activity verification & verified social review links
+- **T15 (`docs/data/activities.csv`):** Verified 11 of 12 activities directly from official websites (1 show-dependent: Broadway via `broadway.org`):
+  - The Met (`metmuseum.org/plan-your-visit`): Sun–Tue & Thu 10am–5pm, Fri–Sat 10am–9pm, closed Wed + Thanksgiving/Dec 25/Jan 1/first Mon in May; $30/adult ($60/2 adults).
+  - AMNH (`amnh.org/plan-your-visit`): Daily 10am–5:30pm, closed Thanksgiving & Dec 25; $37/adult ($74/2 adults) non-NY General Admission.
+  - Top of the Rock (`rockefellercenter.com`): Daily 8am–midnight (last entry 11:10pm); starting $40/adult ($80/2 adults).
+  - Empire State Building (`esbnyc.com/buy-tickets`): Open 365 days/year (seasonal hours), timed reservation required; 86th Floor starting $46/adult ($92/2 adults).
+  - 9/11 Memorial & Museum (`911memorial.org/visit`, `visit.911memorial.org`): Memorial daily 8am–8pm (free); Museum Wed–Mon & select Tue 9am–7pm (last entry 5:30pm), $36/adult ($72/2 adults).
+  - Statue of Liberty & Ellis Island (`nps.gov/stli`, `cityexperiences.com`): Daily 8:30am–5pm (last ferry 3:30pm, shortened winter hours), closed Thanksgiving & Dec 25; $26/adult ($52/2 adults) incl. taxes/fees via Statue City Cruises.
+  - Brooklyn Bridge (`nyc.gov/html/dot`): Open 24 hours; free ($0).
+  - Central Park (`centralparknyc.org/visit`): Daily 6am–1am, 365 days/year; free ($0).
+  - The High Line (`thehighline.org/faq/`): Winter (Dec 1–Mar 31) daily 7am–8pm; Interim Walkway temporarily closed; free ($0).
+  - Chelsea Market (`chelseamarket.com/visit`): Daily 7am–10pm, closed Christmas Day; free entry ($0).
+  - Broadway (`broadway.org`): Show-dependent (most shows dark Mondays; Presidents' Day week schedules vary).
+- **T16 (`docs/data/social_reviews.csv`):** Added 27 verified direct social media review/guide URLs (YouTube, TikTok, Instagram) covering all 12 activities, 10 featured MICHELIN-starred restaurants (Le Bernardin, Eleven Madison Park, Per Se, Jungsik, Aquavit, Aska, Masa, Atomix, Gramercy Tavern, The Modern), and 2 Guide-listed restaurants (Ai Fiori, One White Street). Platforms without a verified direct link remain explicitly labelled `(search)`.
+- **T17 (`build.py`, `docs/*.html`):** Integrated `social_reviews.csv` into `build.py` so verified links display with `✓` and tooltips while unverified platforms remain labelled search fallbacks. Rebuilt both `docs/` and `deepdive/`; automated link check confirmed **0 broken internal links**.
