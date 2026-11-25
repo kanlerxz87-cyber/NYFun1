@@ -196,3 +196,9 @@ merged to `main`, reset Pages to `main:/docs` (or `main:/`) and delete the stale
   with itself.
 - **Link check (automated, all three trees):** 0 broken internal links across `index.html`, `docs/*.html`
   and `deepdive/*.html`.
+
+| T15 | Fresh-session audit of the merged site and repository claims | `README.md`, `COORDINATION.md` | arena-6042f4cf | in progress | 2026-11-25 |
+
+### 2026-11-25 · arena-6042f4cf · T15 claim
+- Scope: audit documentation and board claims against the current checkout; do not edit generated site/data or another session's files.
+- Base: current session branch `arena/6042f4cf-nyfun1` at `b076314` (merged integration commit); historical task owners in this board are not active claims on this branch.
