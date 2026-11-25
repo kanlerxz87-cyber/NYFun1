@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Open questions — what must be decided, and what is missing · NYC 2027 — Trip Planning Dashboard</title>
+<meta name="description" content="Verified, source-linked NYC trip plan for 15-22 February 2027: hotels, MICHELIN restaurants, activities, costs and open questions.">
+<link rel="stylesheet" href="assets/style.css">
+</head><body>
+<header class="site"><div class="inner">
+  <div class="brand">NYC <span>2027</span> · Trip Planning Dashboard</div>
+  <nav class="top"><a href="index.html" class="">Overview</a><a href="hotels.html" class="">Hotels</a><a href="restaurants.html" class="">MICHELIN</a><a href="activities.html" class="">Activities</a><a href="itinerary.html" class="">Itinerary</a><a href="budget.html" class="">Budget</a><a href="questions.html" class="on">Open questions</a><a href="suggestions.html" class="">Suggestions</a><a href="flagged.html" class="">Flagged for review</a><a href="methodology.html" class="">Method &amp; sources</a><a href="repo-review.html" class="">Repo review</a><a href="../deepdive/index.html" class="">Verified deep dive</a></nav>
+</div></header>
+<main class="wrap">
+<h1>Open questions — what must be decided, and what is missing</h1>
+<p class="lede">Each question states what we know, what we do not know, and the exact step that would close the gap.</p>
+
+<p class="lede">Every question that stands between this dataset and a booking, in the order it must be
+answered. "Answered" means the dataset already settles it. "Open" means no amount of research can settle
+it — it needs your decision. "Blocked on external data" means a source exists and we name it.</p>
+
+<div class="qa" id="Q1">
+  <div class="q">Q1 · How long is the trip - 4, 7 or 14 nights?</div>
+  <div class="meta"><span class="pill bad">Open - needs your decision</span>
+    <span class="tag">owner: traveller</span><span class="tag">blocks: hotel dates, budget, itinerary</span></div>
+  <p><strong>What we know:</strong> The brief asks for 1-2 weeks but names 15-18 February (4 nights) as the preferred window. We drafted all three: 4 nights, 7 nights (recommended) and 14 nights.</p>
+  <p><strong>What we do not know:</strong> Which constraint is real - the specific dates, or the length?</p>
+  <p><strong>How to close it:</strong> Pick the row you want in the itinerary page; the hotel price per night is identical for the same room type, so 4 nights is roughly 4/7 of the 7-night total plus cleaning/one-off fees.</p>
+</div>
+<div class="qa" id="Q2">
+  <div class="q">Q2 · What is the all-in budget ceiling for two adults, excluding airfare?</div>
+  <div class="meta"><span class="pill bad">Open - needs your decision</span>
+    <span class="tag">owner: traveller</span><span class="tag">blocks: hotel tier, number of starred dinners</span></div>
+  <p><strong>What we know:</strong> We can price a 7-night hotel from about $1,159 (all-in, breakfast included) to $1,688 (Moxy, resort fee included). Two starred dinners for two adults model at $500-900 per dinner.</p>
+  <p><strong>What we do not know:</strong> The ceiling, and whether airfare/transit sit inside it.</p>
+  <p><strong>How to close it:</strong> Give a single number. If it is under $3,000 the plan must drop one starred dinner; if it is over $6,000 the shortlist should be widened upward (Q9) rather than optimised for price.</p>
+</div>
+<div class="qa" id="Q3">
+  <div class="q">Q3 · Is 60 minutes door-to-door the hard limit, and does winter walking count against it?</div>
+  <div class="meta"><span class="pill ok">Answered - 60 min stated</span>
+    <span class="tag">owner: traveller</span><span class="tag">blocks: restaurant shortlist</span></div>
+  <p><strong>What we know:</strong> The brief sets one hour by subway or bus. All four hotels reach all six fully verified starred restaurants in 8-26 modelled minutes, so the constraint binds only for Brooklyn/Queens.</p>
+  <p><strong>What we do not know:</strong> Whether a 15-minute walk in February wind chill is acceptable as part of that hour.</p>
+  <p><strong>How to close it:</strong> If not, restrict dinners to the Midtown cluster (Le Bernardin, Per Se, Sushi Sho, Aquavit) and treat Tribeca/Brooklyn as taxi nights.</p>
+</div>
+<div class="qa" id="Q4">
+  <div class="q">Q4 · How many MICHELIN-starred dinners per week is the right number?</div>
+  <div class="meta"><span class="pill bad">Open - needs your decision</span>
+    <span class="tag">owner: traveller</span><span class="tag">blocks: food budget, itinerary</span></div>
+  <p><strong>What we know:</strong> The 7-night itinerary can host two comfortably, three with effort. Tasting menus run 2-3 hours.</p>
+  <p><strong>What we do not know:</strong> Appetite for that format, and willingness to do lunch instead (Le Bernardin and Aquavit both serve weekday lunch, which is typically the cheaper way into the same kitchen).</p>
+  <p><strong>How to close it:</strong> Choose 1, 2 or 3. Each added dinner adds roughly $500-900 for two (MODEL).</p>
+</div>
+<div class="qa" id="Q5">
+  <div class="q">Q5 · Should the plan survive a star change on 14 December 2026?</div>
+  <div class="meta"><span class="pill ok">Answered - risk identified</span>
+    <span class="tag">owner: traveller</span><span class="tag">blocks: nothing</span></div>
+  <p><strong>What we know:</strong> The next NYC ceremony is reported for 14 Dec 2026, so today's stars may not hold for February.</p>
+  <p><strong>What we do not know:</strong> The new list (not published yet).</p>
+  <p><strong>How to close it:</strong> Re-check in January 2027. Prefer restaurants whose appeal is independent of the star (Le Bernardin, EMP, Per Se, Sushi Sho are long-standing).</p>
+</div>
+<div class="qa" id="Q6">
+  <div class="q">Q6 · Refundable or non-refundable rate?</div>
+  <div class="meta"><span class="pill bad">Open - needs your decision</span>
+    <span class="tag">owner: traveller</span><span class="tag">blocks: cancellation flexibility</span></div>
+  <p><strong>What we know:</strong> All four shortlisted rates are free-cancellation with deadlines of 2027-02-12/13. Non-refundable is typically 10-20% cheaper but locks the dates.</p>
+  <p><strong>What we do not know:</strong> How likely a date change is.</p>
+  <p><strong>How to close it:</strong> If Q1/Q16 are unsettled, book the free-cancellation rate and keep re-pricing weekly; the flexibility is currently costing nothing on the #1 hotel.</p>
+</div>
+<div class="qa" id="Q7">
+  <div class="q">Q7 · Breakfast included vs higher guest rating - which matters more?</div>
+  <div class="meta"><span class="pill bad">Open - needs your decision</span>
+    <span class="tag">owner: traveller</span><span class="tag">blocks: hotel choice #1 vs #2</span></div>
+  <p><strong>What we know:</strong> Fairfield includes breakfast (rated 8.9 for breakfast) and scores 8.0 overall; citizenM Times Square scores 8.9 overall but breakfast is $23.50 per person per night.</p>
+  <p><strong>What we do not know:</strong> Whether you eat breakfast at the hotel.</p>
+  <p><strong>How to close it:</strong> Two people x 7 nights of citizenM breakfast would be about $329 - worth comparing with the $185 all-in price gap between #1 and #2.</p>
+</div>
+<div class="qa" id="Q8">
+  <div class="q">Q8 · Is 'queen bed or equivalent or bigger' satisfied by the verified rooms?</div>
+  <div class="meta"><span class="pill ok">Answered - yes, verified</span>
+    <span class="tag">owner: n/a</span><span class="tag">blocks: nothing</span></div>
+  <p><strong>What we know:</strong> Every shortlisted room is 1 king bed or 1 queen bed with an attached (private) bathroom, read off the Booking.com room table for the exact dates.</p>
+  <p><strong>What we do not know:</strong> Room size preference (citizenM rooms are compact; sizes were not published on the page).</p>
+  <p><strong>How to close it:</strong> If space matters, ask the hotel for the room dimensions before booking - not published on the captured pages.</p>
+</div>
+<div class="qa" id="Q9">
+  <div class="q">Q9 · Should we also consider Brooklyn or the Upper East/West Side as a base?</div>
+  <div class="meta"><span class="pill bad">Open - needs your decision</span>
+    <span class="tag">owner: traveller</span><span class="tag">blocks: hotel shortlist breadth</span></div>
+  <p><strong>What we know:</strong> Manhattan holds 63 of the 72 star entries; Brooklyn holds 6, Queens 1. A Brooklyn base would suit Aska/Francie/Oxomoco/Shota but adds 20-30 minutes to every Midtown dinner.</p>
+  <p><strong>What we do not know:</strong> Whether a second base (split stay) is attractive for the 14-night variant.</p>
+  <p><strong>How to close it:</strong> If yes, price 3-4 Brooklyn properties for the same window (S3) before deciding.</p>
+</div>
+<div class="qa" id="Q10">
+  <div class="q">Q10 · Any accessibility, quiet-room or workspace needs?</div>
+  <div class="meta"><span class="pill bad">Open - needs your decision</span>
+    <span class="tag">owner: traveller</span><span class="tag">blocks: room type</span></div>
+  <p><strong>What we know:</strong> Accessible variants exist at citizenM (King Room - Accessible) and Moxy (roll-in shower) and were priced. None of the four hotels' quiet-floor policies were verified.</p>
+  <p><strong>What we do not know:</strong> The requirement itself.</p>
+  <p><strong>How to close it:</strong> State the need; accessible rooms must be booked by name, not by category.</p>
+</div>
+<div class="qa" id="Q11">
+  <div class="q">Q11 · Which airport, and is the transfer in scope?</div>
+  <div class="meta"><span class="pill bad">Open - needs your decision</span>
+    <span class="tag">owner: traveller</span><span class="tag">blocks: budget completeness, arrival day</span></div>
+  <p><strong>What we know:</strong> Nothing about airfare or transfers is priced. Midtown West hotels are closest to Penn Station and Port Authority; JFK/LGA transfers are not verified in this pass.</p>
+  <p><strong>What we do not know:</strong> Origin, arrival time, luggage.</p>
+  <p><strong>How to close it:</strong> Provide the flight; the arrival-day plan can then be timed (check-in is typically 15:00-16:00).</p>
+</div>
+<div class="qa" id="Q12">
+  <div class="q">Q12 · Any dietary restrictions that would rule out tasting menus?</div>
+  <div class="meta"><span class="pill bad">Open - needs your decision</span>
+    <span class="tag">owner: traveller</span><span class="tag">blocks: specific restaurants</span></div>
+  <p><strong>What we know:</strong> Several of these kitchens run fixed menus. EMP's menu is explicitly vegan-friendly per its MICHELIN description; others were not verified for substitutions.</p>
+  <p><strong>What we do not know:</strong> Allergies, alcohol, pork/beef, etc.</p>
+  <p><strong>How to close it:</strong> Every starred restaurant has a reservations contact on its booking platform; ask before booking rather than on arrival.</p>
+</div>
+<div class="qa" id="Q13">
+  <div class="q">Q13 · Which activities are must-do, and which are weather-dependent?</div>
+  <div class="meta"><span class="pill bad">Open - needs your decision</span>
+    <span class="tag">owner: traveller</span><span class="tag">blocks: itinerary</span></div>
+  <p><strong>What we know:</strong> Only MoMA is fully verified (hours, price, closures). The Met's price is verified; its hours are not. Ten further candidates are unpriced and unverified.</p>
+  <p><strong>What we do not know:</strong> Must-do list, and tolerance for cold-weather outdoor time.</p>
+  <p><strong>How to close it:</strong> Pick 4-5 must-dos; suggestion S6 adds an indoor/outdoor flag so February swaps are obvious.</p>
+</div>
+<div class="qa" id="Q14">
+  <div class="q">Q14 · Do you want a CityPASS-style bundle?</div>
+  <div class="meta"><span class="pill bad">Open - needs your decision</span>
+    <span class="tag">owner: traveller</span><span class="tag">blocks: activity budget</span></div>
+  <p><strong>What we know:</strong> MoMA's own site promotes New York C3 by CityPASS (up to 42% off three attractions) and states no city pass includes the Met.</p>
+  <p><strong>What we do not know:</strong> Whether the bundled attractions match your must-do list, and current C3 pricing.</p>
+  <p><strong>How to close it:</strong> Price C3 only after Q13 fixes the must-do list; a pass is worthless if it covers attractions you would not visit.</p>
+</div>
+<div class="qa" id="Q15">
+  <div class="q">Q15 · When do the targeted restaurants release reservations?</div>
+  <div class="meta"><span class="pill bad">Blocked on external data</span>
+    <span class="tag">owner: agent (next pass)</span><span class="tag">blocks: whether the plan is bookable</span></div>
+  <p><strong>What we know:</strong> Booking platforms are recorded per restaurant (Resy: Le Bernardin, EMP; Tock: Per Se, Sushi Sho, Aquavit, Jungsik).</p>
+  <p><strong>What we do not know:</strong> Release windows and sell-out speed for each.</p>
+  <p><strong>How to close it:</strong> Open each restaurant's booking page 30 and 60 days before the date and record the first available slot; this becomes the S1 dataset.</p>
+</div>
+<div class="qa" id="Q16">
+  <div class="q">Q16 · Is the Presidents' Day / school-recess week a problem?</div>
+  <div class="meta"><span class="pill warn">Partially answered</span>
+    <span class="tag">owner: agent + traveller</span><span class="tag">blocks: date choice, budget</span></div>
+  <p><strong>What we know:</strong> 15 Feb 2027 is the third Monday of February (Presidents' Day). Holiday demand is real for NYC hotels and museums.</p>
+  <p><strong>What we do not know:</strong> Whether NYC public schools are on midwinter recess that same week in 2027 (unverified).</p>
+  <p><strong>How to close it:</strong> Check the NYC DOE 2026-27 calendar; if it overlaps, compare the 22 Feb - 1 Mar window, which we priced 12% higher for the hotel but is out of the school break.</p>
+</div>
+<div class="qa" id="Q17">
+  <div class="q">Q17 · Do we need travel insurance or a cancellation buffer?</div>
+  <div class="meta"><span class="pill bad">Open - needs your decision</span>
+    <span class="tag">owner: traveller</span><span class="tag">blocks: booking step</span></div>
+  <p><strong>What we know:</strong> All four hotel rates are cancellable until 12-13 Feb 2027 at no cost on the captured rates.</p>
+  <p><strong>What we do not know:</strong> Appetite for risk on airfare and prepaid dinners.</p>
+  <p><strong>How to close it:</strong> If dinners are prepaid (some tasting menus require it), insurance becomes relevant; record the deposit terms at booking.</p>
+</div>
+<div class="qa" id="Q18">
+  <div class="q">Q18 · What would make this plan 'done' for you?</div>
+  <div class="meta"><span class="pill bad">Open - needs your decision</span>
+    <span class="tag">owner: traveller</span><span class="tag">blocks: scope of next session</span></div>
+  <p><strong>What we know:</strong> The dataset now covers hotel price/bed/bathroom, the full star roster, verified detail for 6 restaurants, one fully verified activity, and every gap is listed.</p>
+  <p><strong>What we do not know:</strong> Whether the priority is more restaurants verified, more activities verified, or wider hotel coverage.</p>
+  <p><strong>How to close it:</strong> Approve the relevant suggestions (S1-S12) and the next pass starts there.</p>
+</div>
+<h2>Decision order</h2>
+<ol>
+  <li><strong>Q2 (budget ceiling)</strong> — determines whether the #1 hotel or the #2 hotel is even in scope.</li>
+  <li><strong>Q1 (trip length)</strong> — 4, 7 or 14 nights; all three itineraries are drafted.</li>
+  <li><strong>Q6 (refundable vs non-refundable)</strong> — decides whether you can still change dates after booking.</li>
+  <li><strong>Q4 (how many starred dinners)</strong> — drives the food budget line.</li>
+  <li><strong>Q3 and Q12</strong> — transit tolerance and dietary constraints prune specific restaurants.</li>
+  <li>Everything else can be resolved after the hotel is held on a free-cancellation rate.</li>
+</ol>
+
+</main>
+<footer class="site"><div class="wrap">
+<p><strong>Build 2026-11-25</strong> · Prices and hours are point-in-time snapshots and must be re-checked before booking.
+Every value is either linked to a source on the row/page or left blank and listed on the
+<a href="flagged.html">Flagged for review</a> page. Derived numbers are labelled MODEL/DERIVED.</p>
+<p><a href="methodology.html">Method, verification tiers &amp; full source list</a> ·
+<a href="https://github.com/kanlerxz87-cyber/NYFun1" target="_blank" rel="noopener">Repository</a></p>
+</div></footer>
+</body></html>

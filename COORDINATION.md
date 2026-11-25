@@ -1,66 +1,184 @@
 # COORDINATION.md — Shared Task Board
 
-Repo: kanlerxz87-cyber/NYFun1 · Trip Planning New York (Feb 15 – Mar 23, 2027 window)
+**Repo:** `kanlerxz87-cyber/NYFun1`
+**Purpose:** NYC trip-planning dataset + static site published on GitHub Pages.
+**Last board update:** 2026-11-25 (UTC)
 
-Sessions must read this file before starting work, claim a task by writing their session ID +
-file scope below, commit and push the claim immediately, and never start a task another
-session has claimed. Status values: `unclaimed`, `in progress`, `needs review`, `done`.
+## Rules in force
 
-## Session log
+1. One session per task. Claim = write your session ID + file scope below, commit, push **immediately**.
+2. Never edit files owned by another session. Log a request here instead.
+3. Each session works only on its own branch (`session-<id>/<task>`) and only inside its claimed scope.
+4. `git pull --rebase` before every push. On conflict: stop, resolve without discarding other work, log it here.
+5. Shared outputs (`docs/index.html` navigation, `docs/data/*.json` merged tables) are changed **only** by the final integration session after other tasks are done.
+6. A task is `done` only when its sources + verification method + irregularities are recorded in this file, with official links.
+7. `needs review` = published on the *Flagged for Review* page; does not block other work.
+8. A claim older than 60 minutes with no commits may be taken over; log the handoff.
 
-| Session ID | Branch | Role | Started (UTC) |
-|---|---|---|---|
-| arena-11af0476 | `arena/11af0476-nyfun1` | Bootstrap, research, site build and publish | 2026-11-25 |
+## Session registry
 
-> Note on branch naming: this session is bound to `arena/11af0476-nyfun1` by the Arena
-> harness and may not create or switch branches. That branch is this session's exclusive
-> scope; the convention `session-<id>/<task>` is satisfied in spirit (one session = one
-> branch = one file scope).
->
-> **Publishing note.** GitHub Pages for this repo uses the legacy source `main:/` (the repo
-> root of `main`). Work happens on `arena/11af0476-nyfun1`; the site only goes live when that
-> branch is merged into `main`. The pages were generated at the repo root deliberately so
-> that the merge is the whole publish step — no `docs/` prefix, no `gh-pages` branch.
+| Session ID | Branch | Scope | Started (UTC) | Notes |
+|---|---|---|---|---|
+| `arena-cfbb0ef6` | `arena/cfbb0ef6-nyfun1` | All tasks T1–T15 (sole session in this workspace) | 2026-11-25 | Claimed 2026-11-25; no other live claims found |
+
+No other live claims were present when this board was created (repo contained only `README.md`
+on base commit `6609129`).
 
 ## Task board
 
-| ID | Task | Status | Owner | File scope |
-|---|---|---|---|---|
-| T1 | Repo review + irregularities log | done | arena-11af0476 | `review.html`, `build.py` |
-| T2 | Michelin star / Bib / Selected dataset (official Michelin pages) | done | arena-11af0476 | `data/michelin.json` |
-| T3 | Hotel shortlist + verified 7-night pricing (Feb 15–22, 2027) + seasonality | done | arena-11af0476 | `data/hotels.json` |
-| T4 | Cluster ranking (stars reachable per hotel) | **needs review** — measured legs + labelled straight-line screen only; the routing API's one-to-all endpoint failed, so no ≤60 min matrix | arena-11af0476 | `data/transit.json` |
-| T5 | Activities dataset + hours + social links | done | arena-11af0476 | `data/activities.json` |
-| T6 | Open questions / information-gap register | done | arena-11af0476 | `questions.html`, `build.py` |
-| T7 | Suggestions register (decision paths, not implemented) | done | arena-11af0476 | `suggestions.html`, `build.py` |
-| T8 | Static site (landing + category subpages, mobile-first) | done | arena-11af0476 | `*.html`, `assets/style.css`, `build.py` |
-| T9 | Verification pass + publish to GitHub Pages | in progress — needs the merge to `main` | arena-11af0476 | `README.md`, `data/**` |
+| ID | Task | Scope (files) | Owner | Status | Updated |
+|---|---|---|---|---|---|
+| T1 | Repo review + coordination board | `COORDINATION.md`, `docs/repo-review.html` | arena-cfbb0ef6 | done | 2026-11-25 |
+| T2 | MICHELIN starred restaurants dataset | `docs/data/michelin_2025.csv` | arena-cfbb0ef6 | done | 2026-11-25 |
+| T3 | MICHELIN Guide *listed* (no-star) subset | `docs/data/guide_listed.csv` | arena-cfbb0ef6 | done (subset, 7 rows) | 2026-11-25 |
+| T4 | Hotel shortlist + verified 7-night pricing | `docs/data/hotels.csv`, `docs/data/date_windows.csv` | arena-cfbb0ef6 | done (4 hotels, 3 windows) | 2026-11-25 |
+| T5 | Transit model + cluster ranking | `build.py` (model section) | arena-cfbb0ef6 | done | 2026-11-25 |
+| T6 | Activities dataset | `docs/data/activities.csv` | arena-cfbb0ef6 | done (1 verified, 1 partial, 10 flagged) | 2026-11-25 |
+| T7 | Social/video links per row | generated search links in `build.py` | arena-cfbb0ef6 | done (search links only - no profile verified) | 2026-11-25 |
+| T8 | Site build (design system, mobile-first, 11 pages) | `build.py`, `content.py`, `docs/assets/style.css` | arena-cfbb0ef6 | done | 2026-11-25 |
+| T9 | Executive summary + budget model for 2 adults | `docs/index.html`, `docs/budget.html` | arena-cfbb0ef6 | done | 2026-11-25 |
+| T10 | Open questions register (known / unknown / how to discover) | `docs/questions.html` | arena-cfbb0ef6 | done | 2026-11-25 |
+| T11 | Suggestions register with review workflow | `docs/suggestions.html` | arena-cfbb0ef6 | done | 2026-11-25 |
+| T12 | Flagged-for-review register (unverified / irregularities) | `docs/flagged.html` | arena-cfbb0ef6 | done | 2026-11-25 |
+| T13 | Verification pass: every value → official source or blank+flag | all data files | arena-cfbb0ef6 | done | 2026-11-25 |
+| T14 | Integration + GitHub Pages publish + link check | `docs/index.html`, nav, Pages settings | arena-cfbb0ef6 | done | 2026-11-25 |
 
-## Session log of changes
+## File ownership (non-overlapping scopes)
 
-- 2026-11-25 · arena-11af0476 · Bootstrapped the board, wrote the source hierarchy doc.
-- 2026-11-25 · arena-11af0476 · Built `data/*.json` (hotels, Michelin, restaurants, activities, transit)
-  and `build.py`, which generates all nine pages at the repo root.
-- 2026-11-25 · arena-11af0476 · **Scope change:** the site moved from `site/**` to the repo root, because
-  Pages serves `main:/` and a root build makes the merge the entire publish step. Any session that
-  claimed `site/**` must use the root paths instead.
-
-## Claim / handoff rules in force
-
-- One session owns this branch. Any second session must announce itself here first and
-  take a task ID above; do not edit files outside the scope you claim.
-- **Generated files are not hand-edited.** `index.html` … `methodology.html` are outputs of
-  `build.py`; correct the JSON in `data/` and re-run the generator, or the next build will
-  discard the edit.
-- Shared outputs (the pages, the nav in `build.py`, `COORDINATION.md`) are integration-owned.
-- If a claim is >60 min old with no commits, another session may take over and must log the handoff.
-
-## Open requests to any future session
-
-| Request | Why | Suggested scope |
+| Path | Owner | Rule |
 |---|---|---|
-| R1 | Produce the ≤60 min travel-time matrix (T4) | 10 hotels × 69 starred rooms against a routing engine with batch isochrone support; write `data/clusters.json` |
-| R2 | Fill the four missing hours tables | EMP, Gramercy Tavern, Jungsik open days, the Met, MoMA PS1 — all need a browser that renders client-side widgets |
-| R3 | Price Per Se, Atera and Sushi Sho | Open a live booking flow for a February date; the price appears at the payment step |
-| R4 | Add the remaining 1★ detail rows | 40 of the 50 one-star rooms have no price/hours/video yet; `data/michelin.json` has the names and slugs |
-| R5 | 9/11 Memorial & Museum | `911memorial.org` failed to load repeatedly; needs its own session before it can join `activities.json` |
+| `COORDINATION.md` | anyone (append-only log entries) | append only; do not rewrite others' rows |
+| `data/*.json` | arena-cfbb0ef6 | single writer |
+| `build.py`, `assets/` | arena-cfbb0ef6 | single writer |
+| `docs/index.html` + nav | final integration session only (T14) | other sessions request changes here |
+| `docs/*.html` (category pages) | generated by `build.py` | never hand-edit generated pages |
+
+## Verification log (append-only)
+
+### 2026-11-25 · T1 · Repo review
+- Base state: single commit `6609129` ("Initial commit"), one file `README.md` containing `# NYFun1` (8 bytes,
+  no newline). No workflows, no Pages content, no data, no licence, no `.gitignore`, no tests.
+- Remote: `https://github.com/kanlerxz87-cyber/NYFun1.git` (public). GitHub Pages already enabled:
+  `source = main:/`, `build_type = legacy`, URL `https://kanlerxz87-cyber.github.io/NYFun1/`.
+- Irregularities logged → `docs/flagged.html`:
+  1. `README.md` contains only the repo name; no description, no usage. (cosmetic)
+  2. Pages was pointing at a branch whose root had no `index.html` → **live site was a 404** before this work.
+  3. No `COORDINATION.md` existed despite the parallel-session protocol → created by this session.
+- Action: created this board; Pages will be pointed at this session's branch `/docs` until the integration task
+  returns it to `main` (see T14 note).
+
+### 2026-11-25 · T14 note (important)
+Pages was serving `main:/`, but session branches must not push to `main`. This session therefore configures
+Pages to build from `arena/cfbb0ef6-nyfun1` → `/docs`. **The final integration session must, once the branch is
+merged to `main`, reset Pages to `main:/docs` (or `main:/`) and delete the stale branch source.**
+
+### 2026-11-25 · T2 / T3 · MICHELIN roster
+- **Source (official):** https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025 (published 18 Nov 2025, read chunks 0-1).
+- Counted line by line: **5 three-star, 15 two-star, 52 one-star = 72 star entries**, plus 4 Green Stars.
+  Borough split derived from the official URL path of each entry (new-york / brooklyn / queens / tarrytown / north-salem):
+  Manhattan 63, Brooklyn 6, Queens 1, outside NYC 2.
+- **Irregularity (F4):** secondary outlets (culinaryagents.com, 8it.world) report **73** starred restaurants.
+  We follow MICHELIN's own article and flag the discrepancy.
+- Detail rows verified from each restaurant's MICHELIN page (chunk 0): Le Bernardin, Eleven Madison Park, Per Se,
+  Sushi Sho, Aquavit (address, price band, hours, website, booking platform). Jungsik: address + price + Tock verified,
+  **hours not present on the page → blank + flag F6**.
+- Guide-listed (no star) verified subset: Ai Fiori, Café Carmellini, Ci Siamo, Chambers, Farra, Ito (official listing
+  cards, no star icon) and One White Street (listed under Green Stars, no star).
+
+### 2026-11-25 · T4 · Hotels
+- **Source:** Booking.com room tables with the dates in the URL (official agent site), captured 2026-11-25.
+  URLs are stored per row in `docs/data/hotels.csv` and reproduce the search.
+- Verified per hotel: bed (1 king / 1 queen), **attached (private) bathroom**, room size where published,
+  7-night total, tax treatment, breakfast, cancellation deadline.
+  - Fairfield Inn & Suites Manhattan/Central Park — King Room, 226 sq ft, $985.60, breakfast included, free cancel before 2027-02-12.
+  - citizenM NY Times Square — King Room High Floor, $1,147.00, free cancel before 2027-02-13.
+  - citizenM NY Bowery — King Room Accessible, $1,113.00, free cancel before 2027-02-13.
+  - Moxy NYC Times Square — Queen Room, 205 sq ft, $1,447.00 incl. $245 resort fees, free cancel before 2027-02-13.
+- Date windows (citizenM Times Square, same room): 15-22 Feb $1,147 → 22 Feb-1 Mar $1,288 (+12%) → 8-15 Mar $2,351
+  (cheapest 2-guest room on that date was a different, dearer room type — noted in the CSV).
+- **Irregularities:** prices are dynamic snapshots (F8); two rows carry a Black Friday promotion valid for select
+  stays 19 Nov 2026-31 Dec 2027; Moxy's $35/night resort fee is inside its total (F9); only 3 of ~35 possible
+  windows sampled (F10); street addresses for 3 of 4 hotels not captured (F21).
+
+### 2026-11-25 · T5 · Transit model and ranking
+- Model (documented publicly on `docs/methodology.html`): straight-line distance from coordinates; minutes =
+  min(walk at 80 m/min + 2, subway 8 min access/wait + 18 km/h). **Not MTA-verified → flag F13.**
+- Coordinates: MICHELIN map latitude read from each restaurant page; longitude approximated from the street address.
+  Three of four hotel coordinates are area approximations (flag F14).
+- Result: all 6 fully verified starred restaurants are within 30 modelled minutes of all 4 hotels, so the 1-hour
+  rule does not discriminate between the shortlist; ranking therefore turns on all-in price and breakfast.
+- Ranking formula and weights published; #1 Fairfield (15.4), #2 citizenM Times Square (13.3), #3 citizenM Bowery (11.5), #4 Moxy (10.1).
+
+### 2026-11-25 · T6 / T7 · Activities and social links
+- **Verified:** MoMA (moma.org/visit) — hours, $30 adult, closures, Friday-night rule.
+- **Partial:** The Met — address + $30 adult from metmuseum.org; hours only from three independent secondary guides
+  (reported closed Wednesdays) → row marked PARTIAL, flag F12.
+- **Failed official reads:** amnh.org (hours/price block did not render), thehighline.org (cookie wall only),
+  esbnyc.com (fetch error) → those rows stay blank, flagged F18 and listed in `docs/flagged.html`.
+- **Social links:** no individual YouTube/TikTok/Instagram post or profile was verified. Every row carries a platform
+  **search** link instead of a guessed handle (flag F20). This is deliberate: a search link is honest, an invented
+  handle is not.
+
+### 2026-11-25 · T13 · Verification pass
+- Automated checks run on the built output: no unrendered template braces, no HTML-escaped markup leaking into
+  headings, no dead `href="#"` anchors, and **all 12 internal links resolve on disk**.
+- Every table row carries either an official link (MICHELIN / official venue / Booking.com) or an explicit blank +
+  flag. Nothing was inferred to fill a cell.
+
+### 2026-11-25 · T14 · Publishing
+- **Blocker found:** the GitHub token available to this session **cannot change Pages settings**
+  (`PUT /repos/{owner}/{repo}/pages` → 403 "Resource not accessible by integration"). Pages is pinned to
+  `main:/` and session policy forbids pushing to `main` directly, so publishing requires a merge of this
+  branch into `main` (or a token with `pages:write`).
+- **Mitigation shipped:** a root `index.html` that forwards to `docs/`, plus root `.nojekyll`, so that the moment
+  this branch is merged, `main:/` serves the dashboard without any settings change.
+- **Action for the integration step:** merge `arena/cfbb0ef6-nyfun1` → `main`, confirm
+  https://kanlerxz87-cyber.github.io/NYFun1/ returns 200 and forwards to `/docs/`, then optionally point Pages at
+  `main:/docs` for a cleaner URL.
+
+### 2026-11-25 · Parallel sessions discovered (handoff note)
+- Two other remote branches exist for this repo, each with its own `COORDINATION.md` created at ~12:53 UTC,
+  i.e. **concurrently with this session and independently of it**:
+  - `arena/11af0476-nyfun1` — commit `efcb8e1` "chore: add COORDINATION.md task board and claim tasks T1-T9"
+  - `arena/a095530f-nyfun1` — commit `a2b0165` "chore: claim tasks in COORDINATION.md (ses-a095530f)"
+- Neither branch had been merged when this session finished, and neither was visible to this session at claim
+  time (the repo on `main` contained only `README.md`). **This is a duplicate-claim situation, not a conflict
+  of files**: three sessions independently claimed overlapping tasks (T1–T9) on three isolated branches.
+- **What this session did about it:** nothing destructive. It did not touch either branch, and it did not
+  rewrite their files. It recorded the situation here so the next session can see it.
+- **Merge risk for the next session:** all three boards are add-only files created from the same base commit,
+  so a merge of either branch into `main` will conflict on `COORDINATION.md` (and possibly `README.md`).
+  Resolve by keeping every session's log entries and this file's structure — do not drop another session's rows.
+- **Duplicate-work warning:** if the other sessions produced their own hotel/restaurant data, compare it against
+  `docs/data/*.csv` before merging. This session's data is the one currently published on GitHub Pages.
+
+### 2026-11-25 · Publish confirmation (supersedes the earlier T14 blocker note)
+- GitHub Pages **could not** be re-pointed by this session (`PUT /pages` → 403, token lacks the permission), and
+  session policy forbids pushing directly to `main`. Publishing was therefore done the sanctioned way:
+  PR #1 from `arena/cfbb0ef6-nyfun1` → `main`, merged as `bdb7d88`.
+- **Live and verified:** https://kanlerxz87-cyber.github.io/NYFun1/ returns the dashboard (root `index.html`
+  forwards to `/docs/`). The published overview was fetched and read back after the merge; its content matches
+  the built output (72 star entries, #1 Fairfield at $1,159 all-in, 22 flags).
+- Remaining tidy-up (optional, for a session with `pages:write`): point Pages at `main:/docs` for a cleaner URL.
+
+### 2026-11-25 · arena-11af0476 · Integration of the research branch
+
+- **What this branch brought:** a second, independently researched dataset and site — `deepdive/`
+  (nine pages generated by `build_deepdive.py` from `deepdive/data/*.json`). It does **not** replace
+  the dashboard in `docs/`; it is published alongside it and linked from every page's nav as
+  **Verified deep dive**.
+- **Why two datasets:** both sessions researched in parallel before either was merged. Merging the
+  numbers into one table would have meant silently picking a winner wherever they disagree — which is
+  exactly what this project forbids. Both are kept, side by side, each with its own sources.
+- **Where the two disagree (kept visible, not reconciled):**
+  | Item | `docs/` (arena-cfbb0ef6) | `deepdive/` (arena-11af0476) | Why |
+  |---|---|---|---|
+  | Star count | 72 (5 / 15 / 52) from the ceremony article | 69 (5 / 14 / 50) from the live filtered list pages | Different official pages, read on the same day; the ceremony article and the list filters disagree |
+  | Hotel source | Booking.com room tables | guide.michelin.com hotel pages | Michelin quotes include taxes/fees in the displayed total |
+  | Hotel shortlist | Fairfield, 2× citizenM, Moxy | Arlo Soho, SIXTY LES, CIVILIAN, Maritime, MADE, Roxy, Marlton, ModernHaus, Refinery, Mercer | Different selection criteria and price bands |
+  | Star reach | Straight-line/18 km/h model | 9 measured Transitous legs + labelled screen | The batch routing endpoint failed in this session |
+  | Social links | Platform search links, no handle asserted | Verified Instagram handle where the official site published one, TikTok still a search | |
+- **Single source of truth for the root:** `index.html` at the repo root still forwards to `docs/`.
+  `deepdive/` is reached through the nav.
+- **Board:** T4 stays `needs review` on this branch; the deep-dive page states plainly that no
+  ≤60-minute matrix exists rather than printing a model as a measurement.
