@@ -254,7 +254,7 @@ bathroom — {money(TOP['base'],2)} for 7 nights before tax ({money(TOP['incl'])
 and it still puts all {len(verified)} verified MICHELIN restaurants inside 30 minutes (MODEL).</p>
 <p>If location prestige matters more than price, <strong>citizenM New York Times Square</strong>
 (#2, est. {money([h for h in hotels if 'Times Square' in h['hotel'] and 'citizenM' in h['hotel']][0]['incl'])}
-all-in) is a ~0.4 km walk from Le Bernardin and Per Se and has the highest guest score of the shortlist
+all-in) is a 0.35 km walk from Le Bernardin and 0.8 km from Per Se (straight line) and has the highest guest score of the shortlist
 (8.9/10).</p>
 </div>
 </div>
