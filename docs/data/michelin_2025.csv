@@ -1,0 +1,73 @@
+name,stars,green,cuisine,borough,price_band,address,hours,closed,michelin_url,website,booking,lat,lon,verification
+Eleven Madison Park,3,no,"Contemporary, Vegan",Manhattan,$$$$,"11 Madison Ave, New York, NY 10010","Mon-Thu 5:30pm-10pm; Fri-Sun 12pm-1pm & 5:30pm-11pm",none,https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/eleven-madison-park,https://www.elevenmadisonpark.com/,Resy,40.7415225,-73.9872217,verified
+Jungsik,3,no,"Korean, Contemporary",Manhattan,$$$$,"2 Harrison St, New York, NY 10013","NOT CAPTURED",,https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/jungsik-new-york,https://www.jungsik.com/,Tock,40.7187256,-74.0086,partial
+Le Bernardin,3,no,Seafood,Manhattan,$$$$,"155 W 51st St, New York, NY 10019","Mon-Thu 12pm-2:30pm & 5pm-10:30pm; Fri 12pm-2:30pm & 5pm-11pm; Sat 5pm-11pm",Sunday,https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/le-bernardin,https://www.le-bernardin.com/,Resy,40.7614,-73.9819,verified
+Per Se,3,no,"Contemporary, French",Manhattan,$$$$,"10 Columbus Circle, New York, NY 10019","Daily 4:30pm-9pm",none,https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/per-se,https://www.thomaskeller.com/perseny,Tock,40.7680545,-73.9825882,verified
+Sushi Sho,3,no,"Japanese, Sushi",Manhattan,$$$$,"3 E 41st St, New York, NY 10017","Tue-Sun 5pm-10pm",Monday,https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/sushi-sho-1213976,,Tock,40.7526984,-73.981,verified
+Aquavit,2,no,"Scandinavian, Contemporary",Manhattan,$$$$,"65 E 55th St, New York, NY 10022","Mon-Thu 12pm-2pm & 5:30pm-9pm; Fri 12pm-2pm & 5:30pm-9:30pm; Sat 5pm-9:30pm",Sunday,https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/aquavit,https://www.aquavit.org/,Tock,40.7616,-73.9723,verified
+Atera,2,no,Contemporary,Manhattan,,,"NOT VERIFIED",,,https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/atera,,,,roster-only
+Atomix,2,no,Korean,Manhattan,,,"NOT VERIFIED",,,https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/atomix,,,,roster-only
+Aska,2,no,Scandinavian,Brooklyn,,,"NOT VERIFIED",,,https://guide.michelin.com/us/en/new-york-state/brooklyn/restaurant/aska,,,,roster-only
+Blue Hill at Stone Barns,2,yes,American,Tarrytown NY,,,"NOT VERIFIED",,,https://guide.michelin.com/us/en/new-york-state/tarrytown/restaurant/blue-hill-at-stone-barns,,,,roster-only
+Cesar,2,no,Contemporary,Manhattan,,,"NOT VERIFIED",,,https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/cesar,,,,roster-only
+Chef's Table at Brooklyn Fare,2,no,Contemporary,Manhattan,,,"NOT VERIFIED",,,https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/chef-s-table-at-brooklyn-fare,,,,roster-only
+Gabriel Kreuther,2,no,French,Manhattan,,,"NOT VERIFIED",,,https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/gabriel-kreuther,,,,roster-only
+Jean-Georges,2,no,Contemporary,Manhattan,,,"NOT VERIFIED",,,https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/jean-georges,,,,roster-only
+Joo Ok,2,no,Korean,Manhattan,,,"NOT VERIFIED",,,https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/joo-ok-1214822,,,,roster-only
+Masa,2,no,Japanese,Manhattan,,,"NOT VERIFIED",,,https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/masa,,,,roster-only
+odo,2,no,Japanese,Manhattan,,,"NOT VERIFIED",,,https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/odo,,,,roster-only
+Saga,2,no,Contemporary,Manhattan,,,"NOT VERIFIED",,,https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/saga,,,,roster-only
+Sushi Noz,2,no,Japanese,Manhattan,,,"NOT VERIFIED",,,https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/sushi-noz,,,,roster-only
+The Modern,2,no,Contemporary,Manhattan,,,"NOT VERIFIED",,,https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/the-modern,,,,roster-only
+63 Clinton,1,no,Contemporary,Manhattan,,,"NOT VERIFIED",,,https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/63-clinton,,,,roster-only
+Bar Miller,1,no,Japanese,Manhattan,,,"NOT VERIFIED",,,https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/bar-miller,,,,roster-only
+bom,1,no,Korean,Manhattan,,,"NOT VERIFIED",,,https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/bom,,,,roster-only
+Bridges,1,no,Contemporary,Manhattan,,,"NOT VERIFIED",,,https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/bridges-1216261,,,,roster-only
+Cafe Boulud,1,no,French,Manhattan,,,"NOT VERIFIED",,,https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/cafe-boulud,,,,roster-only
+Casa Mono,1,no,Spanish,Manhattan,,,"NOT VERIFIED",,,https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/casa-mono,,,,roster-only
+Corima,1,no,Mexican,Manhattan,,,"NOT VERIFIED",,,https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/corima,,,,roster-only
+Cote,1,no,Korean,Manhattan,,,"NOT VERIFIED",,,https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/cote,,,,roster-only
+Crown Shy,1,no,Contemporary,Manhattan,,,"NOT VERIFIED",,,https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/crown-shy,,,,roster-only
+Daniel,1,no,French,Manhattan,,,"NOT VERIFIED",,,https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/daniel,,,,roster-only
+Dirt Candy,1,yes,Vegetarian,Manhattan,,,"NOT VERIFIED",,,https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/dirt-candy,,,,roster-only
+Essential by Christophe,1,no,French Contemporary,Manhattan,,,"NOT VERIFIED",,,https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/essential-by-christophe,,,,roster-only
+Estela,1,no,Contemporary,Manhattan,,,"NOT VERIFIED",,,https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/estela,,,,roster-only
+Family Meal at Blue Hill,1,yes,American,Manhattan,,,"NOT VERIFIED",,,https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/blue-hill,,,,roster-only
+Francie,1,no,Contemporary,Brooklyn,,,"NOT VERIFIED",,,https://guide.michelin.com/us/en/new-york-state/brooklyn/restaurant/francie,,,,roster-only
+Frevo,1,no,Contemporary,Manhattan,,,"NOT VERIFIED",,,https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/frevo,,,,roster-only
+Gramercy Tavern,1,no,Contemporary,Manhattan,,,"NOT VERIFIED",,,https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/gramercy-tavern,,,,roster-only
+Huso,1,no,Contemporary,Manhattan,,,"NOT VERIFIED",,,https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/huso-1218089,,,,roster-only
+Icca,1,no,Japanese,Manhattan,,,"NOT VERIFIED",,,https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/icca,,,,roster-only
+Jeju Noodle Bar,1,no,Korean,Manhattan,,,"NOT VERIFIED",,,https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/jeju-noodle-bar,,,,roster-only
+Joji,1,no,Japanese,Manhattan,,,"NOT VERIFIED",,,https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/joji,,,,roster-only
+Jua,1,no,Korean,Manhattan,,,"NOT VERIFIED",,,https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/jua,,,,roster-only
+Kochi,1,no,Korean,Manhattan,,,"NOT VERIFIED",,,https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/kochi,,,,roster-only
+Kosaka,1,no,Japanese,Manhattan,,,"NOT VERIFIED",,,https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/kosaka,,,,roster-only
+L'Abeille,1,no,French,Manhattan,,,"NOT VERIFIED",,,https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/l%E2%80%99abeille,,,,roster-only
+La Bastide by Andrea Calstier,1,no,French,North Salem NY,,,"NOT VERIFIED",,,https://guide.michelin.com/us/en/new-york-state/north-salem/restaurant/la-bastide-by-andrea-calstier,,,,roster-only
+Le Coucou,1,no,French,Manhattan,,,"NOT VERIFIED",,,https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/le-coucou,,,,roster-only
+Le Pavillon,1,no,French,Manhattan,,,"NOT VERIFIED",,,https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/le-pavillon-1192744,,,,roster-only
+Mari,1,no,Korean,Manhattan,,,"NOT VERIFIED",,,https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/mari,,,,roster-only
+Meju,1,no,Korean,Queens,,,"NOT VERIFIED",,,https://guide.michelin.com/us/en/new-york-state/queens/restaurant/meju,,,,roster-only
+Muku,1,no,Japanese,Manhattan,,,"NOT VERIFIED",,,https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/muku,,,,roster-only
+Noda,1,no,Japanese,Manhattan,,,"NOT VERIFIED",,,https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/noda,,,,roster-only
+Noksu,1,no,Contemporary,Manhattan,,,"NOT VERIFIED",,,https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/noksu,,,,roster-only
+Noz 17,1,no,Japanese,Manhattan,,,"NOT VERIFIED",,,https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/noz17,,,,roster-only
+Oiji Mi,1,no,Korean,Manhattan,,,"NOT VERIFIED",,,https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/oiji-mi,,,,roster-only
+Oxomoco,1,no,Mexican,Brooklyn,,,"NOT VERIFIED",,,https://guide.michelin.com/us/en/new-york-state/brooklyn/restaurant/oxomoco,,,,roster-only
+Restaurant Yuu,1,no,French Contemporary,Brooklyn,,,"NOT VERIFIED",,,https://guide.michelin.com/us/en/new-york-state/brooklyn/restaurant/restaurant-yuu,,,,roster-only
+Rezdora,1,no,Italian,Manhattan,,,"NOT VERIFIED",,,https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/rezdora-osteria-emiliana,,,,roster-only
+Semma,1,no,Indian,Manhattan,,,"NOT VERIFIED",,,https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/semma,,,,roster-only
+Shion 69 Leonard Street,1,no,Japanese,Manhattan,,,"NOT VERIFIED",,,https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/shoji-at-69-leonard,,,,roster-only
+Shmone,1,no,Israeli,Manhattan,,,"NOT VERIFIED",,,https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/shmone,,,,roster-only
+Shota Omakase,1,no,Japanese,Brooklyn,,,"NOT VERIFIED",,,https://guide.michelin.com/us/en/new-york-state/brooklyn/restaurant/shota-omakase,,,,roster-only
+Sushi Nakazawa,1,no,Japanese,Manhattan,,,"NOT VERIFIED",,,https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/sushi-nakazawa,,,,roster-only
+Tempura Matsui,1,no,Japanese,Manhattan,,,"NOT VERIFIED",,,https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/tempura-matsui,,,,roster-only
+The Four Horsemen,1,no,American,Brooklyn,,,"NOT VERIFIED",,,https://guide.michelin.com/us/en/new-york-state/brooklyn/restaurant/the-four-horsemen,,,,roster-only
+Torien,1,no,Japanese,Manhattan,,,"NOT VERIFIED",,,https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/torien,,,,roster-only
+Torrisi,1,no,Contemporary,Manhattan,,,"NOT VERIFIED",,,https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/torrisi,,,,roster-only
+Tsukimi,1,no,Japanese,Manhattan,,,"NOT VERIFIED",,,https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/tsukimi,,,,roster-only
+Tuome,1,no,Fusion,Manhattan,,,"NOT VERIFIED",,,https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/tuome,,,,roster-only
+Yamada,1,no,Japanese,Manhattan,,,"NOT VERIFIED",,,https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/yamada,,,,roster-only
+YingTao,1,no,Contemporary,Manhattan,,,"NOT VERIFIED",,,https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/yingtao,,,,roster-only
+Yoshino,1,no,Japanese,Manhattan,,,"NOT VERIFIED",,,https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/yoshino-1185037,,,,roster-only
