@@ -196,3 +196,9 @@ merged to `main`, reset Pages to `main:/docs` (or `main:/`) and delete the stale
   with itself.
 - **Link check (automated, all three trees):** 0 broken internal links across `index.html`, `docs/*.html`
   and `deepdive/*.html`.
+
+### 2026-11-25 · arena-958be332 · Claim (this session)
+- Session ID: `958be332` · Branch: `arena/958be332-nyfun1` (branched from `b076314`, merge of PR #3)
+- Scope claimed: **T15 verification pass + social-link upgrade + activities hours fill + site polish** — files: `COORDINATION.md` (this log), `docs/data/activities.csv`, `docs/data/michelin_2025.csv`, `docs/data/hotels.csv`, `docs/data/date_windows.csv`, `content.py`, `build.py`, `docs/*.html` (regenerated), `deepdive/data/*.json` (only if a value is re-verified), `deepdive/*.html` (regenerated), `README.md`, `index.html` (only if needed).
+- Rule: no other session has claimed this scope on this branch; prior sessions' work on `main` is treated as published baseline. This session will not rewrite other sessions' log entries, only append.
+- Plan: (1) re-verify every table row against official sources, blank+flag anything unconfirmed; (2) replace platform search links with verified direct YouTube/TikTok/Instagram links where the official venue page publishes them, otherwise keep search links and flag; (3) fill activity hours/prices from official museum/operator pages; (4) rebuild both sites, run link check, push branch and open PR for integration.
