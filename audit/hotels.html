@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta name="description" content="Official exact-date hotel quotes, stay-window samples, and dynamic-quote drift.">
+<title>Hotels · T18 Verified Audit</title>
+<style>
+/* T18 Verified Audit — self-contained, no external fonts, images, or scripts. */
+:root {
+  --ink: #14213d;
+  --ink-2: #243b5a;
+  --paper: #f7f4ec;
+  --card: #fffdf8;
+  --line: #d9d2c2;
+  --muted: #64748b;
+  --teal: #0f766e;
+  --teal-soft: #d7f0ec;
+  --amber: #b45309;
+  --amber-soft: #fef3c7;
+  --red: #9f1239;
+  --red-soft: #ffe4e6;
+  --blue: #1d4ed8;
+  --blue-soft: #dbeafe;
+  --shadow: 0 10px 30px rgba(20, 33, 61, .08);
+  --radius: 16px;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 10% 0%, rgba(15,118,110,.12), transparent 32rem),
+    radial-gradient(circle at 90% 5%, rgba(180,83,9,.10), transparent 28rem),
+    var(--paper);
+  line-height: 1.55;
+}
+a { color: var(--blue); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:hover { color: var(--teal); }
+.skip { position: absolute; left: -999px; }
+.skip:focus { left: 12px; top: 12px; z-index: 100; padding: 10px 14px; background: var(--card); border-radius: 8px; }
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(247,244,236,.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+.header-inner { max-width: 1180px; margin: 0 auto; padding: 12px 18px; display: flex; gap: 18px; align-items: center; }
+.brand { font-weight: 800; letter-spacing: -.02em; color: var(--ink); text-decoration: none; white-space: nowrap; }
+.brand span { color: var(--teal); }
+.nav { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: thin; padding-bottom: 2px; }
+.nav a { white-space: nowrap; text-decoration: none; color: var(--ink-2); font-size: .88rem; padding: 6px 9px; border-radius: 999px; border: 1px solid transparent; }
+.nav a:hover { background: #fff; border-color: var(--line); }
+.nav a[aria-current="page"] { background: var(--ink); color: #fff; border-color: var(--ink); }
+main { max-width: 1180px; margin: 0 auto; padding: 28px 18px 64px; }
+.hero {
+  padding: 30px; border: 1px solid var(--line); border-radius: 24px;
+  background: linear-gradient(135deg, rgba(255,253,248,.96), rgba(215,240,236,.72));
+  box-shadow: var(--shadow); margin-bottom: 24px;
+}
+.eyebrow { text-transform: uppercase; letter-spacing: .14em; font-weight: 800; font-size: .72rem; color: var(--teal); margin: 0 0 8px; }
+h1 { font-size: clamp(2rem, 5vw, 3.4rem); line-height: 1.05; letter-spacing: -.045em; margin: 0 0 12px; }
+h2 { font-size: clamp(1.4rem, 3vw, 2rem); letter-spacing: -.025em; margin: 34px 0 12px; }
+h3 { font-size: 1.08rem; margin: 0 0 8px; }
+p { margin: 0 0 12px; }
+.lede { font-size: 1.12rem; color: var(--ink-2); max-width: 78ch; }
+.meta-line { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+.meta-pill { font-size: .82rem; padding: 6px 10px; border: 1px solid var(--line); border-radius: 999px; background: rgba(255,255,255,.7); }
+.notice { border-left: 4px solid var(--amber); background: var(--amber-soft); padding: 14px 16px; border-radius: 0 12px 12px 0; margin: 18px 0; }
+.notice strong { color: var(--amber); }
+.grid { display: grid; gap: 14px; }
+.kpis { grid-template-columns: repeat(4, minmax(0,1fr)); }
+.cards-2 { grid-template-columns: repeat(2, minmax(0,1fr)); }
+.cards-3 { grid-template-columns: repeat(3, minmax(0,1fr)); }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; box-shadow: var(--shadow); }
+.kpi { border-top: 4px solid var(--teal); }
+.kpi .number { font-size: 1.8rem; font-weight: 850; letter-spacing: -.04em; display: block; }
+.kpi .label { color: var(--muted); font-size: .86rem; }
+.card p:last-child, .card ul:last-child { margin-bottom: 0; }
+ul, ol { padding-left: 1.25rem; }
+li { margin: 5px 0; }
+.section { margin-top: 30px; }
+.section-head { display: flex; align-items: end; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.count { color: var(--muted); font-size: .9rem; }
+.toolbar { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin: 12px 0; }
+input[type="search"], button, select {
+  font: inherit; border: 1px solid var(--line); background: #fff; color: var(--ink);
+  border-radius: 10px; padding: 8px 11px;
+}
+input[type="search"] { min-width: min(320px, 100%); }
+button { cursor: pointer; font-weight: 650; }
+button:hover { border-color: var(--teal); }
+button.primary { background: var(--ink); color: #fff; border-color: var(--ink); }
+button.primary:hover { background: var(--teal); }
+button[aria-pressed="true"] { background: var(--teal); color: #fff; border-color: var(--teal); }
+.table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius); background: var(--card); box-shadow: var(--shadow); }
+table { width: 100%; border-collapse: collapse; font-size: .9rem; }
+caption { text-align: left; padding: 12px 14px; color: var(--muted); font-weight: 650; }
+th, td { padding: 11px 12px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
+th { background: #eee9dc; color: var(--ink); font-size: .76rem; text-transform: uppercase; letter-spacing: .06em; position: sticky; top: 0; }
+tbody tr:hover { background: #faf7ef; }
+tbody tr:last-child td { border-bottom: 0; }
+td.blank-value { background: repeating-linear-gradient(135deg, rgba(180,83,9,.06), rgba(180,83,9,.06) 6px, transparent 6px, transparent 12px); }
+.blank { color: var(--amber); font-weight: 750; }
+.badge { display: inline-block; font-size: .72rem; font-weight: 800; padding: 3px 8px; border-radius: 999px; border: 1px solid transparent; margin: 1px 3px 1px 0; }
+.badge.flag { background: var(--amber-soft); color: var(--amber); border-color: #f3cf77; }
+.badge.ok { background: var(--teal-soft); color: var(--teal); border-color: #9bd8cf; }
+.badge.info { background: var(--blue-soft); color: var(--blue); border-color: #a9c8ff; }
+.badge.warn { background: var(--red-soft); color: var(--red); border-color: #f5b5c2; }
+.source-link { font-weight: 700; font-size: .82rem; }
+.extra-links { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 6px; }
+.extra-links a { font-size: .75rem; }
+.flags-cell { max-width: 280px; }
+.flags-cell .badge { white-space: normal; }
+.scroll-note { color: var(--muted); font-size: .82rem; margin: 6px 0 0; }
+.callout { background: var(--card); border: 1px solid var(--line); border-left: 4px solid var(--teal); border-radius: 0 var(--radius) var(--radius) 0; padding: 16px 18px; margin: 16px 0; }
+.callout.warn { border-left-color: var(--amber); }
+.callout.stop { border-left-color: var(--red); }
+.choice-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; }
+.choice { border: 1px solid var(--line); border-radius: 14px; padding: 16px; background: #fff; }
+.choice label { display: block; font-weight: 800; cursor: pointer; }
+.choice small { color: var(--muted); }
+.choice.selected { border-color: var(--teal); box-shadow: 0 0 0 3px var(--teal-soft); }
+.decision-output { margin-top: 14px; padding: 14px; border-radius: 12px; background: var(--ink); color: #fff; }
+.decision-output a { color: #9ee6dc; }
+.checklist { list-style: none; padding: 0; }
+.checklist li { display: flex; gap: 10px; align-items: flex-start; padding: 11px 0; border-bottom: 1px solid var(--line); }
+.checklist input { margin-top: 4px; }
+.progress { height: 9px; border-radius: 999px; background: #e6e0d2; overflow: hidden; margin: 10px 0 16px; }
+.progress > div { height: 100%; width: 0; background: var(--teal); transition: width .2s ease; }
+.code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .82rem; background: #eee9dc; padding: 2px 5px; border-radius: 5px; }
+.footer { max-width: 1180px; margin: 0 auto; padding: 22px 18px 40px; border-top: 1px solid var(--line); color: var(--muted); font-size: .85rem; }
+.pill-row { display: flex; flex-wrap: wrap; gap: 6px; }
+.hidden { display: none !important; }
+.source-domain { color: var(--muted); font-size: .72rem; display: block; }
+.details { border: 1px solid var(--line); border-radius: 12px; background: #fff; padding: 10px 14px; margin: 10px 0; }
+.summary-title { font-weight: 750; cursor: pointer; }
+.mini { font-size: .82rem; color: var(--muted); }
+.status-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--amber); margin-right: 6px; }
+.status-dot.ok { background: var(--teal); }
+.status-dot.info { background: var(--blue); }
+@media (max-width: 960px) {
+  .kpis { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .cards-3, .cards-2, .choice-grid { grid-template-columns: 1fr; }
+  .header-inner { align-items: flex-start; flex-direction: column; gap: 8px; }
+}
+@media (max-width: 760px) {
+  main { padding: 20px 12px 48px; }
+  .hero { padding: 22px 18px; border-radius: 18px; }
+  .table-wrap { overflow: visible; border: 0; background: transparent; box-shadow: none; }
+  table, tbody, tr, td { display: block; width: 100%; }
+  thead { display: none; }
+  tbody { display: grid; gap: 12px; }
+  tbody tr { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 10px; box-shadow: var(--shadow); }
+  td { border: 0; border-bottom: 1px dashed var(--line); padding: 8px 4px; display: grid; grid-template-columns: 120px 1fr; gap: 10px; }
+  td:last-child { border-bottom: 0; }
+  td::before { content: attr(data-label); font-size: .7rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); font-weight: 800; padding-top: 2px; }
+  td.blank-value { background: transparent; }
+  th { position: static; }
+}
+@media print {
+  .site-header, .toolbar, .footer { display: none; }
+  body { background: #fff; }
+  .hero, .card, .table-wrap { box-shadow: none; }
+  a { color: #000; }
+}
+
+/* Explicit card view toggle (same layout as small screens). */
+.table-wrap[data-force-cards="true"] { overflow: visible; border: 0; background: transparent; box-shadow: none; }
+.table-wrap[data-force-cards="true"] table,
+.table-wrap[data-force-cards="true"] tbody,
+.table-wrap[data-force-cards="true"] tr,
+.table-wrap[data-force-cards="true"] td { display: block; width: 100%; }
+.table-wrap[data-force-cards="true"] thead { display: none; }
+.table-wrap[data-force-cards="true"] tbody { display: grid; gap: 12px; }
+.table-wrap[data-force-cards="true"] tbody tr { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 10px; box-shadow: var(--shadow); }
+.table-wrap[data-force-cards="true"] td { border: 0; border-bottom: 1px dashed var(--line); padding: 8px 4px; display: grid; grid-template-columns: 120px 1fr; gap: 10px; }
+.table-wrap[data-force-cards="true"] td:last-child { border-bottom: 0; }
+.table-wrap[data-force-cards="true"] td::before { content: attr(data-label); font-size: .7rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); font-weight: 800; padding-top: 2px; }
+.table-wrap[data-force-cards="true"] th { position: static; }
+
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header"><div class="header-inner"><a class="brand" href="./index.html">Verified <span>Audit</span></a>
+<nav class="nav" aria-label="Audit sections"><a href="./index.html">Executive summary</a><a href="./hotels.html" aria-current="page">Hotels</a><a href="./restaurants.html">Restaurants</a><a href="./activities.html">Activities</a><a href="./social.html">Social</a><a href="./transit.html">Transit</a><a href="./questions.html">Questions</a><a href="./suggestions.html">Suggestions</a><a href="./flagged.html">Flagged</a><a href="./repo-review.html">Repo review</a><a href="./verification.html">Verification</a><a href="./sources.html">Sources</a></nav>
+</div></header>
+<main id="main">
+<div class="hero"><p class="eyebrow">Official-source verification</p><h1>Hotels &amp; stay windows</h1><p class="lede">Exact-date official-agent and MICHELIN hotel quotes captured on 2026-11-25. Prices are snapshots, not a booking-date experiment.</p><div class="meta-line"><span class="meta-pill">2 adults · 1 room</span><span class="meta-pill">7-night baseline</span><span class="meta-pill">2027-02-15 → 2027-02-22</span></div></div><div class="callout warn"><strong>Dynamic quotes must be re-captured before purchase</strong><p>Fairfield currently prints a final total including taxes and fees; citizenM and Moxy print taxes as excluded. <a href="https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-15&amp;checkout=2027-02-22&amp;group_adults=2&amp;no_rooms=1&amp;selected_currency=USD" target="_blank" rel="noopener noreferrer">Booking.com exact-date page</a> · <a href="https://guide.michelin.com/us/en/hotels-stays/nyc/arlo-soho-8260?arr=2027-02-15&amp;dep=2027-02-22&amp;nA=2&amp;nC=0&amp;nR=1" target="_blank" rel="noopener noreferrer">MICHELIN Arlo exact-date page</a>.</p></div><section class="section" id="hotel-quotes"><div class="section-head"><h2>Current exact-date hotel quotes</h2><span class="count">4 rows</span></div><p class="lede">Room, bed, private bath, amenities, quote basis, and caveats are shown only when printed by the official page.</p><div class="toolbar"><input type="search" placeholder="Filter rows…" data-table-target="hotel-quotes" aria-label="Filter hotel-quotes rows"><button type="button" data-flag-target="hotel-quotes" aria-pressed="false">Show flagged only</button><button type="button" data-card-target="hotel-quotes" aria-pressed="false">Card view</button><span class="count">4 rows</span></div><div class="table-wrap" data-force-cards="false"><table id="hotel-quotes"><caption>Current exact-date hotel quotes with official source links</caption><thead><tr><th scope="col">Hotel</th><th scope="col">Area</th><th scope="col">Address</th><th scope="col">Room</th><th scope="col">Bed</th><th scope="col">Bath</th><th scope="col">Amenities</th><th scope="col">Dates</th><th scope="col">Nights</th><th scope="col">7-night total</th><th scope="col">Quote basis</th><th scope="col">Caveat</th><th scope="col">Official source</th><th scope="col">Flags</th></tr></thead><tbody><tr data-search="fairfield inn &amp; suites by marriott new york manhattan/central park hell’s kitchen / midtown west 538 west 58th street, hell’s kitchen, new york, ny 10019 king room / king room with city view (hearing accessible) 1 large double bed / 1 king bed (source wording varies by room row) private bathroom (in room) american breakfast included; free wifi; fitness center; bar; non-smoking; check-in from 15:00; check-out by 11:00; $250 damage deposit; min age 21 2027-02-15 → 2027-02-22 7 us$1,183.59 including taxes and fees black friday offer; current price us$1,183.59 discounted from us$1,680.34; free cancellation before 2027-02-12; no prepayment dynamic localized booking.com page; baseline docs/data/hotels.csv us$985.60 and docs/index.html us$1,159 all-in are not reproducible dynamic quote: re-quote before booking localized german page captured baseline price discrepancy flagged" data-flagged="1"><td data-label="Hotel">Fairfield Inn &amp; Suites by Marriott New York Manhattan/Central Park</td><td data-label="Area">Hell’s Kitchen / Midtown West</td><td data-label="Address">538 West 58th Street, Hell’s Kitchen, New York, NY 10019</td><td data-label="Room">King Room / King Room with City View (hearing accessible)</td><td data-label="Bed">1 large double bed / 1 king bed (source wording varies by room row)</td><td data-label="Bath">Private bathroom (in room)</td><td data-label="Amenities">American breakfast included; free WiFi; fitness center; bar; non-smoking; check-in from 15:00; check-out by 11:00; $250 damage deposit; min age 21</td><td data-label="Dates">2027-02-15 → 2027-02-22</td><td data-label="Nights">7</td><td data-label="7-night total">US$1,183.59 including taxes and fees</td><td data-label="Quote basis">Black Friday offer; current price US$1,183.59 discounted from US$1,680.34; free cancellation before 2027-02-12; no prepayment</td><td data-label="Caveat">Dynamic localized Booking.com page; baseline docs/data/hotels.csv US$985.60 and docs/index.html US$1,159 all-in are not reproducible</td><td data-label="Official source"><a class="source-link" href="https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-15&amp;checkout=2027-02-22&amp;group_adults=2&amp;no_rooms=1&amp;selected_currency=USD" target="_blank" rel="noopener noreferrer">Booking.com exact-date page<span class="source-domain">www.booking.com</span></a></td><td data-label="Flags"><span class="badge flag">Dynamic quote: re-quote before booking</span><span class="badge flag">Localized German page captured</span><span class="badge flag">Baseline price discrepancy flagged</span></td></tr><tr data-search="citizenm new york times square midtown west / theater district 218 west 50th street, new york, ny 10019 king room - high floor 1 king bed attached/private bathroom private bathroom; free wifi; fitness center; restaurant/bar; business center; express check-in/out; good breakfast; no parking 2027-02-15 → 2027-02-22 7 us$1,147.00 for 7 nights; excludes 14.75% tax and us$4 city tax per night free cancellation before 2027-02-13; no prepayment; breakfast us$23.50 per person per night unless included-rate row chosen all-in two-adult total is blank+flag because the page prints taxes as excluded, not a final total all-in total blank+flag: taxes excluded breakfast-included rows have different prices dynamic quote: re-quote before booking" data-flagged="1"><td data-label="Hotel">citizenM New York Times Square</td><td data-label="Area">Midtown West / Theater District</td><td data-label="Address">218 West 50th Street, New York, NY 10019</td><td data-label="Room">King Room - High Floor</td><td data-label="Bed">1 king bed</td><td data-label="Bath">Attached/private bathroom</td><td data-label="Amenities">Private bathroom; free WiFi; fitness center; restaurant/bar; business center; express check-in/out; good breakfast; no parking</td><td data-label="Dates">2027-02-15 → 2027-02-22</td><td data-label="Nights">7</td><td data-label="7-night total">US$1,147.00 for 7 nights; excludes 14.75% tax and US$4 city tax per night</td><td data-label="Quote basis">Free cancellation before 2027-02-13; no prepayment; breakfast US$23.50 per person per night unless included-rate row chosen</td><td data-label="Caveat">All-in two-adult total is blank+flag because the page prints taxes as excluded, not a final total</td><td data-label="Official source"><a class="source-link" href="https://www.booking.com/hotel/us/citizenm-new-york-times-square-new-york.html?checkin=2027-02-15&amp;checkout=2027-02-22&amp;group_adults=2&amp;no_rooms=1&amp;selected_currency=USD" target="_blank" rel="noopener noreferrer">Booking.com exact-date page<span class="source-domain">www.booking.com</span></a></td><td data-label="Flags"><span class="badge flag">All-in total blank+flag: taxes excluded</span><span class="badge flag">Breakfast-included rows have different prices</span><span class="badge flag">Dynamic quote: re-quote before booking</span></td></tr><tr data-search="citizenm new york bowery lower east side 189 bowery, lower east side, new york, ny 10002 king room - high floor 1 king bed private bathroom with rain shower; attached bathroom in room row all rooms private bathroom; desk; wall-to-wall windows; flat-screen tv; fridge; free wifi; restaurant; shared lounge; canteenm 24/7 2027-02-15 → 2027-02-22 7 us$1,148.00 for 7 nights; excludes 14.75% tax and us$4 city tax per night free cancellation before 2027-02-13; no prepayment; breakfast us$23.50 per person per night unless included-rate row chosen baseline docs/data/hotels.csv lists us$1,113.00 and address not captured; current official page differs baseline price discrepancy flagged baseline address placeholder flagged all-in total blank+flag: taxes excluded" data-flagged="1"><td data-label="Hotel">citizenM New York Bowery</td><td data-label="Area">Lower East Side</td><td data-label="Address">189 Bowery, Lower East Side, New York, NY 10002</td><td data-label="Room">King Room - High Floor</td><td data-label="Bed">1 king bed</td><td data-label="Bath">Private bathroom with rain shower; attached bathroom in room row</td><td data-label="Amenities">All rooms private bathroom; desk; wall-to-wall windows; flat-screen TV; fridge; free WiFi; restaurant; shared lounge; canteenM 24/7</td><td data-label="Dates">2027-02-15 → 2027-02-22</td><td data-label="Nights">7</td><td data-label="7-night total">US$1,148.00 for 7 nights; excludes 14.75% tax and US$4 city tax per night</td><td data-label="Quote basis">Free cancellation before 2027-02-13; no prepayment; breakfast US$23.50 per person per night unless included-rate row chosen</td><td data-label="Caveat">Baseline docs/data/hotels.csv lists US$1,113.00 and ADDRESS NOT CAPTURED; current official page differs</td><td data-label="Official source"><a class="source-link" href="https://www.booking.com/hotel/us/citizenm-new-york-bowery.html?checkin=2027-02-15&amp;checkout=2027-02-22&amp;group_adults=2&amp;no_rooms=1&amp;selected_currency=USD" target="_blank" rel="noopener noreferrer">Booking.com exact-date page<span class="source-domain">www.booking.com</span></a></td><td data-label="Flags"><span class="badge flag">Baseline price discrepancy flagged</span><span class="badge flag">Baseline address placeholder flagged</span><span class="badge flag">All-in total blank+flag: taxes excluded</span></td></tr><tr data-search="moxy nyc times square midtown west 485 7th avenue, new york, ny 10018 queen room / queen room - hearing accessible 1 queen bed attached/private bathroom air conditioning; flat-screen tv; free wifi; breakfast us$25 pp/night; lunch us$35 pp/night; dinner us$50 pp/night; $35 resort fee per night included in listed price line 2027-02-15 → 2027-02-22 7 us$1,447.00 for 7 nights; excludes 14.75% tax and us$4 city tax per night; $35/night resort fee included in displayed price line free cancellation before 2027-02-13; no prepayment; 205 ft² baseline docs/data/hotels.csv lists address not captured; current official page gives 485 7th avenue baseline address placeholder flagged all-in total blank+flag: taxes excluded resort fee wording must be re-checked at checkout" data-flagged="1"><td data-label="Hotel">Moxy NYC Times Square</td><td data-label="Area">Midtown West</td><td data-label="Address">485 7th Avenue, New York, NY 10018</td><td data-label="Room">Queen Room / Queen Room - Hearing Accessible</td><td data-label="Bed">1 queen bed</td><td data-label="Bath">Attached/private bathroom</td><td data-label="Amenities">Air conditioning; flat-screen TV; free WiFi; breakfast US$25 pp/night; lunch US$35 pp/night; dinner US$50 pp/night; $35 resort fee per night included in listed price line</td><td data-label="Dates">2027-02-15 → 2027-02-22</td><td data-label="Nights">7</td><td data-label="7-night total">US$1,447.00 for 7 nights; excludes 14.75% tax and US$4 city tax per night; $35/night resort fee included in displayed price line</td><td data-label="Quote basis">Free cancellation before 2027-02-13; no prepayment; 205 ft²</td><td data-label="Caveat">Baseline docs/data/hotels.csv lists ADDRESS NOT CAPTURED; current official page gives 485 7th Avenue</td><td data-label="Official source"><a class="source-link" href="https://www.booking.com/hotel/us/moxy-nyc-times-square.html?checkin=2027-02-15&amp;checkout=2027-02-22&amp;group_adults=2&amp;no_rooms=1&amp;selected_currency=USD" target="_blank" rel="noopener noreferrer">Booking.com exact-date page<span class="source-domain">www.booking.com</span></a></td><td data-label="Flags"><span class="badge flag">Baseline address placeholder flagged</span><span class="badge flag">All-in total blank+flag: taxes excluded</span><span class="badge flag">Resort fee wording must be re-checked at checkout</span></td></tr></tbody></table></div><p class="scroll-note">Dashed cells are blank+flag. Use Card view or a narrow screen for card layout. Every row includes an official-source link.</p></section><section class="section" id="stay-windows"><div class="section-head"><h2>Stay-window samples</h2><span class="count">5 rows</span></div><p class="lede">These are stay-window quotes sampled on one purchase date; they do not answer the cheapest upcoming date to book.</p><div class="toolbar"><input type="search" placeholder="Filter rows…" data-table-target="stay-windows" aria-label="Filter stay-windows rows"><button type="button" data-flag-target="stay-windows" aria-pressed="false">Show flagged only</button><button type="button" data-card-target="stay-windows" aria-pressed="false">Card view</button><span class="count">5 rows</span></div><div class="table-wrap" data-force-cards="false"><table id="stay-windows"><caption>Arlo Soho stay-window samples and the unsupported booking-date question</caption><thead><tr><th scope="col">Stay window</th><th scope="col">Hotel</th><th scope="col">Room</th><th scope="col">Nights</th><th scope="col">Official total</th><th scope="col">Avg/night</th><th scope="col">Free cancel by</th><th scope="col">Finding</th><th scope="col">Official source</th><th scope="col">Flags</th></tr></thead><tbody><tr data-search="2027-02-15 → 2027-02-22 arlo soho 1 queen bed free-cancellation / member rate 7 us$1,690.16 with taxes and fees us$231.64 2027-02-14 cheapest of four official arlo soho stay windows sampled member rate · sign in dynamic quote: not a booking-date experiment" data-flagged="1"><td data-label="Stay window">2027-02-15 → 2027-02-22</td><td data-label="Hotel">Arlo Soho</td><td data-label="Room">1 Queen Bed free-cancellation / member rate</td><td data-label="Nights">7</td><td data-label="Official total">US$1,690.16 with taxes and fees</td><td data-label="Avg/night">US$231.64</td><td data-label="Free cancel by">2027-02-14</td><td data-label="Finding">Cheapest of four official Arlo Soho stay windows sampled</td><td data-label="Official source"><a class="source-link" href="https://guide.michelin.com/us/en/hotels-stays/nyc/arlo-soho-8260?arr=2027-02-15&amp;dep=2027-02-22&amp;nA=2&amp;nC=0&amp;nR=1" target="_blank" rel="noopener noreferrer">MICHELIN Arlo Soho exact-date page<span class="source-domain">guide.michelin.com</span></a></td><td data-label="Flags"><span class="badge flag">MEMBER RATE · SIGN IN</span><span class="badge flag">Dynamic quote: not a booking-date experiment</span></td></tr><tr data-search="2027-02-22 → 2027-03-01 arlo soho 1 queen bed free-cancellation / member rate 7 us$1,762.45 with taxes and fees us$241.64 2027-02-21 higher than preferred-window quote member rate · sign in dynamic quote: not a booking-date experiment" data-flagged="1"><td data-label="Stay window">2027-02-22 → 2027-03-01</td><td data-label="Hotel">Arlo Soho</td><td data-label="Room">1 Queen Bed free-cancellation / member rate</td><td data-label="Nights">7</td><td data-label="Official total">US$1,762.45 with taxes and fees</td><td data-label="Avg/night">US$241.64</td><td data-label="Free cancel by">2027-02-21</td><td data-label="Finding">Higher than preferred-window quote</td><td data-label="Official source"><a class="source-link" href="https://guide.michelin.com/us/en/hotels-stays/nyc/arlo-soho-8260?arr=2027-02-22&amp;dep=2027-03-01&amp;nA=2&amp;nC=0&amp;nR=1" target="_blank" rel="noopener noreferrer">MICHELIN Arlo Soho exact-date page<span class="source-domain">guide.michelin.com</span></a></td><td data-label="Flags"><span class="badge flag">MEMBER RATE · SIGN IN</span><span class="badge flag">Dynamic quote: not a booking-date experiment</span></td></tr><tr data-search="2027-03-08 → 2027-03-15 arlo soho 1 queen bed free-cancellation / member rate 7 us$2,702.26 with taxes and fees us$371.64 2027-03-07 highest of four stay windows sampled member rate · sign in dynamic quote: not a booking-date experiment" data-flagged="1"><td data-label="Stay window">2027-03-08 → 2027-03-15</td><td data-label="Hotel">Arlo Soho</td><td data-label="Room">1 Queen Bed free-cancellation / member rate</td><td data-label="Nights">7</td><td data-label="Official total">US$2,702.26 with taxes and fees</td><td data-label="Avg/night">US$371.64</td><td data-label="Free cancel by">2027-03-07</td><td data-label="Finding">Highest of four stay windows sampled</td><td data-label="Official source"><a class="source-link" href="https://guide.michelin.com/us/en/hotels-stays/nyc/arlo-soho-8260?arr=2027-03-08&amp;dep=2027-03-15&amp;nA=2&amp;nC=0&amp;nR=1" target="_blank" rel="noopener noreferrer">MICHELIN Arlo Soho exact-date page<span class="source-domain">guide.michelin.com</span></a></td><td data-label="Flags"><span class="badge flag">MEMBER RATE · SIGN IN</span><span class="badge flag">Dynamic quote: not a booking-date experiment</span></td></tr><tr data-search="2027-03-15 → 2027-03-22 arlo soho 1 queen bed free-cancellation / member rate 7 us$2,196.21 with taxes and fees us$301.64 2027-03-14 lower than march 8 window but higher than february windows member rate · sign in dynamic quote: not a booking-date experiment" data-flagged="1"><td data-label="Stay window">2027-03-15 → 2027-03-22</td><td data-label="Hotel">Arlo Soho</td><td data-label="Room">1 Queen Bed free-cancellation / member rate</td><td data-label="Nights">7</td><td data-label="Official total">US$2,196.21 with taxes and fees</td><td data-label="Avg/night">US$301.64</td><td data-label="Free cancel by">2027-03-14</td><td data-label="Finding">Lower than March 8 window but higher than February windows</td><td data-label="Official source"><a class="source-link" href="https://guide.michelin.com/us/en/hotels-stays/nyc/arlo-soho-8260?arr=2027-03-15&amp;dep=2027-03-22&amp;nA=2&amp;nC=0&amp;nR=1" target="_blank" rel="noopener noreferrer">MICHELIN Arlo Soho exact-date page<span class="source-domain">guide.michelin.com</span></a></td><td data-label="Flags"><span class="badge flag">MEMBER RATE · SIGN IN</span><span class="badge flag">Dynamic quote: not a booking-date experiment</span></td></tr><tr data-search="cheapest upcoming time to book (not stay)       no official source publishes a future booking-date price curve. stay-window quotes sampled on one purchase date cannot prove the cheapest upcoming purchase date. answer blank+flag: booking-date experiment missing do not substitute stay-window prices for booking-date prices current black friday offer is a snapshot, not a prediction" data-flagged="1"><td data-label="Stay window">Cheapest upcoming time to BOOK (not stay)</td><td data-label="Hotel" class="blank-value"><span class="blank">— blank+flag</span></td><td data-label="Room" class="blank-value"><span class="blank">— blank+flag</span></td><td data-label="Nights" class="blank-value"><span class="blank">— blank+flag</span></td><td data-label="Official total" class="blank-value"><span class="blank">— blank+flag</span></td><td data-label="Avg/night" class="blank-value"><span class="blank">— blank+flag</span></td><td data-label="Free cancel by" class="blank-value"><span class="blank">— blank+flag</span></td><td data-label="Finding">No official source publishes a future booking-date price curve. Stay-window quotes sampled on one purchase date cannot prove the cheapest upcoming purchase date.</td><td data-label="Official source"><a class="source-link" href="https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-15&amp;checkout=2027-02-22&amp;group_adults=2&amp;no_rooms=1&amp;selected_currency=USD" target="_blank" rel="noopener noreferrer">Booking.com exact-date page<span class="source-domain">www.booking.com</span></a></td><td data-label="Flags"><span class="badge flag">Answer blank+flag: booking-date experiment missing</span><span class="badge flag">Do not substitute stay-window prices for booking-date prices</span><span class="badge flag">Current Black Friday offer is a snapshot, not a prediction</span><span class="badge flag">Blank+flag: Hotel, Room, Nights, Official total, Avg/night, Free cancel by</span></td></tr></tbody></table></div><p class="scroll-note">Dashed cells are blank+flag. Use Card view or a narrow screen for card layout. Every row includes an official-source link.</p></section><section class="section" id="michelin-hotel-claims"><div class="section-head"><h2>MICHELIN hotel quote drift</h2><span class="count">10 rows</span></div><p class="lede">Blank re-verified totals are intentionally left blank+flag where T18 did not re-fetch the exact-date page.</p><div class="toolbar"><input type="search" placeholder="Filter rows…" data-table-target="michelin-hotel-claims" aria-label="Filter michelin-hotel-claims rows"><button type="button" data-flag-target="michelin-hotel-claims" aria-pressed="false">Show flagged only</button><button type="button" data-card-target="michelin-hotel-claims" aria-pressed="false">Card view</button><span class="count">10 rows</span></div><div class="table-wrap" data-force-cards="false"><table id="michelin-hotel-claims"><caption>Stored deep-dive MICHELIN hotel totals versus T18 re-verification</caption><thead><tr><th scope="col">Hotel</th><th scope="col">Stored 7-night total</th><th scope="col">Re-verified total</th><th scope="col">Status</th><th scope="col">Official source</th><th scope="col">Flags</th></tr></thead><tbody><tr data-search="arlo soho 1721.14 1690.16 re-fetched in t18; stored and live totals differ dynamic quote drift stored value not reproducible" data-flagged="1"><td data-label="Hotel">Arlo Soho</td><td data-label="Stored 7-night total">1721.14</td><td data-label="Re-verified total">1690.16</td><td data-label="Status">Re-fetched in T18; stored and live totals differ</td><td data-label="Official source"><a class="source-link" href="https://guide.michelin.com/us/en/hotels-stays/nyc/arlo-soho-8260?arr=2027-02-15&amp;dep=2027-02-22&amp;nA=2&amp;nC=0&amp;nR=1" target="_blank" rel="noopener noreferrer">MICHELIN Arlo Soho exact-date page<span class="source-domain">guide.michelin.com</span></a></td><td data-label="Flags"><span class="badge flag">Dynamic quote drift</span><span class="badge flag">Stored value not reproducible</span></td></tr><tr data-search="sixty les 2146.99  not re-fetched in t18 reverified value blank+flag" data-flagged="1"><td data-label="Hotel">SIXTY LES</td><td data-label="Stored 7-night total">2146.99</td><td data-label="Re-verified total" class="blank-value"><span class="blank">— blank+flag</span></td><td data-label="Status">Not re-fetched in T18</td><td data-label="Official source"><a class="source-link" href="https://guide.michelin.com/us/en/hotels-stays/nyc/sixty-les-851?arr=2027-02-15&amp;dep=2027-02-22&amp;nA=2&amp;nC=0&amp;nR=1" target="_blank" rel="noopener noreferrer">MICHELIN hotel page<span class="source-domain">guide.michelin.com</span></a></td><td data-label="Flags"><span class="badge flag">Reverified value blank+flag</span><span class="badge flag">Blank+flag: Re-verified total</span></td></tr><tr data-search="civilian hotel 2389.69  not re-fetched in t18 reverified value blank+flag" data-flagged="1"><td data-label="Hotel">CIVILIAN Hotel</td><td data-label="Stored 7-night total">2389.69</td><td data-label="Re-verified total" class="blank-value"><span class="blank">— blank+flag</span></td><td data-label="Status">Not re-fetched in T18</td><td data-label="Official source"><a class="source-link" href="https://guide.michelin.com/us/en/hotels-stays/nyc/civilian-hotel-12657?arr=2027-02-15&amp;dep=2027-02-22&amp;nA=2&amp;nC=0&amp;nR=1" target="_blank" rel="noopener noreferrer">MICHELIN hotel page<span class="source-domain">guide.michelin.com</span></a></td><td data-label="Flags"><span class="badge flag">Reverified value blank+flag</span><span class="badge flag">Blank+flag: Re-verified total</span></td></tr><tr data-search="the maritime hotel 2434.94  not re-fetched in t18 reverified value blank+flag" data-flagged="1"><td data-label="Hotel">The Maritime Hotel</td><td data-label="Stored 7-night total">2434.94</td><td data-label="Re-verified total" class="blank-value"><span class="blank">— blank+flag</span></td><td data-label="Status">Not re-fetched in T18</td><td data-label="Official source"><a class="source-link" href="https://guide.michelin.com/us/en/hotels-stays/nyc/the-maritime-hotel-32?arr=2027-02-15&amp;dep=2027-02-22&amp;nA=2&amp;nC=0&amp;nR=1" target="_blank" rel="noopener noreferrer">MICHELIN hotel page<span class="source-domain">guide.michelin.com</span></a></td><td data-label="Flags"><span class="badge flag">Reverified value blank+flag</span><span class="badge flag">Blank+flag: Re-verified total</span></td></tr><tr data-search="made hotel 2704.70  not re-fetched in t18 reverified value blank+flag" data-flagged="1"><td data-label="Hotel">MADE Hotel</td><td data-label="Stored 7-night total">2704.70</td><td data-label="Re-verified total" class="blank-value"><span class="blank">— blank+flag</span></td><td data-label="Status">Not re-fetched in T18</td><td data-label="Official source"><a class="source-link" href="https://guide.michelin.com/us/en/hotels-stays/nyc/made-hotel-8712?arr=2027-02-15&amp;dep=2027-02-22&amp;nA=2&amp;nC=0&amp;nR=1" target="_blank" rel="noopener noreferrer">MICHELIN hotel page<span class="source-domain">guide.michelin.com</span></a></td><td data-label="Flags"><span class="badge flag">Reverified value blank+flag</span><span class="badge flag">Blank+flag: Re-verified total</span></td></tr><tr data-search="the roxy hotel new york 3137.32  not re-fetched in t18 reverified value blank+flag" data-flagged="1"><td data-label="Hotel">The Roxy Hotel New York</td><td data-label="Stored 7-night total">3137.32</td><td data-label="Re-verified total" class="blank-value"><span class="blank">— blank+flag</span></td><td data-label="Status">Not re-fetched in T18</td><td data-label="Official source"><a class="source-link" href="https://guide.michelin.com/us/en/hotels-stays/nyc/the-roxy-hotel-new-york-3291?arr=2027-02-15&amp;dep=2027-02-22&amp;nA=2&amp;nC=0&amp;nR=1" target="_blank" rel="noopener noreferrer">MICHELIN hotel page<span class="source-domain">guide.michelin.com</span></a></td><td data-label="Flags"><span class="badge flag">Reverified value blank+flag</span><span class="badge flag">Blank+flag: Re-verified total</span></td></tr><tr data-search="the marlton hotel 3828.12  not re-fetched in t18 reverified value blank+flag" data-flagged="1"><td data-label="Hotel">The Marlton Hotel</td><td data-label="Stored 7-night total">3828.12</td><td data-label="Re-verified total" class="blank-value"><span class="blank">— blank+flag</span></td><td data-label="Status">Not re-fetched in T18</td><td data-label="Official source"><a class="source-link" href="https://guide.michelin.com/us/en/hotels-stays/nyc/the-marlton-hotel-7089?arr=2027-02-15&amp;dep=2027-02-22&amp;nA=2&amp;nC=0&amp;nR=1" target="_blank" rel="noopener noreferrer">MICHELIN hotel page<span class="source-domain">guide.michelin.com</span></a></td><td data-label="Flags"><span class="badge flag">Reverified value blank+flag</span><span class="badge flag">Blank+flag: Re-verified total</span></td></tr><tr data-search="modernhaus soho 3592.72  not re-fetched in t18; address blank in repo reverified value blank+flag address blank+flag in repo" data-flagged="1"><td data-label="Hotel">Modernhaus Soho</td><td data-label="Stored 7-night total">3592.72</td><td data-label="Re-verified total" class="blank-value"><span class="blank">— blank+flag</span></td><td data-label="Status">Not re-fetched in T18; address blank in repo</td><td data-label="Official source"><a class="source-link" href="https://guide.michelin.com/us/en/hotels-stays/nyc/modernhaus-soho-5777?arr=2027-02-15&amp;dep=2027-02-22&amp;nA=2&amp;nC=0&amp;nR=1" target="_blank" rel="noopener noreferrer">MICHELIN hotel page<span class="source-domain">guide.michelin.com</span></a></td><td data-label="Flags"><span class="badge flag">Reverified value blank+flag</span><span class="badge flag">Address blank+flag in repo</span><span class="badge flag">Blank+flag: Re-verified total</span></td></tr><tr data-search="refinery hotel new york   repo leaves 7-night total blank; not re-fetched total blank+flag bed type blank+flag in repo" data-flagged="1"><td data-label="Hotel">Refinery Hotel New York</td><td data-label="Stored 7-night total" class="blank-value"><span class="blank">— blank+flag</span></td><td data-label="Re-verified total" class="blank-value"><span class="blank">— blank+flag</span></td><td data-label="Status">Repo leaves 7-night total blank; not re-fetched</td><td data-label="Official source"><a class="source-link" href="https://guide.michelin.com/us/en/hotels-stays/nyc/refinery-hotel-new-york-6995?arr=2027-02-15&amp;dep=2027-02-22&amp;nA=2&amp;nC=0&amp;nR=1" target="_blank" rel="noopener noreferrer">MICHELIN hotel page<span class="source-domain">guide.michelin.com</span></a></td><td data-label="Flags"><span class="badge flag">Total blank+flag</span><span class="badge flag">Bed type blank+flag in repo</span><span class="badge flag">Blank+flag: Stored 7-night total, Re-verified total</span></td></tr><tr data-search="the mercer 9462.69  not re-fetched in t18; address blank in repo reverified value blank+flag address blank+flag in repo" data-flagged="1"><td data-label="Hotel">The Mercer</td><td data-label="Stored 7-night total">9462.69</td><td data-label="Re-verified total" class="blank-value"><span class="blank">— blank+flag</span></td><td data-label="Status">Not re-fetched in T18; address blank in repo</td><td data-label="Official source"><a class="source-link" href="https://guide.michelin.com/us/en/hotels-stays/nyc/the-mercer-60?arr=2027-02-15&amp;dep=2027-02-22&amp;nA=2&amp;nC=0&amp;nR=1" target="_blank" rel="noopener noreferrer">MICHELIN hotel page<span class="source-domain">guide.michelin.com</span></a></td><td data-label="Flags"><span class="badge flag">Reverified value blank+flag</span><span class="badge flag">Address blank+flag in repo</span><span class="badge flag">Blank+flag: Re-verified total</span></td></tr></tbody></table></div><p class="scroll-note">Dashed cells are blank+flag. Use Card view or a narrow screen for card layout. Every row includes an official-source link.</p></section>
+</main>
+<footer class="footer">Generated 2026-11-25T22:36:07+00:00 · T18 2026-11-25 · <a href="./data/official_facts.json">Machine-readable facts</a> · <a href="./data/link_report.json">Link report</a> · <a href="./assets/style.css">Stylesheet</a> · <a href="./build_audit.py">Generator</a> · <a href="https://github.com/kanlerxz87-cyber/NYFun1/blob/b07631405e316015f0a3eeb255f5f2d27facd610/COORDINATION.md" target="_blank" rel="noopener noreferrer">Coordination board</a></footer>
+<script>
+
+(function () {
+  const filterState = new Map();
+
+  function stateFor(id) {
+    if (!filterState.has(id)) filterState.set(id, { q: "", flagged: false });
+    return filterState.get(id);
+  }
+
+  function applyFilters(table) {
+    const state = stateFor(table.id);
+    table.querySelectorAll("tbody tr").forEach(function (row) {
+      const matchQ = !state.q || (row.dataset.search || "").indexOf(state.q) !== -1;
+      const matchF = !state.flagged || row.dataset.flagged === "1";
+      row.classList.toggle("hidden", !(matchQ && matchF));
+    });
+  }
+
+  document.addEventListener("input", function (event) {
+    const input = event.target.closest("[data-table-target]");
+    if (!input) return;
+    const table = document.getElementById(input.dataset.tableTarget);
+    if (!table) return;
+    const state = stateFor(table.id);
+    state.q = input.value.toLowerCase();
+    applyFilters(table);
+  });
+
+  document.addEventListener("click", function (event) {
+    const flagBtn = event.target.closest("[data-flag-target]");
+    if (flagBtn) {
+      const table = document.getElementById(flagBtn.dataset.flagTarget);
+      if (table) {
+        const state = stateFor(table.id);
+        state.flagged = flagBtn.getAttribute("aria-pressed") !== "true";
+        flagBtn.setAttribute("aria-pressed", state.flagged ? "true" : "false");
+        flagBtn.textContent = state.flagged ? "Show all rows" : "Show flagged only";
+        applyFilters(table);
+      }
+      return;
+    }
+    const cardBtn = event.target.closest("[data-card-target]");
+    if (cardBtn) {
+      const table = document.getElementById(cardBtn.dataset.cardTarget);
+      if (table) {
+        const wrap = table.closest(".table-wrap");
+        const on = cardBtn.getAttribute("aria-pressed") !== "true";
+        cardBtn.setAttribute("aria-pressed", on ? "true" : "false");
+        cardBtn.textContent = on ? "Table view" : "Card view";
+        if (wrap) wrap.dataset.forceCards = on ? "true" : "false";
+      }
+      return;
+    }
+  });
+
+  function escapeHTML(value) {
+    return String(value).replace(/[&<>"']/g, function (ch) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[ch];
+    });
+  }
+
+  document.querySelectorAll("[data-decision-panel]").forEach(function (panel) {
+    const key = panel.dataset.storageKey || "t18-decision-v1";
+    const radios = Array.prototype.slice.call(panel.querySelectorAll("input[type=radio]"));
+    const output = panel.querySelector(".decision-output");
+    function render() {
+      const selectedValue = localStorage.getItem(key) || "";
+      radios.forEach(function (radio) {
+        radio.checked = radio.value === selectedValue;
+        const choice = radio.closest(".choice");
+        if (choice) choice.classList.toggle("selected", radio.checked);
+      });
+      const selected = radios.find(function (radio) { return radio.checked; });
+      if (!selected) {
+        output.innerHTML = "<strong>No decision path selected yet.</strong> Complete the review workflow before choosing Hold, Re-verify, Book refundable, or Integrate.";
+      } else {
+        output.innerHTML = "<strong>Selected:</strong> " + escapeHTML(selected.dataset.title) +
+          "<br><strong>Rationale:</strong> " + escapeHTML(selected.dataset.rationale) +
+          "<br><strong>Caveat:</strong> " + escapeHTML(selected.dataset.caveat);
+      }
+    }
+    radios.forEach(function (radio) {
+      radio.addEventListener("change", function () {
+        localStorage.setItem(key, radio.value);
+        render();
+      });
+    });
+    const copy = panel.querySelector(".copy-decision");
+    if (copy) {
+      copy.addEventListener("click", function () {
+        const selected = radios.find(function (radio) { return radio.checked; });
+        const text = selected
+          ? "T18 decision: " + selected.dataset.title + "\nRationale: " + selected.dataset.rationale + "\nCaveat: " + selected.dataset.caveat
+          : "T18 decision: none selected";
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(function () {
+            copy.textContent = "Copied";
+            setTimeout(function () { copy.textContent = "Copy decision summary"; }, 1200);
+          }).catch(function () { copy.textContent = "Copy unavailable"; });
+        } else {
+          copy.textContent = "Copy unavailable";
+        }
+      });
+    }
+    const reset = panel.querySelector(".reset-decision");
+    if (reset) {
+      reset.addEventListener("click", function () {
+        localStorage.removeItem(key);
+        render();
+      });
+    }
+    render();
+  });
+
+  document.querySelectorAll("[data-checklist]").forEach(function (root) {
+    const key = root.dataset.checklistKey;
+    const checks = Array.prototype.slice.call(root.querySelectorAll(".review-check"));
+    const bar = root.querySelector(".progress > div");
+    const output = root.querySelector(".checklist-output");
+    function load() {
+      try { return JSON.parse(localStorage.getItem(key) || "[]"); } catch (e) { return []; }
+    }
+    function save(values) { localStorage.setItem(key, JSON.stringify(values)); }
+    function render() {
+      const done = load();
+      checks.forEach(function (check) {
+        check.checked = done.indexOf(Number(check.dataset.step)) !== -1;
+      });
+      const count = checks.filter(function (check) { return check.checked; }).length;
+      const total = checks.length || 1;
+      if (bar) bar.style.width = (count / total * 100) + "%";
+      if (output) output.innerHTML = "<strong>" + count + " of " + checks.length + " review steps complete.</strong>";
+    }
+    checks.forEach(function (check) {
+      check.addEventListener("change", function () {
+        const step = Number(check.dataset.step);
+        let done = load().filter(function (item) { return item !== step; });
+        if (check.checked) done.push(step);
+        save(done);
+        render();
+      });
+    });
+    const reset = root.querySelector(".reset-checklist");
+    if (reset) {
+      reset.addEventListener("click", function () {
+        localStorage.removeItem(key);
+        render();
+      });
+    }
+    render();
+  });
+})();
+
+</script>
+</body>
+</html>

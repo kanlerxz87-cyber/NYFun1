@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta name="description" content="Official activity hours, admission prices, exceptions, and 2027 blank+flag cells.">
+<title>Activities · T18 Verified Audit</title>
+<style>
+/* T18 Verified Audit — self-contained, no external fonts, images, or scripts. */
+:root {
+  --ink: #14213d;
+  --ink-2: #243b5a;
+  --paper: #f7f4ec;
+  --card: #fffdf8;
+  --line: #d9d2c2;
+  --muted: #64748b;
+  --teal: #0f766e;
+  --teal-soft: #d7f0ec;
+  --amber: #b45309;
+  --amber-soft: #fef3c7;
+  --red: #9f1239;
+  --red-soft: #ffe4e6;
+  --blue: #1d4ed8;
+  --blue-soft: #dbeafe;
+  --shadow: 0 10px 30px rgba(20, 33, 61, .08);
+  --radius: 16px;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 10% 0%, rgba(15,118,110,.12), transparent 32rem),
+    radial-gradient(circle at 90% 5%, rgba(180,83,9,.10), transparent 28rem),
+    var(--paper);
+  line-height: 1.55;
+}
+a { color: var(--blue); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:hover { color: var(--teal); }
+.skip { position: absolute; left: -999px; }
+.skip:focus { left: 12px; top: 12px; z-index: 100; padding: 10px 14px; background: var(--card); border-radius: 8px; }
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(247,244,236,.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+.header-inner { max-width: 1180px; margin: 0 auto; padding: 12px 18px; display: flex; gap: 18px; align-items: center; }
+.brand { font-weight: 800; letter-spacing: -.02em; color: var(--ink); text-decoration: none; white-space: nowrap; }
+.brand span { color: var(--teal); }
+.nav { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: thin; padding-bottom: 2px; }
+.nav a { white-space: nowrap; text-decoration: none; color: var(--ink-2); font-size: .88rem; padding: 6px 9px; border-radius: 999px; border: 1px solid transparent; }
+.nav a:hover { background: #fff; border-color: var(--line); }
+.nav a[aria-current="page"] { background: var(--ink); color: #fff; border-color: var(--ink); }
+main { max-width: 1180px; margin: 0 auto; padding: 28px 18px 64px; }
+.hero {
+  padding: 30px; border: 1px solid var(--line); border-radius: 24px;
+  background: linear-gradient(135deg, rgba(255,253,248,.96), rgba(215,240,236,.72));
+  box-shadow: var(--shadow); margin-bottom: 24px;
+}
+.eyebrow { text-transform: uppercase; letter-spacing: .14em; font-weight: 800; font-size: .72rem; color: var(--teal); margin: 0 0 8px; }
+h1 { font-size: clamp(2rem, 5vw, 3.4rem); line-height: 1.05; letter-spacing: -.045em; margin: 0 0 12px; }
+h2 { font-size: clamp(1.4rem, 3vw, 2rem); letter-spacing: -.025em; margin: 34px 0 12px; }
+h3 { font-size: 1.08rem; margin: 0 0 8px; }
+p { margin: 0 0 12px; }
+.lede { font-size: 1.12rem; color: var(--ink-2); max-width: 78ch; }
+.meta-line { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+.meta-pill { font-size: .82rem; padding: 6px 10px; border: 1px solid var(--line); border-radius: 999px; background: rgba(255,255,255,.7); }
+.notice { border-left: 4px solid var(--amber); background: var(--amber-soft); padding: 14px 16px; border-radius: 0 12px 12px 0; margin: 18px 0; }
+.notice strong { color: var(--amber); }
+.grid { display: grid; gap: 14px; }
+.kpis { grid-template-columns: repeat(4, minmax(0,1fr)); }
+.cards-2 { grid-template-columns: repeat(2, minmax(0,1fr)); }
+.cards-3 { grid-template-columns: repeat(3, minmax(0,1fr)); }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; box-shadow: var(--shadow); }
+.kpi { border-top: 4px solid var(--teal); }
+.kpi .number { font-size: 1.8rem; font-weight: 850; letter-spacing: -.04em; display: block; }
+.kpi .label { color: var(--muted); font-size: .86rem; }
+.card p:last-child, .card ul:last-child { margin-bottom: 0; }
+ul, ol { padding-left: 1.25rem; }
+li { margin: 5px 0; }
+.section { margin-top: 30px; }
+.section-head { display: flex; align-items: end; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.count { color: var(--muted); font-size: .9rem; }
+.toolbar { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin: 12px 0; }
+input[type="search"], button, select {
+  font: inherit; border: 1px solid var(--line); background: #fff; color: var(--ink);
+  border-radius: 10px; padding: 8px 11px;
+}
+input[type="search"] { min-width: min(320px, 100%); }
+button { cursor: pointer; font-weight: 650; }
+button:hover { border-color: var(--teal); }
+button.primary { background: var(--ink); color: #fff; border-color: var(--ink); }
+button.primary:hover { background: var(--teal); }
+button[aria-pressed="true"] { background: var(--teal); color: #fff; border-color: var(--teal); }
+.table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius); background: var(--card); box-shadow: var(--shadow); }
+table { width: 100%; border-collapse: collapse; font-size: .9rem; }
+caption { text-align: left; padding: 12px 14px; color: var(--muted); font-weight: 650; }
+th, td { padding: 11px 12px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
+th { background: #eee9dc; color: var(--ink); font-size: .76rem; text-transform: uppercase; letter-spacing: .06em; position: sticky; top: 0; }
+tbody tr:hover { background: #faf7ef; }
+tbody tr:last-child td { border-bottom: 0; }
+td.blank-value { background: repeating-linear-gradient(135deg, rgba(180,83,9,.06), rgba(180,83,9,.06) 6px, transparent 6px, transparent 12px); }
+.blank { color: var(--amber); font-weight: 750; }
+.badge { display: inline-block; font-size: .72rem; font-weight: 800; padding: 3px 8px; border-radius: 999px; border: 1px solid transparent; margin: 1px 3px 1px 0; }
+.badge.flag { background: var(--amber-soft); color: var(--amber); border-color: #f3cf77; }
+.badge.ok { background: var(--teal-soft); color: var(--teal); border-color: #9bd8cf; }
+.badge.info { background: var(--blue-soft); color: var(--blue); border-color: #a9c8ff; }
+.badge.warn { background: var(--red-soft); color: var(--red); border-color: #f5b5c2; }
+.source-link { font-weight: 700; font-size: .82rem; }
+.extra-links { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 6px; }
+.extra-links a { font-size: .75rem; }
+.flags-cell { max-width: 280px; }
+.flags-cell .badge { white-space: normal; }
+.scroll-note { color: var(--muted); font-size: .82rem; margin: 6px 0 0; }
+.callout { background: var(--card); border: 1px solid var(--line); border-left: 4px solid var(--teal); border-radius: 0 var(--radius) var(--radius) 0; padding: 16px 18px; margin: 16px 0; }
+.callout.warn { border-left-color: var(--amber); }
+.callout.stop { border-left-color: var(--red); }
+.choice-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; }
+.choice { border: 1px solid var(--line); border-radius: 14px; padding: 16px; background: #fff; }
+.choice label { display: block; font-weight: 800; cursor: pointer; }
+.choice small { color: var(--muted); }
+.choice.selected { border-color: var(--teal); box-shadow: 0 0 0 3px var(--teal-soft); }
+.decision-output { margin-top: 14px; padding: 14px; border-radius: 12px; background: var(--ink); color: #fff; }
+.decision-output a { color: #9ee6dc; }
+.checklist { list-style: none; padding: 0; }
+.checklist li { display: flex; gap: 10px; align-items: flex-start; padding: 11px 0; border-bottom: 1px solid var(--line); }
+.checklist input { margin-top: 4px; }
+.progress { height: 9px; border-radius: 999px; background: #e6e0d2; overflow: hidden; margin: 10px 0 16px; }
+.progress > div { height: 100%; width: 0; background: var(--teal); transition: width .2s ease; }
+.code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .82rem; background: #eee9dc; padding: 2px 5px; border-radius: 5px; }
+.footer { max-width: 1180px; margin: 0 auto; padding: 22px 18px 40px; border-top: 1px solid var(--line); color: var(--muted); font-size: .85rem; }
+.pill-row { display: flex; flex-wrap: wrap; gap: 6px; }
+.hidden { display: none !important; }
+.source-domain { color: var(--muted); font-size: .72rem; display: block; }
+.details { border: 1px solid var(--line); border-radius: 12px; background: #fff; padding: 10px 14px; margin: 10px 0; }
+.summary-title { font-weight: 750; cursor: pointer; }
+.mini { font-size: .82rem; color: var(--muted); }
+.status-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--amber); margin-right: 6px; }
+.status-dot.ok { background: var(--teal); }
+.status-dot.info { background: var(--blue); }
+@media (max-width: 960px) {
+  .kpis { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .cards-3, .cards-2, .choice-grid { grid-template-columns: 1fr; }
+  .header-inner { align-items: flex-start; flex-direction: column; gap: 8px; }
+}
+@media (max-width: 760px) {
+  main { padding: 20px 12px 48px; }
+  .hero { padding: 22px 18px; border-radius: 18px; }
+  .table-wrap { overflow: visible; border: 0; background: transparent; box-shadow: none; }
+  table, tbody, tr, td { display: block; width: 100%; }
+  thead { display: none; }
+  tbody { display: grid; gap: 12px; }
+  tbody tr { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 10px; box-shadow: var(--shadow); }
+  td { border: 0; border-bottom: 1px dashed var(--line); padding: 8px 4px; display: grid; grid-template-columns: 120px 1fr; gap: 10px; }
+  td:last-child { border-bottom: 0; }
+  td::before { content: attr(data-label); font-size: .7rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); font-weight: 800; padding-top: 2px; }
+  td.blank-value { background: transparent; }
+  th { position: static; }
+}
+@media print {
+  .site-header, .toolbar, .footer { display: none; }
+  body { background: #fff; }
+  .hero, .card, .table-wrap { box-shadow: none; }
+  a { color: #000; }
+}
+
+/* Explicit card view toggle (same layout as small screens). */
+.table-wrap[data-force-cards="true"] { overflow: visible; border: 0; background: transparent; box-shadow: none; }
+.table-wrap[data-force-cards="true"] table,
+.table-wrap[data-force-cards="true"] tbody,
+.table-wrap[data-force-cards="true"] tr,
+.table-wrap[data-force-cards="true"] td { display: block; width: 100%; }
+.table-wrap[data-force-cards="true"] thead { display: none; }
+.table-wrap[data-force-cards="true"] tbody { display: grid; gap: 12px; }
+.table-wrap[data-force-cards="true"] tbody tr { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 10px; box-shadow: var(--shadow); }
+.table-wrap[data-force-cards="true"] td { border: 0; border-bottom: 1px dashed var(--line); padding: 8px 4px; display: grid; grid-template-columns: 120px 1fr; gap: 10px; }
+.table-wrap[data-force-cards="true"] td:last-child { border-bottom: 0; }
+.table-wrap[data-force-cards="true"] td::before { content: attr(data-label); font-size: .7rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); font-weight: 800; padding-top: 2px; }
+.table-wrap[data-force-cards="true"] th { position: static; }
+
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header"><div class="header-inner"><a class="brand" href="./index.html">Verified <span>Audit</span></a>
+<nav class="nav" aria-label="Audit sections"><a href="./index.html">Executive summary</a><a href="./hotels.html">Hotels</a><a href="./restaurants.html">Restaurants</a><a href="./activities.html" aria-current="page">Activities</a><a href="./social.html">Social</a><a href="./transit.html">Transit</a><a href="./questions.html">Questions</a><a href="./suggestions.html">Suggestions</a><a href="./flagged.html">Flagged</a><a href="./repo-review.html">Repo review</a><a href="./verification.html">Verification</a><a href="./sources.html">Sources</a></nav>
+</div></header>
+<main id="main">
+<div class="hero"><p class="eyebrow">Official-source verification</p><h1>Activities, hours &amp; admission</h1><p class="lede">Official venue and agency pages are used for hours, prices, and exceptions. February 2027 schedules that are not printed remain blank+flag.</p><div class="meta-line"><span class="meta-pill">MoMA, Met, AMNH, NPS</span><span class="meta-pill">High Line &amp; Chelsea Market</span><span class="meta-pill">ESB / 9/11 / Broadway flagged</span></div></div><div class="callout warn"><strong>Several official pages publish rolling or 2026 schedules only</strong><p>Empire State Building and 9/11 Memorial & Museum did not publish February 2027 hours in fetched content. <a href="https://www.esbnyc.com/hours-directions" target="_blank" rel="noopener noreferrer">ESB hours page</a> · <a href="https://www.911memorial.org/special-hours" target="_blank" rel="noopener noreferrer">9/11 special hours</a>.</p></div><section class="section" id="activity-rows"><div class="section-head"><h2>Activity verification table</h2><span class="count">12 rows</span></div><p class="lede">Additional official ticket / special-hours links appear inside the source cell.</p><div class="toolbar"><input type="search" placeholder="Filter rows…" data-table-target="activity-rows" aria-label="Filter activity-rows rows"><button type="button" data-flag-target="activity-rows" aria-pressed="false">Show flagged only</button><button type="button" data-card-target="activity-rows" aria-pressed="false">Card view</button><span class="count">12 rows</span></div><div class="table-wrap" data-force-cards="false"><table id="activity-rows"><caption>Official activity rows with source links and blank+flag cells</caption><thead><tr><th scope="col">Activity</th><th scope="col">Category</th><th scope="col">Days open</th><th scope="col">Hours</th><th scope="col">Exceptions</th><th scope="col">Official place</th><th scope="col">Official adult price</th><th scope="col">Total for 2 adults</th><th scope="col">Social</th><th scope="col">≤60 min transit</th><th scope="col">Official source</th><th scope="col">Flags</th></tr></thead><tbody><tr data-search="museum of modern art (moma) museum every day except thanksgiving and christmas mon–thu &amp; sat–sun 10:30 a.m.–5:30 p.m.; fri 10:30 a.m.–8:30 p.m. galleries close ~15 min before museum closing; uniqlo friday nights free for ny state residents 5:30–8:30 p.m. with advance free tickets https://www.moma.org/visit/ adults $30    two-adult total blank+flag: official page prints per-adult price only social links blank+flag ≤60-minute transit blank+flag" data-flagged="1"><td data-label="Activity">Museum of Modern Art (MoMA)</td><td data-label="Category">Museum</td><td data-label="Days open">Every day except Thanksgiving and Christmas</td><td data-label="Hours">Mon–Thu &amp; Sat–Sun 10:30 a.m.–5:30 p.m.; Fri 10:30 a.m.–8:30 p.m.</td><td data-label="Exceptions">Galleries close ~15 min before museum closing; UNIQLO Friday Nights free for NY State residents 5:30–8:30 p.m. with advance free tickets</td><td data-label="Official place"><a href="https://www.moma.org/visit/" target="_blank" rel="noopener noreferrer">https://www.moma.org/visit/<span class="source-domain">www.moma.org</span></a></td><td data-label="Official adult price">Adults $30</td><td data-label="Total for 2 adults" class="blank-value"><span class="blank">— blank+flag</span></td><td data-label="Social" class="blank-value"><span class="blank">— blank+flag</span></td><td data-label="≤60 min transit" class="blank-value"><span class="blank">— blank+flag</span></td><td data-label="Official source"><a class="source-link" href="https://www.moma.org/visit/" target="_blank" rel="noopener noreferrer">MoMA official visit page<span class="source-domain">www.moma.org</span></a></td><td data-label="Flags"><span class="badge flag">Two-adult total blank+flag: official page prints per-adult price only</span><span class="badge flag">Social links blank+flag</span><span class="badge flag">≤60-minute transit blank+flag</span><span class="badge flag">Blank+flag: Total for 2 adults, Social, ≤60 min transit</span></td></tr><tr data-search="the metropolitan museum of art (fifth avenue) museum closed wednesdays  pay-what-you-wish for ny state residents and ny/nj/ct students; members and children 12 and under free https://www.metmuseum.org/visit/plan-your-visit adults $30    2027 public hours table blank+flag: not printed in fetched official chunks two-adult total blank+flag social links blank+flag ≤60-minute transit blank+flag" data-flagged="1"><td data-label="Activity">The Metropolitan Museum of Art (Fifth Avenue)</td><td data-label="Category">Museum</td><td data-label="Days open">Closed Wednesdays</td><td data-label="Hours" class="blank-value"><span class="blank">— blank+flag</span></td><td data-label="Exceptions">Pay-what-you-wish for NY State residents and NY/NJ/CT students; members and children 12 and under free</td><td data-label="Official place"><a href="https://www.metmuseum.org/visit/plan-your-visit" target="_blank" rel="noopener noreferrer">https://www.metmuseum.org/visit/plan-your-visit<span class="source-domain">www.metmuseum.org</span></a></td><td data-label="Official adult price">Adults $30</td><td data-label="Total for 2 adults" class="blank-value"><span class="blank">— blank+flag</span></td><td data-label="Social" class="blank-value"><span class="blank">— blank+flag</span></td><td data-label="≤60 min transit" class="blank-value"><span class="blank">— blank+flag</span></td><td data-label="Official source"><a class="source-link" href="https://www.metmuseum.org/visit/plan-your-visit" target="_blank" rel="noopener noreferrer">The Met official plan-your-visit page<span class="source-domain">www.metmuseum.org</span></a><div class="extra-links"><a href="https://www.metmuseum.org/" target="_blank" rel="noopener noreferrer">The Met home page</a></div></td><td data-label="Flags"><span class="badge flag">2027 public hours table blank+flag: not printed in fetched official chunks</span><span class="badge flag">Two-adult total blank+flag</span><span class="badge flag">Social links blank+flag</span><span class="badge flag">≤60-minute transit blank+flag</span><span class="badge flag">Blank+flag: Hours, Total for 2 adults, Social, ≤60 min transit</span></td></tr><tr data-search="american museum of natural history museum daily; closed thanksgiving day and christmas day 10 a.m.–5:30 p.m. extended holiday hours on select dates nov 7–jan 30; before 10 a.m. or after 5 p.m. use central park west and 81st street/rose center entrances; all times subject to change https://www.amnh.org/plan-your-visit/hours     adult price blank+flag: official ticketing page shows standard pricing option but no numeric amount two-adult total blank+flag social links blank+flag ≤60-minute transit blank+flag" data-flagged="1"><td data-label="Activity">American Museum of Natural History</td><td data-label="Category">Museum</td><td data-label="Days open">Daily; closed Thanksgiving Day and Christmas Day</td><td data-label="Hours">10 a.m.–5:30 p.m.</td><td data-label="Exceptions">Extended holiday hours on select dates Nov 7–Jan 30; before 10 a.m. or after 5 p.m. use Central Park West and 81st Street/Rose Center entrances; all times subject to change</td><td data-label="Official place"><a href="https://www.amnh.org/plan-your-visit/hours" target="_blank" rel="noopener noreferrer">https://www.amnh.org/plan-your-visit/hours<span class="source-domain">www.amnh.org</span></a></td><td data-label="Official adult price" class="blank-value"><span class="blank">— blank+flag</span></td><td data-label="Total for 2 adults" class="blank-value"><span class="blank">— blank+flag</span></td><td data-label="Social" class="blank-value"><span class="blank">— blank+flag</span></td><td data-label="≤60 min transit" class="blank-value"><span class="blank">— blank+flag</span></td><td data-label="Official source"><a class="source-link" href="https://www.amnh.org/plan-your-visit/hours" target="_blank" rel="noopener noreferrer">AMNH official hours page<span class="source-domain">www.amnh.org</span></a><div class="extra-links"><a href="https://tickets.amnh.org/select" target="_blank" rel="noopener noreferrer">AMNH official tickets</a></div></td><td data-label="Flags"><span class="badge flag">Adult price blank+flag: official ticketing page shows Standard Pricing option but no numeric amount</span><span class="badge flag">Two-adult total blank+flag</span><span class="badge flag">Social links blank+flag</span><span class="badge flag">≤60-minute transit blank+flag</span><span class="badge flag">Blank+flag: Official adult price, Total for 2 adults, Social, ≤60 min transit</span></td></tr><tr data-search="top of the rock observation deck observation deck  open 8 am–12 am (live banner) timed admission at selected date and admission time https://www.rockefellercenter.com/tickets/top-of-the-rock-observation-deck/ timed admission from $42; all-inclusive pass from $82    days-open schedule blank+flag: live banner did not print days two-adult total blank+flag: official page prints starting prices only social links blank+flag ≤60-minute transit blank+flag" data-flagged="1"><td data-label="Activity">Top of the Rock Observation Deck</td><td data-label="Category">Observation deck</td><td data-label="Days open" class="blank-value"><span class="blank">— blank+flag</span></td><td data-label="Hours">OPEN 8 AM–12 AM (live banner)</td><td data-label="Exceptions">Timed admission at selected date and admission time</td><td data-label="Official place"><a href="https://www.rockefellercenter.com/tickets/top-of-the-rock-observation-deck/" target="_blank" rel="noopener noreferrer">https://www.rockefellercenter.com/tickets/top-of-the-rock-observation-deck/<span class="source-domain">www.rockefellercenter.com</span></a></td><td data-label="Official adult price">Timed admission from $42; all-inclusive pass from $82</td><td data-label="Total for 2 adults" class="blank-value"><span class="blank">— blank+flag</span></td><td data-label="Social" class="blank-value"><span class="blank">— blank+flag</span></td><td data-label="≤60 min transit" class="blank-value"><span class="blank">— blank+flag</span></td><td data-label="Official source"><a class="source-link" href="https://www.rockefellercenter.com/tickets/top-of-the-rock-observation-deck/" target="_blank" rel="noopener noreferrer">Rockefeller Center official ticket page<span class="source-domain">www.rockefellercenter.com</span></a></td><td data-label="Flags"><span class="badge flag">Days-open schedule blank+flag: live banner did not print days</span><span class="badge flag">Two-adult total blank+flag: official page prints starting prices only</span><span class="badge flag">Social links blank+flag</span><span class="badge flag">≤60-minute transit blank+flag</span><span class="badge flag">Blank+flag: Days open, Total for 2 adults, Social, ≤60 min transit</span></td></tr><tr data-search="empire state building observatory observation deck open 365 days a year  fetched official hours page lists rolling nov–dec 2026 ranges only; current example 10 am–10 pm with doors closing at 9 pm; 2027 hours not captured https://www.esbnyc.com/hours-directions 86th floor from $46; 86th + 102nd floor from $81    feb 2027 hours blank+flag two-adult total blank+flag: official page prints starting prices only social links blank+flag ≤60-minute transit blank+flag" data-flagged="1"><td data-label="Activity">Empire State Building Observatory</td><td data-label="Category">Observation deck</td><td data-label="Days open">Open 365 days a year</td><td data-label="Hours" class="blank-value"><span class="blank">— blank+flag</span></td><td data-label="Exceptions">Fetched official hours page lists rolling Nov–Dec 2026 ranges only; current example 10 AM–10 PM with doors closing at 9 PM; 2027 hours not captured</td><td data-label="Official place"><a href="https://www.esbnyc.com/hours-directions" target="_blank" rel="noopener noreferrer">https://www.esbnyc.com/hours-directions<span class="source-domain">www.esbnyc.com</span></a></td><td data-label="Official adult price">86th Floor from $46; 86th + 102nd Floor from $81</td><td data-label="Total for 2 adults" class="blank-value"><span class="blank">— blank+flag</span></td><td data-label="Social" class="blank-value"><span class="blank">— blank+flag</span></td><td data-label="≤60 min transit" class="blank-value"><span class="blank">— blank+flag</span></td><td data-label="Official source"><a class="source-link" href="https://www.esbnyc.com/hours-directions" target="_blank" rel="noopener noreferrer">ESB official hours page<span class="source-domain">www.esbnyc.com</span></a><div class="extra-links"><a href="https://www.esbnyc.com/buy-tickets" target="_blank" rel="noopener noreferrer">ESB official tickets</a></div></td><td data-label="Flags"><span class="badge flag">Feb 2027 hours blank+flag</span><span class="badge flag">Two-adult total blank+flag: official page prints starting prices only</span><span class="badge flag">Social links blank+flag</span><span class="badge flag">≤60-minute transit blank+flag</span><span class="badge flag">Blank+flag: Hours, Total for 2 adults, Social, ≤60 min transit</span></td></tr><tr data-search="9/11 memorial &amp; museum memorial / museum six days a week plus select tuesdays  special/extended-hours page lists 2026 tuesday openings only; feb 2027 schedule not captured https://www.911memorial.org/visit/museum     exact daily 2027 hours blank+flag adult price blank+flag two-adult total blank+flag social links blank+flag ≤60-minute transit blank+flag" data-flagged="1"><td data-label="Activity">9/11 Memorial &amp; Museum</td><td data-label="Category">Memorial / Museum</td><td data-label="Days open">Six days a week plus select Tuesdays</td><td data-label="Hours" class="blank-value"><span class="blank">— blank+flag</span></td><td data-label="Exceptions">Special/extended-hours page lists 2026 Tuesday openings only; Feb 2027 schedule not captured</td><td data-label="Official place"><a href="https://www.911memorial.org/visit/museum" target="_blank" rel="noopener noreferrer">https://www.911memorial.org/visit/museum<span class="source-domain">www.911memorial.org</span></a></td><td data-label="Official adult price" class="blank-value"><span class="blank">— blank+flag</span></td><td data-label="Total for 2 adults" class="blank-value"><span class="blank">— blank+flag</span></td><td data-label="Social" class="blank-value"><span class="blank">— blank+flag</span></td><td data-label="≤60 min transit" class="blank-value"><span class="blank">— blank+flag</span></td><td data-label="Official source"><a class="source-link" href="https://www.911memorial.org/visit/museum" target="_blank" rel="noopener noreferrer">9/11 Memorial &amp; Museum official page<span class="source-domain">www.911memorial.org</span></a><div class="extra-links"><a href="https://www.911memorial.org/special-hours" target="_blank" rel="noopener noreferrer">Official special hours</a></div></td><td data-label="Flags"><span class="badge flag">Exact daily 2027 hours blank+flag</span><span class="badge flag">Adult price blank+flag</span><span class="badge flag">Two-adult total blank+flag</span><span class="badge flag">Social links blank+flag</span><span class="badge flag">≤60-minute transit blank+flag</span><span class="badge flag">Blank+flag: Hours, Official adult price, Total for 2 adults, Social, ≤60 min transit</span></td></tr><tr data-search="statue of liberty &amp; ellis island landmark / national park every day; closed thanksgiving 2026-11-26 and christmas 2026-12-25 9:00 am–4:30 pm; last statue entry 3:30 pm; liberty island information center 9:30 am–4:30 pm core hours may change seasonally; access only via statue city cruises ferry; official ticket includes round-trip ferry, island access, museums, and audio tours https://www.nps.gov/stli/planyourvisit/hours.htm official ferry page: starting at $26; adult-from $81 appears in a separate selection widget    feb 2027 ferry schedule blank+flag exact two-adult ticket total blank+flag social links blank+flag ≤60-minute transit blank+flag" data-flagged="1"><td data-label="Activity">Statue of Liberty &amp; Ellis Island</td><td data-label="Category">Landmark / National Park</td><td data-label="Days open">Every day; closed Thanksgiving 2026-11-26 and Christmas 2026-12-25</td><td data-label="Hours">9:00 AM–4:30 PM; last statue entry 3:30 PM; Liberty Island Information Center 9:30 AM–4:30 PM</td><td data-label="Exceptions">Core hours may change seasonally; access only via Statue City Cruises ferry; official ticket includes round-trip ferry, island access, museums, and audio tours</td><td data-label="Official place"><a href="https://www.nps.gov/stli/planyourvisit/hours.htm" target="_blank" rel="noopener noreferrer">https://www.nps.gov/stli/planyourvisit/hours.htm<span class="source-domain">www.nps.gov</span></a></td><td data-label="Official adult price">Official ferry page: starting at $26; adult-from $81 appears in a separate selection widget</td><td data-label="Total for 2 adults" class="blank-value"><span class="blank">— blank+flag</span></td><td data-label="Social" class="blank-value"><span class="blank">— blank+flag</span></td><td data-label="≤60 min transit" class="blank-value"><span class="blank">— blank+flag</span></td><td data-label="Official source"><a class="source-link" href="https://www.nps.gov/stli/planyourvisit/hours.htm" target="_blank" rel="noopener noreferrer">NPS official hours page<span class="source-domain">www.nps.gov</span></a><div class="extra-links"><a href="https://www.statuecitycruises.com/tickets" target="_blank" rel="noopener noreferrer">Official ferry tickets</a></div></td><td data-label="Flags"><span class="badge flag">Feb 2027 ferry schedule blank+flag</span><span class="badge flag">Exact two-adult ticket total blank+flag</span><span class="badge flag">Social links blank+flag</span><span class="badge flag">≤60-minute transit blank+flag</span><span class="badge flag">Blank+flag: Total for 2 adults, Social, ≤60 min transit</span></td></tr><tr data-search="brooklyn bridge pedestrian walkway walk   nyc dot construction-project note says promenade will be open at all times, although portions may be narrowed; not a 2027 schedule https://www.nyc.gov/html/dot/html/infrastructure/brooklyn-bridge.shtml     days/hours blank+flag cost blank+flag: no official admission price printed two-adult total blank+flag social links blank+flag ≤60-minute transit blank+flag" data-flagged="1"><td data-label="Activity">Brooklyn Bridge pedestrian walkway</td><td data-label="Category">Walk</td><td data-label="Days open" class="blank-value"><span class="blank">— blank+flag</span></td><td data-label="Hours" class="blank-value"><span class="blank">— blank+flag</span></td><td data-label="Exceptions">NYC DOT construction-project note says promenade will be open at all times, although portions may be narrowed; not a 2027 schedule</td><td data-label="Official place"><a href="https://www.nyc.gov/html/dot/html/infrastructure/brooklyn-bridge.shtml" target="_blank" rel="noopener noreferrer">https://www.nyc.gov/html/dot/html/infrastructure/brooklyn-bridge.shtml<span class="source-domain">www.nyc.gov</span></a></td><td data-label="Official adult price" class="blank-value"><span class="blank">— blank+flag</span></td><td data-label="Total for 2 adults" class="blank-value"><span class="blank">— blank+flag</span></td><td data-label="Social" class="blank-value"><span class="blank">— blank+flag</span></td><td data-label="≤60 min transit" class="blank-value"><span class="blank">— blank+flag</span></td><td data-label="Official source"><a class="source-link" href="https://www.nyc.gov/html/dot/html/infrastructure/brooklyn-bridge.shtml" target="_blank" rel="noopener noreferrer">NYC DOT official Brooklyn Bridge page<span class="source-domain">www.nyc.gov</span></a></td><td data-label="Flags"><span class="badge flag">Days/hours blank+flag</span><span class="badge flag">Cost blank+flag: no official admission price printed</span><span class="badge flag">Two-adult total blank+flag</span><span class="badge flag">Social links blank+flag</span><span class="badge flag">≤60-minute transit blank+flag</span><span class="badge flag">Blank+flag: Days open, Hours, Official adult price, Total for 2 adults, Social, ≤60 min transit</span></td></tr><tr data-search="central park park   2018 nyc parks advisory states park hours 6 a.m.–1 a.m.; treated as historical official text, not a current 2027 schedule https://www.nycgovparks.org/parks/central-park/     current 2027 hours blank+flag cost blank+flag two-adult total blank+flag social links blank+flag ≤60-minute transit blank+flag" data-flagged="1"><td data-label="Activity">Central Park</td><td data-label="Category">Park</td><td data-label="Days open" class="blank-value"><span class="blank">— blank+flag</span></td><td data-label="Hours" class="blank-value"><span class="blank">— blank+flag</span></td><td data-label="Exceptions">2018 NYC Parks advisory states park hours 6 a.m.–1 a.m.; treated as historical official text, not a current 2027 schedule</td><td data-label="Official place"><a href="https://www.nycgovparks.org/parks/central-park/" target="_blank" rel="noopener noreferrer">https://www.nycgovparks.org/parks/central-park/<span class="source-domain">www.nycgovparks.org</span></a></td><td data-label="Official adult price" class="blank-value"><span class="blank">— blank+flag</span></td><td data-label="Total for 2 adults" class="blank-value"><span class="blank">— blank+flag</span></td><td data-label="Social" class="blank-value"><span class="blank">— blank+flag</span></td><td data-label="≤60 min transit" class="blank-value"><span class="blank">— blank+flag</span></td><td data-label="Official source"><a class="source-link" href="https://www.nycgovparks.org/parks/central-park/pressrelease/21596" target="_blank" rel="noopener noreferrer">NYC Parks official advisory<span class="source-domain">www.nycgovparks.org</span></a></td><td data-label="Flags"><span class="badge flag">Current 2027 hours blank+flag</span><span class="badge flag">Cost blank+flag</span><span class="badge flag">Two-adult total blank+flag</span><span class="badge flag">Social links blank+flag</span><span class="badge flag">≤60-minute transit blank+flag</span><span class="badge flag">Blank+flag: Days open, Hours, Official adult price, Total for 2 adults, Social, ≤60 min transit</span></td></tr><tr data-search="the high line park  dec 1–mar 31: 7 a.m.–8 p.m.; apr 1–nov 30: 7 a.m.–10 p.m. rail yard preserve between 30th and 34th closes at dusk; free docent-led tours on select days; elevator status checked separately; park rules printed https://www.thehighline.org/visit/?amp=1     days-open wording blank+flag: official page prints seasonal hours but not an explicit weekly day table admission price blank+flag two-adult total blank+flag social links blank+flag ≤60-minute transit blank+flag" data-flagged="1"><td data-label="Activity">The High Line</td><td data-label="Category">Park</td><td data-label="Days open" class="blank-value"><span class="blank">— blank+flag</span></td><td data-label="Hours">Dec 1–Mar 31: 7 a.m.–8 p.m.; Apr 1–Nov 30: 7 a.m.–10 p.m.</td><td data-label="Exceptions">Rail Yard Preserve between 30th and 34th closes at dusk; free docent-led tours on select days; elevator status checked separately; park rules printed</td><td data-label="Official place"><a href="https://www.thehighline.org/visit/?amp=1" target="_blank" rel="noopener noreferrer">https://www.thehighline.org/visit/?amp=1<span class="source-domain">www.thehighline.org</span></a></td><td data-label="Official adult price" class="blank-value"><span class="blank">— blank+flag</span></td><td data-label="Total for 2 adults" class="blank-value"><span class="blank">— blank+flag</span></td><td data-label="Social" class="blank-value"><span class="blank">— blank+flag</span></td><td data-label="≤60 min transit" class="blank-value"><span class="blank">— blank+flag</span></td><td data-label="Official source"><a class="source-link" href="https://www.thehighline.org/visit/?amp=1" target="_blank" rel="noopener noreferrer">High Line official visitor info<span class="source-domain">www.thehighline.org</span></a></td><td data-label="Flags"><span class="badge flag">Days-open wording blank+flag: official page prints seasonal hours but not an explicit weekly day table</span><span class="badge flag">Admission price blank+flag</span><span class="badge flag">Two-adult total blank+flag</span><span class="badge flag">Social links blank+flag</span><span class="badge flag">≤60-minute transit blank+flag</span><span class="badge flag">Blank+flag: Days open, Official adult price, Total for 2 adults, Social, ≤60 min transit</span></td></tr><tr data-search="broadway show (the broadway league) theater   official broadway league directory lists shows and a performance-times page, but no feb 2027 show-specific schedule was captured https://www.broadway.org/     feb 2027 show/days/hours blank+flag price blank+flag two-adult total blank+flag social links blank+flag ≤60-minute transit blank+flag" data-flagged="1"><td data-label="Activity">Broadway show (The Broadway League)</td><td data-label="Category">Theater</td><td data-label="Days open" class="blank-value"><span class="blank">— blank+flag</span></td><td data-label="Hours" class="blank-value"><span class="blank">— blank+flag</span></td><td data-label="Exceptions">Official Broadway League directory lists shows and a performance-times page, but no Feb 2027 show-specific schedule was captured</td><td data-label="Official place"><a href="https://www.broadway.org/" target="_blank" rel="noopener noreferrer">https://www.broadway.org/<span class="source-domain">www.broadway.org</span></a></td><td data-label="Official adult price" class="blank-value"><span class="blank">— blank+flag</span></td><td data-label="Total for 2 adults" class="blank-value"><span class="blank">— blank+flag</span></td><td data-label="Social" class="blank-value"><span class="blank">— blank+flag</span></td><td data-label="≤60 min transit" class="blank-value"><span class="blank">— blank+flag</span></td><td data-label="Official source"><a class="source-link" href="https://www.broadway.org/" target="_blank" rel="noopener noreferrer">Broadway League official site<span class="source-domain">www.broadway.org</span></a></td><td data-label="Flags"><span class="badge flag">Feb 2027 show/days/hours blank+flag</span><span class="badge flag">Price blank+flag</span><span class="badge flag">Two-adult total blank+flag</span><span class="badge flag">Social links blank+flag</span><span class="badge flag">≤60-minute transit blank+flag</span><span class="badge flag">Blank+flag: Days open, Hours, Official adult price, Total for 2 adults, Social, ≤60 min transit</span></td></tr><tr data-search="chelsea market food hall mon–sun 7:00 am–10:00 pm thanksgiving 7 am–10 pm; christmas eve 7 am–10 pm; christmas day closed; new year’s eve 7 am–10 pm; new year’s day 7 am–10 pm; vendors choose holiday hours https://www.chelseamarket.com/visit/     admission price blank+flag two-adult total blank+flag social links blank+flag ≤60-minute transit blank+flag" data-flagged="1"><td data-label="Activity">Chelsea Market</td><td data-label="Category">Food hall</td><td data-label="Days open">Mon–Sun</td><td data-label="Hours">7:00 AM–10:00 PM</td><td data-label="Exceptions">Thanksgiving 7 AM–10 PM; Christmas Eve 7 AM–10 PM; Christmas Day closed; New Year’s Eve 7 AM–10 PM; New Year’s Day 7 AM–10 PM; vendors choose holiday hours</td><td data-label="Official place"><a href="https://www.chelseamarket.com/visit/" target="_blank" rel="noopener noreferrer">https://www.chelseamarket.com/visit/<span class="source-domain">www.chelseamarket.com</span></a></td><td data-label="Official adult price" class="blank-value"><span class="blank">— blank+flag</span></td><td data-label="Total for 2 adults" class="blank-value"><span class="blank">— blank+flag</span></td><td data-label="Social" class="blank-value"><span class="blank">— blank+flag</span></td><td data-label="≤60 min transit" class="blank-value"><span class="blank">— blank+flag</span></td><td data-label="Official source"><a class="source-link" href="https://www.chelseamarket.com/visit/" target="_blank" rel="noopener noreferrer">Chelsea Market official visit page<span class="source-domain">www.chelseamarket.com</span></a></td><td data-label="Flags"><span class="badge flag">Admission price blank+flag</span><span class="badge flag">Two-adult total blank+flag</span><span class="badge flag">Social links blank+flag</span><span class="badge flag">≤60-minute transit blank+flag</span><span class="badge flag">Blank+flag: Official adult price, Total for 2 adults, Social, ≤60 min transit</span></td></tr></tbody></table></div><p class="scroll-note">Dashed cells are blank+flag. Use Card view or a narrow screen for card layout. Every row includes an official-source link.</p></section>
+</main>
+<footer class="footer">Generated 2026-11-25T22:36:07+00:00 · T18 2026-11-25 · <a href="./data/official_facts.json">Machine-readable facts</a> · <a href="./data/link_report.json">Link report</a> · <a href="./assets/style.css">Stylesheet</a> · <a href="./build_audit.py">Generator</a> · <a href="https://github.com/kanlerxz87-cyber/NYFun1/blob/b07631405e316015f0a3eeb255f5f2d27facd610/COORDINATION.md" target="_blank" rel="noopener noreferrer">Coordination board</a></footer>
+<script>
+
+(function () {
+  const filterState = new Map();
+
+  function stateFor(id) {
+    if (!filterState.has(id)) filterState.set(id, { q: "", flagged: false });
+    return filterState.get(id);
+  }
+
+  function applyFilters(table) {
+    const state = stateFor(table.id);
+    table.querySelectorAll("tbody tr").forEach(function (row) {
+      const matchQ = !state.q || (row.dataset.search || "").indexOf(state.q) !== -1;
+      const matchF = !state.flagged || row.dataset.flagged === "1";
+      row.classList.toggle("hidden", !(matchQ && matchF));
+    });
+  }
+
+  document.addEventListener("input", function (event) {
+    const input = event.target.closest("[data-table-target]");
+    if (!input) return;
+    const table = document.getElementById(input.dataset.tableTarget);
+    if (!table) return;
+    const state = stateFor(table.id);
+    state.q = input.value.toLowerCase();
+    applyFilters(table);
+  });
+
+  document.addEventListener("click", function (event) {
+    const flagBtn = event.target.closest("[data-flag-target]");
+    if (flagBtn) {
+      const table = document.getElementById(flagBtn.dataset.flagTarget);
+      if (table) {
+        const state = stateFor(table.id);
+        state.flagged = flagBtn.getAttribute("aria-pressed") !== "true";
+        flagBtn.setAttribute("aria-pressed", state.flagged ? "true" : "false");
+        flagBtn.textContent = state.flagged ? "Show all rows" : "Show flagged only";
+        applyFilters(table);
+      }
+      return;
+    }
+    const cardBtn = event.target.closest("[data-card-target]");
+    if (cardBtn) {
+      const table = document.getElementById(cardBtn.dataset.cardTarget);
+      if (table) {
+        const wrap = table.closest(".table-wrap");
+        const on = cardBtn.getAttribute("aria-pressed") !== "true";
+        cardBtn.setAttribute("aria-pressed", on ? "true" : "false");
+        cardBtn.textContent = on ? "Table view" : "Card view";
+        if (wrap) wrap.dataset.forceCards = on ? "true" : "false";
+      }
+      return;
+    }
+  });
+
+  function escapeHTML(value) {
+    return String(value).replace(/[&<>"']/g, function (ch) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[ch];
+    });
+  }
+
+  document.querySelectorAll("[data-decision-panel]").forEach(function (panel) {
+    const key = panel.dataset.storageKey || "t18-decision-v1";
+    const radios = Array.prototype.slice.call(panel.querySelectorAll("input[type=radio]"));
+    const output = panel.querySelector(".decision-output");
+    function render() {
+      const selectedValue = localStorage.getItem(key) || "";
+      radios.forEach(function (radio) {
+        radio.checked = radio.value === selectedValue;
+        const choice = radio.closest(".choice");
+        if (choice) choice.classList.toggle("selected", radio.checked);
+      });
+      const selected = radios.find(function (radio) { return radio.checked; });
+      if (!selected) {
+        output.innerHTML = "<strong>No decision path selected yet.</strong> Complete the review workflow before choosing Hold, Re-verify, Book refundable, or Integrate.";
+      } else {
+        output.innerHTML = "<strong>Selected:</strong> " + escapeHTML(selected.dataset.title) +
+          "<br><strong>Rationale:</strong> " + escapeHTML(selected.dataset.rationale) +
+          "<br><strong>Caveat:</strong> " + escapeHTML(selected.dataset.caveat);
+      }
+    }
+    radios.forEach(function (radio) {
+      radio.addEventListener("change", function () {
+        localStorage.setItem(key, radio.value);
+        render();
+      });
+    });
+    const copy = panel.querySelector(".copy-decision");
+    if (copy) {
+      copy.addEventListener("click", function () {
+        const selected = radios.find(function (radio) { return radio.checked; });
+        const text = selected
+          ? "T18 decision: " + selected.dataset.title + "\nRationale: " + selected.dataset.rationale + "\nCaveat: " + selected.dataset.caveat
+          : "T18 decision: none selected";
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(function () {
+            copy.textContent = "Copied";
+            setTimeout(function () { copy.textContent = "Copy decision summary"; }, 1200);
+          }).catch(function () { copy.textContent = "Copy unavailable"; });
+        } else {
+          copy.textContent = "Copy unavailable";
+        }
+      });
+    }
+    const reset = panel.querySelector(".reset-decision");
+    if (reset) {
+      reset.addEventListener("click", function () {
+        localStorage.removeItem(key);
+        render();
+      });
+    }
+    render();
+  });
+
+  document.querySelectorAll("[data-checklist]").forEach(function (root) {
+    const key = root.dataset.checklistKey;
+    const checks = Array.prototype.slice.call(root.querySelectorAll(".review-check"));
+    const bar = root.querySelector(".progress > div");
+    const output = root.querySelector(".checklist-output");
+    function load() {
+      try { return JSON.parse(localStorage.getItem(key) || "[]"); } catch (e) { return []; }
+    }
+    function save(values) { localStorage.setItem(key, JSON.stringify(values)); }
+    function render() {
+      const done = load();
+      checks.forEach(function (check) {
+        check.checked = done.indexOf(Number(check.dataset.step)) !== -1;
+      });
+      const count = checks.filter(function (check) { return check.checked; }).length;
+      const total = checks.length || 1;
+      if (bar) bar.style.width = (count / total * 100) + "%";
+      if (output) output.innerHTML = "<strong>" + count + " of " + checks.length + " review steps complete.</strong>";
+    }
+    checks.forEach(function (check) {
+      check.addEventListener("change", function () {
+        const step = Number(check.dataset.step);
+        let done = load().filter(function (item) { return item !== step; });
+        if (check.checked) done.push(step);
+        save(done);
+        render();
+      });
+    });
+    const reset = root.querySelector(".reset-checklist");
+    if (reset) {
+      reset.addEventListener("click", function () {
+        localStorage.removeItem(key);
+        render();
+      });
+    }
+    render();
+  });
+})();
+
+</script>
+</body>
+</html>

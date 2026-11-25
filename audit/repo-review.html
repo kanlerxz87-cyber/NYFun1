@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta name="description" content="Repository baseline irregularities and T18 scope boundaries.">
+<title>Repo review · T18 Verified Audit</title>
+<style>
+/* T18 Verified Audit — self-contained, no external fonts, images, or scripts. */
+:root {
+  --ink: #14213d;
+  --ink-2: #243b5a;
+  --paper: #f7f4ec;
+  --card: #fffdf8;
+  --line: #d9d2c2;
+  --muted: #64748b;
+  --teal: #0f766e;
+  --teal-soft: #d7f0ec;
+  --amber: #b45309;
+  --amber-soft: #fef3c7;
+  --red: #9f1239;
+  --red-soft: #ffe4e6;
+  --blue: #1d4ed8;
+  --blue-soft: #dbeafe;
+  --shadow: 0 10px 30px rgba(20, 33, 61, .08);
+  --radius: 16px;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 10% 0%, rgba(15,118,110,.12), transparent 32rem),
+    radial-gradient(circle at 90% 5%, rgba(180,83,9,.10), transparent 28rem),
+    var(--paper);
+  line-height: 1.55;
+}
+a { color: var(--blue); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:hover { color: var(--teal); }
+.skip { position: absolute; left: -999px; }
+.skip:focus { left: 12px; top: 12px; z-index: 100; padding: 10px 14px; background: var(--card); border-radius: 8px; }
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(247,244,236,.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+.header-inner { max-width: 1180px; margin: 0 auto; padding: 12px 18px; display: flex; gap: 18px; align-items: center; }
+.brand { font-weight: 800; letter-spacing: -.02em; color: var(--ink); text-decoration: none; white-space: nowrap; }
+.brand span { color: var(--teal); }
+.nav { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: thin; padding-bottom: 2px; }
+.nav a { white-space: nowrap; text-decoration: none; color: var(--ink-2); font-size: .88rem; padding: 6px 9px; border-radius: 999px; border: 1px solid transparent; }
+.nav a:hover { background: #fff; border-color: var(--line); }
+.nav a[aria-current="page"] { background: var(--ink); color: #fff; border-color: var(--ink); }
+main { max-width: 1180px; margin: 0 auto; padding: 28px 18px 64px; }
+.hero {
+  padding: 30px; border: 1px solid var(--line); border-radius: 24px;
+  background: linear-gradient(135deg, rgba(255,253,248,.96), rgba(215,240,236,.72));
+  box-shadow: var(--shadow); margin-bottom: 24px;
+}
+.eyebrow { text-transform: uppercase; letter-spacing: .14em; font-weight: 800; font-size: .72rem; color: var(--teal); margin: 0 0 8px; }
+h1 { font-size: clamp(2rem, 5vw, 3.4rem); line-height: 1.05; letter-spacing: -.045em; margin: 0 0 12px; }
+h2 { font-size: clamp(1.4rem, 3vw, 2rem); letter-spacing: -.025em; margin: 34px 0 12px; }
+h3 { font-size: 1.08rem; margin: 0 0 8px; }
+p { margin: 0 0 12px; }
+.lede { font-size: 1.12rem; color: var(--ink-2); max-width: 78ch; }
+.meta-line { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+.meta-pill { font-size: .82rem; padding: 6px 10px; border: 1px solid var(--line); border-radius: 999px; background: rgba(255,255,255,.7); }
+.notice { border-left: 4px solid var(--amber); background: var(--amber-soft); padding: 14px 16px; border-radius: 0 12px 12px 0; margin: 18px 0; }
+.notice strong { color: var(--amber); }
+.grid { display: grid; gap: 14px; }
+.kpis { grid-template-columns: repeat(4, minmax(0,1fr)); }
+.cards-2 { grid-template-columns: repeat(2, minmax(0,1fr)); }
+.cards-3 { grid-template-columns: repeat(3, minmax(0,1fr)); }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; box-shadow: var(--shadow); }
+.kpi { border-top: 4px solid var(--teal); }
+.kpi .number { font-size: 1.8rem; font-weight: 850; letter-spacing: -.04em; display: block; }
+.kpi .label { color: var(--muted); font-size: .86rem; }
+.card p:last-child, .card ul:last-child { margin-bottom: 0; }
+ul, ol { padding-left: 1.25rem; }
+li { margin: 5px 0; }
+.section { margin-top: 30px; }
+.section-head { display: flex; align-items: end; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.count { color: var(--muted); font-size: .9rem; }
+.toolbar { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin: 12px 0; }
+input[type="search"], button, select {
+  font: inherit; border: 1px solid var(--line); background: #fff; color: var(--ink);
+  border-radius: 10px; padding: 8px 11px;
+}
+input[type="search"] { min-width: min(320px, 100%); }
+button { cursor: pointer; font-weight: 650; }
+button:hover { border-color: var(--teal); }
+button.primary { background: var(--ink); color: #fff; border-color: var(--ink); }
+button.primary:hover { background: var(--teal); }
+button[aria-pressed="true"] { background: var(--teal); color: #fff; border-color: var(--teal); }
+.table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius); background: var(--card); box-shadow: var(--shadow); }
+table { width: 100%; border-collapse: collapse; font-size: .9rem; }
+caption { text-align: left; padding: 12px 14px; color: var(--muted); font-weight: 650; }
+th, td { padding: 11px 12px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
+th { background: #eee9dc; color: var(--ink); font-size: .76rem; text-transform: uppercase; letter-spacing: .06em; position: sticky; top: 0; }
+tbody tr:hover { background: #faf7ef; }
+tbody tr:last-child td { border-bottom: 0; }
+td.blank-value { background: repeating-linear-gradient(135deg, rgba(180,83,9,.06), rgba(180,83,9,.06) 6px, transparent 6px, transparent 12px); }
+.blank { color: var(--amber); font-weight: 750; }
+.badge { display: inline-block; font-size: .72rem; font-weight: 800; padding: 3px 8px; border-radius: 999px; border: 1px solid transparent; margin: 1px 3px 1px 0; }
+.badge.flag { background: var(--amber-soft); color: var(--amber); border-color: #f3cf77; }
+.badge.ok { background: var(--teal-soft); color: var(--teal); border-color: #9bd8cf; }
+.badge.info { background: var(--blue-soft); color: var(--blue); border-color: #a9c8ff; }
+.badge.warn { background: var(--red-soft); color: var(--red); border-color: #f5b5c2; }
+.source-link { font-weight: 700; font-size: .82rem; }
+.extra-links { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 6px; }
+.extra-links a { font-size: .75rem; }
+.flags-cell { max-width: 280px; }
+.flags-cell .badge { white-space: normal; }
+.scroll-note { color: var(--muted); font-size: .82rem; margin: 6px 0 0; }
+.callout { background: var(--card); border: 1px solid var(--line); border-left: 4px solid var(--teal); border-radius: 0 var(--radius) var(--radius) 0; padding: 16px 18px; margin: 16px 0; }
+.callout.warn { border-left-color: var(--amber); }
+.callout.stop { border-left-color: var(--red); }
+.choice-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; }
+.choice { border: 1px solid var(--line); border-radius: 14px; padding: 16px; background: #fff; }
+.choice label { display: block; font-weight: 800; cursor: pointer; }
+.choice small { color: var(--muted); }
+.choice.selected { border-color: var(--teal); box-shadow: 0 0 0 3px var(--teal-soft); }
+.decision-output { margin-top: 14px; padding: 14px; border-radius: 12px; background: var(--ink); color: #fff; }
+.decision-output a { color: #9ee6dc; }
+.checklist { list-style: none; padding: 0; }
+.checklist li { display: flex; gap: 10px; align-items: flex-start; padding: 11px 0; border-bottom: 1px solid var(--line); }
+.checklist input { margin-top: 4px; }
+.progress { height: 9px; border-radius: 999px; background: #e6e0d2; overflow: hidden; margin: 10px 0 16px; }
+.progress > div { height: 100%; width: 0; background: var(--teal); transition: width .2s ease; }
+.code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .82rem; background: #eee9dc; padding: 2px 5px; border-radius: 5px; }
+.footer { max-width: 1180px; margin: 0 auto; padding: 22px 18px 40px; border-top: 1px solid var(--line); color: var(--muted); font-size: .85rem; }
+.pill-row { display: flex; flex-wrap: wrap; gap: 6px; }
+.hidden { display: none !important; }
+.source-domain { color: var(--muted); font-size: .72rem; display: block; }
+.details { border: 1px solid var(--line); border-radius: 12px; background: #fff; padding: 10px 14px; margin: 10px 0; }
+.summary-title { font-weight: 750; cursor: pointer; }
+.mini { font-size: .82rem; color: var(--muted); }
+.status-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--amber); margin-right: 6px; }
+.status-dot.ok { background: var(--teal); }
+.status-dot.info { background: var(--blue); }
+@media (max-width: 960px) {
+  .kpis { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .cards-3, .cards-2, .choice-grid { grid-template-columns: 1fr; }
+  .header-inner { align-items: flex-start; flex-direction: column; gap: 8px; }
+}
+@media (max-width: 760px) {
+  main { padding: 20px 12px 48px; }
+  .hero { padding: 22px 18px; border-radius: 18px; }
+  .table-wrap { overflow: visible; border: 0; background: transparent; box-shadow: none; }
+  table, tbody, tr, td { display: block; width: 100%; }
+  thead { display: none; }
+  tbody { display: grid; gap: 12px; }
+  tbody tr { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 10px; box-shadow: var(--shadow); }
+  td { border: 0; border-bottom: 1px dashed var(--line); padding: 8px 4px; display: grid; grid-template-columns: 120px 1fr; gap: 10px; }
+  td:last-child { border-bottom: 0; }
+  td::before { content: attr(data-label); font-size: .7rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); font-weight: 800; padding-top: 2px; }
+  td.blank-value { background: transparent; }
+  th { position: static; }
+}
+@media print {
+  .site-header, .toolbar, .footer { display: none; }
+  body { background: #fff; }
+  .hero, .card, .table-wrap { box-shadow: none; }
+  a { color: #000; }
+}
+
+/* Explicit card view toggle (same layout as small screens). */
+.table-wrap[data-force-cards="true"] { overflow: visible; border: 0; background: transparent; box-shadow: none; }
+.table-wrap[data-force-cards="true"] table,
+.table-wrap[data-force-cards="true"] tbody,
+.table-wrap[data-force-cards="true"] tr,
+.table-wrap[data-force-cards="true"] td { display: block; width: 100%; }
+.table-wrap[data-force-cards="true"] thead { display: none; }
+.table-wrap[data-force-cards="true"] tbody { display: grid; gap: 12px; }
+.table-wrap[data-force-cards="true"] tbody tr { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 10px; box-shadow: var(--shadow); }
+.table-wrap[data-force-cards="true"] td { border: 0; border-bottom: 1px dashed var(--line); padding: 8px 4px; display: grid; grid-template-columns: 120px 1fr; gap: 10px; }
+.table-wrap[data-force-cards="true"] td:last-child { border-bottom: 0; }
+.table-wrap[data-force-cards="true"] td::before { content: attr(data-label); font-size: .7rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); font-weight: 800; padding-top: 2px; }
+.table-wrap[data-force-cards="true"] th { position: static; }
+
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header"><div class="header-inner"><a class="brand" href="./index.html">Verified <span>Audit</span></a>
+<nav class="nav" aria-label="Audit sections"><a href="./index.html">Executive summary</a><a href="./hotels.html">Hotels</a><a href="./restaurants.html">Restaurants</a><a href="./activities.html">Activities</a><a href="./social.html">Social</a><a href="./transit.html">Transit</a><a href="./questions.html">Questions</a><a href="./suggestions.html">Suggestions</a><a href="./flagged.html">Flagged</a><a href="./repo-review.html" aria-current="page">Repo review</a><a href="./verification.html">Verification</a><a href="./sources.html">Sources</a></nav>
+</div></header>
+<main id="main">
+<div class="hero"><p class="eyebrow">T18 scope boundary</p><h1>Repository review</h1><p class="lede">Line-by-line baseline irregularities are documented without editing another active session’s claimed files.</p><div class="meta-line"><span class="meta-pill">audit/** only</span><span class="meta-pill">Append-only COORDINATION.md</span><span class="meta-pill">No shared-file edits</span></div></div><div class="callout warn"><strong>Final integration request is logged but not executed</strong><p>Add a “Verified audit” nav link from docs/index.html and deepdive/index.html to ../audit/index.html, merge this branch, verify combined internal links, and republish GitHub Pages. <a href="https://github.com/kanlerxz87-cyber/NYFun1/blob/b07631405e316015f0a3eeb255f5f2d27facd610/COORDINATION.md" target="_blank" rel="noopener noreferrer">COORDINATION.md T18</a></p></div><section class="section" id="repo-findings"><div class="section-head"><h2>Findings</h2><span class="count">12 rows</span></div><p class="lede">Official-source disagreements and unsupported claims are kept visible.</p><div class="toolbar"><input type="search" placeholder="Filter rows…" data-table-target="repo-findings" aria-label="Filter repo-findings rows"><button type="button" data-flag-target="repo-findings" aria-pressed="false">Show flagged only</button><button type="button" data-card-target="repo-findings" aria-pressed="false">Card view</button><span class="count">12 rows</span></div><div class="table-wrap" data-force-cards="false"><table id="repo-findings"><caption>Independent findings from official-source comparison</caption><thead><tr><th scope="col">Topic</th><th scope="col">Finding</th><th scope="col">Implication</th><th scope="col">Source hint</th><th scope="col">Official source</th><th scope="col">Flags</th></tr></thead><tbody><tr data-search="official-source disagreement on star count 2025 ceremony article lists 72 stars; live nyc filter lists 69 stars. keep both datasets visible; do not reconcile by inference. michelin article + live filter" data-flagged="0"><td data-label="Topic">Official-source disagreement on star count</td><td data-label="Finding">2025 ceremony article lists 72 stars; live NYC filter lists 69 stars.</td><td data-label="Implication">Keep both datasets visible; do not reconcile by inference.</td><td data-label="Source hint">MICHELIN article + live filter</td><td data-label="Official source"><a class="source-link" href="https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025" target="_blank" rel="noopener noreferrer">Official source / repository board<span class="source-domain">guide.michelin.com</span></a></td><td data-label="Flags"><span class="badge ok">No flag</span></td></tr><tr data-search="current hotel quotes drift fairfield baseline us$985.60 / us$1,159 all-in is not reproducible; live quote is us$1,183.59 incl taxes/fees. treat quotes as dated snapshots; re-quote before booking. booking.com exact-date page" data-flagged="0"><td data-label="Topic">Current hotel quotes drift</td><td data-label="Finding">Fairfield baseline US$985.60 / US$1,159 all-in is not reproducible; live quote is US$1,183.59 incl taxes/fees.</td><td data-label="Implication">Treat quotes as dated snapshots; re-quote before booking.</td><td data-label="Source hint">Booking.com exact-date page</td><td data-label="Official source"><a class="source-link" href="https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-15&amp;checkout=2027-02-22&amp;group_adults=2&amp;no_rooms=1&amp;selected_currency=USD" target="_blank" rel="noopener noreferrer">Official source / repository board<span class="source-domain">www.booking.com</span></a></td><td data-label="Flags"><span class="badge ok">No flag</span></td></tr><tr data-search="arlo soho stored values differ stored feb 15 total 1721.14; live t18 queen free-cancel total 1690.16. stored feb 22 value matches a bunk room total, not queen courtyard view. flag dynamic drift and room-type mismatch. michelin arlo exact-date pages" data-flagged="0"><td data-label="Topic">Arlo Soho stored values differ</td><td data-label="Finding">Stored Feb 15 total 1721.14; live T18 queen free-cancel total 1690.16. Stored Feb 22 value matches a Bunk Room total, not Queen Courtyard View.</td><td data-label="Implication">Flag dynamic drift and room-type mismatch.</td><td data-label="Source hint">MICHELIN Arlo exact-date pages</td><td data-label="Official source"><a class="source-link" href="https://guide.michelin.com/us/en/hotels-stays/nyc/arlo-soho-8260?arr=2027-02-15&amp;dep=2027-02-22&amp;nA=2&amp;nC=0&amp;nR=1" target="_blank" rel="noopener noreferrer">Official source / repository board<span class="source-domain">guide.michelin.com</span></a></td><td data-label="Flags"><span class="badge ok">No flag</span></td></tr><tr data-search="best time to book unsupported sampled stay-window prices do not measure purchase-date price changes. answer blank+flag; run fixed-date purchase-date experiment. booking.com / michelin exact-date pages" data-flagged="0"><td data-label="Topic">Best time to book unsupported</td><td data-label="Finding">Sampled stay-window prices do not measure purchase-date price changes.</td><td data-label="Implication">Answer blank+flag; run fixed-date purchase-date experiment.</td><td data-label="Source hint">Booking.com / MICHELIN exact-date pages</td><td data-label="Official source"><a class="source-link" href="https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-15&amp;checkout=2027-02-22&amp;group_adults=2&amp;no_rooms=1&amp;selected_currency=USD" target="_blank" rel="noopener noreferrer">Official source / repository board<span class="source-domain">www.booking.com</span></a></td><td data-label="Flags"><span class="badge ok">No flag</span></td></tr><tr data-search="restaurant totals are not officially printed as two-adult totals official menus publish per-person / per-guest prices. leave two-adult totals blank+flag; do not multiply into verified-value cells. official menus / faqs / tock" data-flagged="0"><td data-label="Topic">Restaurant totals are not officially printed as two-adult totals</td><td data-label="Finding">Official menus publish per-person / per-guest prices.</td><td data-label="Implication">Leave two-adult totals blank+flag; do not multiply into verified-value cells.</td><td data-label="Source hint">Official menus / FAQs / Tock</td><td data-label="Official source"><a class="source-link" href="https://github.com/kanlerxz87-cyber/NYFun1/blob/b07631405e316015f0a3eeb255f5f2d27facd610/docs/README-sources.md" target="_blank" rel="noopener noreferrer">Official source / repository board<span class="source-domain">github.com</span></a></td><td data-label="Flags"><span class="badge ok">No flag</span></td></tr><tr data-search="starred vs guide-listed-only distinction fetched no-star detail pages show guide listing without star icons; one white street carries a green star emblem but no star. keep separate table. michelin detail pages" data-flagged="0"><td data-label="Topic">Starred vs Guide-listed-only distinction</td><td data-label="Finding">Fetched no-star detail pages show Guide listing without star icons; One White Street carries a Green Star emblem but no star.</td><td data-label="Implication">Keep separate table.</td><td data-label="Source hint">MICHELIN detail pages</td><td data-label="Official source"><a class="source-link" href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurants" target="_blank" rel="noopener noreferrer">Official source / repository board<span class="source-domain">guide.michelin.com</span></a></td><td data-label="Flags"><span class="badge ok">No flag</span></td></tr><tr data-search="activity hours are partly verified moma, amnh, nps, high line, chelsea market publish official hours. esb and 9/11 publish rolling/2026 schedules; met hours table not captured. use blank+flag where 2027 schedule is not printed. official venue/agency pages" data-flagged="0"><td data-label="Topic">Activity hours are partly verified</td><td data-label="Finding">MoMA, AMNH, NPS, High Line, Chelsea Market publish official hours. ESB and 9/11 publish rolling/2026 schedules; Met hours table not captured.</td><td data-label="Implication">Use blank+flag where 2027 schedule is not printed.</td><td data-label="Source hint">Official venue/agency pages</td><td data-label="Official source"><a class="source-link" href="https://www.esbnyc.com/hours-directions" target="_blank" rel="noopener noreferrer">Official source / repository board<span class="source-domain">www.esbnyc.com</span></a></td><td data-label="Flags"><span class="badge ok">No flag</span></td></tr><tr data-search="mta fare verified; door-to-door matrix not mta official page says $3 base fare, $35 seven-day cap, free transfer within two hours. no official trip-time matrix was produced. fare facts may be used; rank/count blank+flag. mta fares page" data-flagged="0"><td data-label="Topic">MTA fare verified; door-to-door matrix not</td><td data-label="Finding">MTA official page says $3 base fare, $35 seven-day cap, free transfer within two hours. No official trip-time matrix was produced.</td><td data-label="Implication">Fare facts may be used; rank/count blank+flag.</td><td data-label="Source hint">MTA fares page</td><td data-label="Official source"><a class="source-link" href="https://www.mta.info/fares-tolls/subway-bus" target="_blank" rel="noopener noreferrer">Official source / repository board<span class="source-domain">www.mta.info</span></a></td><td data-label="Flags"><span class="badge ok">No flag</span></td></tr><tr data-search="youtube links verified; tiktok/instagram not 27 direct youtube pages verified via oembed. search/account links are discovery-only. do not call search links verified reviews. youtube oembed endpoints" data-flagged="0"><td data-label="Topic">YouTube links verified; TikTok/Instagram not</td><td data-label="Finding">27 direct YouTube pages verified via oEmbed. Search/account links are discovery-only.</td><td data-label="Implication">Do not call search links verified reviews.</td><td data-label="Source hint">YouTube oEmbed endpoints</td><td data-label="Official source"><a class="source-link" href="https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=e1-xFAKQMIM&amp;format=json" target="_blank" rel="noopener noreferrer">Official source / repository board<span class="source-domain">www.youtube.com</span></a></td><td data-label="Flags"><span class="badge ok">No flag</span></td></tr><tr data-search="repo placeholders violate blank+flag rule literal not verified, not captured, address not captured, and broad verified labels appear in baseline csv/json. flag for review; t18 does not edit other sessions’ files. repository baseline files" data-flagged="0"><td data-label="Topic">Repo placeholders violate blank+flag rule</td><td data-label="Finding">Literal NOT VERIFIED, NOT CAPTURED, ADDRESS NOT CAPTURED, and broad verified labels appear in baseline CSV/JSON.</td><td data-label="Implication">Flag for review; T18 does not edit other sessions’ files.</td><td data-label="Source hint">Repository baseline files</td><td data-label="Official source"><a class="source-link" href="https://github.com/kanlerxz87-cyber/NYFun1/blob/b07631405e316015f0a3eeb255f5f2d27facd610/docs/data/activities.csv" target="_blank" rel="noopener noreferrer">Official source / repository board<span class="source-domain">github.com</span></a></td><td data-label="Flags"><span class="badge ok">No flag</span></td></tr><tr data-search="modeled coordinates and straight-line transit are not verified transit docs/ uses modeled lat/lon; deepdive/ uses a straight-line walking screen and measured transitous legs. leave official transit ranks blank+flag. repository baseline files + mta source policy" data-flagged="0"><td data-label="Topic">Modeled coordinates and straight-line transit are not verified transit</td><td data-label="Finding">docs/ uses modeled lat/lon; deepdive/ uses a straight-line walking screen and measured Transitous legs.</td><td data-label="Implication">Leave official transit ranks blank+flag.</td><td data-label="Source hint">Repository baseline files + MTA source policy</td><td data-label="Official source"><a class="source-link" href="https://github.com/kanlerxz87-cyber/NYFun1/blob/b07631405e316015f0a3eeb255f5f2d27facd610/deepdive/data/transit.json" target="_blank" rel="noopener noreferrer">Official source / repository board<span class="source-domain">github.com</span></a></td><td data-label="Flags"><span class="badge ok">No flag</span></td></tr><tr data-search="site is self-contained and preview-safe generated html uses inline css/js, relative links, and no external assets. final integration can link and publish after combined link check. audit build output" data-flagged="0"><td data-label="Topic">Site is self-contained and preview-safe</td><td data-label="Finding">Generated HTML uses inline CSS/JS, relative links, and no external assets.</td><td data-label="Implication">Final integration can link and publish after combined link check.</td><td data-label="Source hint">audit build output</td><td data-label="Official source"><a class="source-link" href="https://github.com/kanlerxz87-cyber/NYFun1/blob/b07631405e316015f0a3eeb255f5f2d27facd610/COORDINATION.md" target="_blank" rel="noopener noreferrer">Official source / repository board<span class="source-domain">github.com</span></a></td><td data-label="Flags"><span class="badge ok">No flag</span></td></tr></tbody></table></div><p class="scroll-note">Dashed cells are blank+flag. Use Card view or a narrow screen for card layout. Every row includes an official-source link.</p></section><section class="section" id="repo-irregularities"><div class="section-head"><h2>Baseline irregularities</h2><span class="count">9 rows</span></div><p class="lede">These rows are review findings; T18 did not modify the linked baseline files.</p><div class="toolbar"><input type="search" placeholder="Filter rows…" data-table-target="repo-irregularities" aria-label="Filter repo-irregularities rows"><button type="button" data-flag-target="repo-irregularities" aria-pressed="false">Show flagged only</button><button type="button" data-card-target="repo-irregularities" aria-pressed="false">Card view</button><span class="count">9 rows</span></div><div class="table-wrap" data-force-cards="false"><table id="repo-irregularities"><caption>Baseline repository irregularities with source links</caption><thead><tr><th scope="col">File</th><th scope="col">Issue</th><th scope="col">Evidence</th><th scope="col">Action</th><th scope="col">Official source</th><th scope="col">Flags</th></tr></thead><tbody><tr data-search="docs/data/activities.csv literal not verified placeholders in hours and secondary-guide prices amnh and met rows use not verified / secondary values rather than blank+flag. replace with blank cells and publish flags after merge coordination. placeholder violates blank+flag rule not edited by t18" data-flagged="1"><td data-label="File">docs/data/activities.csv</td><td data-label="Issue">Literal NOT VERIFIED placeholders in hours and secondary-guide prices</td><td data-label="Evidence">AMNH and Met rows use NOT VERIFIED / secondary values rather than blank+flag.</td><td data-label="Action">Replace with blank cells and publish flags after merge coordination.</td><td data-label="Official source"><a class="source-link" href="https://github.com/kanlerxz87-cyber/NYFun1/blob/b07631405e316015f0a3eeb255f5f2d27facd610/docs/data/activities.csv" target="_blank" rel="noopener noreferrer">Baseline repository file<span class="source-domain">github.com</span></a></td><td data-label="Flags"><span class="badge flag">Placeholder violates blank+flag rule</span><span class="badge flag">Not edited by T18</span></td></tr><tr data-search="docs/data/michelin_2025.csv roster-only rows carry not verified placeholders and modeled coordinates modeled lat/lon and blanket verified labels exceed field-level official verification. separate official roster facts from modeled coordinates; keep 72-star dataset visible. modeled coordinates blanket verified label not edited by t18" data-flagged="1"><td data-label="File">docs/data/michelin_2025.csv</td><td data-label="Issue">Roster-only rows carry NOT VERIFIED placeholders and modeled coordinates</td><td data-label="Evidence">Modeled lat/lon and blanket verified labels exceed field-level official verification.</td><td data-label="Action">Separate official roster facts from modeled coordinates; keep 72-star dataset visible.</td><td data-label="Official source"><a class="source-link" href="https://github.com/kanlerxz87-cyber/NYFun1/blob/b07631405e316015f0a3eeb255f5f2d27facd610/docs/data/michelin_2025.csv" target="_blank" rel="noopener noreferrer">Baseline repository file<span class="source-domain">github.com</span></a></td><td data-label="Flags"><span class="badge flag">Modeled coordinates</span><span class="badge flag">Blanket verified label</span><span class="badge flag">Not edited by T18</span></td></tr><tr data-search="docs/data/hotels.csv address not captured, modeled lat/lon, and broad verified labels fairfield, citizenm bowery, and moxy addresses were missing in baseline. use official exact-date pages; leave unverified fields blank+flag. address placeholder dynamic price drift not edited by t18" data-flagged="1"><td data-label="File">docs/data/hotels.csv</td><td data-label="Issue">ADDRESS NOT CAPTURED, modeled lat/lon, and broad verified labels</td><td data-label="Evidence">Fairfield, citizenM Bowery, and Moxy addresses were missing in baseline.</td><td data-label="Action">Use official exact-date pages; leave unverified fields blank+flag.</td><td data-label="Official source"><a class="source-link" href="https://github.com/kanlerxz87-cyber/NYFun1/blob/b07631405e316015f0a3eeb255f5f2d27facd610/docs/data/hotels.csv" target="_blank" rel="noopener noreferrer">Baseline repository file<span class="source-domain">github.com</span></a></td><td data-label="Flags"><span class="badge flag">Address placeholder</span><span class="badge flag">Dynamic price drift</span><span class="badge flag">Not edited by T18</span></td></tr><tr data-search="deepdive/data/hotels.json seasonality room/price mismatch and dynamic quote drift stored arlo totals differ from live t18 quotes; feb 22 value matches a bunk room total, not queen courtyard view. flag dynamic drift and room-type mismatch; do not overwrite another session’s files. room-type mismatch dynamic quote drift not edited by t18" data-flagged="1"><td data-label="File">deepdive/data/hotels.json</td><td data-label="Issue">Seasonality room/price mismatch and dynamic quote drift</td><td data-label="Evidence">Stored Arlo totals differ from live T18 quotes; Feb 22 value matches a Bunk Room total, not Queen Courtyard View.</td><td data-label="Action">Flag dynamic drift and room-type mismatch; do not overwrite another session’s files.</td><td data-label="Official source"><a class="source-link" href="https://github.com/kanlerxz87-cyber/NYFun1/blob/b07631405e316015f0a3eeb255f5f2d27facd610/deepdive/data/hotels.json" target="_blank" rel="noopener noreferrer">Baseline repository file<span class="source-domain">github.com</span></a></td><td data-label="Flags"><span class="badge flag">Room-type mismatch</span><span class="badge flag">Dynamic quote drift</span><span class="badge flag">Not edited by T18</span></td></tr><tr data-search="deepdive/data/restaurants.json derived cost_for_two_usd and inconsistent cheapest_option text per-person × 2 totals are presented alongside contradictory cheaper-for-two strings. leave two-adult totals blank+flag unless officially printed as such. derived total internal inconsistency not edited by t18" data-flagged="1"><td data-label="File">deepdive/data/restaurants.json</td><td data-label="Issue">Derived cost_for_two_usd and inconsistent cheapest_option text</td><td data-label="Evidence">Per-person × 2 totals are presented alongside contradictory cheaper-for-two strings.</td><td data-label="Action">Leave two-adult totals blank+flag unless officially printed as such.</td><td data-label="Official source"><a class="source-link" href="https://github.com/kanlerxz87-cyber/NYFun1/blob/b07631405e316015f0a3eeb255f5f2d27facd610/deepdive/data/restaurants.json" target="_blank" rel="noopener noreferrer">Baseline repository file<span class="source-domain">github.com</span></a></td><td data-label="Flags"><span class="badge flag">Derived total</span><span class="badge flag">Internal inconsistency</span><span class="badge flag">Not edited by T18</span></td></tr><tr data-search="deepdive/data/transit.json stale fare note and straight-line / measured-sample transit claims $2.90 / $34 note is superseded by official mta $3 / $35; 9 measured legs and straight-line screen are not a full matrix. use official mta fares; leave full ≤60-minute hotel rank blank+flag. stale fare note unsupported full matrix not edited by t18" data-flagged="1"><td data-label="File">deepdive/data/transit.json</td><td data-label="Issue">Stale fare note and straight-line / measured-sample transit claims</td><td data-label="Evidence">$2.90 / $34 note is superseded by official MTA $3 / $35; 9 measured legs and straight-line screen are not a full matrix.</td><td data-label="Action">Use official MTA fares; leave full ≤60-minute hotel rank blank+flag.</td><td data-label="Official source"><a class="source-link" href="https://github.com/kanlerxz87-cyber/NYFun1/blob/b07631405e316015f0a3eeb255f5f2d27facd610/deepdive/data/transit.json" target="_blank" rel="noopener noreferrer">Baseline repository file<span class="source-domain">github.com</span></a></td><td data-label="Flags"><span class="badge flag">Stale fare note</span><span class="badge flag">Unsupported full matrix</span><span class="badge flag">Not edited by T18</span></td></tr><tr data-search="docs/index.html fairfield us$1,159 all-in baseline not reproducible t18 official exact-date page shows us$1,183.59 incl taxes/fees for a comparable 7-night stay. re-quote at purchase time; label quotes as snapshots. dynamic price drift not edited by t18" data-flagged="1"><td data-label="File">docs/index.html</td><td data-label="Issue">Fairfield US$1,159 all-in baseline not reproducible</td><td data-label="Evidence">T18 official exact-date page shows US$1,183.59 incl taxes/fees for a comparable 7-night stay.</td><td data-label="Action">Re-quote at purchase time; label quotes as snapshots.</td><td data-label="Official source"><a class="source-link" href="https://github.com/kanlerxz87-cyber/NYFun1/blob/b07631405e316015f0a3eeb255f5f2d27facd610/docs/index.html" target="_blank" rel="noopener noreferrer">Baseline repository file<span class="source-domain">github.com</span></a></td><td data-label="Flags"><span class="badge flag">Dynamic price drift</span><span class="badge flag">Not edited by T18</span></td></tr><tr data-search="readme.md / root index.html parallel-dataset build instructions and root redirect do not expose audit/ root redirects to docs/; no verified audit nav link was present at baseline. final integration session adds ../audit/index.html links, merges, verifies links, republishes pages. integration pending not edited by t18" data-flagged="1"><td data-label="File">README.md / root index.html</td><td data-label="Issue">Parallel-dataset build instructions and root redirect do not expose audit/</td><td data-label="Evidence">Root redirects to docs/; no Verified audit nav link was present at baseline.</td><td data-label="Action">Final integration session adds ../audit/index.html links, merges, verifies links, republishes Pages.</td><td data-label="Official source"><a class="source-link" href="https://github.com/kanlerxz87-cyber/NYFun1/blob/b07631405e316015f0a3eeb255f5f2d27facd610/README.md" target="_blank" rel="noopener noreferrer">Baseline repository file<span class="source-domain">github.com</span></a></td><td data-label="Flags"><span class="badge flag">Integration pending</span><span class="badge flag">Not edited by T18</span></td></tr><tr data-search="coordination.md t18 integration request is logged but not executed claim reserves audit/** and append-only coordination.md; final nav/merge/publish is out of t18 scope. final integration session must complete nav, merge, combined link check, and pages publish. integration pending out of t18 exclusive scope" data-flagged="1"><td data-label="File">COORDINATION.md</td><td data-label="Issue">T18 integration request is logged but not executed</td><td data-label="Evidence">Claim reserves audit/** and append-only COORDINATION.md; final nav/merge/publish is out of T18 scope.</td><td data-label="Action">Final integration session must complete nav, merge, combined link check, and Pages publish.</td><td data-label="Official source"><a class="source-link" href="https://github.com/kanlerxz87-cyber/NYFun1/blob/b07631405e316015f0a3eeb255f5f2d27facd610/COORDINATION.md" target="_blank" rel="noopener noreferrer">Coordination board<span class="source-domain">github.com</span></a></td><td data-label="Flags"><span class="badge flag">Integration pending</span><span class="badge flag">Out of T18 exclusive scope</span></td></tr></tbody></table></div><p class="scroll-note">Dashed cells are blank+flag. Use Card view or a narrow screen for card layout. Every row includes an official-source link.</p></section>
+</main>
+<footer class="footer">Generated 2026-11-25T22:36:07+00:00 · T18 2026-11-25 · <a href="./data/official_facts.json">Machine-readable facts</a> · <a href="./data/link_report.json">Link report</a> · <a href="./assets/style.css">Stylesheet</a> · <a href="./build_audit.py">Generator</a> · <a href="https://github.com/kanlerxz87-cyber/NYFun1/blob/b07631405e316015f0a3eeb255f5f2d27facd610/COORDINATION.md" target="_blank" rel="noopener noreferrer">Coordination board</a></footer>
+<script>
+
+(function () {
+  const filterState = new Map();
+
+  function stateFor(id) {
+    if (!filterState.has(id)) filterState.set(id, { q: "", flagged: false });
+    return filterState.get(id);
+  }
+
+  function applyFilters(table) {
+    const state = stateFor(table.id);
+    table.querySelectorAll("tbody tr").forEach(function (row) {
+      const matchQ = !state.q || (row.dataset.search || "").indexOf(state.q) !== -1;
+      const matchF = !state.flagged || row.dataset.flagged === "1";
+      row.classList.toggle("hidden", !(matchQ && matchF));
+    });
+  }
+
+  document.addEventListener("input", function (event) {
+    const input = event.target.closest("[data-table-target]");
+    if (!input) return;
+    const table = document.getElementById(input.dataset.tableTarget);
+    if (!table) return;
+    const state = stateFor(table.id);
+    state.q = input.value.toLowerCase();
+    applyFilters(table);
+  });
+
+  document.addEventListener("click", function (event) {
+    const flagBtn = event.target.closest("[data-flag-target]");
+    if (flagBtn) {
+      const table = document.getElementById(flagBtn.dataset.flagTarget);
+      if (table) {
+        const state = stateFor(table.id);
+        state.flagged = flagBtn.getAttribute("aria-pressed") !== "true";
+        flagBtn.setAttribute("aria-pressed", state.flagged ? "true" : "false");
+        flagBtn.textContent = state.flagged ? "Show all rows" : "Show flagged only";
+        applyFilters(table);
+      }
+      return;
+    }
+    const cardBtn = event.target.closest("[data-card-target]");
+    if (cardBtn) {
+      const table = document.getElementById(cardBtn.dataset.cardTarget);
+      if (table) {
+        const wrap = table.closest(".table-wrap");
+        const on = cardBtn.getAttribute("aria-pressed") !== "true";
+        cardBtn.setAttribute("aria-pressed", on ? "true" : "false");
+        cardBtn.textContent = on ? "Table view" : "Card view";
+        if (wrap) wrap.dataset.forceCards = on ? "true" : "false";
+      }
+      return;
+    }
+  });
+
+  function escapeHTML(value) {
+    return String(value).replace(/[&<>"']/g, function (ch) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[ch];
+    });
+  }
+
+  document.querySelectorAll("[data-decision-panel]").forEach(function (panel) {
+    const key = panel.dataset.storageKey || "t18-decision-v1";
+    const radios = Array.prototype.slice.call(panel.querySelectorAll("input[type=radio]"));
+    const output = panel.querySelector(".decision-output");
+    function render() {
+      const selectedValue = localStorage.getItem(key) || "";
+      radios.forEach(function (radio) {
+        radio.checked = radio.value === selectedValue;
+        const choice = radio.closest(".choice");
+        if (choice) choice.classList.toggle("selected", radio.checked);
+      });
+      const selected = radios.find(function (radio) { return radio.checked; });
+      if (!selected) {
+        output.innerHTML = "<strong>No decision path selected yet.</strong> Complete the review workflow before choosing Hold, Re-verify, Book refundable, or Integrate.";
+      } else {
+        output.innerHTML = "<strong>Selected:</strong> " + escapeHTML(selected.dataset.title) +
+          "<br><strong>Rationale:</strong> " + escapeHTML(selected.dataset.rationale) +
+          "<br><strong>Caveat:</strong> " + escapeHTML(selected.dataset.caveat);
+      }
+    }
+    radios.forEach(function (radio) {
+      radio.addEventListener("change", function () {
+        localStorage.setItem(key, radio.value);
+        render();
+      });
+    });
+    const copy = panel.querySelector(".copy-decision");
+    if (copy) {
+      copy.addEventListener("click", function () {
+        const selected = radios.find(function (radio) { return radio.checked; });
+        const text = selected
+          ? "T18 decision: " + selected.dataset.title + "\nRationale: " + selected.dataset.rationale + "\nCaveat: " + selected.dataset.caveat
+          : "T18 decision: none selected";
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(function () {
+            copy.textContent = "Copied";
+            setTimeout(function () { copy.textContent = "Copy decision summary"; }, 1200);
+          }).catch(function () { copy.textContent = "Copy unavailable"; });
+        } else {
+          copy.textContent = "Copy unavailable";
+        }
+      });
+    }
+    const reset = panel.querySelector(".reset-decision");
+    if (reset) {
+      reset.addEventListener("click", function () {
+        localStorage.removeItem(key);
+        render();
+      });
+    }
+    render();
+  });
+
+  document.querySelectorAll("[data-checklist]").forEach(function (root) {
+    const key = root.dataset.checklistKey;
+    const checks = Array.prototype.slice.call(root.querySelectorAll(".review-check"));
+    const bar = root.querySelector(".progress > div");
+    const output = root.querySelector(".checklist-output");
+    function load() {
+      try { return JSON.parse(localStorage.getItem(key) || "[]"); } catch (e) { return []; }
+    }
+    function save(values) { localStorage.setItem(key, JSON.stringify(values)); }
+    function render() {
+      const done = load();
+      checks.forEach(function (check) {
+        check.checked = done.indexOf(Number(check.dataset.step)) !== -1;
+      });
+      const count = checks.filter(function (check) { return check.checked; }).length;
+      const total = checks.length || 1;
+      if (bar) bar.style.width = (count / total * 100) + "%";
+      if (output) output.innerHTML = "<strong>" + count + " of " + checks.length + " review steps complete.</strong>";
+    }
+    checks.forEach(function (check) {
+      check.addEventListener("change", function () {
+        const step = Number(check.dataset.step);
+        let done = load().filter(function (item) { return item !== step; });
+        if (check.checked) done.push(step);
+        save(done);
+        render();
+      });
+    });
+    const reset = root.querySelector(".reset-checklist");
+    if (reset) {
+      reset.addEventListener("click", function () {
+        localStorage.removeItem(key);
+        render();
+      });
+    }
+    render();
+  });
+})();
+
+</script>
+</body>
+</html>

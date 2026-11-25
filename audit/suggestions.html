@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta name="description" content="Review-first suggestions, triage checklist, and decision options.">
+<title>Suggestions · T18 Verified Audit</title>
+<style>
+/* T18 Verified Audit — self-contained, no external fonts, images, or scripts. */
+:root {
+  --ink: #14213d;
+  --ink-2: #243b5a;
+  --paper: #f7f4ec;
+  --card: #fffdf8;
+  --line: #d9d2c2;
+  --muted: #64748b;
+  --teal: #0f766e;
+  --teal-soft: #d7f0ec;
+  --amber: #b45309;
+  --amber-soft: #fef3c7;
+  --red: #9f1239;
+  --red-soft: #ffe4e6;
+  --blue: #1d4ed8;
+  --blue-soft: #dbeafe;
+  --shadow: 0 10px 30px rgba(20, 33, 61, .08);
+  --radius: 16px;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 10% 0%, rgba(15,118,110,.12), transparent 32rem),
+    radial-gradient(circle at 90% 5%, rgba(180,83,9,.10), transparent 28rem),
+    var(--paper);
+  line-height: 1.55;
+}
+a { color: var(--blue); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:hover { color: var(--teal); }
+.skip { position: absolute; left: -999px; }
+.skip:focus { left: 12px; top: 12px; z-index: 100; padding: 10px 14px; background: var(--card); border-radius: 8px; }
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(247,244,236,.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+.header-inner { max-width: 1180px; margin: 0 auto; padding: 12px 18px; display: flex; gap: 18px; align-items: center; }
+.brand { font-weight: 800; letter-spacing: -.02em; color: var(--ink); text-decoration: none; white-space: nowrap; }
+.brand span { color: var(--teal); }
+.nav { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: thin; padding-bottom: 2px; }
+.nav a { white-space: nowrap; text-decoration: none; color: var(--ink-2); font-size: .88rem; padding: 6px 9px; border-radius: 999px; border: 1px solid transparent; }
+.nav a:hover { background: #fff; border-color: var(--line); }
+.nav a[aria-current="page"] { background: var(--ink); color: #fff; border-color: var(--ink); }
+main { max-width: 1180px; margin: 0 auto; padding: 28px 18px 64px; }
+.hero {
+  padding: 30px; border: 1px solid var(--line); border-radius: 24px;
+  background: linear-gradient(135deg, rgba(255,253,248,.96), rgba(215,240,236,.72));
+  box-shadow: var(--shadow); margin-bottom: 24px;
+}
+.eyebrow { text-transform: uppercase; letter-spacing: .14em; font-weight: 800; font-size: .72rem; color: var(--teal); margin: 0 0 8px; }
+h1 { font-size: clamp(2rem, 5vw, 3.4rem); line-height: 1.05; letter-spacing: -.045em; margin: 0 0 12px; }
+h2 { font-size: clamp(1.4rem, 3vw, 2rem); letter-spacing: -.025em; margin: 34px 0 12px; }
+h3 { font-size: 1.08rem; margin: 0 0 8px; }
+p { margin: 0 0 12px; }
+.lede { font-size: 1.12rem; color: var(--ink-2); max-width: 78ch; }
+.meta-line { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+.meta-pill { font-size: .82rem; padding: 6px 10px; border: 1px solid var(--line); border-radius: 999px; background: rgba(255,255,255,.7); }
+.notice { border-left: 4px solid var(--amber); background: var(--amber-soft); padding: 14px 16px; border-radius: 0 12px 12px 0; margin: 18px 0; }
+.notice strong { color: var(--amber); }
+.grid { display: grid; gap: 14px; }
+.kpis { grid-template-columns: repeat(4, minmax(0,1fr)); }
+.cards-2 { grid-template-columns: repeat(2, minmax(0,1fr)); }
+.cards-3 { grid-template-columns: repeat(3, minmax(0,1fr)); }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; box-shadow: var(--shadow); }
+.kpi { border-top: 4px solid var(--teal); }
+.kpi .number { font-size: 1.8rem; font-weight: 850; letter-spacing: -.04em; display: block; }
+.kpi .label { color: var(--muted); font-size: .86rem; }
+.card p:last-child, .card ul:last-child { margin-bottom: 0; }
+ul, ol { padding-left: 1.25rem; }
+li { margin: 5px 0; }
+.section { margin-top: 30px; }
+.section-head { display: flex; align-items: end; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.count { color: var(--muted); font-size: .9rem; }
+.toolbar { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin: 12px 0; }
+input[type="search"], button, select {
+  font: inherit; border: 1px solid var(--line); background: #fff; color: var(--ink);
+  border-radius: 10px; padding: 8px 11px;
+}
+input[type="search"] { min-width: min(320px, 100%); }
+button { cursor: pointer; font-weight: 650; }
+button:hover { border-color: var(--teal); }
+button.primary { background: var(--ink); color: #fff; border-color: var(--ink); }
+button.primary:hover { background: var(--teal); }
+button[aria-pressed="true"] { background: var(--teal); color: #fff; border-color: var(--teal); }
+.table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius); background: var(--card); box-shadow: var(--shadow); }
+table { width: 100%; border-collapse: collapse; font-size: .9rem; }
+caption { text-align: left; padding: 12px 14px; color: var(--muted); font-weight: 650; }
+th, td { padding: 11px 12px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
+th { background: #eee9dc; color: var(--ink); font-size: .76rem; text-transform: uppercase; letter-spacing: .06em; position: sticky; top: 0; }
+tbody tr:hover { background: #faf7ef; }
+tbody tr:last-child td { border-bottom: 0; }
+td.blank-value { background: repeating-linear-gradient(135deg, rgba(180,83,9,.06), rgba(180,83,9,.06) 6px, transparent 6px, transparent 12px); }
+.blank { color: var(--amber); font-weight: 750; }
+.badge { display: inline-block; font-size: .72rem; font-weight: 800; padding: 3px 8px; border-radius: 999px; border: 1px solid transparent; margin: 1px 3px 1px 0; }
+.badge.flag { background: var(--amber-soft); color: var(--amber); border-color: #f3cf77; }
+.badge.ok { background: var(--teal-soft); color: var(--teal); border-color: #9bd8cf; }
+.badge.info { background: var(--blue-soft); color: var(--blue); border-color: #a9c8ff; }
+.badge.warn { background: var(--red-soft); color: var(--red); border-color: #f5b5c2; }
+.source-link { font-weight: 700; font-size: .82rem; }
+.extra-links { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 6px; }
+.extra-links a { font-size: .75rem; }
+.flags-cell { max-width: 280px; }
+.flags-cell .badge { white-space: normal; }
+.scroll-note { color: var(--muted); font-size: .82rem; margin: 6px 0 0; }
+.callout { background: var(--card); border: 1px solid var(--line); border-left: 4px solid var(--teal); border-radius: 0 var(--radius) var(--radius) 0; padding: 16px 18px; margin: 16px 0; }
+.callout.warn { border-left-color: var(--amber); }
+.callout.stop { border-left-color: var(--red); }
+.choice-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; }
+.choice { border: 1px solid var(--line); border-radius: 14px; padding: 16px; background: #fff; }
+.choice label { display: block; font-weight: 800; cursor: pointer; }
+.choice small { color: var(--muted); }
+.choice.selected { border-color: var(--teal); box-shadow: 0 0 0 3px var(--teal-soft); }
+.decision-output { margin-top: 14px; padding: 14px; border-radius: 12px; background: var(--ink); color: #fff; }
+.decision-output a { color: #9ee6dc; }
+.checklist { list-style: none; padding: 0; }
+.checklist li { display: flex; gap: 10px; align-items: flex-start; padding: 11px 0; border-bottom: 1px solid var(--line); }
+.checklist input { margin-top: 4px; }
+.progress { height: 9px; border-radius: 999px; background: #e6e0d2; overflow: hidden; margin: 10px 0 16px; }
+.progress > div { height: 100%; width: 0; background: var(--teal); transition: width .2s ease; }
+.code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .82rem; background: #eee9dc; padding: 2px 5px; border-radius: 5px; }
+.footer { max-width: 1180px; margin: 0 auto; padding: 22px 18px 40px; border-top: 1px solid var(--line); color: var(--muted); font-size: .85rem; }
+.pill-row { display: flex; flex-wrap: wrap; gap: 6px; }
+.hidden { display: none !important; }
+.source-domain { color: var(--muted); font-size: .72rem; display: block; }
+.details { border: 1px solid var(--line); border-radius: 12px; background: #fff; padding: 10px 14px; margin: 10px 0; }
+.summary-title { font-weight: 750; cursor: pointer; }
+.mini { font-size: .82rem; color: var(--muted); }
+.status-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--amber); margin-right: 6px; }
+.status-dot.ok { background: var(--teal); }
+.status-dot.info { background: var(--blue); }
+@media (max-width: 960px) {
+  .kpis { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .cards-3, .cards-2, .choice-grid { grid-template-columns: 1fr; }
+  .header-inner { align-items: flex-start; flex-direction: column; gap: 8px; }
+}
+@media (max-width: 760px) {
+  main { padding: 20px 12px 48px; }
+  .hero { padding: 22px 18px; border-radius: 18px; }
+  .table-wrap { overflow: visible; border: 0; background: transparent; box-shadow: none; }
+  table, tbody, tr, td { display: block; width: 100%; }
+  thead { display: none; }
+  tbody { display: grid; gap: 12px; }
+  tbody tr { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 10px; box-shadow: var(--shadow); }
+  td { border: 0; border-bottom: 1px dashed var(--line); padding: 8px 4px; display: grid; grid-template-columns: 120px 1fr; gap: 10px; }
+  td:last-child { border-bottom: 0; }
+  td::before { content: attr(data-label); font-size: .7rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); font-weight: 800; padding-top: 2px; }
+  td.blank-value { background: transparent; }
+  th { position: static; }
+}
+@media print {
+  .site-header, .toolbar, .footer { display: none; }
+  body { background: #fff; }
+  .hero, .card, .table-wrap { box-shadow: none; }
+  a { color: #000; }
+}
+
+/* Explicit card view toggle (same layout as small screens). */
+.table-wrap[data-force-cards="true"] { overflow: visible; border: 0; background: transparent; box-shadow: none; }
+.table-wrap[data-force-cards="true"] table,
+.table-wrap[data-force-cards="true"] tbody,
+.table-wrap[data-force-cards="true"] tr,
+.table-wrap[data-force-cards="true"] td { display: block; width: 100%; }
+.table-wrap[data-force-cards="true"] thead { display: none; }
+.table-wrap[data-force-cards="true"] tbody { display: grid; gap: 12px; }
+.table-wrap[data-force-cards="true"] tbody tr { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 10px; box-shadow: var(--shadow); }
+.table-wrap[data-force-cards="true"] td { border: 0; border-bottom: 1px dashed var(--line); padding: 8px 4px; display: grid; grid-template-columns: 120px 1fr; gap: 10px; }
+.table-wrap[data-force-cards="true"] td:last-child { border-bottom: 0; }
+.table-wrap[data-force-cards="true"] td::before { content: attr(data-label); font-size: .7rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); font-weight: 800; padding-top: 2px; }
+.table-wrap[data-force-cards="true"] th { position: static; }
+
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header"><div class="header-inner"><a class="brand" href="./index.html">Verified <span>Audit</span></a>
+<nav class="nav" aria-label="Audit sections"><a href="./index.html">Executive summary</a><a href="./hotels.html">Hotels</a><a href="./restaurants.html">Restaurants</a><a href="./activities.html">Activities</a><a href="./social.html">Social</a><a href="./transit.html">Transit</a><a href="./questions.html">Questions</a><a href="./suggestions.html" aria-current="page">Suggestions</a><a href="./flagged.html">Flagged</a><a href="./repo-review.html">Repo review</a><a href="./verification.html">Verification</a><a href="./sources.html">Sources</a></nav>
+</div></header>
+<main id="main">
+<div class="hero"><p class="eyebrow">Review gate</p><h1>Suggestions &amp; review-first workflow</h1><p class="lede">Suggestions need review before implementation. T18 does not edit shared docs/**, deepdive/**, build scripts, README, or root index.html files.</p><div class="meta-line"><span class="meta-pill">12 suggestions</span><span class="meta-pill">Needs-review status</span><span class="meta-pill">Final integration pending</span></div></div><div class="callout warn"><strong>Scope boundary</strong><p>T18 exclusive scope is audit/** plus append-only COORDINATION.md.</p></div><section class="section" id="suggestions-table"><div class="section-head"><h2>Suggestions awaiting review</h2><span class="count">12 rows</span></div><p class="lede">Status remains needs review until the reviewer chooses a path.</p><div class="toolbar"><input type="search" placeholder="Filter rows…" data-table-target="suggestions-table" aria-label="Filter suggestions-table rows"><button type="button" data-flag-target="suggestions-table" aria-pressed="false">Show flagged only</button><button type="button" data-card-target="suggestions-table" aria-pressed="false">Card view</button><span class="count">12 rows</span></div><div class="table-wrap" data-force-cards="false"><table id="suggestions-table"><caption>Suggestions with official source / coordination links</caption><thead><tr><th scope="col">Suggestion</th><th scope="col">Priority</th><th scope="col">Owner</th><th scope="col">Workflow</th><th scope="col">Status</th><th scope="col">Source hint</th><th scope="col">Official source</th><th scope="col">Flags</th></tr></thead><tbody><tr data-search="re-check official michelin live star filters immediately before booking high final integration / traveller review capture 3/2/1-star counts, green stars, bib gourmand, and selected; record fetch date. needs review michelin live lists needs review before implementation" data-flagged="1"><td data-label="Suggestion">Re-check official MICHELIN live star filters immediately before booking</td><td data-label="Priority">High</td><td data-label="Owner">Final integration / traveller review</td><td data-label="Workflow">Capture 3/2/1-star counts, Green Stars, Bib Gourmand, and Selected; record fetch date.</td><td data-label="Status">needs review</td><td data-label="Source hint">MICHELIN live lists</td><td data-label="Official source"><a class="source-link" href="https://github.com/kanlerxz87-cyber/NYFun1/blob/b07631405e316015f0a3eeb255f5f2d27facd610/COORDINATION.md" target="_blank" rel="noopener noreferrer">COORDINATION.md T18<span class="source-domain">github.com</span></a></td><td data-label="Flags"><span class="badge flag">Needs review before implementation</span></td></tr><tr data-search="repeat exact-date hotel quotes at several fixed purchase dates high verification session use identical room, 2 adults, 1 room, 7 nights; record booking date, quote date, member/non-member status, all-in total. needs review booking.com / michelin hotel pages needs review before implementation" data-flagged="1"><td data-label="Suggestion">Repeat exact-date hotel quotes at several fixed purchase dates</td><td data-label="Priority">High</td><td data-label="Owner">Verification session</td><td data-label="Workflow">Use identical room, 2 adults, 1 room, 7 nights; record booking date, quote date, member/non-member status, all-in total.</td><td data-label="Status">needs review</td><td data-label="Source hint">Booking.com / MICHELIN hotel pages</td><td data-label="Official source"><a class="source-link" href="https://github.com/kanlerxz87-cyber/NYFun1/blob/b07631405e316015f0a3eeb255f5f2d27facd610/COORDINATION.md" target="_blank" rel="noopener noreferrer">COORDINATION.md T18<span class="source-domain">github.com</span></a></td><td data-label="Flags"><span class="badge flag">Needs review before implementation</span></td></tr><tr data-search="capture checkout-level final totals high verification session print or save a source page that states taxes/fees/resort fee and final total. needs review booking.com / hotel checkout needs review before implementation" data-flagged="1"><td data-label="Suggestion">Capture checkout-level final totals</td><td data-label="Priority">High</td><td data-label="Owner">Verification session</td><td data-label="Workflow">Print or save a source page that states taxes/fees/resort fee and final total.</td><td data-label="Status">needs review</td><td data-label="Source hint">Booking.com / hotel checkout</td><td data-label="Official source"><a class="source-link" href="https://github.com/kanlerxz87-cyber/NYFun1/blob/b07631405e316015f0a3eeb255f5f2d27facd610/COORDINATION.md" target="_blank" rel="noopener noreferrer">COORDINATION.md T18<span class="source-domain">github.com</span></a></td><td data-label="Flags"><span class="badge flag">Needs review before implementation</span></td></tr><tr data-search="publish 2027-specific venue hours high final integration re-fetch moma, met, amnh, 9/11, esb, top of rock, statue city cruises, broadway, parks. needs review official venue pages needs review before implementation" data-flagged="1"><td data-label="Suggestion">Publish 2027-specific venue hours</td><td data-label="Priority">High</td><td data-label="Owner">Final integration</td><td data-label="Workflow">Re-fetch MoMA, Met, AMNH, 9/11, ESB, Top of Rock, Statue City Cruises, Broadway, parks.</td><td data-label="Status">needs review</td><td data-label="Source hint">Official venue pages</td><td data-label="Official source"><a class="source-link" href="https://github.com/kanlerxz87-cyber/NYFun1/blob/b07631405e316015f0a3eeb255f5f2d27facd610/COORDINATION.md" target="_blank" rel="noopener noreferrer">COORDINATION.md T18<span class="source-domain">github.com</span></a></td><td data-label="Flags"><span class="badge flag">Needs review before implementation</span></td></tr><tr data-search="build an official mta door-to-door matrix high final integration use mta trip planner/gtfs with a reproducible script; rank hotels by count of live-starred venues ≤60 min. needs review mta official trip planner / gtfs needs review before implementation" data-flagged="1"><td data-label="Suggestion">Build an official MTA door-to-door matrix</td><td data-label="Priority">High</td><td data-label="Owner">Final integration</td><td data-label="Workflow">Use MTA trip planner/GTFS with a reproducible script; rank hotels by count of live-starred venues ≤60 min.</td><td data-label="Status">needs review</td><td data-label="Source hint">MTA official trip planner / GTFS</td><td data-label="Official source"><a class="source-link" href="https://github.com/kanlerxz87-cyber/NYFun1/blob/b07631405e316015f0a3eeb255f5f2d27facd610/COORDINATION.md" target="_blank" rel="noopener noreferrer">COORDINATION.md T18<span class="source-domain">github.com</span></a></td><td data-label="Flags"><span class="badge flag">Needs review before implementation</span></td></tr><tr data-search="verify tiktok and instagram direct review links medium verification session use platform oembed or direct post urls; keep search/account links in discovery-only table. needs review tiktok / instagram platform pages needs review before implementation" data-flagged="1"><td data-label="Suggestion">Verify TikTok and Instagram direct review links</td><td data-label="Priority">Medium</td><td data-label="Owner">Verification session</td><td data-label="Workflow">Use platform oEmbed or direct post URLs; keep search/account links in discovery-only table.</td><td data-label="Status">needs review</td><td data-label="Source hint">TikTok / Instagram platform pages</td><td data-label="Official source"><a class="source-link" href="https://github.com/kanlerxz87-cyber/NYFun1/blob/b07631405e316015f0a3eeb255f5f2d27facd610/COORDINATION.md" target="_blank" rel="noopener noreferrer">COORDINATION.md T18<span class="source-domain">github.com</span></a></td><td data-label="Flags"><span class="badge flag">Needs review before implementation</span></td></tr><tr data-search="add official social accounts separately from reviews medium verification session do not conflate a restaurant’s official account with a third-party review. needs review official venue and platform pages needs review before implementation" data-flagged="1"><td data-label="Suggestion">Add official social accounts separately from reviews</td><td data-label="Priority">Medium</td><td data-label="Owner">Verification session</td><td data-label="Workflow">Do not conflate a restaurant’s official account with a third-party review.</td><td data-label="Status">needs review</td><td data-label="Source hint">Official venue and platform pages</td><td data-label="Official source"><a class="source-link" href="https://github.com/kanlerxz87-cyber/NYFun1/blob/b07631405e316015f0a3eeb255f5f2d27facd610/COORDINATION.md" target="_blank" rel="noopener noreferrer">COORDINATION.md T18<span class="source-domain">github.com</span></a></td><td data-label="Flags"><span class="badge flag">Needs review before implementation</span></td></tr><tr data-search="replace literal not verified / not captured placeholders with blank+flag high owner of docs/data after merge coordination do not edit another active session’s claimed files in t18; log integration request. needs review docs/readme-sources.md blank-findings rule needs review before implementation" data-flagged="1"><td data-label="Suggestion">Replace literal NOT VERIFIED / NOT CAPTURED placeholders with blank+flag</td><td data-label="Priority">High</td><td data-label="Owner">Owner of docs/data after merge coordination</td><td data-label="Workflow">Do not edit another active session’s claimed files in T18; log integration request.</td><td data-label="Status">needs review</td><td data-label="Source hint">docs/README-sources.md blank-findings rule</td><td data-label="Official source"><a class="source-link" href="https://github.com/kanlerxz87-cyber/NYFun1/blob/b07631405e316015f0a3eeb255f5f2d27facd610/COORDINATION.md" target="_blank" rel="noopener noreferrer">COORDINATION.md T18<span class="source-domain">github.com</span></a></td><td data-label="Flags"><span class="badge flag">Needs review before implementation</span></td></tr><tr data-search="keep 72-star ceremony and 69-live datasets visibly distinct high final integration do not silently reconcile official-source disagreement. needs review michelin article + live filter needs review before implementation" data-flagged="1"><td data-label="Suggestion">Keep 72-star ceremony and 69-live datasets visibly distinct</td><td data-label="Priority">High</td><td data-label="Owner">Final integration</td><td data-label="Workflow">Do not silently reconcile official-source disagreement.</td><td data-label="Status">needs review</td><td data-label="Source hint">MICHELIN article + live filter</td><td data-label="Official source"><a class="source-link" href="https://github.com/kanlerxz87-cyber/NYFun1/blob/b07631405e316015f0a3eeb255f5f2d27facd610/COORDINATION.md" target="_blank" rel="noopener noreferrer">COORDINATION.md T18<span class="source-domain">github.com</span></a></td><td data-label="Flags"><span class="badge flag">Needs review before implementation</span></td></tr><tr data-search="add “verified audit” nav links from docs/index.html and deepdive/index.html high final integration session link to ../audit/index.html, then run combined link checker. needs review coordination.md t18 integration request needs review before implementation" data-flagged="1"><td data-label="Suggestion">Add “Verified audit” nav links from docs/index.html and deepdive/index.html</td><td data-label="Priority">High</td><td data-label="Owner">Final integration session</td><td data-label="Workflow">Link to ../audit/index.html, then run combined link checker.</td><td data-label="Status">needs review</td><td data-label="Source hint">COORDINATION.md T18 integration request</td><td data-label="Official source"><a class="source-link" href="https://github.com/kanlerxz87-cyber/NYFun1/blob/b07631405e316015f0a3eeb255f5f2d27facd610/COORDINATION.md" target="_blank" rel="noopener noreferrer">COORDINATION.md T18<span class="source-domain">github.com</span></a></td><td data-label="Flags"><span class="badge flag">Needs review before implementation</span></td></tr><tr data-search="republish github pages only after combined link check high final integration session merge branches, build, confirm no broken internal links, publish. needs review coordination.md t18 integration request needs review before implementation" data-flagged="1"><td data-label="Suggestion">Republish GitHub Pages only after combined link check</td><td data-label="Priority">High</td><td data-label="Owner">Final integration session</td><td data-label="Workflow">Merge branches, build, confirm no broken internal links, publish.</td><td data-label="Status">needs review</td><td data-label="Source hint">COORDINATION.md T18 integration request</td><td data-label="Official source"><a class="source-link" href="https://github.com/kanlerxz87-cyber/NYFun1/blob/b07631405e316015f0a3eeb255f5f2d27facd610/COORDINATION.md" target="_blank" rel="noopener noreferrer">COORDINATION.md T18<span class="source-domain">github.com</span></a></td><td data-label="Flags"><span class="badge flag">Needs review before implementation</span></td></tr><tr data-search="use a review-first decision gate high person reviewing this dossier choose hold / re-verify / book refundable / integrate, record decision, then implement changes. needs review this dossier needs review before implementation" data-flagged="1"><td data-label="Suggestion">Use a review-first decision gate</td><td data-label="Priority">High</td><td data-label="Owner">Person reviewing this dossier</td><td data-label="Workflow">Choose Hold / Re-verify / Book refundable / Integrate, record decision, then implement changes.</td><td data-label="Status">needs review</td><td data-label="Source hint">This dossier</td><td data-label="Official source"><a class="source-link" href="https://github.com/kanlerxz87-cyber/NYFun1/blob/b07631405e316015f0a3eeb255f5f2d27facd610/COORDINATION.md" target="_blank" rel="noopener noreferrer">COORDINATION.md T18<span class="source-domain">github.com</span></a></td><td data-label="Flags"><span class="badge flag">Needs review before implementation</span></td></tr></tbody></table></div><p class="scroll-note">Dashed cells are blank+flag. Use Card view or a narrow screen for card layout. Every row includes an official-source link.</p></section><section class="section" id="suggestion-triage"><div class="section-head"><h2>Suggestion triage</h2><span class="count">Mark each item reviewed</span></div><div class="callout" data-checklist data-checklist-key="t18-suggestions-v1"><div class="progress"><div></div></div><div class="checklist-output"></div><ul class="checklist"><li><input type="checkbox" class="review-check" data-step="1"><span><strong>Re-check official MICHELIN live star filters immediately before booking</strong> <span class="mini">High · Final integration / traveller review</span> <a href="https://github.com/kanlerxz87-cyber/NYFun1/blob/b07631405e316015f0a3eeb255f5f2d27facd610/COORDINATION.md" target="_blank" rel="noopener noreferrer">Source<span class="source-domain">github.com</span></a></span></li><li><input type="checkbox" class="review-check" data-step="2"><span><strong>Repeat exact-date hotel quotes at several fixed purchase dates</strong> <span class="mini">High · Verification session</span> <a href="https://github.com/kanlerxz87-cyber/NYFun1/blob/b07631405e316015f0a3eeb255f5f2d27facd610/COORDINATION.md" target="_blank" rel="noopener noreferrer">Source<span class="source-domain">github.com</span></a></span></li><li><input type="checkbox" class="review-check" data-step="3"><span><strong>Capture checkout-level final totals</strong> <span class="mini">High · Verification session</span> <a href="https://github.com/kanlerxz87-cyber/NYFun1/blob/b07631405e316015f0a3eeb255f5f2d27facd610/COORDINATION.md" target="_blank" rel="noopener noreferrer">Source<span class="source-domain">github.com</span></a></span></li><li><input type="checkbox" class="review-check" data-step="4"><span><strong>Publish 2027-specific venue hours</strong> <span class="mini">High · Final integration</span> <a href="https://github.com/kanlerxz87-cyber/NYFun1/blob/b07631405e316015f0a3eeb255f5f2d27facd610/COORDINATION.md" target="_blank" rel="noopener noreferrer">Source<span class="source-domain">github.com</span></a></span></li><li><input type="checkbox" class="review-check" data-step="5"><span><strong>Build an official MTA door-to-door matrix</strong> <span class="mini">High · Final integration</span> <a href="https://github.com/kanlerxz87-cyber/NYFun1/blob/b07631405e316015f0a3eeb255f5f2d27facd610/COORDINATION.md" target="_blank" rel="noopener noreferrer">Source<span class="source-domain">github.com</span></a></span></li><li><input type="checkbox" class="review-check" data-step="6"><span><strong>Verify TikTok and Instagram direct review links</strong> <span class="mini">Medium · Verification session</span> <a href="https://github.com/kanlerxz87-cyber/NYFun1/blob/b07631405e316015f0a3eeb255f5f2d27facd610/COORDINATION.md" target="_blank" rel="noopener noreferrer">Source<span class="source-domain">github.com</span></a></span></li><li><input type="checkbox" class="review-check" data-step="7"><span><strong>Add official social accounts separately from reviews</strong> <span class="mini">Medium · Verification session</span> <a href="https://github.com/kanlerxz87-cyber/NYFun1/blob/b07631405e316015f0a3eeb255f5f2d27facd610/COORDINATION.md" target="_blank" rel="noopener noreferrer">Source<span class="source-domain">github.com</span></a></span></li><li><input type="checkbox" class="review-check" data-step="8"><span><strong>Replace literal NOT VERIFIED / NOT CAPTURED placeholders with blank+flag</strong> <span class="mini">High · Owner of docs/data after merge coordination</span> <a href="https://github.com/kanlerxz87-cyber/NYFun1/blob/b07631405e316015f0a3eeb255f5f2d27facd610/COORDINATION.md" target="_blank" rel="noopener noreferrer">Source<span class="source-domain">github.com</span></a></span></li><li><input type="checkbox" class="review-check" data-step="9"><span><strong>Keep 72-star ceremony and 69-live datasets visibly distinct</strong> <span class="mini">High · Final integration</span> <a href="https://github.com/kanlerxz87-cyber/NYFun1/blob/b07631405e316015f0a3eeb255f5f2d27facd610/COORDINATION.md" target="_blank" rel="noopener noreferrer">Source<span class="source-domain">github.com</span></a></span></li><li><input type="checkbox" class="review-check" data-step="10"><span><strong>Add “Verified audit” nav links from docs/index.html and deepdive/index.html</strong> <span class="mini">High · Final integration session</span> <a href="https://github.com/kanlerxz87-cyber/NYFun1/blob/b07631405e316015f0a3eeb255f5f2d27facd610/COORDINATION.md" target="_blank" rel="noopener noreferrer">Source<span class="source-domain">github.com</span></a></span></li><li><input type="checkbox" class="review-check" data-step="11"><span><strong>Republish GitHub Pages only after combined link check</strong> <span class="mini">High · Final integration session</span> <a href="https://github.com/kanlerxz87-cyber/NYFun1/blob/b07631405e316015f0a3eeb255f5f2d27facd610/COORDINATION.md" target="_blank" rel="noopener noreferrer">Source<span class="source-domain">github.com</span></a></span></li><li><input type="checkbox" class="review-check" data-step="12"><span><strong>Use a review-first decision gate</strong> <span class="mini">High · Person reviewing this dossier</span> <a href="https://github.com/kanlerxz87-cyber/NYFun1/blob/b07631405e316015f0a3eeb255f5f2d27facd610/COORDINATION.md" target="_blank" rel="noopener noreferrer">Source<span class="source-domain">github.com</span></a></span></li></ul><div class="toolbar"><button type="button" class="reset-checklist">Reset triage</button></div></div></section><section class="section" id="decision-suggestions"><div class="section-head"><h2>Decision gate</h2><span class="count">Choose a path only after review</span></div><div class="callout stop"><strong>Do not book non-refundable travel yet.</strong><p>Key 2027-specific roster, hours, booking-date, and transit values remain blank+flag.</p></div><div class="choice-grid" data-decision-panel data-storage-key="t18-decision-suggestions"><div class="choice" data-option-id="1"><label><input type="radio" name="decision-suggestions" value="opt-1" data-title="A — Hold / verification-first" data-rationale="Do not book non-refundable travel until blockers are resolved." data-caveat="Official-source gaps listed on Questions and Flagged pages"> A — Hold / verification-first</label><div class="mini">Recommended by this audit · Do not book non-refundable travel until blockers are resolved.</div><div class="pill-row"><span class="badge info">Source</span><a href="https://github.com/kanlerxz87-cyber/NYFun1/blob/b07631405e316015f0a3eeb255f5f2d27facd610/COORDINATION.md" target="_blank" rel="noopener noreferrer">Source<span class="source-domain">github.com</span></a></div><p>Official-source gaps listed on Questions and Flagged pages</p></div><div class="choice" data-option-id="2"><label><input type="radio" name="decision-suggestions" value="opt-2" data-title="B — Book refundable Fairfield after re-quote" data-rationale="Lowest current official all-in exact-date quote captured: US$1,183.59 incl taxes/fees; free cancellation before 2027-02-12." data-caveat="Dynamic Black Friday quote; re-quote and confirm room/bed before purchase"> B — Book refundable Fairfield after re-quote</label><div class="mini">Conditional · Lowest current official all-in exact-date quote captured: US$1,183.59 incl taxes/fees; free cancellation before 2027-02-12.</div><div class="pill-row"><span class="badge info">Source</span><a href="https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-15&amp;checkout=2027-02-22&amp;group_adults=2&amp;no_rooms=1&amp;selected_currency=USD" target="_blank" rel="noopener noreferrer">Source<span class="source-domain">www.booking.com</span></a></div><p>Dynamic Black Friday quote; re-quote and confirm room/bed before purchase</p></div><div class="choice" data-option-id="3"><label><input type="radio" name="decision-suggestions" value="opt-3" data-title="C — Book refundable citizenM Times Square after checkout total" data-rationale="US$1,147 for 7 nights is printed excluding 14.75% tax and US$4/night city tax; private bath and king bed printed." data-caveat="All-in total blank+flag; capture checkout total before purchase"> C — Book refundable citizenM Times Square after checkout total</label><div class="mini">Conditional · US$1,147 for 7 nights is printed excluding 14.75% tax and US$4/night city tax; private bath and king bed printed.</div><div class="pill-row"><span class="badge info">Source</span><a href="https://www.booking.com/hotel/us/citizenm-new-york-times-square-new-york.html?checkin=2027-02-15&amp;checkout=2027-02-22&amp;group_adults=2&amp;no_rooms=1&amp;selected_currency=USD" target="_blank" rel="noopener noreferrer">Source<span class="source-domain">www.booking.com</span></a></div><p>All-in total blank+flag; capture checkout total before purchase</p></div><div class="choice" data-option-id="4"><label><input type="radio" name="decision-suggestions" value="opt-4" data-title="D — Book Arlo Soho member rate" data-rationale="US$1,690.16 with taxes/fees for 7 nights; 1 Queen Bed free-cancellation rate." data-caveat="MEMBER RATE · SIGN IN; standard non-member rate blank+flag"> D — Book Arlo Soho member rate</label><div class="mini">Conditional · US$1,690.16 with taxes/fees for 7 nights; 1 Queen Bed free-cancellation rate.</div><div class="pill-row"><span class="badge info">Source</span><a href="https://guide.michelin.com/us/en/hotels-stays/nyc/arlo-soho-8260?arr=2027-02-15&amp;dep=2027-02-22&amp;nA=2&amp;nC=0&amp;nR=1" target="_blank" rel="noopener noreferrer">Source<span class="source-domain">guide.michelin.com</span></a></div><p>MEMBER RATE · SIGN IN; standard non-member rate blank+flag</p></div><div class="choice" data-option-id="5"><label><input type="radio" name="decision-suggestions" value="opt-5" data-title="E — Integrate and publish audit site" data-rationale="Add shared nav links, merge, verify combined internal links, republish Pages." data-caveat="Shared nav and publication are outside T18 exclusive scope"> E — Integrate and publish audit site</label><div class="mini">Final integration session · Add shared nav links, merge, verify combined internal links, republish Pages.</div><div class="pill-row"><span class="badge info">Source</span><a href="https://github.com/kanlerxz87-cyber/NYFun1/blob/b07631405e316015f0a3eeb255f5f2d27facd610/COORDINATION.md" target="_blank" rel="noopener noreferrer">Source<span class="source-domain">github.com</span></a></div><p>Shared nav and publication are outside T18 exclusive scope</p></div><div class="decision-output"></div><div class="toolbar"><button type="button" class="copy-decision">Copy decision summary</button><button type="button" class="reset-decision">Reset decision</button></div></div></section>
+</main>
+<footer class="footer">Generated 2026-11-25T22:36:07+00:00 · T18 2026-11-25 · <a href="./data/official_facts.json">Machine-readable facts</a> · <a href="./data/link_report.json">Link report</a> · <a href="./assets/style.css">Stylesheet</a> · <a href="./build_audit.py">Generator</a> · <a href="https://github.com/kanlerxz87-cyber/NYFun1/blob/b07631405e316015f0a3eeb255f5f2d27facd610/COORDINATION.md" target="_blank" rel="noopener noreferrer">Coordination board</a></footer>
+<script>
+
+(function () {
+  const filterState = new Map();
+
+  function stateFor(id) {
+    if (!filterState.has(id)) filterState.set(id, { q: "", flagged: false });
+    return filterState.get(id);
+  }
+
+  function applyFilters(table) {
+    const state = stateFor(table.id);
+    table.querySelectorAll("tbody tr").forEach(function (row) {
+      const matchQ = !state.q || (row.dataset.search || "").indexOf(state.q) !== -1;
+      const matchF = !state.flagged || row.dataset.flagged === "1";
+      row.classList.toggle("hidden", !(matchQ && matchF));
+    });
+  }
+
+  document.addEventListener("input", function (event) {
+    const input = event.target.closest("[data-table-target]");
+    if (!input) return;
+    const table = document.getElementById(input.dataset.tableTarget);
+    if (!table) return;
+    const state = stateFor(table.id);
+    state.q = input.value.toLowerCase();
+    applyFilters(table);
+  });
+
+  document.addEventListener("click", function (event) {
+    const flagBtn = event.target.closest("[data-flag-target]");
+    if (flagBtn) {
+      const table = document.getElementById(flagBtn.dataset.flagTarget);
+      if (table) {
+        const state = stateFor(table.id);
+        state.flagged = flagBtn.getAttribute("aria-pressed") !== "true";
+        flagBtn.setAttribute("aria-pressed", state.flagged ? "true" : "false");
+        flagBtn.textContent = state.flagged ? "Show all rows" : "Show flagged only";
+        applyFilters(table);
+      }
+      return;
+    }
+    const cardBtn = event.target.closest("[data-card-target]");
+    if (cardBtn) {
+      const table = document.getElementById(cardBtn.dataset.cardTarget);
+      if (table) {
+        const wrap = table.closest(".table-wrap");
+        const on = cardBtn.getAttribute("aria-pressed") !== "true";
+        cardBtn.setAttribute("aria-pressed", on ? "true" : "false");
+        cardBtn.textContent = on ? "Table view" : "Card view";
+        if (wrap) wrap.dataset.forceCards = on ? "true" : "false";
+      }
+      return;
+    }
+  });
+
+  function escapeHTML(value) {
+    return String(value).replace(/[&<>"']/g, function (ch) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[ch];
+    });
+  }
+
+  document.querySelectorAll("[data-decision-panel]").forEach(function (panel) {
+    const key = panel.dataset.storageKey || "t18-decision-v1";
+    const radios = Array.prototype.slice.call(panel.querySelectorAll("input[type=radio]"));
+    const output = panel.querySelector(".decision-output");
+    function render() {
+      const selectedValue = localStorage.getItem(key) || "";
+      radios.forEach(function (radio) {
+        radio.checked = radio.value === selectedValue;
+        const choice = radio.closest(".choice");
+        if (choice) choice.classList.toggle("selected", radio.checked);
+      });
+      const selected = radios.find(function (radio) { return radio.checked; });
+      if (!selected) {
+        output.innerHTML = "<strong>No decision path selected yet.</strong> Complete the review workflow before choosing Hold, Re-verify, Book refundable, or Integrate.";
+      } else {
+        output.innerHTML = "<strong>Selected:</strong> " + escapeHTML(selected.dataset.title) +
+          "<br><strong>Rationale:</strong> " + escapeHTML(selected.dataset.rationale) +
+          "<br><strong>Caveat:</strong> " + escapeHTML(selected.dataset.caveat);
+      }
+    }
+    radios.forEach(function (radio) {
+      radio.addEventListener("change", function () {
+        localStorage.setItem(key, radio.value);
+        render();
+      });
+    });
+    const copy = panel.querySelector(".copy-decision");
+    if (copy) {
+      copy.addEventListener("click", function () {
+        const selected = radios.find(function (radio) { return radio.checked; });
+        const text = selected
+          ? "T18 decision: " + selected.dataset.title + "\nRationale: " + selected.dataset.rationale + "\nCaveat: " + selected.dataset.caveat
+          : "T18 decision: none selected";
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(function () {
+            copy.textContent = "Copied";
+            setTimeout(function () { copy.textContent = "Copy decision summary"; }, 1200);
+          }).catch(function () { copy.textContent = "Copy unavailable"; });
+        } else {
+          copy.textContent = "Copy unavailable";
+        }
+      });
+    }
+    const reset = panel.querySelector(".reset-decision");
+    if (reset) {
+      reset.addEventListener("click", function () {
+        localStorage.removeItem(key);
+        render();
+      });
+    }
+    render();
+  });
+
+  document.querySelectorAll("[data-checklist]").forEach(function (root) {
+    const key = root.dataset.checklistKey;
+    const checks = Array.prototype.slice.call(root.querySelectorAll(".review-check"));
+    const bar = root.querySelector(".progress > div");
+    const output = root.querySelector(".checklist-output");
+    function load() {
+      try { return JSON.parse(localStorage.getItem(key) || "[]"); } catch (e) { return []; }
+    }
+    function save(values) { localStorage.setItem(key, JSON.stringify(values)); }
+    function render() {
+      const done = load();
+      checks.forEach(function (check) {
+        check.checked = done.indexOf(Number(check.dataset.step)) !== -1;
+      });
+      const count = checks.filter(function (check) { return check.checked; }).length;
+      const total = checks.length || 1;
+      if (bar) bar.style.width = (count / total * 100) + "%";
+      if (output) output.innerHTML = "<strong>" + count + " of " + checks.length + " review steps complete.</strong>";
+    }
+    checks.forEach(function (check) {
+      check.addEventListener("change", function () {
+        const step = Number(check.dataset.step);
+        let done = load().filter(function (item) { return item !== step; });
+        if (check.checked) done.push(step);
+        save(done);
+        render();
+      });
+    });
+    const reset = root.querySelector(".reset-checklist");
+    if (reset) {
+      reset.addEventListener("click", function () {
+        localStorage.removeItem(key);
+        render();
+      });
+    }
+    render();
+  });
+})();
+
+</script>
+</body>
+</html>

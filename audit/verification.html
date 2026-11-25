@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta name="description" content="Source registry, internal-link checker, and source-link checker.">
+<title>Verification &amp; link checker · T18 Verified Audit</title>
+<style>
+/* T18 Verified Audit — self-contained, no external fonts, images, or scripts. */
+:root {
+  --ink: #14213d;
+  --ink-2: #243b5a;
+  --paper: #f7f4ec;
+  --card: #fffdf8;
+  --line: #d9d2c2;
+  --muted: #64748b;
+  --teal: #0f766e;
+  --teal-soft: #d7f0ec;
+  --amber: #b45309;
+  --amber-soft: #fef3c7;
+  --red: #9f1239;
+  --red-soft: #ffe4e6;
+  --blue: #1d4ed8;
+  --blue-soft: #dbeafe;
+  --shadow: 0 10px 30px rgba(20, 33, 61, .08);
+  --radius: 16px;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 10% 0%, rgba(15,118,110,.12), transparent 32rem),
+    radial-gradient(circle at 90% 5%, rgba(180,83,9,.10), transparent 28rem),
+    var(--paper);
+  line-height: 1.55;
+}
+a { color: var(--blue); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:hover { color: var(--teal); }
+.skip { position: absolute; left: -999px; }
+.skip:focus { left: 12px; top: 12px; z-index: 100; padding: 10px 14px; background: var(--card); border-radius: 8px; }
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(247,244,236,.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+.header-inner { max-width: 1180px; margin: 0 auto; padding: 12px 18px; display: flex; gap: 18px; align-items: center; }
+.brand { font-weight: 800; letter-spacing: -.02em; color: var(--ink); text-decoration: none; white-space: nowrap; }
+.brand span { color: var(--teal); }
+.nav { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: thin; padding-bottom: 2px; }
+.nav a { white-space: nowrap; text-decoration: none; color: var(--ink-2); font-size: .88rem; padding: 6px 9px; border-radius: 999px; border: 1px solid transparent; }
+.nav a:hover { background: #fff; border-color: var(--line); }
+.nav a[aria-current="page"] { background: var(--ink); color: #fff; border-color: var(--ink); }
+main { max-width: 1180px; margin: 0 auto; padding: 28px 18px 64px; }
+.hero {
+  padding: 30px; border: 1px solid var(--line); border-radius: 24px;
+  background: linear-gradient(135deg, rgba(255,253,248,.96), rgba(215,240,236,.72));
+  box-shadow: var(--shadow); margin-bottom: 24px;
+}
+.eyebrow { text-transform: uppercase; letter-spacing: .14em; font-weight: 800; font-size: .72rem; color: var(--teal); margin: 0 0 8px; }
+h1 { font-size: clamp(2rem, 5vw, 3.4rem); line-height: 1.05; letter-spacing: -.045em; margin: 0 0 12px; }
+h2 { font-size: clamp(1.4rem, 3vw, 2rem); letter-spacing: -.025em; margin: 34px 0 12px; }
+h3 { font-size: 1.08rem; margin: 0 0 8px; }
+p { margin: 0 0 12px; }
+.lede { font-size: 1.12rem; color: var(--ink-2); max-width: 78ch; }
+.meta-line { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+.meta-pill { font-size: .82rem; padding: 6px 10px; border: 1px solid var(--line); border-radius: 999px; background: rgba(255,255,255,.7); }
+.notice { border-left: 4px solid var(--amber); background: var(--amber-soft); padding: 14px 16px; border-radius: 0 12px 12px 0; margin: 18px 0; }
+.notice strong { color: var(--amber); }
+.grid { display: grid; gap: 14px; }
+.kpis { grid-template-columns: repeat(4, minmax(0,1fr)); }
+.cards-2 { grid-template-columns: repeat(2, minmax(0,1fr)); }
+.cards-3 { grid-template-columns: repeat(3, minmax(0,1fr)); }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; box-shadow: var(--shadow); }
+.kpi { border-top: 4px solid var(--teal); }
+.kpi .number { font-size: 1.8rem; font-weight: 850; letter-spacing: -.04em; display: block; }
+.kpi .label { color: var(--muted); font-size: .86rem; }
+.card p:last-child, .card ul:last-child { margin-bottom: 0; }
+ul, ol { padding-left: 1.25rem; }
+li { margin: 5px 0; }
+.section { margin-top: 30px; }
+.section-head { display: flex; align-items: end; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.count { color: var(--muted); font-size: .9rem; }
+.toolbar { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin: 12px 0; }
+input[type="search"], button, select {
+  font: inherit; border: 1px solid var(--line); background: #fff; color: var(--ink);
+  border-radius: 10px; padding: 8px 11px;
+}
+input[type="search"] { min-width: min(320px, 100%); }
+button { cursor: pointer; font-weight: 650; }
+button:hover { border-color: var(--teal); }
+button.primary { background: var(--ink); color: #fff; border-color: var(--ink); }
+button.primary:hover { background: var(--teal); }
+button[aria-pressed="true"] { background: var(--teal); color: #fff; border-color: var(--teal); }
+.table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius); background: var(--card); box-shadow: var(--shadow); }
+table { width: 100%; border-collapse: collapse; font-size: .9rem; }
+caption { text-align: left; padding: 12px 14px; color: var(--muted); font-weight: 650; }
+th, td { padding: 11px 12px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
+th { background: #eee9dc; color: var(--ink); font-size: .76rem; text-transform: uppercase; letter-spacing: .06em; position: sticky; top: 0; }
+tbody tr:hover { background: #faf7ef; }
+tbody tr:last-child td { border-bottom: 0; }
+td.blank-value { background: repeating-linear-gradient(135deg, rgba(180,83,9,.06), rgba(180,83,9,.06) 6px, transparent 6px, transparent 12px); }
+.blank { color: var(--amber); font-weight: 750; }
+.badge { display: inline-block; font-size: .72rem; font-weight: 800; padding: 3px 8px; border-radius: 999px; border: 1px solid transparent; margin: 1px 3px 1px 0; }
+.badge.flag { background: var(--amber-soft); color: var(--amber); border-color: #f3cf77; }
+.badge.ok { background: var(--teal-soft); color: var(--teal); border-color: #9bd8cf; }
+.badge.info { background: var(--blue-soft); color: var(--blue); border-color: #a9c8ff; }
+.badge.warn { background: var(--red-soft); color: var(--red); border-color: #f5b5c2; }
+.source-link { font-weight: 700; font-size: .82rem; }
+.extra-links { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 6px; }
+.extra-links a { font-size: .75rem; }
+.flags-cell { max-width: 280px; }
+.flags-cell .badge { white-space: normal; }
+.scroll-note { color: var(--muted); font-size: .82rem; margin: 6px 0 0; }
+.callout { background: var(--card); border: 1px solid var(--line); border-left: 4px solid var(--teal); border-radius: 0 var(--radius) var(--radius) 0; padding: 16px 18px; margin: 16px 0; }
+.callout.warn { border-left-color: var(--amber); }
+.callout.stop { border-left-color: var(--red); }
+.choice-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; }
+.choice { border: 1px solid var(--line); border-radius: 14px; padding: 16px; background: #fff; }
+.choice label { display: block; font-weight: 800; cursor: pointer; }
+.choice small { color: var(--muted); }
+.choice.selected { border-color: var(--teal); box-shadow: 0 0 0 3px var(--teal-soft); }
+.decision-output { margin-top: 14px; padding: 14px; border-radius: 12px; background: var(--ink); color: #fff; }
+.decision-output a { color: #9ee6dc; }
+.checklist { list-style: none; padding: 0; }
+.checklist li { display: flex; gap: 10px; align-items: flex-start; padding: 11px 0; border-bottom: 1px solid var(--line); }
+.checklist input { margin-top: 4px; }
+.progress { height: 9px; border-radius: 999px; background: #e6e0d2; overflow: hidden; margin: 10px 0 16px; }
+.progress > div { height: 100%; width: 0; background: var(--teal); transition: width .2s ease; }
+.code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .82rem; background: #eee9dc; padding: 2px 5px; border-radius: 5px; }
+.footer { max-width: 1180px; margin: 0 auto; padding: 22px 18px 40px; border-top: 1px solid var(--line); color: var(--muted); font-size: .85rem; }
+.pill-row { display: flex; flex-wrap: wrap; gap: 6px; }
+.hidden { display: none !important; }
+.source-domain { color: var(--muted); font-size: .72rem; display: block; }
+.details { border: 1px solid var(--line); border-radius: 12px; background: #fff; padding: 10px 14px; margin: 10px 0; }
+.summary-title { font-weight: 750; cursor: pointer; }
+.mini { font-size: .82rem; color: var(--muted); }
+.status-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--amber); margin-right: 6px; }
+.status-dot.ok { background: var(--teal); }
+.status-dot.info { background: var(--blue); }
+@media (max-width: 960px) {
+  .kpis { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .cards-3, .cards-2, .choice-grid { grid-template-columns: 1fr; }
+  .header-inner { align-items: flex-start; flex-direction: column; gap: 8px; }
+}
+@media (max-width: 760px) {
+  main { padding: 20px 12px 48px; }
+  .hero { padding: 22px 18px; border-radius: 18px; }
+  .table-wrap { overflow: visible; border: 0; background: transparent; box-shadow: none; }
+  table, tbody, tr, td { display: block; width: 100%; }
+  thead { display: none; }
+  tbody { display: grid; gap: 12px; }
+  tbody tr { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 10px; box-shadow: var(--shadow); }
+  td { border: 0; border-bottom: 1px dashed var(--line); padding: 8px 4px; display: grid; grid-template-columns: 120px 1fr; gap: 10px; }
+  td:last-child { border-bottom: 0; }
+  td::before { content: attr(data-label); font-size: .7rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); font-weight: 800; padding-top: 2px; }
+  td.blank-value { background: transparent; }
+  th { position: static; }
+}
+@media print {
+  .site-header, .toolbar, .footer { display: none; }
+  body { background: #fff; }
+  .hero, .card, .table-wrap { box-shadow: none; }
+  a { color: #000; }
+}
+
+/* Explicit card view toggle (same layout as small screens). */
+.table-wrap[data-force-cards="true"] { overflow: visible; border: 0; background: transparent; box-shadow: none; }
+.table-wrap[data-force-cards="true"] table,
+.table-wrap[data-force-cards="true"] tbody,
+.table-wrap[data-force-cards="true"] tr,
+.table-wrap[data-force-cards="true"] td { display: block; width: 100%; }
+.table-wrap[data-force-cards="true"] thead { display: none; }
+.table-wrap[data-force-cards="true"] tbody { display: grid; gap: 12px; }
+.table-wrap[data-force-cards="true"] tbody tr { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 10px; box-shadow: var(--shadow); }
+.table-wrap[data-force-cards="true"] td { border: 0; border-bottom: 1px dashed var(--line); padding: 8px 4px; display: grid; grid-template-columns: 120px 1fr; gap: 10px; }
+.table-wrap[data-force-cards="true"] td:last-child { border-bottom: 0; }
+.table-wrap[data-force-cards="true"] td::before { content: attr(data-label); font-size: .7rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); font-weight: 800; padding-top: 2px; }
+.table-wrap[data-force-cards="true"] th { position: static; }
+
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header"><div class="header-inner"><a class="brand" href="./index.html">Verified <span>Audit</span></a>
+<nav class="nav" aria-label="Audit sections"><a href="./index.html">Executive summary</a><a href="./hotels.html">Hotels</a><a href="./restaurants.html">Restaurants</a><a href="./activities.html">Activities</a><a href="./social.html">Social</a><a href="./transit.html">Transit</a><a href="./questions.html">Questions</a><a href="./suggestions.html">Suggestions</a><a href="./flagged.html">Flagged</a><a href="./repo-review.html">Repo review</a><a href="./verification.html" aria-current="page">Verification</a><a href="./sources.html">Sources</a></nav>
+</div></header>
+<main id="main">
+<div class="hero"><p class="eyebrow">Build-time checks</p><h1>Verification &amp; link checker</h1><p class="lede">The static build checks relative internal links on disk, validates HTTPS source URL syntax, and confirms every rendered table row has a source link.</p><div class="meta-line"><span class="meta-pill">2026-11-25</span><span class="meta-pill">Stdlib-only generator</span><span class="meta-pill">No browser-side network calls</span></div></div><div class="grid kpis section"><div class="card kpi"><span class="number">PASS</span><span class="label">Overall checker status</span></div><div class="card kpi"><span class="number">17</span><span class="label">Unique internal links</span></div><div class="card kpi"><span class="number">136</span><span class="label">Unique HTTPS source URLs</span></div><div class="card kpi"><span class="number">939 / 939</span><span class="label">Rows with source link</span></div></div><div class="callout warn"><strong>External pages are not re-fetched by the generator</strong><p>T18 fetched official pages during verification and recorded the capture log. The static build validates URL syntax and source-link presence; it does not claim live HTTP 200 for external pages. <a href="https://www.mta.info/fares-tolls/subway-bus" target="_blank" rel="noopener noreferrer">Example official source</a>.</p></div><section class="section" id="link-report"><div class="section-head"><h2>Checker summary</h2><span class="count">5 rows</span></div><p class="lede">Full machine-readable output is in data/link_report.json.</p><div class="toolbar"><input type="search" placeholder="Filter rows…" data-table-target="link-report" aria-label="Filter link-report rows"><button type="button" data-flag-target="link-report" aria-pressed="false">Show flagged only</button><button type="button" data-card-target="link-report" aria-pressed="false">Card view</button><span class="count">5 rows</span></div><div class="table-wrap" data-force-cards="false"><table id="link-report"><caption>Build-time link and source-link checker summary</caption><thead><tr><th scope="col">Check</th><th scope="col">Result</th><th scope="col">Status</th><th scope="col">Note</th><th scope="col">Official source</th><th scope="col">Flags</th></tr></thead><tbody><tr data-search="internal links 17 unique local links checked; 0 broken pass relative hrefs were resolved against audit/ and checked on disk; external and anchor links were skipped." data-flagged="0"><td data-label="Check">Internal links</td><td data-label="Result">17 unique local links checked; 0 broken</td><td data-label="Status">pass</td><td data-label="Note">Relative hrefs were resolved against audit/ and checked on disk; external and anchor links were skipped.</td><td data-label="Official source"><a class="source-link" href="sources.html">Source registry</a></td><td data-label="Flags"><span class="badge ok">No flag</span></td></tr><tr data-search="source url syntax 136 unique https source urls; 0 missing; 0 non-https pass row source urls and extra official-source urls must be unique https links; internal source-registry links are handled as internal links." data-flagged="0"><td data-label="Check">Source URL syntax</td><td data-label="Result">136 unique HTTPS source URLs; 0 missing; 0 non-HTTPS</td><td data-label="Status">pass</td><td data-label="Note">Row source URLs and extra official-source URLs must be unique HTTPS links; internal source-registry links are handled as internal links.</td><td data-label="Official source"><a class="source-link" href="sources.html">Source registry</a></td><td data-label="Flags"><span class="badge ok">No flag</span></td></tr><tr data-search="row source-link coverage 939 of 939 rendered rows include a source link pass every generated table row is checked for a class=&quot;source-link&quot; anchor." data-flagged="0"><td data-label="Check">Row source-link coverage</td><td data-label="Result">939 of 939 rendered rows include a source link</td><td data-label="Status">pass</td><td data-label="Note">Every generated table row is checked for a class=&quot;source-link&quot; anchor.</td><td data-label="Official source"><a class="source-link" href="sources.html">Source registry</a></td><td data-label="Flags"><span class="badge ok">No flag</span></td></tr><tr data-search="external live http status not re-fetched from static build info external official pages were fetched during t18 verification and recorded in the source registry. the static generator does not re-fetch them and does not claim live http 200 status. live http 200 not claimed" data-flagged="1"><td data-label="Check">External live HTTP status</td><td data-label="Result">Not re-fetched from static build</td><td data-label="Status">info</td><td data-label="Note">External official pages were fetched during T18 verification and recorded in the source registry. The static generator does not re-fetch them and does not claim live HTTP 200 status.</td><td data-label="Official source"><a class="source-link" href="sources.html">Source registry</a></td><td data-label="Flags"><span class="badge flag">Live HTTP 200 not claimed</span></td></tr><tr data-search="overall status pass pass pass means no broken internal links, no missing row source links, no missing row source urls, and no non-https source urls." data-flagged="0"><td data-label="Check">Overall status</td><td data-label="Result">PASS</td><td data-label="Status">pass</td><td data-label="Note">Pass means no broken internal links, no missing row source links, no missing row source URLs, and no non-HTTPS source URLs.</td><td data-label="Official source"><a class="source-link" href="sources.html">Source registry</a></td><td data-label="Flags"><span class="badge ok">No flag</span></td></tr></tbody></table></div><p class="scroll-note">Dashed cells are blank+flag. Use Card view or a narrow screen for card layout. Every row includes an official-source link.</p></section><section class="section" id="verification-sources"><div class="section-head"><h2>Source registry / verification log</h2><span class="count">29 rows</span></div><p class="lede">Each row records what was fetched and what the source was used for.</p><div class="toolbar"><input type="search" placeholder="Filter rows…" data-table-target="verification-sources" aria-label="Filter verification-sources rows"><button type="button" data-flag-target="verification-sources" aria-pressed="false">Show flagged only</button><button type="button" data-card-target="verification-sources" aria-pressed="false">Card view</button><span class="count">29 rows</span></div><div class="table-wrap" data-force-cards="false"><table id="verification-sources"><caption>Official source registry and T18 fetch log</caption><thead><tr><th scope="col">Rank</th><th scope="col">Title</th><th scope="col">Used for</th><th scope="col">Verification log</th><th scope="col">Official source</th><th scope="col">Flags</th></tr></thead><tbody><tr data-search="official michelin guide all the stars in the michelin guide to new york city 2025 72-name 2025 star ceremony roster; 5/15/52 counts; 4 green stars fetched chunks 0–1 on 2026-11-25" data-flagged="0"><td data-label="Rank">Official MICHELIN Guide</td><td data-label="Title">All the stars in the MICHELIN Guide to New York City 2025</td><td data-label="Used for">72-name 2025 star ceremony roster; 5/15/52 counts; 4 Green Stars</td><td data-label="Verification log">Fetched chunks 0–1 on 2026-11-25</td><td data-label="Official source"><a class="source-link" href="https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025" target="_blank" rel="noopener noreferrer">Official MICHELIN Guide<span class="source-domain">guide.michelin.com</span></a></td><td data-label="Flags"><span class="badge ok">No flag</span></td></tr><tr data-search="official michelin guide nyc and surroundings restaurant listing filters live distinction counts 5/14/50=69; 76 bib gourmand; 224 selected fetched chunk 0 on 2026-11-25" data-flagged="0"><td data-label="Rank">Official MICHELIN Guide</td><td data-label="Title">NYC and surroundings restaurant listing filters</td><td data-label="Used for">Live distinction counts 5/14/50=69; 76 Bib Gourmand; 224 Selected</td><td data-label="Verification log">Fetched chunk 0 on 2026-11-25</td><td data-label="Official source"><a class="source-link" href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurants" target="_blank" rel="noopener noreferrer">Official MICHELIN Guide<span class="source-domain">guide.michelin.com</span></a></td><td data-label="Flags"><span class="badge ok">No flag</span></td></tr><tr data-search="official michelin guide nyc 3 stars list live 3-star filtered list fetched chunk 0 on 2026-11-25" data-flagged="0"><td data-label="Rank">Official MICHELIN Guide</td><td data-label="Title">NYC 3 Stars list</td><td data-label="Used for">Live 3-star filtered list</td><td data-label="Verification log">Fetched chunk 0 on 2026-11-25</td><td data-label="Official source"><a class="source-link" href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurants/3-stars-michelin" target="_blank" rel="noopener noreferrer">Official MICHELIN Guide<span class="source-domain">guide.michelin.com</span></a></td><td data-label="Flags"><span class="badge ok">No flag</span></td></tr><tr data-search="official michelin guide nyc 2 stars list live 2-star filtered list fetched chunks 0–4 on 2026-11-25" data-flagged="0"><td data-label="Rank">Official MICHELIN Guide</td><td data-label="Title">NYC 2 Stars list</td><td data-label="Used for">Live 2-star filtered list</td><td data-label="Verification log">Fetched chunks 0–4 on 2026-11-25</td><td data-label="Official source"><a class="source-link" href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurants/2-stars-michelin" target="_blank" rel="noopener noreferrer">Official MICHELIN Guide<span class="source-domain">guide.michelin.com</span></a></td><td data-label="Flags"><span class="badge ok">No flag</span></td></tr><tr data-search="official michelin guide nyc 1 star list live 1-star filtered list fetched chunk 0 on 2026-11-25" data-flagged="0"><td data-label="Rank">Official MICHELIN Guide</td><td data-label="Title">NYC 1 Star list</td><td data-label="Used for">Live 1-star filtered list</td><td data-label="Verification log">Fetched chunk 0 on 2026-11-25</td><td data-label="Official source"><a class="source-link" href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurants/1-star-michelin" target="_blank" rel="noopener noreferrer">Official MICHELIN Guide<span class="source-domain">guide.michelin.com</span></a></td><td data-label="Flags"><span class="badge ok">No flag</span></td></tr><tr data-search="official michelin guide nyc 1 star list page 2 live 1-star filtered list, final two names fetched chunk 0 on 2026-11-25" data-flagged="0"><td data-label="Rank">Official MICHELIN Guide</td><td data-label="Title">NYC 1 Star list page 2</td><td data-label="Used for">Live 1-star filtered list, final two names</td><td data-label="Verification log">Fetched chunk 0 on 2026-11-25</td><td data-label="Official source"><a class="source-link" href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurants/1-star-michelin/page/2" target="_blank" rel="noopener noreferrer">Official MICHELIN Guide<span class="source-domain">guide.michelin.com</span></a></td><td data-label="Flags"><span class="badge ok">No flag</span></td></tr><tr data-search="official michelin guide nyc bib gourmand list bib gourmand count and distinction meaning fetched chunk 0 on 2026-11-25" data-flagged="0"><td data-label="Rank">Official MICHELIN Guide</td><td data-label="Title">NYC Bib Gourmand list</td><td data-label="Used for">Bib Gourmand count and distinction meaning</td><td data-label="Verification log">Fetched chunk 0 on 2026-11-25</td><td data-label="Official source"><a class="source-link" href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurants/bib-gourmand" target="_blank" rel="noopener noreferrer">Official MICHELIN Guide<span class="source-domain">guide.michelin.com</span></a></td><td data-label="Flags"><span class="badge ok">No flag</span></td></tr><tr data-search="official michelin hotel page arlo soho michelin hotel page address, 325 rooms, guest score 18.4/20, compact queen rooms fetched chunk 0 on 2026-11-25" data-flagged="0"><td data-label="Rank">Official MICHELIN hotel page</td><td data-label="Title">Arlo Soho MICHELIN hotel page</td><td data-label="Used for">Address, 325 rooms, guest score 18.4/20, compact queen rooms</td><td data-label="Verification log">Fetched chunk 0 on 2026-11-25</td><td data-label="Official source"><a class="source-link" href="https://guide.michelin.com/us/en/hotels-stays/nyc/arlo-soho-8260" target="_blank" rel="noopener noreferrer">Official MICHELIN hotel page<span class="source-domain">guide.michelin.com</span></a></td><td data-label="Flags"><span class="badge ok">No flag</span></td></tr><tr data-search="government agency mta subway and bus fares $3 base fare, $7.25 express bus, $35 seven-day fare cap, transfer rules fetched chunk 0 on 2026-11-25" data-flagged="0"><td data-label="Rank">Government agency</td><td data-label="Title">MTA subway and bus fares</td><td data-label="Used for">$3 base fare, $7.25 express bus, $35 seven-day fare cap, transfer rules</td><td data-label="Verification log">Fetched chunk 0 on 2026-11-25</td><td data-label="Official source"><a class="source-link" href="https://www.mta.info/fares-tolls/subway-bus" target="_blank" rel="noopener noreferrer">Government agency<span class="source-domain">www.mta.info</span></a></td><td data-label="Flags"><span class="badge ok">No flag</span></td></tr><tr data-search="government agency mta fares and tolls fare summary fetched chunk 0 on 2026-11-25" data-flagged="0"><td data-label="Rank">Government agency</td><td data-label="Title">MTA fares and tolls</td><td data-label="Used for">Fare summary</td><td data-label="Verification log">Fetched chunk 0 on 2026-11-25</td><td data-label="Official source"><a class="source-link" href="https://www.mta.info/fares-tolls" target="_blank" rel="noopener noreferrer">Government agency<span class="source-domain">www.mta.info</span></a></td><td data-label="Flags"><span class="badge ok">No flag</span></td></tr><tr data-search="official venue moma visit address, adult admission, daily hours, friday hours, closures, uniqlo friday nights fetched chunk 0 on 2026-11-25" data-flagged="0"><td data-label="Rank">Official venue</td><td data-label="Title">MoMA Visit</td><td data-label="Used for">Address, adult admission, daily hours, Friday hours, closures, UNIQLO Friday Nights</td><td data-label="Verification log">Fetched chunk 0 on 2026-11-25</td><td data-label="Official source"><a class="source-link" href="https://www.moma.org/visit/" target="_blank" rel="noopener noreferrer">Official venue<span class="source-domain">www.moma.org</span></a></td><td data-label="Flags"><span class="badge ok">No flag</span></td></tr><tr data-search="official venue the met plan your visit / tickets adult admission, address, pay-what-you-wish eligibility fetched chunk 0 on 2026-11-25" data-flagged="0"><td data-label="Rank">Official venue</td><td data-label="Title">The Met Plan Your Visit / Tickets</td><td data-label="Used for">Adult admission, address, pay-what-you-wish eligibility</td><td data-label="Verification log">Fetched chunk 0 on 2026-11-25</td><td data-label="Official source"><a class="source-link" href="https://www.metmuseum.org/visit/plan-your-visit" target="_blank" rel="noopener noreferrer">Official venue<span class="source-domain">www.metmuseum.org</span></a></td><td data-label="Flags"><span class="badge ok">No flag</span></td></tr><tr data-search="official venue the met home page general admission $30; closed wednesdays fetched chunk 0 on 2026-11-25" data-flagged="0"><td data-label="Rank">Official venue</td><td data-label="Title">The Met home page</td><td data-label="Used for">General admission $30; closed Wednesdays</td><td data-label="Verification log">Fetched chunk 0 on 2026-11-25</td><td data-label="Official source"><a class="source-link" href="https://www.metmuseum.org/" target="_blank" rel="noopener noreferrer">Official venue<span class="source-domain">www.metmuseum.org</span></a></td><td data-label="Flags"><span class="badge ok">No flag</span></td></tr><tr data-search="official venue amnh hours and temporary hall closures daily 10 am–5:30 pm; thanksgiving/christmas closures; extended holiday hours fetched chunk 1 on 2026-11-25" data-flagged="0"><td data-label="Rank">Official venue</td><td data-label="Title">AMNH Hours and Temporary Hall Closures</td><td data-label="Used for">Daily 10 am–5:30 pm; Thanksgiving/Christmas closures; extended holiday hours</td><td data-label="Verification log">Fetched chunk 1 on 2026-11-25</td><td data-label="Official source"><a class="source-link" href="https://www.amnh.org/plan-your-visit/hours" target="_blank" rel="noopener noreferrer">Official venue<span class="source-domain">www.amnh.org</span></a></td><td data-label="Flags"><span class="badge ok">No flag</span></td></tr><tr data-search="official venue amnh tickets &amp; admission standard pricing option exists; numeric standard adult price not printed fetched chunk 0 on 2026-11-25" data-flagged="0"><td data-label="Rank">Official venue</td><td data-label="Title">AMNH Tickets &amp; Admission</td><td data-label="Used for">Standard Pricing option exists; numeric standard adult price not printed</td><td data-label="Verification log">Fetched chunk 0 on 2026-11-25</td><td data-label="Official source"><a class="source-link" href="https://tickets.amnh.org/select" target="_blank" rel="noopener noreferrer">Official venue<span class="source-domain">tickets.amnh.org</span></a></td><td data-label="Flags"><span class="badge ok">No flag</span></td></tr><tr data-search="government agency nps statue of liberty hours daily 9 am–4:30 pm; last statue entry 3:30 pm; ferry-only access; 2026 closures fetched chunk 0 on 2026-11-25" data-flagged="0"><td data-label="Rank">Government agency</td><td data-label="Title">NPS Statue of Liberty hours</td><td data-label="Used for">Daily 9 AM–4:30 PM; last statue entry 3:30 PM; ferry-only access; 2026 closures</td><td data-label="Verification log">Fetched chunk 0 on 2026-11-25</td><td data-label="Official source"><a class="source-link" href="https://www.nps.gov/stli/planyourvisit/hours.htm" target="_blank" rel="noopener noreferrer">Government agency<span class="source-domain">www.nps.gov</span></a></td><td data-label="Flags"><span class="badge ok">No flag</span></td></tr><tr data-search="official ferry concessioner statue city cruises tickets official ticket provider, inclusions, starting-at price, departure points fetched chunk 0 on 2026-11-25" data-flagged="0"><td data-label="Rank">Official ferry concessioner</td><td data-label="Title">Statue City Cruises tickets</td><td data-label="Used for">Official ticket provider, inclusions, starting-at price, departure points</td><td data-label="Verification log">Fetched chunk 0 on 2026-11-25</td><td data-label="Official source"><a class="source-link" href="https://www.statuecitycruises.com/tickets" target="_blank" rel="noopener noreferrer">Official ferry concessioner<span class="source-domain">www.statuecitycruises.com</span></a></td><td data-label="Flags"><span class="badge ok">No flag</span></td></tr><tr data-search="official venue high line visitor info amp seasonal hours, rail yard preserve closes at dusk, park rules, wheelchair requests fetched chunk 1 on 2026-11-25" data-flagged="0"><td data-label="Rank">Official venue</td><td data-label="Title">High Line Visitor Info AMP</td><td data-label="Used for">Seasonal hours, Rail Yard Preserve closes at dusk, park rules, wheelchair requests</td><td data-label="Verification log">Fetched chunk 1 on 2026-11-25</td><td data-label="Official source"><a class="source-link" href="https://www.thehighline.org/visit/?amp=1" target="_blank" rel="noopener noreferrer">Official venue<span class="source-domain">www.thehighline.org</span></a></td><td data-label="Flags"><span class="badge ok">No flag</span></td></tr><tr data-search="official venue chelsea market visit address, market hours, holiday hours, organized tour policy fetched chunk 0 on 2026-11-25" data-flagged="0"><td data-label="Rank">Official venue</td><td data-label="Title">Chelsea Market Visit</td><td data-label="Used for">Address, market hours, holiday hours, organized tour policy</td><td data-label="Verification log">Fetched chunk 0 on 2026-11-25</td><td data-label="Official source"><a class="source-link" href="https://www.chelseamarket.com/visit/" target="_blank" rel="noopener noreferrer">Official venue<span class="source-domain">www.chelseamarket.com</span></a></td><td data-label="Flags"><span class="badge ok">No flag</span></td></tr><tr data-search="official venue top of the rock tickets open 8 am–12 am live banner; timed admission from $42 fetched chunk 0 on 2026-11-25" data-flagged="0"><td data-label="Rank">Official venue</td><td data-label="Title">Top of the Rock tickets</td><td data-label="Used for">OPEN 8 AM–12 AM live banner; timed admission from $42</td><td data-label="Verification log">Fetched chunk 0 on 2026-11-25</td><td data-label="Official source"><a class="source-link" href="https://www.rockefellercenter.com/tickets/top-of-the-rock-observation-deck/" target="_blank" rel="noopener noreferrer">Official venue<span class="source-domain">www.rockefellercenter.com</span></a></td><td data-label="Flags"><span class="badge ok">No flag</span></td></tr><tr data-search="official venue empire state building hours &amp; directions open 365 days; rolling nov–dec 2026 hours; 2027 hours not published fetched chunk 0 on 2026-11-25" data-flagged="0"><td data-label="Rank">Official venue</td><td data-label="Title">Empire State Building Hours &amp; Directions</td><td data-label="Used for">Open 365 days; rolling Nov–Dec 2026 hours; 2027 hours not published</td><td data-label="Verification log">Fetched chunk 0 on 2026-11-25</td><td data-label="Official source"><a class="source-link" href="https://www.esbnyc.com/hours-directions" target="_blank" rel="noopener noreferrer">Official venue<span class="source-domain">www.esbnyc.com</span></a></td><td data-label="Flags"><span class="badge ok">No flag</span></td></tr><tr data-search="official venue empire state building tickets 86th floor tickets from $46; 102nd + 86th from $81 fetched chunk 0 on 2026-11-25" data-flagged="0"><td data-label="Rank">Official venue</td><td data-label="Title">Empire State Building tickets</td><td data-label="Used for">86th Floor tickets from $46; 102nd + 86th from $81</td><td data-label="Verification log">Fetched chunk 0 on 2026-11-25</td><td data-label="Official source"><a class="source-link" href="https://www.esbnyc.com/buy-tickets" target="_blank" rel="noopener noreferrer">Official venue<span class="source-domain">www.esbnyc.com</span></a></td><td data-label="Flags"><span class="badge ok">No flag</span></td></tr><tr data-search="official venue 9/11 memorial &amp; museum – the museum open six days a week plus select tuesdays fetched chunk 0 on 2026-11-25" data-flagged="0"><td data-label="Rank">Official venue</td><td data-label="Title">9/11 Memorial &amp; Museum – The Museum</td><td data-label="Used for">Open six days a week plus select Tuesdays</td><td data-label="Verification log">Fetched chunk 0 on 2026-11-25</td><td data-label="Official source"><a class="source-link" href="https://www.911memorial.org/visit/museum" target="_blank" rel="noopener noreferrer">Official venue<span class="source-domain">www.911memorial.org</span></a></td><td data-label="Flags"><span class="badge ok">No flag</span></td></tr><tr data-search="official venue 9/11 museum special &amp; extended hours 2026 tuesday openings only fetched chunk 0 on 2026-11-25" data-flagged="0"><td data-label="Rank">Official venue</td><td data-label="Title">9/11 Museum Special &amp; Extended Hours</td><td data-label="Used for">2026 Tuesday openings only</td><td data-label="Verification log">Fetched chunk 0 on 2026-11-25</td><td data-label="Official source"><a class="source-link" href="https://www.911memorial.org/special-hours" target="_blank" rel="noopener noreferrer">Official venue<span class="source-domain">www.911memorial.org</span></a></td><td data-label="Flags"><span class="badge ok">No flag</span></td></tr><tr data-search="government agency nyc dot brooklyn bridge pedestrian promenade and construction-project note fetched chunk 0 on 2026-11-25" data-flagged="0"><td data-label="Rank">Government agency</td><td data-label="Title">NYC DOT Brooklyn Bridge</td><td data-label="Used for">Pedestrian promenade and construction-project note</td><td data-label="Verification log">Fetched chunk 0 on 2026-11-25</td><td data-label="Official source"><a class="source-link" href="https://www.nyc.gov/html/dot/html/infrastructure/brooklyn-bridge.shtml" target="_blank" rel="noopener noreferrer">Government agency<span class="source-domain">www.nyc.gov</span></a></td><td data-label="Flags"><span class="badge ok">No flag</span></td></tr><tr data-search="government agency nyc parks central park advisory 2018 official statement of park hours 6 a.m.–1 a.m.; flagged as historical fetched chunk 0 on 2026-11-25" data-flagged="0"><td data-label="Rank">Government agency</td><td data-label="Title">NYC Parks Central Park advisory</td><td data-label="Used for">2018 official statement of park hours 6 a.m.–1 a.m.; flagged as historical</td><td data-label="Verification log">Fetched chunk 0 on 2026-11-25</td><td data-label="Official source"><a class="source-link" href="https://www.nycgovparks.org/parks/central-park/pressrelease/21596" target="_blank" rel="noopener noreferrer">Government agency<span class="source-domain">www.nycgovparks.org</span></a></td><td data-label="Flags"><span class="badge ok">No flag</span></td></tr><tr data-search="official industry association broadway.org (the broadway league) official show directory and performance-times link; no feb 2027 schedule fetched chunk 0 on 2026-11-25" data-flagged="0"><td data-label="Rank">Official industry association</td><td data-label="Title">Broadway.org (The Broadway League)</td><td data-label="Used for">Official show directory and performance-times link; no Feb 2027 schedule</td><td data-label="Verification log">Fetched chunk 0 on 2026-11-25</td><td data-label="Official source"><a class="source-link" href="https://www.broadway.org/" target="_blank" rel="noopener noreferrer">Official industry association<span class="source-domain">www.broadway.org</span></a></td><td data-label="Flags"><span class="badge ok">No flag</span></td></tr><tr data-search="official repository docs/readme-sources.md source hierarchy and blank-findings rule read locally from baseline commit" data-flagged="0"><td data-label="Rank">Official repository</td><td data-label="Title">docs/README-sources.md</td><td data-label="Used for">Source hierarchy and blank-findings rule</td><td data-label="Verification log">Read locally from baseline commit</td><td data-label="Official source"><a class="source-link" href="https://github.com/kanlerxz87-cyber/NYFun1/blob/b07631405e316015f0a3eeb255f5f2d27facd610/docs/README-sources.md" target="_blank" rel="noopener noreferrer">Official repository<span class="source-domain">github.com</span></a></td><td data-label="Flags"><span class="badge ok">No flag</span></td></tr><tr data-search="official repository coordination.md parallel-session task board and t18 claim read locally from baseline commit" data-flagged="0"><td data-label="Rank">Official repository</td><td data-label="Title">COORDINATION.md</td><td data-label="Used for">Parallel-session task board and T18 claim</td><td data-label="Verification log">Read locally from baseline commit</td><td data-label="Official source"><a class="source-link" href="https://github.com/kanlerxz87-cyber/NYFun1/blob/b07631405e316015f0a3eeb255f5f2d27facd610/COORDINATION.md" target="_blank" rel="noopener noreferrer">Official repository<span class="source-domain">github.com</span></a></td><td data-label="Flags"><span class="badge ok">No flag</span></td></tr></tbody></table></div><p class="scroll-note">Dashed cells are blank+flag. Use Card view or a narrow screen for card layout. Every row includes an official-source link.</p></section><section class="section"><h2>Source policy</h2><div class="grid cards-2"><div class="card"><h3>Rule 1</h3><p>Official place/agency pages outrank search snippets, secondary guides, and platform search links.</p></div><div class="card"><h3>Rule 2</h3><p>Dynamic quote pages are snapshots with a capture date; they are not predictions or booking-date experiments.</p></div><div class="card"><h3>Rule 3</h3><p>YouTube oEmbed confirms platform metadata only; it does not prove review quality or venue endorsement.</p></div><div class="card"><h3>Rule 4</h3><p>TikTok/Instagram search and profile links are discovery-only, not verified reviews.</p></div><div class="card"><h3>Rule 5</h3><p>Modeled coordinates, straight-line screens, arithmetic-derived totals, and community-router samples are not official-source verification.</p></div></div></section>
+</main>
+<footer class="footer">Generated 2026-11-25T22:36:07+00:00 · T18 2026-11-25 · <a href="./data/official_facts.json">Machine-readable facts</a> · <a href="./data/link_report.json">Link report</a> · <a href="./assets/style.css">Stylesheet</a> · <a href="./build_audit.py">Generator</a> · <a href="https://github.com/kanlerxz87-cyber/NYFun1/blob/b07631405e316015f0a3eeb255f5f2d27facd610/COORDINATION.md" target="_blank" rel="noopener noreferrer">Coordination board</a></footer>
+<script>
+
+(function () {
+  const filterState = new Map();
+
+  function stateFor(id) {
+    if (!filterState.has(id)) filterState.set(id, { q: "", flagged: false });
+    return filterState.get(id);
+  }
+
+  function applyFilters(table) {
+    const state = stateFor(table.id);
+    table.querySelectorAll("tbody tr").forEach(function (row) {
+      const matchQ = !state.q || (row.dataset.search || "").indexOf(state.q) !== -1;
+      const matchF = !state.flagged || row.dataset.flagged === "1";
+      row.classList.toggle("hidden", !(matchQ && matchF));
+    });
+  }
+
+  document.addEventListener("input", function (event) {
+    const input = event.target.closest("[data-table-target]");
+    if (!input) return;
+    const table = document.getElementById(input.dataset.tableTarget);
+    if (!table) return;
+    const state = stateFor(table.id);
+    state.q = input.value.toLowerCase();
+    applyFilters(table);
+  });
+
+  document.addEventListener("click", function (event) {
+    const flagBtn = event.target.closest("[data-flag-target]");
+    if (flagBtn) {
+      const table = document.getElementById(flagBtn.dataset.flagTarget);
+      if (table) {
+        const state = stateFor(table.id);
+        state.flagged = flagBtn.getAttribute("aria-pressed") !== "true";
+        flagBtn.setAttribute("aria-pressed", state.flagged ? "true" : "false");
+        flagBtn.textContent = state.flagged ? "Show all rows" : "Show flagged only";
+        applyFilters(table);
+      }
+      return;
+    }
+    const cardBtn = event.target.closest("[data-card-target]");
+    if (cardBtn) {
+      const table = document.getElementById(cardBtn.dataset.cardTarget);
+      if (table) {
+        const wrap = table.closest(".table-wrap");
+        const on = cardBtn.getAttribute("aria-pressed") !== "true";
+        cardBtn.setAttribute("aria-pressed", on ? "true" : "false");
+        cardBtn.textContent = on ? "Table view" : "Card view";
+        if (wrap) wrap.dataset.forceCards = on ? "true" : "false";
+      }
+      return;
+    }
+  });
+
+  function escapeHTML(value) {
+    return String(value).replace(/[&<>"']/g, function (ch) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[ch];
+    });
+  }
+
+  document.querySelectorAll("[data-decision-panel]").forEach(function (panel) {
+    const key = panel.dataset.storageKey || "t18-decision-v1";
+    const radios = Array.prototype.slice.call(panel.querySelectorAll("input[type=radio]"));
+    const output = panel.querySelector(".decision-output");
+    function render() {
+      const selectedValue = localStorage.getItem(key) || "";
+      radios.forEach(function (radio) {
+        radio.checked = radio.value === selectedValue;
+        const choice = radio.closest(".choice");
+        if (choice) choice.classList.toggle("selected", radio.checked);
+      });
+      const selected = radios.find(function (radio) { return radio.checked; });
+      if (!selected) {
+        output.innerHTML = "<strong>No decision path selected yet.</strong> Complete the review workflow before choosing Hold, Re-verify, Book refundable, or Integrate.";
+      } else {
+        output.innerHTML = "<strong>Selected:</strong> " + escapeHTML(selected.dataset.title) +
+          "<br><strong>Rationale:</strong> " + escapeHTML(selected.dataset.rationale) +
+          "<br><strong>Caveat:</strong> " + escapeHTML(selected.dataset.caveat);
+      }
+    }
+    radios.forEach(function (radio) {
+      radio.addEventListener("change", function () {
+        localStorage.setItem(key, radio.value);
+        render();
+      });
+    });
+    const copy = panel.querySelector(".copy-decision");
+    if (copy) {
+      copy.addEventListener("click", function () {
+        const selected = radios.find(function (radio) { return radio.checked; });
+        const text = selected
+          ? "T18 decision: " + selected.dataset.title + "\nRationale: " + selected.dataset.rationale + "\nCaveat: " + selected.dataset.caveat
+          : "T18 decision: none selected";
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(function () {
+            copy.textContent = "Copied";
+            setTimeout(function () { copy.textContent = "Copy decision summary"; }, 1200);
+          }).catch(function () { copy.textContent = "Copy unavailable"; });
+        } else {
+          copy.textContent = "Copy unavailable";
+        }
+      });
+    }
+    const reset = panel.querySelector(".reset-decision");
+    if (reset) {
+      reset.addEventListener("click", function () {
+        localStorage.removeItem(key);
+        render();
+      });
+    }
+    render();
+  });
+
+  document.querySelectorAll("[data-checklist]").forEach(function (root) {
+    const key = root.dataset.checklistKey;
+    const checks = Array.prototype.slice.call(root.querySelectorAll(".review-check"));
+    const bar = root.querySelector(".progress > div");
+    const output = root.querySelector(".checklist-output");
+    function load() {
+      try { return JSON.parse(localStorage.getItem(key) || "[]"); } catch (e) { return []; }
+    }
+    function save(values) { localStorage.setItem(key, JSON.stringify(values)); }
+    function render() {
+      const done = load();
+      checks.forEach(function (check) {
+        check.checked = done.indexOf(Number(check.dataset.step)) !== -1;
+      });
+      const count = checks.filter(function (check) { return check.checked; }).length;
+      const total = checks.length || 1;
+      if (bar) bar.style.width = (count / total * 100) + "%";
+      if (output) output.innerHTML = "<strong>" + count + " of " + checks.length + " review steps complete.</strong>";
+    }
+    checks.forEach(function (check) {
+      check.addEventListener("change", function () {
+        const step = Number(check.dataset.step);
+        let done = load().filter(function (item) { return item !== step; });
+        if (check.checked) done.push(step);
+        save(done);
+        render();
+      });
+    });
+    const reset = root.querySelector(".reset-checklist");
+    if (reset) {
+      reset.addEventListener("click", function () {
+        localStorage.removeItem(key);
+        render();
+      });
+    }
+    render();
+  });
+})();
+
+</script>
+</body>
+</html>
