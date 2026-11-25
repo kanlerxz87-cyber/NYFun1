@@ -196,3 +196,13 @@ merged to `main`, reset Pages to `main:/docs` (or `main:/`) and delete the stale
   with itself.
 - **Link check (automated, all three trees):** 0 broken internal links across `index.html`, `docs/*.html`
   and `deepdive/*.html`.
+
+### 2026-11-25 · arena-b4c22674 · T18 claim (independent, non-overlapping scope)
+
+- Session ID: `arena-b4c22674`; fixed Arena branch: `arena/b4c22674-nyfun1` (system policy prohibits creating a different branch/worktree).
+- Base: `b076314` (merged integration of PR #3). The board on this branch shows T1–T14 complete; no active claim on `audit/**`.
+- Remote branches were checked before this claim. Active claims observed at approximately 22:00–22:01 UTC include: `arena-8efb11a7` (`docs/data/activities.csv`, `docs/data/social_reviews.csv`, `build.py`, `content.py`, `docs/*.html`), `arena-204d4ba1` (`build_deepdive.py`), `arena-6042f4cf` (`README.md`, `COORDINATION.md`), `arena-958be332` (broad verification and both generated site trees), and `arena-0bedffaa` (site integrity audit). These are isolated branches and are not visible in this branch's board, but their scopes are respected.
+- **Claimed task T18:** independent official-source verification, line-by-line discrepancy review, executive decision dossier, and a mobile-friendly self-contained site under a new directory.
+- **Exclusive file scope:** `audit/**` and append-only entries in `COORDINATION.md`. No edits to `README.md`, `build.py`, `build_deepdive.py`, `content.py`, `index.html`, `docs/**`, `deepdive/**`, or any other session's files.
+- **Integration requests (for the final integration session, not this session):** add one navigation link labelled *Verified audit* from `docs/index.html` and `deepdive/index.html` to `../audit/index.html`; merge this branch; verify internal links and republish GitHub Pages. This session will not change shared navigation or publish settings.
+- **Policy note:** all unverified values will remain blank and be explicitly flagged; official links are required per table row. Search-result links will be labelled as discovery links, never as verified venue reviews.
