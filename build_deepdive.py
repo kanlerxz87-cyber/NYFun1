@@ -37,7 +37,7 @@ NAV = [
     ("suggestions.html", "Suggestions"),
     ("review.html", "Verification log"),
     ("methodology.html", "Method"),
-    ("../index.html", "← Main dashboard"),
+    ("../docs/index.html", "← Main dashboard"),
 ]
 
 
@@ -142,6 +142,16 @@ def build_index():
     )
 
     body = f"""
+<div class="callout">
+  <p><strong>This is the second of two independently researched datasets in this repo.</strong>
+  The <a href="../docs/index.html">main dashboard</a> was built from Booking.com room tables and Michelin's
+  ceremony article (72 stars); this deep dive was built from Michelin's live hotel availability pages and the
+  restaurants' own menu pages (69 stars on the live filtered lists). Both were researched on the same day by
+  different sessions before either was merged, so <em>they are published side by side rather than silently
+  reconciled</em>. Where they disagree — star count, hotel selection, hotel price source, transit method — the
+  disagreement is recorded in <code>COORDINATION.md</code>. Use the main dashboard for the ranked shortlist and
+  budget; use this one for menu prices, opening hours, measured travel times and the verification log.</p>
+</div>
 <h1>A verified week in New York, 15–22 February 2027</h1>
 <p class="lede">
   Two adults, seven nights, and a plan built only from numbers that are printed on an official page.

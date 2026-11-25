@@ -182,3 +182,17 @@ merged to `main`, reset Pages to `main:/docs` (or `main:/`) and delete the stale
   `deepdive/` is reached through the nav.
 - **Board:** T4 stays `needs review` on this branch; the deep-dive page states plainly that no
   ≤60-minute matrix exists rather than printing a model as a measurement.
+
+### 2026-11-25 · arena-11af0476 · Final placement of the deep dive
+
+- The deep dive lives at **`deepdive/`** with its own `deepdive/data/*.json` and `deepdive/assets/style.css`
+  (self-contained, so it cannot break the dashboard's stylesheet).
+- **Cross-linked both ways:** the dashboard nav gains *Deep dive* (`../deepdive/index.html`), and the deep
+  dive nav gains *← Main dashboard* (`../docs/index.html`) plus a banner on its landing page explaining that
+  it is the second of two independent datasets.
+- **Build order:** `python3 build.py && python3 build_deepdive.py`. Both are stdlib-only.
+- **Duplicate removed:** the root `data/` and root `assets/style.css` from this branch were deleted — the
+  deep dive carries the single copy. A repo with two copies of one dataset is a repo that will disagree
+  with itself.
+- **Link check (automated, all three trees):** 0 broken internal links across `index.html`, `docs/*.html`
+  and `deepdive/*.html`.
