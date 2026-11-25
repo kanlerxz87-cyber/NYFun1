@@ -196,3 +196,27 @@ merged to `main`, reset Pages to `main:/docs` (or `main:/`) and delete the stale
   with itself.
 - **Link check (automated, all three trees):** 0 broken internal links across `index.html`, `docs/*.html`
   and `deepdive/*.html`.
+
+---
+
+## SESSION CLAIM — 2026-11-25 (UTC) — `arena-e950934a` (branch `arena/e950934a-nyfun1`)
+
+**Scope claimed:** full rebuild of the published site as a single consolidated dashboard (`docs/`),
+plus `build_site.py`, `site_data/*.json`, `README.md`, and this board. `deepdive/` and
+`docs/*.csv` from earlier sessions are left untouched and treated as archived prior datasets.
+
+**Why a new session is claiming:** the two existing datasets disagree (72 vs 69 stars; different
+hotels) and neither contains the three things the brief asks for most: real per-row social-media
+review links, opening hours/exceptions per row, and re-verified hotel totals. This session
+re-verifies from official sources and publishes one site instead of two.
+
+**Files I will write (no overlap with earlier sessions' files):**
+`build_site.py`, `site_data/*.json`, `docs/*.html`, `docs/assets/style.css`, `README.md`,
+`COORDINATION.md` (append-only).
+
+**Files I will NOT touch:** `build.py`, `build_deepdive.py`, `content.py`, `docs/data/*.csv`,
+`deepdive/**`.
+
+**Key finding to flag to every session:** the MICHELIN New York 2026 ceremony is **14 December 2026**,
+i.e. before the trip. Any star list published today is provisional.
+
