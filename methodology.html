@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Method · NYC Feb 2027</title>
+<meta name="description" content="Verified New York City trip plan for two adults, February 2027 — hotels, Michelin restaurants, activities and transit.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="top">
+  <div class="top-inner">
+    <a class="brand" href="index.html">NYC <span>Feb 2027</span></a>
+    <nav class="pills"><a href="index.html">Overview</a><a href="hotels.html">Hotels</a><a href="restaurants.html">Restaurants</a><a href="activities.html">Activities</a><a href="transit.html">Getting around</a><a href="questions.html">Questions</a><a href="suggestions.html">Suggestions</a><a href="review.html">Verification log</a><a href="methodology.html" class="active">Method</a></nav>
+  </div>
+</header>
+<main>
+
+<h1>Method</h1>
+<p class="lede">
+  How this was built, what "verified" means here, and what the site deliberately refuses to do.
+</p>
+
+<h2>The question being answered</h2>
+<p>
+  Two adults, seven nights in New York, somewhere between 15 February and 23 March 2027, preferring 15–18 February.
+  Rank hotels by price, location and amenities with a queen bed and private bathroom. Show the hotel cost as a
+  7-night total and identify the cheapest booking window. Pull the Michelin picture — and keep "starred" separate
+  from "listed". Rank hotels by how many starred restaurants are reachable. Give a cost for two at each restaurant.
+  Attach hours, closures, an official link and a video to every row.
+</p>
+
+<h2>The verification rule</h2>
+<div class="callout">
+  <p>A value is <strong>verified</strong> when it was read, character for character, off a page belonging to the
+  venue, the agency that runs it, or the Michelin Guide — and that page's URL is recorded next to it.
+  A value is <strong>unverified</strong> when no such page printed it. Unverified values are blank, tagged
+  <span class="tag unv">unverified</span>, and listed in the <a href="questions.html">questions register</a>.
+  Nothing on this site is inferred, estimated, recalled or plausibility-checked into existence.</p>
+</div>
+
+<h3>What that rule cost</h3>
+<ul class="tight">
+  <li>Eleven Madison Park and Gramercy Tavern have <strong>no hours</strong> on this site, despite both being easy to guess.</li>
+  <li>Per Se and Atera have <strong>no price</strong>. The famous "$390" and "$365" figures circulating online are not on either official page.</li>
+  <li>The Met has <strong>no hours</strong>, because its own page would not render them across three URL attempts.</li>
+  <li>Refinery has <strong>no 7-night total</strong>, because its page shows only nightly rates.</li>
+</ul>
+
+<h2>Price conventions</h2>
+<div class="tablewrap">
+<table>
+<thead><tr><th>Figure</th><th>What it is</th><th>What it excludes</th></tr></thead>
+<tbody>
+<tr><td>Hotel 7-night total</td><td>The stay total Michelin prints, taxes and fees included</td><td>Resort fees not shown on the page, incidentals</td></tr>
+<tr><td>Hotel "from /nt"</td><td>The lowest nightly rate displayed for the range, which may be a room that fails the bed requirement</td><td>—</td></tr>
+<tr><td>Hotel "quoted /nt"</td><td>The average nightly rate on the specific room that meets queen-or-larger + private bathroom</td><td>—</td></tr>
+<tr><td>Restaurant "cost for two"</td><td>Cheapest published full-menu price per person × 2</td><td>Wine, tax, gratuity, supplements</td></tr>
+<tr><td>Museum admission</td><td>The adult rate on the official ticket page</td><td>Special exhibitions where separately ticketed</td></tr>
+<tr><td>Budget total</td><td>Sum of the verified inputs, labelled <em>derived</em></td><td>Airfare, alcohol, taxis, shopping</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2>How the transit figures were made</h2>
+<p>
+  Origin and destination coordinates were geocoded with OpenStreetMap's Nominatim, house number only — asking it for
+  "The Maritime Hotel 363 West 16th Street New York" returns nothing, while "363 West 16th Street New York" resolves.
+  Each pair was then sent to Transitous, an open routing service backed by MTA NYC Transit GTFS and OSM, at a weekday
+  midday departure, and the returned door-to-door duration and transfer count were recorded verbatim.
+</p>
+<div class="callout warn">
+  <p>The batch isochrone endpoint failed on every attempt, so no travel-time matrix exists. The
+  <a href="transit.html">transit page</a> publishes the nine measured legs and labels the cluster screen as a
+  straight-line approximation, not a travel time.</p>
+</div>
+
+<h2>Site structure</h2>
+<ul class="tight">
+  <li><code>index.html</code> — executive summary, KPI grid, 7-day shape, budget</li>
+  <li><code>hotels.html</code> — ten rooms, seasonality test, per-hotel detail</li>
+  <li><code>restaurants.html</code> — starred table, menu detail, star-vs-listing separation</li>
+  <li><code>activities.html</code> — six verified attractions plus an unverified shortlist</li>
+  <li><code>transit.html</code> — measured legs, cluster screen, fares</li>
+  <li><code>questions.html</code> — the unknowns register and the decisions they imply</li>
+  <li><code>suggestions.html</code> — ten recommendations, kept separate from the data</li>
+  <li><code>review.html</code> — sources, irregularities, manual-review checklist</li>
+  <li><code>data/*.json</code> — the single source of truth; <code>build.py</code> renders every page from it</li>
+</ul>
+
+<h2>Mobile &amp; accessibility</h2>
+<ul class="tight">
+  <li>Single stylesheet, no framework, no external fonts or scripts — the whole site loads in one round trip.</li>
+  <li>Every table sits in a horizontally scrollable wrapper with a sticky header row, so wide tables stay usable at 360 px.</li>
+  <li>Body text is 16 px with a 1.55 line height; the layout collapses to a single column below 640 px.</li>
+  <li>Links and status tags all carry text, never colour alone.</li>
+</ul>
+
+<h2>Rebuilding</h2>
+<pre><code>python3 build.py</code></pre>
+<p class="note">Reads <code>data/hotels.json</code>, <code>data/michelin.json</code>, <code>data/restaurants.json</code>,
+<code>data/activities.json</code> and <code>data/transit.json</code>; writes the HTML pages at the repo root.
+No dependencies beyond the Python 3 standard library.</p>
+
+</main>
+<footer>
+  Verified against official sources on 2026-11-25. Every unconfirmed value is left blank and flagged.
+  Targets: 2 adults, 7 nights, 15–22 Feb 2027.
+</footer>
+</body>
+</html>

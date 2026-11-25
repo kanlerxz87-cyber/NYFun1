@@ -1,0 +1,82 @@
+{
+  "meta": {
+    "title": "Michelin Guide New York — verified star / Bib Gourmand inventory",
+    "verified_on": "2026-11-25",
+    "source_of_record": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurants",
+    "distinction_counts_reported_by_michelin": {
+      "3_stars": 5,
+      "2_stars": 14,
+      "1_star": 50,
+      "bib_gourmand": 76,
+      "selected": 224,
+      "note": "Counts shown in the filter panel of the official NYC listing page on 2026-11-25."
+    },
+    "award_year_note": "The most recent New York ceremony was the November 2025 Northeast Cities ceremony (NY, Chicago, Philadelphia, Boston). The next guide edition had not been published as of the verification date, so every distinction below is the live distinction shown on guide.michelin.com on 2026-11-25 and MUST be re-checked before booking."
+  },
+  "three_stars": [
+    { "name": "Sushi Sho", "url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/sushi-sho-1213976", "cuisine": "Japanese", "price": "$$$$" },
+    { "name": "Jungsik New York", "url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/jungsik-new-york", "cuisine": "Korean, Contemporary", "price": "$$$$", "address": "2 Harrison St., New York, NY, 10013", "website": "https://www.jungsik.com/", "phone": "+1 212-219-0900", "reservations": "Tock", "hours_note": "Neither the Michelin detail page nor jungsik.com publishes an opening-hours table (official site shows address, phone and a booking link only). Hours UNVERIFIED — confirm by phone or on Tock." },
+    { "name": "Eleven Madison Park", "url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/eleven-madison-park", "cuisine": "Contemporary, Vegan", "price": "$$$$", "address": "11 Madison Ave., New York, NY, 10010", "website": "https://www.elevenmadisonpark.com/", "phone": "+1 212-889-0905", "hours_note": "Official page publishes reservation/ticketing flow rather than a plain hours table; hours not transcribed here — UNVERIFIED." },
+    { "name": "Le Bernardin", "url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/le-bernardin", "cuisine": "Seafood", "price": "$$$$", "address": "155 W. 51st St., New York, NY, 10019", "website": "https://www.le-bernardin.com/", "phone": "+1 212-554-1515", "hours": { "Mon": "12 PM-2:30 PM, 5 PM-10:30 PM", "Tue": "12 PM-2:30 PM, 5 PM-10:30 PM", "Wed": "12 PM-2:30 PM, 5 PM-10:30 PM", "Thu": "12 PM-2:30 PM, 5 PM-10:30 PM", "Fri": "12 PM-2:30 PM, 5 PM-11 PM", "Sat": "5 PM-11 PM", "Sun": "closed" } },
+    { "name": "Per Se", "url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/per-se", "cuisine": "Contemporary, French", "price": "$$$$", "address": "10 Columbus Circle, New York, NY, 10019", "website": "https://www.thomaskeller.com/perseny", "phone": "+1 212-823-9335", "hours": { "Mon": "4:30 PM-9 PM", "Tue": "4:30 PM-9 PM", "Wed": "4:30 PM-9 PM", "Thu": "4:30 PM-9 PM", "Fri": "4:30 PM-9 PM", "Sat": "4:30 PM-9 PM", "Sun": "4:30 PM-9 PM" } }
+  ],
+  "two_stars": [
+    { "name": "Atera", "url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/atera", "cuisine": "Contemporary", "price": "$$$$", "address": "77 Worth St., New York, NY, 10013", "website": "https://ateranyc.com/", "phone": "+1 212-226-1444", "hours": { "Mon": "7 PM-10 PM", "Tue": "5 PM-10 PM", "Wed": "5 PM-10 PM", "Thu": "5 PM-10 PM", "Fri": "5 PM-10 PM", "Sat": "1:30 PM-10 PM", "Sun": "5 PM-10 PM" } },
+    { "name": "Saga", "url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/saga", "cuisine": "Contemporary", "price": "$$$$", "hours": { "Mon": "5 PM-9:30 PM", "Tue": "5 PM-9:30 PM", "Wed": "5 PM-9:30 PM", "Thu": "5 PM-9:30 PM", "Fri": "5 PM-9:30 PM", "Sat": "5 PM-9:30 PM", "Sun": "5 PM-9:30 PM" } },
+    { "name": "Joo Ok", "url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/joo-ok-1214822", "cuisine": "Korean", "price": "$$$" },
+    { "name": "César", "url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/cesar", "cuisine": "Contemporary", "price": "$$$$" },
+    { "name": "Odo", "url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/odo", "cuisine": "Japanese", "price": "$$$$" },
+    { "name": "Chef's Table at Brooklyn Fare", "url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/chef-s-table-at-brooklyn-fare", "cuisine": "Contemporary", "price": "$$$$" },
+    { "name": "Atomix", "url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/atomix", "cuisine": "Korean", "price": "$$$$" },
+    { "name": "Aska", "url": "https://guide.michelin.com/us/en/new-york-state/brooklyn/restaurant/aska", "cuisine": "Scandinavian", "price": "$$$$", "city": "Brooklyn" },
+    { "name": "Aquavit", "url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/aquavit", "cuisine": "Scandinavian", "price": "$$$$" },
+    { "name": "Jean-Georges", "url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/jean-georges", "cuisine": "Contemporary", "price": "$$$$" },
+    { "name": "Gabriel Kreuther", "url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/gabriel-kreuther", "cuisine": "French, Contemporary", "price": "$$$$", "address": "41 W. 42nd St., New York, NY, 10036", "website": "https://www.gknyc.com/", "phone": "+1 212-257-5826", "hours": { "Mon": "4:45 PM-9:30 PM", "Tue": "11:45 AM-2:15 PM, 4:45 PM-9:30 PM", "Wed": "11:45 AM-2:15 PM, 4:45 PM-9:30 PM", "Thu": "11:45 AM-2:15 PM, 4:45 PM-9:30 PM", "Fri": "11:45 AM-2:15 PM, 4:45 PM-10 PM", "Sat": "4:45 PM-10 PM", "Sun": "closed" } },
+    { "name": "Masa", "url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/masa", "cuisine": "Japanese", "price": "$$$$" },
+    { "name": "Sushi Noz", "url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/sushi-noz", "cuisine": "Japanese", "price": "$$$$" },
+    { "name": "The Modern", "url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/the-modern", "cuisine": "Contemporary", "price": "$$$$" }
+  ],
+  "one_star": [
+    "Le Coucou", "Muku", "Huso", "Yamada", "Bridges", "Corima", "Jua", "Frevo", "Torien", "Tempura Matsui",
+    "Estela", "Sushi Nakazawa New York", "Noda", "Jeju Noodle Bar", "Semma", "Yoshino", "Cote", "Crown Shy",
+    "Shmoné", "Gramercy Tavern", "Oiji Mi", "Family Meal at Blue Hill", "Dirt Candy", "Tuome", "Bar Miller",
+    "bōm", "Noz 17", "Torrisi", "Casa Mono", "Kosaka", "Sixty Three Clinton", "Nōksu", "Icca", "L'Abeille",
+    "Tsukimi", "Rezdôra", "Francie", "Oxomoco", "The Four Horsemen", "Shota Omakase", "Restaurant Yuu",
+    "Le Pavillon", "Kochi", "Café Boulud at Maison Barnes", "Jōji", "YingTao", "Daniel",
+    "Essential by Christophe", "Mari", "Meju"
+  ],
+  "one_star_source_pages": [
+    "https://guide.michelin.com/us/en/new-york-state/new-york/restaurants/1-star-michelin",
+    "https://guide.michelin.com/us/en/new-york-state/new-york/restaurants/1-star-michelin/page/2"
+  ],
+  "one_star_url_slugs": {
+    "Le Coucou": "le-coucou", "Muku": "muku", "Huso": "huso-1218089", "Yamada": "yamada",
+    "Bridges": "bridges-1216261", "Corima": "corima", "Jua": "jua", "Frevo": "frevo", "Torien": "torien",
+    "Tempura Matsui": "tempura-matsui", "Estela": "estela", "Sushi Nakazawa New York": "sushi-nakazawa",
+    "Noda": "noda", "Jeju Noodle Bar": "jeju-noodle-bar", "Semma": "semma", "Yoshino": "yoshino-1185037",
+    "Cote": "cote", "Crown Shy": "crown-shy", "Shmoné": "shmone", "Gramercy Tavern": "gramercy-tavern",
+    "Oiji Mi": "oiji-mi", "Family Meal at Blue Hill": "blue-hill", "Dirt Candy": "dirt-candy",
+    "Tuome": "tuome", "Bar Miller": "bar-miller", "bōm": "bom", "Noz 17": "noz17", "Torrisi": "torrisi",
+    "Casa Mono": "casa-mono", "Kosaka": "kosaka", "Sixty Three Clinton": "63-clinton", "Nōksu": "noksu",
+    "Icca": "icca", "L'Abeille": "l%E2%80%99abeille", "Tsukimi": "tsukimi",
+    "Rezdôra": "rezdora-osteria-emiliana", "Le Pavillon": "le-pavillon-1192744", "Kochi": "kochi",
+    "Café Boulud at Maison Barnes": "cafe-boulud", "Jōji": "joji", "YingTao": "yingtao", "Daniel": "daniel",
+    "Essential by Christophe": "essential-by-christophe", "Mari": "mari"
+  },
+  "one_star_brooklyn": {
+    "Francie": "https://guide.michelin.com/us/en/new-york-state/brooklyn/restaurant/francie",
+    "Oxomoco": "https://guide.michelin.com/us/en/new-york-state/brooklyn/restaurant/oxomoco",
+    "The Four Horsemen": "https://guide.michelin.com/us/en/new-york-state/brooklyn/restaurant/the-four-horsemen",
+    "Shota Omakase": "https://guide.michelin.com/us/en/new-york-state/brooklyn/restaurant/shota-omakase",
+    "Restaurant Yuu": "https://guide.michelin.com/us/en/new-york-state/brooklyn/restaurant/restaurant-yuu"
+  },
+  "one_star_queens": {
+    "Meju": "https://guide.michelin.com/us/en/new-york-state/queens/restaurant/meju"
+  },
+  "bib_gourmand_note": "76 Bib Gourmand entries are listed by Michelin for NYC and surroundings. Bib Gourmand = 'good quality, good value cooking'; it is NOT a star. The full Bib Gourmand set is not itemised here; see https://guide.michelin.com/us/en/new-york-state/new-york/restaurants/bib-gourmand",
+  "bib_gourmand_verified_examples": [
+    { "name": "Pranakhon", "url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/pranakhon", "cuisine": "Thai", "price": "$$$" },
+    { "name": "Tonchin", "url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/tonchin", "cuisine": "Japanese", "price": "$" },
+    { "name": "Hupo", "url": "https://guide.michelin.com/us/en/new-york-state/queens/restaurant/hupo", "cuisine": "Chinese", "city": "Queens" }
+  ]
+}

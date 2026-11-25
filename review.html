@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Verification log · NYC Feb 2027</title>
+<meta name="description" content="Verified New York City trip plan for two adults, February 2027 — hotels, Michelin restaurants, activities and transit.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="top">
+  <div class="top-inner">
+    <a class="brand" href="index.html">NYC <span>Feb 2027</span></a>
+    <nav class="pills"><a href="index.html">Overview</a><a href="hotels.html">Hotels</a><a href="restaurants.html">Restaurants</a><a href="activities.html">Activities</a><a href="transit.html">Getting around</a><a href="questions.html">Questions</a><a href="suggestions.html">Suggestions</a><a href="review.html" class="active">Verification log</a><a href="methodology.html">Method</a></nav>
+  </div>
+</header>
+<main>
+
+<h1>Verification log</h1>
+<p class="lede">
+  Every source used, every irregularity found, and what was done about it. This page is the audit trail —
+  it exists so that any number on this site can be traced to a URL and any gap can be traced to a reason.
+</p>
+
+<div class="grid">
+  <div class="kpi"><div class="k">Sources cited</div><div class="v">17</div><div class="s">official venue, agency and routing pages</div></div>
+  <div class="kpi"><div class="k">Irregularities logged</div><div class="v">12</div><div class="s">including 5 left open</div></div>
+  <div class="kpi"><div class="k">Values left blank</div><div class="v">19</div><div class="s">flagged in the data, never estimated</div></div>
+  <div class="kpi"><div class="k">Derived figures</div><div class="v">1</div><div class="s">the budget total, labelled as such</div></div>
+</div>
+
+<h2>Source hierarchy applied</h2>
+<ol class="tight">
+  <li><strong>The venue's own website or its own booking platform</strong> (Tock, Resy) — used for prices, hours, policies.</li>
+  <li><strong>The Michelin Guide's own page</strong> — used for distinctions, addresses, cuisine, price band, and hours where the venue publishes none.</li>
+  <li><strong>NPS / museum / operator official pages</strong> — used for attraction hours, admission and closures.</li>
+  <li><strong>OpenStreetMap via Nominatim</strong> — used only for coordinates, never for hours or prices.</li>
+  <li><strong>Nothing else.</strong> No aggregators, no review sites, no video descriptions, no memory.</li>
+</ol>
+
+<h2>Irregularities flagged</h2>
+<div class="tablewrap">
+<table>
+<thead><tr><th>Item</th><th>What the sources actually say</th><th>How it was handled</th><th>Status</th></tr></thead>
+<tbody><tr><td><strong>Arlo Soho — Le Bernardin travel time</strong></td><td>An earlier routing query returned 30 min with 1 transfer; the re-run returned <strong>38 min with 0 transfers</strong> on the M7.</td><td>The re-run is the number published on the transit page. Both are weekday-midday measurements; the difference is a departure-time artefact.</td><td><span class="tag ok">resolved — later measurement used</span></td></tr><tr><td><strong>CIVILIAN Hotel street address</strong></td><td>The Michelin page lists 305 W 48th St. The OpenStreetMap record returned by the geocoder for that block is at 317 W 48th St.</td><td>Coordinates are flagged in the hotel data with a note; the address field keeps Michelin's 305 W 48th St. The 12-house-number gap does not change any travel time materially.</td><td><span class="tag unv">flagged, not resolved</span></td></tr><tr><td><strong>Atera closing time</strong></td><td>Michelin's detail page says Tue–Fri 17:00–22:00. Tock's live listing shows service until 23:00 with slots to 23:00.</td><td>Both are official. The Michelin page is treated as the hours of record and the discrepancy is printed on the restaurant card rather than smoothed over.</td><td><span class="tag unv">flagged</span></td></tr><tr><td><strong>Bib Gourmand count</strong></td><td>Michelin's sidebar and filter panel disagree across pages — 76, 77 and 83 were all seen.</td><td>The filter-panel figure (76) is used throughout, and the number is described as 'reported by Michelin' rather than asserted.</td><td><span class="tag unv">flagged</span></td></tr><tr><td><strong>&#x27;2 Harrison St&#x27; geocodes to Binghamton</strong></td><td>Nominatim resolves '2 Harrison Street New York' to Binghamton, NY (42.10, −75.94) — a different city 200 miles away.</td><td>Jungsik's coordinates are therefore blank rather than wrong. No travel time involving Jungsik is published.</td><td><span class="tag unv">flagged — data left blank</span></td></tr><tr><td><strong>Per Se price in a video title</strong></td><td>A YouTube title says '9 Course $390 Tasting Menu'. $390 appears nowhere on thomaskeller.com or Michelin's page.</td><td>Not used. Per Se's cost field is null and flagged. A 3-year-old video title is not a price source.</td><td><span class="tag ok">rejected as a source</span></td></tr><tr><td><strong>The Modern address</strong></td><td>The restaurant is inside MoMA at 9 W 53rd St, but the Michelin page does not print a street number.</td><td>The MoMA building address is used and labelled as such; the map pin comes from the OSM node for The Modern Bar Room.</td><td><span class="tag unv">flagged — address inferred from building</span></td></tr><tr><td><strong>Gramercy Tavern has no hours anywhere</strong></td><td>Neither the official site, its menu page, nor the Michelin detail page carries an opening-hours table.</td><td>Hours left blank and flagged. Gramercy's Tavern room is the itinerary's Tuesday-evening fallback, which is the single riskiest scheduling assumption on the site because the venue's open days are unknown.</td><td><span class="tag unv">open — see questions</span></td></tr><tr><td><strong>Refinery Hotel 7-night total</strong></td><td>The page displays a nightly rate and a 'total with taxes' per night, but no stay total.</td><td>Total left blank rather than multiplied. Refinery is ranked on nightly rate only and appears at the bottom of the sort.</td><td><span class="tag ok">by design</span></td></tr><tr><td><strong>Hotel quotes are 15 months out</strong></td><td>Michelin renders rates for dates more than 31 days out with a 'cannot book more than 31 days ahead' warning attached.</td><td>Every hotel quote is labelled as a point-in-time indication, not a bookable rate. The seasonality test compares four such quotes to each other, which is still valid as a relative comparison.</td><td><span class="tag ok">labelled</span></td></tr><tr><td><strong>MoMA PS1 hours</strong></td><td>moma.org states PS1 is free for all, but the PS1 hours live on momaps1.org, which was not fetched.</td><td>Admission is verified; hours are blank and flagged.</td><td><span class="tag unv">open — see questions</span></td></tr><tr><td><strong>The Met hours</strong></td><td>Three URLs were tried; the hours module never rendered.</td><td>Hours blank. Not inferred from memory or from a third party.</td><td><span class="tag unv">open — see questions</span></td></tr></tbody>
+</table>
+</div>
+
+<h2>Sources</h2>
+<div class="tablewrap">
+<table>
+<thead><tr><th>Source</th><th>Link</th><th>What it supplied</th></tr></thead>
+<tbody><tr><td><strong>Michelin star lists</strong></td><td><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurants/3-stars-michelin" target="_blank" rel="noopener">open</a></td><td class='note'>3★ 5, 2★ 14, 1★ 50, Bib 76, Selected 224</td></tr><tr><td><strong>Michelin hotel index</strong></td><td><a href="https://guide.michelin.com/us/en/hotels-stays/nyc" target="_blank" rel="noopener">open</a></td><td class='note'>83 NYC hotels, no prices on the index</td></tr><tr><td><strong>Le Bernardin menus</strong></td><td><a href="https://www.le-bernardin.com/accessible/menus/dining-room/dinner/" target="_blank" rel="noopener">open</a></td><td class='note'>$225 dinner prix fixe, $142 lunch, $350 chef&#x27;s tasting</td></tr><tr><td><strong>Eleven Madison Park FAQ</strong></td><td><a href="https://www.elevenmadisonpark.com/faq" target="_blank" rel="noopener">open</a></td><td class='note'>$385 tasting, $255 bar tasting, reservation release rule, non-refundable policy</td></tr><tr><td><strong>Jungsik on Tock</strong></td><td><a href="https://www.exploretock.com/jungsik" target="_blank" rel="noopener">open</a></td><td class='note'>$335 signature menu, 17:00–21:30 today window, $200 deposit</td></tr><tr><td><strong>Atera on Tock</strong></td><td><a href="https://www.exploretock.com/atera" target="_blank" rel="noopener">open</a></td><td class='note'>$200 deposit, three seating formats, service to 23:00</td></tr><tr><td><strong>Saga menus</strong></td><td><a href="https://www.saga-nyc.com/menus" target="_blank" rel="noopener">open</a></td><td class='note'>$215 / $315 / $365 price points, Resy booking</td></tr><tr><td><strong>Gabriel Kreuther dinner PDF</strong></td><td><a href="https://www.gknyc.com/menus" target="_blank" rel="noopener">open</a></td><td class='note'>$325 chef&#x27;s tasting, $200 3-course, $235 4-course, supplements</td></tr><tr><td><strong>The Modern menus</strong></td><td><a href="https://www.themodernnyc.com/the-modern/" target="_blank" rel="noopener">open</a></td><td class='note'>Impressions $185, Abstractions $285, lunch prix fixe $115</td></tr><tr><td><strong>Gramercy Tavern menus</strong></td><td><a href="https://www.gramercytavern.com/dining-room-menu/" target="_blank" rel="noopener">open</a></td><td class='note'>$178 seasonal menu, Tavern à la carte prices</td></tr><tr><td><strong>MoMA visit</strong></td><td><a href="https://www.moma.org/visit/" target="_blank" rel="noopener">open</a></td><td class='note'>Hours, $30 admission, Friday nights, closures</td></tr><tr><td><strong>Met plan-your-visit</strong></td><td><a href="https://www.metmuseum.org/plan-your-visit" target="_blank" rel="noopener">open</a></td><td class='note'>Admission tiers, transit directions, visitor rules</td></tr><tr><td><strong>Statue of Liberty hours</strong></td><td><a href="https://www.nps.gov/stli/planyourvisit/hours.htm" target="_blank" rel="noopener">open</a></td><td class='note'>09:00–16:30, last entry 15:30, ferry-only</td></tr><tr><td><strong>Top of the Rock</strong></td><td><a href="https://www.rockefellercenter.com/tickets/top-of-the-rock-observation-deck/" target="_blank" rel="noopener">open</a></td><td class='note'>08:00–24:00, $42 / $82 / $185 tiers</td></tr><tr><td><strong>The High Line</strong></td><td><a href="https://www.thehighline.org/visit/" target="_blank" rel="noopener">open</a></td><td class='note'>Winter hours 07:00–20:00, rules, accessibility</td></tr><tr><td><strong>Transitous routing API</strong></td><td><a href="https://api.transitous.org/api/v1/plan" target="_blank" rel="noopener">open</a></td><td class='note'>MTA GTFS-backed door-to-door times</td></tr><tr><td><strong>Nominatim</strong></td><td><a href="https://nominatim.openstreetmap.org/" target="_blank" rel="noopener">open</a></td><td class='note'>Coordinates for hotels and restaurants</td></tr></tbody>
+</table>
+</div>
+
+<h2>Manual review checklist</h2>
+<p>If you want to spot-check this site in ten minutes, these are the ten links that carry the most weight:</p>
+<ol class="tight">
+  <li><a href="https://guide.michelin.com/us/en/hotels-stays/nyc/arlo-soho-8260?arr=2027-02-15&amp;dep=2027-02-22&amp;nA=2&amp;nC=0&amp;nR=1" target="_blank" rel="noopener">Arlo Soho quote</a> — confirm $1,721.14 for 7 nights</li>
+  <li><a href="https://guide.michelin.com/us/en/hotels-stays/nyc/the-maritime-hotel-32?arr=2027-02-15&amp;dep=2027-02-22&amp;nA=2&amp;nC=0&amp;nR=1" target="_blank" rel="noopener">The Maritime quote</a> — confirm $2,434.94 and breakfast inclusion</li>
+  <li><a href="https://www.le-bernardin.com/accessible/menus/dining-room/dinner/" target="_blank" rel="noopener">Le Bernardin dinner</a> — confirm $225 for 4 courses</li>
+  <li><a href="https://www.elevenmadisonpark.com/faq" target="_blank" rel="noopener">EMP FAQ</a> — confirm $385 / $255 and the 1st-of-month reservation rule</li>
+  <li><a href="https://www.exploretock.com/jungsik" target="_blank" rel="noopener">Jungsik on Tock</a> — confirm $335 and the 17:00–21:30 window</li>
+  <li><a href="https://www.themodernnyc.com/the-modern/" target="_blank" rel="noopener">The Modern menu</a> — confirm $185 / $285 / $115</li>
+  <li><a href="https://www.moma.org/visit/" target="_blank" rel="noopener">MoMA visit</a> — confirm hours and $30</li>
+  <li><a href="https://www.nps.gov/stli/planyourvisit/hours.htm" target="_blank" rel="noopener">Statue of Liberty hours</a> — confirm 09:00–16:30 and 15:30 last entry</li>
+  <li><a href="https://www.thehighline.org/visit/" target="_blank" rel="noopener">The High Line visit</a> — confirm the winter 07:00–20:00 schedule</li>
+  <li><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurants/3-stars-michelin" target="_blank" rel="noopener">Michelin 3★ list</a> — confirm the five names</li>
+</ol>
+
+<h2>Repository</h2>
+<p>
+  The data behind every table is in <code>data/*.json</code> and the pages are generated from it by <code>build.py</code>,
+  so a correction to a JSON file propagates everywhere when the generator is re-run. Source hierarchy and conventions:
+  <code>docs/README-sources.md</code>. Parallel-session rules: <code>COORDINATION.md</code>.
+</p>
+
+</main>
+<footer>
+  Verified against official sources on 2026-11-25. Every unconfirmed value is left blank and flagged.
+  Targets: 2 adults, 7 nights, 15–22 Feb 2027.
+</footer>
+</body>
+</html>
