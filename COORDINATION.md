@@ -202,3 +202,19 @@ merged to `main`, reset Pages to `main:/docs` (or `main:/`) and delete the stale
   with itself.
 - **Link check (automated, all three trees):** 0 broken internal links across `index.html`, `docs/*.html`
   and `deepdive/*.html`.
+
+### 2026-11-25 · arena-0bedffaa · T15 independent static integrity audit
+
+- **Scope:** `tools/audit_site.py`, `docs/independent-audit.md`, and this append-only log. No shared data, navigation, or generated site pages were edited because their ownership is assigned in the board.
+- **Official roster reference already captured by the research task:** https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025 . This audit did not fetch any external pages and does not claim to re-verify that article or any live prices/hours.
+- **Verification performed locally:** `python3 build.py`; `python3 build_deepdive.py`; `python3 tools/audit_site.py`. Both generators completed. Static audit covered 21 HTML pages: zero broken local links/anchors; all 21 pages include viewport metadata. It found 66 of 72 main Michelin CSV records with blank `michelin_url`; the rendered main Michelin table has 66 of 79 rows without a non-social external source link. Main activity rows have a URL on 12/12 rows. Main hotel table has 7/31 rows with non-social external links; 24 modelled travel rows do not have an official transit source. Deep-dive restaurant rows have links on 42/42; deep-dive hotel rows have links on 14/14. After adding a source-coverage gate, the audit intentionally exits `2` for the known gaps (structural checks remain clean).
+- **Social audit (URL-pattern check only):** 321 platform URLs found: 97 YouTube searches, 101 TikTok searches, 91 Instagram hashtag pages, and 32 direct video/post/profile URLs. The 32 direct URLs were not opened or checked for review relevance.
+- **Irregularities/request for review:** the source-link gap on 66 starred roster rows; modelled route rows without an official per-row transit source; generic social discovery pages standing in for review links; hotel date windows are a small snapshot sample, not a booking-time prediction; 72-vs-69 Michelin counts remain unresolved as recorded above. These are published in `docs/independent-audit.md` for review. Request the data owner/final integrator to add exact per-row Michelin sources (never guess slugs), replace search pages with confirmed review URLs where found, and either cite official MTA route evidence or leave travel minutes modelled/unverified.
+- **Status:** `needs review` — audit artifacts complete; external-source verification and changes to files owned by earlier sessions were not performed in this task.
+- **Claim push note:** the requested `git pull --rebase origin arena/0bedffaa-nyfun1` could not run before the initial claim push because that remote branch did not exist yet (`couldn't find remote ref`); the claim was then pushed to create the current branch. Subsequent pushes will rebase against the now-created tracking branch.
+
+#### Task board addendum (append-only)
+
+| ID | Task | Scope (files) | Owner | Status | Updated |
+|---|---|---|---|---|---|
+| T15 | Independent static integrity audit + source-gap handoff | `tools/audit_site.py`, `docs/independent-audit.md`, append-only `COORDINATION.md` | arena-0bedffaa | needs review | 2026-11-25 |
