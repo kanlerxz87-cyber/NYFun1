@@ -1,0 +1,308 @@
+{
+  "transit_hotels": [
+    {
+      "hotel": "Arlo Soho",
+      "starred_within_60_min": "",
+      "rank": "",
+      "method": "",
+      "result": "",
+      "_source_url": "https://guide.michelin.com/us/en/hotels-stays/nyc/arlo-soho-8260?arr=2027-02-15&dep=2027-02-22&nA=2&nC=0&nR=1",
+      "_source_label": "MICHELIN hotel page",
+      "_extra_source_urls": [
+        {
+          "label": "MTA official fares",
+          "url": "https://www.mta.info/fares-tolls/subway-bus"
+        },
+        {
+          "label": "MICHELIN live star list",
+          "url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurants"
+        }
+      ],
+      "_flags": [
+        "Count blank+flag: no official MTA door-to-door matrix",
+        "Rank blank+flag",
+        "Transitous sample not treated as official MTA source"
+      ]
+    },
+    {
+      "hotel": "SIXTY LES",
+      "starred_within_60_min": "",
+      "rank": "",
+      "method": "",
+      "result": "",
+      "_source_url": "https://guide.michelin.com/us/en/hotels-stays/nyc/sixty-les-851",
+      "_source_label": "MICHELIN hotel page",
+      "_extra_source_urls": [
+        {
+          "label": "MTA official fares",
+          "url": "https://www.mta.info/fares-tolls/subway-bus"
+        },
+        {
+          "label": "MICHELIN live star list",
+          "url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurants"
+        }
+      ],
+      "_flags": [
+        "Count blank+flag: no official MTA door-to-door matrix",
+        "Rank blank+flag",
+        "Transitous sample not treated as official MTA source"
+      ]
+    },
+    {
+      "hotel": "CIVILIAN Hotel",
+      "starred_within_60_min": "",
+      "rank": "",
+      "method": "",
+      "result": "",
+      "_source_url": "https://guide.michelin.com/us/en/hotels-stays/nyc/civilian-hotel-12657",
+      "_source_label": "MICHELIN hotel page",
+      "_extra_source_urls": [
+        {
+          "label": "MTA official fares",
+          "url": "https://www.mta.info/fares-tolls/subway-bus"
+        },
+        {
+          "label": "MICHELIN live star list",
+          "url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurants"
+        }
+      ],
+      "_flags": [
+        "Count blank+flag: no official MTA door-to-door matrix",
+        "Rank blank+flag",
+        "Transitous sample not treated as official MTA source"
+      ]
+    },
+    {
+      "hotel": "The Maritime Hotel",
+      "starred_within_60_min": "",
+      "rank": "",
+      "method": "",
+      "result": "",
+      "_source_url": "https://guide.michelin.com/us/en/hotels-stays/nyc/the-maritime-hotel-32",
+      "_source_label": "MICHELIN hotel page",
+      "_extra_source_urls": [
+        {
+          "label": "MTA official fares",
+          "url": "https://www.mta.info/fares-tolls/subway-bus"
+        },
+        {
+          "label": "MICHELIN live star list",
+          "url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurants"
+        }
+      ],
+      "_flags": [
+        "Count blank+flag: no official MTA door-to-door matrix",
+        "Rank blank+flag",
+        "Transitous sample not treated as official MTA source"
+      ]
+    },
+    {
+      "hotel": "MADE Hotel",
+      "starred_within_60_min": "",
+      "rank": "",
+      "method": "",
+      "result": "",
+      "_source_url": "https://guide.michelin.com/us/en/hotels-stays/nyc/made-hotel-8712",
+      "_source_label": "MICHELIN hotel page",
+      "_extra_source_urls": [
+        {
+          "label": "MTA official fares",
+          "url": "https://www.mta.info/fares-tolls/subway-bus"
+        },
+        {
+          "label": "MICHELIN live star list",
+          "url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurants"
+        }
+      ],
+      "_flags": [
+        "Count blank+flag: no official MTA door-to-door matrix",
+        "Rank blank+flag",
+        "Transitous sample not treated as official MTA source"
+      ]
+    },
+    {
+      "hotel": "The Roxy Hotel New York",
+      "starred_within_60_min": "",
+      "rank": "",
+      "method": "",
+      "result": "",
+      "_source_url": "https://guide.michelin.com/us/en/hotels-stays/nyc/the-roxy-hotel-new-york-3291",
+      "_source_label": "MICHELIN hotel page",
+      "_extra_source_urls": [
+        {
+          "label": "MTA official fares",
+          "url": "https://www.mta.info/fares-tolls/subway-bus"
+        },
+        {
+          "label": "MICHELIN live star list",
+          "url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurants"
+        }
+      ],
+      "_flags": [
+        "Count blank+flag: no official MTA door-to-door matrix",
+        "Rank blank+flag",
+        "Transitous sample not treated as official MTA source"
+      ]
+    },
+    {
+      "hotel": "The Marlton Hotel",
+      "starred_within_60_min": "",
+      "rank": "",
+      "method": "",
+      "result": "",
+      "_source_url": "https://guide.michelin.com/us/en/hotels-stays/nyc/the-marlton-hotel-7089",
+      "_source_label": "MICHELIN hotel page",
+      "_extra_source_urls": [
+        {
+          "label": "MTA official fares",
+          "url": "https://www.mta.info/fares-tolls/subway-bus"
+        },
+        {
+          "label": "MICHELIN live star list",
+          "url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurants"
+        }
+      ],
+      "_flags": [
+        "Count blank+flag: no official MTA door-to-door matrix",
+        "Rank blank+flag",
+        "Transitous sample not treated as official MTA source"
+      ]
+    },
+    {
+      "hotel": "Modernhaus Soho",
+      "starred_within_60_min": "",
+      "rank": "",
+      "method": "",
+      "result": "",
+      "_source_url": "https://guide.michelin.com/us/en/hotels-stays/nyc/modernhaus-soho-5777",
+      "_source_label": "MICHELIN hotel page",
+      "_extra_source_urls": [
+        {
+          "label": "MTA official fares",
+          "url": "https://www.mta.info/fares-tolls/subway-bus"
+        },
+        {
+          "label": "MICHELIN live star list",
+          "url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurants"
+        }
+      ],
+      "_flags": [
+        "Count blank+flag: no official MTA door-to-door matrix",
+        "Rank blank+flag",
+        "Transitous sample not treated as official MTA source"
+      ]
+    },
+    {
+      "hotel": "Refinery Hotel New York",
+      "starred_within_60_min": "",
+      "rank": "",
+      "method": "",
+      "result": "",
+      "_source_url": "https://guide.michelin.com/us/en/hotels-stays/nyc/refinery-hotel-new-york-6995",
+      "_source_label": "MICHELIN hotel page",
+      "_extra_source_urls": [
+        {
+          "label": "MTA official fares",
+          "url": "https://www.mta.info/fares-tolls/subway-bus"
+        },
+        {
+          "label": "MICHELIN live star list",
+          "url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurants"
+        }
+      ],
+      "_flags": [
+        "Count blank+flag: no official MTA door-to-door matrix",
+        "Rank blank+flag",
+        "Transitous sample not treated as official MTA source"
+      ]
+    },
+    {
+      "hotel": "The Mercer",
+      "starred_within_60_min": "",
+      "rank": "",
+      "method": "",
+      "result": "",
+      "_source_url": "https://guide.michelin.com/us/en/hotels-stays/nyc/the-mercer-60",
+      "_source_label": "MICHELIN hotel page",
+      "_extra_source_urls": [
+        {
+          "label": "MTA official fares",
+          "url": "https://www.mta.info/fares-tolls/subway-bus"
+        },
+        {
+          "label": "MICHELIN live star list",
+          "url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurants"
+        }
+      ],
+      "_flags": [
+        "Count blank+flag: no official MTA door-to-door matrix",
+        "Rank blank+flag",
+        "Transitous sample not treated as official MTA source"
+      ]
+    }
+  ],
+  "transit_facts": [
+    {
+      "fact": "Subway/local bus fare",
+      "value": "$3",
+      "note": "Most riders; official MTA fares page",
+      "_source_url": "https://www.mta.info/fares-tolls/subway-bus",
+      "_source_label": "MTA official fares",
+      "_flags": []
+    },
+    {
+      "fact": "Express bus",
+      "value": "$7.25",
+      "note": "Official MTA fares page",
+      "_source_url": "https://www.mta.info/fares-tolls/subway-bus",
+      "_source_label": "MTA official fares",
+      "_flags": []
+    },
+    {
+      "fact": "7-day fare cap",
+      "value": "$35",
+      "note": "Tap-and-ride cap for subway and local bus in a 7-day period",
+      "_source_url": "https://www.mta.info/fares-tolls/subway-bus",
+      "_source_label": "MTA official fares",
+      "_flags": []
+    },
+    {
+      "fact": "Free transfer",
+      "value": "One free transfer within two hours",
+      "note": "Subway↔bus or bus↔bus when using same card/device",
+      "_source_url": "https://www.mta.info/fares-tolls/subway-bus",
+      "_source_label": "MTA official fares",
+      "_flags": []
+    },
+    {
+      "fact": "MetroCard purchase/refill",
+      "value": "No longer available as of January 1, 2026",
+      "note": "Existing cards can spend down value; exact end of acceptance announced later in 2026",
+      "_source_url": "https://www.mta.info/fares-tolls/subway-bus",
+      "_source_label": "MTA official fares",
+      "_flags": []
+    },
+    {
+      "fact": "Transitous / MOTIS sample",
+      "value": "10 restaurant destinations sampled from citizenM Times Square at 2027-02-17 17:00 -05:00",
+      "note": "Community Transitous/MOTIS API using MTA GTFS + OSM; derived sample, not an official MTA trip-planner publication or full 10-hotel × live-star matrix.",
+      "_source_url": "https://raw.githubusercontent.com/motis-project/motis/master/openapi.yaml",
+      "_source_label": "MOTIS OpenAPI / community router documentation",
+      "_flags": [
+        "Derived/community-router sample: not official MTA trip times",
+        "Do not use for hotel ranking"
+      ]
+    },
+    {
+      "fact": "Full ≤60-minute hotel ranking",
+      "value": "",
+      "note": "No official MTA door-to-door matrix was produced. Hotel rank and count cells remain blank+flag.",
+      "_source_url": "https://www.mta.info/fares-tolls/subway-bus",
+      "_source_label": "MTA official fares page",
+      "_flags": [
+        "Rank blank+flag",
+        "Count blank+flag"
+      ]
+    }
+  ]
+}

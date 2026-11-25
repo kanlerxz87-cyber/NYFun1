@@ -1,0 +1,720 @@
+{
+  "questions": [
+    {
+      "question": "Which MICHELIN roster is authoritative for Feb 2027?",
+      "known_official": "Official 2025 ceremony article: 5 three-star + 15 two-star + 52 one-star = 72; live NYC filter: 5 + 14 + 50 = 69.",
+      "answer": "",
+      "why_or_next": "No official 2026/2027 NYC ceremony roster was found; distinctions may change before travel. Re-check guide.michelin.com immediately before booking.",
+      "source_hint": "MICHELIN article + live filter",
+      "_source_url": "https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025",
+      "_source_label": "Official source / repository board",
+      "_flags": [
+        "Answer blank+flag"
+      ]
+    },
+    {
+      "question": "Which hotel is chosen?",
+      "known_official": "",
+      "answer": "",
+      "why_or_next": "No hotel is chosen in this audit. A chosen hotel is required before a door-to-door ≤60-minute activity/transit matrix can be meaningful.",
+      "source_hint": "Re-quote and compare official hotel pages",
+      "_source_url": "https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
+      "_source_label": "Official source / repository board",
+      "_flags": [
+        "Answer blank+flag"
+      ]
+    },
+    {
+      "question": "What is the cheapest upcoming DATE TO BOOK?",
+      "known_official": "Current official quotes were sampled on 2026-11-25 for stays in Feb/Mar 2027.",
+      "answer": "",
+      "why_or_next": "No official source publishes a future booking-date price curve. A repeat experiment on fixed future purchase dates is needed.",
+      "source_hint": "Booking.com / MICHELIN exact-date pages",
+      "_source_url": "https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
+      "_source_label": "Official source / repository board",
+      "_flags": [
+        "Answer blank+flag"
+      ]
+    },
+    {
+      "question": "Do quoted hotel rates require membership or sign-in?",
+      "known_official": "Arlo Soho pages show MEMBER RATE · SIGN IN.",
+      "answer": "",
+      "why_or_next": "Standard non-member rate is blank+flag.",
+      "source_hint": "MICHELIN Arlo Soho exact-date pages",
+      "_source_url": "https://guide.michelin.com/us/en/hotels-stays/nyc/arlo-soho-8260?arr=2027-02-15&dep=2027-02-22&nA=2&nC=0&nR=1",
+      "_source_label": "Official source / repository board",
+      "_flags": [
+        "Answer blank+flag"
+      ]
+    },
+    {
+      "question": "Are all quoted totals final all-in totals?",
+      "known_official": "Fairfield prints US$1,183.59 incl taxes/fees; citizenM/Moxy print tax and city tax as excluded.",
+      "answer": "",
+      "why_or_next": "All-in totals for citizenM/Moxy are blank+flag; checkout totals must be captured.",
+      "source_hint": "Booking.com exact-date pages",
+      "_source_url": "https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
+      "_source_label": "Official source / repository board",
+      "_flags": [
+        "Answer blank+flag"
+      ]
+    },
+    {
+      "question": "Can the 7-night baseline answer 1–2 weeks, 2–4 weeks, or preferred 3 nights?",
+      "known_official": "Baseline stay is 2027-02-15 → 2027-02-22, 7 nights.",
+      "answer": "",
+      "why_or_next": "No. Other duration options remain blank+flag.",
+      "source_hint": "Repository baseline + user requirements",
+      "_source_url": "https://github.com/kanlerxz87-cyber/NYFun1/blob/b07631405e316015f0a3eeb255f5f2d27facd610/COORDINATION.md",
+      "_source_label": "Official source / repository board",
+      "_flags": [
+        "Answer blank+flag"
+      ]
+    },
+    {
+      "question": "Which restaurants currently have stars vs are Guide-listed only?",
+      "known_official": "Live filtered star lists and no-star detail pages are separated in this audit.",
+      "answer": "",
+      "why_or_next": "A 2027 roster refresh is still required.",
+      "source_hint": "MICHELIN live lists + detail pages",
+      "_source_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurants",
+      "_source_label": "Official source / repository board",
+      "_flags": [
+        "Answer blank+flag"
+      ]
+    },
+    {
+      "question": "What is the exact cost for 2 adults at each restaurant?",
+      "known_official": "Official menus publish per-person or per-guest prices.",
+      "answer": "",
+      "why_or_next": "Two-adult totals are blank+flag because the totals are not printed as such; arithmetic is not entered as an official value.",
+      "source_hint": "Official restaurant menus / FAQs / Tock",
+      "_source_url": "https://github.com/kanlerxz87-cyber/NYFun1/blob/b07631405e316015f0a3eeb255f5f2d27facd610/docs/README-sources.md",
+      "_source_label": "Official source / repository board",
+      "_flags": [
+        "Answer blank+flag"
+      ]
+    },
+    {
+      "question": "Which official hours apply in February 2027?",
+      "known_official": "MoMA, AMNH, NPS, High Line, Chelsea Market, and several MICHELIN restaurant pages publish current or seasonal hours. ESB and 9/11 pages publish rolling/2026 schedules.",
+      "answer": "",
+      "why_or_next": "Feb 2027 hours for several venues are blank+flag; re-check the week of travel.",
+      "source_hint": "Official venue and agency pages",
+      "_source_url": "https://www.esbnyc.com/hours-directions",
+      "_source_label": "Official source / repository board",
+      "_flags": [
+        "Answer blank+flag"
+      ]
+    },
+    {
+      "question": "What is the exact Statue of Liberty ferry schedule and price in Feb 2027?",
+      "known_official": "NPS prints park hours and ferry-only access; Statue City Cruises prints starting-at prices and 2026 calendar availability.",
+      "answer": "",
+      "why_or_next": "Feb 2027 ferry schedule and exact two-adult total are blank+flag.",
+      "source_hint": "NPS + Statue City Cruises",
+      "_source_url": "https://www.nps.gov/stli/planyourvisit/hours.htm",
+      "_source_label": "Official source / repository board",
+      "_flags": [
+        "Answer blank+flag"
+      ]
+    },
+    {
+      "question": "What is the full ≤60-minute subway/bus cluster matrix?",
+      "known_official": "MTA publishes fare rules; MICHELIN publishes an official live star list.",
+      "answer": "",
+      "why_or_next": "No official MTA door-to-door matrix was produced. Counts and ranks are blank+flag.",
+      "source_hint": "MTA fares + MICHELIN live list",
+      "_source_url": "https://www.mta.info/fares-tolls/subway-bus",
+      "_source_label": "Official source / repository board",
+      "_flags": [
+        "Answer blank+flag"
+      ]
+    },
+    {
+      "question": "Are the social links verified reviews?",
+      "known_official": "27 direct YouTube pages were verified through official oEmbed endpoints.",
+      "answer": "",
+      "why_or_next": "TikTok/Instagram direct review links are blank+flag. Search/account links are discovery-only.",
+      "source_hint": "YouTube oEmbed endpoints",
+      "_source_url": "https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=e1-xFAKQMIM&format=json",
+      "_source_label": "Official source / repository board",
+      "_flags": [
+        "Answer blank+flag"
+      ]
+    },
+    {
+      "question": "Do all activities have official social review links?",
+      "known_official": "",
+      "answer": "",
+      "why_or_next": "No verified direct activity review link was captured; activity social cells are blank+flag.",
+      "source_hint": "Official activity pages",
+      "_source_url": "https://github.com/kanlerxz87-cyber/NYFun1/blob/b07631405e316015f0a3eeb255f5f2d27facd610/COORDINATION.md",
+      "_source_label": "Official source / repository board",
+      "_flags": [
+        "Answer blank+flag"
+      ]
+    },
+    {
+      "question": "Which Broadway show and 2027 performance time?",
+      "known_official": "Broadway League official directory lists shows and a performance-times link.",
+      "answer": "",
+      "why_or_next": "Feb 2027 show schedule, days, hours, and prices are blank+flag.",
+      "source_hint": "Broadway.org",
+      "_source_url": "https://www.broadway.org/",
+      "_source_label": "Official source / repository board",
+      "_flags": [
+        "Answer blank+flag"
+      ]
+    },
+    {
+      "question": "What are cancellation and prepayment terms at booking time?",
+      "known_official": "Current Booking/MICHELIN quote pages print free-cancellation and prepayment terms.",
+      "answer": "",
+      "why_or_next": "These are dynamic; re-capture at purchase time.",
+      "source_hint": "Booking.com / MICHELIN exact-date pages",
+      "_source_url": "https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
+      "_source_label": "Official source / repository board",
+      "_flags": [
+        "Answer blank+flag"
+      ]
+    },
+    {
+      "question": "Are modeled coordinates and straight-line clusters acceptable?",
+      "known_official": "docs/data/hotels.csv and docs/data/michelin_2025.csv contain modeled coordinates; deepdive transit uses a straight-line screen.",
+      "answer": "",
+      "why_or_next": "No. Modeled coordinates and straight-line counts are flagged; leave verified transit values blank.",
+      "source_hint": "Repository files + MTA official source policy",
+      "_source_url": "https://github.com/kanlerxz87-cyber/NYFun1/blob/b07631405e316015f0a3eeb255f5f2d27facd610/deepdive/data/transit.json",
+      "_source_label": "Official source / repository board",
+      "_flags": [
+        "Answer blank+flag"
+      ]
+    },
+    {
+      "question": "Which pages should be merged into the live site?",
+      "known_official": "audit/ contains a self-contained static sub-site.",
+      "answer": "",
+      "why_or_next": "Final integration session must add “Verified audit” links from docs/index.html and deepdive/index.html, merge, verify links, and republish Pages.",
+      "source_hint": "COORDINATION.md T18 integration request",
+      "_source_url": "https://github.com/kanlerxz87-cyber/NYFun1/blob/b07631405e316015f0a3eeb255f5f2d27facd610/COORDINATION.md",
+      "_source_label": "Official source / repository board",
+      "_flags": [
+        "Answer blank+flag"
+      ]
+    },
+    {
+      "question": "Can a reasonable final booking decision be made now?",
+      "known_official": "Many official-source values are verified, but key 2027-specific price, roster, hours, booking-date, and transit values remain blank+flag.",
+      "answer": "",
+      "why_or_next": "No. Use the review workflow, resolve blockers, then choose a path.",
+      "source_hint": "This dossier",
+      "_source_url": "https://github.com/kanlerxz87-cyber/NYFun1/blob/b07631405e316015f0a3eeb255f5f2d27facd610/COORDINATION.md",
+      "_source_label": "Official source / repository board",
+      "_flags": [
+        "Answer blank+flag"
+      ]
+    }
+  ],
+  "suggestions": [
+    {
+      "idea": "Re-check official MICHELIN live star filters immediately before booking",
+      "priority": "High",
+      "owner": "Final integration / traveller review",
+      "workflow": "Capture 3/2/1-star counts, Green Stars, Bib Gourmand, and Selected; record fetch date.",
+      "status": "needs review",
+      "source_hint": "MICHELIN live lists",
+      "_source_url": "https://github.com/kanlerxz87-cyber/NYFun1/blob/b07631405e316015f0a3eeb255f5f2d27facd610/COORDINATION.md",
+      "_source_label": "COORDINATION.md T18",
+      "_flags": [
+        "Needs review before implementation"
+      ]
+    },
+    {
+      "idea": "Repeat exact-date hotel quotes at several fixed purchase dates",
+      "priority": "High",
+      "owner": "Verification session",
+      "workflow": "Use identical room, 2 adults, 1 room, 7 nights; record booking date, quote date, member/non-member status, all-in total.",
+      "status": "needs review",
+      "source_hint": "Booking.com / MICHELIN hotel pages",
+      "_source_url": "https://github.com/kanlerxz87-cyber/NYFun1/blob/b07631405e316015f0a3eeb255f5f2d27facd610/COORDINATION.md",
+      "_source_label": "COORDINATION.md T18",
+      "_flags": [
+        "Needs review before implementation"
+      ]
+    },
+    {
+      "idea": "Capture checkout-level final totals",
+      "priority": "High",
+      "owner": "Verification session",
+      "workflow": "Print or save a source page that states taxes/fees/resort fee and final total.",
+      "status": "needs review",
+      "source_hint": "Booking.com / hotel checkout",
+      "_source_url": "https://github.com/kanlerxz87-cyber/NYFun1/blob/b07631405e316015f0a3eeb255f5f2d27facd610/COORDINATION.md",
+      "_source_label": "COORDINATION.md T18",
+      "_flags": [
+        "Needs review before implementation"
+      ]
+    },
+    {
+      "idea": "Publish 2027-specific venue hours",
+      "priority": "High",
+      "owner": "Final integration",
+      "workflow": "Re-fetch MoMA, Met, AMNH, 9/11, ESB, Top of Rock, Statue City Cruises, Broadway, parks.",
+      "status": "needs review",
+      "source_hint": "Official venue pages",
+      "_source_url": "https://github.com/kanlerxz87-cyber/NYFun1/blob/b07631405e316015f0a3eeb255f5f2d27facd610/COORDINATION.md",
+      "_source_label": "COORDINATION.md T18",
+      "_flags": [
+        "Needs review before implementation"
+      ]
+    },
+    {
+      "idea": "Build an official MTA door-to-door matrix",
+      "priority": "High",
+      "owner": "Final integration",
+      "workflow": "Use MTA trip planner/GTFS with a reproducible script; rank hotels by count of live-starred venues ≤60 min.",
+      "status": "needs review",
+      "source_hint": "MTA official trip planner / GTFS",
+      "_source_url": "https://github.com/kanlerxz87-cyber/NYFun1/blob/b07631405e316015f0a3eeb255f5f2d27facd610/COORDINATION.md",
+      "_source_label": "COORDINATION.md T18",
+      "_flags": [
+        "Needs review before implementation"
+      ]
+    },
+    {
+      "idea": "Verify TikTok and Instagram direct review links",
+      "priority": "Medium",
+      "owner": "Verification session",
+      "workflow": "Use platform oEmbed or direct post URLs; keep search/account links in discovery-only table.",
+      "status": "needs review",
+      "source_hint": "TikTok / Instagram platform pages",
+      "_source_url": "https://github.com/kanlerxz87-cyber/NYFun1/blob/b07631405e316015f0a3eeb255f5f2d27facd610/COORDINATION.md",
+      "_source_label": "COORDINATION.md T18",
+      "_flags": [
+        "Needs review before implementation"
+      ]
+    },
+    {
+      "idea": "Add official social accounts separately from reviews",
+      "priority": "Medium",
+      "owner": "Verification session",
+      "workflow": "Do not conflate a restaurant’s official account with a third-party review.",
+      "status": "needs review",
+      "source_hint": "Official venue and platform pages",
+      "_source_url": "https://github.com/kanlerxz87-cyber/NYFun1/blob/b07631405e316015f0a3eeb255f5f2d27facd610/COORDINATION.md",
+      "_source_label": "COORDINATION.md T18",
+      "_flags": [
+        "Needs review before implementation"
+      ]
+    },
+    {
+      "idea": "Replace literal NOT VERIFIED / NOT CAPTURED placeholders with blank+flag",
+      "priority": "High",
+      "owner": "Owner of docs/data after merge coordination",
+      "workflow": "Do not edit another active session’s claimed files in T18; log integration request.",
+      "status": "needs review",
+      "source_hint": "docs/README-sources.md blank-findings rule",
+      "_source_url": "https://github.com/kanlerxz87-cyber/NYFun1/blob/b07631405e316015f0a3eeb255f5f2d27facd610/COORDINATION.md",
+      "_source_label": "COORDINATION.md T18",
+      "_flags": [
+        "Needs review before implementation"
+      ]
+    },
+    {
+      "idea": "Keep 72-star ceremony and 69-live datasets visibly distinct",
+      "priority": "High",
+      "owner": "Final integration",
+      "workflow": "Do not silently reconcile official-source disagreement.",
+      "status": "needs review",
+      "source_hint": "MICHELIN article + live filter",
+      "_source_url": "https://github.com/kanlerxz87-cyber/NYFun1/blob/b07631405e316015f0a3eeb255f5f2d27facd610/COORDINATION.md",
+      "_source_label": "COORDINATION.md T18",
+      "_flags": [
+        "Needs review before implementation"
+      ]
+    },
+    {
+      "idea": "Add “Verified audit” nav links from docs/index.html and deepdive/index.html",
+      "priority": "High",
+      "owner": "Final integration session",
+      "workflow": "Link to ../audit/index.html, then run combined link checker.",
+      "status": "needs review",
+      "source_hint": "COORDINATION.md T18 integration request",
+      "_source_url": "https://github.com/kanlerxz87-cyber/NYFun1/blob/b07631405e316015f0a3eeb255f5f2d27facd610/COORDINATION.md",
+      "_source_label": "COORDINATION.md T18",
+      "_flags": [
+        "Needs review before implementation"
+      ]
+    },
+    {
+      "idea": "Republish GitHub Pages only after combined link check",
+      "priority": "High",
+      "owner": "Final integration session",
+      "workflow": "Merge branches, build, confirm no broken internal links, publish.",
+      "status": "needs review",
+      "source_hint": "COORDINATION.md T18 integration request",
+      "_source_url": "https://github.com/kanlerxz87-cyber/NYFun1/blob/b07631405e316015f0a3eeb255f5f2d27facd610/COORDINATION.md",
+      "_source_label": "COORDINATION.md T18",
+      "_flags": [
+        "Needs review before implementation"
+      ]
+    },
+    {
+      "idea": "Use a review-first decision gate",
+      "priority": "High",
+      "owner": "Person reviewing this dossier",
+      "workflow": "Choose Hold / Re-verify / Book refundable / Integrate, record decision, then implement changes.",
+      "status": "needs review",
+      "source_hint": "This dossier",
+      "_source_url": "https://github.com/kanlerxz87-cyber/NYFun1/blob/b07631405e316015f0a3eeb255f5f2d27facd610/COORDINATION.md",
+      "_source_label": "COORDINATION.md T18",
+      "_flags": [
+        "Needs review before implementation"
+      ]
+    }
+  ],
+  "workflow": [
+    {
+      "step": 1,
+      "action": "1. Read the executive summary and flagged-for-review page.",
+      "decision": "",
+      "_source_url": "https://github.com/kanlerxz87-cyber/NYFun1/blob/b07631405e316015f0a3eeb255f5f2d27facd610/COORDINATION.md",
+      "_source_label": "COORDINATION.md T18",
+      "_flags": [
+        "Decision blank+flag until reviewer chooses path"
+      ]
+    },
+    {
+      "step": 2,
+      "action": "2. Confirm every blank+flag cell is genuinely blank and not silently filled.",
+      "decision": "",
+      "_source_url": "https://github.com/kanlerxz87-cyber/NYFun1/blob/b07631405e316015f0a3eeb255f5f2d27facd610/COORDINATION.md",
+      "_source_label": "COORDINATION.md T18",
+      "_flags": [
+        "Decision blank+flag until reviewer chooses path"
+      ]
+    },
+    {
+      "step": 3,
+      "action": "3. Separate verified official-source values from repo claims and dynamic snapshots.",
+      "decision": "",
+      "_source_url": "https://github.com/kanlerxz87-cyber/NYFun1/blob/b07631405e316015f0a3eeb255f5f2d27facd610/COORDINATION.md",
+      "_source_label": "COORDINATION.md T18",
+      "_flags": [
+        "Decision blank+flag until reviewer chooses path"
+      ]
+    },
+    {
+      "step": 4,
+      "action": "4. Choose a decision path: Hold, Re-verify, Book refundable after re-quote, or Integrate/publish.",
+      "decision": "",
+      "_source_url": "https://github.com/kanlerxz87-cyber/NYFun1/blob/b07631405e316015f0a3eeb255f5f2d27facd610/COORDINATION.md",
+      "_source_label": "COORDINATION.md T18",
+      "_flags": [
+        "Decision blank+flag until reviewer chooses path"
+      ]
+    },
+    {
+      "step": 5,
+      "action": "5. Record the decision and owner in COORDINATION.md before editing shared outputs.",
+      "decision": "",
+      "_source_url": "https://github.com/kanlerxz87-cyber/NYFun1/blob/b07631405e316015f0a3eeb255f5f2d27facd610/COORDINATION.md",
+      "_source_label": "COORDINATION.md T18",
+      "_flags": [
+        "Decision blank+flag until reviewer chooses path"
+      ]
+    },
+    {
+      "step": 6,
+      "action": "6. Re-run official-source checks for 2027-specific values.",
+      "decision": "",
+      "_source_url": "https://github.com/kanlerxz87-cyber/NYFun1/blob/b07631405e316015f0a3eeb255f5f2d27facd610/COORDINATION.md",
+      "_source_label": "COORDINATION.md T18",
+      "_flags": [
+        "Decision blank+flag until reviewer chooses path"
+      ]
+    },
+    {
+      "step": 7,
+      "action": "7. Only then implement site changes and republish Pages.",
+      "decision": "",
+      "_source_url": "https://github.com/kanlerxz87-cyber/NYFun1/blob/b07631405e316015f0a3eeb255f5f2d27facd610/COORDINATION.md",
+      "_source_label": "COORDINATION.md T18",
+      "_flags": [
+        "Decision blank+flag until reviewer chooses path"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "topic": "Official-source disagreement on star count",
+      "finding": "2025 ceremony article lists 72 stars; live NYC filter lists 69 stars.",
+      "implication": "Keep both datasets visible; do not reconcile by inference.",
+      "source_hint": "MICHELIN article + live filter",
+      "_source_url": "https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025",
+      "_source_label": "Official source / repository board",
+      "_flags": []
+    },
+    {
+      "topic": "Current hotel quotes drift",
+      "finding": "Fairfield baseline US$985.60 / US$1,159 all-in is not reproducible; live quote is US$1,183.59 incl taxes/fees.",
+      "implication": "Treat quotes as dated snapshots; re-quote before booking.",
+      "source_hint": "Booking.com exact-date page",
+      "_source_url": "https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
+      "_source_label": "Official source / repository board",
+      "_flags": []
+    },
+    {
+      "topic": "Arlo Soho stored values differ",
+      "finding": "Stored Feb 15 total 1721.14; live T18 queen free-cancel total 1690.16. Stored Feb 22 value matches a Bunk Room total, not Queen Courtyard View.",
+      "implication": "Flag dynamic drift and room-type mismatch.",
+      "source_hint": "MICHELIN Arlo exact-date pages",
+      "_source_url": "https://guide.michelin.com/us/en/hotels-stays/nyc/arlo-soho-8260?arr=2027-02-15&dep=2027-02-22&nA=2&nC=0&nR=1",
+      "_source_label": "Official source / repository board",
+      "_flags": []
+    },
+    {
+      "topic": "Best time to book unsupported",
+      "finding": "Sampled stay-window prices do not measure purchase-date price changes.",
+      "implication": "Answer blank+flag; run fixed-date purchase-date experiment.",
+      "source_hint": "Booking.com / MICHELIN exact-date pages",
+      "_source_url": "https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
+      "_source_label": "Official source / repository board",
+      "_flags": []
+    },
+    {
+      "topic": "Restaurant totals are not officially printed as two-adult totals",
+      "finding": "Official menus publish per-person / per-guest prices.",
+      "implication": "Leave two-adult totals blank+flag; do not multiply into verified-value cells.",
+      "source_hint": "Official menus / FAQs / Tock",
+      "_source_url": "https://github.com/kanlerxz87-cyber/NYFun1/blob/b07631405e316015f0a3eeb255f5f2d27facd610/docs/README-sources.md",
+      "_source_label": "Official source / repository board",
+      "_flags": []
+    },
+    {
+      "topic": "Starred vs Guide-listed-only distinction",
+      "finding": "Fetched no-star detail pages show Guide listing without star icons; One White Street carries a Green Star emblem but no star.",
+      "implication": "Keep separate table.",
+      "source_hint": "MICHELIN detail pages",
+      "_source_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurants",
+      "_source_label": "Official source / repository board",
+      "_flags": []
+    },
+    {
+      "topic": "Activity hours are partly verified",
+      "finding": "MoMA, AMNH, NPS, High Line, Chelsea Market publish official hours. ESB and 9/11 publish rolling/2026 schedules; Met hours table not captured.",
+      "implication": "Use blank+flag where 2027 schedule is not printed.",
+      "source_hint": "Official venue/agency pages",
+      "_source_url": "https://www.esbnyc.com/hours-directions",
+      "_source_label": "Official source / repository board",
+      "_flags": []
+    },
+    {
+      "topic": "MTA fare verified; door-to-door matrix not",
+      "finding": "MTA official page says $3 base fare, $35 seven-day cap, free transfer within two hours. No official trip-time matrix was produced.",
+      "implication": "Fare facts may be used; rank/count blank+flag.",
+      "source_hint": "MTA fares page",
+      "_source_url": "https://www.mta.info/fares-tolls/subway-bus",
+      "_source_label": "Official source / repository board",
+      "_flags": []
+    },
+    {
+      "topic": "YouTube links verified; TikTok/Instagram not",
+      "finding": "27 direct YouTube pages verified via oEmbed. Search/account links are discovery-only.",
+      "implication": "Do not call search links verified reviews.",
+      "source_hint": "YouTube oEmbed endpoints",
+      "_source_url": "https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=e1-xFAKQMIM&format=json",
+      "_source_label": "Official source / repository board",
+      "_flags": []
+    },
+    {
+      "topic": "Repo placeholders violate blank+flag rule",
+      "finding": "Literal NOT VERIFIED, NOT CAPTURED, ADDRESS NOT CAPTURED, and broad verified labels appear in baseline CSV/JSON.",
+      "implication": "Flag for review; T18 does not edit other sessions’ files.",
+      "source_hint": "Repository baseline files",
+      "_source_url": "https://github.com/kanlerxz87-cyber/NYFun1/blob/b07631405e316015f0a3eeb255f5f2d27facd610/docs/data/activities.csv",
+      "_source_label": "Official source / repository board",
+      "_flags": []
+    },
+    {
+      "topic": "Modeled coordinates and straight-line transit are not verified transit",
+      "finding": "docs/ uses modeled lat/lon; deepdive/ uses a straight-line walking screen and measured Transitous legs.",
+      "implication": "Leave official transit ranks blank+flag.",
+      "source_hint": "Repository baseline files + MTA source policy",
+      "_source_url": "https://github.com/kanlerxz87-cyber/NYFun1/blob/b07631405e316015f0a3eeb255f5f2d27facd610/deepdive/data/transit.json",
+      "_source_label": "Official source / repository board",
+      "_flags": []
+    },
+    {
+      "topic": "Site is self-contained and preview-safe",
+      "finding": "Generated HTML uses inline CSS/JS, relative links, and no external assets.",
+      "implication": "Final integration can link and publish after combined link check.",
+      "source_hint": "audit build output",
+      "_source_url": "https://github.com/kanlerxz87-cyber/NYFun1/blob/b07631405e316015f0a3eeb255f5f2d27facd610/COORDINATION.md",
+      "_source_label": "Official source / repository board",
+      "_flags": []
+    }
+  ],
+  "decision_options": [
+    {
+      "option": "A — Hold / verification-first",
+      "status": "Recommended by this audit",
+      "rationale": "Do not book non-refundable travel until blockers are resolved.",
+      "caveat": "Official-source gaps listed on Questions and Flagged pages",
+      "choice": "",
+      "_source_url": "https://github.com/kanlerxz87-cyber/NYFun1/blob/b07631405e316015f0a3eeb255f5f2d27facd610/COORDINATION.md",
+      "_source_label": "Official source / COORDINATION.md",
+      "_flags": [
+        "Choice blank+flag until review workflow completed"
+      ]
+    },
+    {
+      "option": "B — Book refundable Fairfield after re-quote",
+      "status": "Conditional",
+      "rationale": "Lowest current official all-in exact-date quote captured: US$1,183.59 incl taxes/fees; free cancellation before 2027-02-12.",
+      "caveat": "Dynamic Black Friday quote; re-quote and confirm room/bed before purchase",
+      "choice": "",
+      "_source_url": "https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
+      "_source_label": "Official source / COORDINATION.md",
+      "_flags": [
+        "Choice blank+flag until review workflow completed"
+      ]
+    },
+    {
+      "option": "C — Book refundable citizenM Times Square after checkout total",
+      "status": "Conditional",
+      "rationale": "US$1,147 for 7 nights is printed excluding 14.75% tax and US$4/night city tax; private bath and king bed printed.",
+      "caveat": "All-in total blank+flag; capture checkout total before purchase",
+      "choice": "",
+      "_source_url": "https://www.booking.com/hotel/us/citizenm-new-york-times-square-new-york.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
+      "_source_label": "Official source / COORDINATION.md",
+      "_flags": [
+        "Choice blank+flag until review workflow completed"
+      ]
+    },
+    {
+      "option": "D — Book Arlo Soho member rate",
+      "status": "Conditional",
+      "rationale": "US$1,690.16 with taxes/fees for 7 nights; 1 Queen Bed free-cancellation rate.",
+      "caveat": "MEMBER RATE · SIGN IN; standard non-member rate blank+flag",
+      "choice": "",
+      "_source_url": "https://guide.michelin.com/us/en/hotels-stays/nyc/arlo-soho-8260?arr=2027-02-15&dep=2027-02-22&nA=2&nC=0&nR=1",
+      "_source_label": "Official source / COORDINATION.md",
+      "_flags": [
+        "Choice blank+flag until review workflow completed"
+      ]
+    },
+    {
+      "option": "E — Integrate and publish audit site",
+      "status": "Final integration session",
+      "rationale": "Add shared nav links, merge, verify combined internal links, republish Pages.",
+      "caveat": "Shared nav and publication are outside T18 exclusive scope",
+      "choice": "",
+      "_source_url": "https://github.com/kanlerxz87-cyber/NYFun1/blob/b07631405e316015f0a3eeb255f5f2d27facd610/COORDINATION.md",
+      "_source_label": "Official source / COORDINATION.md",
+      "_flags": [
+        "Choice blank+flag until review workflow completed"
+      ]
+    }
+  ],
+  "flags_seed": [
+    {
+      "flag": "No official 2026/2027 NYC MICHELIN star roster found; 2025 article is the latest fetched official NYC ceremony article.",
+      "severity": "review",
+      "status": "needs review",
+      "_source_url": "https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025",
+      "_source_label": "Official source / repository board",
+      "_flags": []
+    },
+    {
+      "flag": "Live 69-star filter and 72-star ceremony roster disagree; no silent reconciliation performed.",
+      "severity": "review",
+      "status": "needs review",
+      "_source_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurants",
+      "_source_label": "Official source / repository board",
+      "_flags": []
+    },
+    {
+      "flag": "Cheapest upcoming booking date is unsupported by official sources.",
+      "severity": "review",
+      "status": "needs review",
+      "_source_url": "https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
+      "_source_label": "Official source / repository board",
+      "_flags": []
+    },
+    {
+      "flag": "Full ≤60-minute subway/bus hotel ranking is unsupported by an official MTA matrix.",
+      "severity": "review",
+      "status": "needs review",
+      "_source_url": "https://www.mta.info/fares-tolls/subway-bus",
+      "_source_label": "Official source / repository board",
+      "_flags": []
+    },
+    {
+      "flag": "Two-adult restaurant totals are not officially printed; blank+flag.",
+      "severity": "review",
+      "status": "needs review",
+      "_source_url": "https://github.com/kanlerxz87-cyber/NYFun1/blob/b07631405e316015f0a3eeb255f5f2d27facd610/docs/README-sources.md",
+      "_source_label": "Official source / repository board",
+      "_flags": []
+    },
+    {
+      "flag": "TikTok/Instagram direct review links are not verified; blank+flag.",
+      "severity": "review",
+      "status": "needs review",
+      "_source_url": "https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=e1-xFAKQMIM&format=json",
+      "_source_label": "Official source / repository board",
+      "_flags": []
+    },
+    {
+      "flag": "Modeled coordinates and straight-line cluster screens are not official transit verification.",
+      "severity": "review",
+      "status": "needs review",
+      "_source_url": "https://github.com/kanlerxz87-cyber/NYFun1/blob/b07631405e316015f0a3eeb255f5f2d27facd610/deepdive/data/transit.json",
+      "_source_label": "Official source / repository board",
+      "_flags": []
+    },
+    {
+      "flag": "Literal NOT VERIFIED / NOT CAPTURED placeholders in baseline data violate blank+flag presentation.",
+      "severity": "review",
+      "status": "needs review",
+      "_source_url": "https://github.com/kanlerxz87-cyber/NYFun1/blob/b07631405e316015f0a3eeb255f5f2d27facd610/docs/data/activities.csv",
+      "_source_label": "Official source / repository board",
+      "_flags": []
+    },
+    {
+      "flag": "Blanket verified labels in baseline CSV/JSON exceed field-level official verification.",
+      "severity": "review",
+      "status": "needs review",
+      "_source_url": "https://github.com/kanlerxz87-cyber/NYFun1/blob/b07631405e316015f0a3eeb255f5f2d27facd610/docs/data/hotels.csv",
+      "_source_label": "Official source / repository board",
+      "_flags": []
+    },
+    {
+      "flag": "Dynamic hotel quotes drift between repo snapshots and live official pages.",
+      "severity": "review",
+      "status": "needs review",
+      "_source_url": "https://guide.michelin.com/us/en/hotels-stays/nyc/arlo-soho-8260?arr=2027-02-15&dep=2027-02-22&nA=2&nC=0&nR=1",
+      "_source_label": "Official source / repository board",
+      "_flags": []
+    },
+    {
+      "flag": "ESB and 9/11 official pages did not publish Feb 2027 hours in fetched content.",
+      "severity": "review",
+      "status": "needs review",
+      "_source_url": "https://www.esbnyc.com/hours-directions",
+      "_source_label": "Official source / repository board",
+      "_flags": []
+    },
+    {
+      "flag": "Final integration must add nav links, merge, verify links, and republish Pages.",
+      "severity": "review",
+      "status": "needs review",
+      "_source_url": "https://github.com/kanlerxz87-cyber/NYFun1/blob/b07631405e316015f0a3eeb255f5f2d27facd610/COORDINATION.md",
+      "_source_label": "Official source / repository board",
+      "_flags": []
+    }
+  ]
+}
