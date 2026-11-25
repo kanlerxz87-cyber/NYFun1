@@ -359,7 +359,7 @@ suggestion S-02.</p>
 <div class="card"><h3><a href="budget.html">Budget</a></h3><p class="small">Every line item with its source and whether it is verified, derived or unpriced.</p></div>
 <div class="card"><h3><a href="questions.html">Questions</a></h3><p class="small">{len(FR['questions'])} decisions, what we have, what is missing, and how to find it.</p></div>
 <div class="card"><h3><a href="suggestions.html">Suggestions</a></h3><p class="small">12 improvements with effort, impact, risk and a decision field.</p></div>
-<div class="card"><h3><a href="flagged.html">Flagged</a></h3><p class="small">20 irregularities, each with severity and the source that settles it.</p></div>
+<div class="card"><h3><a href="flagged.html">Flagged</a></h3><p class="small">{len(FR['flags'])} irregularities, each with severity and the source that settles it.</p></div>
 <div class="card"><h3><a href="method.html">Method &amp; sources</a></h3><p class="small">How each number was produced, every source URL, and the build's own checks.</p></div>
 </div>
 """
@@ -393,7 +393,9 @@ def build_hotels():
             + '<div class="small">' + pill("documented" if not h["tax_included"] else "verified",
                                            "derived" if not h["tax_included"] else "as printed") + '</div>',
             f'{esc(h["cancellation"])}<div class="small">guest score {esc(h["rating"])}</div>',
-            ext(h["source_url"], "Booking.com"),
+            (ext(h["source_url"], "Booking.com (hotel page)")
+             if "/hotel/us/" in h["source_url"]
+             else ext(h["source_url"], "Booking.com (search page)")),
         ])
     rk = sorted(HOTELS["hotels"], key=lambda z: (-z["reach"]["stars_within_5km"],
                                                   -z["reach"]["three_star_within_5km"]))
@@ -448,11 +450,6 @@ completely: Arlo SoHo looks cheapest at {money(1021.00)} and is still second at
 <strong>{money(188.70)} dearer</strong> all-in, before you add its $23.50 breakfast.</div>
 
 <h2>Shortlist, 15–22 February 2027 (7 nights, 2 adults)</h2>
-<div class="legend">
-  <span>{stars_badge(3)}</span><span class="small">Three MICHELIN stars</span>
-  <span>{stars_badge(2)}</span><span class="small">Two stars</span>
-  <span>{stars_badge(1)}</span><span class="small">One star</span>
-</div>
 {table(
     ["Hotel", "Room / bed / bathroom", "Breakfast", "Advertised total", "All-in, 7 nights", "Cancellation &amp; score", "Source"],
     rows,

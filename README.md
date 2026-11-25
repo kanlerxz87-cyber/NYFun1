@@ -38,9 +38,9 @@ Anything unverified is on [the Flagged page](docs/flagged.html). Anything undeci
 | [Activities](docs/activities.html) | 11 activities with official hours, exceptions, prices for two, and social/video links |
 | [Itinerary](docs/itinerary.html) | Day-by-day for 7 nights, plus 4-night and 14-night variants |
 | [Budget](docs/budget.html) | Every line with its source and whether it is verified, derived or deliberately blank |
-| [Questions](docs/questions.html) | 24 decisions: what we have, what is missing, how to discover it |
+| [Questions](docs/questions.html) | 26 decisions: what we have, what is missing, how to discover it |
 | [Suggestions](docs/suggestions.html) | 12 proposed improvements with effort, impact, risk and a decision field |
-| [Flagged](docs/flagged.html) | 16 irregularities with severity and the source that would close each |
+| [Flagged](docs/flagged.html) | 21 irregularities with severity and the source that would close each |
 | [Method & sources](docs/method.html) | Every source URL, what failed, the travel model's assumptions, the build's own checks |
 | [Repo review](docs/repo-review.html) | What this repository contained, what was wrong with it, and verification counted rather than claimed |
 
