@@ -43,11 +43,11 @@ on base commit `6609129`).
 | T12 | Flagged-for-review register (unverified / irregularities) | `docs/flagged.html` | arena-cfbb0ef6 | done | 2026-11-25 |
 | T13 | Verification pass: every value → official source or blank+flag | all data files | arena-cfbb0ef6 | done | 2026-11-25 |
 | T14 | Integration + GitHub Pages publish + link check | `docs/index.html`, nav, Pages settings | arena-cfbb0ef6 | done | 2026-11-25 |
-| T16 | Enrich verified restaurants with official social/profile links (YouTube/TikTok/Instagram) and verify hours/exceptions | `docs/data/michelin_2025.csv`, `docs/data/guide_listed.csv`, `content.py`, `build.py`, `docs/*.html` | arena-c23ad872 | in progress | 2026-11-25 |
-| T17 | Enrich activities with verified social/profile links and verify hours/days/exceptions | `docs/data/activities.csv`, `build.py`, `docs/*.html` | arena-c23ad872 | in progress | 2026-11-25 |
-| T18 | Verify table columns meet spec (days open, hours, exceptions, link, social links) and update site | `build.py`, `docs/*.html` | arena-c23ad872 | in progress | 2026-11-25 |
-| T19 | Update COORDINATION/verification log with sources and irregularities | `COORDINATION.md`, `docs/flagged.html` | arena-c23ad872 | in progress | 2026-11-25 |
-| T20 | Final rebuild, link check, commit | `docs/*`, `COORDINATION.md` | arena-c23ad872 | in progress | 2026-11-25 |
+| T16 | Enrich verified restaurants with official social/profile links (YouTube/TikTok/Instagram) and verify hours/exceptions | `docs/data/michelin_2025.csv`, `docs/data/guide_listed.csv`, `content.py`, `build.py`, `docs/*.html` | arena-c23ad872 | done (verified profiles where found; search fallback for rest) | 2026-11-25 |
+| T17 | Enrich activities with verified social/profile links and verify hours/days/exceptions | `docs/data/activities.csv`, `build.py`, `docs/*.html` | arena-c23ad872 | done (verified/partial per row; search fallback for missing) | 2026-11-25 |
+| T18 | Verify table columns meet spec (days open, hours, exceptions, link, social links) and update site | `build.py`, `docs/*.html` | arena-c23ad872 | done | 2026-11-25 |
+| T19 | Update COORDINATION/verification log with sources and irregularities | `COORDINATION.md`, `docs/flagged.html` | arena-c23ad872 | done | 2026-11-25 |
+| T20 | Final rebuild, link check, commit | `docs/*`, `COORDINATION.md` | arena-c23ad872 | done | 2026-11-25 |
 
 ## File ownership (non-overlapping scopes)
 
@@ -202,3 +202,18 @@ merged to `main`, reset Pages to `main:/docs` (or `main:/`) and delete the stale
   with itself.
 - **Link check (automated, all three trees):** 0 broken internal links across `index.html`, `docs/*.html`
   and `deepdive/*.html`.
+
+### 2026-11-25 · arena-c23ad872 · T16-T18 Social links & table spec compliance
+
+- **Scope:** enriched `docs/data/activities.csv`, `docs/data/michelin_2025.csv`, `docs/data/guide_listed.csv` with `instagram_url`, `youtube_url`, `tiktok_url`, `social_verification` columns; updated `build.py` to render verified links with a "verified" pill and fall back to platform search links with a "search" pill. Updated table headers to explicitly include "Days/hours open", "Closed / exceptions", "Official / booking link", and "Social media (YT / TikTok / IG)" as requested.
+- **Verified social profiles (direct fetch or official-source confirmation, 2026-11-25):**
+  - Le Bernardin Instagram: https://www.instagram.com/lebernardinny/ (profile fetched; bio: "3-Star @michelinguide 4-Star @nytimes").
+  - Eleven Madison Park Instagram: https://www.instagram.com/elevenmadisonpark/ (profile fetched).
+  - Jungsik NYC Instagram: https://www.instagram.com/jungsik_nyc/ (profile fetched; bio: "Three Michelin-starred NY").
+  - Sushi Sho NYC Instagram: https://www.instagram.com/sushishonyc/ (profile fetched; bio matches 3 E 41st Street, New York).
+  - MoMA Instagram: https://www.instagram.com/themuseumofmodernart/ ; YouTube: https://www.youtube.com/@themuseumofmodernart (confirmed via Shorty Awards entry https://shortyawards.com/17th/momas-youtube-channel); TikTok: https://www.tiktok.com/@museumofmodernart (official account page observed in search results).
+  - Empire State Building Instagram/YouTube/TikTok: https://www.instagram.com/empirestatebldg/ , https://www.youtube.com/@EmpireStateBldg , https://www.tiktok.com/@empirestatebldg (listed on official ESB page https://www.esbnyc.com/page/follow-worlds-most-famous-building).
+- **Partially corroborated (multiple sources, not direct official-site link capture):** Per Se IG @perseny (restaurantguru sameAs, nyctourism); Aquavit IG @AquavitNYC (Culinary Agents, Restaurant Guru); Met IG/YouTube/TikTok @metmuseum (Instagram confirmed; TikTok launch reported by GadgetMatch 2019); AMNH IG @amnh (profile fetched) and YouTube @AMNH (Feedspot listing); Top of the Rock IG @topoftherocknyc; 9/11 Memorial @911memorial; Statue of Liberty NPS handles; Central Park Conservancy @centralparknyc; High Line @highlinenyc; Broadway.com accounts; Chelsea Market @chelseamarketnyc. These are marked PARTIAL in `social_verification` and should be re-confirmed from the venue's own website before being treated as authoritative.
+- **Not verified / no official brand account found:** no official YouTube/TikTok brand account was verified for the starred restaurants in this pass; roster-only starred restaurants (66) and guide-listed subset have no verified profile links and retain search links. Brooklyn Bridge walkway has no single official social account.
+- **Irregularities / honesty notes:** F20 is partially addressed (some verified official profile links now exist) but remains open for full coverage. Many restaurants/venues do not publish an official TikTok/YouTube; search links are provided as discoverability aids, clearly labelled "search", not asserted as official profiles. No social link was invented.
+- **User-request compliance:** every restaurant and activity row now includes social media columns (YouTube/TikTok/Instagram) with either a verified link or a clearly labelled search link, plus a per-row social verification note.

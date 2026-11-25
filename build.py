@@ -44,15 +44,33 @@ def ext(url, label=None):
     label = label or ("MICHELIN" if "michelin.com" in url else "site")
     return f'<a href="{esc(url)}" target="_blank" rel="noopener">{esc(label)}</a>'
 
-def social_links(name, kind="restaurant"):
+def _platform_link(url, label, verified=False):
+    if not (url or "").strip():
+        return None
+    url = url.strip()
+    tag = "official" if verified else "link"
+    cls = "ok" if verified else "info"
+    return f'<a href="{esc(url)}" target="_blank" rel="noopener">{esc(label)}</a> <span class="pill {cls}">{tag}</span>'
+
+def social_links(name, kind="restaurant", row=None):
+    row = row or {}
     q = re.sub(r"\s+", "+", name.replace("&", "and"))
-    return (
-        '<span class="linklist">'
-        f'<a href="https://www.youtube.com/results?search_query={q}+{kind}+new+york" target="_blank" rel="noopener">YouTube</a>'
-        f'<a href="https://www.tiktok.com/search?q={q}" target="_blank" rel="noopener">TikTok</a>'
-        f'<a href="https://www.instagram.com/explore/tags/{q.lower()}/" target="_blank" rel="noopener">Instagram</a>'
-        "</span>"
-    )
+    tag_q = re.sub(r"[^A-Za-z0-9]+", "", name.lower())
+    platforms = [
+        ("YouTube", "youtube_url", f"https://www.youtube.com/results?search_query={q}+{kind}+new+york"),
+        ("TikTok", "tiktok_url", f"https://www.tiktok.com/search?q={q}"),
+        ("Instagram", "instagram_url", f"https://www.instagram.com/explore/tags/{tag_q}/"),
+    ]
+    parts = []
+    for label, key, search_url in platforms:
+        vurl = (row.get(key) or "").strip()
+        if vurl:
+            parts.append(f'<a href="{esc(vurl)}" target="_blank" rel="noopener">{esc(label)}</a> <span class="pill ok">verified</span>')
+        else:
+            parts.append(f'<a href="{esc(search_url)}" target="_blank" rel="noopener">{esc(label)}</a> <span class="pill info">search</span>')
+    note = (row.get("social_verification") or "").strip()
+    note_html = f'<div class="small muted">{esc(note)}</div>' if note else ''
+    return '<div class="linklist" style="display:flex;flex-direction:column;gap:4px">' + "".join(f"<div>{p}</div>" for p in parts) + note_html + "</div>"
 
 def stars_html(n):
     n = int(n or 0)
@@ -430,12 +448,12 @@ def page_restaurants():
             f'<span class="linklist">{ext(r["michelin_url"], "MICHELIN")}{ext(r["website"])}'
             + (f'<span class="pill">{esc(r["booking"])}</span>' if r["booking"] else "")
             + "</span>",
-            social_links(r["name"]),
+            social_links(r["name"], row=r),
             status_pill(r["verification"]),
         ])
-    tbl = table(["Restaurant", "Stars", "Green", "Price band", "Address", "Hours (source: MICHELIN page)",
-                 "Closed", "Est. spend for 2", f"From {esc(TOP['hotel'].split(' by ')[0])} (MODEL)",
-                 "Official links", "Video / social", "Verification"],
+    tbl = table(["Restaurant", "Stars", "Green", "Price band", "Address", "Days/hours open",
+                 "Closed / exceptions", "Est. spend for 2 adults (MODEL)", f"From {esc(TOP['hotel'].split(' by ')[0])} (MODEL)",
+                 "Official / booking link", "Social media (YT / TikTok / IG)", "Verification"],
                 rows, caption="Fully verified detail is available only for the six entries below. "
                               "Price band is the MICHELIN $ scale; the spend estimate is a MODEL, not a menu price.",
                 numeric_cols=())
@@ -450,12 +468,13 @@ def page_restaurants():
             esc(r["price_band"]) or '<span class="small">— blank —</span>',
             '<span class="small">— blank —</span>',
             '<span class="small">— blank —</span>',
+            '<span class="small">— blank —</span>',
             ext(r["michelin_url"], "MICHELIN"),
-            social_links(r["name"]),
+            social_links(r["name"], row=r),
             status_pill("roster-only"),
         ])
-    roster = table(["Restaurant", "Stars", "Green", "Borough", "Price band", "Address", "Hours",
-                    "Official link", "Video / social", "Verification"],
+    roster = table(["Restaurant", "Stars", "Green", "Borough", "Price band", "Address", "Days/hours open", "Closed / exceptions",
+                    "Official link", "Social media (YT / TikTok / IG)", "Verification"],
                    roster_rows,
                    caption=f"Official roster: the remaining {len(roster_rows)} of {TOTAL} star entries. "
                            "Name, star level, cuisine, borough and official link are verified from the MICHELIN "
@@ -463,9 +482,9 @@ def page_restaurants():
 
     listed_rows = [[esc(x["name"]) + "<br><span class='small'>" + esc(x["price_band"]) + " · " + esc(x["cuisine"]) + "</span>",
                     "Listed in the Guide — <strong>no star</strong>" + (" + Green Star" if x["green"] == "yes" else ""),
-                    ext(x["michelin_url"], "MICHELIN"), social_links(x["name"]), esc(x["evidence"])]
+                    ext(x["michelin_url"], "MICHELIN"), social_links(x["name"], row=x), esc(x["evidence"])]
                    for x in listed]
-    listed_tbl = table(["Restaurant", "Status", "Official link", "Video / social", "How we know"],
+    listed_tbl = table(["Restaurant", "Status", "Official link", "Social media (YT / TikTok / IG)", "How we know"],
                        listed_rows,
                        caption="MICHELIN Guide listed restaurants (recommended, no star) seen on official MICHELIN "
                                "listing pages during this pass — a verified subset, not the complete Guide.")
@@ -531,11 +550,11 @@ def page_activities():
              money(a["cost_2_adults_usd"]) if a["cost_2_adults_usd"] else '<span class="small">— blank —</span>',
              esc(a["exceptions"]) if a["exceptions"] else "—",
              f'<span class="linklist">{ext(a["official_url"], "official")}</span>',
-             social_links(a["activity"], "visit"),
+             social_links(a["activity"], "visit", row=a),
              status_pill(a["verification"])]
             for a in activities]
-    tbl = table(["Activity", "Address", "Hours", "Adult", "2 adults", "Exceptions / closures",
-                 "Official link", "Video / social", "Verification"], rows,
+    tbl = table(["Activity", "Address", "Days/hours open", "Adult", "2 adults", "Closed / exceptions",
+                 "Official link", "Social media (YT / TikTok / IG)", "Verification"], rows,
                 caption="Only MoMA is fully verified in this pass. Everything else is deliberately blank "
                         "rather than guessed, and carries the source that would close it.",
                 numeric_cols=(3, 4))
