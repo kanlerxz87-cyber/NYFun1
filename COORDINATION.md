@@ -197,8 +197,18 @@ merged to `main`, reset Pages to `main:/docs` (or `main:/`) and delete the stale
 - **Link check (automated, all three trees):** 0 broken internal links across `index.html`, `docs/*.html`
   and `deepdive/*.html`.
 
-| T15 | Fresh-session audit of the merged site and repository claims | `README.md`, `COORDINATION.md` | arena-6042f4cf | in progress | 2026-11-25 |
+| ID | Task | Scope (files) | Owner | Status | Updated |
+|---|---|---|---|---|---|
+| T15 | Fresh-session audit of the merged site and repository claims | `README.md`, `COORDINATION.md` | arena-6042f4cf | done | 2026-11-25 |
 
-### 2026-11-25 · arena-6042f4cf · T15 claim
-- Scope: audit documentation and board claims against the current checkout; do not edit generated site/data or another session's files.
-- Base: current session branch `arena/6042f4cf-nyfun1` at `b076314` (merged integration commit); historical task owners in this board are not active claims on this branch.
+### 2026-11-25 · arena-6042f4cf · T15 audit and verification
+- Scope completed: audited repository documentation and built output; edited only `README.md` and this coordination log. Generated HTML/data remain unchanged.
+- Build verification: `python3 build.py && python3 build_deepdive.py` succeeded; a local-link scan of root `index.html`, `docs/*.html`, and `deepdive/*.html` found 0 broken internal links (21 HTML files checked).
+- Official source spot-checks (live pages fetched 2026-11-25): [MICHELIN NYC 3-star filter](https://guide.michelin.com/us/en/new-york-state/new-york/restaurants/3-stars-michelin) showed 5 three-star, 14 two-star, 50 one-star (69 total), unlike the 2025-ceremony-derived `docs/` roster of 72 (5/15/52); this is an unresolved source-version discrepancy and has been made explicit in `README.md`.
+- [MICHELIN Arlo Soho quote for 15–22 Feb 2027, two adults](https://guide.michelin.com/us/en/hotels-stays/nyc/arlo-soho-8260?arr=2027-02-15&dep=2027-02-22&nA=2&nC=0&nR=1) displayed $241 total/night and “You cannot book more than 31 days”; saved deep-dive snapshot was $235.93/night. The quote is not presently bookable this far ahead and rate has changed; README now warns that saved seven-night totals and cheapest-date conclusion are not current firm offers.
+- [MoMA official visit page](https://www.moma.org/visit/) read back current adult admission ($30), day-by-day hours, holiday closures and Friday-night exception; it supports the main activity row.
+- [Le Bernardin official dinner menu](https://www.le-bernardin.com/accessible/menus/dining-room/dinner/) showed the $225 four-course prix fixe, confirming the listed couple total needs to be treated as menu price only (before tax, tip, beverages, supplements).
+- Remaining irregularities requested for follow-up under T16: fresh bookable hotel quotes; align the main star roster with the current official listing while preserving provenance; a complete door-to-door ≤60-minute hotel-to-place matrix; and curated per-place social-media review links (the existing activity video links are largely platform search results, not specific reviews). None of these gaps was silently filled.
+
+| T16 | Follow-up audit fixes: re-quote hotels, reconcile star source versions, complete transit matrix, curate per-place review links | `deepdive/data/hotels.json`, `docs/data/michelin_2025.csv`, `deepdive/data/michelin.json`, transit/activity/restaurant data and generated tables | unclaimed | unclaimed | 2026-11-25 |
+- Request for the integration owner: do not promote dynamic Michelin hotel quotes to bookable totals while the official page shows a >31-day limit; record fresh quotes only when actually available. Re-check live MICHELIN distinction counts against the 2025 ceremony roster before describing current star status. Build actual public-transport itineraries for every hotel/place pair and verify specific video URLs before calling them reviews. Surface all unresolved items on the existing Flagged for Review page before marking T16 done.

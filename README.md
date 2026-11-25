@@ -77,11 +77,13 @@ checklist, and a **suggestions** page kept separate from the data.
   EMP $385, Saga $215, Gabriel Kreuther $200, The Modern $185, Jungsik $335, Gramercy $178).
 - Per-venue opening hours and closures, straight from the Michelin detail pages.
 - Nine door-to-door transit legs measured against MTA GTFS — not modelled.
-- A four-window seasonality test proving the 15–22 Feb window is the cheapest of the four tested.
+- A four-date **snapshot comparison** captured 2026-11-25 ranked 15–22 Feb as the lowest of those four quoted windows. This is not proof that it is the cheapest bookable date.
 - Nineteen values left deliberately blank, each with a row in the questions register.
 
 ## Known limitations
 
-See `docs/flagged.html` (22 items) and `docs/questions.html` (18 items). The three that matter most:
-hotel prices are dynamic snapshots, the MICHELIN star list is expected to change on 14 December 2026
-(before the trip), and all transit minutes are modelled, not MTA-verified.
+See `docs/flagged.html` (22 items) and `docs/questions.html` (18 items). The most consequential limitations:
+
+- **Hotel rates are not firm or currently revalidated.** The quoted pages are dynamic snapshots. In a fresh check on 2026-11-25, MICHELIN's Arlo Soho page for 15–22 Feb 2027 displayed **$241 total per night** and warned “You cannot book more than 31 days”; the deep-dive dataset's saved quote is $235.93 per night. Since the stay is outside the site's booking window and the displayed rate differs from the saved snapshot, do not treat the saved seven-night totals or the “cheapest date” conclusion as a current, bookable offer. See the audit entry in `COORDINATION.md`.
+- **The two star rosters are not reconciled.** The official live MICHELIN Guide filter page checked 2026-11-25 showed 5 three-star, 14 two-star, and 50 one-star entries (69 total); the `docs/` roster has 72 entries (5/15/52) from the 2025 ceremony article. Both sources and the discrepancy are retained rather than silently selecting one. Check the official Guide again for the trip date; do not present the 72-row roster as the current 2026 count.
+- **The two transit treatments are not a complete verified 60-minute hotel comparison:** `docs/` uses a labelled distance model; `deepdive/` has nine measured legs but says its full matrix failed. Do not read either as proof that every listed activity or restaurant is within one hour.
