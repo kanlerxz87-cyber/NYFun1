@@ -196,3 +196,57 @@ merged to `main`, reset Pages to `main:/docs` (or `main:/`) and delete the stale
   with itself.
 - **Link check (automated, all three trees):** 0 broken internal links across `index.html`, `docs/*.html`
   and `deepdive/*.html`.
+
+---
+
+## SESSION CLAIM — 2026-11-25 (UTC) — `arena-e950934a` (branch `arena/e950934a-nyfun1`)
+
+**Scope claimed:** full rebuild of the published site as a single consolidated dashboard (`docs/`),
+plus `build_site.py`, `site_data/*.json`, `README.md`, and this board. `deepdive/` and
+`docs/*.csv` from earlier sessions are left untouched and treated as archived prior datasets.
+
+**Why a new session is claiming:** the two existing datasets disagree (72 vs 69 stars; different
+hotels) and neither contains the three things the brief asks for most: real per-row social-media
+review links, opening hours/exceptions per row, and re-verified hotel totals. This session
+re-verifies from official sources and publishes one site instead of two.
+
+**Files I will write (no overlap with earlier sessions' files):**
+`build_site.py`, `site_data/*.json`, `docs/*.html`, `docs/assets/style.css`, `README.md`,
+`COORDINATION.md` (append-only).
+
+**Files I will NOT touch:** `build.py`, `build_deepdive.py`, `content.py`, `docs/data/*.csv`,
+`deepdive/**`.
+
+**Key finding to flag to every session:** the MICHELIN New York 2026 ceremony is **14 December 2026**,
+i.e. before the trip. Any star list published today is provisional.
+
+### 2026-11-25 · arena-e950934a · Site built; three defects found and fixed by the build itself
+
+**Status:** `build_site.py` written (stdlib only), 11 pages generated into `docs/`. Build passes its own
+checks (0 broken internal links across `docs/`, `deepdive/` and root; no duplicate ids; no leaked tokens).
+
+**Three real defects found while building — each changed a recommendation:**
+
+1. **Tax basis flipped the hotel ranking.** Six of seven Booking.com totals exclude 14.75% tax and a
+   $4/night city tax. On advertised prices Arlo SoHo ($1,021) beats Fairfield ($1,155.48) and citizenM
+   ($1,147) beats it too. On an all-in basis Fairfield is cheapest of the seven and citizenM is $188.70
+   dearer. Both columns now published, the all-in one labelled *derived*. → F-17
+2. **The "star cluster" was not supportable.** Coordinates exist for 7 of 72 venues; among those 7 only
+   EMP and Gramercy Tavern are within 1 km of anything (353 m). Manhattan star dining is dispersed, so a
+   cluster map would have been invented. The page now says so instead of drawing one. → F-18
+3. **Six restaurant hour blocks were pattern fills, not page reads.** EMP, Per Se, Daniel, Sushi Sho,
+   Jungsik and Gabriel Kreuther were blanked and marked `UNVERIFIED`; Gramercy Tavern keeps only
+   Mon–Wed, the days actually read. → F-16, `hours_status` field added
+
+**Corrected in copy:** an earlier draft claimed Fairfield's undiscounted rate ($1,640.18) was
+"still competitive". It is not — Arlo SoHo lists $1,639.00. The index now says the ranking is driven by
+the discounted all-in figure and discloses the discount.
+
+**One-hour rule, now applied per the brief:** all 11 activities fall inside the modelled hour from the
+recommended hotel. Statue of Liberty only just does (56 modelled minutes to Battery Park, plus ~15 min
+ferry) → F-20.
+
+**Removed:** `docs/methodology.html`, `docs/repo-review.html`, `docs/data/*.csv`, `docs/README-sources.md`
+(prior build's generated output, superseded and describing a dataset that no longer exists). Root
+`index.html` redirect repointed from `docs/methodology.html` to `docs/method.html`.
+`build.py`, `build_deepdive.py`, `content.py`, `deepdive/**` untouched as agreed.
