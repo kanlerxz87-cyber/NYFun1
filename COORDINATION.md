@@ -20,6 +20,7 @@
 | Session ID | Branch | Scope | Started (UTC) | Notes |
 |---|---|---|---|---|
 | `arena-cfbb0ef6` | `arena/cfbb0ef6-nyfun1` | All tasks T1–T15 (sole session in this workspace) | 2026-11-25 | Claimed 2026-11-25; no other live claims found |
+| `arena-8efb11a7` | `arena/8efb11a7-nyfun1` | T15 (Activities official hours/exceptions/prices), T16 (Verified YouTube/TikTok/Instagram review links), T17 (Dashboard table integration & rebuild) | 2026-11-25 | Claimed 2026-11-25 on top of merged `main` (`b076314`) |
 
 No other live claims were present when this board was created (repo contained only `README.md`
 on base commit `6609129`).
@@ -42,6 +43,9 @@ on base commit `6609129`).
 | T12 | Flagged-for-review register (unverified / irregularities) | `docs/flagged.html` | arena-cfbb0ef6 | done | 2026-11-25 |
 | T13 | Verification pass: every value → official source or blank+flag | all data files | arena-cfbb0ef6 | done | 2026-11-25 |
 | T14 | Integration + GitHub Pages publish + link check | `docs/index.html`, nav, Pages settings | arena-cfbb0ef6 | done | 2026-11-25 |
+| T15 | Activities official verification (days, hours, exceptions, 2-adult prices) | `docs/data/activities.csv` | arena-8efb11a7 | in progress | 2026-11-25 |
+| T16 | Verified social media review links (YouTube, TikTok, Instagram) for activities & restaurants | `docs/data/social_reviews.csv` | arena-8efb11a7 | in progress | 2026-11-25 |
+| T17 | Integrate verified activities & social reviews into dashboard + rebuild + link check | `build.py`, `content.py`, `docs/*.html` | arena-8efb11a7 | in progress | 2026-11-25 |
 
 ## File ownership (non-overlapping scopes)
 
