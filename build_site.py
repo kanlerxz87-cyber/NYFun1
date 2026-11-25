@@ -260,6 +260,8 @@ def build_index():
     def _k(r):
         return r["michelin_url"].rstrip("/").split("/")[-1]
 
+    n_ig_total = len({s["url"] for grp in SOCIAL["accounts"].values() for s in grp
+                      if s["kind"] == "official"})
     n_hours = sum(1 for r in ROSTER["restaurants"] if _det.get(_k(r), {}).get("hours"))
     n_price = sum(1 for r in ROSTER["restaurants"] if _det.get(_k(r), {}).get("menu_price_usd"))
     pl_h = "" if n_hours == 1 else "s"
@@ -331,7 +333,7 @@ suggestion S-02.</p>
 <ul class="tight">
 <li><strong>${FR["budget"]["verified_subtotal_usd"]:,.2f} verified subtotal</strong> across hotel, flights, transit, five tickets and two tasting menus.</li>
 <li><strong>{n_hours} of {n_stars} restaurants have verified hours</strong> and <strong>{n_price} have a verified menu price</strong>. The other 66&ndash;70 rows are complete on name, distinction, cuisine, borough and official link &mdash; and deliberately blank on hours and price (<a href="restaurants.html">see the table</a>).</li>
-<li><strong>10 verified official social accounts</strong> and 1 verified third-party review video; every other social cell is a search link, labelled as a search.</li>
+<li><strong>{n_ig_total} verified official social accounts</strong> across restaurants and activities, and <strong>3 verified third-party review videos</strong> (all Le Bernardin). Every other social cell is a search link, labelled as a search &mdash; TikTok returned HTTP 400 on every read, so no TikTok account is claimed anywhere.</li>
 <li><strong>{len(FR['flags'])} flagged items</strong> and <strong>{len(FR['questions'])} open questions</strong>, each with the exact source that would settle it.</li>
 </ul>
 </div>

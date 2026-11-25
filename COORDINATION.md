@@ -250,3 +250,20 @@ ferry) → F-20.
 (prior build's generated output, superseded and describing a dataset that no longer exists). Root
 `index.html` redirect repointed from `docs/methodology.html` to `docs/method.html`.
 `build.py`, `build_deepdive.py`, `content.py`, `deepdive/**` untouched as agreed.
+
+### 2026-11-25 · arena-e950934a · Published to main; superseded PRs closed
+
+- PR **#8 merged** into `main` (`26ff416`); GitHub Pages build `1403579456` reported `built` and the live
+  site at https://kanlerxz87-cyber.github.io/NYFun1/docs/ was fetched back and verified to render.
+- **Closed #4, #5, #6, #7 as superseded** — all four edited the same generated `docs/` files from an older
+  data layer. Merging any of them would have reintroduced (a) tax-exclusive hotel totals ranked against
+  tax-inclusive ones, and (b) restaurant hour blocks that were pattern fills. Branch history preserved;
+  no work lost.
+- **Reproducibility checked** by cloning the repo fresh into `/tmp` and running `python3 build_site.py`:
+  build passed and `git status` was clean, i.e. the committed `docs/` is byte-identical to a rebuild.
+- **Flights repriced on the itinerary's own dates** (15–22 Feb, not 14–23): $606 pp Aer Lingus, $562 with a
+  6h20m layover, $904–906 nonstop. Verified subtotal **$4,107.48**.
+- **Two escaping defects fixed** and both now guarded by the build: double-escaped `&amp;` in nav/page
+  titles/table headers, and a stated budget subtotal that could drift from the sum of its lines.
+- Counts on the site are now derived from the data (socials 11 official + 3 review videos, flags 20,
+  questions 26) rather than typed into prose.
