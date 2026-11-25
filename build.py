@@ -72,7 +72,7 @@ def table(headers, rows, caption=None, cls="", numeric_cols=()):
     if caption:
         out.append(f"<caption>{caption}</caption>")
     out.append("<thead><tr>" + "".join(
-        f'<th class="{"num" if i in numeric_cols else ""}">{esc(h)}</th>'
+        f'<th class="{"num" if i in numeric_cols else ""}">{h}</th>'
         for i, h in enumerate(headers)) + "</tr></thead><tbody>")
     for r in rows:
         out.append("<tr>" + "".join(
@@ -326,20 +326,21 @@ def page_hotels():
             f"{esc(h['bath'])}" + (f"<br><span class='small'>{esc(h['size_sqft'])} sq ft</span>" if h['size_sqft'] else ""),
             money(h['base'], 2),
             f"<span class='small'>14.75% tax + $4/night city tax"
-            + (f"<br>resort fee ${esc(h['resort_fee_in_nightly'])}/night included" if h['resort_fee_in_nightly'] not in ('', '0') else "")
+            + (f"<br>resort fee ${esc(h['resort_fee_in_nightly'])}/night included in the 7-night total" if h['resort_fee_in_nightly'] not in ('', '0') else "")
             + "</span>",
             f"<strong>{money(h['incl'])}</strong>",
             esc(h['breakfast']),
+            f"<span class='small'>{esc(h['cancellation'])}</span>",
             f"{h['n20']} / {h['n30']} / {h['n60']}",
             f"{h['score']:.1f}",
             ext(h['booking_url'], "Booking.com"),
         ])
     tbl = table(["Rank", "Hotel", "Room verified", "Bathroom", "7 nights<br>(listed, pre-tax)",
-                 "Taxes & fees", "7-night est.<br>all-in", "Breakfast", "Within 20/30/60 min<br>(MODEL)",
-                 "Score", "Price source"],
+                 "Taxes & fees", "7-night est.<br>all-in", "Breakfast", "Cancellation",
+                 "Within 20/30/60 min<br>(MODEL)", "Score", "Price source"],
                 rows, caption=f"Four hotels priced for Mon 15 → Mon 22 Feb 2027, 2 adults, 1 room. "
                               f"Prices captured {BUILT} on Booking.com; the all-in column is DERIVED.",
-                numeric_cols=(4, 6, 9))
+                numeric_cols=(4, 6, 10))
 
     detail = ""
     for h in hotels:
@@ -361,9 +362,9 @@ per room. No shared-bathroom property was considered. Room size is shown where t
 
 {tbl}
 <p class="hint">All-in column = listed price × 1.1475 (14.75% NYC hotel tax) + $4 × 7 nights city tax.
-That is the tax treatment the page itself states. Moxy's nightly rate already includes a $35/night resort
-fee. Cancellation deadlines, breakfast treatment and the promo that produced the price are in the table
-above and in the row notes below. Booking.com prices are dynamic — re-fetch before paying (flag F8).</p>
+That is the tax treatment the page itself states. Moxy's 7-night total already includes $245 of resort fees ($35/night). Cancellation deadlines and breakfast treatment are columns above; the promotion that produced each
+price is named in the source row on the date-window table where it applied. Booking.com prices are
+dynamic — re-fetch before paying (flag F8).</p>
 
 <h2>Price by date window (same hotel, same room)</h2>
 {table(["Window", "Nights", "Hotel / room", "7-night total (pre-tax)", "Per night", "Source", "Note"],
