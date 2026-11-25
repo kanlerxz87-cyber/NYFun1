@@ -450,6 +450,15 @@
    "source": "https://www.nps.gov/stli/planyourvisit/fees.htm",
    "settle_by": "Query a scheduled journey planner for the hotel-to-Battery-Park leg at 09:00 on a weekday",
    "status": "Open"
+  },
+  {
+   "id": "F-21",
+   "severity": "MEDIUM",
+   "title": "Three hotel rows link to a Booking.com search page, not the hotel's own page",
+   "detail": "Arlo SoHo, Hyatt Place Chelsea and Residence Inn FiDi were priced from the search results table, and no venue-specific Booking.com URL was captured for them. Their price is verified; their direct link is not, so the row says 'search page' rather than pretending otherwise. The search URL does reproduce the same dated result.",
+   "source": "https://www.booking.com/searchresults.html?ss=Manhattan%2C+New+York&checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD&order=price",
+   "settle_by": "Open each of the three hotels from the search results and copy its /hotel/us/ URL",
+   "status": "Open"
   }
  ],
  "questions": [

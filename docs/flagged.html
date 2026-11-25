@@ -19,9 +19,9 @@
 the exact action that would close it. Nothing is hidden and nothing is quietly smoothed over.</p>
 
 <div class="kpi">
- <div class="card"><div class="k">Flagged items</div><div class="v">20</div></div>
+ <div class="card"><div class="k">Flagged items</div><div class="v">21</div></div>
  <div class="card"><div class="k">High severity</div><div class="v">7</div><div class="small">Could change a recommendation</div></div>
- <div class="card"><div class="k">Medium</div><div class="v">9</div></div>
+ <div class="card"><div class="k">Medium</div><div class="v">10</div></div>
  <div class="card"><div class="k">Low</div><div class="v">4</div></div>
 </div>
 
@@ -48,6 +48,7 @@ the exact action that would close it. Nothing is hidden and nothing is quietly s
 <tr><td><strong>F-18</strong> <span class="pill p-open">HIGH</span><div class="small">A 'star cluster' cannot be demonstrated from this dataset</div></td><td>Coordinates were verified for only 7 of the 72 star entries. Among those 7, only Eleven Madison Park and Gramercy Tavern sit within a kilometre of another scored venue (353 m). The others are each more than 1 km from the next one, so Manhattan star dining is dispersed rather than clustered. Any neighbourhood-level cluster map would be invented.</td><td><a class="" href="https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025" target="_blank" rel="noopener noreferrer">official page</a></td><td>Verify coordinates for all 72 entries and compute density</td></tr>
 <tr><td><strong>F-19</strong> <span class="pill p-partial">MEDIUM</span><div class="small">The hotel reach ranking covers 7 restaurants, not 72</div></td><td>The brief asks hotels to be ranked by how many MICHELIN restaurants are reachable within an hour. Only the 7 venues with verified coordinates can be scored, so the ranking is out of 7 rather than out of 72. The five Midtown and Chelsea hotels are effectively tied on it, which is why cost decides the recommendation.</td><td><a class="" href="https://api.transitous.org/api/v1/plan" target="_blank" rel="noopener noreferrer">official page</a></td><td>Verify all 72 coordinates and run a measured journey matrix</td></tr>
 <tr><td><strong>F-20</strong> <span class="pill p-partial">MEDIUM</span><div class="small">Activity travel times are modelled, and the Statue of Liberty only just qualifies</div></td><td>All eleven activities fall inside the modelled one-hour reach of the recommended hotel, but the Statue of Liberty does so at 56 modelled minutes to Battery Park, before the roughly 15-minute ferry to the island. It is the one activity where the rule is satisfied by a margin thin enough that a real schedule could break it.</td><td><a class="" href="https://www.nps.gov/stli/planyourvisit/fees.htm" target="_blank" rel="noopener noreferrer">official page</a></td><td>Query a scheduled journey planner for the hotel-to-Battery-Park leg at 09:00 on a weekday</td></tr>
+<tr><td><strong>F-21</strong> <span class="pill p-partial">MEDIUM</span><div class="small">Three hotel rows link to a Booking.com search page, not the hotel's own page</div></td><td>Arlo SoHo, Hyatt Place Chelsea and Residence Inn FiDi were priced from the search results table, and no venue-specific Booking.com URL was captured for them. Their price is verified; their direct link is not, so the row says 'search page' rather than pretending otherwise. The search URL does reproduce the same dated result.</td><td><a class="" href="https://www.booking.com/searchresults.html?ss=Manhattan%2C+New+York&amp;checkin=2027-02-15&amp;checkout=2027-02-22&amp;group_adults=2&amp;no_rooms=1&amp;selected_currency=USD&amp;order=price" target="_blank" rel="noopener noreferrer">official page</a></td><td>Open each of the three hotels from the search results and copy its /hotel/us/ URL</td></tr>
 </tbody></table>
 <div class="cards">
 <div class="mcard">
@@ -169,6 +170,12 @@ the exact action that would close it. Nothing is hidden and nothing is quietly s
 <div class="mcard-row"><span class="k">What happened</span><span class="v">All eleven activities fall inside the modelled one-hour reach of the recommended hotel, but the Statue of Liberty does so at 56 modelled minutes to Battery Park, before the roughly 15-minute ferry to the island. It is the one activity where the rule is satisfied by a margin thin enough that a real schedule could break it.</span></div>
 <div class="mcard-row"><span class="k">Source</span><span class="v"><a class="" href="https://www.nps.gov/stli/planyourvisit/fees.htm" target="_blank" rel="noopener noreferrer">official page</a></span></div>
 <div class="mcard-row"><span class="k">How to close it</span><span class="v">Query a scheduled journey planner for the hotel-to-Battery-Park leg at 09:00 on a weekday</span></div>
+</div>
+<div class="mcard">
+<div class="mcard-title"><strong>F-21</strong> <span class="pill p-partial">MEDIUM</span><div class="small">Three hotel rows link to a Booking.com search page, not the hotel's own page</div></div>
+<div class="mcard-row"><span class="k">What happened</span><span class="v">Arlo SoHo, Hyatt Place Chelsea and Residence Inn FiDi were priced from the search results table, and no venue-specific Booking.com URL was captured for them. Their price is verified; their direct link is not, so the row says 'search page' rather than pretending otherwise. The search URL does reproduce the same dated result.</span></div>
+<div class="mcard-row"><span class="k">Source</span><span class="v"><a class="" href="https://www.booking.com/searchresults.html?ss=Manhattan%2C+New+York&amp;checkin=2027-02-15&amp;checkout=2027-02-22&amp;group_adults=2&amp;no_rooms=1&amp;selected_currency=USD&amp;order=price" target="_blank" rel="noopener noreferrer">official page</a></span></div>
+<div class="mcard-row"><span class="k">How to close it</span><span class="v">Open each of the three hotels from the search results and copy its /hotel/us/ URL</span></div>
 </div>
 </div>
 
