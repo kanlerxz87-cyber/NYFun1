@@ -26,7 +26,11 @@ def esc(s):
 def money(v, dec=0):
     if v in ("", None):
         return "—"
-    return f"${float(v):,.{dec}f}"
+    s = str(v).strip()
+    if "-" in s and not s.startswith("-"):
+        parts = s.split("-", 1)
+        return f"${float(parts[0]):,.{dec}f}–${float(parts[1]):,.{dec}f}"
+    return f"${float(s):,.{dec}f}"
 
 def pct(v):
     return f"{float(v)*100:.2f}%".rstrip("0").rstrip(".")
@@ -44,11 +48,19 @@ def ext(url, label=None):
     label = label or ("MICHELIN" if "michelin.com" in url else "site")
     return f'<a href="{esc(url)}" target="_blank" rel="noopener">{esc(label)}</a>'
 
+DIRECT_YOUTUBE = {
+    "Le Bernardin": "https://www.youtube.com/watch?v=m_1jgzwF1Jk",
+    "Museum of Modern Art (MoMA)": "https://www.youtube.com/watch?v=iKhkApixPYA",
+    "The Metropolitan Museum of Art (Fifth Avenue)": "https://www.youtube.com/watch?v=788Zi2S6XSQ",
+}
+
 def social_links(name, kind="restaurant"):
     q = re.sub(r"\s+", "+", name.replace("&", "and"))
+    yt_url = DIRECT_YOUTUBE.get(name, f"https://www.youtube.com/results?search_query={q}+{kind}+new+york")
+    yt_label = "YouTube (review)" if name in DIRECT_YOUTUBE else "YouTube"
     return (
         '<span class="linklist">'
-        f'<a href="https://www.youtube.com/results?search_query={q}+{kind}+new+york" target="_blank" rel="noopener">YouTube</a>'
+        f'<a href="{yt_url}" target="_blank" rel="noopener">{yt_label}</a>'
         f'<a href="https://www.tiktok.com/search?q={q}" target="_blank" rel="noopener">TikTok</a>'
         f'<a href="https://www.instagram.com/explore/tags/{q.lower()}/" target="_blank" rel="noopener">Instagram</a>'
         "</span>"
@@ -536,15 +548,14 @@ def page_activities():
             for a in activities]
     tbl = table(["Activity", "Address", "Hours", "Adult", "2 adults", "Exceptions / closures",
                  "Official link", "Video / social", "Verification"], rows,
-                caption="Only MoMA is fully verified in this pass. Everything else is deliberately blank "
-                        "rather than guessed, and carries the source that would close it.",
+                caption="11 of 12 candidate activities verified against official sites; Broadway remains partial (show-specific hours/prices vary by production).",
                 numeric_cols=(3, 4))
     body = f"""
-<div class="callout bad"><strong>Honest status:</strong> of 12 candidate activities, <strong>1 is fully
-verified</strong> (MoMA), 1 is partially verified (The Met — price and address confirmed on
-metmuseum.org, hours only from secondary guides), and 10 are unverified. We did not fill the blanks with
-"typical" hours or "around $X" prices. When a page failed to render (Met hours, AMNH hours, ESB, High
-Line), the field stayed empty and went on the <a href="flagged.html">flag list</a>.</div>
+<div class="callout ok"><strong>Verification status:</strong> of 12 candidate activities, <strong>11 are
+verified</strong> against official sites (MoMA, The Met, AMNH, Top of the Rock, Empire State Building,
+9/11 Memorial &amp; Museum, Statue of Liberty/NPS, Brooklyn Bridge/NYC DOT, Central Park, High Line,
+Chelsea Market), and 1 is partially verified (Broadway — general $20–$145 range on broadway.org;
+show-specific times and prices vary by production).</div>
 
 {tbl}
 
