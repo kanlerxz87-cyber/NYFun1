@@ -109,11 +109,11 @@
     "note": "Booking.com prints this as the total including taxes and fees."
    },
    {
-    "item": "Flights - 2 adults, AMS to JFK return, 14-23 Feb 2027",
-    "usd": 1372.0,
+    "item": "Flights - 2 adults, AMS to JFK return, 15-22 Feb 2027 (the itinerary's own dates)",
+    "usd": 1204.0,
     "kind": "VERIFIED FARE x 2",
-    "source": "https://www.kayak.com/flights/AMS-NYC/2027-02-14/2027-02-23?sort=bestflight_a",
-    "note": "$686 round trip per adult on the cheapest itinerary (Aer Lingus, 1 stop via Dublin). Google Flights showed $543 on the same dates. This is a fare, not a quote for two seats (F-15)."
+    "source": "https://www.google.com/travel/flights?q=Flights%20to%20JFK%20from%20AMS%20on%202027-02-15%20through%202027-02-22",
+    "note": "Out on 15 Feb, back on 22 Feb: Aer Lingus 1-stop round trip $606 per adult, nonstop KLM/Delta $904-906, and the absolute cheapest $562 with a 6h20m Dublin layover. The line uses the $606 itinerary x 2. Google Flights prices 1 adult, so two seats may not cost exactly double (F-15)."
    },
    {
     "item": "Transit - 2 adults, 7 days, MTA fare cap",
@@ -174,7 +174,7 @@
     "note": "No official source exists for what a couple spends on ordinary meals. Inventing a daily allowance would be a guess, so this line is blank."
    }
   ],
-  "verified_subtotal_usd": 4275.48,
+  "verified_subtotal_usd": 4107.48,
   "verified_subtotal_note": "Sum of the lines with a read amount. Includes the two MICHELIN dinners and the doubled lowest flight fare.",
   "unpriced_lines": 1
  },

@@ -45,7 +45,7 @@ def dash(v):
 def ext(url, label=None, cls=""):
     if not url:
         return ""
-    lab = esc(label) if label else esc(re.sub(r"^https?://(www\.)?", "", url).split("?")[0][:44])
+    lab = label if label else esc(re.sub(r"^https?://(www\.)?", "", url).split("?")[0][:44])
     return (f'<a class="{cls}" href="{esc(url)}" target="_blank" rel="noopener noreferrer">'
             f'{lab}</a>')
 
@@ -73,7 +73,10 @@ def table(headers, rows, caption=None, cls="", card_labels=None):
     out = [f'<table class="tbl {cls}">']
     if caption:
         out.append(f"<caption>{esc(caption)}</caption>")
-    out.append("<thead><tr>" + "".join(f"<th>{esc(h)}</th>" for h in headers) + "</tr></thead><tbody>")
+    out.append("<thead><tr>" + "".join("<th>" + h + "</th>" for h in headers) + "</tr></thead><tbody>")
+    for _h in headers:
+        if "&amp;amp;" in _h:
+            raise ValueError("double-escaped header: " + _h)
     for r in rows:
         out.append("<tr>" + "".join(f"<td>{c}</td>" for c in r) + "</tr>")
     out.append("</tbody></table>")
@@ -84,9 +87,9 @@ def table(headers, rows, caption=None, cls="", card_labels=None):
         for i, c in enumerate(r):
             lab = labels[i] if i < len(labels) else ""
             if i == 0:
-                out.append(f'<div class="mcard-title">{c}</div>')
+                out.append('<div class="mcard-title">' + c + '</div>')
             else:
-                out.append(f'<div class="mcard-row"><span class="k">{esc(lab)}</span><span class="v">{c}</span></div>')
+                out.append('<div class="mcard-row"><span class="k">' + lab + '</span><span class="v">' + c + '</span></div>')
         out.append("</div>")
     out.append("</div>")
     return "\n".join(out)
@@ -103,7 +106,7 @@ NAV = [
     ("questions.html", "Questions"),
     ("suggestions.html", "Suggestions"),
     ("flagged.html", "Flagged"),
-    ("method.html", "Method &amp; sources"),
+    ("method.html", "Method & sources"),
     ("repo-review.html", "Repo review"),
 ]
 
@@ -881,7 +884,8 @@ the lines that have a verified number.</p>
  <div class="card"><div class="k">Verified subtotal</div><div class="v">{money(b["verified_subtotal_usd"])}</div>
   <div class="small">Everything above except the blank line.</div></div>
  <div class="card"><div class="k">Hotel share</div><div class="v">{money(1155.48)}</div><div class="small">{1155.48 / b["verified_subtotal_usd"] * 100:.0f}% of the subtotal</div></div>
- <div class="card"><div class="k">Dining share (2 tasting menus)</div><div class="v">{money(1350)}</div><div class="small">{1350 / b["verified_subtotal_usd"] * 100:.0f}% — food only, no wine</div></div>
+ <div class="card"><div class="k">Flights share</div><div class="v">{money(1204)}</div><div class="small">{1204 / b["verified_subtotal_usd"] * 100:.0f}% of the subtotal &mdash; nearly as much as the hotel</div></div>
+ <div class="card"><div class="k">Dining share (2 tasting menus)</div><div class="v">{money(1350)}</div><div class="small">{1350 / b["verified_subtotal_usd"] * 100:.0f}% &mdash; food only, no wine</div></div>
  <div class="card"><div class="k">Lines with no price</div><div class="v">{b["unpriced_lines"]}</div><div class="small">Ordinary meals: no official source exists, so it is blank rather than estimated.</div></div>
 </div>
 
@@ -1113,7 +1117,8 @@ formula is written down.</li>
 <li>{ext("https://www.911memorial.org/visit/visit-museum-1", "9/11 Memorial &amp; Museum: hours and tickets")} · {ext("https://www.rockefellercenter.com/tickets/top-of-the-rock-observation-deck/", "Top of the Rock: tickets")} · {ext("https://www.nps.gov/stli/planyourvisit/fees.htm", "Statue of Liberty: NPS fees")}</li>
 <li>{ext("https://www.nycgovparks.org/parks/central-park", "NYC Parks: Central Park")} · {ext("https://www.thehighline.org/visit/", "The High Line: visitor info")}</li>
 <li>{ext("https://www.mta.info/fares-tolls/subway-bus", "MTA subway and bus fares")} — $3 fare, $35 seven-day tap-and-ride cap.</li>
-<li>{ext("https://www.kayak.com/flights/AMS-NYC/2027-02-14/2027-02-23?sort=bestflight_a", "KAYAK AMS–NYC, 14–23 Feb 2027")} and {ext("https://www.google.com/travel/flights?q=Flights%20to%20JFK%20from%20AMS%20on%202027-02-14%20through%202027-02-23", "Google Flights, same dates")}.</li>
+<li>{ext("https://www.google.com/travel/flights?q=Flights%20to%20JFK%20from%20AMS%20on%202027-02-15%20through%202027-02-22", "Google Flights: AMS–JFK, 15–22 Feb 2027")} &mdash; $606 per adult round trip (Aer Lingus, 1 stop via Dublin), $562 with a 6h20m layover, $904–906 nonstop. These are the itinerary's own dates.</li>
+<li>{ext("https://www.kayak.com/flights/AMS-NYC/2027-02-14/2027-02-23?sort=bestflight_a", "KAYAK AMS–NYC, 14–23 Feb 2027")} &mdash; a cross-check on adjacent dates: $686 cheapest, $908 nonstop. The extra night costs money, which is why the plan does not add one.</li>
 </ul>
 
 <h3>Social accounts verified</h3>
@@ -1324,6 +1329,8 @@ def run_checks(pages):
             errors.append(f"{name}: unrendered template token")
         if "&lt;span" in html or "&lt;a " in html:
             errors.append(f"{name}: escaped markup leaked into output")
+        if "&amp;amp;" in html or "&amp;#" in html:
+            errors.append(f"{name}: double-escaped HTML entity")
         if 'href="#"' in html:
             errors.append(f"{name}: dead placeholder href")
         ids = re.findall(r'\bid="([^"]+)"', html)
@@ -1348,13 +1355,13 @@ def main():
             "New York City, 15–22 February 2027", build_index()),
         "hotels.html": layout("hotels.html", "Hotels — 7 nights verified", build_hotels()),
         "restaurants.html": layout("restaurants.html", "MICHELIN restaurants", build_restaurants()),
-        "activities.html": layout("activities.html", "Activities &amp; social reviews", build_activities()),
+        "activities.html": layout("activities.html", "Activities & social reviews", build_activities()),
         "itinerary.html": layout("itinerary.html", "Itinerary", build_itinerary()),
         "budget.html": layout("budget.html", "Budget", build_budget()),
         "questions.html": layout("questions.html", "Open questions", build_questions()),
         "suggestions.html": layout("suggestions.html", "Suggestions for improvement", build_suggestions()),
         "flagged.html": layout("flagged.html", "Flagged for review", build_flagged()),
-        "method.html": layout("method.html", "Method &amp; sources", build_method()),
+        "method.html": layout("method.html", "Method & sources", build_method()),
         "repo-review.html": layout("repo-review.html", "Repository review", build_repo_review()),
     }
 
