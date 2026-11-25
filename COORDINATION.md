@@ -20,6 +20,7 @@
 | Session ID | Branch | Scope | Started (UTC) | Notes |
 |---|---|---|---|---|
 | `arena-cfbb0ef6` | `arena/cfbb0ef6-nyfun1` | All tasks T1–T15 (sole session in this workspace) | 2026-11-25 | Claimed 2026-11-25; no other live claims found |
+| `arena-c23ad872` | `arena/c23ad872-nyfun1` | T16-T20: enrich restaurant/activity social links with verified official/profile links where found; verify hours/days/exceptions columns; update tables/site; add verification log | 2026-11-25 | Claimed 2026-11-25; working on current branch per system constraint |
 
 No other live claims were present when this board was created (repo contained only `README.md`
 on base commit `6609129`).
@@ -42,6 +43,11 @@ on base commit `6609129`).
 | T12 | Flagged-for-review register (unverified / irregularities) | `docs/flagged.html` | arena-cfbb0ef6 | done | 2026-11-25 |
 | T13 | Verification pass: every value → official source or blank+flag | all data files | arena-cfbb0ef6 | done | 2026-11-25 |
 | T14 | Integration + GitHub Pages publish + link check | `docs/index.html`, nav, Pages settings | arena-cfbb0ef6 | done | 2026-11-25 |
+| T16 | Enrich verified restaurants with official social/profile links (YouTube/TikTok/Instagram) and verify hours/exceptions | `docs/data/michelin_2025.csv`, `docs/data/guide_listed.csv`, `content.py`, `build.py`, `docs/*.html` | arena-c23ad872 | in progress | 2026-11-25 |
+| T17 | Enrich activities with verified social/profile links and verify hours/days/exceptions | `docs/data/activities.csv`, `build.py`, `docs/*.html` | arena-c23ad872 | in progress | 2026-11-25 |
+| T18 | Verify table columns meet spec (days open, hours, exceptions, link, social links) and update site | `build.py`, `docs/*.html` | arena-c23ad872 | in progress | 2026-11-25 |
+| T19 | Update COORDINATION/verification log with sources and irregularities | `COORDINATION.md`, `docs/flagged.html` | arena-c23ad872 | in progress | 2026-11-25 |
+| T20 | Final rebuild, link check, commit | `docs/*`, `COORDINATION.md` | arena-c23ad872 | in progress | 2026-11-25 |
 
 ## File ownership (non-overlapping scopes)
 
