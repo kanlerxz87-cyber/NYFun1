@@ -959,7 +959,7 @@ def build_review():
 
 <div class="grid">
   <div class="kpi"><div class="k">Sources cited</div><div class="v">17</div><div class="s">official venue, agency and routing pages</div></div>
-  <div class="kpi"><div class="k">Irregularities logged</div><div class="v">{len(issues)}</div><div class="s">including 5 left open</div></div>
+  <div class="kpi"><div class="k">Irregularities logged</div><div class="v">{len(issues)}</div><div class="s">5 flagged, 3 still open, 1 rejected, 1 resolved</div></div>
   <div class="kpi"><div class="k">Values left blank</div><div class="v">19</div><div class="s">flagged in the data, never estimated</div></div>
   <div class="kpi"><div class="k">Derived figures</div><div class="v">1</div><div class="s">the budget total, labelled as such</div></div>
 </div>
