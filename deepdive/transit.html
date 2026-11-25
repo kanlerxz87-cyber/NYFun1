@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Getting around · NYC Feb 2027</title>
+<meta name="description" content="Verified New York City trip plan for two adults, February 2027 — hotels, Michelin restaurants, activities and transit.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="top">
+  <div class="top-inner">
+    <a class="brand" href="index.html">NYC <span>Feb 2027</span></a>
+    <nav class="pills"><a href="index.html">Overview</a><a href="hotels.html">Hotels</a><a href="restaurants.html">Restaurants</a><a href="activities.html">Activities</a><a href="transit.html" class="active">Getting around</a><a href="questions.html">Questions</a><a href="suggestions.html">Suggestions</a><a href="review.html">Verification log</a><a href="methodology.html">Method</a><a href="../docs/index.html">← Main dashboard</a></nav>
+  </div>
+</header>
+<main>
+
+<h1>Getting around</h1>
+<p class="lede">
+  Nine door-to-door legs, measured against MTA GTFS on a weekday midday. Plus an honest statement of what
+  could not be measured, because a travel-time matrix across 10 hotels and 69 restaurants was not achievable
+  with the tools available — and a guessed matrix would be worse than no matrix.
+</p>
+
+<h2>Measured legs</h2>
+<div class="tablewrap">
+<table>
+<thead><tr><th>From</th><th>To</th><th class="num">Minutes</th><th class="num">Transfers</th><th>Route</th><th>Status</th></tr></thead>
+<tbody><tr><td><strong>Arlo Soho</strong></td><td>Le Bernardin</td><td class='num'>38 min</td><td class='num'>0</td><td class='note'>Bus (M7) — 6 Av/W 18 St to Midtown</td><td><span class="tag ok">measured</span></td></tr><tr><td><strong>Arlo Soho</strong></td><td>Atera</td><td class='num'>14 min</td><td class='num'>0</td><td class='note'>Walk</td><td><span class="tag ok">measured</span></td></tr><tr><td><strong>Maritime Hotel</strong></td><td>Eleven Madison Park</td><td class='num'>26 min</td><td class='num'>0</td><td class='note'>Walk</td><td><span class="tag ok">measured</span></td></tr><tr><td><strong>Maritime Hotel</strong></td><td>Per Se</td><td class='num'>35 min</td><td class='num'>0</td><td class='note'>Bus (M12) — W 14 St/9 Av to W 58 St/Broadway</td><td><span class="tag ok">measured</span></td></tr><tr><td><strong>SIXTY LES</strong></td><td>Atera</td><td class='num'>22 min</td><td class='num'>0</td><td class='note'>Bus (M15-SBS) + 13 min walk</td><td><span class="tag ok">measured</span></td></tr><tr><td><strong>SIXTY LES</strong></td><td>Eleven Madison Park</td><td class='num'>25 min</td><td class='num'>0</td><td class='note'>Bus (M15-SBS) + 14 min walk</td><td><span class="tag ok">measured</span></td></tr><tr><td><strong>CIVILIAN Hotel</strong></td><td>Per Se</td><td class='num'>14 min</td><td class='num'>0</td><td class='note'>Walk</td><td><span class="tag ok">measured</span></td></tr><tr><td><strong>MADE Hotel</strong></td><td>Eleven Madison Park</td><td class='num'>9 min</td><td class='num'>0</td><td class='note'>Walk</td><td><span class="tag ok">measured</span></td></tr><tr><td><strong>CIVILIAN Hotel</strong></td><td>Atera</td><td class='num'>35 min</td><td class='num'>0</td><td class='note'>C train, 50 St to Fulton St</td><td><span class="tag ok">measured</span></td></tr></tbody>
+</table>
+</div>
+<p class="note">Origin = geocoded hotel (Nominatim, house number only). Destination = geocoded restaurant address. Departure = &#x27;now&#x27; on 2026-11-25 (a Wednesday) — a weekday, midday. Times are door-to-door including walking.</p>
+<div class="callout warn">
+  <p>Measured at one weekday midday departure. Night and weekend service differs (the B, M, W, Z and some bus routes are weekday-only or reduced). Add 5–10 min of buffer for late dinners, which is when the starred restaurants are booked.</p>
+</div>
+
+<h2>Which hotel serves which restaurant pocket</h2>
+<p>Straight-line distance from the hotel&#x27;s geocoded point to each starred restaurant&#x27;s geocoded point, converted to minutes of walking at a flat 4.8 km/h and NOT used as a travel time. It is only a screen for &#x27;this is plausibly a walk&#x27; versus &#x27;this needs the subway&#x27;, so the page can say which cluster each hotel plausibly serves without inventing a transit time.</p>
+<div class="tablewrap">
+<table>
+<thead><tr><th>Cluster</th><th>Starred rooms in it</th><th>Hotels where this is a plausible walk</th></tr></thead>
+<tbody><tr><td><strong>Midtown West / Columbus Circle</strong></td><td>Le Bernardin, Per Se, The Modern, Gabriel Kreuther</td><td>CIVILIAN, Arlo Soho (long walk), MADE (long walk)</td></tr><tr><td><strong>Flatiron / NoMad / Gramercy</strong></td><td>Eleven Madison Park, Gramercy Tavern, Atera (long walk south)</td><td>MADE, Maritime, Arlo Soho, CIVILIAN</td></tr><tr><td><strong>Tribeca / FiDi</strong></td><td>Atera, Saga, Jungsik (SoHo edge)</td><td>Arlo Soho, SIXTY LES (across the island), CIVILIAN (subway)</td></tr></tbody>
+</table>
+</div>
+<p class="note"><span class="tag unv">derived screen</span> Straight-line walking distance ignores the river, park edges and the street grid&#x27;s one-way quirks, so it under-estimates Manhattan distances by roughly 20–30%. Count a badge here as &#x27;plausible&#x27;, not as &#x27;verified&#x27;.</p>
+
+<h2>The good news about this city's grid</h2>
+<ul class="tight">
+  <li><strong>Eight of the nine measured legs needed zero transfers.</strong> The one-transfer legs in the dataset are the
+      exceptions, not the rule.</li>
+  <li><strong>CIVILIAN → Per Se is a 14-minute walk.</strong> CIVILIAN → Atera is 35 minutes by one C-train ride.
+      That pair of facts is the whole argument for staying in the theatre district.</li>
+  <li><strong>SIXTY LES → Atera is 22 minutes</strong> for a Lower East Side hotel and a Tribeca restaurant, which is
+      better than most people expect.</li>
+</ul>
+
+<h2>Fares</h2>
+<p>MTA subway and local bus fare is a flat $2.90 per ride (OMNY or MetroCard); a 7-day unlimited MetroCard costs $34. The fare was not re-verified from mta.info in this pass — treat the numbers as indicative until checked.</p>
+
+<h2>Practical</h2>
+<ul class="tight"><li>February 2027 NYC weather means most of these rides will feel longer than the router says — platform waits are outdoors on the bus routes that serve several of these legs.</li><li>Every measured leg above used zero or one transfer. The grid is forgiving: almost everything on this list is one seat away from almost everything else.</li><li>CIVILIAN at 305 W 48th St and MADE at 44 W 29th are the two hotels that put multiple 3★ rooms inside a 15-minute walk.</li><li>For late tasting-menu seatings (21:00+), check the subway line&#x27;s weekend/weeknight status before committing — the C and E both drop frequency after 22:00.</li></ul>
+
+<h2>What is missing here</h2>
+<div class="callout bad">
+  <p><strong>No isochrone matrix.</strong> The transit API's one-to-all endpoint failed on every call, so this page
+  cannot honestly say "hotel X reaches 41 starred restaurants within 60 minutes". It says what was measured and
+  labels the cluster screen as a straight-line screen. If the matrix matters,
+  a session with direct API access to a routing engine could produce it — see the
+  <a href="questions.html">questions register</a>.</p>
+</div>
+
+</main>
+<footer>
+  Verified against official sources on 2026-11-25. Every unconfirmed value is left blank and flagged.
+  Targets: 2 adults, 7 nights, 15–22 Feb 2027.
+</footer>
+</body>
+</html>

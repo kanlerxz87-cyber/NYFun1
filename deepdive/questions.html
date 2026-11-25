@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Questions &amp; unknowns · NYC Feb 2027</title>
+<meta name="description" content="Verified New York City trip plan for two adults, February 2027 — hotels, Michelin restaurants, activities and transit.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="top">
+  <div class="top-inner">
+    <a class="brand" href="index.html">NYC <span>Feb 2027</span></a>
+    <nav class="pills"><a href="index.html">Overview</a><a href="hotels.html">Hotels</a><a href="restaurants.html">Restaurants</a><a href="activities.html">Activities</a><a href="transit.html">Getting around</a><a href="questions.html" class="active">Questions</a><a href="suggestions.html">Suggestions</a><a href="review.html">Verification log</a><a href="methodology.html">Method</a><a href="../docs/index.html">← Main dashboard</a></nav>
+  </div>
+</header>
+<main>
+
+<h1>Questions &amp; unknowns</h1>
+<p class="lede">
+  Everything this plan could not confirm, what it would take to confirm it, and what state the answer is in today.
+  This page exists so that no blank in the tables is a mystery — each one has an entry and a route to an answer.
+</p>
+
+<div class="tablewrap">
+<table>
+<thead><tr><th>Question</th><th>What we found</th><th>How to resolve it</th><th>Status</th></tr></thead>
+<tbody><tr><td><strong>How many Michelin-starred restaurants are within 60 minutes of each hotel?</strong></td><td>Blocked — the routing engine&#x27;s one-to-all endpoint failed on every attempt.</td><td>Re-run against a routing service with batch isochrone support, or query the 10 × 69 pairs individually (690 calls at ~1 s each).</td><td><span class="tag ok">Partial — 9 legs measured, cluster screen only</span></td></tr><tr><td><strong>What are Eleven Madison Park&#x27;s opening hours?</strong></td><td>Not published. elevenmadisonpark.com serves a ticketing flow and an FAQ; neither prints an hours table. Michelin&#x27;s page has no hours widget for EMP.</td><td>Email info@elevenmadisonpark.com, or read the hours once Resy opens February 2027 bookings on 1 Feb 2027.</td><td><span class="tag unv">Unverified</span></td></tr><tr><td><strong>What are Gramercy Tavern&#x27;s opening hours?</strong></td><td>Not published on the pages fetched — the official site&#x27;s menu page and the Michelin page both lack an hours table.</td><td>Check gramercytavern.com&#x27;s reservation page, or call the restaurant.</td><td><span class="tag unv">Unverified</span></td></tr><tr><td><strong>What does Per Se cost?</strong></td><td>Not published. thomaskeller.com/perseny renders as a landing page with Michelin/Relais badges only.</td><td>Email or call Per Se reservations; the price is confirmed at booking.</td><td><span class="tag unv">Unverified</span></td></tr><tr><td><strong>What does Atera cost?</strong></td><td>Not published. Tock shows a $200 pp deposit but no menu price.</td><td>Open a Tock booking flow for a February date — the price appears at the payment step.</td><td><span class="tag unv">Unverified</span></td></tr><tr><td><strong>What are the Met&#x27;s and MoMA PS1&#x27;s opening hours?</strong></td><td>The Met&#x27;s hours module did not render on three URLs; momaps1.org was not fetched.</td><td>Read metmuseum.org/plan-your-visit and momaps1.org/en/visit in a normal browser.</td><td><span class="tag unv">Unverified</span></td></tr><tr><td><strong>How much is the Statue of Liberty ferry?</strong></td><td>Not captured. NPS publishes the park hours but the ferry is sold by a concessioner whose price page was not read.</td><td>Check cityexperiences.com (the official NPS ferry operator) for a February 2027 date.</td><td><span class="tag unv">Unverified</span></td></tr><tr><td><strong>What are the street addresses of ModernHaus Soho and The Mercer?</strong></td><td>Not transcribed from their Michelin pages during this pass, so neither could be geocoded.</td><td>Re-open the two Michelin hotel pages; the address is in the header block.</td><td><span class="tag unv">Unverified</span></td></tr><tr><td><strong>Is the full Bib Gourmand list needed?</strong></td><td>No. Michelin reports 76 Bib Gourmand entries for NYC; three representative ones are verified and the rest are linked by list URL.</td><td>Fetch guide.michelin.com/.../bib-gourmand page by page if a full inventory is wanted.</td><td><span class="tag ok">Count verified, list not itemised</span></td></tr><tr><td><strong>What is the exact 2027 Michelin star list?</strong></td><td>Unknown. The next New York ceremony has not happened; every distinction here is the live distinction on 2026-11-25.</td><td>Re-check guide.michelin.com after the next Northeast Cities ceremony, expected around November 2027.</td><td><span class="tag ok">Current at time of writing</span></td></tr><tr><td><strong>Will the hotel prices still hold?</strong></td><td>No guarantee. These are same-day quotes for a stay 15 months out, on thin inventory.</td><td>Re-quote 3–6 months before travel; February is historically the cheap month and the seasonality test confirms it for this hotel.</td><td><span class="tag ok">Point-in-time quote</span></td></tr><tr><td><strong>Does the itinerary survive Monday closures?</strong></td><td>Partly. Le Bernardin and Gabriel Kreuther are both closed Sunday (verified). Jungsik&#x27;s open days are not published anywhere official, so its slot is a placeholder.</td><td>The itinerary keeps Monday free of a starred dinner and flags Sunday&#x27;s Jungsik booking as provisional. Confirm every venue&#x27;s hours at the moment of booking.</td><td><span class="tag ok">Partly checked — Jungsik open</span></td></tr><tr><td><strong>Is the budget total a verified number?</strong></td><td>No — it is the one derived figure on the site. Every input is verified; the sums are arithmetic.</td><td>Nothing to discover; it is labelled as derived on the overview page.</td><td><span class="tag ok">Derived, labelled</span></td></tr><tr><td><strong>Are the TikTok and Instagram links per-venue?</strong></td><td>Mixed. Instagram handles are recorded where the official site or Tock page links one. TikTok links are search URLs, not specific posts.</td><td>Replace search URLs with specific posts if you want curated picks; searching by venue name returns current material.</td><td><span class="tag ok">Partial</span></td></tr></tbody>
+</table>
+</div>
+
+<h2>Things you should decide before booking</h2>
+<div class="card">
+  <h3>Eleven Madison Park is a deadline, not a choice</h3>
+  <p>
+    EMP releases reservations <strong>on the first of the month for the following month</strong> and its FAQ states that
+    all sales are final and non-refundable. A February 2027 table opens on 1 February 2027 — the day before your flight.
+    Booking it means committing $770 for two, non-refundable, sight unseen, at the last minute. If that is not a risk
+    you want, the plan works without it: Saga at $215 pp or The Modern at $185 pp deliver the same "evening" at half the exposure.
+  </p>
+</div>
+<div class="card">
+  <h3>Three starred dinners, or four?</h3>
+  <p>
+    The overview's shape uses three. Adding a fourth (Gabriel Kreuther, $400 for two at the 3-course, is the cheapest
+    2★ full dinner on the list) pushes food to roughly $2,300 for two and makes four of seven nights a 3-hour commitment.
+    The trade-off is real and it is yours — the data supports either.
+  </p>
+</div>
+<div class="card">
+  <h3>Is the Met worth a full day in February?</h3>
+  <p>
+    The Met is the best indoor answer to a cold week, and it is free-adjacent for NY residents only — you are not one,
+    so $30 each. But it is 10 minutes from the 6-train and the whole Upper East Side is a dead zone for the starred
+    restaurants on this list. Expect the Met day to end downtown.
+  </p>
+</div>
+
+<h2>Deliberate omissions</h2>
+<ul class="tight">
+  <li><strong>No estimated prices.</strong> Where a restaurant does not print a price, there is no number in the table. Not a range, not a "typical".</li>
+  <li><strong>No inferred hours.</strong> "Most Michelin restaurants open at 17:30" is not a source.</li>
+  <li><strong>No invented transit times.</strong> Nine legs were measured; the rest are labelled as a straight-line screen or not shown.</li>
+  <li><strong>No airfare, no taxi estimates, no alcohol budget.</strong> None were verified from a source.</li>
+</ul>
+
+</main>
+<footer>
+  Verified against official sources on 2026-11-25. Every unconfirmed value is left blank and flagged.
+  Targets: 2 adults, 7 nights, 15–22 Feb 2027.
+</footer>
+</body>
+</html>

@@ -19,12 +19,14 @@ explicit register of everything that could not be verified.
 | `content.py` | Registers: 22 flags, 18 open questions, 12 suggestions, itineraries, budget, sources |
 | `build.py` | Stdlib-only generator: reads the CSVs, writes every HTML page |
 | `COORDINATION.md` | Shared task board, claims, file ownership and verification log |
+| `deepdive/` | **Second, independently researched site — the "verified deep dive"** |
 
 ## Build
 
 ```bash
-python3 build.py     # regenerates docs/*.html from docs/data/*.csv + content.py
-python3 -m http.server -d docs 8000   # preview at http://localhost:8000
+python3 build.py           # main dashboard: docs/*.html from docs/data/*.csv + content.py
+python3 build_deepdive.py  # deep dive: deepdive/*.html from deepdive/data/*.json
+python3 -m http.server 8000   # preview both at http://localhost:8000
 ```
 
 No third-party dependencies.
@@ -50,6 +52,33 @@ No third-party dependencies.
 - `date_windows.csv`: one row per hotel/date window with the 7-night total and the exact source URL.
 - `activities.csv`: `activity, category, area, address, hours, cost_adult_usd, cost_2_adults_usd,
   official_url, verification, exceptions, notes`.
+
+## Two datasets, deliberately
+
+Two research sessions worked this repo in parallel before either was merged, from different official
+sources. Rather than merge the numbers and quietly pick a winner wherever they disagree, both are
+published and cross-linked; the disagreements are itemised in `COORDINATION.md`.
+
+| | `docs/` (main dashboard) | `deepdive/` |
+|---|---|---|
+| Stars | 72 (5/15/52) — Michelin's ceremony article | 69 (5/14/50) — Michelin's live filtered lists |
+| Hotels | 4, quoted from Booking.com room tables | 10, quoted from Michelin's own availability pages |
+| Hotel price basis | room rate + separately itemised taxes/fees | the stay total Michelin prints, taxes & fees included |
+| Transit | distance/18 km/h model, labelled MODEL | 9 legs measured against MTA GTFS via Transitous |
+| Restaurant depth | roster + price band; social links are search links only | menu prices from the venues' own pages, hours, closures, verified video |
+| Best for | the ranked shortlist and the budget envelope | menu prices, hours, measured travel times, the audit trail |
+
+`deepdive/` also carries the **verification log** (`deepdive/review.html`) with a 10-link manual review
+checklist, and a **suggestions** page kept separate from the data.
+
+### What the deep dive adds over the dashboard
+
+- Restaurant prices read from each venue's own menu page (Le Bernardin $225 dinner / $142 lunch,
+  EMP $385, Saga $215, Gabriel Kreuther $200, The Modern $185, Jungsik $335, Gramercy $178).
+- Per-venue opening hours and closures, straight from the Michelin detail pages.
+- Nine door-to-door transit legs measured against MTA GTFS — not modelled.
+- A four-window seasonality test proving the 15–22 Feb window is the cheapest of the four tested.
+- Nineteen values left deliberately blank, each with a row in the questions register.
 
 ## Known limitations
 

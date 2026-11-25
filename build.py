@@ -173,6 +173,7 @@ PAGES = [
     ("flagged.html", "Flagged for review"),
     ("methodology.html", "Method & sources"),
     ("repo-review.html", "Repo review"),
+    ("../deepdive/index.html", "Deep dive"),
 ]
 
 def layout(page, title, body, lede=""):

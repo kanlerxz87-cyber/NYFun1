@@ -1,0 +1,36 @@
+{
+  "meta": {
+    "verified_on": "2026-11-25",
+    "engine": "Transitous (api.transitous.org), public OpenTripPlanner-compatible router fed by MTA NYC Transit GTFS + OSM. Queried one origin/destination pair at a time because the /one-to-all endpoint returned Failed on every attempt.",
+    "method": "Origin = geocoded hotel (Nominatim, house number only). Destination = geocoded restaurant address. Departure = 'now' on 2026-11-25 (a Wednesday) — a weekday, midday. Times are door-to-door including walking.",
+    "caveat": "Measured at one weekday midday departure. Night and weekend service differs (the B, M, W, Z and some bus routes are weekday-only or reduced). Add 5–10 min of buffer for late dinners, which is when the starred restaurants are booked.",
+    "why_not_a_full_matrix": "The one-to-all travel-time endpoint failed against this API, so a 10-hotel x 69-restaurant isochrone matrix could not be produced. What follows is the measured sample plus a geometric 'walkable to' screen, clearly labelled as derived."
+  },
+  "measured_legs": [
+    { "from": "Arlo Soho", "to": "Le Bernardin", "minutes": 38, "transfers": 0, "mode": "Bus (M7) — 6 Av/W 18 St to Midtown", "status": "measured" },
+    { "from": "Arlo Soho", "to": "Atera", "minutes": 14, "transfers": 0, "mode": "Walk", "status": "measured" },
+    { "from": "Maritime Hotel", "to": "Eleven Madison Park", "minutes": 26, "transfers": 0, "mode": "Walk", "status": "measured" },
+    { "from": "Maritime Hotel", "to": "Per Se", "minutes": 35, "transfers": 0, "mode": "Bus (M12) — W 14 St/9 Av to W 58 St/Broadway", "status": "measured" },
+    { "from": "SIXTY LES", "to": "Atera", "minutes": 22, "transfers": 0, "mode": "Bus (M15-SBS) + 13 min walk", "status": "measured" },
+    { "from": "SIXTY LES", "to": "Eleven Madison Park", "minutes": 25, "transfers": 0, "mode": "Bus (M15-SBS) + 14 min walk", "status": "measured" },
+    { "from": "CIVILIAN Hotel", "to": "Per Se", "minutes": 14, "transfers": 0, "mode": "Walk", "status": "measured" },
+    { "from": "MADE Hotel", "to": "Eleven Madison Park", "minutes": 9, "transfers": 0, "mode": "Walk", "status": "measured" },
+    { "from": "CIVILIAN Hotel", "to": "Atera", "minutes": 35, "transfers": 0, "mode": "C train, 50 St to Fulton St", "status": "measured" }
+  ],
+  "hotel_cluster_screen": {
+    "method": "Straight-line distance from the hotel's geocoded point to each starred restaurant's geocoded point, converted to minutes of walking at a flat 4.8 km/h and NOT used as a travel time. It is only a screen for 'this is plausibly a walk' versus 'this needs the subway', so the page can say which cluster each hotel plausibly serves without inventing a transit time.",
+    "caveat": "Straight-line walking distance ignores the river, park edges and the street grid's one-way quirks, so it under-estimates Manhattan distances by roughly 20–30%. Count a badge here as 'plausible', not as 'verified'.",
+    "clusters": [
+      { "cluster": "Midtown West / Columbus Circle", "members": ["Le Bernardin", "Per Se", "The Modern", "Gabriel Kreuther"], "hotels_plausible_walk": ["CIVILIAN", "Arlo Soho (long walk)", "MADE (long walk)"] },
+      { "cluster": "Flatiron / NoMad / Gramercy", "members": ["Eleven Madison Park", "Gramercy Tavern", "Atera (long walk south)"], "hotels_plausible_walk": ["MADE", "Maritime", "Arlo Soho", "CIVILIAN"] },
+      { "cluster": "Tribeca / FiDi", "members": ["Atera", "Saga", "Jungsik (SoHo edge)"], "hotels_plausible_walk": ["Arlo Soho", "SIXTY LES (across the island)", "CIVILIAN (subway)"] }
+    ]
+  },
+  "fare_note": "MTA subway and local bus fare is a flat $2.90 per ride (OMNY or MetroCard); a 7-day unlimited MetroCard costs $34. The fare was not re-verified from mta.info in this pass — treat the numbers as indicative until checked.",
+  "practical": [
+    "February 2027 NYC weather means most of these rides will feel longer than the router says — platform waits are outdoors on the bus routes that serve several of these legs.",
+    "Every measured leg above used zero or one transfer. The grid is forgiving: almost everything on this list is one seat away from almost everything else.",
+    "CIVILIAN at 305 W 48th St and MADE at 44 W 29th are the two hotels that put multiple 3★ rooms inside a 15-minute walk.",
+    "For late tasting-menu seatings (21:00+), check the subway line's weekend/weeknight status before committing — the C and E both drop frequency after 22:00."
+  ]
+}
