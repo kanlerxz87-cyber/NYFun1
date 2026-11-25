@@ -10,40 +10,40 @@
       "hotel": "Fairfield Inn & Suites by Marriott New York Manhattan/Central Park",
       "base_7n": 985.6,
       "incl_7n": 1158.98,
-      "n20": 5,
-      "n30": 6,
-      "n60": 6,
-      "score": 15.4
+      "n20": 6,
+      "n30": 7,
+      "n60": 7,
+      "score": 18.12
     },
     {
       "rank": 2,
       "hotel": "citizenM New York Times Square",
       "base_7n": 1147.0,
       "incl_7n": 1344.18,
-      "n20": 5,
-      "n30": 6,
-      "n60": 6,
-      "score": 13.28
+      "n20": 6,
+      "n30": 7,
+      "n60": 7,
+      "score": 15.62
     },
     {
       "rank": 3,
       "hotel": "citizenM New York Bowery",
       "base_7n": 1113.0,
       "incl_7n": 1305.17,
-      "n20": 3,
-      "n30": 6,
-      "n60": 6,
-      "score": 11.49
+      "n20": 4,
+      "n30": 7,
+      "n60": 7,
+      "score": 13.79
     },
     {
       "rank": 4,
       "hotel": "Moxy NYC Times Square",
       "base_7n": 1447.0,
       "incl_7n": 1688.43,
-      "n20": 5,
-      "n30": 6,
-      "n60": 6,
-      "score": 10.07
+      "n20": 6,
+      "n30": 7,
+      "n60": 7,
+      "score": 11.85
     }
   ],
   "flags": 22,

@@ -96,9 +96,9 @@ FLAGS = [
 
 # --------------------------------------------------------------------------- QUESTIONS
 QUESTIONS = [
- dict(id="Q1", q="How long is the trip - 4, 7 or 14 nights?",
+ dict(id="Q1", q="How long is the trip - 4 nights, 1-2 weeks, or 2-4 weeks?",
       status="Open - needs your decision", owner="traveller", blocks="hotel dates, budget, itinerary",
-      know="The brief asks for 1-2 weeks but names 15-18 February (4 nights) as the preferred window. "
+      know="The brief states preferred dates 15–18 Feb 2027 (4 nights), asks for 1–2 weeks, and also says trip could be up to 2–4 weeks. These constraints conflict. "
            "We drafted all three: 4 nights, 7 nights (recommended) and 14 nights.",
       unknown="Which constraint is real - the specific dates, or the length?",
       how="Pick the row you want in the itinerary page; the hotel price per night is identical for the "
@@ -206,8 +206,7 @@ QUESTIONS = [
       status="Open - needs your decision", owner="traveller", blocks="booking step",
       know="All four hotel rates are cancellable until 12-13 Feb 2027 at no cost on the captured rates.",
       unknown="Appetite for risk on airfare and prepaid dinners.",
-      how="If dinners are prepaid (some tasting menus require it), insurance becomes relevant; record the "
-          "deposit terms at booking."),
+      how="If dinners are prepaid (some tasting menus require it), insurance becomes relevant; record the deposit terms at booking."),
  dict(id="Q18", q="What would make this plan 'done' for you?",
       status="Open - needs your decision", owner="traveller", blocks="scope of next session",
       know="The dataset now covers hotel price/bed/bathroom, the full star roster, verified detail for 6 "

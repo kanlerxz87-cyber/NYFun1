@@ -20,6 +20,7 @@
 | Session ID | Branch | Scope | Started (UTC) | Notes |
 |---|---|---|---|---|
 | `arena-cfbb0ef6` | `arena/cfbb0ef6-nyfun1` | All tasks T1–T15 (sole session in this workspace) | 2026-11-25 | Claimed 2026-11-25; no other live claims found |
+| `arena-c0c981a7` | `arena/c0c981a7-nyfun1` | Audit + gap-fill vs user request: social links/hours/cost columns, executive summary/questions/suggestions clarity, site structure, verification pass | 2026-11-25 | Claimed 2026-11-25; working on current branch only; no overlapping file edits with other active sessions |
 
 No other live claims were present when this board was created (repo contained only `README.md`
 on base commit `6609129`).
@@ -196,3 +197,14 @@ merged to `main`, reset Pages to `main:/docs` (or `main:/`) and delete the stale
   with itself.
 - **Link check (automated, all three trees):** 0 broken internal links across `index.html`, `docs/*.html`
   and `deepdive/*.html`.
+
+
+### 2026-11-25 · arena-c0c981a7 · Gap-fill audit against user request
+
+- **Branch:** `arena/c0c981a7-nyfun1` (current session). Read existing `docs/`, `deepdive/`, data, and build scripts; did not rewrite other sessions' log entries.
+- **Verified data added:** Atomix (MICHELIN 2-star) — address `104 E 30th St, New York, NY 10016`, hours `Tue-Sat 5:30pm-12am`, closed Sun/Mon, website `https://www.atomixnyc.com/`, booking Tock, price $$$$, coords approx 40.7442/-73.9827, verification upgraded from `roster-only` to `verified`. Source: https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/atomix (fetched 2026-11-25).
+- **Table/format alignment to user request:** restaurants tables now explicitly include "Days open / hours", "Closed / exceptions", "Est. spend for 2 adults", "Official link / website", and "YouTube / TikTok / Instagram (search links)" columns. Activities table now includes "Days open / hours", "Closed / exceptions", "2 adults (total)", "≤1 hr from top hotel (MODEL)" heuristic, official link, and social search links. Guide-listed table includes requested columns with blanks flagged.
+- **Social links:** kept as platform search links (not fabricated handles) for all rows; labeled clearly as search links. No individual profile was invented. Flag F20 remains open.
+- **Executive summary / questions:** index clarifies preferred 15–18 Feb 2027, 1–2 week, and 2–4 week ambiguity (Q1). Hotels page states ranking criterion as "amount of MICHELIN restaurants around the given hotel within 1 hour by subway/bus (MODEL)". Cheapest sampled stay window stated with actual dates. "Cheapest upcoming time to book" clarified: cancellable snapshot available 2026-11-25; future price drops cannot be verified from single snapshot. Questions page now renders Known / Unknown / How to discover / Answer-decision needed.
+- **Verification / honesty:** no values inferred. Blanks remain blank; modelled values labelled MODEL/DERIVED. Build regenerated docs via `python3 build.py`.
+- **Remaining gaps (not fabricated):** 65 starred restaurants still roster-only (address/hours/cost blank); most activities unverified; social profiles not verified as direct handles; hotel "best time to book" needs weekly snapshots; full 1-hour MICHELIN count per hotel needs coordinates for all restaurants.
