@@ -63,8 +63,9 @@ Writes `docs/*.html` and `docs/assets/style.css`. The generator **fails the buil
 - any internal link points at a file that does not exist,
 - a template token or escaped markup leaks into the output,
 - a page contains a placeholder link that goes nowhere,
-- two elements share an id, or
-- a table row has a different number of cells than its header.
+- two elements share an id,
+- a table row has a different number of cells than its header, or
+- the budget's stated subtotal does not equal the sum of its priced lines.
 
 `build.py`, `build_deepdive.py` and `content.py` belong to the earlier dataset and are left untouched.
 

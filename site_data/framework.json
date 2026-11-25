@@ -174,7 +174,7 @@
     "note": "No official source exists for what a couple spends on ordinary meals. Inventing a daily allowance would be a guess, so this line is blank."
    }
   ],
-  "verified_subtotal_usd": 4228.48,
+  "verified_subtotal_usd": 4275.48,
   "verified_subtotal_note": "Sum of the lines with a read amount. Includes the two MICHELIN dinners and the doubled lowest flight fare.",
   "unpriced_lines": 1
  },
@@ -467,7 +467,7 @@
    "id": "Q-02",
    "question": "What is the total budget for two people, excluding flights?",
    "why_it_blocks": "Every ranking on this site sorts on price. Without a ceiling there is no way to say whether two starred dinners are affordable.",
-   "have": "A verified subtotal of $4,228.48 for the 7-night plan, excluding ordinary meals.",
+   "have": "A verified subtotal of $4,275.48 for the 7-night plan, excluding ordinary meals.",
    "missing": "A budget figure.",
    "how_to_discover": "Answer directly.",
    "owner": "traveller",

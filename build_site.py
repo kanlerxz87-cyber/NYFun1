@@ -326,7 +326,7 @@ suggestion S-02.</p>
 <div class="card">
 <h3>5 · What is verified, and what is not</h3>
 <ul class="tight">
-<li><strong>{FR["budget"]["verified_subtotal_usd"] and '$4,228.48'} verified subtotal</strong> across hotel, flights, transit, five tickets and two tasting menus.</li>
+<li><strong>${FR["budget"]["verified_subtotal_usd"]:,.2f} verified subtotal</strong> across hotel, flights, transit, five tickets and two tasting menus.</li>
 <li><strong>{n_hours} of {n_stars} restaurants have verified hours</strong> and <strong>{n_price} have a verified menu price</strong>. The other 66&ndash;70 rows are complete on name, distinction, cuisine, borough and official link &mdash; and deliberately blank on hours and price (<a href="restaurants.html">see the table</a>).</li>
 <li><strong>10 verified official social accounts</strong> and 1 verified third-party review video; every other social cell is a search link, labelled as a search.</li>
 <li><strong>{len(FR['flags'])} flagged items</strong> and <strong>{len(FR['questions'])} open questions</strong>, each with the exact source that would settle it.</li>
@@ -1311,6 +1311,14 @@ def build_repo_review():
 # ---------------------------------------------------------------- checks
 def run_checks(pages):
     errors, warnings = [], []
+
+    # the stated budget subtotal must equal the sum of its priced lines
+    _b = FR["budget"]
+    _sum = round(sum(l["usd"] for l in _b["lines"] if l["usd"] is not None), 2)
+    if abs(_sum - _b["verified_subtotal_usd"]) > 0.005:
+        errors.append("budget: stated subtotal %.2f != sum of lines %.2f"
+                      % (_b["verified_subtotal_usd"], _sum))
+
     for name, html in pages.items():
         if "{{" in html or "}}" in html:
             errors.append(f"{name}: unrendered template token")
