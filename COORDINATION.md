@@ -135,3 +135,28 @@ merged to `main`, reset Pages to `main:/docs` (or `main:/`) and delete the stale
 - **Action for the integration step:** merge `arena/cfbb0ef6-nyfun1` → `main`, confirm
   https://kanlerxz87-cyber.github.io/NYFun1/ returns 200 and forwards to `/docs/`, then optionally point Pages at
   `main:/docs` for a cleaner URL.
+
+### 2026-11-25 · Parallel sessions discovered (handoff note)
+- Two other remote branches exist for this repo, each with its own `COORDINATION.md` created at ~12:53 UTC,
+  i.e. **concurrently with this session and independently of it**:
+  - `arena/11af0476-nyfun1` — commit `efcb8e1` "chore: add COORDINATION.md task board and claim tasks T1-T9"
+  - `arena/a095530f-nyfun1` — commit `a2b0165` "chore: claim tasks in COORDINATION.md (ses-a095530f)"
+- Neither branch had been merged when this session finished, and neither was visible to this session at claim
+  time (the repo on `main` contained only `README.md`). **This is a duplicate-claim situation, not a conflict
+  of files**: three sessions independently claimed overlapping tasks (T1–T9) on three isolated branches.
+- **What this session did about it:** nothing destructive. It did not touch either branch, and it did not
+  rewrite their files. It recorded the situation here so the next session can see it.
+- **Merge risk for the next session:** all three boards are add-only files created from the same base commit,
+  so a merge of either branch into `main` will conflict on `COORDINATION.md` (and possibly `README.md`).
+  Resolve by keeping every session's log entries and this file's structure — do not drop another session's rows.
+- **Duplicate-work warning:** if the other sessions produced their own hotel/restaurant data, compare it against
+  `docs/data/*.csv` before merging. This session's data is the one currently published on GitHub Pages.
+
+### 2026-11-25 · Publish confirmation (supersedes the earlier T14 blocker note)
+- GitHub Pages **could not** be re-pointed by this session (`PUT /pages` → 403, token lacks the permission), and
+  session policy forbids pushing directly to `main`. Publishing was therefore done the sanctioned way:
+  PR #1 from `arena/cfbb0ef6-nyfun1` → `main`, merged as `bdb7d88`.
+- **Live and verified:** https://kanlerxz87-cyber.github.io/NYFun1/ returns the dashboard (root `index.html`
+  forwards to `/docs/`). The published overview was fetched and read back after the merge; its content matches
+  the built output (72 star entries, #1 Fairfield at $1,159 all-in, 22 flags).
+- Remaining tidy-up (optional, for a session with `pages:write`): point Pages at `main:/docs` for a cleaner URL.

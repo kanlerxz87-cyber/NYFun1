@@ -377,6 +377,16 @@ dynamic — re-fetch before paying (flag F8).</p>
 sampled; 8–15 March cost roughly double per night. Move the trip <em>earlier</em>, not later, if price is
 the constraint. See <a href="questions.html">Q1</a> for the date decision.</div>
 
+<h2>When to book — what we can and cannot say</h2>
+<p><strong>What we can say (verified):</strong> the rates captured on 2026-11-25 for 15–22 February 2027 are
+available now, are cancellable free until 12–13 February 2027, and require no prepayment. That means the
+low-risk move is to hold one of them now and keep shopping — a held free-cancellation room costs nothing
+while you watch the price.</p>
+<p><strong>What we cannot say:</strong> whether prices will be lower in three weeks. "Best time to book"
+needs a price history for these exact dates, and this session produced a single snapshot. Any statement
+about the ideal booking lead time would be a guess, so there is none on this page. Suggestion S3 is the
+mechanism to answer it properly: capture the same four URLs weekly and compare.</p>
+
 <h2>Why these four and not others</h2>
 <p>Booking.com returned <strong>690 properties</strong> for the 15–22 February 2027 window (2 adults,
 1 room) when we ran the search — the shortlist is deliberately four, chosen to give one option per
