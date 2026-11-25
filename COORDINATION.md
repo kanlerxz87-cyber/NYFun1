@@ -42,6 +42,7 @@ on base commit `6609129`).
 | T12 | Flagged-for-review register (unverified / irregularities) | `docs/flagged.html` | arena-cfbb0ef6 | done | 2026-11-25 |
 | T13 | Verification pass: every value → official source or blank+flag | all data files | arena-cfbb0ef6 | done | 2026-11-25 |
 | T14 | Integration + GitHub Pages publish + link check | `docs/index.html`, nav, Pages settings | arena-cfbb0ef6 | done | 2026-11-25 |
+| T15 | Social review-link coverage audit (direct videos vs clearly labeled platform searches) | `build_deepdive.py`, `COORDINATION.md` | arena-204d4ba1 | in progress | 2026-11-25 |
 
 ## File ownership (non-overlapping scopes)
 
