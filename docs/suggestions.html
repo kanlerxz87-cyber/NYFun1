@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Suggestions | NYC Trip Planner</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="topbar">
+    <nav class="nav">
+      <div class="brand">NYC <span>Trip Planner</span></div>
+      <a href="index.html" data-page="index.html">Dashboard</a>
+      <a href="hotels.html" data-page="hotels.html">Hotels</a>
+      <a href="restaurants.html" data-page="restaurants.html">Michelin Restaurants</a>
+      <a href="activities.html" data-page="activities.html">Activities</a>
+      <a href="summary.html" data-page="summary.html">Executive Summary</a>
+      <a href="questions.html" data-page="questions.html">Questions &amp; Gaps</a>
+      <a href="suggestions.html" data-page="suggestions.html">Suggestions</a>
+      <a href="verification.html" data-page="verification.html">Verification &amp; Flags</a>
+    </nav>
+  </div>
+  <main class="wrap">
+    <section class="hero">
+      <h1>Suggestions (Review Before Implementing)</h1>
+      <p>Ideas to improve decision quality and the site. <strong>No changes are implemented automatically</strong> — review and pick the best path.</p>
+    </section>
+
+    <div class="callout info">
+      <strong>Review gate</strong>
+      Each suggestion below includes impact, effort, risk, and dependencies. Implement only after selecting priorities and confirming data sources.
+    </div>
+
+    <section class="section">
+      <h2>Site &amp; Decision-Making Improvements</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Suggestion</th>
+              <th>Impact</th>
+              <th>Effort</th>
+              <th>Risk / caveat</th>
+              <th>Data/source needed</th>
+              <th>Recommended?</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>S1</td>
+              <td>Add a live pricing evidence table: dated official quotes for each hotel/date window (room, nightly, taxes/fees, total, cancellation, capture timestamp).</td>
+              <td>High - resolves main blocker</td>
+              <td>Medium</td>
+              <td>Prices change quickly; stale quotes mislead.</td>
+              <td>Official hotel booking flow captures.</td>
+              <td><span class="badge ok">Yes, P0</span></td>
+            </tr>
+            <tr>
+              <td>S2</td>
+              <td>Add a transit matrix: hotel × restaurant/activity with dated travel duration, route, and source URL/screenshot.</td>
+              <td>High - verifies 1-hour constraint</td>
+              <td>Medium</td>
+              <td>Travel time varies by time/day/service changes.</td>
+              <td>Google Maps/MTA Trip Planner results.</td>
+              <td><span class="badge ok">Yes, P1</span></td>
+            </tr>
+            <tr>
+              <td>S3</td>
+              <td>Add Michelin Selected/Bib Gourmand layer near top hotel candidates, clearly labeled separately from starred restaurants.</td>
+              <td>Medium - completes "Michelin rated/listed" scope</td>
+              <td>Medium/High</td>
+              <td>Large dataset; verification burden increases.</td>
+              <td>Michelin Guide official filters/pages.</td>
+              <td><span class="badge info">Yes, after P0</span></td>
+            </tr>
+            <tr>
+              <td>S4</td>
+              <td>Add a cost calculator for 2 adults: menu price + NY sales tax (8.875%) + tip scenario (18/20%) + drinks toggle.</td>
+              <td>High - makes restaurant costs comparable</td>
+              <td>Medium</td>
+              <td>Assumptions must be labeled; menu prices change.</td>
+              <td>Official menu prices; NYC tax rate source.</td>
+              <td><span class="badge ok">Yes</span></td>
+            </tr>
+            <tr>
+              <td>S5</td>
+              <td>Add reservation-availability tracker with last-checked timestamp and booking link.</td>
+              <td>High - avoids unavailable plans</td>
+              <td>Medium</td>
+              <td>Availability changes minute-to-minute.</td>
+              <td>Resy/Tock/OpenTable/official reservation pages.</td>
+              <td><span class="badge ok">Yes</span></td>
+            </tr>
+            <tr>
+              <td>S6</td>
+              <td>Add map view (static image or embedded map with pins) for hotels and Michelin clusters.</td>
+              <td>Medium - visual decision aid</td>
+              <td>Low/Medium</td>
+              <td>Embedded third-party maps may add privacy/tracking; verify license/terms.</td>
+              <td>Hotel/restaurant coordinates from official sources.</td>
+              <td><span class="badge info">Consider</span></td>
+            </tr>
+            <tr>
+              <td>S7</td>
+              <td>Add an itinerary builder for preferred 3-night window and alternative 7-night window, with travel buffers.</td>
+              <td>Medium</td>
+              <td>Medium</td>
+              <td>Over-optimistic schedules; need rest/buffer time.</td>
+              <td>Verified hours, transit times, reservation slots.</td>
+              <td><span class="badge info">Consider</span></td>
+            </tr>
+            <tr>
+              <td>S8</td>
+              <td>Add a "data freshness" badge per row (verified date, verifier, next review date).</td>
+              <td>High - prevents stale decisions</td>
+              <td>Low</td>
+              <td>Requires maintenance discipline.</td>
+              <td>Verification log.</td>
+              <td><span class="badge ok">Yes</span></td>
+            </tr>
+            <tr>
+              <td>S9</td>
+              <td>Add sensitivity analysis: show how ranking changes if price, transit, or Michelin density weight changes.</td>
+              <td>Medium</td>
+              <td>Medium</td>
+              <td>Can create false precision if inputs unverified.</td>
+              <td>Verified inputs first.</td>
+              <td><span class="badge warn">After verification</span></td>
+            </tr>
+            <tr>
+              <td>S10</td>
+              <td>Automate nightly link-check and source-capture snapshots (archive links/PDFs) for official pages.</td>
+              <td>Medium - auditability</td>
+              <td>Medium/High</td>
+              <td>Scraping/ToS constraints; storage.</td>
+              <td>Approved archiving method.</td>
+              <td><span class="badge info">Consider</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Missing Information — How to Discover</h2>
+      <div class="card">
+        <ul class="clean">
+          <li><strong>Hotel prices:</strong> Use official hotel booking engine; capture total for same room type across date windows. Record currency, taxes/fees, and cancellation terms.</li>
+          <li><strong>Restaurant costs:</strong> Use official menu/tasting menu pages. Where only prix-fixe is listed, compute for 2 adults and label exclusions (wine pairing, supplements, tip).</li>
+          <li><strong>Transit:</strong> Use <a href="https://new.mta.info/">MTA</a> and Google Maps "Depart at/Arrive by" for representative times; record exact duration and transfers.</li>
+          <li><strong>Michelin status changes:</strong> Re-check each restaurant's Michelin Guide page before final itinerary; Michelin awards can change annually.</li>
+          <li><strong>Closures/holidays:</strong> Check official restaurant/activity pages for Feb 15–18, 2027 and any holiday/special closure notices.</li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="footer"><p>Suggestions are advisory. Review and prioritize before implementation.</p></div>
+  </main>
+  <script src="js/main.js"></script>
+</body>
+</html>

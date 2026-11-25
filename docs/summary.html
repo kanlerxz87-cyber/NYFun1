@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Executive Summary | NYC Trip Planner</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="topbar">
+    <nav class="nav">
+      <div class="brand">NYC <span>Trip Planner</span></div>
+      <a href="index.html" data-page="index.html">Dashboard</a>
+      <a href="hotels.html" data-page="hotels.html">Hotels</a>
+      <a href="restaurants.html" data-page="restaurants.html">Michelin Restaurants</a>
+      <a href="activities.html" data-page="activities.html">Activities</a>
+      <a href="summary.html" data-page="summary.html">Executive Summary</a>
+      <a href="questions.html" data-page="questions.html">Questions &amp; Gaps</a>
+      <a href="suggestions.html" data-page="suggestions.html">Suggestions</a>
+      <a href="verification.html" data-page="verification.html">Verification &amp; Flags</a>
+    </nav>
+  </div>
+  <main class="wrap">
+    <section class="hero">
+      <h1>Executive Summary</h1>
+      <p>Decision-ready snapshot for a 2-adult NYC trip, preferred Feb 15–18, 2027 (within Feb 15–Mar 23, 2027 window). This summary separates confirmed facts from unverified items.</p>
+    </section>
+
+    <div class="grid kpi">
+      <div class="card kpi"><div class="label">Recommended planning stance</div><div class="value">Midtown West base</div><div class="note">Best balance of transit access to Michelin clusters and activities; confirm hotel price before booking.</div></div>
+      <div class="card kpi"><div class="label">Confirmed</div><div class="value">Michelin status/hours (sample)</div><div class="note">12 restaurants verified against Michelin Guide pages on 2026-11-25.</div></div>
+      <div class="card kpi"><div class="label">Not confirmed</div><div class="value">2027 hotel pricing</div><div class="note">No live 7-night official quote captured; booking decision blocked until verified.</div></div>
+    </div>
+
+    <section class="section">
+      <h2>Key Findings</h2>
+      <div class="card">
+        <ul class="clean">
+          <li><strong>Best location logic:</strong> Midtown West / Times Square / Bryant Park area gives dense access to starred dining (Le Bernardin, The Modern, Gabriel Kreuther, Per Se/Masa nearby) and major activities. Most Midtown-starred restaurants are reachable within ~5–30 minutes by walk/subway; most Manhattan starred restaurants are plausibly within 60 minutes, but exact pairwise transit times remain <span class="badge warn">Estimate</span>.</li>
+          <li><strong>Hotel amenity verification:</strong> Pod Times Square Queen Pod is <span class="badge ok">Verified</span> on the official rooms page to have a queen bed, private bathroom with rain showerhead, and sleeps 2. Other candidates (YOTEL, Moxy, citizenM) have suitable room types but require live official confirmation for the exact room/date.</li>
+          <li><strong>Pricing gap (blocking for "best/cheapest"):</strong> The request requires real verified 7-night totals and cheapest upcoming booking time. These were not verifiable from official booking sources in-session. Any booking decision based on price is therefore <strong>not yet evidence-complete</strong>.</li>
+          <li><strong>Michelin mix:</strong> The selected restaurants include 3-star (Le Bernardin, Per Se, Jungsik, Eleven Madison Park), 2-star (The Modern, Gabriel Kreuther, Aquavit, Masa, Atomix, Jean-Georges), and 1-star (Le Coucou, Daniel). All are Michelin-starred; no "Michelin Selected only" entries were fully cataloged in this pass.</li>
+          <li><strong>Preferred dates:</strong> Feb 15–18, 2027 is a 3-night/4-day window; it fits a short high-density itinerary. A 7-night stay (as requested for pricing comparison) would allow broader borough exploration and more Michelin reservations.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Recommended Next Actions (before booking)</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Priority</th><th>Action</th><th>Why</th><th>Owner</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td>P0</td><td>Capture live official 7-night quotes for each hotel candidate across candidate check-in dates (Feb 15, Feb 22, Mar 1, Mar 8, Mar 15).</td><td>Required by user; currently unverified.</td><td>Next agent/user</td><td><span class="badge bad">Open</span></td></tr>
+            <tr><td>P0</td><td>Confirm room type explicitly states private bathroom + queen/king bed + 2 adults for chosen rate.</td><td>Hard requirement.</td><td>Next agent/user</td><td><span class="badge warn">Partial</span></td></tr>
+            <tr><td>P1</td><td>Verify restaurant hours for exact travel dates and reservation availability.</td><td>Hours/closures change; Michelin page is a baseline, not a reservation guarantee.</td><td>Next agent/user</td><td><span class="badge warn">Open</span></td></tr>
+            <tr><td>P1</td><td>Compute hotel→restaurant transit times with dated MTA/Google Maps evidence.</td><td>Replaces estimates in ranking.</td><td>Next agent/user</td><td><span class="badge warn">Open</span></td></tr>
+            <tr><td>P2</td><td>Add Michelin Selected/Bib Gourmand restaurants near chosen hotel.</td><td>Completes "Michelin rated/listed" coverage.</td><td>Next agent/user</td><td><span class="badge warn">Open</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Decision Rule</h2>
+      <div class="callout info">
+        <strong>Do not finalize a hotel booking until:</strong> (1) a dated official quote is captured for the selected room and dates; (2) the room confirms private bathroom and queen+ bed for 2 adults; (3) cancellation/tax/fee policy is recorded; and (4) transit to priority restaurants is verified.
+      </div>
+    </section>
+
+    <div class="footer"><p>Summary generated 2026-11-25. See <a href="verification.html">Verification &amp; Flags</a>.</p></div>
+  </main>
+  <script src="js/main.js"></script>
+</body>
+</html>

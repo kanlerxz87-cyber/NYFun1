@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Questions & Missing Info | NYC Trip Planner</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="topbar">
+    <nav class="nav">
+      <div class="brand">NYC <span>Trip Planner</span></div>
+      <a href="index.html" data-page="index.html">Dashboard</a>
+      <a href="hotels.html" data-page="hotels.html">Hotels</a>
+      <a href="restaurants.html" data-page="restaurants.html">Michelin Restaurants</a>
+      <a href="activities.html" data-page="activities.html">Activities</a>
+      <a href="summary.html" data-page="summary.html">Executive Summary</a>
+      <a href="questions.html" data-page="questions.html">Questions &amp; Gaps</a>
+      <a href="suggestions.html" data-page="suggestions.html">Suggestions</a>
+      <a href="verification.html" data-page="verification.html">Verification &amp; Flags</a>
+    </nav>
+  </div>
+  <main class="wrap">
+    <section class="hero">
+      <h1>Questions, Missing Information, and Answers Needed</h1>
+      <p>Everything that should be resolved before a final booking/itinerary decision. No assumptions are made where evidence is missing.</p>
+    </section>
+
+    <section class="section">
+      <h2>Decision-Critical Questions</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Question</th>
+              <th>Why it matters</th>
+              <th>Current known information</th>
+              <th>Missing information</th>
+              <th>How to obtain (suggested source/method)</th>
+              <th>Blocks decision?</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Q1</td>
+              <td>What is the actual 7-night total price for each candidate hotel in the Feb 15–Mar 23, 2027 window?</td>
+              <td>User requires real verified 7-night totals and cheapest booking window.</td>
+              <td>Official hotel booking pages identified; no 2027 quote captured.</td>
+              <td>Dated, room-specific total price including taxes/fees for 7-night stays.</td>
+              <td>Query official booking engines for check-ins 2027-02-15, 02-22, 03-01, 03-08, 03-15 (7 nights), 2 adults, queen+ private bath. Record screenshot/PDF/quote ID and date.</td>
+              <td><span class="badge bad">Yes</span></td>
+            </tr>
+            <tr>
+              <td>Q2</td>
+              <td>What is the "cheapest upcoming time to book" based on verifiable evidence?</td>
+              <td>User explicitly requested it.</td>
+              <td>No verifiable booking-timing evidence captured.</td>
+              <td>Price samples over time or official rate-calendar evidence showing minimum.</td>
+              <td>Track official rates weekly for target dates; document date/time/price. Optionally compare with reputable trackers but mark as secondary, not official hotel quote.</td>
+              <td><span class="badge bad">Yes</span></td>
+            </tr>
+            <tr>
+              <td>Q3</td>
+              <td>Is the trip 3 nights (Feb 15–18 preferred) or 7+ nights within Feb 15–Mar 23?</td>
+              <td>Budget, hotel, and dining plans differ materially.</td>
+              <td>Preferred window is Feb 15–18, 2027; request also states 1–2 weeks and asks for 7-night totals.</td>
+              <td>Final trip length and exact check-in/check-out dates.</td>
+              <td>User decision. If unresolved, present two scenarios: 3-night preferred and 7-night comparison.</td>
+              <td><span class="badge bad">Yes</span></td>
+            </tr>
+            <tr>
+              <td>Q4</td>
+              <td>Which candidate hotel room type is confirmed to have private bathroom + queen bed or larger for 2 adults at the selected rate?</td>
+              <td>Non-negotiable requirement.</td>
+              <td>Pod Times Square Queen Pod verified on official rooms page. Others unconfirmed for specific rate.</td>
+              <td>Rate-level room details for selected dates.</td>
+              <td>Check official booking flow room details and capture room name, bed type, bathroom, occupancy, and policy.</td>
+              <td><span class="badge bad">Yes</span></td>
+            </tr>
+            <tr>
+              <td>Q5</td>
+              <td>What is the all-in cost (taxes, fees, resort/facility fees) for the selected hotel?</td>
+              <td>7-night total can differ significantly from nightly base rate.</td>
+              <td>Not captured.</td>
+              <td>Final checkout price breakdown.</td>
+              <td>Proceed to final step of official booking flow (without purchasing) and record total/taxes/fees.</td>
+              <td><span class="badge bad">Yes</span></td>
+            </tr>
+            <tr>
+              <td>Q6</td>
+              <td>Which Michelin restaurants are realistically reservable for the chosen dates/times?</td>
+              <td>Starred restaurants often book out; itinerary feasibility depends on availability.</td>
+              <td>Michelin status/hours verified for sample; reservations not checked.</td>
+              <td>Reservation availability on Resy/Tock/official systems.</td>
+              <td>Check official reservation links for each restaurant for party of 2 on target dates.</td>
+              <td><span class="badge warn">High</span></td>
+            </tr>
+            <tr>
+              <td>Q7</td>
+              <td>What are exact transit times from chosen hotel to each priority restaurant/activity at expected travel times?</td>
+              <td>User asked for &le;1 hour travel by subway/bus for activities/restaurants.</td>
+              <td>Estimates only.</td>
+              <td>Dated route results (departure time, lines, duration).</td>
+              <td>Use Google Maps/MTA Trip Planner; record URL/screenshot and departure time (weekday dinner, weekend lunch etc.).</td>
+              <td><span class="badge warn">High</span></td>
+            </tr>
+            <tr>
+              <td>Q8</td>
+              <td>What is the expected dining budget for 2 adults per restaurant including tax/tip/drinks?</td>
+              <td>$$$$ symbol is not a total cost; Michelin dining can vary widely.</td>
+              <td>Estimates provided; not official menu totals.</td>
+              <td>Current menu/tasting prices and beverage policy.</td>
+              <td>Check official restaurant menus/pricing pages; compute low/high total for 2 including 8.875% NY tax and 18–20% tip assumptions (label assumptions).</td>
+              <td><span class="badge warn">High</span></td>
+            </tr>
+            <tr>
+              <td>Q9</td>
+              <td>Should Michelin Selected/Bib Gourmand restaurants be included in ranking, or only starred?</td>
+              <td>User asked for "michelin rated and michelin star restaurants clusters..." - scope affects ranking.</td>
+              <td>Starred sample included; selected not exhaustively included.</td>
+              <td>User preference/scope decision.</td>
+              <td>Confirm scope; if included, pull official Michelin Selected/Bib list near chosen hotel.</td>
+              <td><span class="badge warn">Medium</span></td>
+            </tr>
+            <tr>
+              <td>Q10</td>
+              <td>Any accessibility, dietary, or mobility constraints beyond "2 adults, queen bed, private bath"?</td>
+              <td>Affects hotel room choice, restaurant suitability, transit plans.</td>
+              <td>Not specified.</td>
+              <td>User constraints/preferences.</td>
+              <td>Ask user to confirm: mobility needs, dietary restrictions, budget ceiling, preferred neighborhood vibe, flight times/airports.</td>
+              <td><span class="badge warn">Medium</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Missing-Info Discovery Plan</h2>
+      <div class="card">
+        <ul class="clean">
+          <li><strong>Pricing evidence pack:</strong> For each hotel/date window, save a dated quote capture (URL, timestamp, room name, nightly rate, taxes/fees, total, cancellation policy).</li>
+          <li><strong>Transit evidence pack:</strong> For top 10 hotel→restaurant pairs, save Google Maps/MTA route results with departure time and mode.</li>
+          <li><strong>Reservation evidence pack:</strong> For top restaurants, save availability status for preferred dates.</li>
+          <li><strong>Menu/cost evidence pack:</strong> For each restaurant, save official menu/pricing page and compute 2-adult low/high estimate with assumptions labeled.</li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="footer"><p>Use this page as the pre-booking checklist. Do not treat unanswered P0 items as optional.</p></div>
+  </main>
+  <script src="js/main.js"></script>
+</body>
+</html>

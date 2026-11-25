@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hotels | NYC Trip Planner</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="topbar">
+    <nav class="nav">
+      <div class="brand">NYC <span>Trip Planner</span></div>
+      <a href="index.html" data-page="index.html">Dashboard</a>
+      <a href="hotels.html" data-page="hotels.html">Hotels</a>
+      <a href="restaurants.html" data-page="restaurants.html">Michelin Restaurants</a>
+      <a href="activities.html" data-page="activities.html">Activities</a>
+      <a href="summary.html" data-page="summary.html">Executive Summary</a>
+      <a href="questions.html" data-page="questions.html">Questions &amp; Gaps</a>
+      <a href="suggestions.html" data-page="suggestions.html">Suggestions</a>
+      <a href="verification.html" data-page="verification.html">Verification &amp; Flags</a>
+    </nav>
+  </div>
+  <main class="wrap">
+    <section class="hero">
+      <h1>Hotels</h1>
+      <p>Candidates evaluated for 2 adults, private bathroom, queen bed or larger, Midtown/Michelin-cluster access, and 7-night total pricing. <strong>No unverified price is presented as a quote.</strong></p>
+    </section>
+
+    <div class="callout bad">
+      <strong>Pricing verification limitation (critical)</strong>
+      Live, bookable 7-night totals for 2027-02-15–2027-02-22 (or other 7-night windows in Feb 15–Mar 23, 2027) were <strong>not verifiable</strong> from official hotel booking pages during this session (2026-11-25). Many hotel booking engines render prices dynamically and/or do not expose future-year inventory in static fetches. All price cells below are blank and flagged unless a verifiable official quote is captured. Before booking, obtain a dated quote from the official booking link and record it in <code>COORDINATION.md</code>.
+    </div>
+
+    <section class="section">
+      <h2>Hotel Comparison (verified amenities + flagged pricing)</h2>
+      <p class="lead">Amenity columns are marked Verified only when confirmed on an official hotel page. Transit times are estimates; verify on MTA/Google Maps.</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Hotel</th>
+              <th>Area / Address</th>
+              <th>Private bathroom</th>
+              <th>Queen bed or larger</th>
+              <th>Sleeps 2 adults</th>
+              <th>Transit to Midtown Michelin cluster</th>
+              <th>7-night total (preferred window 2027-02-15 check-in, 7 nights)</th>
+              <th>7-night total (cheapest verifiable window in Feb 15–Mar 23, 2027)</th>
+              <th>Cheapest upcoming time to book (verifiable)</th>
+              <th>Official source(s)</th>
+              <th>Status / flags</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Pod Times Square</strong><br><span class="muted small">Budget/micro-hotel</span></td>
+              <td>400 W 42nd St, New York, NY 10036 (Hell's Kitchen/Times Square area)<br><span class="muted small">Address per official site/property pages; confirm on booking.</span></td>
+              <td><span class="badge ok">Verified</span><br><span class="small">Queen Pod: "Private bathroom with rain showerhead"</span></td>
+              <td><span class="badge ok">Verified</span><br><span class="small">Queen Pod: Queen bed; also larger Pod Pads available.</span></td>
+              <td><span class="badge ok">Verified</span><br><span class="small">Queen Pod sleeps 2.</span></td>
+              <td><span class="badge warn">Estimate</span><br><span class="small">Walk/subway to Times Square/Bryant Park/Columbus Circle Michelin cluster: ~5–25 min depending on restaurant; 1 hr covers most Manhattan starred restaurants. Verify per route.</span></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>
+                <a href="https://www.thepodhotel.com/pod-times-square/rooms">Official rooms page</a><br>
+                <a href="https://www.thepodhotel.com/pod-times-square">Official hotel page</a>
+              </td>
+              <td><span class="badge warn">Pricing unverified</span><br><span class="small">Amenities verified from official rooms page (accessed 2026-11-25). No 2027 rate captured.</span></td>
+            </tr>
+            <tr>
+              <td><strong>YOTEL New York Times Square</strong><br><span class="muted small">Midscale</span></td>
+              <td>570 10th Ave, New York, NY 10036 (Hell's Kitchen)<br><span class="muted small">Verify on official site.</span></td>
+              <td><span class="badge warn">Needs confirmation</span><br><span class="small">Room listings indicate private bathroom/shower; confirm exact room type on official booking.</span></td>
+              <td><span class="badge warn">Needs confirmation</span><br><span class="small">"Premium Queen"/"First Class Queen" room types exist; confirm bed size on official booking.</span></td>
+              <td><span class="badge warn">Needs confirmation</span><br><span class="small">Queen rooms typically sleep 2; confirm occupancy on official booking.</span></td>
+              <td><span class="badge warn">Estimate</span><br><span class="small">West of Times Square; subway/bus/walk to Midtown Michelin cluster generally ~10–30 min. Verify per route.</span></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>
+                <a href="https://www.yotel.com/en/hotels/yotel-new-york">Official hotel page</a><br>
+                <a href="https://www.yotel.com/en/hotels/yotel-new-york/rooms">Official rooms/booking entry</a>
+              </td>
+              <td><span class="badge warn">Pricing unverified</span><br><span class="small">Amenities/pricing require live official booking confirmation for selected dates.</span></td>
+            </tr>
+            <tr>
+              <td><strong>Moxy NYC Times Square</strong><br><span class="muted small">Marriott lifestyle/midscale</span></td>
+              <td>485 7th Ave, New York, NY 10018 (Times Square/Garment District)<br><span class="muted small">Verify on official site.</span></td>
+              <td><span class="badge warn">Needs confirmation</span><br><span class="small">Confirm private bathroom for selected room type on official Marriott page.</span></td>
+              <td><span class="badge warn">Needs confirmation</span><br><span class="small">Queen/King room types listed by brand; confirm exact room on official booking.</span></td>
+              <td><span class="badge warn">Needs confirmation</span><br><span class="small">Confirm occupancy for selected room.</span></td>
+              <td><span class="badge warn">Estimate</span><br><span class="small">Very close to Times Square/Bryant Park; many Midtown Michelin restaurants within ~5–25 min walk/subway. Verify per route.</span></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>
+                <a href="https://www.marriott.com/en-us/hotels/nycox-moxy-nyc-times-square/overview/">Official Marriott page</a>
+              </td>
+              <td><span class="badge warn">Pricing unverified</span><br><span class="small">Amenities/pricing require live official booking confirmation.</span></td>
+            </tr>
+            <tr>
+              <td><strong>citizenM New York Times Square</strong><br><span class="muted small">Midscale/modern</span></td>
+              <td>218 W 50th St, New York, NY 10019 (Midtown West/Theater District)<br><span class="muted small">Verify on official site.</span></td>
+              <td><span class="badge warn">Needs confirmation</span><br><span class="small">citizenM rooms typically include private shower/bathroom pod; confirm on official room page for this property.</span></td>
+              <td><span class="badge warn">Needs confirmation</span><br><span class="small">citizenM typically uses XL king bed (larger than queen) - confirm on official property page.</span></td>
+              <td><span class="badge warn">Needs confirmation</span><br><span class="small">Rooms typically sleep 2; confirm on official booking.</span></td>
+              <td><span class="badge warn">Estimate</span><br><span class="small">Excellent Midtown West location; walkable to Le Bernardin/Gabriel Kreuther/The Modern area; ~5–20 min to many Midtown starred restaurants. Verify per route.</span></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>
+                <a href="https://www.citizenm.com/hotels/united-states/new-york/new-york-times-square-hotel">Official hotel page</a>
+              </td>
+              <td><span class="badge warn">Pricing unverified</span><br><span class="small">Amenities/pricing require live official booking confirmation.</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Hotel Ranking by Michelin Access (Provisional)</h2>
+      <p class="lead">Ranking is provisional because hotel pricing is unverified and transit times are estimates. Criterion requested: number of Michelin restaurants around hotel within 1 hour by subway or bus.</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Rank (provisional)</th>
+              <th>Hotel</th>
+              <th>Why</th>
+              <th>Estimated Michelin-starred restaurants within ~60 min subway/bus</th>
+              <th>Confidence</th>
+              <th>Source basis</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>citizenM New York Times Square</td>
+              <td>Midtown West/Theater District location places it close to multiple starred restaurants in Midtown West, Midtown East, and easy subway access to downtown/Brooklyn.</td>
+              <td><span class="badge warn">Estimate: High (most Manhattan starred restaurants)</span></td>
+              <td><span class="badge warn">Medium-low</span></td>
+              <td><a href="https://www.citizenm.com/hotels/united-states/new-york/new-york-times-square-hotel">Hotel location</a>; <a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurants/all-starred">Michelin NYC starred list</a>; transit estimate.</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Moxy NYC Times Square</td>
+              <td>Central Times Square/Garment District location with strong subway access; similar cluster access to citizenM.</td>
+              <td><span class="badge warn">Estimate: High</span></td>
+              <td><span class="badge warn">Medium-low</span></td>
+              <td><a href="https://www.marriott.com/en-us/hotels/nycox-moxy-nyc-times-square/overview/">Hotel location</a>; <a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurants/all-starred">Michelin NYC starred list</a>; transit estimate.</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Pod Times Square</td>
+              <td>Hell's Kitchen/42nd St location is near Times Square transit hub; good access, slightly west of core Midtown East cluster.</td>
+              <td><span class="badge warn">Estimate: High</span></td>
+              <td><span class="badge warn">Medium-low</span></td>
+              <td><a href="https://www.thepodhotel.com/pod-times-square">Hotel location</a>; <a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurants/all-starred">Michelin NYC starred list</a>; transit estimate.</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>YOTEL New York Times Square</td>
+              <td>Further west on 10th Ave; still within ~1 hr of most Manhattan starred restaurants by transit, but slightly less walkable to Midtown East cluster.</td>
+              <td><span class="badge warn">Estimate: High</span></td>
+              <td><span class="badge warn">Medium-low</span></td>
+              <td><a href="https://www.yotel.com/en/hotels/yotel-new-york">Hotel location</a>; <a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurants/all-starred">Michelin NYC starred list</a>; transit estimate.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout info">
+        <strong>How to make this ranking verifiable</strong>
+        For each hotel-restaurant pair, record a dated Google Maps/MTA trip-planner result (departure time, mode: subway/bus, duration). Store screenshots/links in <code>research/transit/</code> and update this table with exact durations and source URLs.
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Booking-Timing Research (Evidence-Limited)</h2>
+      <div class="card">
+        <p>The request asks for "cheapest upcoming time to book a hotel" with actual dates and real verified pricing. I could not verify a specific cheapest 7-night booking window for Feb 15–Mar 23, 2027 from official hotel sources during this session.</p>
+        <ul class="clean">
+          <li><span class="badge warn">Unverified</span> No official hotel rate calendar/quote captured for 2027 dates.</li>
+          <li><span class="badge info">Method to verify</span> Check each hotel's official booking engine for 7-night windows starting 2027-02-15, 2027-02-22, 2027-03-01, 2027-03-08, 2027-03-15; record total price, taxes/fees, room type, cancellation policy, and capture date.</li>
+          <li><span class="badge info">Secondary guidance</span> General travel-industry advice often suggests booking 1–3 months out for urban hotels, but this varies; do not treat as verified pricing. Confirm with live quotes.</li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="footer">
+      <p>Hotel amenity verification date: 2026-11-25. Pricing: unverified unless explicitly quoted. <a href="verification.html">Verification &amp; Flags</a>.</p>
+    </div>
+  </main>
+  <script src="js/main.js"></script>
+</body>
+</html>
