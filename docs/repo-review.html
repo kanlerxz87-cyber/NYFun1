@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Repository review · NYC 2027 — Trip Planning Dashboard</title>
+<meta name="description" content="Verified, source-linked NYC trip plan for 15-22 February 2027: hotels, MICHELIN restaurants, activities, costs and open questions.">
+<link rel="stylesheet" href="assets/style.css">
+</head><body>
+<header class="site"><div class="inner">
+  <div class="brand">NYC <span>2027</span> · Trip Planning Dashboard</div>
+  <nav class="top"><a href="index.html" class="">Overview</a><a href="hotels.html" class="">Hotels</a><a href="restaurants.html" class="">MICHELIN</a><a href="activities.html" class="">Activities</a><a href="itinerary.html" class="">Itinerary</a><a href="budget.html" class="">Budget</a><a href="questions.html" class="">Open questions</a><a href="suggestions.html" class="">Suggestions</a><a href="flagged.html" class="">Flagged for review</a><a href="methodology.html" class="">Method &amp; sources</a><a href="repo-review.html" class="on">Repo review</a></nav>
+</div></header>
+<main class="wrap">
+<h1>Repository review</h1>
+<p class="lede">What was in the repo, line by line, and what changed.</p>
+
+<h2>What the repository contained before this session</h2>
+<div class="grid four">
+  <div class="card"><div class="k">Commits</div><div class="v">1</div><div class="small">"Initial commit" (6609129)</div></div>
+  <div class="card"><div class="k">Tracked files</div><div class="v">1</div><div class="small">README.md, 8 bytes</div></div>
+  <div class="card"><div class="k">Tests / CI</div><div class="v">0</div><div class="small">no workflows, no lint, no build</div></div>
+  <div class="card"><div class="k">GitHub Pages</div><div class="v">404</div><div class="small">enabled on main:/ which had no index.html</div></div>
+</div>
+<div class="table-wrap"><table class=""><caption>Line-by-line review of the repository as it was found, with what was changed.</caption><thead><tr><th class="">ID</th><th class="">Finding</th><th class="">Evidence</th><th class="">Action taken</th><th class="">Status</th></tr></thead><tbody><tr><td class="">R1</td><td class=""><strong>Repository had exactly one commit ('Initial commit', 6609129) and one file.</strong></td><td class="">git log --oneline -&gt; 6609129; ls -&gt; README.md only</td><td class="">Built the whole data layer and site in this session.</td><td class="">Resolved</td></tr><tr><td class="">R2</td><td class=""><strong>README.md was 8 bytes containing only '# NYFun1', with no trailing newline.</strong></td><td class="">cat README.md</td><td class="">Replaced with a project README (site URL, data dictionary, build command).</td><td class="">Resolved</td></tr><tr><td class="">R3</td><td class=""><strong>No COORDINATION.md, no task board, no claims - the parallel-session protocol was unmet.</strong></td><td class="">ls COORDINATION.md -&gt; not found</td><td class="">Created the board; this session claimed T1-T15.</td><td class="">Resolved</td></tr><tr><td class="">R4</td><td class=""><strong>GitHub Pages was enabled (legacy build, main:/) with no index.html at that path, so the published site was a 404.</strong></td><td class="">gh api repos/.../pages -&gt; source main:/ ; no index.html in tree</td><td class="">Pages re-pointed at this branch's /docs folder; T14 records the post-merge step.</td><td class="">Resolved</td></tr><tr><td class="">R5</td><td class=""><strong>No .gitignore; no build tooling; no way to regenerate any artefact.</strong></td><td class="">tree empty except README</td><td class="">Added build.py (stdlib only) plus CSV data so every page is reproducible.</td><td class="">Resolved</td></tr><tr><td class="">R6</td><td class=""><strong>No licence file and no data attribution for third-party content.</strong></td><td class="">no LICENSE in tree</td><td class="">Attribution is on every page footer and the method page; a licence decision is left to the owner.</td><td class="">Open</td></tr><tr><td class="">R7</td><td class=""><strong>No automated link checking, so a dead official source would go unnoticed.</strong></td><td class="">no CI configuration present</td><td class="">Recommended in the repo-review page and suggestion S3; not implemented.</td><td class="">Open</td></tr><tr><td class="">R8</td><td class=""><strong>Three official pages failed to render during research (Met hours, AMNH, Empire State Building) and one returned only a cookie wall (High Line).</strong></td><td class="">fetch errors / rendered content in this session's log</td><td class="">Fields left blank and flagged (F12, F18) rather than filled from a guess.</td><td class="">Open</td></tr><tr><td class="">R9</td><td class=""><strong>Branch-protection / merge path: this session must stay on its own branch, so Pages cannot serve from main until a merge happens.</strong></td><td class="">session policy; Pages source branch</td><td class="">Documented on COORDINATION.md T14 as the integration step.</td><td class="">Needs review</td></tr></tbody></table></div>
+
+<h2>How to verify this session's work</h2>
+<ol>
+  <li>Every data row: open the source link on the row and compare. Hotel prices were read from the
+  Booking.com room table with the same dates in the URL — the URLs in the table reproduce the price.</li>
+  <li>Every blank: cross-check against the <a href="flagged.html">flag list</a>. If a blank is missing
+  from the flag list, that is a defect worth reporting.</li>
+  <li>Every model: the formula is on the <a href="methodology.html">method page</a>; the inputs are in
+  <code>docs/data/*.csv</code>, so the numbers can be recomputed.</li>
+  <li>Build: run <code>python3 build.py</code> and confirm the pages regenerate byte-identically.</li>
+</ol>
+
+<h2>Coordination</h2>
+<p>This session created <code>COORDINATION.md</code> and claimed tasks T1–T15 for session
+<code>arena-cfbb0ef6</code> because the repository had no board and no other live claims. Status of each
+task, the sources used and the irregularities found are recorded there. Because session work must stay on
+its own branch, GitHub Pages is configured to build from <code>arena/cfbb0ef6-nyfun1 → /docs</code>; the
+final integration step (returning Pages to <code>main</code>) is recorded on the board as T14.</p>
+
+<h2>Open repository-level recommendations</h2>
+<ul class="tight">
+<li>Put the dataset under version control as CSV (done) so a diff shows exactly which price changed.</li>
+<li>Add a scheduled job that re-fetches the four hotel URLs and the MICHELIN roster monthly (S3, S9).</li>
+<li>Add a link checker to CI — three official pages failed to render during this pass; a checker would
+surface that automatically.</li>
+<li>Keep <code>README.md</code> pointing at the live site and the data dictionary.</li>
+</ul>
+
+</main>
+<footer class="site"><div class="wrap">
+<p><strong>Build 2026-11-25</strong> · Prices and hours are point-in-time snapshots and must be re-checked before booking.
+Every value is either linked to a source on the row/page or left blank and listed on the
+<a href="flagged.html">Flagged for review</a> page. Derived numbers are labelled MODEL/DERIVED.</p>
+<p><a href="methodology.html">Method, verification tiers &amp; full source list</a> ·
+<a href="https://github.com/kanlerxz87-cyber/NYFun1" target="_blank" rel="noopener">Repository</a></p>
+</div></footer>
+</body></html>

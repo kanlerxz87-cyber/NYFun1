@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Budget — 7 nights for two adults · NYC 2027 — Trip Planning Dashboard</title>
+<meta name="description" content="Verified, source-linked NYC trip plan for 15-22 February 2027: hotels, MICHELIN restaurants, activities, costs and open questions.">
+<link rel="stylesheet" href="assets/style.css">
+</head><body>
+<header class="site"><div class="inner">
+  <div class="brand">NYC <span>2027</span> · Trip Planning Dashboard</div>
+  <nav class="top"><a href="index.html" class="">Overview</a><a href="hotels.html" class="">Hotels</a><a href="restaurants.html" class="">MICHELIN</a><a href="activities.html" class="">Activities</a><a href="itinerary.html" class="">Itinerary</a><a href="budget.html" class="on">Budget</a><a href="questions.html" class="">Open questions</a><a href="suggestions.html" class="">Suggestions</a><a href="flagged.html" class="">Flagged for review</a><a href="methodology.html" class="">Method &amp; sources</a><a href="repo-review.html" class="">Repo review</a></nav>
+</div></header>
+<main class="wrap">
+<h1>Budget — 7 nights for two adults</h1>
+<p class="lede">What we can verify, what is modelled, and what stays blank because the input (airfare, 2027 transit fare, menu prices) is not in hand.</p>
+
+<div class="grid two">
+<div class="card"><h3>Typical plan (2 starred dinners)</h3>
+<p class="v">$2,700 – $3,900</p>
+<p class="small">Hotel + taxes, 2 MICHELIN dinners for two, MoMA and Met admission. Excludes airfare,
+local transit, other meals, shopping and tips.</p></div>
+<div class="card"><h3>Frugal plan</h3>
+<p class="v">$2,200 – $2,800</p>
+<p class="small">Same hotel on the verified rate, one starred dinner instead of two, free/low-cost
+afternoons. Still inside the one-hour transit rule.</p></div>
+</div>
+<div class="table-wrap"><table class=""><caption>Two-adult totals for 7 nights. 'Verified' means the number came off an official page; 'MODEL' means it is our arithmetic on top of verified inputs.</caption><thead><tr><th class="">Line item</th><th class="">Basis</th><th class="num">Low</th><th class="num">High</th><th class="">Status</th></tr></thead><tbody><tr><td class="">Hotel — 7 nights, 2 adults (recommended: Fairfield, king, breakfast included)</td><td class="">Listed $985.60 x 1.1475 + $4 x 7 nights</td><td class="num">$1,159</td><td class="num">$1,159</td><td class=""><span class="pill info">MODEL on verified price</span></td></tr><tr><td class="">Hotel — 7 nights (alternative: citizenM Times Square)</td><td class="">Listed $1,147.00, same tax maths</td><td class="num">$1,344</td><td class="num">$1,344</td><td class=""><span class="pill info">MODEL on verified price</span></td></tr><tr><td class="">Hotel — 7 nights (alternative: Moxy Times Square)</td><td class="">$1,447 includes $35/night resort fee</td><td class="num">$1,688</td><td class="num">$1,688</td><td class=""><span class="pill info">MODEL on verified price</span></td></tr><tr><td class="">MICHELIN dinner for two - 3-star</td><td class="">$250-450 per person food, x2, MODEL envelope</td><td class="num">$500</td><td class="num">$900</td><td class=""><span class="pill info">MODEL</span></td></tr><tr><td class="">MICHELIN dinner for two - 2-star</td><td class="">$250-450 per person food, x2, MODEL envelope</td><td class="num">$500</td><td class="num">$900</td><td class=""><span class="pill info">MODEL</span></td></tr><tr><td class="">MoMA admission, 2 adults</td><td class="">moma.org $30 per adult</td><td class="num">$60</td><td class="num">$60</td><td class=""><span class="pill ok">VERIFIED</span></td></tr><tr><td class="">The Met admission, 2 adults</td><td class="">metmuseum.org $30 per adult</td><td class="num">$60</td><td class="num">$60</td><td class=""><span class="pill ok">VERIFIED</span></td></tr><tr><td class="">AMNH admission, 2 adults</td><td class="">secondary source only - excluded from totals</td><td class="num">—</td><td class="num">—</td><td class=""><span class="pill bad">UNVERIFIED</span></td></tr><tr><td class="">Other meals (7 breakfasts/lunches/dinners not starred)</td><td class="">$60-120 per day for two, MODEL, not researched</td><td class="num">$420</td><td class="num">$840</td><td class=""><span class="pill info">MODEL</span></td></tr><tr><td class="">Subway/bus fares</td><td class="">2027 MTA fare not verified - deliberately not quoted</td><td class="num">—</td><td class="num">—</td><td class=""><span class="pill bad">UNVERIFIED</span></td></tr><tr><td class="">Airfare and airport transfers</td><td class="">Origin unknown (Q11)</td><td class="num">—</td><td class="num">—</td><td class=""><span class="pill bad">UNVERIFIED</span></td></tr></tbody></table></div>
+
+<h2>What is deliberately missing</h2>
+<ul class="tight">
+<li><strong>Airfare</strong> — origin airport unknown (Q11). Nothing here assumes a fare.</li>
+<li><strong>Subway/bus fares</strong> — the MTA fare for February 2027 is not published in a form we could
+verify in this pass; we refuse to quote a 2026 fare as a 2027 cost. Flag F19.</li>
+<li><strong>Menu prices</strong> — no restaurant's tasting-menu price was captured from its own site. The
+spend column is a band-based model (S5).</li>
+<li><strong>Travel insurance</strong> — depends on the refundable/non-refundable decision (Q6).</li>
+</ul>
+<div class="callout ok"><strong>Price-sensitivity finding:</strong> shifting from the 15–22 February window
+to 8–15 March added about $1,204 to the same room for the same week. Date choice moves the
+budget more than hotel choice does.</div>
+
+</main>
+<footer class="site"><div class="wrap">
+<p><strong>Build 2026-11-25</strong> · Prices and hours are point-in-time snapshots and must be re-checked before booking.
+Every value is either linked to a source on the row/page or left blank and listed on the
+<a href="flagged.html">Flagged for review</a> page. Derived numbers are labelled MODEL/DERIVED.</p>
+<p><a href="methodology.html">Method, verification tiers &amp; full source list</a> ·
+<a href="https://github.com/kanlerxz87-cyber/NYFun1" target="_blank" rel="noopener">Repository</a></p>
+</div></footer>
+</body></html>

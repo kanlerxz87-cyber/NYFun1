@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Suggestions — review, then choose a path · NYC 2027 — Trip Planning Dashboard</title>
+<meta name="description" content="Verified, source-linked NYC trip plan for 15-22 February 2027: hotels, MICHELIN restaurants, activities, costs and open questions.">
+<link rel="stylesheet" href="assets/style.css">
+</head><body>
+<header class="site"><div class="inner">
+  <div class="brand">NYC <span>2027</span> · Trip Planning Dashboard</div>
+  <nav class="top"><a href="index.html" class="">Overview</a><a href="hotels.html" class="">Hotels</a><a href="restaurants.html" class="">MICHELIN</a><a href="activities.html" class="">Activities</a><a href="itinerary.html" class="">Itinerary</a><a href="budget.html" class="">Budget</a><a href="questions.html" class="">Open questions</a><a href="suggestions.html" class="on">Suggestions</a><a href="flagged.html" class="">Flagged for review</a><a href="methodology.html" class="">Method &amp; sources</a><a href="repo-review.html" class="">Repo review</a></nav>
+</div></header>
+<main class="wrap">
+<h1>Suggestions — review, then choose a path</h1>
+<p class="lede">Twelve proposals to make this plan more decision-ready. Nothing is implemented until it is approved here.</p>
+
+<div class="callout ok"><strong>How to use this page.</strong> Review the list, mark the ones you want with
+"Approved" (or reply with the IDs), and only then does anything get built. Nothing here is a promise that
+the data is already better than it is.</div>
+<div class="table-wrap"><table class=""><caption>Nothing on this list has been implemented. Change a status to Approved and it becomes the next session's work order.</caption><thead><tr><th class="">ID</th><th class="">Suggestion</th><th class="">Impact</th><th class="">Effort</th><th class="">How it would be implemented</th><th class="">Review status</th></tr></thead><tbody><tr><td class=""><strong>S1</strong></td><td class=""><strong>Attach reservation release windows + direct booking links to every starred restaurant</strong><br><span class='small'>The plan's biggest failure mode is a restaurant that is fully booked, not a hotel that costs $200 more.</span></td><td class="">High</td><td class="">Medium (one capture per restaurant)</td><td class="">Capture each restaurant's Resy/Tock listing 30 and 60 days out; store release window, party-size rules, deposit and cancellation terms next to the row; replace the platform name with a direct link.</td><td class=""><span class="pill warn">Proposed</span></td></tr><tr><td class=""><strong>S2</strong></td><td class=""><strong>Close the 66-restaurant detail gap with a documented capture pass</strong><br><span class='small'>The roster table currently shows stars but not address, price band or hours.</span></td><td class="">High</td><td class="">Medium (66 page reads, scripted)</td><td class="">One capture per MICHELIN restaurant page into the same CSV schema; keep the 'blank unless read' rule and the tier badges.</td><td class=""><span class="pill warn">Proposed</span></td></tr><tr><td class=""><strong>S3</strong></td><td class=""><strong>Weekly, dated price tracker for the shortlist (and widen the shortlist)</strong><br><span class='small'>Turns three sampled date windows into a real 'best time to book' answer; today's prices are snapshots.</span></td><td class="">High</td><td class="">Low (4-16 URL fetches per week)</td><td class="">A scheduled job writes one row per hotel per week with the 7-night total for each Monday-start window from 15 Feb to 22 Mar 2027, then charts the trend.</td><td class=""><span class="pill warn">Proposed</span></td></tr><tr><td class=""><strong>S4</strong></td><td class=""><strong>Neighborhood map with star pins</strong><br><span class='small'>A table cannot show that four verified stars sit within a 15-minute walk of Midtown West.</span></td><td class="">Medium</td><td class="">Medium</td><td class="">Static map image or lightweight SVG using the captured coordinates; colour pins by star level; link each pin to its row.</td><td class=""><span class="pill warn">Proposed</span></td></tr><tr><td class=""><strong>S5</strong></td><td class=""><strong>Verified tasting-menu prices from restaurant websites</strong><br><span class='small'>The spend column is currently a band-based model; real menus exist on every restaurant site.</span></td><td class="">High</td><td class="">Medium</td><td class="">Capture the current menu price, whether service is included, and the pairing cost per restaurant.</td><td class=""><span class="pill warn">Proposed</span></td></tr><tr><td class=""><strong>S6</strong></td><td class=""><strong>Add indoor/outdoor and cold-weather columns to activities</strong><br><span class='small'>A February itinerary needs to know which plans survive a 0 degree day.</span></td><td class="">Medium</td><td class="">Low</td><td class="">Two columns (indoor/outdoor, typical February comfort) plus a 'swap candidate' field.</td><td class=""><span class="pill warn">Proposed</span></td></tr><tr><td class=""><strong>S7</strong></td><td class=""><strong>Add accessibility and room-size filters to hotels</strong><br><span class='small'>Accessible rooms were priced but not labelled; citizenM room sizes were not published.</span></td><td class="">Medium</td><td class="">Low</td><td class="">Capture room square footage and accessibility features from each hotel's own site.</td><td class=""><span class="pill warn">Proposed</span></td></tr><tr><td class=""><strong>S8</strong></td><td class=""><strong>Make the 14-night variant a first-class plan with a split stay</strong><br><span class='small'>The brief allows two weeks; a 7+7 split (Midtown then Brooklyn) would reach the whole roster.</span></td><td class="">Medium</td><td class="">Medium</td><td class="">Price two 7-night blocks for each hotel, add a Brooklyn block, and re-run the transit model.</td><td class=""><span class="pill warn">Proposed</span></td></tr><tr><td class=""><strong>S9</strong></td><td class=""><strong>Star-change watchlist around the 14 December 2026 ceremony</strong><br><span class='small'>Star status may change before the trip; the plan should not silently go stale.</span></td><td class="">High</td><td class="">Low</td><td class="">Diff the new roster against michelin_2025.csv, publish the diff, and re-badge affected rows.</td><td class=""><span class="pill warn">Proposed</span></td></tr><tr><td class=""><strong>S10</strong></td><td class=""><strong>Booking-deadline countdown on the hotels page</strong><br><span class='small'>Free-cancellation deadlines (12-13 Feb 2027) are the real decision points.</span></td><td class="">Medium</td><td class="">Low</td><td class="">Compute days-to-deadline from the captured rate terms and show it on each row.</td><td class=""><span class="pill warn">Proposed</span></td></tr><tr><td class=""><strong>S11</strong></td><td class=""><strong>A visible decision log with approvals</strong><br><span class='small'>Suggestions and questions need a record of what was chosen and when.</span></td><td class="">Medium</td><td class="">Low</td><td class="">A dated table on this page, appended each time a suggestion or question is resolved.</td><td class=""><span class="pill warn">Proposed</span></td></tr><tr><td class=""><strong>S12</strong></td><td class=""><strong>Print/PDF-friendly views of the itinerary and budget</strong><br><span class='small'>The plan is used offline, in the street, in February.</span></td><td class="">Low</td><td class="">Low</td><td class="">A print stylesheet is already stubbed; add an 'export' note per page and test on mobile Safari.</td><td class=""><span class="pill warn">Proposed</span></td></tr></tbody></table></div>
+
+<h2>If you only approve one thing</h2>
+<p><strong>S1 — attach the reservation release window and a direct booking link to every starred
+restaurant.</strong> The biggest practical risk in this plan is not price, it is that the four-star
+dinners are booked out 30 days out. Once the restaurant list is fixed, that is the single highest-value
+improvement, and it costs one research pass per restaurant.</p>
+
+<h2>If you approve a second</h2>
+<p><strong>S3 — a dated price tracker for the shortlist.</strong> All four hotel prices are snapshots from
+2026-11-25, two of them propped up by a Black Friday promotion. A weekly capture of the same four URLs would
+turn this into a real "best time to book" answer instead of a three-window sample.</p>
+
+<h2>Decision log</h2>
+<table><thead><tr><th>Date</th><th>Suggestion</th><th>Decision</th><th>By</th></tr></thead>
+<tbody>
+<tr><td>2026-11-25</td><td>S1–S12</td><td>Proposed — awaiting review</td><td>agent session</td></tr>
+</tbody></table>
+
+</main>
+<footer class="site"><div class="wrap">
+<p><strong>Build 2026-11-25</strong> · Prices and hours are point-in-time snapshots and must be re-checked before booking.
+Every value is either linked to a source on the row/page or left blank and listed on the
+<a href="flagged.html">Flagged for review</a> page. Derived numbers are labelled MODEL/DERIVED.</p>
+<p><a href="methodology.html">Method, verification tiers &amp; full source list</a> ·
+<a href="https://github.com/kanlerxz87-cyber/NYFun1" target="_blank" rel="noopener">Repository</a></p>
+</div></footer>
+</body></html>
