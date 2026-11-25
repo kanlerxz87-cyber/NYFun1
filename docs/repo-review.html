@@ -2,60 +2,153 @@
 <html lang="en"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Repository review · NYC 2027 — Trip Planning Dashboard</title>
-<meta name="description" content="Verified, source-linked NYC trip plan for 15-22 February 2027: hotels, MICHELIN restaurants, activities, costs and open questions.">
+<title>Repository review · NYC 2027 Trip Planner</title>
+<meta name="description" content="Source-linked New York City trip plan for two adults, 15-22 February 2027: hotels, MICHELIN restaurants, activities, budget, open questions and flags.">
 <link rel="stylesheet" href="assets/style.css">
 </head><body>
+<a class="skip" href="#main">Skip to content</a>
 <header class="site"><div class="inner">
-  <div class="brand">NYC <span>2027</span> · Trip Planning Dashboard</div>
-  <nav class="top"><a href="index.html" class="">Overview</a><a href="hotels.html" class="">Hotels</a><a href="restaurants.html" class="">MICHELIN</a><a href="activities.html" class="">Activities</a><a href="itinerary.html" class="">Itinerary</a><a href="budget.html" class="">Budget</a><a href="questions.html" class="">Open questions</a><a href="suggestions.html" class="">Suggestions</a><a href="flagged.html" class="">Flagged for review</a><a href="methodology.html" class="">Method &amp; sources</a><a href="repo-review.html" class="on">Repo review</a><a href="../deepdive/index.html" class="">Deep dive</a></nav>
+  <div class="brand">NYC <span>2027</span> · Trip Planner</div>
+  <nav class="top" aria-label="Sections"><a href="index.html">Overview</a><a href="hotels.html">Hotels</a><a href="restaurants.html">MICHELIN</a><a href="activities.html">Activities</a><a href="itinerary.html">Itinerary</a><a href="budget.html">Budget</a><a href="questions.html">Questions</a><a href="suggestions.html">Suggestions</a><a href="flagged.html">Flagged</a><a href="method.html">Method &amp;amp; sources</a><a href="repo-review.html" class="on">Repo review</a></nav>
 </div></header>
-<main class="wrap">
+<main class="wrap" id="main">
 <h1>Repository review</h1>
-<p class="lede">What was in the repo, line by line, and what changed.</p>
 
-<h2>What the repository contained before this session</h2>
-<div class="grid four">
-  <div class="card"><div class="k">Commits</div><div class="v">1</div><div class="small">"Initial commit" (6609129)</div></div>
-  <div class="card"><div class="k">Tracked files</div><div class="v">1</div><div class="small">README.md, 8 bytes</div></div>
-  <div class="card"><div class="k">Tests / CI</div><div class="v">0</div><div class="small">no workflows, no lint, no build</div></div>
-  <div class="card"><div class="k">GitHub Pages</div><div class="v">404</div><div class="small">enabled on main:/ which had no index.html</div></div>
+<p class="lede">What this repository contained, what was wrong with it, and what is now verified versus merely written down. This page exists so the work can be checked rather than trusted.</p><h2>Verification coverage, counted</h2><table class="tbl ">
+<caption>What is actually verified on this site, counted rather than claimed.</caption>
+<thead><tr><th>Dataset</th><th>Rows</th><th>Fully or partly verified</th><th>Has a source link</th><th>Verified social</th><th>Blank / flagged</th></tr></thead><tbody>
+<tr><td>Restaurants (star roster)</td><td>72</td><td>8 with a detail page</td><td>72 (MICHELIN page on every row)</td><td>6 official Instagram · 1 review video</td><td>64 roster-only</td></tr>
+<tr><td>Restaurants (hours)</td><td>72</td><td>2</td><td>2</td><td>—</td><td>70 blank</td></tr>
+<tr><td>Restaurants (menu price)</td><td>72</td><td>3</td><td>3</td><td>—</td><td>69 blank</td></tr>
+<tr><td>Hotels</td><td>7</td><td>7 priced for 7 nights</td><td>7</td><td>—</td><td>6 without a street address</td></tr>
+<tr><td>Activities</td><td>11</td><td>6 verified · 4 partial</td><td>11</td><td>5 official Instagram</td><td>1 roster-only</td></tr>
+</tbody></table>
+<div class="cards">
+<div class="mcard">
+<div class="mcard-title">Restaurants (star roster)</div>
+<div class="mcard-row"><span class="k">Rows</span><span class="v">72</span></div>
+<div class="mcard-row"><span class="k">Verified</span><span class="v">8 with a detail page</span></div>
+<div class="mcard-row"><span class="k">Source link</span><span class="v">72 (MICHELIN page on every row)</span></div>
+<div class="mcard-row"><span class="k">Social</span><span class="v">6 official Instagram · 1 review video</span></div>
+<div class="mcard-row"><span class="k">Blank</span><span class="v">64 roster-only</span></div>
 </div>
-<div class="table-wrap"><table class=""><caption>Line-by-line review of the repository as it was found, with what was changed.</caption><thead><tr><th class="">ID</th><th class="">Finding</th><th class="">Evidence</th><th class="">Action taken</th><th class="">Status</th></tr></thead><tbody><tr><td class="">R1</td><td class=""><strong>Repository had exactly one commit ('Initial commit', 6609129) and one file.</strong></td><td class="">git log --oneline -&gt; 6609129; ls -&gt; README.md only</td><td class="">Built the whole data layer and site in this session.</td><td class="">Resolved</td></tr><tr><td class="">R2</td><td class=""><strong>README.md was 8 bytes containing only '# NYFun1', with no trailing newline.</strong></td><td class="">cat README.md</td><td class="">Replaced with a project README (site URL, data dictionary, build command).</td><td class="">Resolved</td></tr><tr><td class="">R3</td><td class=""><strong>No COORDINATION.md, no task board, no claims - the parallel-session protocol was unmet.</strong></td><td class="">ls COORDINATION.md -&gt; not found</td><td class="">Created the board; this session claimed T1-T15.</td><td class="">Resolved</td></tr><tr><td class="">R4</td><td class=""><strong>GitHub Pages was enabled (legacy build, main:/) with no index.html at that path, so the published site was a 404.</strong></td><td class="">gh api repos/.../pages -&gt; source main:/ ; no index.html in tree</td><td class="">Pages re-pointed at this branch's /docs folder; T14 records the post-merge step.</td><td class="">Resolved</td></tr><tr><td class="">R5</td><td class=""><strong>No .gitignore; no build tooling; no way to regenerate any artefact.</strong></td><td class="">tree empty except README</td><td class="">Added build.py (stdlib only) plus CSV data so every page is reproducible.</td><td class="">Resolved</td></tr><tr><td class="">R6</td><td class=""><strong>No licence file and no data attribution for third-party content.</strong></td><td class="">no LICENSE in tree</td><td class="">Attribution is on every page footer and the method page; a licence decision is left to the owner.</td><td class="">Open</td></tr><tr><td class="">R7</td><td class=""><strong>No automated link checking, so a dead official source would go unnoticed.</strong></td><td class="">no CI configuration present</td><td class="">Recommended in the repo-review page and suggestion S3; not implemented.</td><td class="">Open</td></tr><tr><td class="">R8</td><td class=""><strong>Three official pages failed to render during research (Met hours, AMNH, Empire State Building) and one returned only a cookie wall (High Line).</strong></td><td class="">fetch errors / rendered content in this session's log</td><td class="">Fields left blank and flagged (F12, F18) rather than filled from a guess.</td><td class="">Open</td></tr><tr><td class="">R9</td><td class=""><strong>Branch-protection / merge path: this session must stay on its own branch, so Pages cannot serve from main until a merge happens.</strong></td><td class="">session policy; Pages source branch</td><td class="">Documented on COORDINATION.md T14 as the integration step.</td><td class="">Needs review</td></tr></tbody></table></div>
-
-<h2>How to verify this session's work</h2>
-<ol>
-  <li>Every data row: open the source link on the row and compare. Hotel prices were read from the
-  Booking.com room table with the same dates in the URL — the URLs in the table reproduce the price.</li>
-  <li>Every blank: cross-check against the <a href="flagged.html">flag list</a>. If a blank is missing
-  from the flag list, that is a defect worth reporting.</li>
-  <li>Every model: the formula is on the <a href="methodology.html">method page</a>; the inputs are in
-  <code>docs/data/*.csv</code>, so the numbers can be recomputed.</li>
-  <li>Build: run <code>python3 build.py</code> and confirm the pages regenerate byte-identically.</li>
-</ol>
-
-<h2>Coordination</h2>
-<p>This session created <code>COORDINATION.md</code> and claimed tasks T1–T15 for session
-<code>arena-cfbb0ef6</code> because the repository had no board and no other live claims. Status of each
-task, the sources used and the irregularities found are recorded there. Because session work must stay on
-its own branch, GitHub Pages is configured to build from <code>arena/cfbb0ef6-nyfun1 → /docs</code>; the
-final integration step (returning Pages to <code>main</code>) is recorded on the board as T14.</p>
-
-<h2>Open repository-level recommendations</h2>
-<ul class="tight">
-<li>Put the dataset under version control as CSV (done) so a diff shows exactly which price changed.</li>
-<li>Add a scheduled job that re-fetches the four hotel URLs and the MICHELIN roster monthly (S3, S9).</li>
-<li>Add a link checker to CI — three official pages failed to render during this pass; a checker would
-surface that automatically.</li>
-<li>Keep <code>README.md</code> pointing at the live site and the data dictionary.</li>
-</ul>
-
+<div class="mcard">
+<div class="mcard-title">Restaurants (hours)</div>
+<div class="mcard-row"><span class="k">Rows</span><span class="v">72</span></div>
+<div class="mcard-row"><span class="k">Verified</span><span class="v">2</span></div>
+<div class="mcard-row"><span class="k">Source link</span><span class="v">2</span></div>
+<div class="mcard-row"><span class="k">Social</span><span class="v">—</span></div>
+<div class="mcard-row"><span class="k">Blank</span><span class="v">70 blank</span></div>
+</div>
+<div class="mcard">
+<div class="mcard-title">Restaurants (menu price)</div>
+<div class="mcard-row"><span class="k">Rows</span><span class="v">72</span></div>
+<div class="mcard-row"><span class="k">Verified</span><span class="v">3</span></div>
+<div class="mcard-row"><span class="k">Source link</span><span class="v">3</span></div>
+<div class="mcard-row"><span class="k">Social</span><span class="v">—</span></div>
+<div class="mcard-row"><span class="k">Blank</span><span class="v">69 blank</span></div>
+</div>
+<div class="mcard">
+<div class="mcard-title">Hotels</div>
+<div class="mcard-row"><span class="k">Rows</span><span class="v">7</span></div>
+<div class="mcard-row"><span class="k">Verified</span><span class="v">7 priced for 7 nights</span></div>
+<div class="mcard-row"><span class="k">Source link</span><span class="v">7</span></div>
+<div class="mcard-row"><span class="k">Social</span><span class="v">—</span></div>
+<div class="mcard-row"><span class="k">Blank</span><span class="v">6 without a street address</span></div>
+</div>
+<div class="mcard">
+<div class="mcard-title">Activities</div>
+<div class="mcard-row"><span class="k">Rows</span><span class="v">11</span></div>
+<div class="mcard-row"><span class="k">Verified</span><span class="v">6 verified · 4 partial</span></div>
+<div class="mcard-row"><span class="k">Source link</span><span class="v">11</span></div>
+<div class="mcard-row"><span class="k">Social</span><span class="v">5 official Instagram</span></div>
+<div class="mcard-row"><span class="k">Blank</span><span class="v">1 roster-only</span></div>
+</div>
+</div><div class="warnbox"><strong>The headline number is uncomfortable and should be.</strong> Of 72 star restaurants, 2 have verified hours and 3 have a verified menu price. The roster is complete; the operational detail is not. That is a research limit, not a formatting choice, and the Flagged page says what would close it.</div><h2>Repository review</h2><table class="tbl ">
+<caption>The repository as found, reviewed line by line, with what was done about each finding.</caption>
+<thead><tr><th>#</th><th>Finding</th><th>Evidence</th><th>What was done</th><th>Status</th></tr></thead><tbody>
+<tr><td>R1</td><td>The repository began as a single 8-byte README and now carries two independently researched datasets that disagree with each other.</td><td>git log; 2 commits on this branch; docs/ and deepdive/ both published</td><td>This site publishes one dataset and treats the other as archived prior work; the disagreement is itemised rather than merged away (S-01, Q-23).</td><td>Documented</td></tr>
+<tr><td>R2</td><td>Two live datasets contradict each other on the star count.</td><td>docs/data/michelin_2025.csv vs this roster: 69 vs 72</td><td>Both numbers are shown on the MICHELIN page and flagged F-02, with Q-17 naming the diff as the way to settle it.</td><td>Open</td></tr>
+<tr><td>R3</td><td>GitHub Pages builds from main:/ with a root index.html that redirects into docs/. Nothing on this branch is live until it is merged.</td><td>gh api repos/.../pages -> source main:/, build_type legacy</td><td>Every page here is generated into docs/, and the root redirect already points at docs/. Publishing is a merge, not a setting.</td><td>Needs merge</td></tr>
+<tr><td>R4</td><td>No CI of any kind: no link checker, no data validation.</td><td>.github does not exist</td><td>build_site.py now runs its own checks and exits non-zero on failure. A CI job that calls it is proposed as S-07.</td><td>Partly addressed</td></tr>
+<tr><td>R5</td><td>No LICENSE file, so the repository's reuse terms are undefined.</td><td>no LICENSE at root</td><td>Out of scope for a research task and left to the owner; noted rather than guessed at.</td><td>Open</td></tr>
+<tr><td>R6</td><td>Old generated pages survived a rebuild and linked to pages that no longer exist.</td><td>docs/methodology.html and docs/repo-review.html from a prior build were superseded by method.html</td><td>The superseded page is removed and this one is regenerated from data; the build fails if any internal link dangles.</td><td>Resolved</td></tr>
+<tr><td>R7</td><td>Three official pages failed to render during research, so their values are absent.</td><td>metmuseum.org hours block, thehighline.org consent wall, amnh.org ticketing</td><td>Left blank and flagged (F-09, F-10); never filled from a secondary source.</td><td>Open</td></tr>
+<tr><td>R8</td><td>An Instagram handle was inferred from another account's post, not opened directly.</td><td>@chelseamarketny, read in a verified High Line post</td><td>Labelled as unconfirmed in F-08 rather than presented as verified.</td><td>Open</td></tr>
+<tr><td>R9</td><td>No .gitignore rule for the generated site, so build output and source live in the same tree.</td><td>.gitignore contains only __pycache__, *.pyc, .DS_Store</td><td>Deliberate: docs/ is the published artefact and must be committed. The generated CSS and HTML are reproducible from site_data/ plus build_site.py.</td><td>Accepted</td></tr>
+</tbody></table>
+<div class="cards">
+<div class="mcard">
+<div class="mcard-title">R1</div>
+<div class="mcard-row"><span class="k">Finding</span><span class="v">The repository began as a single 8-byte README and now carries two independently researched datasets that disagree with each other.</span></div>
+<div class="mcard-row"><span class="k">Evidence</span><span class="v">git log; 2 commits on this branch; docs/ and deepdive/ both published</span></div>
+<div class="mcard-row"><span class="k">Action</span><span class="v">This site publishes one dataset and treats the other as archived prior work; the disagreement is itemised rather than merged away (S-01, Q-23).</span></div>
+<div class="mcard-row"><span class="k">Status</span><span class="v">Documented</span></div>
+</div>
+<div class="mcard">
+<div class="mcard-title">R2</div>
+<div class="mcard-row"><span class="k">Finding</span><span class="v">Two live datasets contradict each other on the star count.</span></div>
+<div class="mcard-row"><span class="k">Evidence</span><span class="v">docs/data/michelin_2025.csv vs this roster: 69 vs 72</span></div>
+<div class="mcard-row"><span class="k">Action</span><span class="v">Both numbers are shown on the MICHELIN page and flagged F-02, with Q-17 naming the diff as the way to settle it.</span></div>
+<div class="mcard-row"><span class="k">Status</span><span class="v">Open</span></div>
+</div>
+<div class="mcard">
+<div class="mcard-title">R3</div>
+<div class="mcard-row"><span class="k">Finding</span><span class="v">GitHub Pages builds from main:/ with a root index.html that redirects into docs/. Nothing on this branch is live until it is merged.</span></div>
+<div class="mcard-row"><span class="k">Evidence</span><span class="v">gh api repos/.../pages -> source main:/, build_type legacy</span></div>
+<div class="mcard-row"><span class="k">Action</span><span class="v">Every page here is generated into docs/, and the root redirect already points at docs/. Publishing is a merge, not a setting.</span></div>
+<div class="mcard-row"><span class="k">Status</span><span class="v">Needs merge</span></div>
+</div>
+<div class="mcard">
+<div class="mcard-title">R4</div>
+<div class="mcard-row"><span class="k">Finding</span><span class="v">No CI of any kind: no link checker, no data validation.</span></div>
+<div class="mcard-row"><span class="k">Evidence</span><span class="v">.github does not exist</span></div>
+<div class="mcard-row"><span class="k">Action</span><span class="v">build_site.py now runs its own checks and exits non-zero on failure. A CI job that calls it is proposed as S-07.</span></div>
+<div class="mcard-row"><span class="k">Status</span><span class="v">Partly addressed</span></div>
+</div>
+<div class="mcard">
+<div class="mcard-title">R5</div>
+<div class="mcard-row"><span class="k">Finding</span><span class="v">No LICENSE file, so the repository's reuse terms are undefined.</span></div>
+<div class="mcard-row"><span class="k">Evidence</span><span class="v">no LICENSE at root</span></div>
+<div class="mcard-row"><span class="k">Action</span><span class="v">Out of scope for a research task and left to the owner; noted rather than guessed at.</span></div>
+<div class="mcard-row"><span class="k">Status</span><span class="v">Open</span></div>
+</div>
+<div class="mcard">
+<div class="mcard-title">R6</div>
+<div class="mcard-row"><span class="k">Finding</span><span class="v">Old generated pages survived a rebuild and linked to pages that no longer exist.</span></div>
+<div class="mcard-row"><span class="k">Evidence</span><span class="v">docs/methodology.html and docs/repo-review.html from a prior build were superseded by method.html</span></div>
+<div class="mcard-row"><span class="k">Action</span><span class="v">The superseded page is removed and this one is regenerated from data; the build fails if any internal link dangles.</span></div>
+<div class="mcard-row"><span class="k">Status</span><span class="v">Resolved</span></div>
+</div>
+<div class="mcard">
+<div class="mcard-title">R7</div>
+<div class="mcard-row"><span class="k">Finding</span><span class="v">Three official pages failed to render during research, so their values are absent.</span></div>
+<div class="mcard-row"><span class="k">Evidence</span><span class="v">metmuseum.org hours block, thehighline.org consent wall, amnh.org ticketing</span></div>
+<div class="mcard-row"><span class="k">Action</span><span class="v">Left blank and flagged (F-09, F-10); never filled from a secondary source.</span></div>
+<div class="mcard-row"><span class="k">Status</span><span class="v">Open</span></div>
+</div>
+<div class="mcard">
+<div class="mcard-title">R8</div>
+<div class="mcard-row"><span class="k">Finding</span><span class="v">An Instagram handle was inferred from another account's post, not opened directly.</span></div>
+<div class="mcard-row"><span class="k">Evidence</span><span class="v">@chelseamarketny, read in a verified High Line post</span></div>
+<div class="mcard-row"><span class="k">Action</span><span class="v">Labelled as unconfirmed in F-08 rather than presented as verified.</span></div>
+<div class="mcard-row"><span class="k">Status</span><span class="v">Open</span></div>
+</div>
+<div class="mcard">
+<div class="mcard-title">R9</div>
+<div class="mcard-row"><span class="k">Finding</span><span class="v">No .gitignore rule for the generated site, so build output and source live in the same tree.</span></div>
+<div class="mcard-row"><span class="k">Evidence</span><span class="v">.gitignore contains only __pycache__, *.pyc, .DS_Store</span></div>
+<div class="mcard-row"><span class="k">Action</span><span class="v">Deliberate: docs/ is the published artefact and must be committed. The generated CSS and HTML are reproducible from site_data/ plus build_site.py.</span></div>
+<div class="mcard-row"><span class="k">Status</span><span class="v">Accepted</span></div>
+</div>
+</div><h2>What changed in this session</h2><div class="card"><ul class="tight"><li><strong>New data layer</strong> in <code>site_data/</code>: star roster, restaurant detail, hotels, activities, social accounts, and the framework (plan, budget, itineraries, flags, questions, suggestions).</li><li><strong>New generator</strong> <code>build_site.py</code>, standard library only, which refuses to publish a page with a dangling link, a duplicated id, or an unescaped template token.</li><li><strong>New site</strong> of 11 pages in <code>docs/</code>, regenerated from the data, with a card layout below 700px so no table needs horizontal scrolling on a phone.</li><li><strong>Superseded pages removed</strong> so no two pages in the published tree describe the same thing differently.</li></ul></div><h2>How to check this work</h2><div class="card"><ol class="tight"><li><strong>Re-run the build:</strong> <code>python3 build_site.py</code>. It prints every check it ran. A failure exits non-zero.</li><li><strong>Spot-check a row:</strong> open the source link in the row and compare the number. Hotel URLs carry the dates in the query string, so the price reproduces.</li><li><strong>Check a blank:</strong> every blank on the site should appear on the <a href="flagged.html">Flagged</a> page. A blank that is not flagged is a defect.</li><li><strong>Check a derived number:</strong> the formula is on the <a href="method.html">Method</a> page and the inputs are in <code>site_data/*.json</code>.</li></ol></div><h2>What is still missing from the repository itself</h2><div class="badbox"><ul class="tight"><li><strong>No licence.</strong> Decide before sharing the repo.</li><li><strong>No CI.</strong> The build has checks; nothing runs them automatically (S-07).</li><li><strong>No price history.</strong> Each build overwrites the last; a dated snapshot of <code>site_data/</code> would show how prices moved (S-03).</li><li><strong>No test for data shape.</strong> The generator fails on missing keys, but there is no schema that would catch a field quietly changing meaning.</li></ul></div>
 </main>
-<footer class="site"><div class="wrap">
-<p><strong>Build 2026-11-25</strong> · Prices and hours are point-in-time snapshots and must be re-checked before booking.
-Every value is either linked to a source on the row/page or left blank and listed on the
-<a href="flagged.html">Flagged for review</a> page. Derived numbers are labelled MODEL/DERIVED.</p>
-<p><a href="methodology.html">Method, verification tiers &amp; full source list</a> ·
-<a href="https://github.com/kanlerxz87-cyber/NYFun1" target="_blank" rel="noopener">Repository</a></p>
-</div></footer>
+<footer class="site">
+  <p><strong>Built 2026-11-25.</strong> Every figure on this site was read on an official page on that date
+  unless the row says otherwise. Prices and hours change; re-check before booking.
+  Rows that could not be verified are blank and listed on <a href="flagged.html">Flagged</a>.</p>
+  <p>Sources, method and the model's assumptions: <a href="method.html">Method &amp; sources</a> ·
+  Open decisions: <a href="questions.html">Questions</a> ·
+  Improvement ideas: <a href="suggestions.html">Suggestions</a></p>
+</footer>
 </body></html>

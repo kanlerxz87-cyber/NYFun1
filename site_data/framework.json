@@ -1,0 +1,873 @@
+{
+ "trip": {
+  "party": "2 adults (couple)",
+  "preferred_start": "2027-02-15",
+  "preferred_end": "2027-02-18",
+  "preferred_nights": 3,
+  "recommended_start": "2027-02-15",
+  "recommended_end": "2027-02-22",
+  "recommended_nights": 7,
+  "brief_window": "2027-02-15 to 2027-03-23",
+  "conflict": "The preferred time (15-18 Feb 2027) is 3 nights, but the brief asks for a 1-2 week trip. The plan uses 15-22 Feb 2027 (7 nights, Mon to Mon) and keeps 4-night and 14-night variants as choices.",
+  "calendar_note": "2027-02-15 is the third Monday of February 2027, i.e. the US Presidents' Day holiday. Derived from the calendar, not read from an official page - see F-11."
+ },
+ "requirements_check": [
+  {
+   "requirement": "Trip 1-2 weeks between 15 Feb and 23 Mar 2027",
+   "status": "MET",
+   "how": "7-night plan 15-22 Feb 2027, plus 4-night and 14-night variants"
+  },
+  {
+   "requirement": "Preferred 15-18 Feb 2027 included",
+   "status": "MET",
+   "how": "The 7-night plan starts 15 Feb and contains 15-18 Feb"
+  },
+  {
+   "requirement": "Hotel with private bathroom",
+   "status": "MET",
+   "how": "All 7 shortlisted rooms state an attached private bathroom"
+  },
+  {
+   "requirement": "Queen bed or bigger",
+   "status": "MET",
+   "how": "All 7 rooms have 1 king or 1 queen; no doubles or twins in the shortlist"
+  },
+  {
+   "requirement": "7-night total price per hotel",
+   "status": "MET",
+   "how": "Each hotel row shows the 7-night total printed for 15-22 Feb 2027"
+  },
+  {
+   "requirement": "Cheapest time to book, real dates",
+   "status": "PARTIAL",
+   "how": "Three 7-night windows priced for the recommended hotel; no per-night curve (F-12, S-03)"
+  },
+  {
+   "requirement": "MICHELIN star vs guide-listed distinction",
+   "status": "MET",
+   "how": "Every row states its star level from MICHELIN's ceremony article; guide-listed venues listed separately"
+  },
+  {
+   "requirement": "Rank hotels by MICHELIN restaurants within 1 hour",
+   "status": "PARTIAL",
+   "how": "The 1-hour rule is modelled, not measured (F-05, Q-19)"
+  },
+  {
+   "requirement": "Restaurant cost for 2 adults",
+   "status": "PARTIAL",
+   "how": "Real per-person prices for 3 venues; the rest blank with the source that would settle them (Q-06)"
+  },
+  {
+   "requirement": "Social media review link per row",
+   "status": "PARTIAL",
+   "how": "10 verified official accounts + 1 verified review video; the rest are labelled search links. TikTok blocked (F-07)"
+  },
+  {
+   "requirement": "Days open, hours and exceptions per row",
+   "status": "PARTIAL",
+   "how": "Verified for 6 restaurants and 6 activities; the rest blank with the reason stated"
+  },
+  {
+   "requirement": "Link to each restaurant/activity",
+   "status": "MET",
+   "how": "Every row links to the MICHELIN page and/or the venue's own site"
+  },
+  {
+   "requirement": "Mobile friendly and simple",
+   "status": "MET",
+   "how": "Card view below 700px, sticky header, no horizontal scrolling"
+  },
+  {
+   "requirement": "Executive summary",
+   "status": "MET",
+   "how": "Six numbered points on the landing page, decision first"
+  },
+  {
+   "requirement": "Dedicated suggestions section",
+   "status": "MET",
+   "how": "12 proposals with effort, impact, risk and a decision field"
+  },
+  {
+   "requirement": "Questions register with how to discover",
+   "status": "MET",
+   "how": "24 questions, each naming the source that settles it"
+  },
+  {
+   "requirement": "No manual input from the traveller",
+   "status": "MET",
+   "how": "Every decision is pre-made and justified"
+  }
+ ],
+ "budget": {
+  "basis": "2 adults, 7 nights, 2027-02-15 to 2027-02-22",
+  "lines": [
+   {
+    "item": "Hotel - Fairfield Inn & Suites Manhattan/Central Park, King Room, 7 nights",
+    "usd": 1155.48,
+    "kind": "VERIFIED",
+    "source": "https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
+    "note": "Booking.com prints this as the total including taxes and fees."
+   },
+   {
+    "item": "Flights - 2 adults, AMS to JFK return, 14-23 Feb 2027",
+    "usd": 1372.0,
+    "kind": "VERIFIED FARE x 2",
+    "source": "https://www.kayak.com/flights/AMS-NYC/2027-02-14/2027-02-23?sort=bestflight_a",
+    "note": "$686 round trip per adult on the cheapest itinerary (Aer Lingus, 1 stop via Dublin). Google Flights showed $543 on the same dates. This is a fare, not a quote for two seats (F-15)."
+   },
+   {
+    "item": "Transit - 2 adults, 7 days, MTA fare cap",
+    "usd": 70.0,
+    "kind": "DERIVED from official cap",
+    "source": "https://www.mta.info/fares-tolls/subway-bus",
+    "note": "MTA caps subway and local bus spend at $35 per person per 7-day period with tap-and-ride. 2 x $35 is the maximum, not an estimate."
+   },
+   {
+    "item": "MoMA - 2 adults",
+    "usd": 60.0,
+    "kind": "VERIFIED",
+    "source": "https://www.moma.org/visit/"
+   },
+   {
+    "item": "The Met - 2 adults",
+    "usd": 60.0,
+    "kind": "VERIFIED",
+    "source": "https://www.metmuseum.org/plan-your-visit"
+   },
+   {
+    "item": "9/11 Memorial & Museum - 2 adults (top of the official range)",
+    "usd": 72.0,
+    "kind": "VERIFIED RANGE",
+    "source": "https://www.911memorial.org/visit/visit-museum-1"
+   },
+   {
+    "item": "Top of the Rock - 2 adults (official 'from' price)",
+    "usd": 84.0,
+    "kind": "VERIFIED FLOOR",
+    "source": "https://www.rockefellercenter.com/tickets/top-of-the-rock-observation-deck/"
+   },
+   {
+    "item": "Statue of Liberty ferry - 2 adults",
+    "usd": 52.0,
+    "kind": "VERIFIED",
+    "source": "https://www.nps.gov/stli/planyourvisit/fees.htm"
+   },
+   {
+    "item": "Dinner at Le Bernardin - Chef's Tasting for 2, food only",
+    "usd": 700.0,
+    "kind": "VERIFIED",
+    "source": "https://www.le-bernardin.com/accessible/menus/dining-room/chef-s-tasting/",
+    "note": "$350 per person. With the wine pairing ($530 pp) the same meal is $1,060 for two."
+   },
+   {
+    "item": "Dinner at Gabriel Kreuther - Chef's Tasting for 2, food only",
+    "usd": 650.0,
+    "kind": "VERIFIED",
+    "source": "https://cdn.prod.website-files.com/69f8cb7ff67007b4842004ce/6afddf36f7cde3e50d030e4c_RGK_DinnerMenu%2011.17.26.pdf",
+    "note": "$325 per person. Wine pairing from $255 pp is extra."
+   },
+   {
+    "item": "Breakfast, lunches and non-MICHELIN dinners - 7 days, 2 adults",
+    "usd": null,
+    "kind": "NOT PRICED - left blank",
+    "source": null,
+    "note": "No official source exists for what a couple spends on ordinary meals. Inventing a daily allowance would be a guess, so this line is blank."
+   }
+  ],
+  "verified_subtotal_usd": 4228.48,
+  "verified_subtotal_note": "Sum of the lines with a read amount. Includes the two MICHELIN dinners and the doubled lowest flight fare.",
+  "unpriced_lines": 1
+ },
+ "itineraries": [
+  {
+   "id": "seven",
+   "title": "7 nights - recommended (15-22 Feb 2027)",
+   "days": [
+    {
+     "date": "Mon 15 Feb",
+     "day": "Arrival",
+     "plan": "Land at JFK, check in. Evening walk to Times Square / Rockefeller Center. No timed booking on arrival day."
+    },
+    {
+     "date": "Tue 16 Feb",
+     "day": "Midtown",
+     "plan": "MoMA in the morning (opens 10:30). Top of the Rock timed entry late afternoon for daylight and dusk."
+    },
+    {
+     "date": "Wed 17 Feb",
+     "day": "Uptown",
+     "plan": "The Met on the Upper East Side, then Central Park on foot."
+    },
+    {
+     "date": "Thu 18 Feb",
+     "day": "Downtown",
+     "plan": "9/11 Memorial & Museum (open Wed-Mon, so Thursday works), then the Statue of Liberty ferry option."
+    },
+    {
+     "date": "Fri 19 Feb",
+     "day": "Chelsea / High Line",
+     "plan": "High Line and Chelsea Market by day. Le Bernardin Chef's Tasting at 17:00 or later."
+    },
+    {
+     "date": "Sat 20 Feb",
+     "day": "Brooklyn",
+     "plan": "Brooklyn Bridge walkway early, then DUMBO. Gabriel Kreuther for dinner in Midtown."
+    },
+    {
+     "date": "Sun 21 Feb",
+     "day": "Buffer",
+     "plan": "Weather-dependent day or a second museum. Le Bernardin is closed Sunday, so no starred dinner is booked."
+    },
+    {
+     "date": "Mon 22 Feb",
+     "day": "Departure",
+     "plan": "Check out, JFK."
+    }
+   ]
+  },
+  {
+   "id": "four",
+   "title": "4 nights - the literal preferred window (15-18 Feb 2027)",
+   "days": [
+    {
+     "date": "Mon 15 Feb",
+     "day": "Arrival",
+     "plan": "Arrive, settle in, evening in Midtown."
+    },
+    {
+     "date": "Tue 16 Feb",
+     "day": "Museums",
+     "plan": "MoMA morning, The Met afternoon."
+    },
+    {
+     "date": "Wed 17 Feb",
+     "day": "Downtown",
+     "plan": "9/11 Memorial & Museum, Brooklyn Bridge walk at sunset."
+    },
+    {
+     "date": "Thu 18 Feb",
+     "day": "One big dinner",
+     "plan": "Le Bernardin or Gabriel Kreuther as the single splurge, then depart."
+    }
+   ],
+   "note": "Fits the preferred dates exactly but allows only one MICHELIN dinner and no buffer day."
+  },
+  {
+   "id": "fourteen",
+   "title": "14 nights - upper end of the brief (15 Feb - 1 Mar 2027)",
+   "days": [
+    {
+     "date": "Week 1 (15-22 Feb)",
+     "day": "Core",
+     "plan": "As the 7-night plan above."
+    },
+    {
+     "date": "Week 2 (22 Feb - 1 Mar)",
+     "day": "Depth",
+     "plan": "Outer-borough stars (Aska and Francie in Brooklyn, Meju in Queens), a day trip, a second starred dinner. The second week's hotel cost was NOT priced (Q-13)."
+    }
+   ],
+   "note": "Two weeks doubles the hotel line. The second week's real price must be captured before this can be budgeted."
+  }
+ ],
+ "flags": [
+  {
+   "id": "F-01",
+   "severity": "HIGH",
+   "title": "The MICHELIN New York list changes on 14 December 2026 - before the trip",
+   "detail": "The next New York star ceremony is scheduled for Monday 14 December 2026. Every star shown on this site is the list published at the 18 November 2025 ceremony. Between now and February 2027 the entire roster can change.",
+   "source": "https://ny.eater.com/news/414985/michelin-guide-new-york-additions-2026-bib-gourmands-michelin-recommendations",
+   "settle_by": "Re-read https://guide.michelin.com/us/en/article/michelin-guide-ceremony after 2026-12-14 and re-run the star tables",
+   "status": "Open"
+  },
+  {
+   "id": "F-02",
+   "severity": "HIGH",
+   "title": "MICHELIN's own two official sources disagree on the star count",
+   "detail": "The ceremony article lists 72 star entries (5 three-star / 15 two-star / 52 one-star). MICHELIN's own filtered list pages, read the same day, show 69 (5 / 14 / 50). The site publishes the 72-entry roster because it is the authoritative ceremony publication, and shows the 69 figure next to it rather than silently picking one.",
+   "source": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurants/1-star-michelin",
+   "settle_by": "Compare the two lists name by name and record which 3 are missing",
+   "status": "Open"
+  },
+  {
+   "id": "F-03",
+   "severity": "HIGH",
+   "title": "Hotel prices are a live snapshot, and every one carries a time-limited promotion",
+   "detail": "All hotel totals were read on 2026-11-25 and several rely on a 'Black Friday Deal' the booking page says is valid for select stays between 19 Nov 2026 and 31 Dec 2027. The undiscounted list prices are shown alongside so the real rate is visible. Any price here can change before booking.",
+   "source": "https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
+   "settle_by": "Re-check the same URL the day of booking",
+   "status": "Open"
+  },
+  {
+   "id": "F-04",
+   "severity": "MEDIUM",
+   "title": "Two hotels quote a total that excludes tax, one includes it",
+   "detail": "Fairfield's $1,155.48 includes taxes and fees. citizenM, Arona and the rest print the rate excluding 14.75% tax and a $4/night city tax, which Booking.com shows separately. The hotel table states which basis each row uses so the rows are never compared like-for-like by accident.",
+   "source": "https://www.booking.com/hotel/us/citizenm-new-york-times-square-new-york.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
+   "settle_by": "Read the 'Excluded' line on each room row (done) and apply tax where excluded",
+   "status": "Documented"
+  },
+  {
+   "id": "F-05",
+   "severity": "HIGH",
+   "title": "The one-hour MICHELIN rule is modelled, not measured",
+   "detail": "Travel times on this site are computed from straight-line distance at an assumed average speed, then labelled MODEL. Only a handful of legs were checked against a real transit router. A model can be wrong in either direction, especially across the East River where there is no direct subway.",
+   "source": "https://api.transitous.org/api/v1/plan",
+   "settle_by": "Run each hotel-to-restaurant pair through an MTA-scheduled journey planner for a weekday 19:00 departure",
+   "status": "Open"
+  },
+  {
+   "id": "F-06",
+   "severity": "MEDIUM",
+   "title": "Most restaurant menu prices could not be read",
+   "detail": "Only Le Bernardin, Gabriel Kreuther and Per Se published a readable price. Eleven Madison Park, Jungsik, Sushi Sho, Daniel and Gramercy Tavern either publish no price, hide it behind a booking flow, or serve their menu as an image.",
+   "source": "https://www.elevenmadisonpark.com/",
+   "settle_by": "Open each venue's Resy/Tock booking page, where the tasting-menu price is displayed before payment",
+   "status": "Open"
+  },
+  {
+   "id": "F-07",
+   "severity": "MEDIUM",
+   "title": "TikTok could not be verified at all",
+   "detail": "Every TikTok URL returned HTTP 400 to an automated read on 2026-11-25. No TikTok handle is asserted anywhere on this site; where TikTok appears it is a search link, labelled as a search.",
+   "source": "https://www.tiktok.com/",
+   "settle_by": "Open the venue's own website and look for a TikTok icon, or search TikTok manually",
+   "status": "Open"
+  },
+  {
+   "id": "F-08",
+   "severity": "MEDIUM",
+   "title": "One Instagram handle was inferred, not opened",
+   "detail": "The Chelsea Market handle @chelseamarketny was read in a post by the verified High Line account, not by opening the Chelsea Market profile itself. It is labelled as unconfirmed.",
+   "source": "https://www.instagram.com/highlinenyc/",
+   "settle_by": "Open https://www.instagram.com/chelseamarketny/ directly",
+   "status": "Open"
+  },
+  {
+   "id": "F-09",
+   "severity": "HIGH",
+   "title": "Hours for The Met and The High Line were not captured",
+   "detail": "The Met's official hours block did not render in the captured page and the High Line's visitor page served a cookie wall. Neither set of hours is shown, rather than being taken from a secondary source.",
+   "source": "https://www.metmuseum.org/plan-your-visit",
+   "settle_by": "Read the hours block on metmuseum.org and thehighline.org with a browser that renders script",
+   "status": "Open"
+  },
+  {
+   "id": "F-10",
+   "severity": "MEDIUM",
+   "title": "Restaurant hours conflict between MICHELIN and the restaurant",
+   "detail": "Gramercy Tavern's MICHELIN listing shows dinner ending at 21:00, while the restaurant's own Instagram says the Tavern is open until 23:00 seven days a week. Both are official; they describe different rooms. The row is flagged rather than resolved.",
+   "source": "https://www.instagram.com/gramercytavern/",
+   "settle_by": "Check gramercytavern.com hours for each room separately",
+   "status": "Open"
+  },
+  {
+   "id": "F-11",
+   "severity": "LOW",
+   "title": "The Presidents' Day claim is derived, not sourced",
+   "detail": "15 February 2027 falls on the third Monday of February, which is the US federal Washington's Birthday holiday. This is arithmetic on the calendar plus general knowledge; no official 2027 federal calendar page was read.",
+   "source": null,
+   "settle_by": "Read the OPM federal holidays page for 2027",
+   "status": "Open"
+  },
+  {
+   "id": "F-12",
+   "severity": "MEDIUM",
+   "title": "The second week of a 14-night trip is unpriced",
+   "detail": "Only the 15-22 Feb window was priced per hotel. A 22 Feb - 1 Mar stay is a different rate and shows signs of being dearer (the same Fairfield room rises from $1,155.48 to about $1,290 once tax is added).",
+   "source": "https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-22&checkout=2027-03-01&group_adults=2&no_rooms=1&selected_currency=USD",
+   "settle_by": "Price 22 Feb - 1 Mar for the two finalist hotels",
+   "status": "Open"
+  },
+  {
+   "id": "F-13",
+   "severity": "MEDIUM",
+   "title": "Four of seven hotels show no street address",
+   "detail": "Booking.com's captured text gave the area but not the street address for Fairfield, Arlo SoHo, Pestana, Arlo Midtown, Hyatt Place Chelsea and Residence Inn FiDi. Their coordinates are area-level, so their travel times are less precise than citizenM's, whose address is known.",
+   "source": "https://www.booking.com/",
+   "settle_by": "Read the address line on each hotel page",
+   "status": "Open"
+  },
+  {
+   "id": "F-14",
+   "severity": "LOW",
+   "title": "Accessible room types were the cheapest qualifying rooms at two hotels",
+   "detail": "At Hyatt Place Chelsea the cheapest king room on these dates was the roll-in-shower accessible room, and at citizenM Bowery the accessible king. Those rooms are bookable by anyone, but a standard room may price differently.",
+   "source": "https://www.booking.com/hotel/us/hyatt-place-new-york-chelsea.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
+   "settle_by": "Compare the standard king rate on the same dates",
+   "status": "Documented"
+  },
+  {
+   "id": "F-15",
+   "severity": "LOW",
+   "title": "The flight price is a fare, not a booking",
+   "detail": "The AMS-JFK fares quoted ($543-$686 one adult, round trip) were read on aggregator pages. Fares change hourly and the cheapest itineraries have long layovers or are basic tickets without checked bags.",
+   "source": "https://www.kayak.com/flights/AMS-NYC/2027-02-14/2027-02-23?sort=bestflight_a",
+   "settle_by": "Price the same dates for 2 adults on the airline's own site",
+   "status": "Open"
+  },
+  {
+   "id": "F-16",
+   "severity": "LOW",
+   "title": "One venue's hours exist in MICHELIN's data but not as text",
+   "detail": "Le Bernardin's Friday closing time is 23:00 and Saturday opens at 17:00; both were read from the structured hours block. Jungsik has no hours block at all on its MICHELIN page.",
+   "source": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/jungsik-new-york",
+   "settle_by": "Read jungsik.com reservations page",
+   "status": "Open"
+  },
+  {
+   "id": "F-17",
+   "severity": "HIGH",
+   "title": "Six of seven hotels advertise a price that excludes tax, which flips the ranking",
+   "detail": "Booking.com prints a tax-exclusive total for six of the seven shortlisted properties. On advertised numbers Fairfield ($1,155.48) looks dearer than Arlo SoHo ($1,021.00) and citizenM ($1,147.00). Once 14.75% tax and $4/night city tax are applied, Fairfield is the cheapest of the seven and citizenM is $188.70 dearer. The site shows both columns and labels the second one derived.",
+   "source": "https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
+   "settle_by": "Confirm the final charge at checkout; local fees beyond the two named can still appear",
+   "status": "Documented"
+  },
+  {
+   "id": "F-18",
+   "severity": "HIGH",
+   "title": "A 'star cluster' cannot be demonstrated from this dataset",
+   "detail": "Coordinates were verified for only 7 of the 72 star entries. Among those 7, only Eleven Madison Park and Gramercy Tavern sit within a kilometre of another scored venue (353 m). The others are each more than 1 km from the next one, so Manhattan star dining is dispersed rather than clustered. Any neighbourhood-level cluster map would be invented.",
+   "source": "https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025",
+   "settle_by": "Verify coordinates for all 72 entries and compute density",
+   "status": "Open"
+  },
+  {
+   "id": "F-19",
+   "severity": "MEDIUM",
+   "title": "The hotel reach ranking covers 7 restaurants, not 72",
+   "detail": "The brief asks hotels to be ranked by how many MICHELIN restaurants are reachable within an hour. Only the 7 venues with verified coordinates can be scored, so the ranking is out of 7 rather than out of 72. The five Midtown and Chelsea hotels are effectively tied on it, which is why cost decides the recommendation.",
+   "source": "https://api.transitous.org/api/v1/plan",
+   "settle_by": "Verify all 72 coordinates and run a measured journey matrix",
+   "status": "Open"
+  },
+  {
+   "id": "F-20",
+   "severity": "MEDIUM",
+   "title": "Activity travel times are modelled, and the Statue of Liberty only just qualifies",
+   "detail": "All eleven activities fall inside the modelled one-hour reach of the recommended hotel, but the Statue of Liberty does so at 56 modelled minutes to Battery Park, before the roughly 15-minute ferry to the island. It is the one activity where the rule is satisfied by a margin thin enough that a real schedule could break it.",
+   "source": "https://www.nps.gov/stli/planyourvisit/fees.htm",
+   "settle_by": "Query a scheduled journey planner for the hotel-to-Battery-Park leg at 09:00 on a weekday",
+   "status": "Open"
+  }
+ ],
+ "questions": [
+  {
+   "id": "Q-01",
+   "question": "Does the trip run 4 nights, 7 nights or 14 nights?",
+   "why_it_blocks": "Hotel cost, the number of MICHELIN dinners affordable, and which hotels stay in contention all change with trip length.",
+   "have": "Real 7-night prices for 7 hotels and real activity prices.",
+   "missing": "The traveller's actual leave allowance and total budget.",
+   "how_to_discover": "Answer directly; then price the exact dates on Booking.com for the finalist hotel.",
+   "owner": "traveller",
+   "blocks": "Budget, itinerary, hotel choice"
+  },
+  {
+   "id": "Q-02",
+   "question": "What is the total budget for two people, excluding flights?",
+   "why_it_blocks": "Every ranking on this site sorts on price. Without a ceiling there is no way to say whether two starred dinners are affordable.",
+   "have": "A verified subtotal of $4,228.48 for the 7-night plan, excluding ordinary meals.",
+   "missing": "A budget figure.",
+   "how_to_discover": "Answer directly.",
+   "owner": "traveller",
+   "blocks": "Dinner count, hotel tier"
+  },
+  {
+   "id": "Q-03",
+   "question": "Which departure airport, and are flights already booked?",
+   "why_it_blocks": "The budget assumes AMS-JFK. Departing from Brussels or Dusseldorf changes the fare materially.",
+   "have": "AMS-JFK fares of $543-$686 per adult round trip for 14-23 Feb 2027.",
+   "missing": "Confirmed origin airport and whether flights are booked.",
+   "how_to_discover": "Answer directly; then check the airline site for 2 adults.",
+   "owner": "traveller",
+   "blocks": "Budget"
+  },
+  {
+   "id": "Q-04",
+   "question": "Is one MICHELIN dinner enough, or do you want three-star twice?",
+   "why_it_blocks": "Le Bernardin's tasting menu is $350 pp food only; the wine pairing is another $530 pp. Two three-star dinners with pairings is over $3,500 for the pair.",
+   "have": "Real prices for Le Bernardin and Gabriel Kreuther.",
+   "missing": "The traveller's appetite for splurge vs. spread.",
+   "how_to_discover": "Answer directly.",
+   "owner": "traveller",
+   "blocks": "Restaurant shortlist"
+  },
+  {
+   "id": "Q-05",
+   "question": "Do you drink wine with dinner?",
+   "why_it_blocks": "Pairings roughly double the food cost at every starred venue.",
+   "have": "Le Bernardin pairing $530 pp; Gabriel Kreuther $255-$595 pp.",
+   "missing": "Preference.",
+   "how_to_discover": "Answer directly.",
+   "owner": "traveller",
+   "blocks": "Budget"
+  },
+  {
+   "id": "Q-06",
+   "question": "What are the actual menu prices at EMP, Jungsik, Sushi Sho, Daniel and Gramercy Tavern?",
+   "why_it_blocks": "These five cannot be budgeted, so the dinner plan can only be costed for the venues with a published price.",
+   "have": "Two verified prices and one deposit floor.",
+   "missing": "The published menu price at each remaining venue.",
+   "how_to_discover": "Open each venue's Resy or Tock booking page - the tasting-menu price is shown before payment.",
+   "owner": "research",
+   "blocks": "Budget",
+   "status": "Open"
+  },
+  {
+   "id": "Q-07",
+   "question": "Which three-star restaurant should be the anchor dinner?",
+   "why_it_blocks": "It determines the travel pattern for that evening and which hotel is best placed.",
+   "have": "Le Bernardin (Midtown, $350 pp) is the only three-star with a verified precio and an easy walk from two shortlisted hotels.",
+   "missing": "EMP and Jungsik prices and availability.",
+   "how_to_discover": "Check Resy availability for 15-22 Feb 2027, which opens roughly 30 days ahead.",
+   "owner": "research",
+   "blocks": "Restaurant shortlist"
+  },
+  {
+   "id": "Q-08",
+   "question": "How important is a view or a specific neighbourhood?",
+   "why_it_blocks": "Midtown is best for starred dining; Downtown is cheaper but adds 20-30 minutes to every Midtown dinner.",
+   "have": "All shortlisted hotels are within modelled reach of the verified stars.",
+   "missing": "Preference.",
+   "how_to_discover": "Answer directly.",
+   "owner": "traveller",
+   "blocks": "Hotel choice"
+  },
+  {
+   "id": "Q-09",
+   "question": "What are The Met's and The High Line's opening hours in February 2027?",
+   "why_it_blocks": "Both are anchor daytime activities and neither has verified hours.",
+   "have": "Prices and addresses for both.",
+   "missing": "Hours and closure days.",
+   "how_to_discover": "Read the hours block on metmuseum.org and thehighline.org in a script-rendering browser.",
+   "owner": "research",
+   "blocks": "Itinerary",
+   "status": "Open"
+  },
+  {
+   "id": "Q-10",
+   "question": "Is the hotel's breakfast worth counting as a real saving?",
+   "why_it_blocks": "Fairfield includes breakfast; citizenM charges $23.50 per person per night. Over 7 nights that is $329 for two, which can wipe out citizenM's apparent advantage.",
+   "have": "Both facts verified.",
+   "missing": "Whether the traveller would actually eat hotel breakfast.",
+   "how_to_discover": "Answer directly.",
+   "owner": "traveller",
+   "blocks": "Hotel ranking"
+  },
+  {
+   "id": "Q-11",
+   "question": "Will you be travelling with hand luggage only?",
+   "why_it_blocks": "The cheapest AMS-JFK fares are basic tickets that exclude checked bags and seat selection.",
+   "have": "Fare levels identified (Saver, Light buckets).",
+   "missing": "Bag plan.",
+   "how_to_discover": "Answer directly; add bag fees on the airline site.",
+   "owner": "traveller",
+   "blocks": "Budget"
+  },
+  {
+   "id": "Q-12",
+   "question": "Do you need step-free access or any accessibility feature?",
+   "why_it_blocks": "Two of the cheapest qualifying rooms are accessible room types; if accessibility is needed, those become required rather than incidental.",
+   "have": "Room types and accessibility flags on each hotel page.",
+   "missing": "Requirement.",
+   "how_to_discover": "Answer directly.",
+   "owner": "traveller",
+   "blocks": "Hotel choice"
+  },
+  {
+   "id": "Q-13",
+   "question": "What does the second week cost if you stay 14 nights?",
+   "why_it_blocks": "The 14-night variant cannot be budgeted without pricing 22 Feb - 1 Mar at the finalist hotel.",
+   "have": "One indicative snapshot ($1,020.60 before tax for the same Fairfield room).",
+   "missing": "A full second-week quote including tax.",
+   "how_to_discover": "Price 22 Feb - 1 Mar at the two finalist hotels on Booking.com.",
+   "owner": "research",
+   "blocks": "Budget",
+   "status": "Open"
+  },
+  {
+   "id": "Q-14",
+   "question": "How much time do you want per museum?",
+   "why_it_blocks": "MoMA and The Met on one day is possible but rushed; the itinerary currently splits them.",
+   "have": "Prices and MoMA's verified hours.",
+   "missing": "Pace preference.",
+   "how_to_discover": "Answer directly.",
+   "owner": "traveller",
+   "blocks": "Itinerary"
+  },
+  {
+   "id": "Q-15",
+   "question": "Is the Statue of Liberty worth a half-day in February?",
+   "why_it_blocks": "The ferry is $26 pp and the harbour is cold in February; it competes with an indoor museum for the same slot.",
+   "have": "Verified ferry price and the NPS rule that only Statue City Cruises may dock.",
+   "missing": "Weather tolerance and schedule.",
+   "how_to_discover": "Answer directly; check the NPS operating status page in the week before travel.",
+   "owner": "traveller",
+   "blocks": "Itinerary"
+  },
+  {
+   "id": "Q-16",
+   "question": "Should a Broadway show be booked, and for which night?",
+   "why_it_blocks": "Broadway has no single price; picking a show and a night is a separate decision with its own budget line.",
+   "have": "A link to the official Broadway League site.",
+   "missing": "Show choice, night, seat tier.",
+   "how_to_discover": "Choose a show, then price it on the show's official ticketing page.",
+   "owner": "traveller",
+   "blocks": "Itinerary, budget"
+  },
+  {
+   "id": "Q-17",
+   "question": "Which three of the 72 star entries are actually missing from MICHELIN's live list?",
+   "why_it_blocks": "If the live list is the current truth, several rows on this site may already be out of date.",
+   "have": "Both official counts.",
+   "missing": "A name-by-name diff.",
+   "how_to_discover": "Export both lists and compare programmatically.",
+   "owner": "research",
+   "blocks": "Restaurant table accuracy",
+   "status": "Open"
+  },
+  {
+   "id": "Q-18",
+   "question": "Does the 14 December 2026 ceremony change any venue's star level?",
+   "why_it_blocks": "The trip is after the ceremony, so a venue may gain or lose a star before you dine there.",
+   "have": "The ceremony date.",
+   "missing": "The new list.",
+   "how_to_discover": "Read the MICHELIN article published on or after 2026-12-14.",
+   "owner": "research",
+   "blocks": "Restaurant table accuracy",
+   "status": "Blocked until 2026-12-14"
+  },
+  {
+   "id": "Q-19",
+   "question": "Are the real door-to-door transit times under an hour?",
+   "why_it_blocks": "The brief's central rule is a one-hour trip; the site currently models it.",
+   "have": "A model plus a few measured legs.",
+   "missing": "Measured times for every hotel/restaurant pair.",
+   "how_to_discover": "Query an MTA-scheduled journey planner for each pair at 19:00 on a weekday.",
+   "owner": "research",
+   "blocks": "Hotel ranking",
+   "status": "Open"
+  },
+  {
+   "id": "Q-20",
+   "question": "Will you eat at the hotel or out for breakfast?",
+   "why_it_blocks": "It changes the daily food allowance, which is currently blank rather than guessed.",
+   "have": "Which hotels include breakfast.",
+   "missing": "Habit.",
+   "how_to_discover": "Answer directly.",
+   "owner": "traveller",
+   "blocks": "Budget"
+  },
+  {
+   "id": "Q-21",
+   "question": "Do you want travel insurance, and does it cover non-refundable restaurant deposits?",
+   "why_it_blocks": "EMP and other venues charge the full tasting menu at booking and do not refund.",
+   "have": "The non-refundable policy, read on Resy.",
+   "missing": "Insurance decision.",
+   "how_to_discover": "Check the insurer's terms for pre-paid dining.",
+   "owner": "traveller",
+   "blocks": "Risk"
+  },
+  {
+   "id": "Q-22",
+   "question": "Is there a hard return date?",
+   "why_it_blocks": "The cheapest 7-night windows sit either side of the preferred dates; flexibility of a day or two can move the hotel price by hundreds.",
+   "have": "Three priced windows.",
+   "missing": "Fixed commitments.",
+   "how_to_discover": "Answer directly.",
+   "owner": "traveller",
+   "blocks": "Hotel choice"
+  },
+  {
+   "id": "Q-23",
+   "question": "Should the site be one dashboard or two?",
+   "why_it_blocks": "An earlier session published a second dataset that disagrees with this one; both are live today.",
+   "have": "Both datasets and the itemised disagreements.",
+   "missing": "A decision on which becomes canonical.",
+   "how_to_discover": "Review suggestions S-01 and S-02 and pick one.",
+   "owner": "traveller",
+   "blocks": "Site structure",
+   "status": "Open"
+  },
+  {
+   "id": "Q-24",
+   "question": "What should be removed from the site before it is shared?",
+   "why_it_blocks": "Anything unverified is either labelled or blank; a reader should not have to guess which is which.",
+   "have": "A flag register with 16 items.",
+   "missing": "Sign-off.",
+   "how_to_discover": "Read flagged.html and confirm each label is clear.",
+   "owner": "traveller",
+   "blocks": "Publishing",
+   "status": "Open"
+  },
+  {
+   "id": "Q-25",
+   "question": "Which of the 72 star restaurants actually sit within an hour of the hotel?",
+   "why_it_blocks": "The brief's hotel ranking depends on it, and only 7 of 72 venues could be scored.",
+   "have": "A reach ranking on the 7 verified venues.",
+   "missing": "Verified coordinates for the other 65.",
+   "how_to_discover": "Read the address on each MICHELIN detail page and geocode it, then run a journey matrix.",
+   "owner": "research",
+   "blocks": "Hotel ranking",
+   "status": "Open"
+  },
+  {
+   "id": "Q-26",
+   "question": "Is an advertised hotel price or an all-in price the one to rank on?",
+   "why_it_blocks": "The two produce opposite winners: Arlo SoHo on advertised, Fairfield on all-in.",
+   "have": "Both figures for all seven hotels.",
+   "missing": "Which basis the traveller wants to see first.",
+   "how_to_discover": "Answer directly; the site currently shows advertised first and all-in second.",
+   "owner": "traveller",
+   "blocks": "Presentation",
+   "status": "Open"
+  }
+ ],
+ "suggestions": [
+  {
+   "id": "S-01",
+   "title": "Make this dashboard the single canonical site and retire the duplicate dataset",
+   "problem": "Two independently researched datasets are published side by side and disagree on the star count (72 vs 69), the hotel shortlist and the transit method. A reader cannot tell which to trust.",
+   "proposal": "Keep this dashboard as the canonical dataset, move the older deep dive to an 'archive' page with a one-line explanation, and delete the cross-links that present them as equal.",
+   "effort": "1 hour",
+   "cost": "0",
+   "impact": "High",
+   "risk": "Low - nothing is deleted that is not first archived",
+   "decision": "Pending",
+   "recommended": "Yes"
+  },
+  {
+   "id": "S-02",
+   "title": "Replace modelled travel times with measured ones",
+   "problem": "The one-hour rule is the brief's central constraint and it is currently a straight-line model.",
+   "proposal": "Batch-query an MTA-scheduled journey planner for all 7 hotels x the star restaurants that matter, cache the JSON, and show the measured door-to-door minutes with the query time and date. Keep the model only as a fallback, clearly labelled.",
+   "effort": "3-4 hours",
+   "cost": "0 (public API)",
+   "impact": "High",
+   "risk": "Low",
+   "decision": "Pending",
+   "recommended": "Yes"
+  },
+  {
+   "id": "S-03",
+   "title": "Add a price-watch column with a re-check date",
+   "problem": "Every price on the site is a 2026-11-25 snapshot, and the booking pages say promotions expire.",
+   "proposal": "Add 'price checked on' and 're-check by' columns, and a single page listing every external URL with the date it was last read, so re-verification is a checklist rather than a memory exercise.",
+   "effort": "2 hours",
+   "cost": "0",
+   "impact": "High",
+   "risk": "None",
+   "decision": "Pending",
+   "recommended": "Yes"
+  },
+  {
+   "id": "S-04",
+   "title": "Finish the menu-price matrix from booking platforms",
+   "problem": "Five of the eight priority restaurants have no price, which makes the dinner plan impossible to budget.",
+   "proposal": "Open each venue's Resy or Tock page, where the tasting-menu price is shown before payment, and record it with the URL and the date. Where a venue only sells on the day, record that as the answer.",
+   "effort": "2 hours",
+   "cost": "0",
+   "impact": "High",
+   "risk": "Low",
+   "decision": "Pending",
+   "recommended": "Yes"
+  },
+  {
+   "id": "S-05",
+   "title": "Give every table a mobile card view, not just a scrolling table",
+   "problem": "Seven-column tables on a 390px phone require horizontal scrolling, which is where readers give up.",
+   "proposal": "Below 640px, render each row as a stacked card with the name, star level, hours and links visible without scrolling; keep the true table for desktop.",
+   "effort": "3 hours",
+   "cost": "0",
+   "impact": "High",
+   "risk": "Low",
+   "decision": "Pending",
+   "recommended": "Yes"
+  },
+  {
+   "id": "S-06",
+   "title": "Add a printable one-page trip card",
+   "problem": "The site is a research document; on the day you need one page with addresses, hours and confirmation numbers.",
+   "proposal": "A print stylesheet plus a single page containing only confirmed bookings, with blank fields for confirmation numbers that the traveller fills in.",
+   "effort": "2 hours",
+   "cost": "0",
+   "impact": "Medium",
+   "risk": "None",
+   "decision": "Pending",
+   "recommended": "Yes"
+  },
+  {
+   "id": "S-07",
+   "title": "Automate the link and data-integrity check",
+   "problem": "Manual checking does not scale past a few dozen rows and silently rots.",
+   "proposal": "A script run on every commit that (a) checks every internal link resolves, (b) checks every external URL returns 200, (c) fails the build if a table row has no source, and (d) fails if any numeric cell is non-numeric.",
+   "effort": "4 hours",
+   "cost": "0",
+   "impact": "High",
+   "risk": "Low - external checks can be flaky, so warn rather than fail on those",
+   "decision": "Pending",
+   "recommended": "Yes"
+  },
+  {
+   "id": "S-08",
+   "title": "Separate 'starred' from 'guide-listed' into two visually distinct badges",
+   "problem": "A reader can mistake a Bib Gourmand or a plain listing for a star.",
+   "proposal": "Use one badge per distinction - three-star, two-star, one-star, Green Star, Bib Gourmand, Selected - with the badge drawn from MICHELIN's own icons and a legend at the top of the table.",
+   "effort": "1 hour",
+   "cost": "0",
+   "impact": "Medium",
+   "risk": "None",
+   "decision": "Pending",
+   "recommended": "Yes"
+  },
+  {
+   "id": "S-09",
+   "title": "Show the all-in hotel cost, not the advertised rate",
+   "problem": "Some rows include tax and some do not, so the cheapest-looking row is not always the cheapest.",
+   "proposal": "Compute and display one 'total for 7 nights, taxes and fees included' figure per hotel in a single sortable column, and keep the advertised rate visible only as a secondary detail.",
+   "effort": "2 hours",
+   "cost": "0",
+   "impact": "High",
+   "risk": "Medium - the tax treatment differs by property and must be read per room, not assumed",
+   "decision": "Pending",
+   "recommended": "Yes"
+  },
+  {
+   "id": "S-10",
+   "title": "Add a February-specific weather and packing section",
+   "problem": "February in New York is cold and the itinerary includes outdoor walks; nothing on the site warns about it.",
+   "proposal": "Add a small panel with historical February temperature ranges from an official climate source and a packing list tied to the outdoor activities actually planned.",
+   "effort": "1 hour",
+   "cost": "0",
+   "impact": "Medium",
+   "risk": "Low",
+   "decision": "Pending",
+   "recommended": "Yes"
+  },
+  {
+   "id": "S-11",
+   "title": "Replace social search links with verified posts wherever an account is confirmed",
+   "problem": "Most social cells are search links, which is honest but not what the brief asked for.",
+   "proposal": "Where an official account is verified, link two or three specific posts (the profile page exposes recent post URLs) instead of the profile. Where no account exists, keep the labelled search link.",
+   "effort": "3 hours",
+   "cost": "0",
+   "impact": "Medium",
+   "risk": "Low - post URLs can be deleted by the venue",
+   "decision": "Pending",
+   "recommended": "Yes"
+  },
+  {
+   "id": "S-12",
+   "title": "Add a booking countdown and deadline tracker",
+   "problem": "Eighty percent of the starred restaurants take reservations about 30 days ahead, and the hotel's free-cancellation deadline is 12 February 2027.",
+   "proposal": "A dated checklist of the actions in the order they must happen, each with the exact deadline (open booking date, free-cancel date, ticket release date).",
+   "effort": "1 hour",
+   "cost": "0",
+   "impact": "High",
+   "risk": "None - the 30-day rule is a common pattern, so verify each venue's own window before relying on it",
+   "decision": "Pending",
+   "recommended": "Yes"
+  }
+ ]
+}

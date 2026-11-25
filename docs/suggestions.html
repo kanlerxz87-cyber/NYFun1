@@ -2,46 +2,157 @@
 <html lang="en"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Suggestions — review, then choose a path · NYC 2027 — Trip Planning Dashboard</title>
-<meta name="description" content="Verified, source-linked NYC trip plan for 15-22 February 2027: hotels, MICHELIN restaurants, activities, costs and open questions.">
+<title>Suggestions for improvement · NYC 2027 Trip Planner</title>
+<meta name="description" content="Source-linked New York City trip plan for two adults, 15-22 February 2027: hotels, MICHELIN restaurants, activities, budget, open questions and flags.">
 <link rel="stylesheet" href="assets/style.css">
 </head><body>
+<a class="skip" href="#main">Skip to content</a>
 <header class="site"><div class="inner">
-  <div class="brand">NYC <span>2027</span> · Trip Planning Dashboard</div>
-  <nav class="top"><a href="index.html" class="">Overview</a><a href="hotels.html" class="">Hotels</a><a href="restaurants.html" class="">MICHELIN</a><a href="activities.html" class="">Activities</a><a href="itinerary.html" class="">Itinerary</a><a href="budget.html" class="">Budget</a><a href="questions.html" class="">Open questions</a><a href="suggestions.html" class="on">Suggestions</a><a href="flagged.html" class="">Flagged for review</a><a href="methodology.html" class="">Method &amp; sources</a><a href="repo-review.html" class="">Repo review</a><a href="../deepdive/index.html" class="">Deep dive</a></nav>
+  <div class="brand">NYC <span>2027</span> · Trip Planner</div>
+  <nav class="top" aria-label="Sections"><a href="index.html">Overview</a><a href="hotels.html">Hotels</a><a href="restaurants.html">MICHELIN</a><a href="activities.html">Activities</a><a href="itinerary.html">Itinerary</a><a href="budget.html">Budget</a><a href="questions.html">Questions</a><a href="suggestions.html" class="on">Suggestions</a><a href="flagged.html">Flagged</a><a href="method.html">Method &amp;amp; sources</a><a href="repo-review.html">Repo review</a></nav>
 </div></header>
-<main class="wrap">
-<h1>Suggestions — review, then choose a path</h1>
-<p class="lede">Twelve proposals to make this plan more decision-ready. Nothing is implemented until it is approved here.</p>
+<main class="wrap" id="main">
+<h1>Suggestions for improvement</h1>
 
-<div class="callout ok"><strong>How to use this page.</strong> Review the list, mark the ones you want with
-"Approved" (or reply with the IDs), and only then does anything get built. Nothing here is a promise that
-the data is already better than it is.</div>
-<div class="table-wrap"><table class=""><caption>Nothing on this list has been implemented. Change a status to Approved and it becomes the next session's work order.</caption><thead><tr><th class="">ID</th><th class="">Suggestion</th><th class="">Impact</th><th class="">Effort</th><th class="">How it would be implemented</th><th class="">Review status</th></tr></thead><tbody><tr><td class=""><strong>S1</strong></td><td class=""><strong>Attach reservation release windows + direct booking links to every starred restaurant</strong><br><span class='small'>The plan's biggest failure mode is a restaurant that is fully booked, not a hotel that costs $200 more.</span></td><td class="">High</td><td class="">Medium (one capture per restaurant)</td><td class="">Capture each restaurant's Resy/Tock listing 30 and 60 days out; store release window, party-size rules, deposit and cancellation terms next to the row; replace the platform name with a direct link.</td><td class=""><span class="pill warn">Proposed</span></td></tr><tr><td class=""><strong>S2</strong></td><td class=""><strong>Close the 66-restaurant detail gap with a documented capture pass</strong><br><span class='small'>The roster table currently shows stars but not address, price band or hours.</span></td><td class="">High</td><td class="">Medium (66 page reads, scripted)</td><td class="">One capture per MICHELIN restaurant page into the same CSV schema; keep the 'blank unless read' rule and the tier badges.</td><td class=""><span class="pill warn">Proposed</span></td></tr><tr><td class=""><strong>S3</strong></td><td class=""><strong>Weekly, dated price tracker for the shortlist (and widen the shortlist)</strong><br><span class='small'>Turns three sampled date windows into a real 'best time to book' answer; today's prices are snapshots.</span></td><td class="">High</td><td class="">Low (4-16 URL fetches per week)</td><td class="">A scheduled job writes one row per hotel per week with the 7-night total for each Monday-start window from 15 Feb to 22 Mar 2027, then charts the trend.</td><td class=""><span class="pill warn">Proposed</span></td></tr><tr><td class=""><strong>S4</strong></td><td class=""><strong>Neighborhood map with star pins</strong><br><span class='small'>A table cannot show that four verified stars sit within a 15-minute walk of Midtown West.</span></td><td class="">Medium</td><td class="">Medium</td><td class="">Static map image or lightweight SVG using the captured coordinates; colour pins by star level; link each pin to its row.</td><td class=""><span class="pill warn">Proposed</span></td></tr><tr><td class=""><strong>S5</strong></td><td class=""><strong>Verified tasting-menu prices from restaurant websites</strong><br><span class='small'>The spend column is currently a band-based model; real menus exist on every restaurant site.</span></td><td class="">High</td><td class="">Medium</td><td class="">Capture the current menu price, whether service is included, and the pairing cost per restaurant.</td><td class=""><span class="pill warn">Proposed</span></td></tr><tr><td class=""><strong>S6</strong></td><td class=""><strong>Add indoor/outdoor and cold-weather columns to activities</strong><br><span class='small'>A February itinerary needs to know which plans survive a 0 degree day.</span></td><td class="">Medium</td><td class="">Low</td><td class="">Two columns (indoor/outdoor, typical February comfort) plus a 'swap candidate' field.</td><td class=""><span class="pill warn">Proposed</span></td></tr><tr><td class=""><strong>S7</strong></td><td class=""><strong>Add accessibility and room-size filters to hotels</strong><br><span class='small'>Accessible rooms were priced but not labelled; citizenM room sizes were not published.</span></td><td class="">Medium</td><td class="">Low</td><td class="">Capture room square footage and accessibility features from each hotel's own site.</td><td class=""><span class="pill warn">Proposed</span></td></tr><tr><td class=""><strong>S8</strong></td><td class=""><strong>Make the 14-night variant a first-class plan with a split stay</strong><br><span class='small'>The brief allows two weeks; a 7+7 split (Midtown then Brooklyn) would reach the whole roster.</span></td><td class="">Medium</td><td class="">Medium</td><td class="">Price two 7-night blocks for each hotel, add a Brooklyn block, and re-run the transit model.</td><td class=""><span class="pill warn">Proposed</span></td></tr><tr><td class=""><strong>S9</strong></td><td class=""><strong>Star-change watchlist around the 14 December 2026 ceremony</strong><br><span class='small'>Star status may change before the trip; the plan should not silently go stale.</span></td><td class="">High</td><td class="">Low</td><td class="">Diff the new roster against michelin_2025.csv, publish the diff, and re-badge affected rows.</td><td class=""><span class="pill warn">Proposed</span></td></tr><tr><td class=""><strong>S10</strong></td><td class=""><strong>Booking-deadline countdown on the hotels page</strong><br><span class='small'>Free-cancellation deadlines (12-13 Feb 2027) are the real decision points.</span></td><td class="">Medium</td><td class="">Low</td><td class="">Compute days-to-deadline from the captured rate terms and show it on each row.</td><td class=""><span class="pill warn">Proposed</span></td></tr><tr><td class=""><strong>S11</strong></td><td class=""><strong>A visible decision log with approvals</strong><br><span class='small'>Suggestions and questions need a record of what was chosen and when.</span></td><td class="">Medium</td><td class="">Low</td><td class="">A dated table on this page, appended each time a suggestion or question is resolved.</td><td class=""><span class="pill warn">Proposed</span></td></tr><tr><td class=""><strong>S12</strong></td><td class=""><strong>Print/PDF-friendly views of the itinerary and budget</strong><br><span class='small'>The plan is used offline, in the street, in February.</span></td><td class="">Low</td><td class="">Low</td><td class="">A print stylesheet is already stubbed; add an 'export' note per page and test on mobile Safari.</td><td class=""><span class="pill warn">Proposed</span></td></tr></tbody></table></div>
 
-<h2>If you only approve one thing</h2>
-<p><strong>S1 — attach the reservation release window and a direct booking link to every starred
-restaurant.</strong> The biggest practical risk in this plan is not price, it is that the four-star
-dinners are booked out 30 days out. Once the restaurant list is fixed, that is the single highest-value
-improvement, and it costs one research pass per restaurant.</p>
+<p class="lede">12 concrete improvements to this site, each written so it can be accepted or rejected
+on its own. The point of this page is that you review the options and choose a path <em>before</em>
+anything is implemented.</p>
 
-<h2>If you approve a second</h2>
-<p><strong>S3 — a dated price tracker for the shortlist.</strong> All four hotel prices are snapshots from
-2026-11-25, two of them propped up by a Black Friday promotion. A weekly capture of the same four URLs would
-turn this into a real "best time to book" answer instead of a three-window sample.</p>
+<div class="note"><strong>How to use it.</strong> Read the problem, then the proposal, then the effort.
+The decision dropdown is local to your browser and changes nothing on the site — it is a worksheet.
+Anything you mark "Do it" can be implemented in the order shown; S-01 and S-02 should come first because
+they affect the correctness of everything else.</div>
 
-<h2>Decision log</h2>
-<table><thead><tr><th>Date</th><th>Suggestion</th><th>Decision</th><th>By</th></tr></thead>
-<tbody>
-<tr><td>2026-11-25</td><td>S1–S12</td><td>Proposed — awaiting review</td><td>agent session</td></tr>
+<table class="tbl ">
+<caption>Ordered by recommendation, highest impact first.</caption>
+<thead><tr><th>Improvement</th><th>Proposal</th><th>Effort / cost</th><th>Impact / risk</th><th>Your decision</th></tr></thead><tbody>
+<tr><td><strong>S-01</strong> Make this dashboard the single canonical site and retire the duplicate dataset<div class="small">Two independently researched datasets are published side by side and disagree on the star count (72 vs 69), the hotel shortlist and the transit method. A reader cannot tell which to trust.</div></td><td>Keep this dashboard as the canonical dataset, move the older deep dive to an 'archive' page with a one-line explanation, and delete the cross-links that present them as equal.</td><td>1 hour<div class="small">0</div></td><td><span class="pill p-high">High impact</span><div class="small">risk: Low</div></td><td><select aria-label="Decision for S-01"><option>Pending</option><option>Do it</option><option>Skip</option><option>Discuss</option></select></td></tr>
+<tr><td><strong>S-02</strong> Replace modelled travel times with measured ones<div class="small">The one-hour rule is the brief's central constraint and it is currently a straight-line model.</div></td><td>Batch-query an MTA-scheduled journey planner for all 7 hotels x the star restaurants that matter, cache the JSON, and show the measured door-to-door minutes with the query time and date. Keep the model only as a fallback, clearly labelled.</td><td>3-4 hours<div class="small">0 (public API)</div></td><td><span class="pill p-high">High impact</span><div class="small">risk: Low</div></td><td><select aria-label="Decision for S-02"><option>Pending</option><option>Do it</option><option>Skip</option><option>Discuss</option></select></td></tr>
+<tr><td><strong>S-03</strong> Add a price-watch column with a re-check date<div class="small">Every price on the site is a 2026-11-25 snapshot, and the booking pages say promotions expire.</div></td><td>Add 'price checked on' and 're-check by' columns, and a single page listing every external URL with the date it was last read, so re-verification is a checklist rather than a memory exercise.</td><td>2 hours<div class="small">0</div></td><td><span class="pill p-high">High impact</span><div class="small">risk: None</div></td><td><select aria-label="Decision for S-03"><option>Pending</option><option>Do it</option><option>Skip</option><option>Discuss</option></select></td></tr>
+<tr><td><strong>S-04</strong> Finish the menu-price matrix from booking platforms<div class="small">Five of the eight priority restaurants have no price, which makes the dinner plan impossible to budget.</div></td><td>Open each venue's Resy or Tock page, where the tasting-menu price is shown before payment, and record it with the URL and the date. Where a venue only sells on the day, record that as the answer.</td><td>2 hours<div class="small">0</div></td><td><span class="pill p-high">High impact</span><div class="small">risk: Low</div></td><td><select aria-label="Decision for S-04"><option>Pending</option><option>Do it</option><option>Skip</option><option>Discuss</option></select></td></tr>
+<tr><td><strong>S-05</strong> Give every table a mobile card view, not just a scrolling table<div class="small">Seven-column tables on a 390px phone require horizontal scrolling, which is where readers give up.</div></td><td>Below 640px, render each row as a stacked card with the name, star level, hours and links visible without scrolling; keep the true table for desktop.</td><td>3 hours<div class="small">0</div></td><td><span class="pill p-high">High impact</span><div class="small">risk: Low</div></td><td><select aria-label="Decision for S-05"><option>Pending</option><option>Do it</option><option>Skip</option><option>Discuss</option></select></td></tr>
+<tr><td><strong>S-06</strong> Add a printable one-page trip card<div class="small">The site is a research document; on the day you need one page with addresses, hours and confirmation numbers.</div></td><td>A print stylesheet plus a single page containing only confirmed bookings, with blank fields for confirmation numbers that the traveller fills in.</td><td>2 hours<div class="small">0</div></td><td><span class="pill p-medium">Medium impact</span><div class="small">risk: None</div></td><td><select aria-label="Decision for S-06"><option>Pending</option><option>Do it</option><option>Skip</option><option>Discuss</option></select></td></tr>
+<tr><td><strong>S-07</strong> Automate the link and data-integrity check<div class="small">Manual checking does not scale past a few dozen rows and silently rots.</div></td><td>A script run on every commit that (a) checks every internal link resolves, (b) checks every external URL returns 200, (c) fails the build if a table row has no source, and (d) fails if any numeric cell is non-numeric.</td><td>4 hours<div class="small">0</div></td><td><span class="pill p-high">High impact</span><div class="small">risk: Low</div></td><td><select aria-label="Decision for S-07"><option>Pending</option><option>Do it</option><option>Skip</option><option>Discuss</option></select></td></tr>
+<tr><td><strong>S-08</strong> Separate 'starred' from 'guide-listed' into two visually distinct badges<div class="small">A reader can mistake a Bib Gourmand or a plain listing for a star.</div></td><td>Use one badge per distinction - three-star, two-star, one-star, Green Star, Bib Gourmand, Selected - with the badge drawn from MICHELIN's own icons and a legend at the top of the table.</td><td>1 hour<div class="small">0</div></td><td><span class="pill p-medium">Medium impact</span><div class="small">risk: None</div></td><td><select aria-label="Decision for S-08"><option>Pending</option><option>Do it</option><option>Skip</option><option>Discuss</option></select></td></tr>
+<tr><td><strong>S-09</strong> Show the all-in hotel cost, not the advertised rate<div class="small">Some rows include tax and some do not, so the cheapest-looking row is not always the cheapest.</div></td><td>Compute and display one 'total for 7 nights, taxes and fees included' figure per hotel in a single sortable column, and keep the advertised rate visible only as a secondary detail.</td><td>2 hours<div class="small">0</div></td><td><span class="pill p-high">High impact</span><div class="small">risk: Medium</div></td><td><select aria-label="Decision for S-09"><option>Pending</option><option>Do it</option><option>Skip</option><option>Discuss</option></select></td></tr>
+<tr><td><strong>S-10</strong> Add a February-specific weather and packing section<div class="small">February in New York is cold and the itinerary includes outdoor walks; nothing on the site warns about it.</div></td><td>Add a small panel with historical February temperature ranges from an official climate source and a packing list tied to the outdoor activities actually planned.</td><td>1 hour<div class="small">0</div></td><td><span class="pill p-medium">Medium impact</span><div class="small">risk: Low</div></td><td><select aria-label="Decision for S-10"><option>Pending</option><option>Do it</option><option>Skip</option><option>Discuss</option></select></td></tr>
+<tr><td><strong>S-11</strong> Replace social search links with verified posts wherever an account is confirmed<div class="small">Most social cells are search links, which is honest but not what the brief asked for.</div></td><td>Where an official account is verified, link two or three specific posts (the profile page exposes recent post URLs) instead of the profile. Where no account exists, keep the labelled search link.</td><td>3 hours<div class="small">0</div></td><td><span class="pill p-medium">Medium impact</span><div class="small">risk: Low</div></td><td><select aria-label="Decision for S-11"><option>Pending</option><option>Do it</option><option>Skip</option><option>Discuss</option></select></td></tr>
+<tr><td><strong>S-12</strong> Add a booking countdown and deadline tracker<div class="small">Eighty percent of the starred restaurants take reservations about 30 days ahead, and the hotel's free-cancellation deadline is 12 February 2027.</div></td><td>A dated checklist of the actions in the order they must happen, each with the exact deadline (open booking date, free-cancel date, ticket release date).</td><td>1 hour<div class="small">0</div></td><td><span class="pill p-high">High impact</span><div class="small">risk: None</div></td><td><select aria-label="Decision for S-12"><option>Pending</option><option>Do it</option><option>Skip</option><option>Discuss</option></select></td></tr>
 </tbody></table>
+<div class="cards">
+<div class="mcard">
+<div class="mcard-title"><strong>S-01</strong> Make this dashboard the single canonical site and retire the duplicate dataset<div class="small">Two independently researched datasets are published side by side and disagree on the star count (72 vs 69), the hotel shortlist and the transit method. A reader cannot tell which to trust.</div></div>
+<div class="mcard-row"><span class="k">Proposal</span><span class="v">Keep this dashboard as the canonical dataset, move the older deep dive to an 'archive' page with a one-line explanation, and delete the cross-links that present them as equal.</span></div>
+<div class="mcard-row"><span class="k">Effort</span><span class="v">1 hour<div class="small">0</div></span></div>
+<div class="mcard-row"><span class="k">Impact</span><span class="v"><span class="pill p-high">High impact</span><div class="small">risk: Low</div></span></div>
+<div class="mcard-row"><span class="k">Decision</span><span class="v"><select aria-label="Decision for S-01"><option>Pending</option><option>Do it</option><option>Skip</option><option>Discuss</option></select></span></div>
+</div>
+<div class="mcard">
+<div class="mcard-title"><strong>S-02</strong> Replace modelled travel times with measured ones<div class="small">The one-hour rule is the brief's central constraint and it is currently a straight-line model.</div></div>
+<div class="mcard-row"><span class="k">Proposal</span><span class="v">Batch-query an MTA-scheduled journey planner for all 7 hotels x the star restaurants that matter, cache the JSON, and show the measured door-to-door minutes with the query time and date. Keep the model only as a fallback, clearly labelled.</span></div>
+<div class="mcard-row"><span class="k">Effort</span><span class="v">3-4 hours<div class="small">0 (public API)</div></span></div>
+<div class="mcard-row"><span class="k">Impact</span><span class="v"><span class="pill p-high">High impact</span><div class="small">risk: Low</div></span></div>
+<div class="mcard-row"><span class="k">Decision</span><span class="v"><select aria-label="Decision for S-02"><option>Pending</option><option>Do it</option><option>Skip</option><option>Discuss</option></select></span></div>
+</div>
+<div class="mcard">
+<div class="mcard-title"><strong>S-03</strong> Add a price-watch column with a re-check date<div class="small">Every price on the site is a 2026-11-25 snapshot, and the booking pages say promotions expire.</div></div>
+<div class="mcard-row"><span class="k">Proposal</span><span class="v">Add 'price checked on' and 're-check by' columns, and a single page listing every external URL with the date it was last read, so re-verification is a checklist rather than a memory exercise.</span></div>
+<div class="mcard-row"><span class="k">Effort</span><span class="v">2 hours<div class="small">0</div></span></div>
+<div class="mcard-row"><span class="k">Impact</span><span class="v"><span class="pill p-high">High impact</span><div class="small">risk: None</div></span></div>
+<div class="mcard-row"><span class="k">Decision</span><span class="v"><select aria-label="Decision for S-03"><option>Pending</option><option>Do it</option><option>Skip</option><option>Discuss</option></select></span></div>
+</div>
+<div class="mcard">
+<div class="mcard-title"><strong>S-04</strong> Finish the menu-price matrix from booking platforms<div class="small">Five of the eight priority restaurants have no price, which makes the dinner plan impossible to budget.</div></div>
+<div class="mcard-row"><span class="k">Proposal</span><span class="v">Open each venue's Resy or Tock page, where the tasting-menu price is shown before payment, and record it with the URL and the date. Where a venue only sells on the day, record that as the answer.</span></div>
+<div class="mcard-row"><span class="k">Effort</span><span class="v">2 hours<div class="small">0</div></span></div>
+<div class="mcard-row"><span class="k">Impact</span><span class="v"><span class="pill p-high">High impact</span><div class="small">risk: Low</div></span></div>
+<div class="mcard-row"><span class="k">Decision</span><span class="v"><select aria-label="Decision for S-04"><option>Pending</option><option>Do it</option><option>Skip</option><option>Discuss</option></select></span></div>
+</div>
+<div class="mcard">
+<div class="mcard-title"><strong>S-05</strong> Give every table a mobile card view, not just a scrolling table<div class="small">Seven-column tables on a 390px phone require horizontal scrolling, which is where readers give up.</div></div>
+<div class="mcard-row"><span class="k">Proposal</span><span class="v">Below 640px, render each row as a stacked card with the name, star level, hours and links visible without scrolling; keep the true table for desktop.</span></div>
+<div class="mcard-row"><span class="k">Effort</span><span class="v">3 hours<div class="small">0</div></span></div>
+<div class="mcard-row"><span class="k">Impact</span><span class="v"><span class="pill p-high">High impact</span><div class="small">risk: Low</div></span></div>
+<div class="mcard-row"><span class="k">Decision</span><span class="v"><select aria-label="Decision for S-05"><option>Pending</option><option>Do it</option><option>Skip</option><option>Discuss</option></select></span></div>
+</div>
+<div class="mcard">
+<div class="mcard-title"><strong>S-06</strong> Add a printable one-page trip card<div class="small">The site is a research document; on the day you need one page with addresses, hours and confirmation numbers.</div></div>
+<div class="mcard-row"><span class="k">Proposal</span><span class="v">A print stylesheet plus a single page containing only confirmed bookings, with blank fields for confirmation numbers that the traveller fills in.</span></div>
+<div class="mcard-row"><span class="k">Effort</span><span class="v">2 hours<div class="small">0</div></span></div>
+<div class="mcard-row"><span class="k">Impact</span><span class="v"><span class="pill p-medium">Medium impact</span><div class="small">risk: None</div></span></div>
+<div class="mcard-row"><span class="k">Decision</span><span class="v"><select aria-label="Decision for S-06"><option>Pending</option><option>Do it</option><option>Skip</option><option>Discuss</option></select></span></div>
+</div>
+<div class="mcard">
+<div class="mcard-title"><strong>S-07</strong> Automate the link and data-integrity check<div class="small">Manual checking does not scale past a few dozen rows and silently rots.</div></div>
+<div class="mcard-row"><span class="k">Proposal</span><span class="v">A script run on every commit that (a) checks every internal link resolves, (b) checks every external URL returns 200, (c) fails the build if a table row has no source, and (d) fails if any numeric cell is non-numeric.</span></div>
+<div class="mcard-row"><span class="k">Effort</span><span class="v">4 hours<div class="small">0</div></span></div>
+<div class="mcard-row"><span class="k">Impact</span><span class="v"><span class="pill p-high">High impact</span><div class="small">risk: Low</div></span></div>
+<div class="mcard-row"><span class="k">Decision</span><span class="v"><select aria-label="Decision for S-07"><option>Pending</option><option>Do it</option><option>Skip</option><option>Discuss</option></select></span></div>
+</div>
+<div class="mcard">
+<div class="mcard-title"><strong>S-08</strong> Separate 'starred' from 'guide-listed' into two visually distinct badges<div class="small">A reader can mistake a Bib Gourmand or a plain listing for a star.</div></div>
+<div class="mcard-row"><span class="k">Proposal</span><span class="v">Use one badge per distinction - three-star, two-star, one-star, Green Star, Bib Gourmand, Selected - with the badge drawn from MICHELIN's own icons and a legend at the top of the table.</span></div>
+<div class="mcard-row"><span class="k">Effort</span><span class="v">1 hour<div class="small">0</div></span></div>
+<div class="mcard-row"><span class="k">Impact</span><span class="v"><span class="pill p-medium">Medium impact</span><div class="small">risk: None</div></span></div>
+<div class="mcard-row"><span class="k">Decision</span><span class="v"><select aria-label="Decision for S-08"><option>Pending</option><option>Do it</option><option>Skip</option><option>Discuss</option></select></span></div>
+</div>
+<div class="mcard">
+<div class="mcard-title"><strong>S-09</strong> Show the all-in hotel cost, not the advertised rate<div class="small">Some rows include tax and some do not, so the cheapest-looking row is not always the cheapest.</div></div>
+<div class="mcard-row"><span class="k">Proposal</span><span class="v">Compute and display one 'total for 7 nights, taxes and fees included' figure per hotel in a single sortable column, and keep the advertised rate visible only as a secondary detail.</span></div>
+<div class="mcard-row"><span class="k">Effort</span><span class="v">2 hours<div class="small">0</div></span></div>
+<div class="mcard-row"><span class="k">Impact</span><span class="v"><span class="pill p-high">High impact</span><div class="small">risk: Medium</div></span></div>
+<div class="mcard-row"><span class="k">Decision</span><span class="v"><select aria-label="Decision for S-09"><option>Pending</option><option>Do it</option><option>Skip</option><option>Discuss</option></select></span></div>
+</div>
+<div class="mcard">
+<div class="mcard-title"><strong>S-10</strong> Add a February-specific weather and packing section<div class="small">February in New York is cold and the itinerary includes outdoor walks; nothing on the site warns about it.</div></div>
+<div class="mcard-row"><span class="k">Proposal</span><span class="v">Add a small panel with historical February temperature ranges from an official climate source and a packing list tied to the outdoor activities actually planned.</span></div>
+<div class="mcard-row"><span class="k">Effort</span><span class="v">1 hour<div class="small">0</div></span></div>
+<div class="mcard-row"><span class="k">Impact</span><span class="v"><span class="pill p-medium">Medium impact</span><div class="small">risk: Low</div></span></div>
+<div class="mcard-row"><span class="k">Decision</span><span class="v"><select aria-label="Decision for S-10"><option>Pending</option><option>Do it</option><option>Skip</option><option>Discuss</option></select></span></div>
+</div>
+<div class="mcard">
+<div class="mcard-title"><strong>S-11</strong> Replace social search links with verified posts wherever an account is confirmed<div class="small">Most social cells are search links, which is honest but not what the brief asked for.</div></div>
+<div class="mcard-row"><span class="k">Proposal</span><span class="v">Where an official account is verified, link two or three specific posts (the profile page exposes recent post URLs) instead of the profile. Where no account exists, keep the labelled search link.</span></div>
+<div class="mcard-row"><span class="k">Effort</span><span class="v">3 hours<div class="small">0</div></span></div>
+<div class="mcard-row"><span class="k">Impact</span><span class="v"><span class="pill p-medium">Medium impact</span><div class="small">risk: Low</div></span></div>
+<div class="mcard-row"><span class="k">Decision</span><span class="v"><select aria-label="Decision for S-11"><option>Pending</option><option>Do it</option><option>Skip</option><option>Discuss</option></select></span></div>
+</div>
+<div class="mcard">
+<div class="mcard-title"><strong>S-12</strong> Add a booking countdown and deadline tracker<div class="small">Eighty percent of the starred restaurants take reservations about 30 days ahead, and the hotel's free-cancellation deadline is 12 February 2027.</div></div>
+<div class="mcard-row"><span class="k">Proposal</span><span class="v">A dated checklist of the actions in the order they must happen, each with the exact deadline (open booking date, free-cancel date, ticket release date).</span></div>
+<div class="mcard-row"><span class="k">Effort</span><span class="v">1 hour<div class="small">0</div></span></div>
+<div class="mcard-row"><span class="k">Impact</span><span class="v"><span class="pill p-high">High impact</span><div class="small">risk: None</div></span></div>
+<div class="mcard-row"><span class="k">Decision</span><span class="v"><select aria-label="Decision for S-12"><option>Pending</option><option>Do it</option><option>Skip</option><option>Discuss</option></select></span></div>
+</div>
+</div>
+
+<h2>If you only do three</h2>
+<div class="grid three">
+<div class="card"><h3>1 · S-02 Measured travel times</h3><p class="small">Turns the one-hour rule from a model into a measurement. Highest impact on the hotel ranking.</p></div>
+<div class="card"><h3>2 · S-01 One canonical site</h3><p class="small">Removes the second dataset that contradicts this one on stars, hotels and transit.</p></div>
+<div class="card"><h3>3 · S-04 Finish the menu prices</h3><p class="small">Makes the dining budget complete instead of partial.</p></div>
+</div>
+
+<h2>What I deliberately did not propose</h2>
+<div class="warnbox">
+<ul class="tight">
+<li><strong>Merging the two datasets into one table.</strong> They were researched independently and
+disagree; merging would silently pick a winner. Better to archive one (S-01).</li>
+<li><strong>Filling blank prices with "typical" values.</strong> It would make the site look complete and
+be worthless.</li>
+<li><strong>Guessing social handles</strong> for venues that publish none. A search link is honest; an
+invented handle is not.</li>
+</ul>
+</div>
 
 </main>
-<footer class="site"><div class="wrap">
-<p><strong>Build 2026-11-25</strong> · Prices and hours are point-in-time snapshots and must be re-checked before booking.
-Every value is either linked to a source on the row/page or left blank and listed on the
-<a href="flagged.html">Flagged for review</a> page. Derived numbers are labelled MODEL/DERIVED.</p>
-<p><a href="methodology.html">Method, verification tiers &amp; full source list</a> ·
-<a href="https://github.com/kanlerxz87-cyber/NYFun1" target="_blank" rel="noopener">Repository</a></p>
-</div></footer>
+<footer class="site">
+  <p><strong>Built 2026-11-25.</strong> Every figure on this site was read on an official page on that date
+  unless the row says otherwise. Prices and hours change; re-check before booking.
+  Rows that could not be verified are blank and listed on <a href="flagged.html">Flagged</a>.</p>
+  <p>Sources, method and the model's assumptions: <a href="method.html">Method &amp; sources</a> ·
+  Open decisions: <a href="questions.html">Questions</a> ·
+  Improvement ideas: <a href="suggestions.html">Suggestions</a></p>
+</footer>
 </body></html>

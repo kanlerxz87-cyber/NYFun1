@@ -1,0 +1,663 @@
+{
+ "meta": {
+  "source_article": "https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025",
+  "read_on": "2026-11-25",
+  "counts": {
+   "3": 5,
+   "2": 15,
+   "1": 52,
+   "total": 72
+  },
+  "live_list_note": "MICHELIN's own filtered list pages, read the same day, show 5 / 14 / 50 = 69. The three-restaurant gap is flagged (see Flaggled page, F-02) and the next ceremony is 14 Dec 2026."
+ },
+ "restaurants": [
+  {
+   "name": "Eleven Madison Park",
+   "stars": 3,
+   "cuisine": "Contemporary, Vegan",
+   "green": "no",
+   "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/eleven-madison-park",
+   "borough": "Manhattan",
+   "source": "MICHELIN Guide, 'All the Stars in The MICHELIN Guide to New York City 2025', 18 Nov 2025"
+  },
+  {
+   "name": "Jungsik",
+   "stars": 3,
+   "cuisine": "Korean",
+   "green": "no",
+   "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/jungsik-new-york",
+   "borough": "Manhattan",
+   "source": "MICHELIN Guide, 'All the Stars in The MICHELIN Guide to New York City 2025', 18 Nov 2025"
+  },
+  {
+   "name": "Le Bernardin",
+   "stars": 3,
+   "cuisine": "Seafood",
+   "green": "no",
+   "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/le-bernardin",
+   "borough": "Manhattan",
+   "source": "MICHELIN Guide, 'All the Stars in The MICHELIN Guide to New York City 2025', 18 Nov 2025"
+  },
+  {
+   "name": "Per Se",
+   "stars": 3,
+   "cuisine": "Contemporary, French",
+   "green": "no",
+   "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/per-se",
+   "borough": "Manhattan",
+   "source": "MICHELIN Guide, 'All the Stars in The MICHELIN Guide to New York City 2025', 18 Nov 2025"
+  },
+  {
+   "name": "Sushi Sho",
+   "stars": 3,
+   "cuisine": "Japanese, Sushi",
+   "green": "no",
+   "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/sushi-sho-1213976",
+   "borough": "Manhattan",
+   "source": "MICHELIN Guide, 'All the Stars in The MICHELIN Guide to New York City 2025', 18 Nov 2025"
+  },
+  {
+   "name": "Aquavit",
+   "stars": 2,
+   "cuisine": "Scandinavian",
+   "green": "no",
+   "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/aquavit",
+   "borough": "Manhattan",
+   "source": "MICHELIN Guide, 'All the Stars in The MICHELIN Guide to New York City 2025', 18 Nov 2025"
+  },
+  {
+   "name": "Aska",
+   "stars": 2,
+   "cuisine": "Scandinavian",
+   "green": "no",
+   "michelin_url": "https://guide.michelin.com/us/en/new-york-state/brooklyn/restaurant/aska",
+   "borough": "Brooklyn",
+   "source": "MICHELIN Guide, 'All the Stars in The MICHELIN Guide to New York City 2025', 18 Nov 2025"
+  },
+  {
+   "name": "Atera",
+   "stars": 2,
+   "cuisine": "Contemporary",
+   "green": "no",
+   "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/atera",
+   "borough": "Manhattan",
+   "source": "MICHELIN Guide, 'All the Stars in The MICHELIN Guide to New York City 2025', 18 Nov 2025"
+  },
+  {
+   "name": "Atomix",
+   "stars": 2,
+   "cuisine": "Korean",
+   "green": "no",
+   "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/atomix",
+   "borough": "Manhattan",
+   "source": "MICHELIN Guide, 'All the Stars in The MICHELIN Guide to New York City 2025', 18 Nov 2025"
+  },
+  {
+   "name": "Blue Hill at Stone Barns",
+   "stars": 2,
+   "cuisine": "American",
+   "green": "yes",
+   "michelin_url": "https://guide.michelin.com/us/en/new-york-state/tarrytown/restaurant/blue-hill-at-stone-barns",
+   "borough": "Tarrytown, NY (outside NYC)",
+   "source": "MICHELIN Guide, 'All the Stars in The MICHELIN Guide to New York City 2025', 18 Nov 2025"
+  },
+  {
+   "name": "César",
+   "stars": 2,
+   "cuisine": "Contemporary",
+   "green": "no",
+   "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/cesar",
+   "borough": "Manhattan",
+   "source": "MICHELIN Guide, 'All the Stars in The MICHELIN Guide to New York City 2025', 18 Nov 2025"
+  },
+  {
+   "name": "Chef's Table at Brooklyn Fare",
+   "stars": 2,
+   "cuisine": "Contemporary",
+   "green": "no",
+   "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/chef-s-table-at-brooklyn-fare",
+   "borough": "Manhattan",
+   "source": "MICHELIN Guide, 'All the Stars in The MICHELIN Guide to New York City 2025', 18 Nov 2025"
+  },
+  {
+   "name": "Gabriel Kreuther",
+   "stars": 2,
+   "cuisine": "French",
+   "green": "no",
+   "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/gabriel-kreuther",
+   "borough": "Manhattan",
+   "source": "MICHELIN Guide, 'All the Stars in The MICHELIN Guide to New York City 2025', 18 Nov 2025"
+  },
+  {
+   "name": "Jean-Georges",
+   "stars": 2,
+   "cuisine": "Contemporary",
+   "green": "no",
+   "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/jean-georges",
+   "borough": "Manhattan",
+   "source": "MICHELIN Guide, 'All the Stars in The MICHELIN Guide to New York City 2025', 18 Nov 2025"
+  },
+  {
+   "name": "Joo Ok",
+   "stars": 2,
+   "cuisine": "Korean",
+   "green": "no",
+   "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/joo-ok-1214822",
+   "borough": "Manhattan",
+   "source": "MICHELIN Guide, 'All the Stars in The MICHELIN Guide to New York City 2025', 18 Nov 2025"
+  },
+  {
+   "name": "Masa",
+   "stars": 2,
+   "cuisine": "Japanese",
+   "green": "no",
+   "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/masa",
+   "borough": "Manhattan",
+   "source": "MICHELIN Guide, 'All the Stars in The MICHELIN Guide to New York City 2025', 18 Nov 2025"
+  },
+  {
+   "name": "Odo",
+   "stars": 2,
+   "cuisine": "Japanese",
+   "green": "no",
+   "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/odo",
+   "borough": "Manhattan",
+   "source": "MICHELIN Guide, 'All the Stars in The MICHELIN Guide to New York City 2025', 18 Nov 2025"
+  },
+  {
+   "name": "Saga",
+   "stars": 2,
+   "cuisine": "Contemporary",
+   "green": "no",
+   "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/saga",
+   "borough": "Manhattan",
+   "source": "MICHELIN Guide, 'All the Stars in The MICHELIN Guide to New York City 2025', 18 Nov 2025"
+  },
+  {
+   "name": "Sushi Noz",
+   "stars": 2,
+   "cuisine": "Japanese",
+   "green": "no",
+   "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/sushi-noz",
+   "borough": "Manhattan",
+   "source": "MICHELIN Guide, 'All the Stars in The MICHELIN Guide to New York City 2025', 18 Nov 2025"
+  },
+  {
+   "name": "The Modern",
+   "stars": 2,
+   "cuisine": "Contemporary",
+   "green": "no",
+   "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/the-modern",
+   "borough": "Manhattan",
+   "source": "MICHELIN Guide, 'All the Stars in The MICHELIN Guide to New York City 2025', 18 Nov 2025"
+  },
+  {
+   "name": "63 Clinton",
+   "stars": 1,
+   "cuisine": "Contemporary",
+   "green": "no",
+   "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/63-clinton",
+   "borough": "Manhattan",
+   "source": "MICHELIN Guide, 'All the Stars in The MICHELIN Guide to New York City 2025', 18 Nov 2025"
+  },
+  {
+   "name": "Bar Miller",
+   "stars": 1,
+   "cuisine": "Japanese",
+   "green": "no",
+   "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/bar-miller",
+   "borough": "Manhattan",
+   "source": "MICHELIN Guide, 'All the Stars in The MICHELIN Guide to New York City 2025', 18 Nov 2025"
+  },
+  {
+   "name": "bōm",
+   "stars": 1,
+   "cuisine": "Korean",
+   "green": "no",
+   "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/bom",
+   "borough": "Manhattan",
+   "source": "MICHELIN Guide, 'All the Stars in The MICHELIN Guide to New York City 2025', 18 Nov 2025"
+  },
+  {
+   "name": "Bridges",
+   "stars": 1,
+   "cuisine": "Contemporary",
+   "green": "no",
+   "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/bridges-1216261",
+   "borough": "Manhattan",
+   "source": "MICHELIN Guide, 'All the Stars in The MICHELIN Guide to New York City 2025', 18 Nov 2025"
+  },
+  {
+   "name": "Café Boulud",
+   "stars": 1,
+   "cuisine": "French",
+   "green": "no",
+   "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/cafe-boulud",
+   "borough": "Manhattan",
+   "source": "MICHELIN Guide, 'All the Stars in The MICHELIN Guide to New York City 2025', 18 Nov 2025"
+  },
+  {
+   "name": "Casa Mono",
+   "stars": 1,
+   "cuisine": "Spanish",
+   "green": "no",
+   "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/casa-mono",
+   "borough": "Manhattan",
+   "source": "MICHELIN Guide, 'All the Stars in The MICHELIN Guide to New York City 2025', 18 Nov 2025"
+  },
+  {
+   "name": "Corima",
+   "stars": 1,
+   "cuisine": "Mexican",
+   "green": "no",
+   "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/corima",
+   "borough": "Manhattan",
+   "source": "MICHELIN Guide, 'All the Stars in The MICHELIN Guide to New York City 2025', 18 Nov 2025"
+  },
+  {
+   "name": "Cote",
+   "stars": 1,
+   "cuisine": "Korean",
+   "green": "no",
+   "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/cote",
+   "borough": "Manhattan",
+   "source": "MICHELIN Guide, 'All the Stars in The MICHELIN Guide to New York City 2025', 18 Nov 2025"
+  },
+  {
+   "name": "Crown Shy",
+   "stars": 1,
+   "cuisine": "Contemporary",
+   "green": "no",
+   "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/crown-shy",
+   "borough": "Manhattan",
+   "source": "MICHELIN Guide, 'All the Stars in The MICHELIN Guide to New York City 2025', 18 Nov 2025"
+  },
+  {
+   "name": "Daniel",
+   "stars": 1,
+   "cuisine": "French",
+   "green": "no",
+   "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/daniel",
+   "borough": "Manhattan",
+   "source": "MICHELIN Guide, 'All the Stars in The MICHELIN Guide to New York City 2025', 18 Nov 2025"
+  },
+  {
+   "name": "Dirt Candy",
+   "stars": 1,
+   "cuisine": "Vegetarian",
+   "green": "yes",
+   "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/dirt-candy",
+   "borough": "Manhattan",
+   "source": "MICHELIN Guide, 'All the Stars in The MICHELIN Guide to New York City 2025', 18 Nov 2025"
+  },
+  {
+   "name": "Essential by Christophe",
+   "stars": 1,
+   "cuisine": "French Contemporary",
+   "green": "no",
+   "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/essential-by-christophe",
+   "borough": "Manhattan",
+   "source": "MICHELIN Guide, 'All the Stars in The MICHELIN Guide to New York City 2025', 18 Nov 2025"
+  },
+  {
+   "name": "Estela",
+   "stars": 1,
+   "cuisine": "Contemporary",
+   "green": "no",
+   "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/estela",
+   "borough": "Manhattan",
+   "source": "MICHELIN Guide, 'All the Stars in The MICHELIN Guide to New York City 2025', 18 Nov 2025"
+  },
+  {
+   "name": "Family Meal at Blue Hill",
+   "stars": 1,
+   "cuisine": "American",
+   "green": "yes",
+   "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/blue-hill",
+   "borough": "Manhattan",
+   "source": "MICHELIN Guide, 'All the Stars in The MICHELIN Guide to New York City 2025', 18 Nov 2025"
+  },
+  {
+   "name": "Francie",
+   "stars": 1,
+   "cuisine": "Contemporary",
+   "green": "no",
+   "michelin_url": "https://guide.michelin.com/us/en/new-york-state/brooklyn/restaurant/francie",
+   "borough": "Brooklyn",
+   "source": "MICHELIN Guide, 'All the Stars in The MICHELIN Guide to New York City 2025', 18 Nov 2025"
+  },
+  {
+   "name": "Frevo",
+   "stars": 1,
+   "cuisine": "Contemporary",
+   "green": "no",
+   "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/frevo",
+   "borough": "Manhattan",
+   "source": "MICHELIN Guide, 'All the Stars in The MICHELIN Guide to New York City 2025', 18 Nov 2025"
+  },
+  {
+   "name": "Gramercy Tavern",
+   "stars": 1,
+   "cuisine": "Contemporary",
+   "green": "no",
+   "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/gramercy-tavern",
+   "borough": "Manhattan",
+   "source": "MICHELIN Guide, 'All the Stars in The MICHELIN Guide to New York City 2025', 18 Nov 2025"
+  },
+  {
+   "name": "Huso",
+   "stars": 1,
+   "cuisine": "Contemporary",
+   "green": "no",
+   "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/huso-1218089",
+   "borough": "Manhattan",
+   "source": "MICHELIN Guide, 'All the Stars in The MICHELIN Guide to New York City 2025', 18 Nov 2025"
+  },
+  {
+   "name": "Icca",
+   "stars": 1,
+   "cuisine": "Japanese",
+   "green": "no",
+   "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/icca",
+   "borough": "Manhattan",
+   "source": "MICHELIN Guide, 'All the Stars in The MICHELIN Guide to New York City 2025', 18 Nov 2025"
+  },
+  {
+   "name": "Jeju Noodle Bar",
+   "stars": 1,
+   "cuisine": "Korean",
+   "green": "no",
+   "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/jeju-noodle-bar",
+   "borough": "Manhattan",
+   "source": "MICHELIN Guide, 'All the Stars in The MICHELIN Guide to New York City 2025', 18 Nov 2025"
+  },
+  {
+   "name": "Jōji",
+   "stars": 1,
+   "cuisine": "Japanese",
+   "green": "no",
+   "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/joji",
+   "borough": "Manhattan",
+   "source": "MICHELIN Guide, 'All the Stars in The MICHELIN Guide to New York City 2025', 18 Nov 2025"
+  },
+  {
+   "name": "Jua",
+   "stars": 1,
+   "cuisine": "Korean",
+   "green": "no",
+   "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/jua",
+   "borough": "Manhattan",
+   "source": "MICHELIN Guide, 'All the Stars in The MICHELIN Guide to New York City 2025', 18 Nov 2025"
+  },
+  {
+   "name": "Kochi",
+   "stars": 1,
+   "cuisine": "Korean",
+   "green": "no",
+   "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/kochi",
+   "borough": "Manhattan",
+   "source": "MICHELIN Guide, 'All the Stars in The MICHELIN Guide to New York City 2025', 18 Nov 2025"
+  },
+  {
+   "name": "Kosaka",
+   "stars": 1,
+   "cuisine": "Japanese",
+   "green": "no",
+   "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/kosaka",
+   "borough": "Manhattan",
+   "source": "MICHELIN Guide, 'All the Stars in The MICHELIN Guide to New York City 2025', 18 Nov 2025"
+  },
+  {
+   "name": "L'Abeille",
+   "stars": 1,
+   "cuisine": "French",
+   "green": "no",
+   "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/l%E2%80%99abeille",
+   "borough": "Manhattan",
+   "source": "MICHELIN Guide, 'All the Stars in The MICHELIN Guide to New York City 2025', 18 Nov 2025"
+  },
+  {
+   "name": "La Bastide by Andrea Calstier",
+   "stars": 1,
+   "cuisine": "French",
+   "green": "no",
+   "michelin_url": "https://guide.michelin.com/us/en/new-york-state/north-salem/restaurant/la-bastide-by-andrea-calstier",
+   "borough": "North Salem, NY (outside NYC)",
+   "source": "MICHELIN Guide, 'All the Stars in The MICHELIN Guide to New York City 2025', 18 Nov 2025"
+  },
+  {
+   "name": "Le Coucou",
+   "stars": 1,
+   "cuisine": "French",
+   "green": "no",
+   "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/le-coucou",
+   "borough": "Manhattan",
+   "source": "MICHELIN Guide, 'All the Stars in The MICHELIN Guide to New York City 2025', 18 Nov 2025"
+  },
+  {
+   "name": "Le Pavillon",
+   "stars": 1,
+   "cuisine": "French",
+   "green": "no",
+   "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/le-pavillon-1192744",
+   "borough": "Manhattan",
+   "source": "MICHELIN Guide, 'All the Stars in The MICHELIN Guide to New York City 2025', 18 Nov 2025"
+  },
+  {
+   "name": "Mari",
+   "stars": 1,
+   "cuisine": "Korean",
+   "green": "no",
+   "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/mari",
+   "borough": "Manhattan",
+   "source": "MICHELIN Guide, 'All the Stars in The MICHELIN Guide to New York City 2025', 18 Nov 2025"
+  },
+  {
+   "name": "Meju",
+   "stars": 1,
+   "cuisine": "Korean",
+   "green": "no",
+   "michelin_url": "https://guide.michelin.com/us/en/new-york-state/queens/restaurant/meju",
+   "borough": "Queens",
+   "source": "MICHELIN Guide, 'All the Stars in The MICHELIN Guide to New York City 2025', 18 Nov 2025"
+  },
+  {
+   "name": "Muku",
+   "stars": 1,
+   "cuisine": "Japanese",
+   "green": "no",
+   "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/muku",
+   "borough": "Manhattan",
+   "source": "MICHELIN Guide, 'All the Stars in The MICHELIN Guide to New York City 2025', 18 Nov 2025"
+  },
+  {
+   "name": "Noda",
+   "stars": 1,
+   "cuisine": "Japanese",
+   "green": "no",
+   "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/noda",
+   "borough": "Manhattan",
+   "source": "MICHELIN Guide, 'All the Stars in The MICHELIN Guide to New York City 2025', 18 Nov 2025"
+  },
+  {
+   "name": "Nōksu",
+   "stars": 1,
+   "cuisine": "Contemporary",
+   "green": "no",
+   "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/noksu",
+   "borough": "Manhattan",
+   "source": "MICHELIN Guide, 'All the Stars in The MICHELIN Guide to New York City 2025', 18 Nov 2025"
+  },
+  {
+   "name": "Noz 17",
+   "stars": 1,
+   "cuisine": "Japanese",
+   "green": "no",
+   "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/noz17",
+   "borough": "Manhattan",
+   "source": "MICHELIN Guide, 'All the Stars in The MICHELIN Guide to New York City 2025', 18 Nov 2025"
+  },
+  {
+   "name": "Oiji Mi",
+   "stars": 1,
+   "cuisine": "Korean",
+   "green": "no",
+   "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/oiji-mi",
+   "borough": "Manhattan",
+   "source": "MICHELIN Guide, 'All the Stars in The MICHELIN Guide to New York City 2025', 18 Nov 2025"
+  },
+  {
+   "name": "Oxomoco",
+   "stars": 1,
+   "cuisine": "Mexican",
+   "green": "no",
+   "michelin_url": "https://guide.michelin.com/us/en/new-york-state/brooklyn/restaurant/oxomoco",
+   "borough": "Brooklyn",
+   "source": "MICHELIN Guide, 'All the Stars in The MICHELIN Guide to New York City 2025', 18 Nov 2025"
+  },
+  {
+   "name": "Restaurant Yuu",
+   "stars": 1,
+   "cuisine": "French Contemporary",
+   "green": "no",
+   "michelin_url": "https://guide.michelin.com/us/en/new-york-state/brooklyn/restaurant/restaurant-yuu",
+   "borough": "Brooklyn",
+   "source": "MICHELIN Guide, 'All the Stars in The MICHELIN Guide to New York City 2025', 18 Nov 2025"
+  },
+  {
+   "name": "Rezdôra",
+   "stars": 1,
+   "cuisine": "Italian",
+   "green": "no",
+   "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/rezdora-osteria-emiliana",
+   "borough": "Manhattan",
+   "source": "MICHELIN Guide, 'All the Stars in The MICHELIN Guide to New York City 2025', 18 Nov 2025"
+  },
+  {
+   "name": "Semma",
+   "stars": 1,
+   "cuisine": "Indian",
+   "green": "no",
+   "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/semma",
+   "borough": "Manhattan",
+   "source": "MICHELIN Guide, 'All the Stars in The MICHELIN Guide to New York City 2025', 18 Nov 2025"
+  },
+  {
+   "name": "Shion 69 Leonard Street",
+   "stars": 1,
+   "cuisine": "Japanese",
+   "green": "no",
+   "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/shoji-at-69-leonard",
+   "borough": "Manhattan",
+   "source": "MICHELIN Guide, 'All the Stars in The MICHELIN Guide to New York City 2025', 18 Nov 2025"
+  },
+  {
+   "name": "Shmoné",
+   "stars": 1,
+   "cuisine": "Israeli",
+   "green": "no",
+   "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/shmone",
+   "borough": "Manhattan",
+   "source": "MICHELIN Guide, 'All the Stars in The MICHELIN Guide to New York City 2025', 18 Nov 2025"
+  },
+  {
+   "name": "Shota Omakase",
+   "stars": 1,
+   "cuisine": "Japanese",
+   "green": "no",
+   "michelin_url": "https://guide.michelin.com/us/en/new-york-state/brooklyn/restaurant/shota-omakase",
+   "borough": "Brooklyn",
+   "source": "MICHELIN Guide, 'All the Stars in The MICHELIN Guide to New York City 2025', 18 Nov 2025"
+  },
+  {
+   "name": "Sushi Nakazawa",
+   "stars": 1,
+   "cuisine": "Japanese",
+   "green": "no",
+   "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/sushi-nakazawa",
+   "borough": "Manhattan",
+   "source": "MICHELIN Guide, 'All the Stars in The MICHELIN Guide to New York City 2025', 18 Nov 2025"
+  },
+  {
+   "name": "Tempura Matsui",
+   "stars": 1,
+   "cuisine": "Japanese",
+   "green": "no",
+   "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/tempura-matsui",
+   "borough": "Manhattan",
+   "source": "MICHELIN Guide, 'All the Stars in The MICHELIN Guide to New York City 2025', 18 Nov 2025"
+  },
+  {
+   "name": "The Four Horsemen",
+   "stars": 1,
+   "cuisine": "American",
+   "green": "no",
+   "michelin_url": "https://guide.michelin.com/us/en/new-york-state/brooklyn/restaurant/the-four-horsemen",
+   "borough": "Brooklyn",
+   "source": "MICHELIN Guide, 'All the Stars in The MICHELIN Guide to New York City 2025', 18 Nov 2025"
+  },
+  {
+   "name": "Torien",
+   "stars": 1,
+   "cuisine": "Japanese",
+   "green": "no",
+   "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/torien",
+   "borough": "Manhattan",
+   "source": "MICHELIN Guide, 'All the Stars in The MICHELIN Guide to New York City 2025', 18 Nov 2025"
+  },
+  {
+   "name": "Torrisi",
+   "stars": 1,
+   "cuisine": "Contemporary",
+   "green": "no",
+   "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/torrisi",
+   "borough": "Manhattan",
+   "source": "MICHELIN Guide, 'All the Stars in The MICHELIN Guide to New York City 2025', 18 Nov 2025"
+  },
+  {
+   "name": "Tsukimi",
+   "stars": 1,
+   "cuisine": "Japanese",
+   "green": "no",
+   "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/tsukimi",
+   "borough": "Manhattan",
+   "source": "MICHELIN Guide, 'All the Stars in The MICHELIN Guide to New York City 2025', 18 Nov 2025"
+  },
+  {
+   "name": "Tuome",
+   "stars": 1,
+   "cuisine": "Fusion",
+   "green": "no",
+   "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/tuome",
+   "borough": "Manhattan",
+   "source": "MICHELIN Guide, 'All the Stars in The MICHELIN Guide to New York City 2025', 18 Nov 2025"
+  },
+  {
+   "name": "Yamada",
+   "stars": 1,
+   "cuisine": "Japanese",
+   "green": "no",
+   "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/yamada",
+   "borough": "Manhattan",
+   "source": "MICHELIN Guide, 'All the Stars in The MICHELIN Guide to New York City 2025', 18 Nov 2025"
+  },
+  {
+   "name": "YingTao",
+   "stars": 1,
+   "cuisine": "Contemporary",
+   "green": "no",
+   "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/yingtao",
+   "borough": "Manhattan",
+   "source": "MICHELIN Guide, 'All the Stars in The MICHELIN Guide to New York City 2025', 18 Nov 2025"
+  },
+  {
+   "name": "Yoshino",
+   "stars": 1,
+   "cuisine": "Japanese",
+   "green": "no",
+   "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/yoshino-1185037",
+   "borough": "Manhattan",
+   "source": "MICHELIN Guide, 'All the Stars in The MICHELIN Guide to New York City 2025', 18 Nov 2025"
+  }
+ ]
+}
