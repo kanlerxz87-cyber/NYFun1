@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NYC Trip Planning | NYFun1</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <h1>NYC Trip Planning Dashboard</h1>
+    <p>1–2 week couple trip (2 adults) · Window: 2027-02-15 to 2027-03-23 · Preferred: 2027-02-15 to 2027-02-18</p>
+  </div>
+</header>
+<nav>
+  <div class="wrap">
+    <a class="active" href="index.html">Overview</a>
+    <a href="hotels.html">Hotels</a>
+    <a href="restaurants.html">Michelin Restaurants</a>
+    <a href="analysis.html">Clusters & Transit</a>
+    <a href="planning.html">Planning & Questions</a>
+    <a href="suggestions.html">Suggestions</a>
+    <a href="review.html">Flagged for Review</a>
+  </div>
+</nav>
+<main><div class="wrap">
+
+  <div class="note warn">
+    <strong>Verification status: in progress.</strong> This site was generated in a single agent session on 2026-11-25. Every table row should have an official source link; values that could not be confirmed from an official source are left blank and flagged as <span class="badge danger">Unverified</span>. No values were inferred. Real-time hotel pricing for Feb–Mar 2027 is dynamic and may require manual confirmation on official/booking pages for the exact dates.
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Trip Window</h3>
+      <div class="kpi">Feb 15 – Mar 23, 2027</div>
+      <p class="muted">Preferred: 2027-02-15 to 2027-02-18 (3 nights). Request also asks for 7-night hotel cost comparison and cheapest upcoming booking time.</p>
+    </div>
+    <div class="card">
+      <h3>Travelers</h3>
+      <div class="kpi">2 adults</div>
+      <p class="muted">Hotel requirements: private bathroom; queen bed or equivalent/bigger.</p>
+    </div>
+    <div class="card">
+      <h3>Michelin Source</h3>
+      <div class="kpi">Official Guide</div>
+      <p class="muted">Primary starred list source: <a href="https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025" target="_blank" rel="noopener">MICHELIN Guide NYC 2025 ceremony article</a>. All-starred listing: <a href="https://guide.michelin.com/en/us/new-york-state/new-york/restaurants/all-starred" target="_blank" rel="noopener">MICHELIN Guide all starred</a>.</p>
+    </div>
+    <div class="card">
+      <h3>Transit Constraint</h3>
+      <div class="kpi">≤ 1 hour</div>
+      <p class="muted">Activities/restaurants should be reachable within ~1 hour by subway or bus from selected hotel. Transit estimates require verification via official MTA/route planner for specific dates/times.</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <h2>Executive Summary</h2>
+    <p class="lead">High-level findings based on verified official sources available during this session. Unverified items are explicitly flagged.</p>
+    <div class="card">
+      <ul class="clean">
+        <li><strong>Dates:</strong> Preferred stay is 2027-02-15–2027-02-18 (Mon–Thu, 3 nights). The broader allowed window is 2027-02-15–2027-03-23. A 7-night comparison is required by the request; cheapest 7-night dates in that window are <span class="badge danger">Unverified</span> because live 2027 pricing is dynamic and not fully verifiable via static official pages.</li>
+        <li><strong>Michelin landscape (official 2025 ceremony source):</strong> The MICHELIN Guide NYC 2025 ceremony article lists Sushi Sho as a new Three Star; Joo Ok promoted to Two Stars; Bridges, Huso, Muku, Yamada as new One Stars. Source: <a href="https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025" target="_blank" rel="noopener">official ceremony article</a>.</li>
+        <li><strong>Count discrepancy (flagged):</strong> The ceremony article text enumerates 5 Three-Star, 15 Two-Star, and 50 One-Star restaurants (70 starred entries) in the sections extracted; the MICHELIN all-starred filter page shows 5 Three-Star, 14 Two-Star, 50 One-Star (69 total). This discrepancy is flagged for manual review before decisions rely on counts.</li>
+        <li><strong>Hotel clustering:</strong> Midtown Manhattan and nearby Flatiron/NoMad/Tribeca areas have dense Michelin coverage. A final hotel ranking by “Michelin restaurants within 1 hour subway/bus” requires verified restaurant addresses, hotel addresses, and transit routing - partially incomplete in this session and flagged.</li>
+        <li><strong>Hotel pricing:</strong> No 2027 hotel prices are presented as verified facts unless confirmed from an official source. The Hotels page provides a candidate framework and flags all unconfirmed pricing/date fields.</li>
+        <li><strong>Recommendation:</strong> Do not book based on unverified pricing or unverified transit assumptions. Use the Planning & Questions and Flagged for Review pages to resolve gaps first.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Site Map</h2>
+    <div class="grid">
+      <div class="card"><h3><a href="hotels.html">Hotels</a></h3><p class="muted">Candidate hotels, required amenities, 7-night pricing framework, booking-window notes, and verification flags.</p></div>
+      <div class="card"><h3><a href="restaurants.html">Michelin Restaurants</a></h3><p class="muted">Starred restaurants from official 2025 ceremony source, with distinction, cuisine, source links, and unverified-field flags.</p></div>
+      <div class="card"><h3><a href="analysis.html">Clusters & Transit</a></h3><p class="muted">Cluster analysis approach, 1-hour transit constraint, and what must be verified before ranking hotels.</p></div>
+      <div class="card"><h3><a href="planning.html">Planning & Questions</a></h3><p class="muted">Executive planning details, open questions, missing information, and decision blockers.</p></div>
+      <div class="card"><h3><a href="suggestions.html">Suggestions</a></h3><p class="muted">Improvement suggestions for decision-making and site/data quality. No implementation without review.</p></div>
+      <div class="card"><h3><a href="review.html">Flagged for Review</a></h3><p class="muted">Irregularities, discrepancies, and unverified items requiring manual review.</p></div>
+    </div>
+  </section>
+
+</div></main>
+<footer><div class="wrap">
+  <div>NYFun1 · Branch <code>arena/0558efa5-nyfun1</code> · Generated 2026-11-25 · <a href="https://github.com/kanlerxz87-cyber/NYFun1">Repository</a></div>
+  <div class="small">Data policy: no inferred values. Unverified values are blank/flagged with source context.</div>
+</div></footer>
+<script src="assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clusters &amp; Transit | NYFun1</title><link rel="stylesheet" href="assets/style.css"></head><body>
+<header><div class="wrap"><h1>Clusters &amp; Transit</h1><p>Michelin cluster analysis and 1-hour subway/bus constraint methodology.</p></div></header>
+<nav><div class="wrap">
+  <a href="index.html">Overview</a>
+  <a href="hotels.html">Hotels</a>
+  <a href="restaurants.html">Michelin Restaurants</a>
+  <a href="activities.html">Activities</a>
+  <a class="active" href="analysis.html">Clusters & Transit</a>
+  <a href="planning.html">Planning & Questions</a>
+  <a href="suggestions.html">Suggestions</a>
+  <a href="review.html">Flagged for Review</a>
+</div></nav>
+<main><div class="wrap">
+<div class="note warn"><strong>Methodology note.</strong> This page defines the clustering/ranking method required by the user. Actual transit-time calculations are <span class="badge danger">Unverified</span> in this session because verified addresses and route times were not fully collected.</div>
+
+<section class="section">
+  <h2>Required Ranking Logic</h2>
+  <div class="card">
+    <ol class="clean">
+      <li><strong>Hotel candidates</strong> must meet: 2 adults, private bathroom, queen bed or equivalent/bigger.</li>
+      <li><strong>Restaurant universe</strong>: Michelin-starred and Michelin Guide-listed/selected restaurants; distinguish starred vs listed.</li>
+      <li><strong>Cluster metric</strong>: count Michelin restaurants reachable within ≤ 60 minutes by subway or bus from hotel (door-to-door estimate, documented assumptions).</li>
+      <li><strong>Ranking</strong>: primary = Michelin density within 1 hour; secondary = verified total 7-night price; tertiary = room compliance confidence and transit convenience.</li>
+      <li><strong>Verification</strong>: every address, travel time, and price must have an official/traceable source or be flagged unverified.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Candidate Clusters (Preliminary, Needs Verification)</h2>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Cluster</th><th>Why relevant</th><th>Example starred restaurants nearby (from Michelin URLs/pages)</th><th>Transit access</th><th>Verification</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>Midtown West / Columbus Circle / Times Square area</td>
+        <td>High concentration of starred dining and major subway lines; close to Per Se, Masa, Le Bernardin area.</td>
+        <td>Per Se, Masa, Le Bernardin (Michelin pages: <a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/per-se" target="_blank" rel="noopener">Per Se</a>, <a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/masa" target="_blank" rel="noopener">Masa</a>, <a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/le-bernardin" target="_blank" rel="noopener">Le Bernardin</a>)</td>
+        <td><span class="badge danger">Unverified</span></td>
+        <td><span class="badge warn">Partial</span> - restaurant presence verified via Michelin; travel times unverified.</td>
+      </tr>
+      <tr>
+        <td>Midtown East / 50s</td>
+        <td>Near Aquavit, Le Pavillon, Sushi Sho, The Modern and Grand Central transit hub.</td>
+        <td>Aquavit, Le Pavillon, Sushi Sho, The Modern (<a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/aquavit" target="_blank" rel="noopener">Aquavit</a>, <a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/le-pavillon-1192744" target="_blank" rel="noopener">Le Pavillon</a>, <a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/sushi-sho-1213976" target="_blank" rel="noopener">Sushi Sho</a>, <a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/the-modern" target="_blank" rel="noopener">The Modern</a>)</td>
+        <td><span class="badge danger">Unverified</span></td>
+        <td><span class="badge warn">Partial</span></td>
+      </tr>
+      <tr>
+        <td>Flatiron / NoMad / Union Square</td>
+        <td>Dense dining and subway access; near Eleven Madison Park, Cote, Oiji Mi, Noda, Jua, etc.</td>
+        <td>Eleven Madison Park, Cote, Jua, Noda (<a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/eleven-madison-park" target="_blank" rel="noopener">EMP</a>, <a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/cote" target="_blank" rel="noopener">Cote</a>, <a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/jua" target="_blank" rel="noopener">Jua</a>, <a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/noda" target="_blank" rel="noopener">Noda</a>)</td>
+        <td><span class="badge danger">Unverified</span></td>
+        <td><span class="badge warn">Partial</span></td>
+      </tr>
+      <tr>
+        <td>Greenwich Village / SoHo / Tribeca</td>
+        <td>Strong one-star density and walkability; near Le Coucou, Estela, Jeju Noodle Bar, Shion 69 Leonard.</td>
+        <td>Le Coucou, Estela, Jeju Noodle Bar (<a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/le-coucou" target="_blank" rel="noopener">Le Coucou</a>, <a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/estela" target="_blank" rel="noopener">Estela</a>, <a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/jeju-noodle-bar" target="_blank" rel="noopener">Jeju Noodle Bar</a>)</td>
+        <td><span class="badge danger">Unverified</span></td>
+        <td><span class="badge warn">Partial</span></td>
+      </tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section class="section">
+  <h2>Transit Verification Sources (to use)</h2>
+  <div class="card">
+    <ul class="clean">
+      <li><a href="https://www.mta.info/" target="_blank" rel="noopener">MTA (official)</a> - service status, maps, schedules.</li>
+      <li><a href="https://new.mta.info/map/5256" target="_blank" rel="noopener">MTA Subway Map</a> - official subway map.</li>
+      <li>Trip planners (Google Maps/Citymapper) can estimate times but should be labeled as estimates; verify against MTA service patterns for Feb-Mar 2027.</li>
+    </ul>
+  </div>
+</section>
+</div></main>
+<footer><div class="wrap"><div class="small">NYFun1 · Branch <code>arena/0558efa5-nyfun1</code> · Generated 2026-11-25 · No inferred values; unverified fields flagged.</div></div></footer>
+<script src="assets/app.js"></script></body></html>

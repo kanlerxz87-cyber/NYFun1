@@ -1,0 +1,84 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flagged for Review | NYFun1</title><link rel="stylesheet" href="assets/style.css"></head><body>
+<header><div class="wrap"><h1>Flagged for Review</h1><p>Irregularities, discrepancies, and unverified items requiring manual review.</p></div></header>
+<nav><div class="wrap">
+  <a href="index.html">Overview</a>
+  <a href="hotels.html">Hotels</a>
+  <a href="restaurants.html">Michelin Restaurants</a>
+  <a href="activities.html">Activities</a>
+  <a href="analysis.html">Clusters & Transit</a>
+  <a href="planning.html">Planning & Questions</a>
+  <a href="suggestions.html">Suggestions</a>
+  <a class="active" href="review.html">Flagged for Review</a>
+</div></nav>
+<main><div class="wrap">
+<div class="note danger"><strong>Flagged for Review.</strong> Items below are unresolved, discrepant, or unverified. They do not block reading the site but they block confident decision-making.</div>
+
+<section class="section">
+  <h2>Irregularities / Discrepancies</h2>
+  <div class="table-wrap"><table>
+    <thead><tr><th>ID</th><th>Item</th><th>Observed</th><th>Source(s)</th><th>Risk</th><th>Recommended action</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>F1</td>
+        <td>Michelin starred count discrepancy</td>
+        <td>Ceremony article extraction yielded 72 starred rows (5 three, 15 two, 52 one by section parsing). All-starred listing filter shows 69 total (5 three, 14 two, 50 one).</td>
+        <td><a href="https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025" target="_blank" rel="noopener">Ceremony article</a>; <a href="https://guide.michelin.com/en/us/new-york-state/new-york/restaurants/all-starred" target="_blank" rel="noopener">All-starred listing</a></td>
+        <td>High - may over/under count restaurants and affect cluster ranking.</td>
+        <td>Manually reconcile every row against current Michelin restaurant pages; remove/adjust any non-current entries.</td>
+        <td><span class="badge danger">Needs review</span></td>
+      </tr>
+      <tr>
+        <td>F2</td>
+        <td>Hotel 2027 pricing not verified</td>
+        <td>No hotel total prices for 7-night stays in Feb 15–Mar 23 2027 were confirmed from official booking flows in this session.</td>
+        <td>Hotels page notes; no verified price source captured.</td>
+        <td>High - user requested real verified pricing and cheapest booking window.</td>
+        <td>Collect official booking totals for exact dates/room types; record timestamp and URL.</td>
+        <td><span class="badge danger">Needs review</span></td>
+      </tr>
+      <tr>
+        <td>F3</td>
+        <td>Restaurant cost/hours/social links incomplete</td>
+        <td>Most restaurant rows have unverified cost, hours, and social links.</td>
+        <td><a href="restaurants.html">Restaurants table</a></td>
+        <td>High - user requested these fields for every listed restaurant/activity.</td>
+        <td>Prioritize shortlisted restaurants near selected hotel; verify from official restaurant sites and official social profiles.</td>
+        <td><span class="badge danger">Needs review</span></td>
+      </tr>
+      <tr>
+        <td>F4</td>
+        <td>Transit 1-hour constraint not computed</td>
+        <td>No verified subway/bus travel-time matrix was produced.</td>
+        <td><a href="analysis.html">Analysis page</a></td>
+        <td>High - required for hotel ranking.</td>
+        <td>Compute travel times using MTA/official trip planner for candidate hotel addresses and restaurant addresses.</td>
+        <td><span class="badge danger">Needs review</span></td>
+      </tr>
+      <tr>
+        <td>F5</td>
+        <td>Michelin Selected (non-starred) not fully enumerated</td>
+        <td>User asked for "michelin rated and micheln star restaurants... listed in the michelin guide or currently have a michelin star". Only starred extraction included.</td>
+        <td><a href="https://guide.michelin.com/en/us/new-york-state/new-york/restaurants" target="_blank" rel="noopener">Michelin NYC restaurants</a></td>
+        <td>Medium - incomplete coverage.</td>
+        <td>Add a verified Michelin Selected table with same fields and source links.</td>
+        <td><span class="badge warn">Needs review</span></td>
+      </tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section class="section">
+  <h2>Verification Log (Session 0558efa5)</h2>
+  <div class="card">
+    <ul class="clean">
+      <li><strong>2026-11-25:</strong> Fetched <a href="https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025" target="_blank" rel="noopener">MICHELIN Guide NYC 2025 ceremony article</a>. Extracted starred restaurant names/cuisines/URLs from article body. Status: partial verification (name/star/cuisine/URL only).</li>
+      <li><strong>2026-11-25:</strong> Fetched <a href="https://guide.michelin.com/en/us/new-york-state/new-york/restaurants/all-starred" target="_blank" rel="noopener">MICHELIN all-starred listing</a>. Observed count display 5 three-star, 14 two-star, 50 one-star (69). Flagged discrepancy vs ceremony extraction.</li>
+      <li><strong>2026-11-25:</strong> Repo audit completed. Initial commit only; no prior project data.</li>
+      <li><strong>Not verified:</strong> Hotel 2027 prices, restaurant hours/costs/social links, transit travel times, Michelin Selected full list.</li>
+    </ul>
+  </div>
+</section>
+</div></main>
+<footer><div class="wrap"><div class="small">NYFun1 · Branch <code>arena/0558efa5-nyfun1</code> · Generated 2026-11-25 · No inferred values; unverified fields flagged.</div></div></footer>
+<script src="assets/app.js"></script></body></html>

@@ -1,0 +1,65 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Planning &amp; Questions | NYFun1</title><link rel="stylesheet" href="assets/style.css"></head><body>
+<header><div class="wrap"><h1>Planning &amp; Questions</h1><p>Executive summary details, open questions, missing information, and decision blockers.</p></div></header>
+<nav><div class="wrap">
+  <a href="index.html">Overview</a>
+  <a href="hotels.html">Hotels</a>
+  <a href="restaurants.html">Michelin Restaurants</a>
+  <a href="activities.html">Activities</a>
+  <a href="analysis.html">Clusters & Transit</a>
+  <a class="active" href="planning.html">Planning & Questions</a>
+  <a href="suggestions.html">Suggestions</a>
+  <a href="review.html">Flagged for Review</a>
+</div></nav>
+<main><div class="wrap">
+<div class="note warn"><strong>Decision gate.</strong> This page lists questions, missing information, and assumptions that must be resolved before making booking decisions. No value below should be treated as verified unless it has an official source link and a verification status of verified.</div>
+
+<section class="section">
+  <h2>Executive Planning Summary</h2>
+  <div class="card">
+    <table style="min-width:600px"><tbody>
+      <tr><th style="width:220px">Trip window</th><td>2027-02-15 to 2027-03-23 (allowed). Preferred: 2027-02-15 to 2027-02-18. <span class="badge info">User-provided</span></td></tr>
+      <tr><th>Travelers</th><td>2 adults, couple. <span class="badge info">User-provided</span></td></tr>
+      <tr><th>Hotel must-haves</th><td>Private bathroom; queen bed or equivalent/bigger. <span class="badge info">User-provided</span></td></tr>
+      <tr><th>Location constraint</th><td>Activities/restaurants targeted within ~1 hour by subway/bus from hotel. <span class="badge warn">Needs transit verification</span></td></tr>
+      <tr><th>Michelin focus</th><td>Michelin-rated and Michelin-star restaurants; distinguish "listed in Michelin Guide" vs "has Michelin star"; cluster-aware hotel ranking. <span class="badge warn">Partially complete</span></td></tr>
+      <tr><th>Pricing requirement</th><td>Real verified pricing; 7-night total hotel cost; cheapest upcoming booking time; actual dates. Restaurant cost for 2 adults (estimate range or exact). <span class="badge danger">Unverified / incomplete</span></td></tr>
+      <tr><th>Source policy</th><td>Official verified trusted sources; every table row has source link; unverifiable values blank and flagged; no hallucinations. <span class="badge ok">Policy applied</span></td></tr>
+    </tbody></table>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Questions, Information, and Answers Needed Before Decisions</h2>
+  <p class="lead">Each item includes what is known, what is missing, why it matters, and a suggested discovery method.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>ID</th><th>Decision / Question</th><th>Known</th><th>Missing</th><th>Why it matters</th><th>Suggested discovery (official/verified)</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td>Q1</td><td>What are the exact trip dates?</td><td>Window 2027-02-15–2027-03-23; preferred 2027-02-15–2027-02-18.</td><td>User confirmation: is 3-night preferred trip the target, or 7-night trip within window?</td><td>Hotel pricing, availability, and restaurant reservations depend on exact dates.</td><td>User confirms dates; then check hotel official booking engines for those exact dates.</td><td><span class="badge warn">Open</span></td></tr>
+      <tr><td>Q2</td><td>What is the hotel budget (total/per night)?</td><td>Not provided.</td><td>Max total budget for 7 nights and/or preferred 3 nights; taxes/fees tolerance.</td><td>Determines feasible hotel cluster and whether Michelin-star dining budget is separate.</td><td>User sets budget; compare against verified total prices (room + taxes/fees) on official hotel/booking pages.</td><td><span class="badge warn">Open</span></td></tr>
+      <tr><td>Q3</td><td>Which 7-night window in Feb 15–Mar 23 2027 is cheapest to book?</td><td>Window known; pricing not verified.</td><td>Real total prices for comparable rooms across candidate 7-night windows.</td><td>User requested cheapest upcoming time to book a hotel with actual dates and real verified pricing.</td><td>Check official hotel sites and reputable booking engines (Booking.com, Expedia, hotel direct) for each candidate date range; capture screenshots/URLs and total price including taxes/fees. Record date checked.</td><td><span class="badge danger">Blocked</span></td></tr>
+      <tr><td>Q4</td><td>Which hotels meet room requirements?</td><td>Requirements: private bathroom, queen bed or equivalent/bigger, 2 adults.</td><td>Verified room type/bed/occupancy/bathroom for specific hotels on exact dates.</td><td>A cheap room that is not queen/private bath does not meet requirements.</td><td>Verify on official hotel room pages and booking flow; capture room name and policy.</td><td><span class="badge danger">Blocked</span></td></tr>
+      <tr><td>Q5</td><td>Which hotel has best Michelin density within 1 hour subway/bus?</td><td>Michelin starred list extracted from official 2025 ceremony article.</td><td>Verified addresses/coordinates for hotels and restaurants; verified transit times by subway/bus for target travel times.</td><td>Core ranking criterion requested by user.</td><td>Use Michelin restaurant pages for addresses; hotel official pages for addresses; MTA/Google Maps/Citymapper for transit estimates (note: Google Maps is not "official transit authority" but useful; MTA for service). Document methodology and timestamps.</td><td><span class="badge danger">Blocked</span></td></tr>
+      <tr><td>Q6</td><td>Are Michelin counts/status current?</td><td>2025 ceremony article fetched; all-starred listing fetched.</td><td>Reconciliation of 69 vs 72 extracted rows; any 2026 changes after 2025 ceremony.</td><td>Affects ranking and restaurant selection.</td><td>Manually compare ceremony article list against current MICHELIN Guide all-starred listing and each restaurant page; record date of verification.</td><td><span class="badge warn">Open</span></td></tr>
+      <tr><td>Q7</td><td>Restaurant cost for 2 adults?</td><td>Not verified.</td><td>Official tasting menu/prix-fixe prices, service fees, taxes, beverage expectations.</td><td>User requested cost for couple of 2 adults, estimate range or exact total price.</td><td>Use official restaurant websites/reservation pages (Tock/Resy/OpenTable where official) for menu prices; note if service included/excluded.</td><td><span class="badge danger">Blocked</span></td></tr>
+      <tr><td>Q8</td><td>Restaurant/activity hours, days, exceptions?</td><td>Not verified.</td><td>Current operating hours, closed days, holiday/special exceptions for Feb–Mar 2027.</td><td>Trip dates include Presidents' Day period; closures affect itinerary.</td><td>Check official restaurant websites and Google Business profiles only as secondary; prefer official site. Confirm near travel dates.</td><td><span class="badge danger">Blocked</span></td></tr>
+      <tr><td>Q9</td><td>Social/media links for every restaurant/activity?</td><td>Not verified.</td><td>YouTube/TikTok/Instagram links per listed item.</td><td>User requested as many as possible alongside each item.</td><td>Search official restaurant social accounts from their websites; for third-party content use platform search and verify relevance.</td><td><span class="badge warn">Open</span></td></tr>
+      <tr><td>Q10</td><td>Accessibility, dietary, reservation constraints?</td><td>2 adults; no other preferences provided.</td><td>Dietary needs, mobility/accessibility, reservation lead time, dress code tolerance.</td><td>Some Michelin restaurants require advance reservations, set menus, or have limited seating.</td><td>User provides preferences; verify on official restaurant pages.</td><td><span class="badge warn">Open</span></td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section class="section">
+  <h2>Assumptions (Must Not Be Treated as Facts)</h2>
+  <div class="card">
+    <ul class="clean">
+      <li>Any hotel price for 2027 is assumed <strong>unverified</strong> until confirmed on an official booking flow for exact dates and room type.</li>
+      <li>Transit times vary by time/day/service changes; "within 1 hour" must be verified for intended departure times.</li>
+      <li>Michelin status can change; the 2025 ceremony is the latest official ceremony source fetched in this session, but current restaurant pages should be checked before booking.</li>
+      <li>Restaurant prices/hours can change; verify close to booking and again before travel.</li>
+    </ul>
+  </div>
+</section>
+</div></main>
+<footer><div class="wrap"><div class="small">NYFun1 · Branch <code>arena/0558efa5-nyfun1</code> · Generated 2026-11-25 · No inferred values; unverified fields flagged.</div></div></footer>
+<script src="assets/app.js"></script></body></html>

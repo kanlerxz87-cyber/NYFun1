@@ -1,0 +1,66 @@
+:root {
+  --bg: #f6f8fb;
+  --card: #ffffff;
+  --text: #182230;
+  --muted: #5d6b82;
+  --border: #dbe3ee;
+  --accent: #0b5fff;
+  --accent-soft: #e8f0ff;
+  --warn: #fff4db;
+  --warn-text: #7a4b00;
+  --danger: #ffe8e8;
+  --danger-text: #8a1c1c;
+  --ok: #e8f7ee;
+  --ok-text: #1f6b3b;
+  --radius: 12px;
+  --shadow: 0 1px 2px rgba(16,24,40,.04), 0 4px 16px rgba(16,24,40,.04);
+}
+* { box-sizing: border-box; }
+body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.45; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+header { background: #101828; color: #fff; padding: 20px 16px; }
+.wrap { max-width: 1200px; margin: 0 auto; }
+header h1 { margin: 0 0 6px; font-size: 1.5rem; }
+header p { margin: 0; color: #d0d8e4; font-size: .95rem; }
+nav { background: #fff; border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 20; }
+nav .wrap { display: flex; gap: 8px; padding: 10px 16px; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+nav a { flex: 0 0 auto; padding: 8px 12px; border-radius: 999px; color: #344054; font-size: .9rem; border: 1px solid transparent; }
+nav a.active, nav a:hover { background: var(--accent-soft); color: var(--accent); text-decoration: none; border-color: #cfe0ff; }
+main { padding: 20px 16px 40px; }
+.grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; box-shadow: var(--shadow); }
+.card h2, .card h3 { margin-top: 0; }
+.kpi { font-size: 1.6rem; font-weight: 700; margin: 4px 0; }
+.muted { color: var(--muted); font-size: .92rem; }
+.badge { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: .75rem; font-weight: 600; white-space: nowrap; }
+.badge.ok { background: var(--ok); color: var(--ok-text); }
+.badge.warn { background: var(--warn); color: var(--warn-text); }
+.badge.danger { background: var(--danger); color: var(--danger-text); }
+.badge.info { background: var(--accent-soft); color: var(--accent); }
+.table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; background: #fff; border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); }
+table { width: 100%; border-collapse: collapse; min-width: 720px; font-size: .9rem; }
+th, td { padding: 10px 10px; border-bottom: 1px solid var(--border); vertical-align: top; text-align: left; }
+th { background: #f8fafc; font-size: .78rem; text-transform: uppercase; letter-spacing: .03em; color: #475467; position: sticky; top: 0; z-index: 1; }
+tr:last-child td { border-bottom: none; }
+.note { padding: 12px 14px; border-radius: 10px; background: #f8fafc; border: 1px solid var(--border); margin: 12px 0; font-size: .92rem; }
+.note.warn { background: var(--warn); border-color: #f0d58c; color: #5f3900; }
+.note.danger { background: var(--danger); border-color: #f2b8b8; color: #6d1515; }
+.section { margin: 28px 0; }
+.section h2 { margin: 0 0 8px; font-size: 1.25rem; }
+.section p.lead { margin: 0 0 14px; color: var(--muted); }
+details { background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 10px 12px; margin: 10px 0; }
+summary { cursor: pointer; font-weight: 600; }
+footer { padding: 24px 16px 40px; color: var(--muted); font-size: .85rem; }
+code { background: #eef2f7; padding: 1px 4px; border-radius: 4px; font-size: .9em; }
+input.filter { width: 100%; max-width: 420px; padding: 10px 12px; border: 1px solid var(--border); border-radius: 8px; font-size: .95rem; margin: 8px 0 12px; }
+.pill-list { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0; }
+.pill { background: #fff; border: 1px solid var(--border); padding: 6px 10px; border-radius: 999px; font-size: .85rem; }
+ul.clean { margin: 8px 0; padding-left: 20px; }
+.small { font-size: .85rem; color: var(--muted); }
+@media (max-width: 640px) {
+  header h1 { font-size: 1.3rem; }
+  .kpi { font-size: 1.35rem; }
+  table { font-size: .85rem; min-width: 640px; }
+  th, td { padding: 8px; }
+}

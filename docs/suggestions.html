@@ -1,0 +1,51 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Suggestions | NYFun1</title><link rel="stylesheet" href="assets/style.css"></head><body>
+<header><div class="wrap"><h1>Suggestions</h1><p>Review suggestions before implementation. No automatic changes applied.</p></div></header>
+<nav><div class="wrap">
+  <a href="index.html">Overview</a>
+  <a href="hotels.html">Hotels</a>
+  <a href="restaurants.html">Michelin Restaurants</a>
+  <a href="activities.html">Activities</a>
+  <a href="analysis.html">Clusters & Transit</a>
+  <a href="planning.html">Planning & Questions</a>
+  <a class="active" href="suggestions.html">Suggestions</a>
+  <a href="review.html">Flagged for Review</a>
+</div></nav>
+<main><div class="wrap">
+<div class="note warn"><strong>Suggestions only.</strong> This section is for review before implementation. No changes below have been applied to data/ranking logic unless explicitly noted.</div>
+
+<section class="section">
+  <h2>Suggestions to Improve Decision Making</h2>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Priority</th><th>Suggestion</th><th>Impact</th><th>Data needed</th><th>How to verify</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td>P1</td><td>Lock exact dates and trip length first (3-night preferred vs 7-night).</td><td>High - all pricing/availability depends on it.</td><td>User decision.</td><td>Confirm in writing; update hotel queries to exact check-in/check-out.</td><td><span class="badge info">Review</span></td></tr>
+      <tr><td>P1</td><td>Build a verified pricing matrix for 7-night windows.</td><td>High - required by user.</td><td>Room+tax+fee totals for same room type across windows: 2027-02-15–22, 02-16–23, ..., latest start allowing 7 nights by 2027-03-23.</td><td>Capture official booking-page totals with timestamp, URL, room name, cancellation policy.</td><td><span class="badge info">Review</span></td></tr>
+      <tr><td>P1</td><td>Verify hotel room requirements on official room pages.</td><td>High - non-negotiable requirements.</td><td>Room name, bed type, private bathroom, max occupancy, accessibility.</td><td>Hotel official site room description/booking flow screenshot or URL.</td><td><span class="badge info">Review</span></td></tr>
+      <tr><td>P1</td><td>Create a transit-verified Michelin density score.</td><td>High - core ranking criterion.</td><td>Hotel/restaurant addresses; travel time by subway/bus at typical dinner departure times.</td><td>Use MTA Trip Planner / official schedules for transit; document origin, destination, departure time, date assumptions.</td><td><span class="badge info">Review</span></td></tr>
+      <tr><td>P2</td><td>Add total cost-of-evening for restaurants (2 adults).</td><td>High - budget realism.</td><td>Tasting menu price, beverage pairing optionality, service charge, tax estimate.</td><td>Official restaurant menu/reservation page; note "estimate" where tax/tip not fixed.</td><td><span class="badge info">Review</span></td></tr>
+      <tr><td>P2</td><td>Separate "Michelin Starred" and "Michelin Selected/Listed" tables.</td><td>Medium - user asked for both.</td><td>Full Michelin Guide NYC selected list.</td><td>Pull from official Michelin Guide search/listing pages with filters; verify each row.</td><td><span class="badge info">Review</span></td></tr>
+      <tr><td>P2</td><td>Add reservation difficulty/lead-time column.</td><td>Medium - prevents unrealistic itineraries.</td><td>Reservation platform, release window, typical availability.</td><td>Official reservation platform (Resy/Tock/OpenTable/restaurant site).</td><td><span class="badge info">Review</span></td></tr>
+      <tr><td>P2</td><td>Add map layer (static or embedded) for clusters.</td><td>Medium - improves decision-making.</td><td>Verified coordinates/addresses.</td><td>Official addresses; use OSM/static map to avoid unverified embed dependencies.</td><td><span class="badge info">Review</span></td></tr>
+      <tr><td>P3</td><td>Add social proof panel with verified official social accounts.</td><td>Medium - requested by user.</td><td>Official Instagram/TikTok/YouTube account links from restaurant websites.</td><td>Only link accounts listed on official restaurant site or verified platform profile.</td><td><span class="badge info">Review</span></td></tr>
+      <tr><td>P3</td><td>Add "last verified" timestamp per row.</td><td>High for trust.</td><td>Verifier, date, source URL, field verified.</td><td>VERIFICATION.md log and per-row metadata.</td><td><span class="badge info">Review</span></td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section class="section">
+  <h2>Missing Information Discovery Plan</h2>
+  <div class="card">
+    <ol class="clean">
+      <li><strong>Dates/pricing:</strong> User confirms exact stay length. For each candidate hotel, collect total price for exact dates from official booking flow; record room type, taxes/fees, cancellation, and capture date.</li>
+      <li><strong>Room compliance:</strong> Verify "queen bed or equivalent/bigger" and "private bathroom" on official room details, not third-party summaries.</li>
+      <li><strong>Michelin completeness:</strong> Reconcile ceremony article against current Michelin restaurant pages; separately export Michelin Selected (non-starred) restaurants in relevant neighborhoods.</li>
+      <li><strong>Transit:</strong> For top 3 hotel candidates, compute travel time to top restaurant clusters using MTA Trip Planner at representative times (weekday dinner, weekend dinner).</li>
+      <li><strong>Restaurant details:</strong> For shortlisted restaurants, verify hours, closing days, holiday exceptions, menu price, and reservation channel from official site.</li>
+      <li><strong>Social links:</strong> Prefer links from official restaurant website footer/contact page; mark third-party/unofficial as unverified.</li>
+    </ol>
+  </div>
+</section>
+</div></main>
+<footer><div class="wrap"><div class="small">NYFun1 · Branch <code>arena/0558efa5-nyfun1</code> · Generated 2026-11-25 · No inferred values; unverified fields flagged.</div></div></footer>
+<script src="assets/app.js"></script></body></html>

@@ -1,0 +1,578 @@
+[
+  {
+    "name": "Eleven Madison Park",
+    "stars": 3,
+    "cuisine": "Vegan, Contemporary",
+    "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/eleven-madison-park",
+    "status_note": "",
+    "distinction": "3 Stars"
+  },
+  {
+    "name": "Jungsik",
+    "stars": 3,
+    "cuisine": "Korean",
+    "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/jungsik-new-york",
+    "status_note": "",
+    "distinction": "3 Stars"
+  },
+  {
+    "name": "Le Bernardin",
+    "stars": 3,
+    "cuisine": "Seafood",
+    "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/le-bernardin",
+    "status_note": "",
+    "distinction": "3 Stars"
+  },
+  {
+    "name": "Per Se",
+    "stars": 3,
+    "cuisine": "Contemporary",
+    "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/per-se",
+    "status_note": "",
+    "distinction": "3 Stars"
+  },
+  {
+    "name": "Sushi Sho",
+    "stars": 3,
+    "cuisine": "Japanese",
+    "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/sushi-sho-1213976",
+    "status_note": "NEW Three Star (2025)",
+    "distinction": "3 Stars"
+  },
+  {
+    "name": "Aquavit",
+    "stars": 2,
+    "cuisine": "Scandinavian",
+    "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/aquavit",
+    "status_note": "",
+    "distinction": "2 Stars"
+  },
+  {
+    "name": "Aska",
+    "stars": 2,
+    "cuisine": "Scandinavian",
+    "michelin_url": "https://guide.michelin.com/us/en/new-york-state/brooklyn/restaurant/aska",
+    "status_note": "",
+    "distinction": "2 Stars"
+  },
+  {
+    "name": "Atera",
+    "stars": 2,
+    "cuisine": "Contemporary",
+    "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/atera",
+    "status_note": "",
+    "distinction": "2 Stars"
+  },
+  {
+    "name": "Atomix",
+    "stars": 2,
+    "cuisine": "Korean",
+    "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/atomix",
+    "status_note": "",
+    "distinction": "2 Stars"
+  },
+  {
+    "name": "Blue Hill at Stone Barns",
+    "stars": 2,
+    "cuisine": "American",
+    "michelin_url": "https://guide.michelin.com/us/en/new-york-state/tarrytown/restaurant/blue-hill-at-stone-barns",
+    "status_note": "Also Green Star",
+    "distinction": "2 Stars"
+  },
+  {
+    "name": "César",
+    "stars": 2,
+    "cuisine": "Contemporary",
+    "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/cesar",
+    "status_note": "",
+    "distinction": "2 Stars"
+  },
+  {
+    "name": "Chef's Table at Brooklyn Fare",
+    "stars": 2,
+    "cuisine": "Contemporary",
+    "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/chef-s-table-at-brooklyn-fare",
+    "status_note": "",
+    "distinction": "2 Stars"
+  },
+  {
+    "name": "Gabriel Kreuther",
+    "stars": 2,
+    "cuisine": "French",
+    "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/gabriel-kreuther",
+    "status_note": "",
+    "distinction": "2 Stars"
+  },
+  {
+    "name": "Jean-Georges",
+    "stars": 2,
+    "cuisine": "Contemporary",
+    "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/jean-georges",
+    "status_note": "",
+    "distinction": "2 Stars"
+  },
+  {
+    "name": "Joo Ok",
+    "stars": 2,
+    "cuisine": "Korean",
+    "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/joo-ok-1214822",
+    "status_note": "NEW Two Star (2025)",
+    "distinction": "2 Stars"
+  },
+  {
+    "name": "Masa",
+    "stars": 2,
+    "cuisine": "Japanese",
+    "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/masa",
+    "status_note": "",
+    "distinction": "2 Stars"
+  },
+  {
+    "name": "odo",
+    "stars": 2,
+    "cuisine": "Japanese",
+    "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/odo",
+    "status_note": "",
+    "distinction": "2 Stars"
+  },
+  {
+    "name": "Saga",
+    "stars": 2,
+    "cuisine": "Contemporary",
+    "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/saga",
+    "status_note": "",
+    "distinction": "2 Stars"
+  },
+  {
+    "name": "Sushi Noz",
+    "stars": 2,
+    "cuisine": "Japanese",
+    "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/sushi-noz",
+    "status_note": "",
+    "distinction": "2 Stars"
+  },
+  {
+    "name": "The Modern",
+    "stars": 2,
+    "cuisine": "Contemporary",
+    "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/the-modern",
+    "status_note": "",
+    "distinction": "2 Stars"
+  },
+  {
+    "name": "63 Clinton",
+    "stars": 1,
+    "cuisine": "Contemporary",
+    "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/63-clinton",
+    "status_note": "",
+    "distinction": "1 Star"
+  },
+  {
+    "name": "Bar Miller",
+    "stars": 1,
+    "cuisine": "Japanese",
+    "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/bar-miller",
+    "status_note": "",
+    "distinction": "1 Star"
+  },
+  {
+    "name": "bōm",
+    "stars": 1,
+    "cuisine": "Korean",
+    "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/bom",
+    "status_note": "",
+    "distinction": "1 Star"
+  },
+  {
+    "name": "Bridges",
+    "stars": 1,
+    "cuisine": "Contemporary",
+    "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/bridges-1216261",
+    "status_note": "NEW One Star (2025)",
+    "distinction": "1 Star"
+  },
+  {
+    "name": "Café Boulud",
+    "stars": 1,
+    "cuisine": "French",
+    "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/cafe-boulud",
+    "status_note": "",
+    "distinction": "1 Star"
+  },
+  {
+    "name": "Casa Mono",
+    "stars": 1,
+    "cuisine": "Spanish",
+    "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/casa-mono",
+    "status_note": "",
+    "distinction": "1 Star"
+  },
+  {
+    "name": "Corima",
+    "stars": 1,
+    "cuisine": "Mexican",
+    "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/corima",
+    "status_note": "",
+    "distinction": "1 Star"
+  },
+  {
+    "name": "Cote",
+    "stars": 1,
+    "cuisine": "Korean",
+    "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/cote",
+    "status_note": "",
+    "distinction": "1 Star"
+  },
+  {
+    "name": "Crown Shy",
+    "stars": 1,
+    "cuisine": "Contemporary",
+    "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/crown-shy",
+    "status_note": "",
+    "distinction": "1 Star"
+  },
+  {
+    "name": "Daniel",
+    "stars": 1,
+    "cuisine": "French",
+    "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/daniel",
+    "status_note": "",
+    "distinction": "1 Star"
+  },
+  {
+    "name": "Dirt Candy",
+    "stars": 1,
+    "cuisine": "Vegetarian",
+    "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/dirt-candy",
+    "status_note": "Also Green Star",
+    "distinction": "1 Star"
+  },
+  {
+    "name": "Essential by Christophe",
+    "stars": 1,
+    "cuisine": "French Contemporary",
+    "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/essential-by-christophe",
+    "status_note": "",
+    "distinction": "1 Star"
+  },
+  {
+    "name": "Estela",
+    "stars": 1,
+    "cuisine": "Contemporary",
+    "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/estela",
+    "status_note": "",
+    "distinction": "1 Star"
+  },
+  {
+    "name": "Family Meal at Blue Hill",
+    "stars": 1,
+    "cuisine": "American",
+    "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/blue-hill",
+    "status_note": "Also Green Star",
+    "distinction": "1 Star"
+  },
+  {
+    "name": "Francie",
+    "stars": 1,
+    "cuisine": "Contemporary",
+    "michelin_url": "https://guide.michelin.com/us/en/new-york-state/brooklyn/restaurant/francie",
+    "status_note": "",
+    "distinction": "1 Star"
+  },
+  {
+    "name": "Frevo",
+    "stars": 1,
+    "cuisine": "Contemporary",
+    "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/frevo",
+    "status_note": "",
+    "distinction": "1 Star"
+  },
+  {
+    "name": "Gramercy Tavern",
+    "stars": 1,
+    "cuisine": "Contemporary",
+    "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/gramercy-tavern",
+    "status_note": "",
+    "distinction": "1 Star"
+  },
+  {
+    "name": "Huso",
+    "stars": 1,
+    "cuisine": "Contemporary",
+    "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/huso-1218089",
+    "status_note": "NEW One Star (2025)",
+    "distinction": "1 Star"
+  },
+  {
+    "name": "Icca",
+    "stars": 1,
+    "cuisine": "Japanese",
+    "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/icca",
+    "status_note": "",
+    "distinction": "1 Star"
+  },
+  {
+    "name": "Jeju Noodle Bar",
+    "stars": 1,
+    "cuisine": "Korean",
+    "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/jeju-noodle-bar",
+    "status_note": "",
+    "distinction": "1 Star"
+  },
+  {
+    "name": "Jōji",
+    "stars": 1,
+    "cuisine": "Japanese",
+    "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/joji",
+    "status_note": "",
+    "distinction": "1 Star"
+  },
+  {
+    "name": "Jua",
+    "stars": 1,
+    "cuisine": "Korean",
+    "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/jua",
+    "status_note": "",
+    "distinction": "1 Star"
+  },
+  {
+    "name": "Kochi",
+    "stars": 1,
+    "cuisine": "Korean",
+    "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/kochi",
+    "status_note": "",
+    "distinction": "1 Star"
+  },
+  {
+    "name": "Kosaka",
+    "stars": 1,
+    "cuisine": "Japanese",
+    "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/kosaka",
+    "status_note": "",
+    "distinction": "1 Star"
+  },
+  {
+    "name": "L’Abeille",
+    "stars": 1,
+    "cuisine": "French",
+    "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/l%E2%80%99abeille",
+    "status_note": "",
+    "distinction": "1 Star"
+  },
+  {
+    "name": "La Bastide by Andrea Calstier",
+    "stars": 1,
+    "cuisine": "French",
+    "michelin_url": "https://guide.michelin.com/us/en/new-york-state/north-salem/restaurant/la-bastide-by-andrea-calstier",
+    "status_note": "Outside NYC (North Salem) - not within 1h subway/bus from typical Manhattan hotel; flag for trip relevance",
+    "distinction": "1 Star"
+  },
+  {
+    "name": "Le Coucou",
+    "stars": 1,
+    "cuisine": "French",
+    "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/le-coucou",
+    "status_note": "",
+    "distinction": "1 Star"
+  },
+  {
+    "name": "Le Pavillon",
+    "stars": 1,
+    "cuisine": "French",
+    "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/le-pavillon-1192744",
+    "status_note": "",
+    "distinction": "1 Star"
+  },
+  {
+    "name": "Mari",
+    "stars": 1,
+    "cuisine": "Korean",
+    "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/mari",
+    "status_note": "",
+    "distinction": "1 Star"
+  },
+  {
+    "name": "Meju",
+    "stars": 1,
+    "cuisine": "Korean",
+    "michelin_url": "https://guide.michelin.com/us/en/new-york-state/queens/restaurant/meju",
+    "status_note": "",
+    "distinction": "1 Star"
+  },
+  {
+    "name": "Muku",
+    "stars": 1,
+    "cuisine": "Japanese",
+    "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/muku",
+    "status_note": "NEW One Star (2025)",
+    "distinction": "1 Star"
+  },
+  {
+    "name": "Noda",
+    "stars": 1,
+    "cuisine": "Japanese",
+    "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/noda",
+    "status_note": "",
+    "distinction": "1 Star"
+  },
+  {
+    "name": "Nōksu",
+    "stars": 1,
+    "cuisine": "Contemporary",
+    "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/noksu",
+    "status_note": "",
+    "distinction": "1 Star"
+  },
+  {
+    "name": "Noz 17",
+    "stars": 1,
+    "cuisine": "Japanese",
+    "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/noz17",
+    "status_note": "",
+    "distinction": "1 Star"
+  },
+  {
+    "name": "Oiji Mi",
+    "stars": 1,
+    "cuisine": "Korean",
+    "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/oiji-mi",
+    "status_note": "",
+    "distinction": "1 Star"
+  },
+  {
+    "name": "Oxomoco",
+    "stars": 1,
+    "cuisine": "Mexican",
+    "michelin_url": "https://guide.michelin.com/us/en/new-york-state/brooklyn/restaurant/oxomoco",
+    "status_note": "",
+    "distinction": "1 Star"
+  },
+  {
+    "name": "Restaurant Yuu",
+    "stars": 1,
+    "cuisine": "French Contemporary",
+    "michelin_url": "https://guide.michelin.com/us/en/new-york-state/brooklyn/restaurant/restaurant-yuu",
+    "status_note": "",
+    "distinction": "1 Star"
+  },
+  {
+    "name": "Rezdôra",
+    "stars": 1,
+    "cuisine": "Italian",
+    "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/rezdora-osteria-emiliana",
+    "status_note": "",
+    "distinction": "1 Star"
+  },
+  {
+    "name": "Semma",
+    "stars": 1,
+    "cuisine": "Indian",
+    "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/semma",
+    "status_note": "",
+    "distinction": "1 Star"
+  },
+  {
+    "name": "Shion 69 Leonard Street",
+    "stars": 1,
+    "cuisine": "Japanese",
+    "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/shoji-at-69-leonard",
+    "status_note": "",
+    "distinction": "1 Star"
+  },
+  {
+    "name": "Shmoné",
+    "stars": 1,
+    "cuisine": "Israeli",
+    "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/shmone",
+    "status_note": "",
+    "distinction": "1 Star"
+  },
+  {
+    "name": "Shota Omakase",
+    "stars": 1,
+    "cuisine": "Japanese",
+    "michelin_url": "https://guide.michelin.com/us/en/new-york-state/brooklyn/restaurant/shota-omakase",
+    "status_note": "",
+    "distinction": "1 Star"
+  },
+  {
+    "name": "Sushi Nakazawa",
+    "stars": 1,
+    "cuisine": "Japanese",
+    "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/sushi-nakazawa",
+    "status_note": "",
+    "distinction": "1 Star"
+  },
+  {
+    "name": "Tempura Matsui",
+    "stars": 1,
+    "cuisine": "Japanese",
+    "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/tempura-matsui",
+    "status_note": "",
+    "distinction": "1 Star"
+  },
+  {
+    "name": "The Four Horsemen",
+    "stars": 1,
+    "cuisine": "American",
+    "michelin_url": "https://guide.michelin.com/us/en/new-york-state/brooklyn/restaurant/the-four-horsemen",
+    "status_note": "",
+    "distinction": "1 Star"
+  },
+  {
+    "name": "Torien",
+    "stars": 1,
+    "cuisine": "Japanese",
+    "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/torien",
+    "status_note": "",
+    "distinction": "1 Star"
+  },
+  {
+    "name": "Torrisi",
+    "stars": 1,
+    "cuisine": "Contemporary",
+    "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/torrisi",
+    "status_note": "",
+    "distinction": "1 Star"
+  },
+  {
+    "name": "Tsukimi",
+    "stars": 1,
+    "cuisine": "Japanese",
+    "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/tsukimi",
+    "status_note": "",
+    "distinction": "1 Star"
+  },
+  {
+    "name": "Tuome",
+    "stars": 1,
+    "cuisine": "Fusion",
+    "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/tuome",
+    "status_note": "",
+    "distinction": "1 Star"
+  },
+  {
+    "name": "Yamada",
+    "stars": 1,
+    "cuisine": "Japanese",
+    "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/yamada",
+    "status_note": "NEW One Star (2025)",
+    "distinction": "1 Star"
+  },
+  {
+    "name": "YingTao",
+    "stars": 1,
+    "cuisine": "Contemporary",
+    "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/yingtao",
+    "status_note": "",
+    "distinction": "1 Star"
+  },
+  {
+    "name": "Yoshino",
+    "stars": 1,
+    "cuisine": "Japanese",
+    "michelin_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/yoshino-1185037",
+    "status_note": "",
+    "distinction": "1 Star"
+  }
+]

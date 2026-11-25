@@ -1,0 +1,855 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Michelin Restaurants | NYFun1</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header><div class="wrap">
+  <h1>Michelin Restaurants</h1>
+  <p>NYC starred restaurants extracted from official MICHELIN Guide 2025 ceremony source. Unverified fields left blank/flagged.</p>
+</div></header>
+<nav><div class="wrap">
+  <a href="index.html">Overview</a>
+  <a href="hotels.html">Hotels</a>
+  <a class="active" href="restaurants.html">Michelin Restaurants</a>
+  <a href="activities.html">Activities</a>
+  <a href="analysis.html">Clusters & Transit</a>
+  <a href="planning.html">Planning & Questions</a>
+  <a href="suggestions.html">Suggestions</a>
+  <a href="review.html">Flagged for Review</a>
+</div></nav>
+<main><div class="wrap">
+
+<div class="note warn">
+  <strong>Source & scope.</strong> Starred restaurant names, distinctions, cuisines, and Michelin URLs were extracted from the official <a href="https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025" target="_blank" rel="noopener">MICHELIN Guide NYC 2025 ceremony article</a> (fetched 2026-11-25). The MICHELIN all-starred listing page shows counts 5/14/50 (69 total): <a href="https://guide.michelin.com/en/us/new-york-state/new-york/restaurants/all-starred" target="_blank" rel="noopener">all-starred listing</a>. This table contains 72 rows extracted from the ceremony article sections; the count discrepancy is <span class="badge danger">Flagged</span> in <a href="review.html">Flagged for Review</a>. "Michelin listed/selected but not starred" restaurants are not fully enumerated here due verification scope; see Suggestions.
+</div>
+
+<div class="note danger">
+  <strong>Unverified fields.</strong> Cost for 2 adults, days/hours/exceptions, official restaurant website links, and social media links are <strong>not verified</strong> in this session unless explicitly sourced. They are left blank/flagged. Do not treat unverified fields as facts.
+</div>
+
+<div class="section">
+  <h2>Starred Restaurants (2025 Ceremony Extraction)</h2>
+  <p class="lead">Filter by name, cuisine, star, or area. All rows link to official Michelin sources.</p>
+  <input id="rest-filter" class="filter" type="search" placeholder="Filter restaurants..." data-filter-table="rest-table">
+  <div class="table-wrap">
+    <table id="rest-table">
+      <thead>
+        <tr>
+          <th>Restaurant / Area</th>
+          <th>Distinction</th>
+          <th>Cuisine (Michelin)</th>
+          <th>Cost for 2 Adults</th>
+          <th>Days / Hours / Exceptions</th>
+          <th>Official / Michelin Link</th>
+          <th>Social (YT / TikTok / IG)</th>
+          <th>Source Links</th>
+          <th>Verification</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+<td><strong>Eleven Madison Park</strong><br><span class="small">New York, NY (from Michelin URL)</span></td>
+<td><span class="badge info">3 Stars</span></td>
+<td>Vegan, Contemporary</td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Cost for 2 adults not confirmed from official source in this session.</span></td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Hours/days/exceptions require official restaurant/guide verification.</span></td>
+<td><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/eleven-madison-park" target="_blank" rel="noopener">Michelin page</a></td>
+<td><span class="badge danger">Unverified</span><div class="small">YouTube: <br>TikTok: <br>Instagram: </div></td>
+<td><a href="https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025" target="_blank" rel="noopener">2025 Ceremony article</a><br><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/eleven-madison-park" target="_blank" rel="noopener">Restaurant Michelin page</a></td>
+<td><span class="badge warn">Partial</span><br><span class="small">Name/star/cuisine/URL verified from official ceremony article. Other fields unverified.</span></td>
+</tr>
+<tr>
+<td><strong>Jungsik</strong><br><span class="small">New York, NY (from Michelin URL)</span></td>
+<td><span class="badge info">3 Stars</span></td>
+<td>Korean</td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Cost for 2 adults not confirmed from official source in this session.</span></td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Hours/days/exceptions require official restaurant/guide verification.</span></td>
+<td><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/jungsik-new-york" target="_blank" rel="noopener">Michelin page</a></td>
+<td><span class="badge danger">Unverified</span><div class="small">YouTube: <br>TikTok: <br>Instagram: </div></td>
+<td><a href="https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025" target="_blank" rel="noopener">2025 Ceremony article</a><br><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/jungsik-new-york" target="_blank" rel="noopener">Restaurant Michelin page</a></td>
+<td><span class="badge warn">Partial</span><br><span class="small">Name/star/cuisine/URL verified from official ceremony article. Other fields unverified.</span></td>
+</tr>
+<tr>
+<td><strong>Le Bernardin</strong><br><span class="small">New York, NY (from Michelin URL)</span></td>
+<td><span class="badge info">3 Stars</span></td>
+<td>Seafood</td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Cost for 2 adults not confirmed from official source in this session.</span></td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Hours/days/exceptions require official restaurant/guide verification.</span></td>
+<td><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/le-bernardin" target="_blank" rel="noopener">Michelin page</a></td>
+<td><span class="badge danger">Unverified</span><div class="small">YouTube: <br>TikTok: <br>Instagram: </div></td>
+<td><a href="https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025" target="_blank" rel="noopener">2025 Ceremony article</a><br><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/le-bernardin" target="_blank" rel="noopener">Restaurant Michelin page</a></td>
+<td><span class="badge warn">Partial</span><br><span class="small">Name/star/cuisine/URL verified from official ceremony article. Other fields unverified.</span></td>
+</tr>
+<tr>
+<td><strong>Per Se</strong><br><span class="small">New York, NY (from Michelin URL)</span></td>
+<td><span class="badge info">3 Stars</span></td>
+<td>Contemporary</td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Cost for 2 adults not confirmed from official source in this session.</span></td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Hours/days/exceptions require official restaurant/guide verification.</span></td>
+<td><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/per-se" target="_blank" rel="noopener">Michelin page</a></td>
+<td><span class="badge danger">Unverified</span><div class="small">YouTube: <br>TikTok: <br>Instagram: </div></td>
+<td><a href="https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025" target="_blank" rel="noopener">2025 Ceremony article</a><br><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/per-se" target="_blank" rel="noopener">Restaurant Michelin page</a></td>
+<td><span class="badge warn">Partial</span><br><span class="small">Name/star/cuisine/URL verified from official ceremony article. Other fields unverified.</span></td>
+</tr>
+<tr>
+<td><strong>Sushi Sho</strong><br><span class="small">New York, NY (from Michelin URL)</span></td>
+<td><span class="badge info">3 Stars</span> <span class="badge warn">NEW Three Star (2025)</span></td>
+<td>Japanese</td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Cost for 2 adults not confirmed from official source in this session.</span></td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Hours/days/exceptions require official restaurant/guide verification.</span></td>
+<td><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/sushi-sho-1213976" target="_blank" rel="noopener">Michelin page</a></td>
+<td><span class="badge danger">Unverified</span><div class="small">YouTube: <br>TikTok: <br>Instagram: </div></td>
+<td><a href="https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025" target="_blank" rel="noopener">2025 Ceremony article</a><br><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/sushi-sho-1213976" target="_blank" rel="noopener">Restaurant Michelin page</a></td>
+<td><span class="badge warn">Partial</span><br><span class="small">Name/star/cuisine/URL verified from official ceremony article. Other fields unverified.</span></td>
+</tr>
+<tr>
+<td><strong>Aquavit</strong><br><span class="small">New York, NY (from Michelin URL)</span></td>
+<td><span class="badge info">2 Stars</span></td>
+<td>Scandinavian</td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Cost for 2 adults not confirmed from official source in this session.</span></td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Hours/days/exceptions require official restaurant/guide verification.</span></td>
+<td><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/aquavit" target="_blank" rel="noopener">Michelin page</a></td>
+<td><span class="badge danger">Unverified</span><div class="small">YouTube: <br>TikTok: <br>Instagram: </div></td>
+<td><a href="https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025" target="_blank" rel="noopener">2025 Ceremony article</a><br><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/aquavit" target="_blank" rel="noopener">Restaurant Michelin page</a></td>
+<td><span class="badge warn">Partial</span><br><span class="small">Name/star/cuisine/URL verified from official ceremony article. Other fields unverified.</span></td>
+</tr>
+<tr>
+<td><strong>Aska</strong><br><span class="small">Brooklyn (from Michelin URL)</span></td>
+<td><span class="badge info">2 Stars</span></td>
+<td>Scandinavian</td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Cost for 2 adults not confirmed from official source in this session.</span></td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Hours/days/exceptions require official restaurant/guide verification.</span></td>
+<td><a href="https://guide.michelin.com/us/en/new-york-state/brooklyn/restaurant/aska" target="_blank" rel="noopener">Michelin page</a></td>
+<td><span class="badge danger">Unverified</span><div class="small">YouTube: <br>TikTok: <br>Instagram: </div></td>
+<td><a href="https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025" target="_blank" rel="noopener">2025 Ceremony article</a><br><a href="https://guide.michelin.com/us/en/new-york-state/brooklyn/restaurant/aska" target="_blank" rel="noopener">Restaurant Michelin page</a></td>
+<td><span class="badge warn">Partial</span><br><span class="small">Name/star/cuisine/URL verified from official ceremony article. Other fields unverified.</span></td>
+</tr>
+<tr>
+<td><strong>Atera</strong><br><span class="small">New York, NY (from Michelin URL)</span></td>
+<td><span class="badge info">2 Stars</span></td>
+<td>Contemporary</td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Cost for 2 adults not confirmed from official source in this session.</span></td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Hours/days/exceptions require official restaurant/guide verification.</span></td>
+<td><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/atera" target="_blank" rel="noopener">Michelin page</a></td>
+<td><span class="badge danger">Unverified</span><div class="small">YouTube: <br>TikTok: <br>Instagram: </div></td>
+<td><a href="https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025" target="_blank" rel="noopener">2025 Ceremony article</a><br><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/atera" target="_blank" rel="noopener">Restaurant Michelin page</a></td>
+<td><span class="badge warn">Partial</span><br><span class="small">Name/star/cuisine/URL verified from official ceremony article. Other fields unverified.</span></td>
+</tr>
+<tr>
+<td><strong>Atomix</strong><br><span class="small">New York, NY (from Michelin URL)</span></td>
+<td><span class="badge info">2 Stars</span></td>
+<td>Korean</td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Cost for 2 adults not confirmed from official source in this session.</span></td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Hours/days/exceptions require official restaurant/guide verification.</span></td>
+<td><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/atomix" target="_blank" rel="noopener">Michelin page</a></td>
+<td><span class="badge danger">Unverified</span><div class="small">YouTube: <br>TikTok: <br>Instagram: </div></td>
+<td><a href="https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025" target="_blank" rel="noopener">2025 Ceremony article</a><br><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/atomix" target="_blank" rel="noopener">Restaurant Michelin page</a></td>
+<td><span class="badge warn">Partial</span><br><span class="small">Name/star/cuisine/URL verified from official ceremony article. Other fields unverified.</span></td>
+</tr>
+<tr>
+<td><strong>Blue Hill at Stone Barns</strong><br><span class="small">Tarrytown, NY (from Michelin URL; outside NYC)</span></td>
+<td><span class="badge info">2 Stars</span> <span class="badge warn">Also Green Star</span></td>
+<td>American</td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Cost for 2 adults not confirmed from official source in this session.</span></td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Hours/days/exceptions require official restaurant/guide verification.</span></td>
+<td><a href="https://guide.michelin.com/us/en/new-york-state/tarrytown/restaurant/blue-hill-at-stone-barns" target="_blank" rel="noopener">Michelin page</a></td>
+<td><span class="badge danger">Unverified</span><div class="small">YouTube: <br>TikTok: <br>Instagram: </div></td>
+<td><a href="https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025" target="_blank" rel="noopener">2025 Ceremony article</a><br><a href="https://guide.michelin.com/us/en/new-york-state/tarrytown/restaurant/blue-hill-at-stone-barns" target="_blank" rel="noopener">Restaurant Michelin page</a></td>
+<td><span class="badge warn">Partial</span><br><span class="small">Name/star/cuisine/URL verified from official ceremony article. Other fields unverified.</span></td>
+</tr>
+<tr>
+<td><strong>César</strong><br><span class="small">New York, NY (from Michelin URL)</span></td>
+<td><span class="badge info">2 Stars</span></td>
+<td>Contemporary</td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Cost for 2 adults not confirmed from official source in this session.</span></td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Hours/days/exceptions require official restaurant/guide verification.</span></td>
+<td><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/cesar" target="_blank" rel="noopener">Michelin page</a></td>
+<td><span class="badge danger">Unverified</span><div class="small">YouTube: <br>TikTok: <br>Instagram: </div></td>
+<td><a href="https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025" target="_blank" rel="noopener">2025 Ceremony article</a><br><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/cesar" target="_blank" rel="noopener">Restaurant Michelin page</a></td>
+<td><span class="badge warn">Partial</span><br><span class="small">Name/star/cuisine/URL verified from official ceremony article. Other fields unverified.</span></td>
+</tr>
+<tr>
+<td><strong>Chef&#x27;s Table at Brooklyn Fare</strong><br><span class="small">New York, NY (from Michelin URL)</span></td>
+<td><span class="badge info">2 Stars</span></td>
+<td>Contemporary</td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Cost for 2 adults not confirmed from official source in this session.</span></td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Hours/days/exceptions require official restaurant/guide verification.</span></td>
+<td><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/chef-s-table-at-brooklyn-fare" target="_blank" rel="noopener">Michelin page</a></td>
+<td><span class="badge danger">Unverified</span><div class="small">YouTube: <br>TikTok: <br>Instagram: </div></td>
+<td><a href="https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025" target="_blank" rel="noopener">2025 Ceremony article</a><br><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/chef-s-table-at-brooklyn-fare" target="_blank" rel="noopener">Restaurant Michelin page</a></td>
+<td><span class="badge warn">Partial</span><br><span class="small">Name/star/cuisine/URL verified from official ceremony article. Other fields unverified.</span></td>
+</tr>
+<tr>
+<td><strong>Gabriel Kreuther</strong><br><span class="small">New York, NY (from Michelin URL)</span></td>
+<td><span class="badge info">2 Stars</span></td>
+<td>French</td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Cost for 2 adults not confirmed from official source in this session.</span></td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Hours/days/exceptions require official restaurant/guide verification.</span></td>
+<td><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/gabriel-kreuther" target="_blank" rel="noopener">Michelin page</a></td>
+<td><span class="badge danger">Unverified</span><div class="small">YouTube: <br>TikTok: <br>Instagram: </div></td>
+<td><a href="https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025" target="_blank" rel="noopener">2025 Ceremony article</a><br><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/gabriel-kreuther" target="_blank" rel="noopener">Restaurant Michelin page</a></td>
+<td><span class="badge warn">Partial</span><br><span class="small">Name/star/cuisine/URL verified from official ceremony article. Other fields unverified.</span></td>
+</tr>
+<tr>
+<td><strong>Jean-Georges</strong><br><span class="small">New York, NY (from Michelin URL)</span></td>
+<td><span class="badge info">2 Stars</span></td>
+<td>Contemporary</td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Cost for 2 adults not confirmed from official source in this session.</span></td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Hours/days/exceptions require official restaurant/guide verification.</span></td>
+<td><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/jean-georges" target="_blank" rel="noopener">Michelin page</a></td>
+<td><span class="badge danger">Unverified</span><div class="small">YouTube: <br>TikTok: <br>Instagram: </div></td>
+<td><a href="https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025" target="_blank" rel="noopener">2025 Ceremony article</a><br><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/jean-georges" target="_blank" rel="noopener">Restaurant Michelin page</a></td>
+<td><span class="badge warn">Partial</span><br><span class="small">Name/star/cuisine/URL verified from official ceremony article. Other fields unverified.</span></td>
+</tr>
+<tr>
+<td><strong>Joo Ok</strong><br><span class="small">New York, NY (from Michelin URL)</span></td>
+<td><span class="badge info">2 Stars</span> <span class="badge warn">NEW Two Star (2025)</span></td>
+<td>Korean</td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Cost for 2 adults not confirmed from official source in this session.</span></td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Hours/days/exceptions require official restaurant/guide verification.</span></td>
+<td><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/joo-ok-1214822" target="_blank" rel="noopener">Michelin page</a></td>
+<td><span class="badge danger">Unverified</span><div class="small">YouTube: <br>TikTok: <br>Instagram: </div></td>
+<td><a href="https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025" target="_blank" rel="noopener">2025 Ceremony article</a><br><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/joo-ok-1214822" target="_blank" rel="noopener">Restaurant Michelin page</a></td>
+<td><span class="badge warn">Partial</span><br><span class="small">Name/star/cuisine/URL verified from official ceremony article. Other fields unverified.</span></td>
+</tr>
+<tr>
+<td><strong>Masa</strong><br><span class="small">New York, NY (from Michelin URL)</span></td>
+<td><span class="badge info">2 Stars</span></td>
+<td>Japanese</td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Cost for 2 adults not confirmed from official source in this session.</span></td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Hours/days/exceptions require official restaurant/guide verification.</span></td>
+<td><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/masa" target="_blank" rel="noopener">Michelin page</a></td>
+<td><span class="badge danger">Unverified</span><div class="small">YouTube: <br>TikTok: <br>Instagram: </div></td>
+<td><a href="https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025" target="_blank" rel="noopener">2025 Ceremony article</a><br><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/masa" target="_blank" rel="noopener">Restaurant Michelin page</a></td>
+<td><span class="badge warn">Partial</span><br><span class="small">Name/star/cuisine/URL verified from official ceremony article. Other fields unverified.</span></td>
+</tr>
+<tr>
+<td><strong>odo</strong><br><span class="small">New York, NY (from Michelin URL)</span></td>
+<td><span class="badge info">2 Stars</span></td>
+<td>Japanese</td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Cost for 2 adults not confirmed from official source in this session.</span></td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Hours/days/exceptions require official restaurant/guide verification.</span></td>
+<td><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/odo" target="_blank" rel="noopener">Michelin page</a></td>
+<td><span class="badge danger">Unverified</span><div class="small">YouTube: <br>TikTok: <br>Instagram: </div></td>
+<td><a href="https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025" target="_blank" rel="noopener">2025 Ceremony article</a><br><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/odo" target="_blank" rel="noopener">Restaurant Michelin page</a></td>
+<td><span class="badge warn">Partial</span><br><span class="small">Name/star/cuisine/URL verified from official ceremony article. Other fields unverified.</span></td>
+</tr>
+<tr>
+<td><strong>Saga</strong><br><span class="small">New York, NY (from Michelin URL)</span></td>
+<td><span class="badge info">2 Stars</span></td>
+<td>Contemporary</td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Cost for 2 adults not confirmed from official source in this session.</span></td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Hours/days/exceptions require official restaurant/guide verification.</span></td>
+<td><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/saga" target="_blank" rel="noopener">Michelin page</a></td>
+<td><span class="badge danger">Unverified</span><div class="small">YouTube: <br>TikTok: <br>Instagram: </div></td>
+<td><a href="https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025" target="_blank" rel="noopener">2025 Ceremony article</a><br><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/saga" target="_blank" rel="noopener">Restaurant Michelin page</a></td>
+<td><span class="badge warn">Partial</span><br><span class="small">Name/star/cuisine/URL verified from official ceremony article. Other fields unverified.</span></td>
+</tr>
+<tr>
+<td><strong>Sushi Noz</strong><br><span class="small">New York, NY (from Michelin URL)</span></td>
+<td><span class="badge info">2 Stars</span></td>
+<td>Japanese</td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Cost for 2 adults not confirmed from official source in this session.</span></td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Hours/days/exceptions require official restaurant/guide verification.</span></td>
+<td><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/sushi-noz" target="_blank" rel="noopener">Michelin page</a></td>
+<td><span class="badge danger">Unverified</span><div class="small">YouTube: <br>TikTok: <br>Instagram: </div></td>
+<td><a href="https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025" target="_blank" rel="noopener">2025 Ceremony article</a><br><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/sushi-noz" target="_blank" rel="noopener">Restaurant Michelin page</a></td>
+<td><span class="badge warn">Partial</span><br><span class="small">Name/star/cuisine/URL verified from official ceremony article. Other fields unverified.</span></td>
+</tr>
+<tr>
+<td><strong>The Modern</strong><br><span class="small">New York, NY (from Michelin URL)</span></td>
+<td><span class="badge info">2 Stars</span></td>
+<td>Contemporary</td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Cost for 2 adults not confirmed from official source in this session.</span></td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Hours/days/exceptions require official restaurant/guide verification.</span></td>
+<td><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/the-modern" target="_blank" rel="noopener">Michelin page</a></td>
+<td><span class="badge danger">Unverified</span><div class="small">YouTube: <br>TikTok: <br>Instagram: </div></td>
+<td><a href="https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025" target="_blank" rel="noopener">2025 Ceremony article</a><br><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/the-modern" target="_blank" rel="noopener">Restaurant Michelin page</a></td>
+<td><span class="badge warn">Partial</span><br><span class="small">Name/star/cuisine/URL verified from official ceremony article. Other fields unverified.</span></td>
+</tr>
+<tr>
+<td><strong>63 Clinton</strong><br><span class="small">New York, NY (from Michelin URL)</span></td>
+<td><span class="badge info">1 Star</span></td>
+<td>Contemporary</td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Cost for 2 adults not confirmed from official source in this session.</span></td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Hours/days/exceptions require official restaurant/guide verification.</span></td>
+<td><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/63-clinton" target="_blank" rel="noopener">Michelin page</a></td>
+<td><span class="badge danger">Unverified</span><div class="small">YouTube: <br>TikTok: <br>Instagram: </div></td>
+<td><a href="https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025" target="_blank" rel="noopener">2025 Ceremony article</a><br><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/63-clinton" target="_blank" rel="noopener">Restaurant Michelin page</a></td>
+<td><span class="badge warn">Partial</span><br><span class="small">Name/star/cuisine/URL verified from official ceremony article. Other fields unverified.</span></td>
+</tr>
+<tr>
+<td><strong>Bar Miller</strong><br><span class="small">New York, NY (from Michelin URL)</span></td>
+<td><span class="badge info">1 Star</span></td>
+<td>Japanese</td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Cost for 2 adults not confirmed from official source in this session.</span></td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Hours/days/exceptions require official restaurant/guide verification.</span></td>
+<td><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/bar-miller" target="_blank" rel="noopener">Michelin page</a></td>
+<td><span class="badge danger">Unverified</span><div class="small">YouTube: <br>TikTok: <br>Instagram: </div></td>
+<td><a href="https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025" target="_blank" rel="noopener">2025 Ceremony article</a><br><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/bar-miller" target="_blank" rel="noopener">Restaurant Michelin page</a></td>
+<td><span class="badge warn">Partial</span><br><span class="small">Name/star/cuisine/URL verified from official ceremony article. Other fields unverified.</span></td>
+</tr>
+<tr>
+<td><strong>bōm</strong><br><span class="small">New York, NY (from Michelin URL)</span></td>
+<td><span class="badge info">1 Star</span></td>
+<td>Korean</td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Cost for 2 adults not confirmed from official source in this session.</span></td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Hours/days/exceptions require official restaurant/guide verification.</span></td>
+<td><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/bom" target="_blank" rel="noopener">Michelin page</a></td>
+<td><span class="badge danger">Unverified</span><div class="small">YouTube: <br>TikTok: <br>Instagram: </div></td>
+<td><a href="https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025" target="_blank" rel="noopener">2025 Ceremony article</a><br><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/bom" target="_blank" rel="noopener">Restaurant Michelin page</a></td>
+<td><span class="badge warn">Partial</span><br><span class="small">Name/star/cuisine/URL verified from official ceremony article. Other fields unverified.</span></td>
+</tr>
+<tr>
+<td><strong>Bridges</strong><br><span class="small">New York, NY (from Michelin URL)</span></td>
+<td><span class="badge info">1 Star</span> <span class="badge warn">NEW One Star (2025)</span></td>
+<td>Contemporary</td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Cost for 2 adults not confirmed from official source in this session.</span></td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Hours/days/exceptions require official restaurant/guide verification.</span></td>
+<td><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/bridges-1216261" target="_blank" rel="noopener">Michelin page</a></td>
+<td><span class="badge danger">Unverified</span><div class="small">YouTube: <br>TikTok: <br>Instagram: </div></td>
+<td><a href="https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025" target="_blank" rel="noopener">2025 Ceremony article</a><br><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/bridges-1216261" target="_blank" rel="noopener">Restaurant Michelin page</a></td>
+<td><span class="badge warn">Partial</span><br><span class="small">Name/star/cuisine/URL verified from official ceremony article. Other fields unverified.</span></td>
+</tr>
+<tr>
+<td><strong>Café Boulud</strong><br><span class="small">New York, NY (from Michelin URL)</span></td>
+<td><span class="badge info">1 Star</span></td>
+<td>French</td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Cost for 2 adults not confirmed from official source in this session.</span></td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Hours/days/exceptions require official restaurant/guide verification.</span></td>
+<td><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/cafe-boulud" target="_blank" rel="noopener">Michelin page</a></td>
+<td><span class="badge danger">Unverified</span><div class="small">YouTube: <br>TikTok: <br>Instagram: </div></td>
+<td><a href="https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025" target="_blank" rel="noopener">2025 Ceremony article</a><br><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/cafe-boulud" target="_blank" rel="noopener">Restaurant Michelin page</a></td>
+<td><span class="badge warn">Partial</span><br><span class="small">Name/star/cuisine/URL verified from official ceremony article. Other fields unverified.</span></td>
+</tr>
+<tr>
+<td><strong>Casa Mono</strong><br><span class="small">New York, NY (from Michelin URL)</span></td>
+<td><span class="badge info">1 Star</span></td>
+<td>Spanish</td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Cost for 2 adults not confirmed from official source in this session.</span></td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Hours/days/exceptions require official restaurant/guide verification.</span></td>
+<td><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/casa-mono" target="_blank" rel="noopener">Michelin page</a></td>
+<td><span class="badge danger">Unverified</span><div class="small">YouTube: <br>TikTok: <br>Instagram: </div></td>
+<td><a href="https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025" target="_blank" rel="noopener">2025 Ceremony article</a><br><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/casa-mono" target="_blank" rel="noopener">Restaurant Michelin page</a></td>
+<td><span class="badge warn">Partial</span><br><span class="small">Name/star/cuisine/URL verified from official ceremony article. Other fields unverified.</span></td>
+</tr>
+<tr>
+<td><strong>Corima</strong><br><span class="small">New York, NY (from Michelin URL)</span></td>
+<td><span class="badge info">1 Star</span></td>
+<td>Mexican</td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Cost for 2 adults not confirmed from official source in this session.</span></td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Hours/days/exceptions require official restaurant/guide verification.</span></td>
+<td><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/corima" target="_blank" rel="noopener">Michelin page</a></td>
+<td><span class="badge danger">Unverified</span><div class="small">YouTube: <br>TikTok: <br>Instagram: </div></td>
+<td><a href="https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025" target="_blank" rel="noopener">2025 Ceremony article</a><br><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/corima" target="_blank" rel="noopener">Restaurant Michelin page</a></td>
+<td><span class="badge warn">Partial</span><br><span class="small">Name/star/cuisine/URL verified from official ceremony article. Other fields unverified.</span></td>
+</tr>
+<tr>
+<td><strong>Cote</strong><br><span class="small">New York, NY (from Michelin URL)</span></td>
+<td><span class="badge info">1 Star</span></td>
+<td>Korean</td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Cost for 2 adults not confirmed from official source in this session.</span></td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Hours/days/exceptions require official restaurant/guide verification.</span></td>
+<td><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/cote" target="_blank" rel="noopener">Michelin page</a></td>
+<td><span class="badge danger">Unverified</span><div class="small">YouTube: <br>TikTok: <br>Instagram: </div></td>
+<td><a href="https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025" target="_blank" rel="noopener">2025 Ceremony article</a><br><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/cote" target="_blank" rel="noopener">Restaurant Michelin page</a></td>
+<td><span class="badge warn">Partial</span><br><span class="small">Name/star/cuisine/URL verified from official ceremony article. Other fields unverified.</span></td>
+</tr>
+<tr>
+<td><strong>Crown Shy</strong><br><span class="small">New York, NY (from Michelin URL)</span></td>
+<td><span class="badge info">1 Star</span></td>
+<td>Contemporary</td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Cost for 2 adults not confirmed from official source in this session.</span></td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Hours/days/exceptions require official restaurant/guide verification.</span></td>
+<td><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/crown-shy" target="_blank" rel="noopener">Michelin page</a></td>
+<td><span class="badge danger">Unverified</span><div class="small">YouTube: <br>TikTok: <br>Instagram: </div></td>
+<td><a href="https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025" target="_blank" rel="noopener">2025 Ceremony article</a><br><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/crown-shy" target="_blank" rel="noopener">Restaurant Michelin page</a></td>
+<td><span class="badge warn">Partial</span><br><span class="small">Name/star/cuisine/URL verified from official ceremony article. Other fields unverified.</span></td>
+</tr>
+<tr>
+<td><strong>Daniel</strong><br><span class="small">New York, NY (from Michelin URL)</span></td>
+<td><span class="badge info">1 Star</span></td>
+<td>French</td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Cost for 2 adults not confirmed from official source in this session.</span></td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Hours/days/exceptions require official restaurant/guide verification.</span></td>
+<td><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/daniel" target="_blank" rel="noopener">Michelin page</a></td>
+<td><span class="badge danger">Unverified</span><div class="small">YouTube: <br>TikTok: <br>Instagram: </div></td>
+<td><a href="https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025" target="_blank" rel="noopener">2025 Ceremony article</a><br><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/daniel" target="_blank" rel="noopener">Restaurant Michelin page</a></td>
+<td><span class="badge warn">Partial</span><br><span class="small">Name/star/cuisine/URL verified from official ceremony article. Other fields unverified.</span></td>
+</tr>
+<tr>
+<td><strong>Dirt Candy</strong><br><span class="small">New York, NY (from Michelin URL)</span></td>
+<td><span class="badge info">1 Star</span> <span class="badge warn">Also Green Star</span></td>
+<td>Vegetarian</td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Cost for 2 adults not confirmed from official source in this session.</span></td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Hours/days/exceptions require official restaurant/guide verification.</span></td>
+<td><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/dirt-candy" target="_blank" rel="noopener">Michelin page</a></td>
+<td><span class="badge danger">Unverified</span><div class="small">YouTube: <br>TikTok: <br>Instagram: </div></td>
+<td><a href="https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025" target="_blank" rel="noopener">2025 Ceremony article</a><br><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/dirt-candy" target="_blank" rel="noopener">Restaurant Michelin page</a></td>
+<td><span class="badge warn">Partial</span><br><span class="small">Name/star/cuisine/URL verified from official ceremony article. Other fields unverified.</span></td>
+</tr>
+<tr>
+<td><strong>Essential by Christophe</strong><br><span class="small">New York, NY (from Michelin URL)</span></td>
+<td><span class="badge info">1 Star</span></td>
+<td>French Contemporary</td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Cost for 2 adults not confirmed from official source in this session.</span></td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Hours/days/exceptions require official restaurant/guide verification.</span></td>
+<td><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/essential-by-christophe" target="_blank" rel="noopener">Michelin page</a></td>
+<td><span class="badge danger">Unverified</span><div class="small">YouTube: <br>TikTok: <br>Instagram: </div></td>
+<td><a href="https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025" target="_blank" rel="noopener">2025 Ceremony article</a><br><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/essential-by-christophe" target="_blank" rel="noopener">Restaurant Michelin page</a></td>
+<td><span class="badge warn">Partial</span><br><span class="small">Name/star/cuisine/URL verified from official ceremony article. Other fields unverified.</span></td>
+</tr>
+<tr>
+<td><strong>Estela</strong><br><span class="small">New York, NY (from Michelin URL)</span></td>
+<td><span class="badge info">1 Star</span></td>
+<td>Contemporary</td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Cost for 2 adults not confirmed from official source in this session.</span></td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Hours/days/exceptions require official restaurant/guide verification.</span></td>
+<td><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/estela" target="_blank" rel="noopener">Michelin page</a></td>
+<td><span class="badge danger">Unverified</span><div class="small">YouTube: <br>TikTok: <br>Instagram: </div></td>
+<td><a href="https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025" target="_blank" rel="noopener">2025 Ceremony article</a><br><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/estela" target="_blank" rel="noopener">Restaurant Michelin page</a></td>
+<td><span class="badge warn">Partial</span><br><span class="small">Name/star/cuisine/URL verified from official ceremony article. Other fields unverified.</span></td>
+</tr>
+<tr>
+<td><strong>Family Meal at Blue Hill</strong><br><span class="small">New York, NY (from Michelin URL)</span></td>
+<td><span class="badge info">1 Star</span> <span class="badge warn">Also Green Star</span></td>
+<td>American</td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Cost for 2 adults not confirmed from official source in this session.</span></td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Hours/days/exceptions require official restaurant/guide verification.</span></td>
+<td><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/blue-hill" target="_blank" rel="noopener">Michelin page</a></td>
+<td><span class="badge danger">Unverified</span><div class="small">YouTube: <br>TikTok: <br>Instagram: </div></td>
+<td><a href="https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025" target="_blank" rel="noopener">2025 Ceremony article</a><br><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/blue-hill" target="_blank" rel="noopener">Restaurant Michelin page</a></td>
+<td><span class="badge warn">Partial</span><br><span class="small">Name/star/cuisine/URL verified from official ceremony article. Other fields unverified.</span></td>
+</tr>
+<tr>
+<td><strong>Francie</strong><br><span class="small">Brooklyn (from Michelin URL)</span></td>
+<td><span class="badge info">1 Star</span></td>
+<td>Contemporary</td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Cost for 2 adults not confirmed from official source in this session.</span></td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Hours/days/exceptions require official restaurant/guide verification.</span></td>
+<td><a href="https://guide.michelin.com/us/en/new-york-state/brooklyn/restaurant/francie" target="_blank" rel="noopener">Michelin page</a></td>
+<td><span class="badge danger">Unverified</span><div class="small">YouTube: <br>TikTok: <br>Instagram: </div></td>
+<td><a href="https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025" target="_blank" rel="noopener">2025 Ceremony article</a><br><a href="https://guide.michelin.com/us/en/new-york-state/brooklyn/restaurant/francie" target="_blank" rel="noopener">Restaurant Michelin page</a></td>
+<td><span class="badge warn">Partial</span><br><span class="small">Name/star/cuisine/URL verified from official ceremony article. Other fields unverified.</span></td>
+</tr>
+<tr>
+<td><strong>Frevo</strong><br><span class="small">New York, NY (from Michelin URL)</span></td>
+<td><span class="badge info">1 Star</span></td>
+<td>Contemporary</td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Cost for 2 adults not confirmed from official source in this session.</span></td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Hours/days/exceptions require official restaurant/guide verification.</span></td>
+<td><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/frevo" target="_blank" rel="noopener">Michelin page</a></td>
+<td><span class="badge danger">Unverified</span><div class="small">YouTube: <br>TikTok: <br>Instagram: </div></td>
+<td><a href="https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025" target="_blank" rel="noopener">2025 Ceremony article</a><br><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/frevo" target="_blank" rel="noopener">Restaurant Michelin page</a></td>
+<td><span class="badge warn">Partial</span><br><span class="small">Name/star/cuisine/URL verified from official ceremony article. Other fields unverified.</span></td>
+</tr>
+<tr>
+<td><strong>Gramercy Tavern</strong><br><span class="small">New York, NY (from Michelin URL)</span></td>
+<td><span class="badge info">1 Star</span></td>
+<td>Contemporary</td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Cost for 2 adults not confirmed from official source in this session.</span></td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Hours/days/exceptions require official restaurant/guide verification.</span></td>
+<td><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/gramercy-tavern" target="_blank" rel="noopener">Michelin page</a></td>
+<td><span class="badge danger">Unverified</span><div class="small">YouTube: <br>TikTok: <br>Instagram: </div></td>
+<td><a href="https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025" target="_blank" rel="noopener">2025 Ceremony article</a><br><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/gramercy-tavern" target="_blank" rel="noopener">Restaurant Michelin page</a></td>
+<td><span class="badge warn">Partial</span><br><span class="small">Name/star/cuisine/URL verified from official ceremony article. Other fields unverified.</span></td>
+</tr>
+<tr>
+<td><strong>Huso</strong><br><span class="small">New York, NY (from Michelin URL)</span></td>
+<td><span class="badge info">1 Star</span> <span class="badge warn">NEW One Star (2025)</span></td>
+<td>Contemporary</td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Cost for 2 adults not confirmed from official source in this session.</span></td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Hours/days/exceptions require official restaurant/guide verification.</span></td>
+<td><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/huso-1218089" target="_blank" rel="noopener">Michelin page</a></td>
+<td><span class="badge danger">Unverified</span><div class="small">YouTube: <br>TikTok: <br>Instagram: </div></td>
+<td><a href="https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025" target="_blank" rel="noopener">2025 Ceremony article</a><br><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/huso-1218089" target="_blank" rel="noopener">Restaurant Michelin page</a></td>
+<td><span class="badge warn">Partial</span><br><span class="small">Name/star/cuisine/URL verified from official ceremony article. Other fields unverified.</span></td>
+</tr>
+<tr>
+<td><strong>Icca</strong><br><span class="small">New York, NY (from Michelin URL)</span></td>
+<td><span class="badge info">1 Star</span></td>
+<td>Japanese</td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Cost for 2 adults not confirmed from official source in this session.</span></td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Hours/days/exceptions require official restaurant/guide verification.</span></td>
+<td><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/icca" target="_blank" rel="noopener">Michelin page</a></td>
+<td><span class="badge danger">Unverified</span><div class="small">YouTube: <br>TikTok: <br>Instagram: </div></td>
+<td><a href="https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025" target="_blank" rel="noopener">2025 Ceremony article</a><br><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/icca" target="_blank" rel="noopener">Restaurant Michelin page</a></td>
+<td><span class="badge warn">Partial</span><br><span class="small">Name/star/cuisine/URL verified from official ceremony article. Other fields unverified.</span></td>
+</tr>
+<tr>
+<td><strong>Jeju Noodle Bar</strong><br><span class="small">New York, NY (from Michelin URL)</span></td>
+<td><span class="badge info">1 Star</span></td>
+<td>Korean</td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Cost for 2 adults not confirmed from official source in this session.</span></td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Hours/days/exceptions require official restaurant/guide verification.</span></td>
+<td><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/jeju-noodle-bar" target="_blank" rel="noopener">Michelin page</a></td>
+<td><span class="badge danger">Unverified</span><div class="small">YouTube: <br>TikTok: <br>Instagram: </div></td>
+<td><a href="https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025" target="_blank" rel="noopener">2025 Ceremony article</a><br><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/jeju-noodle-bar" target="_blank" rel="noopener">Restaurant Michelin page</a></td>
+<td><span class="badge warn">Partial</span><br><span class="small">Name/star/cuisine/URL verified from official ceremony article. Other fields unverified.</span></td>
+</tr>
+<tr>
+<td><strong>Jōji</strong><br><span class="small">New York, NY (from Michelin URL)</span></td>
+<td><span class="badge info">1 Star</span></td>
+<td>Japanese</td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Cost for 2 adults not confirmed from official source in this session.</span></td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Hours/days/exceptions require official restaurant/guide verification.</span></td>
+<td><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/joji" target="_blank" rel="noopener">Michelin page</a></td>
+<td><span class="badge danger">Unverified</span><div class="small">YouTube: <br>TikTok: <br>Instagram: </div></td>
+<td><a href="https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025" target="_blank" rel="noopener">2025 Ceremony article</a><br><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/joji" target="_blank" rel="noopener">Restaurant Michelin page</a></td>
+<td><span class="badge warn">Partial</span><br><span class="small">Name/star/cuisine/URL verified from official ceremony article. Other fields unverified.</span></td>
+</tr>
+<tr>
+<td><strong>Jua</strong><br><span class="small">New York, NY (from Michelin URL)</span></td>
+<td><span class="badge info">1 Star</span></td>
+<td>Korean</td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Cost for 2 adults not confirmed from official source in this session.</span></td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Hours/days/exceptions require official restaurant/guide verification.</span></td>
+<td><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/jua" target="_blank" rel="noopener">Michelin page</a></td>
+<td><span class="badge danger">Unverified</span><div class="small">YouTube: <br>TikTok: <br>Instagram: </div></td>
+<td><a href="https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025" target="_blank" rel="noopener">2025 Ceremony article</a><br><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/jua" target="_blank" rel="noopener">Restaurant Michelin page</a></td>
+<td><span class="badge warn">Partial</span><br><span class="small">Name/star/cuisine/URL verified from official ceremony article. Other fields unverified.</span></td>
+</tr>
+<tr>
+<td><strong>Kochi</strong><br><span class="small">New York, NY (from Michelin URL)</span></td>
+<td><span class="badge info">1 Star</span></td>
+<td>Korean</td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Cost for 2 adults not confirmed from official source in this session.</span></td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Hours/days/exceptions require official restaurant/guide verification.</span></td>
+<td><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/kochi" target="_blank" rel="noopener">Michelin page</a></td>
+<td><span class="badge danger">Unverified</span><div class="small">YouTube: <br>TikTok: <br>Instagram: </div></td>
+<td><a href="https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025" target="_blank" rel="noopener">2025 Ceremony article</a><br><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/kochi" target="_blank" rel="noopener">Restaurant Michelin page</a></td>
+<td><span class="badge warn">Partial</span><br><span class="small">Name/star/cuisine/URL verified from official ceremony article. Other fields unverified.</span></td>
+</tr>
+<tr>
+<td><strong>Kosaka</strong><br><span class="small">New York, NY (from Michelin URL)</span></td>
+<td><span class="badge info">1 Star</span></td>
+<td>Japanese</td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Cost for 2 adults not confirmed from official source in this session.</span></td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Hours/days/exceptions require official restaurant/guide verification.</span></td>
+<td><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/kosaka" target="_blank" rel="noopener">Michelin page</a></td>
+<td><span class="badge danger">Unverified</span><div class="small">YouTube: <br>TikTok: <br>Instagram: </div></td>
+<td><a href="https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025" target="_blank" rel="noopener">2025 Ceremony article</a><br><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/kosaka" target="_blank" rel="noopener">Restaurant Michelin page</a></td>
+<td><span class="badge warn">Partial</span><br><span class="small">Name/star/cuisine/URL verified from official ceremony article. Other fields unverified.</span></td>
+</tr>
+<tr>
+<td><strong>L’Abeille</strong><br><span class="small">New York, NY (from Michelin URL)</span></td>
+<td><span class="badge info">1 Star</span></td>
+<td>French</td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Cost for 2 adults not confirmed from official source in this session.</span></td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Hours/days/exceptions require official restaurant/guide verification.</span></td>
+<td><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/l%E2%80%99abeille" target="_blank" rel="noopener">Michelin page</a></td>
+<td><span class="badge danger">Unverified</span><div class="small">YouTube: <br>TikTok: <br>Instagram: </div></td>
+<td><a href="https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025" target="_blank" rel="noopener">2025 Ceremony article</a><br><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/l%E2%80%99abeille" target="_blank" rel="noopener">Restaurant Michelin page</a></td>
+<td><span class="badge warn">Partial</span><br><span class="small">Name/star/cuisine/URL verified from official ceremony article. Other fields unverified.</span></td>
+</tr>
+<tr>
+<td><strong>La Bastide by Andrea Calstier</strong><br><span class="small">North Salem, NY (from Michelin URL; outside NYC)</span></td>
+<td><span class="badge info">1 Star</span> <span class="badge warn">Outside NYC (North Salem) - not within 1h subway/bus from typical Manhattan hotel; flag for trip relevance</span></td>
+<td>French</td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Cost for 2 adults not confirmed from official source in this session.</span></td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Hours/days/exceptions require official restaurant/guide verification.</span></td>
+<td><a href="https://guide.michelin.com/us/en/new-york-state/north-salem/restaurant/la-bastide-by-andrea-calstier" target="_blank" rel="noopener">Michelin page</a></td>
+<td><span class="badge danger">Unverified</span><div class="small">YouTube: <br>TikTok: <br>Instagram: </div></td>
+<td><a href="https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025" target="_blank" rel="noopener">2025 Ceremony article</a><br><a href="https://guide.michelin.com/us/en/new-york-state/north-salem/restaurant/la-bastide-by-andrea-calstier" target="_blank" rel="noopener">Restaurant Michelin page</a></td>
+<td><span class="badge warn">Partial</span><br><span class="small">Name/star/cuisine/URL verified from official ceremony article. Other fields unverified.</span></td>
+</tr>
+<tr>
+<td><strong>Le Coucou</strong><br><span class="small">New York, NY (from Michelin URL)</span></td>
+<td><span class="badge info">1 Star</span></td>
+<td>French</td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Cost for 2 adults not confirmed from official source in this session.</span></td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Hours/days/exceptions require official restaurant/guide verification.</span></td>
+<td><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/le-coucou" target="_blank" rel="noopener">Michelin page</a></td>
+<td><span class="badge danger">Unverified</span><div class="small">YouTube: <br>TikTok: <br>Instagram: </div></td>
+<td><a href="https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025" target="_blank" rel="noopener">2025 Ceremony article</a><br><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/le-coucou" target="_blank" rel="noopener">Restaurant Michelin page</a></td>
+<td><span class="badge warn">Partial</span><br><span class="small">Name/star/cuisine/URL verified from official ceremony article. Other fields unverified.</span></td>
+</tr>
+<tr>
+<td><strong>Le Pavillon</strong><br><span class="small">New York, NY (from Michelin URL)</span></td>
+<td><span class="badge info">1 Star</span></td>
+<td>French</td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Cost for 2 adults not confirmed from official source in this session.</span></td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Hours/days/exceptions require official restaurant/guide verification.</span></td>
+<td><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/le-pavillon-1192744" target="_blank" rel="noopener">Michelin page</a></td>
+<td><span class="badge danger">Unverified</span><div class="small">YouTube: <br>TikTok: <br>Instagram: </div></td>
+<td><a href="https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025" target="_blank" rel="noopener">2025 Ceremony article</a><br><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/le-pavillon-1192744" target="_blank" rel="noopener">Restaurant Michelin page</a></td>
+<td><span class="badge warn">Partial</span><br><span class="small">Name/star/cuisine/URL verified from official ceremony article. Other fields unverified.</span></td>
+</tr>
+<tr>
+<td><strong>Mari</strong><br><span class="small">New York, NY (from Michelin URL)</span></td>
+<td><span class="badge info">1 Star</span></td>
+<td>Korean</td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Cost for 2 adults not confirmed from official source in this session.</span></td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Hours/days/exceptions require official restaurant/guide verification.</span></td>
+<td><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/mari" target="_blank" rel="noopener">Michelin page</a></td>
+<td><span class="badge danger">Unverified</span><div class="small">YouTube: <br>TikTok: <br>Instagram: </div></td>
+<td><a href="https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025" target="_blank" rel="noopener">2025 Ceremony article</a><br><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/mari" target="_blank" rel="noopener">Restaurant Michelin page</a></td>
+<td><span class="badge warn">Partial</span><br><span class="small">Name/star/cuisine/URL verified from official ceremony article. Other fields unverified.</span></td>
+</tr>
+<tr>
+<td><strong>Meju</strong><br><span class="small">Queens (from Michelin URL)</span></td>
+<td><span class="badge info">1 Star</span></td>
+<td>Korean</td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Cost for 2 adults not confirmed from official source in this session.</span></td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Hours/days/exceptions require official restaurant/guide verification.</span></td>
+<td><a href="https://guide.michelin.com/us/en/new-york-state/queens/restaurant/meju" target="_blank" rel="noopener">Michelin page</a></td>
+<td><span class="badge danger">Unverified</span><div class="small">YouTube: <br>TikTok: <br>Instagram: </div></td>
+<td><a href="https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025" target="_blank" rel="noopener">2025 Ceremony article</a><br><a href="https://guide.michelin.com/us/en/new-york-state/queens/restaurant/meju" target="_blank" rel="noopener">Restaurant Michelin page</a></td>
+<td><span class="badge warn">Partial</span><br><span class="small">Name/star/cuisine/URL verified from official ceremony article. Other fields unverified.</span></td>
+</tr>
+<tr>
+<td><strong>Muku</strong><br><span class="small">New York, NY (from Michelin URL)</span></td>
+<td><span class="badge info">1 Star</span> <span class="badge warn">NEW One Star (2025)</span></td>
+<td>Japanese</td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Cost for 2 adults not confirmed from official source in this session.</span></td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Hours/days/exceptions require official restaurant/guide verification.</span></td>
+<td><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/muku" target="_blank" rel="noopener">Michelin page</a></td>
+<td><span class="badge danger">Unverified</span><div class="small">YouTube: <br>TikTok: <br>Instagram: </div></td>
+<td><a href="https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025" target="_blank" rel="noopener">2025 Ceremony article</a><br><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/muku" target="_blank" rel="noopener">Restaurant Michelin page</a></td>
+<td><span class="badge warn">Partial</span><br><span class="small">Name/star/cuisine/URL verified from official ceremony article. Other fields unverified.</span></td>
+</tr>
+<tr>
+<td><strong>Noda</strong><br><span class="small">New York, NY (from Michelin URL)</span></td>
+<td><span class="badge info">1 Star</span></td>
+<td>Japanese</td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Cost for 2 adults not confirmed from official source in this session.</span></td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Hours/days/exceptions require official restaurant/guide verification.</span></td>
+<td><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/noda" target="_blank" rel="noopener">Michelin page</a></td>
+<td><span class="badge danger">Unverified</span><div class="small">YouTube: <br>TikTok: <br>Instagram: </div></td>
+<td><a href="https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025" target="_blank" rel="noopener">2025 Ceremony article</a><br><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/noda" target="_blank" rel="noopener">Restaurant Michelin page</a></td>
+<td><span class="badge warn">Partial</span><br><span class="small">Name/star/cuisine/URL verified from official ceremony article. Other fields unverified.</span></td>
+</tr>
+<tr>
+<td><strong>Nōksu</strong><br><span class="small">New York, NY (from Michelin URL)</span></td>
+<td><span class="badge info">1 Star</span></td>
+<td>Contemporary</td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Cost for 2 adults not confirmed from official source in this session.</span></td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Hours/days/exceptions require official restaurant/guide verification.</span></td>
+<td><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/noksu" target="_blank" rel="noopener">Michelin page</a></td>
+<td><span class="badge danger">Unverified</span><div class="small">YouTube: <br>TikTok: <br>Instagram: </div></td>
+<td><a href="https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025" target="_blank" rel="noopener">2025 Ceremony article</a><br><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/noksu" target="_blank" rel="noopener">Restaurant Michelin page</a></td>
+<td><span class="badge warn">Partial</span><br><span class="small">Name/star/cuisine/URL verified from official ceremony article. Other fields unverified.</span></td>
+</tr>
+<tr>
+<td><strong>Noz 17</strong><br><span class="small">New York, NY (from Michelin URL)</span></td>
+<td><span class="badge info">1 Star</span></td>
+<td>Japanese</td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Cost for 2 adults not confirmed from official source in this session.</span></td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Hours/days/exceptions require official restaurant/guide verification.</span></td>
+<td><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/noz17" target="_blank" rel="noopener">Michelin page</a></td>
+<td><span class="badge danger">Unverified</span><div class="small">YouTube: <br>TikTok: <br>Instagram: </div></td>
+<td><a href="https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025" target="_blank" rel="noopener">2025 Ceremony article</a><br><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/noz17" target="_blank" rel="noopener">Restaurant Michelin page</a></td>
+<td><span class="badge warn">Partial</span><br><span class="small">Name/star/cuisine/URL verified from official ceremony article. Other fields unverified.</span></td>
+</tr>
+<tr>
+<td><strong>Oiji Mi</strong><br><span class="small">New York, NY (from Michelin URL)</span></td>
+<td><span class="badge info">1 Star</span></td>
+<td>Korean</td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Cost for 2 adults not confirmed from official source in this session.</span></td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Hours/days/exceptions require official restaurant/guide verification.</span></td>
+<td><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/oiji-mi" target="_blank" rel="noopener">Michelin page</a></td>
+<td><span class="badge danger">Unverified</span><div class="small">YouTube: <br>TikTok: <br>Instagram: </div></td>
+<td><a href="https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025" target="_blank" rel="noopener">2025 Ceremony article</a><br><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/oiji-mi" target="_blank" rel="noopener">Restaurant Michelin page</a></td>
+<td><span class="badge warn">Partial</span><br><span class="small">Name/star/cuisine/URL verified from official ceremony article. Other fields unverified.</span></td>
+</tr>
+<tr>
+<td><strong>Oxomoco</strong><br><span class="small">Brooklyn (from Michelin URL)</span></td>
+<td><span class="badge info">1 Star</span></td>
+<td>Mexican</td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Cost for 2 adults not confirmed from official source in this session.</span></td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Hours/days/exceptions require official restaurant/guide verification.</span></td>
+<td><a href="https://guide.michelin.com/us/en/new-york-state/brooklyn/restaurant/oxomoco" target="_blank" rel="noopener">Michelin page</a></td>
+<td><span class="badge danger">Unverified</span><div class="small">YouTube: <br>TikTok: <br>Instagram: </div></td>
+<td><a href="https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025" target="_blank" rel="noopener">2025 Ceremony article</a><br><a href="https://guide.michelin.com/us/en/new-york-state/brooklyn/restaurant/oxomoco" target="_blank" rel="noopener">Restaurant Michelin page</a></td>
+<td><span class="badge warn">Partial</span><br><span class="small">Name/star/cuisine/URL verified from official ceremony article. Other fields unverified.</span></td>
+</tr>
+<tr>
+<td><strong>Restaurant Yuu</strong><br><span class="small">Brooklyn (from Michelin URL)</span></td>
+<td><span class="badge info">1 Star</span></td>
+<td>French Contemporary</td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Cost for 2 adults not confirmed from official source in this session.</span></td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Hours/days/exceptions require official restaurant/guide verification.</span></td>
+<td><a href="https://guide.michelin.com/us/en/new-york-state/brooklyn/restaurant/restaurant-yuu" target="_blank" rel="noopener">Michelin page</a></td>
+<td><span class="badge danger">Unverified</span><div class="small">YouTube: <br>TikTok: <br>Instagram: </div></td>
+<td><a href="https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025" target="_blank" rel="noopener">2025 Ceremony article</a><br><a href="https://guide.michelin.com/us/en/new-york-state/brooklyn/restaurant/restaurant-yuu" target="_blank" rel="noopener">Restaurant Michelin page</a></td>
+<td><span class="badge warn">Partial</span><br><span class="small">Name/star/cuisine/URL verified from official ceremony article. Other fields unverified.</span></td>
+</tr>
+<tr>
+<td><strong>Rezdôra</strong><br><span class="small">New York, NY (from Michelin URL)</span></td>
+<td><span class="badge info">1 Star</span></td>
+<td>Italian</td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Cost for 2 adults not confirmed from official source in this session.</span></td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Hours/days/exceptions require official restaurant/guide verification.</span></td>
+<td><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/rezdora-osteria-emiliana" target="_blank" rel="noopener">Michelin page</a></td>
+<td><span class="badge danger">Unverified</span><div class="small">YouTube: <br>TikTok: <br>Instagram: </div></td>
+<td><a href="https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025" target="_blank" rel="noopener">2025 Ceremony article</a><br><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/rezdora-osteria-emiliana" target="_blank" rel="noopener">Restaurant Michelin page</a></td>
+<td><span class="badge warn">Partial</span><br><span class="small">Name/star/cuisine/URL verified from official ceremony article. Other fields unverified.</span></td>
+</tr>
+<tr>
+<td><strong>Semma</strong><br><span class="small">New York, NY (from Michelin URL)</span></td>
+<td><span class="badge info">1 Star</span></td>
+<td>Indian</td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Cost for 2 adults not confirmed from official source in this session.</span></td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Hours/days/exceptions require official restaurant/guide verification.</span></td>
+<td><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/semma" target="_blank" rel="noopener">Michelin page</a></td>
+<td><span class="badge danger">Unverified</span><div class="small">YouTube: <br>TikTok: <br>Instagram: </div></td>
+<td><a href="https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025" target="_blank" rel="noopener">2025 Ceremony article</a><br><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/semma" target="_blank" rel="noopener">Restaurant Michelin page</a></td>
+<td><span class="badge warn">Partial</span><br><span class="small">Name/star/cuisine/URL verified from official ceremony article. Other fields unverified.</span></td>
+</tr>
+<tr>
+<td><strong>Shion 69 Leonard Street</strong><br><span class="small">New York, NY (from Michelin URL)</span></td>
+<td><span class="badge info">1 Star</span></td>
+<td>Japanese</td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Cost for 2 adults not confirmed from official source in this session.</span></td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Hours/days/exceptions require official restaurant/guide verification.</span></td>
+<td><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/shoji-at-69-leonard" target="_blank" rel="noopener">Michelin page</a></td>
+<td><span class="badge danger">Unverified</span><div class="small">YouTube: <br>TikTok: <br>Instagram: </div></td>
+<td><a href="https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025" target="_blank" rel="noopener">2025 Ceremony article</a><br><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/shoji-at-69-leonard" target="_blank" rel="noopener">Restaurant Michelin page</a></td>
+<td><span class="badge warn">Partial</span><br><span class="small">Name/star/cuisine/URL verified from official ceremony article. Other fields unverified.</span></td>
+</tr>
+<tr>
+<td><strong>Shmoné</strong><br><span class="small">New York, NY (from Michelin URL)</span></td>
+<td><span class="badge info">1 Star</span></td>
+<td>Israeli</td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Cost for 2 adults not confirmed from official source in this session.</span></td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Hours/days/exceptions require official restaurant/guide verification.</span></td>
+<td><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/shmone" target="_blank" rel="noopener">Michelin page</a></td>
+<td><span class="badge danger">Unverified</span><div class="small">YouTube: <br>TikTok: <br>Instagram: </div></td>
+<td><a href="https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025" target="_blank" rel="noopener">2025 Ceremony article</a><br><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/shmone" target="_blank" rel="noopener">Restaurant Michelin page</a></td>
+<td><span class="badge warn">Partial</span><br><span class="small">Name/star/cuisine/URL verified from official ceremony article. Other fields unverified.</span></td>
+</tr>
+<tr>
+<td><strong>Shota Omakase</strong><br><span class="small">Brooklyn (from Michelin URL)</span></td>
+<td><span class="badge info">1 Star</span></td>
+<td>Japanese</td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Cost for 2 adults not confirmed from official source in this session.</span></td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Hours/days/exceptions require official restaurant/guide verification.</span></td>
+<td><a href="https://guide.michelin.com/us/en/new-york-state/brooklyn/restaurant/shota-omakase" target="_blank" rel="noopener">Michelin page</a></td>
+<td><span class="badge danger">Unverified</span><div class="small">YouTube: <br>TikTok: <br>Instagram: </div></td>
+<td><a href="https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025" target="_blank" rel="noopener">2025 Ceremony article</a><br><a href="https://guide.michelin.com/us/en/new-york-state/brooklyn/restaurant/shota-omakase" target="_blank" rel="noopener">Restaurant Michelin page</a></td>
+<td><span class="badge warn">Partial</span><br><span class="small">Name/star/cuisine/URL verified from official ceremony article. Other fields unverified.</span></td>
+</tr>
+<tr>
+<td><strong>Sushi Nakazawa</strong><br><span class="small">New York, NY (from Michelin URL)</span></td>
+<td><span class="badge info">1 Star</span></td>
+<td>Japanese</td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Cost for 2 adults not confirmed from official source in this session.</span></td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Hours/days/exceptions require official restaurant/guide verification.</span></td>
+<td><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/sushi-nakazawa" target="_blank" rel="noopener">Michelin page</a></td>
+<td><span class="badge danger">Unverified</span><div class="small">YouTube: <br>TikTok: <br>Instagram: </div></td>
+<td><a href="https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025" target="_blank" rel="noopener">2025 Ceremony article</a><br><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/sushi-nakazawa" target="_blank" rel="noopener">Restaurant Michelin page</a></td>
+<td><span class="badge warn">Partial</span><br><span class="small">Name/star/cuisine/URL verified from official ceremony article. Other fields unverified.</span></td>
+</tr>
+<tr>
+<td><strong>Tempura Matsui</strong><br><span class="small">New York, NY (from Michelin URL)</span></td>
+<td><span class="badge info">1 Star</span></td>
+<td>Japanese</td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Cost for 2 adults not confirmed from official source in this session.</span></td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Hours/days/exceptions require official restaurant/guide verification.</span></td>
+<td><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/tempura-matsui" target="_blank" rel="noopener">Michelin page</a></td>
+<td><span class="badge danger">Unverified</span><div class="small">YouTube: <br>TikTok: <br>Instagram: </div></td>
+<td><a href="https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025" target="_blank" rel="noopener">2025 Ceremony article</a><br><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/tempura-matsui" target="_blank" rel="noopener">Restaurant Michelin page</a></td>
+<td><span class="badge warn">Partial</span><br><span class="small">Name/star/cuisine/URL verified from official ceremony article. Other fields unverified.</span></td>
+</tr>
+<tr>
+<td><strong>The Four Horsemen</strong><br><span class="small">Brooklyn (from Michelin URL)</span></td>
+<td><span class="badge info">1 Star</span></td>
+<td>American</td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Cost for 2 adults not confirmed from official source in this session.</span></td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Hours/days/exceptions require official restaurant/guide verification.</span></td>
+<td><a href="https://guide.michelin.com/us/en/new-york-state/brooklyn/restaurant/the-four-horsemen" target="_blank" rel="noopener">Michelin page</a></td>
+<td><span class="badge danger">Unverified</span><div class="small">YouTube: <br>TikTok: <br>Instagram: </div></td>
+<td><a href="https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025" target="_blank" rel="noopener">2025 Ceremony article</a><br><a href="https://guide.michelin.com/us/en/new-york-state/brooklyn/restaurant/the-four-horsemen" target="_blank" rel="noopener">Restaurant Michelin page</a></td>
+<td><span class="badge warn">Partial</span><br><span class="small">Name/star/cuisine/URL verified from official ceremony article. Other fields unverified.</span></td>
+</tr>
+<tr>
+<td><strong>Torien</strong><br><span class="small">New York, NY (from Michelin URL)</span></td>
+<td><span class="badge info">1 Star</span></td>
+<td>Japanese</td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Cost for 2 adults not confirmed from official source in this session.</span></td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Hours/days/exceptions require official restaurant/guide verification.</span></td>
+<td><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/torien" target="_blank" rel="noopener">Michelin page</a></td>
+<td><span class="badge danger">Unverified</span><div class="small">YouTube: <br>TikTok: <br>Instagram: </div></td>
+<td><a href="https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025" target="_blank" rel="noopener">2025 Ceremony article</a><br><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/torien" target="_blank" rel="noopener">Restaurant Michelin page</a></td>
+<td><span class="badge warn">Partial</span><br><span class="small">Name/star/cuisine/URL verified from official ceremony article. Other fields unverified.</span></td>
+</tr>
+<tr>
+<td><strong>Torrisi</strong><br><span class="small">New York, NY (from Michelin URL)</span></td>
+<td><span class="badge info">1 Star</span></td>
+<td>Contemporary</td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Cost for 2 adults not confirmed from official source in this session.</span></td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Hours/days/exceptions require official restaurant/guide verification.</span></td>
+<td><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/torrisi" target="_blank" rel="noopener">Michelin page</a></td>
+<td><span class="badge danger">Unverified</span><div class="small">YouTube: <br>TikTok: <br>Instagram: </div></td>
+<td><a href="https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025" target="_blank" rel="noopener">2025 Ceremony article</a><br><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/torrisi" target="_blank" rel="noopener">Restaurant Michelin page</a></td>
+<td><span class="badge warn">Partial</span><br><span class="small">Name/star/cuisine/URL verified from official ceremony article. Other fields unverified.</span></td>
+</tr>
+<tr>
+<td><strong>Tsukimi</strong><br><span class="small">New York, NY (from Michelin URL)</span></td>
+<td><span class="badge info">1 Star</span></td>
+<td>Japanese</td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Cost for 2 adults not confirmed from official source in this session.</span></td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Hours/days/exceptions require official restaurant/guide verification.</span></td>
+<td><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/tsukimi" target="_blank" rel="noopener">Michelin page</a></td>
+<td><span class="badge danger">Unverified</span><div class="small">YouTube: <br>TikTok: <br>Instagram: </div></td>
+<td><a href="https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025" target="_blank" rel="noopener">2025 Ceremony article</a><br><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/tsukimi" target="_blank" rel="noopener">Restaurant Michelin page</a></td>
+<td><span class="badge warn">Partial</span><br><span class="small">Name/star/cuisine/URL verified from official ceremony article. Other fields unverified.</span></td>
+</tr>
+<tr>
+<td><strong>Tuome</strong><br><span class="small">New York, NY (from Michelin URL)</span></td>
+<td><span class="badge info">1 Star</span></td>
+<td>Fusion</td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Cost for 2 adults not confirmed from official source in this session.</span></td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Hours/days/exceptions require official restaurant/guide verification.</span></td>
+<td><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/tuome" target="_blank" rel="noopener">Michelin page</a></td>
+<td><span class="badge danger">Unverified</span><div class="small">YouTube: <br>TikTok: <br>Instagram: </div></td>
+<td><a href="https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025" target="_blank" rel="noopener">2025 Ceremony article</a><br><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/tuome" target="_blank" rel="noopener">Restaurant Michelin page</a></td>
+<td><span class="badge warn">Partial</span><br><span class="small">Name/star/cuisine/URL verified from official ceremony article. Other fields unverified.</span></td>
+</tr>
+<tr>
+<td><strong>Yamada</strong><br><span class="small">New York, NY (from Michelin URL)</span></td>
+<td><span class="badge info">1 Star</span> <span class="badge warn">NEW One Star (2025)</span></td>
+<td>Japanese</td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Cost for 2 adults not confirmed from official source in this session.</span></td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Hours/days/exceptions require official restaurant/guide verification.</span></td>
+<td><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/yamada" target="_blank" rel="noopener">Michelin page</a></td>
+<td><span class="badge danger">Unverified</span><div class="small">YouTube: <br>TikTok: <br>Instagram: </div></td>
+<td><a href="https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025" target="_blank" rel="noopener">2025 Ceremony article</a><br><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/yamada" target="_blank" rel="noopener">Restaurant Michelin page</a></td>
+<td><span class="badge warn">Partial</span><br><span class="small">Name/star/cuisine/URL verified from official ceremony article. Other fields unverified.</span></td>
+</tr>
+<tr>
+<td><strong>YingTao</strong><br><span class="small">New York, NY (from Michelin URL)</span></td>
+<td><span class="badge info">1 Star</span></td>
+<td>Contemporary</td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Cost for 2 adults not confirmed from official source in this session.</span></td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Hours/days/exceptions require official restaurant/guide verification.</span></td>
+<td><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/yingtao" target="_blank" rel="noopener">Michelin page</a></td>
+<td><span class="badge danger">Unverified</span><div class="small">YouTube: <br>TikTok: <br>Instagram: </div></td>
+<td><a href="https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025" target="_blank" rel="noopener">2025 Ceremony article</a><br><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/yingtao" target="_blank" rel="noopener">Restaurant Michelin page</a></td>
+<td><span class="badge warn">Partial</span><br><span class="small">Name/star/cuisine/URL verified from official ceremony article. Other fields unverified.</span></td>
+</tr>
+<tr>
+<td><strong>Yoshino</strong><br><span class="small">New York, NY (from Michelin URL)</span></td>
+<td><span class="badge info">1 Star</span></td>
+<td>Japanese</td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Cost for 2 adults not confirmed from official source in this session.</span></td>
+<td><span class="badge danger">Unverified</span><br><span class="small">Hours/days/exceptions require official restaurant/guide verification.</span></td>
+<td><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/yoshino-1185037" target="_blank" rel="noopener">Michelin page</a></td>
+<td><span class="badge danger">Unverified</span><div class="small">YouTube: <br>TikTok: <br>Instagram: </div></td>
+<td><a href="https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025" target="_blank" rel="noopener">2025 Ceremony article</a><br><a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/yoshino-1185037" target="_blank" rel="noopener">Restaurant Michelin page</a></td>
+<td><span class="badge warn">Partial</span><br><span class="small">Name/star/cuisine/URL verified from official ceremony article. Other fields unverified.</span></td>
+</tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+</div></main>
+<footer><div class="wrap"><div class="small">Primary source: <a href="https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025" target="_blank" rel="noopener">MICHELIN Guide NYC 2025 ceremony article</a>. Extracted 2026-11-25.</div></div></footer>
+<script src="assets/app.js"></script>
+</body>
+</html>

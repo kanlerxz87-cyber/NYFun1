@@ -1,0 +1,126 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hotels | NYFun1</title><link rel="stylesheet" href="assets/style.css"></head><body>
+<header><div class="wrap"><h1>Hotels</h1><p>Candidate hotels ranked by planned Michelin-cluster methodology. Pricing/availability must be verified on official booking flows for exact dates.</p></div></header>
+<nav><div class="wrap">
+  <a href="index.html">Overview</a>
+  <a class="active" href="hotels.html">Hotels</a>
+  <a href="restaurants.html">Michelin Restaurants</a>
+  <a href="activities.html">Activities</a>
+  <a href="analysis.html">Clusters & Transit</a>
+  <a href="planning.html">Planning & Questions</a>
+  <a href="suggestions.html">Suggestions</a>
+  <a href="review.html">Flagged for Review</a>
+</div></nav>
+<main><div class="wrap">
+
+<div class="note danger">
+  <strong>Pricing integrity warning.</strong> The user requested "real verified pricing", "actual dates", "cheapest upcoming time to book", and "7-night total price". In this session, live 2027 hotel inventory/pricing could not be reliably verified from static official booking pages. <strong>No hotel price below is presented as verified.</strong> All price/date cells are blank or flagged <span class="badge danger">Unverified</span>. Before booking, confirm total price (room + taxes + fees) for the exact room type and dates on the official hotel site or a reputable booking engine and record the verification timestamp.
+</div>
+
+<section class="section">
+  <h2>Selection Criteria (Required)</h2>
+  <div class="card">
+    <ul class="clean">
+      <li>2 adults (couple).</li>
+      <li>Private bathroom (en-suite).</li>
+      <li>Queen bed or equivalent/bigger.</li>
+      <li>Preferred dates: 2027-02-15 to 2027-02-18; allowed window: 2027-02-15 to 2027-03-23.</li>
+      <li>Target: activities/restaurants within ~1 hour by subway/bus from hotel.</li>
+      <li>Ranking target: Michelin restaurant density within 1 hour + verified 7-night total price.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Candidate Hotels (Verification In Progress)</h2>
+  <p class="lead">Candidates selected for proximity to Midtown/Flatiron Michelin clusters. Room compliance and pricing require official confirmation for exact dates.</p>
+  <input id="hotel-filter" class="filter" type="search" placeholder="Filter hotels..." data-filter-table="hotel-table">
+  <div class="table-wrap">
+    <table id="hotel-table">
+      <thead>
+        <tr>
+          <th>Hotel</th>
+          <th>Area / Cluster</th>
+          <th>Room Requirement Check (Queen+/Private Bath)</th>
+          <th>7-Night Total (Exact Dates)</th>
+          <th>Cheapest Upcoming 7-Night Window (Feb 15–Mar 23, 2027)</th>
+          <th>Michelin Density (≤1h subway/bus)</th>
+          <th>Official Source</th>
+          <th>Verification</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Hyatt Grand Central New York</strong></td>
+          <td>Midtown East / Grand Central (candidate cluster)</td>
+          <td><span class="badge warn">Needs verification</span><br><span class="small">Verify room type has queen/king and private bathroom for 2 adults on exact dates.</span></td>
+          <td><span class="badge danger">Unverified</span></td>
+          <td><span class="badge danger">Unverified</span></td>
+          <td><span class="badge danger">Unverified</span><br><span class="small">Requires transit-time matrix.</span></td>
+          <td><a href="https://www.hyatt.com/grand-hyatt/en-US/nycgh-grand-hyatt-new-york" target="_blank" rel="noopener">Official hotel site</a></td>
+          <td><span class="badge danger">Unverified</span></td>
+        </tr>
+        <tr>
+          <td><strong>Library Hotel by Library Hotel Collection</strong></td>
+          <td>Midtown East / Grand Central (candidate cluster)</td>
+          <td><span class="badge warn">Needs verification</span><br><span class="small">Confirm queen/king room with private bathroom on official room page.</span></td>
+          <td><span class="badge danger">Unverified</span></td>
+          <td><span class="badge danger">Unverified</span></td>
+          <td><span class="badge danger">Unverified</span></td>
+          <td><a href="https://libraryhotel.com/" target="_blank" rel="noopener">Official hotel site</a></td>
+          <td><span class="badge danger">Unverified</span></td>
+        </tr>
+        <tr>
+          <td><strong>The Shelburne Sonesta New York</strong></td>
+          <td>Murray Hill / Midtown East (candidate cluster)</td>
+          <td><span class="badge warn">Needs verification</span></td>
+          <td><span class="badge danger">Unverified</span></td>
+          <td><span class="badge danger">Unverified</span></td>
+          <td><span class="badge danger">Unverified</span></td>
+          <td><a href="https://www.sonesta.com/sonesta-hotels-resorts/ny/new-york/shelburne-sonesta-new-york" target="_blank" rel="noopener">Official hotel site</a></td>
+          <td><span class="badge danger">Unverified</span></td>
+        </tr>
+        <tr>
+          <td><strong>Moxy NYC Times Square</strong></td>
+          <td>Midtown West / Times Square (candidate cluster)</td>
+          <td><span class="badge warn">Needs verification</span><br><span class="small">Many Moxy rooms are compact; verify bed size is queen/equivalent+ and private bathroom.</span></td>
+          <td><span class="badge danger">Unverified</span></td>
+          <td><span class="badge danger">Unverified</span></td>
+          <td><span class="badge danger">Unverified</span></td>
+          <td><a href="https://moxytimessquare.com/" target="_blank" rel="noopener">Official hotel site</a></td>
+          <td><span class="badge danger">Unverified</span></td>
+        </tr>
+        <tr>
+          <td><strong>Archer Hotel New York</strong></td>
+          <td>Midtown / Bryant Park (candidate cluster)</td>
+          <td><span class="badge warn">Needs verification</span></td>
+          <td><span class="badge danger">Unverified</span></td>
+          <td><span class="badge danger">Unverified</span></td>
+          <td><span class="badge danger">Unverified</span></td>
+          <td><a href="https://archerhotel.com/new-york" target="_blank" rel="noopener">Official hotel site</a></td>
+          <td><span class="badge danger">Unverified</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="section">
+  <h2>7-Night Pricing Comparison Template (Required Format)</h2>
+  <p class="lead">Fill only with verified official/booking-flow totals. Leave blank and flag if unconfirmed.</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Hotel</th><th>Room type (verified)</th><th>Check-in</th><th>Check-out</th><th>Nights</th><th>Total price (all taxes/fees)</th><th>Price source URL</th><th>Date checked</th><th>Verification</th></tr></thead>
+      <tbody>
+        <tr><td>Hyatt Grand Central New York</td><td></td><td>2027-02-15</td><td>2027-02-22</td><td>7</td><td><span class="badge danger">Unverified</span></td><td><a href="https://www.hyatt.com/grand-hyatt/en-US/nycgh-grand-hyatt-new-york" target="_blank" rel="noopener">Official site</a></td><td></td><td><span class="badge danger">Unverified</span></td></tr>
+        <tr><td>Hyatt Grand Central New York</td><td></td><td>2027-02-16</td><td>2027-02-23</td><td>7</td><td><span class="badge danger">Unverified</span></td><td><a href="https://www.hyatt.com/grand-hyatt/en-US/nycgh-grand-hyatt-new-york" target="_blank" rel="noopener">Official site</a></td><td></td><td><span class="badge danger">Unverified</span></td></tr>
+        <tr><td>Hyatt Grand Central New York</td><td></td><td>2027-03-16</td><td>2027-03-23</td><td>7</td><td><span class="badge danger">Unverified</span></td><td><a href="https://www.hyatt.com/grand-hyatt/en-US/nycgh-grand-hyatt-new-york" target="_blank" rel="noopener">Official site</a></td><td></td><td><span class="badge danger">Unverified</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="note warn">The rows above are <strong>date templates</strong>, not verified prices. Repeat for each candidate hotel and every plausible 7-night window in 2027-02-15–2027-03-23. The "cheapest upcoming time to book" should be determined only from verified totals captured on the same day with source links.</div>
+</section>
+
+</div></main>
+<footer><div class="wrap"><div class="small">No hotel pricing inferred. Verify on official booking flow for exact dates/room type.</div></div></footer>
+<script src="assets/app.js"></script></body></html>
