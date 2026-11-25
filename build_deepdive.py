@@ -7,7 +7,10 @@ pages at the repo root, which is what GitHub Pages serves for this repo
 """
 import json
 import os
+import re
+import unicodedata
 from html import escape
+from urllib.parse import quote_plus
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "deepdive")
 DATA = os.path.join(ROOT, "data")
@@ -79,6 +82,20 @@ def ext(url, label="source"):
 
 def link_or_blank(url, label="source"):
     return ext(url, label) if url else blank("no official site found")
+
+
+def social_searches(name, context=""):
+    """Return transparent, per-place platform search links, never fabricated post URLs."""
+    query = " ".join(part for part in (name, context, "review") if part).strip()
+    q = quote_plus(query)
+    ig_tag = unicodedata.normalize("NFKD", name.lower()).encode("ascii", "ignore").decode("ascii")
+    ig_tag = re.sub(r"[^a-z0-9]", "", ig_tag) + "nyc"
+    links = [
+        ("YouTube search", f"https://www.youtube.com/results?search_query={q}"),
+        ("TikTok search", f"https://www.tiktok.com/search?q={q}"),
+        ("Instagram hashtag", f"https://www.instagram.com/explore/tags/{ig_tag}/"),
+    ]
+    return " · ".join(ext(url, label) for label, url in links)
 
 
 def page(slug, title, body, lede=""):
@@ -404,6 +421,7 @@ def build_restaurants():
             f"<td class='num'>{price}</td>"
             f"<td class='num'>{e(r['cheapest_option']) if r.get('cheapest_option') else blank()}</td>"
             f"<td>{link_or_blank(r.get('official'), 'site')} · {ext(r['michelin'], 'Michelin')}{' · ' + ext(r['reserve'], 'book') if r.get('reserve') else ''}</td>"
+            f"<td class='note'>{social_searches(r['name'], 'New York restaurant')}</td>"
             f"</tr>"
         )
 
@@ -421,7 +439,7 @@ def build_restaurants():
             f"<li><a href='{e(v['url'])}' target='_blank' rel='noopener'>{e(v['title'])}</a></li>"
             for v in r.get("videos", [])
         )
-        vids_block = f"<ul class='tight'>{vids}</ul>" if vids else f"<p>{unv('no verified video found')}</p>"
+        vids_block = f"<ul class='tight'>{vids}</ul>" if vids else f"<p>{blank('no selected video link captured')}</p>"
         social = r.get("social_search") or {}
         social_links = " · ".join(
             ext(url, label) for label, url in social.items() if url
@@ -453,25 +471,27 @@ def build_restaurants():
      <strong>Closed:</strong> {closed}</p>
   {menu_block}
   {''.join(extras)}
-  <p class="note"><strong>Watch:</strong></p>
+  <p class="note"><strong>Video links already in the research file:</strong> third-party content, not venue sources or endorsements. Their titles and availability were not re-checked in this pass.</p>
   {vids_block}
+  <p class="note"><strong>Find more reviews:</strong> {social_searches(r['name'], 'New York restaurant')}</p>
   <p class="note">{link_or_blank(r.get('official'), 'Official site')} · {ext(r['michelin'], 'Michelin listing')}{' · ' + social_links if social_links else ''}</p>
 </div>
 """
 
     one_star_rows = "".join(
         f"<tr><td><strong>{e(x['name'])}</strong></td><td>{e(x['cuisine'])}</td><td class='note'>{e(x['why'])}</td>"
-        f"<td>{ext('https://guide.michelin.com/us/en/new-york-state/new-york/restaurants/1-star-michelin', 'Michelin')}</td></tr>"
+        f"<td>{ext('https://guide.michelin.com/us/en/new-york-state/new-york/restaurants/1-star-michelin', 'Michelin')}</td>"
+        f"<td>{social_searches(x['name'], 'New York restaurant')}</td></tr>"
         for x in RESTAURANTS["one_star_shortlist"]
     )
 
     nodetail = "".join(
-        f"<li><strong>{e(x['name'])}</strong> — {star_tag(x['stars'])} {e(x['cuisine'])}, {e(x['michelin_price'])} · {ext(x['url'], 'Michelin')}</li>"
+        f"<li><strong>{e(x['name'])}</strong> — {star_tag(x['stars'])} {e(x['cuisine'])}, {e(x['michelin_price'])} · {ext(x['url'], 'Michelin')} · {social_searches(x['name'], 'New York restaurant')}</li>"
         for x in RESTAURANTS["starred_no_detail_yet"]
     )
 
     selected = "".join(
-        f"<li><strong>{e(x['name'])}</strong> — {e(x['cuisine'])}, {e(x['michelin_price'])} · {e(x['note'])} · {ext(x['url'], 'Michelin')}</li>"
+        f"<li><strong>{e(x['name'])}</strong> — {e(x['cuisine'])}, {e(x['michelin_price'])} · {e(x['note'])} · {ext(x['url'], 'Michelin')} · {social_searches(x['name'], 'New York restaurant')}</li>"
         for x in RESTAURANTS["selected_only_examples"]
     )
 
@@ -491,9 +511,10 @@ def build_restaurants():
 </div>
 
 <h2>The 10, with prices and hours</h2>
+<p class="note">The social buttons below are per-venue platform searches, not claims that a specific review exists. Direct video links captured earlier are shown separately in each restaurant card and are third-party material, not official sources; link titles and availability have not been re-checked in this pass. Use the restaurant's official page for hours, prices and booking facts.</p>
 <div class="tablewrap">
 <table>
-<thead><tr><th>Restaurant</th><th>Star</th><th>Address</th><th>Hours</th><th class="num">Cost for two</th><th class="num">Cheapest route</th><th>Links</th></tr></thead>
+<thead><tr><th>Restaurant</th><th>Star</th><th>Address</th><th>Hours</th><th class="num">Cost for two</th><th class="num">Cheapest route</th><th>Official links</th><th>Find social reviews</th></tr></thead>
 <tbody>{rows}</tbody>
 </table>
 </div>
@@ -513,7 +534,7 @@ def build_restaurants():
 <h2>One-star shortlist worth considering</h2>
 <div class="tablewrap">
 <table>
-<thead><tr><th>Restaurant</th><th>Cuisine</th><th>Why it is on the list</th><th>Source</th></tr></thead>
+<thead><tr><th>Restaurant</th><th>Cuisine</th><th>Why it is on the list</th><th>Official source</th><th>Find social reviews</th></tr></thead>
 <tbody>{one_star_rows}</tbody>
 </table>
 </div>
@@ -540,7 +561,7 @@ def build_activities():
         hours = e(a["hours"]) if a.get("hours") else unv("hours not published")
         tag = ok("hours verified") if a.get("hours_status") == "verified" else unv("hours unverified")
         vids = "".join(
-            f"<li><a href='{e(v['url'])}' target='_blank' rel='noopener'>{e(v['title'])}</a></li>"
+            f"<li><a href='{e(v['url'])}' target='_blank' rel='noopener'>{e('Search YouTube: ' + a['name']) if 'youtube.com/results?' in v['url'] else e(v['title'])}</a></li>"
             for v in a.get("videos", [])
         )
         extra = ""
@@ -565,7 +586,8 @@ def build_activities():
   <p><strong>Hours:</strong> {hours}<br>
      <strong>Admission:</strong> {e(a['admission'])}</p>
   {extra}
-  {f"<p class='note'><strong>Watch:</strong></p><ul class='tight'>{vids}</ul>" if vids else ""}
+  {f"<p class='note'><strong>Video links from the research file:</strong> third-party content, not venue sources; titles and availability were not re-checked in this pass.</p><ul class='tight'>{vids}</ul>" if vids else ""}
+  <p class="note"><strong>Find social reviews:</strong> {social_searches(a['name'], 'New York attraction')}</p>
   <p class="note">{ext(a['official'], 'Official page')}{' · ' + booking if booking else ''}</p>
 </div>
 """
@@ -749,13 +771,17 @@ def build_questions():
          "No — it is the one derived figure on the site. Every input is verified; the sums are arithmetic.",
          "Nothing to discover; it is labelled as derived on the overview page.",
          "Derived, labelled"),
-        ("Are the TikTok and Instagram links per-venue?",
-         "Mixed. Instagram handles are recorded where the official site or Tock page links one. TikTok links are search URLs, not specific posts.",
-         "Replace search URLs with specific posts if you want curated picks; searching by venue name returns current material.",
-         "Partial"),
+        ("Which stay dates and duration should the hotel comparison use?",
+         "The preferred 15–18 February 2027 window is shorter than the seven-night hotel quote (15–22 February). The request also permits a 1–2 week trip and says 2–4 weeks may be possible, so no single stay length is established.",
+         "Choose the intended check-in/check-out dates and trip length; then re-quote the same qualifying room types for those exact dates. Until then, seven-night prices are comparisons only, not the recommended booking dates.",
+         "Unresolved — decision needed"),
+        ("Are there verified YouTube, TikTok and Instagram review posts for every venue?",
+         "Every displayed restaurant and activity now has per-venue YouTube/TikTok searches and an Instagram hashtag link. These are discovery pages, not individually verified review posts. Some older dataset entries link to third-party YouTube videos; titles and current availability were not re-checked in this pass.",
+         "Open each search result, confirm it names the right venue and is an actual review, then save a direct post URL with author, publish date and platform. Do not treat discovery links as verified endorsements or as factual sources for hours/prices.",
+         "Discovery links only — posts need review"),
     ]
     rows = "".join(
-        f"<tr><td><strong>{e(q)}</strong></td><td>{e(a)}</td><td>{e(s)}</td><td>{unv(st) if st.startswith('Unverified') else ok(st)}</td></tr>"
+        f"<tr><td><strong>{e(q)}</strong></td><td>{e(a)}</td><td>{e(s)}</td><td>{unv(st) if st.startswith(('Unverified', 'Unresolved', 'Discovery')) else ok(st)}</td></tr>"
         for q, a, s, st in qs
     )
 
@@ -932,6 +958,10 @@ def build_review():
          "Three URLs were tried; the hours module never rendered.",
          "Hours blank. Not inferred from memory or from a third party.",
          "open — see questions"),
+        ("Social review links",
+         "Every displayed venue now has platform discovery links, but these lead to searches or hashtag pages rather than individually checked review posts. Older direct YouTube links are third-party and were not re-checked in this pass.",
+         "Keep these links as discovery aids only. Before presenting any as a verified review, open it and confirm the exact venue, review content, publisher and post availability; record the direct URL.",
+         "needs review — no post-level verification"),
     ]
     rows = "".join(
         f"<tr><td><strong>{e(n)}</strong></td><td>{d}</td><td>{r}</td><td>{unv(s) if not s.startswith('resolved') and not s.startswith('by design') and not s.startswith('rejected') and not s.startswith('labelled') else ok(s)}</td></tr>"
@@ -970,9 +1000,9 @@ def build_review():
 </p>
 
 <div class="grid">
-  <div class="kpi"><div class="k">Questions logged</div><div class="v">14</div><div class="s">every blank has a route to an answer</div></div>
+  <div class="kpi"><div class="k">Questions logged</div><div class="v">15</div><div class="s">every blank has a route to an answer</div></div>
   <div class="kpi"><div class="k">Sources cited</div><div class="v">{len(sources)}</div><div class="s">official venue, agency and routing pages</div></div>
-  <div class="kpi"><div class="k">Irregularities logged</div><div class="v">{len(issues)}</div><div class="s">5 flagged, 3 still open, 1 rejected, 1 resolved</div></div>
+  <div class="kpi"><div class="k">Irregularities logged</div><div class="v">{len(issues)}</div><div class="s">Includes open hours, pricing and social-link checks</div></div>
   <div class="kpi"><div class="k">Values left blank</div><div class="v">19</div><div class="s">flagged in the data, never estimated</div></div>
   <div class="kpi"><div class="k">Derived figures</div><div class="v">1</div><div class="s">the budget subtotal, labelled as such</div></div>
 </div>

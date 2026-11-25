@@ -42,7 +42,7 @@ on base commit `6609129`).
 | T12 | Flagged-for-review register (unverified / irregularities) | `docs/flagged.html` | arena-cfbb0ef6 | done | 2026-11-25 |
 | T13 | Verification pass: every value → official source or blank+flag | all data files | arena-cfbb0ef6 | done | 2026-11-25 |
 | T14 | Integration + GitHub Pages publish + link check | `docs/index.html`, nav, Pages settings | arena-cfbb0ef6 | done | 2026-11-25 |
-| T15 | Social review-link coverage audit (direct videos vs clearly labeled platform searches) | `build_deepdive.py`, `COORDINATION.md` | arena-204d4ba1 | in progress | 2026-11-25 |
+| T15 | Social review-link coverage audit (direct videos vs clearly labeled platform searches) | `build_deepdive.py`, `README.md`, generated deepdive pages, `COORDINATION.md` | arena-204d4ba1 | needs review | 2026-11-25 |
 
 ## File ownership (non-overlapping scopes)
 
@@ -197,3 +197,12 @@ merged to `main`, reset Pages to `main:/docs` (or `main:/`) and delete the stale
   with itself.
 - **Link check (automated, all three trees):** 0 broken internal links across `index.html`, `docs/*.html`
   and `deepdive/*.html`.
+
+### 2026-11-25 · arena-204d4ba1 · T15 · Social-link audit (needs review)
+
+- **Change:** `build_deepdive.py` now adds per-venue YouTube and TikTok searches plus an Instagram hashtag link for every visible restaurant/activity entry on the deep-dive pages. Search links are explicitly labelled as searches/hashtags, not as individually verified posts. Pre-existing third-party video links are shown separately with a warning that their titles and availability were not re-checked in this pass. README comparison wording was corrected so it no longer calls those videos verified.
+- **Decision-date gap logged:** the preferred 15–18 Feb 2027 dates do not match the current seven-night 15–22 Feb hotel quote; the wider 1–2 week / possible 2–4 week duration is ambiguous. Added to the deep-dive Questions page; current seven-night quotes must not be presented as the chosen booking dates until re-priced for the intended stay.
+- **Verification performed:** `python3 -m py_compile build.py build_deepdive.py`; regenerated both sites; parsed internal links across 21 HTML pages (0 broken local links); checked the generated deep-dive pages for platform-link coverage. Deep-dive pages contain per-venue discovery links for the visible entries: restaurants (43 rendered placements; includes repeated cards/list rows) and activities (7 entries).
+- **No social-post claim is verified:** search URLs are discovery aids only; the social links are not evidence for opening hours, price, or quality. Existing third-party direct video URLs were not individually opened/re-verified. An Instagram fetch attempt returned HTTP 400 in this environment, so actual platform search usability and relevant results remain unconfirmed. Do not mark individual social content verified until each post is opened and checked.
+- **Official-source note:** no factual venue data was added or altered by T15. Existing official restaurant/attraction links remain the sources for venue facts; this task does not claim to have re-verified those pages. The `docs/flagged.html` F20 item already flags that no individual social post was verified; deep-dive `questions.html` and `review.html` now spell out this limitation too.
+- **Status:** `needs review` because the request for specific, per-venue review posts is only met with transparent discovery links pending a post-by-post curation pass. This does not block the rest of the site.

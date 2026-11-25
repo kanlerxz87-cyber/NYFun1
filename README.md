@@ -65,7 +65,7 @@ published and cross-linked; the disagreements are itemised in `COORDINATION.md`.
 | Hotels | 4, quoted from Booking.com room tables | 10, quoted from Michelin's own availability pages |
 | Hotel price basis | room rate + separately itemised taxes/fees | the stay total Michelin prints, taxes & fees included |
 | Transit | distance/18 km/h model, labelled MODEL | 9 legs measured against MTA GTFS via Transitous |
-| Restaurant depth | roster + price band; social links are search links only | menu prices from the venues' own pages, hours, closures, verified video |
+| Restaurant depth | roster + price band; platform searches, not verified individual social posts | menu prices from venue pages, hours and closures; platform searches for listed venues, with older third-party video links not re-checked |
 | Best for | the ranked shortlist and the budget envelope | menu prices, hours, measured travel times, the audit trail |
 
 `deepdive/` also carries the **verification log** (`deepdive/review.html`) with a 10-link manual review
