@@ -135,6 +135,13 @@
     "source": "https://www.metmuseum.org/plan-your-visit"
    },
    {
+    "item": "American Museum of Natural History - 2 adults, standard general admission",
+    "usd": 74,
+    "kind": "VERIFIED",
+    "source": "https://www.amnh.org/plan-your-visit",
+    "note": "Official page: standard adult general admission $37 for visitors from outside NY State; $37 x 2 = $74. NY State residents pay what they wish."
+   },
+   {
     "item": "9/11 Memorial & Museum - 2 adults (top of the official range)",
     "usd": 72.0,
     "kind": "VERIFIED RANGE",
@@ -174,8 +181,8 @@
     "note": "No official source exists for what a couple spends on ordinary meals. Inventing a daily allowance would be a guess, so this line is blank."
    }
   ],
-  "verified_subtotal_usd": 4110.98,
-  "verified_subtotal_note": "Sum of the ten priced lines. Hotel is a derived all-in figure, flights are a doubled single-adult fare; the other lines are read amounts. Ordinary meals are blank.",
+  "verified_subtotal_usd": 4184.98,
+  "verified_subtotal_note": "Sum of the eleven priced lines. Hotel is a derived all-in figure, flights are a doubled single-adult fare; the other lines are read amounts. Ordinary meals are blank.",
   "unpriced_lines": 1
  },
  "itineraries": [
@@ -320,10 +327,10 @@
    "id": "F-06",
    "severity": "MEDIUM",
    "title": "Most restaurant menu prices could not be read",
-   "detail": "Only Le Bernardin, Gabriel Kreuther and Per Se published a readable price. Eleven Madison Park, Jungsik, Sushi Sho, Daniel and Gramercy Tavern either publish no price, hide it behind a booking flow, or serve their menu as an image.",
-   "source": "https://www.elevenmadisonpark.com/",
-   "settle_by": "Open each venue's Resy/Tock booking page, where the tasting-menu price is displayed before payment",
-   "status": "Open"
+   "detail": "Four venues now publish a readable standard price: Le Bernardin ($350), Gabriel Kreuther ($325), Per Se ($200 deposit, not the full menu price) and Gramercy Tavern ($178 seasonal Dining Room menu). Eleven Madison Park, Jungsik, Sushi Sho and Daniel still publish no readable price. Prices were read from the official menu or booking pages linked in each row.",
+   "source": "https://www.gramercytavern.com/dining-room-menu",
+   "settle_by": "Open each remaining venue's Resy/Tock page, where the tasting-menu price is displayed before payment",
+   "status": "Partial"
   },
   {
    "id": "F-07",
@@ -346,10 +353,10 @@
   {
    "id": "F-09",
    "severity": "HIGH",
-   "title": "The High Line's hours are verified; The Met's hours remain unread",
-   "detail": "The High Line's official visitor page states December–March 07:00–20:00, with the Rail Yard Preserve closing at dusk. The Met's official plan-your-visit page yielded admission prices and directions but no museum-hours block, so that cell stays blank.",
-   "source": "https://www.thehighline.org/visit/",
-   "settle_by": "Read the hours block on metmuseum.org in a browser that renders script",
+   "title": "The High Line is verified; The Met's hours come from an official page excerpt only",
+   "detail": "The High Line's official visitor page states December–March 07:00–20:00. The Met's own page excerpt lists Sun–Tue and Thu 10:00–17:00, Fri–Sat 10:00–21:00, closed Wednesday, but a direct fetch of that page redirected to the generic visit page. The Met row is therefore PARTIAL, not VERIFIED.",
+   "source": "https://www.metmuseum.org/plan-your-visit/met-fifth-avenue",
+   "settle_by": "Open the Met Fifth Avenue page in a browser that renders its hours block",
    "status": "Partial"
   },
   {
@@ -494,7 +501,7 @@
    "id": "Q-02",
    "question": "What is the total budget for two people, excluding flights?",
    "why_it_blocks": "Every ranking on this site sorts on price. Without a ceiling there is no way to say whether two starred dinners are affordable.",
-   "have": "A $4,110.98 priced subtotal for the 7-night plan (one derived hotel line), excluding ordinary meals.",
+   "have": "A $4,184.98 priced subtotal for the 7-night plan (one derived hotel line), excluding ordinary meals.",
    "missing": "A budget figure.",
    "how_to_discover": "Answer directly.",
    "owner": "traveller",
@@ -565,7 +572,7 @@
    "id": "Q-09",
    "question": "What are The Met's and The High Line's opening hours in February 2027?",
    "why_it_blocks": "Both are anchor daytime activities and neither has verified hours.",
-   "have": "Prices and addresses for both.",
+   "have": "The High Line 07:00–20:00 in winter (official page) and The Met's hours from an official page excerpt; the Met row is still marked PARTIAL.",
    "missing": "Hours and closure days.",
    "how_to_discover": "Read the hours block on metmuseum.org and thehighline.org in a script-rendering browser.",
    "owner": "research",

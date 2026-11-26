@@ -1,5 +1,5 @@
 {
- "read_on": "2026-11-25",
+ "read_on": "2026-11-25; additional reads 2026-11-26 (Gramercy Tavern menu, Jungsik address)",
  "note": "Every field below was read on the source URL shown in the same object. A field that could not be read is null and is listed in the Open Questions register. 'price' is the price a couple of two adults pays for the standard tasting/prix-fixe menu PER PERSON unless stated; totals for two are computed, never guessed.",
  "details": {
   "le-bernardin": {
@@ -81,7 +81,7 @@
   "jungsik-new-york": {
    "official_site": "https://www.jungsik.com/",
    "booking": "Tock",
-   "address": "2 Harrison St, New York, NY 10013",
+   "address": "2 Harrison St., New York, NY 10013",
    "price_band": "$$$$",
    "hours": null,
    "hours_source": null,
@@ -97,7 +97,9 @@
    "lat": 40.7187256,
    "lon": -74.0086,
    "hours_status": "UNVERIFIED",
-   "hours_note": "No hours block exists on the MICHELIN page for this venue at all."
+   "hours_note": "No hours block exists on the MICHELIN page for this venue at all.",
+   "address_source": "https://www.jungsik.com/",
+   "address_note": "Read from the restaurant's own site on 2026-11-26; no hours or price were published there."
   },
   "sushi-sho-1213976": {
    "official_site": null,
@@ -158,9 +160,9 @@
    "hours_source": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/gramercy-tavern",
    "closed_days": "none listed",
    "exceptions": "The Tavern room and the Dining Room keep different hours; the restaurant's own Instagram states the Tavern is open until 23:00 seven days a week, which is later than the MICHELIN dinner window - flagged, confirm before booking.",
-   "menu_price_usd": null,
-   "price_source": null,
-   "price_note": "Not read - blank.",
+   "menu_price_usd": 178,
+   "price_source": "https://www.gramercytavern.com/dining-room-menu",
+   "price_note": "Official Dining Room menu read 2026-11-26: Seasonal Menu $178 per person; wine pairing $118 per person. The Tavern room is à la carte at separate prices. Beverages, tax and gratuity are additional.",
    "instagram": "https://www.instagram.com/gramercytavern/",
    "instagram_note": "Profile verified, 145,393 followers; bio links to gramercytavern.com/reservations.",
    "youtube_review": null,

@@ -32,13 +32,13 @@
    "category": "Museum",
    "area": "Upper East Side",
    "address": "1000 Fifth Avenue, New York, NY 10028",
-   "hours": null,
-   "days_open": null,
-   "exceptions": "NY State residents may pay what they wish (minimum $0.01). The Met official page was re-read on 2026-11-26: admission and directions were present, but no museum-hours block could be captured, so hours stay blank. See Q-09.",
+   "hours": "Sun–Tue and Thu 10:00–17:00; Fri–Sat 10:00–21:00",
+   "days_open": "Sun–Tue + Thu–Sat; closed Wed",
+   "exceptions": "NY State residents may pay what they wish (minimum $0.01). Closed Wednesdays, Thanksgiving Day, 25 December, 1 January and the first Monday in May. The hours line comes from The Met's own page excerpt; the direct fetch of that URL redirected, so this row stays PARTIAL rather than VERIFIED.",
    "adult_usd": 30,
    "cost_2_adults_usd": 60,
    "official_url": "https://www.metmuseum.org/plan-your-visit",
-   "verification": "PARTIAL - address and adult price verified; hours not captured",
+   "verification": "PARTIAL - hours taken from The Met's own page excerpt in search results 2026-11-26; a direct fetch redirected to the generic visit page",
    "lat": 40.7794,
    "lon": -73.9632,
    "from_hotel": {
@@ -48,7 +48,8 @@
     "transit_min_modelled": 22,
     "within_one_hour": true,
     "method": "MODEL: great-circle km / 4.5 km/h walking, or /12 km/h effective subway speed plus 8 minutes platform access and wait. Not a measured schedule."
-   }
+   },
+   "hours_source": "https://www.metmuseum.org/plan-your-visit/met-fifth-avenue"
   },
   {
    "id": "amnh",
@@ -58,11 +59,11 @@
    "address": "200 Central Park West, New York, NY 10024",
    "hours": "Daily 10:00-17:30",
    "days_open": "Mon-Sun",
-   "exceptions": "Closed Thanksgiving Day and Christmas Day. Extended holiday hours on select dates (Nov-Jan). Before 10:00 or after 17:00 use the Central Park West / 81st Street entrances. Hall closures are published weekly.",
-   "adult_usd": null,
-   "cost_2_adults_usd": null,
-   "official_url": "https://www.amnh.org/plan-your-visit/hours",
-   "verification": "PARTIAL - hours verified; admission price not read (ticketing is a separate page)",
+   "exceptions": "Closed Thanksgiving Day and Christmas Day. Extended holiday hours on select dates (Nov–Jan). Before 10:00 or after 17:00 use the Central Park West / 81st Street entrances. $37 is the STANDARD adult general-admission price for visitors from outside NY State; NY State residents may pay what they wish. Last-hour entry is free at the ticket desk. Hall closures are published weekly.",
+   "adult_usd": 37,
+   "cost_2_adults_usd": 74,
+   "official_url": "https://www.amnh.org/plan-your-visit",
+   "verification": "VERIFIED - hours and standard adult admission read on the official Plan Your Visit page 2026-11-26",
    "lat": 40.7813,
    "lon": -73.974,
    "from_hotel": {
@@ -72,7 +73,8 @@
     "transit_min_modelled": 19,
     "within_one_hour": true,
     "method": "MODEL: great-circle km / 4.5 km/h walking, or /12 km/h effective subway speed plus 8 minutes platform access and wait. Not a measured schedule."
-   }
+   },
+   "price_source": "https://www.amnh.org/plan-your-visit"
   },
   {
    "id": "911-memorial-museum",
