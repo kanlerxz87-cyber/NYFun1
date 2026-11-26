@@ -268,6 +268,7 @@ ferry) → F-20.
 - Counts on the site are now derived from the data (socials 11 official + 3 review videos, flags 20,
   questions 26) rather than typed into prose.
 
+
 ---
 
 ## SESSION CLAIM — 2026-11-26 (UTC) — `arena-c7b21fd7` (branch `arena/c7b21fd7-nyfun1`)
@@ -444,3 +445,63 @@ all roster totals match the ceremony article; all generated counts are derived f
   the unparameterised URL briefly served a stale CDN copy, which self-corrected on re-request.
 - No flagged item or unverified cell blocked the merge. The Flagged for Review page remains the
   canonical register of what is still unknown.
+
+---
+
+## SESSION CLAIM — 2026-11-26 (UTC) — `arena-2eccf543` (branch `arena/2eccf543-nyfun1`)
+
+**Note on branch policy:** Session environment requires all commits and pushes to remain on the
+assigned branch `arena/2eccf543-nyfun1` (no new branch creation). All prior claims on `COORDINATION.md`
+are from 2026-11-25 (>12 hours ago) with no open PRs on `kanlerxz87-cyber/NYFun1`.
+
+**Tasks claimed (in progress):**
+- `T16` · Line-by-line repo review & defect audit (`build_site.py`, `site_data/*.json`, orphan `docs/methodology.html`, `docs/data/build_summary.json`, broken `build.py`, `deepdive/` cross-check)
+- `T17` · Official re-verification of MICHELIN 2025 roster (resolve 72 vs 69 diff, verify addresses/coordinates/hours/prices/websites for starred + guide-listed venues)
+- `T18` · Official verification of hotels across the 2027-02-15 to 2027-03-23 window (real Booking.com / hotel-direct quotes, street addresses, room specs, tax-inclusive totals, cheapest booking window)
+- `T19` · Official verification of activities, MTA transit fares, NYC Feb/Mar climate & holidays (`metmuseum.org`, `thehighline.org`, `amnh.org`, `nps.gov`, `mta.info`, `opm.gov`, `weather.gov`)
+- `T20` · Real transit & MICHELIN cluster analysis from verified venue coordinates (`site_data/*.json`, `build_site.py`)
+- `T21` · Direct social/video review verification (YouTube, Instagram, TikTok) per restaurant and activity
+- `T22` · Rebuild, integrity/link checks, PR to `main`, merge, and confirm GitHub Pages deployment
+
+**Files in scope:** `build_site.py`, `site_data/*.json`, `docs/*.html`, `docs/assets/style.css`,
+`docs/data/` (remove stale orphan `build_summary.json` / `methodology.html` left from `build.py`),
+`README.md`, `COORDINATION.md` (append-only). `deepdive/**`, `build.py`, `build_deepdive.py`,
+`content.py` remain untouched except where audited and documented in the Repo Review / Flagged pages.
+
+### 2026-11-26 · `arena-2eccf543` · T16–T22 COMPLETE & VERIFIED
+
+- **`T16` (Repo & defect cleanup — done):** Removed orphaned `docs/methodology.html` and
+  `docs/data/build_summary.json` (plus empty `docs/data/`), added an orphan check in `build_site.py`
+  `run_checks()`, kept archived `build.py`/`build_deepdive.py`/`content.py`/`deepdive/**` intact per
+  `README.md`, and eliminated stale hardcoded pricing (`$1,155.48`, `$1,021.00`, etc.) from `build_site.py`.
+- **`T17` (MICHELIN reconciliation & menus — done):** Reconciled `72` Nov 2025 ceremony entries against
+  `69` live NYC starred (`5` 3★ / `14` 2★ / `50` 1★), pinpointing exact 3-venue delta (`Blue Hill at
+  Stone Barns` Westchester, `La Bastide by Andrea Calstier` Westchester, and fire-closed `Shion 69 Leonard St`),
+  plus `76` Bib Gourmand, `224` Selected, `4` Green Stars. Verified full Mon–Sun hours, building coordinates,
+  and official menu prices / Tock deposit floors for **22 Manhattan starred venues** + Selected Green Star
+  `One White Street` (`$145 pp`), fixing prior `Le Bernardin` longitude, `Daniel` Monday closure & prix-fixe
+  (`$195/$255`), `Gramercy Tavern` (`$178/$78`), `Cote` (`$84` & coords), and `Atera`/`Aquavit`/`Per Se` deposit floors.
+- **`T18` (Hotels & seasonal sweep — done):** Re-verified all 7 Manhattan shortlisted properties with full
+  street addresses, building coordinates, direct `/hotel/us/...` Booking URLs, tax/resort-fee/cancellation parity,
+  all **5 Mon–Mon seasonal windows** (`15 Feb – 22 Mar 2027`), shifted mid-Feb starts (`16/17/18 Feb`),
+  5 market cross-checks, Winter Outing 2027, and flight/hotel booking windows. **Fairfield Central Park**
+  (`538 W 58th St`, `$985.60` pre-tax / **`$1,158.98` derived all-in**, breakfast included, `$0` resort fee,
+  free cancel `<2027-02-12`) wins as lowest all-in across the shortlist and lowest across all 5 weeks.
+- **`T19` (Activities, climate, holidays — done):** Verified all 11 activities on official sites (`Met`
+  **closed Wednesdays**; `AMNH $37 pp / $74 for 2`; `High Line` winter `07:00–20:00`; `Chelsea Market` `07:00–22:00`;
+  `9/11 Museum` last entry `18:00`; `Statue of Liberty` `09:00–16:30`), verified OPM Washington's Birthday
+  (`2027-02-15`) + NYCPS Midwinter Recess (`Feb 15–19`), added NWS 1991–2020 Central Park Feb/Mar climate normals,
+  and fixed Tuesday Met / Wednesday MoMA routing in both 7-night and 4-night itineraries.
+- **`T20` (Reach & clusters — done):** Recomputed Haversine distances from all 7 verified hotel building
+  coordinates to all 22 verified Manhattan starred venues (`Hyatt Place Chelsea` 22/22, `Pestana CR7` & `Arlo
+  Midtown` 20/22, `Fairfield` 16/22 + `Per Se` 0.59 km + express Columbus Circle access) and from `538 W 58th St`
+  to all 11 activities; corrected prior Arlo SoHo & Residence Inn FiDi nearest-3★ bug to `Jungsik`. Identified
+  the 3 true Manhattan star clusters (Midtown, Flatiron/Gramercy, Tribeca/FiDi/SoHo).
+- **`T21` (Social & video reviews — done):** Verified `24` official Instagram accounts (replacing broken
+  `@Cote_NYC` with `@cotekoreansteakhouse`), `23` YouTube video reviews, and `4` public TikTok tasting videos
+  with search fallbacks and HTTP 400 direct-scrape caveat preserved cleanly.
+- **`T22` (Rebuild & QA — done):** Updated `build_site.py` (`BUILD_DATE = "2026-11-26"`), verified budget
+  sum (`$4,184.98`), verified zero stale tokens/broken links/table mismatches across all 11 `docs/*.html` pages,
+  and passed `python3 build_site.py` self-checks.
+
+
