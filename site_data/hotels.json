@@ -5,7 +5,7 @@
   {
    "start": "2027-02-15",
    "end": "2027-02-22",
-   "label": "Week 1 · Preferred & recommended (Mon-Mon, 7 nights)",
+   "label": "Week 1 \u00b7 Preferred & recommended (Mon-Mon, 7 nights)",
    "fairfield_pretax_usd": 985.6,
    "fairfield_all_in_usd": 1158.98,
    "hyatt_chelsea_pretax_usd": 1113.0,
@@ -16,7 +16,7 @@
   {
    "start": "2027-02-22",
    "end": "2027-03-01",
-   "label": "Week 2 · +1 week (Mon-Mon, 7 nights)",
+   "label": "Week 2 \u00b7 +1 week (Mon-Mon, 7 nights)",
    "fairfield_pretax_usd": 1020.6,
    "fairfield_all_in_usd": 1199.14,
    "hyatt_chelsea_pretax_usd": 1226.0,
@@ -27,7 +27,7 @@
   {
    "start": "2027-03-01",
    "end": "2027-03-08",
-   "label": "Week 3 · Early March (Mon-Mon, 7 nights)",
+   "label": "Week 3 \u00b7 Early March (Mon-Mon, 7 nights)",
    "fairfield_pretax_usd": 1366.0,
    "fairfield_all_in_usd": 1595.49,
    "hyatt_chelsea_pretax_usd": 1419.0,
@@ -39,7 +39,7 @@
   {
    "start": "2027-03-08",
    "end": "2027-03-15",
-   "label": "Week 4 · Mid March (Mon-Mon, 7 nights)",
+   "label": "Week 4 \u00b7 Mid March (Mon-Mon, 7 nights)",
    "fairfield_pretax_usd": 1247.0,
    "fairfield_all_in_usd": 1458.93,
    "hyatt_chelsea_pretax_usd": 1467.0,
@@ -47,30 +47,50 @@
    "pestana_pretax_usd": 1372.0,
    "res_inn_fidi_pretax_usd": 1316.0,
    "citizenm_ts_pretax_usd": 2351.0,
-   "note": "Fairfield +26.5% above Feb 15; citizenM room rate doubles to $2,351."
+   "note": "Fairfield +26.5% above Feb 15; citizenM room rate doubles to $2,351. DISAGREEMENT (both dated 2026-11-26): a second capture of the same Booking.com page the same day priced the standard King Room at $1,660 before tax (non-refundable; $1,953 free-cancellation). Both readings are kept; see flag F-24."
   },
   {
    "start": "2027-03-15",
    "end": "2027-03-22",
-   "label": "Week 5 · Late March (Mon-Mon, 7 nights)",
+   "label": "Week 5 \u00b7 Late March (Mon-Mon, 7 nights)",
    "fairfield_pretax_usd": 1247.0,
    "fairfield_all_in_usd": 1458.93,
    "hyatt_chelsea_pretax_usd": 1388.0,
    "arlo_soho_pretax_usd": 1341.0,
    "pestana_pretax_usd": 1382.0,
    "res_inn_fidi_pretax_usd": 1355.0,
-   "note": "Spring rates remain +22% to +27% above mid-February baseline."
+   "note": "Spring rates remain +22% to +27% above mid-February baseline. DISAGREEMENT (both dated 2026-11-26): a second capture of the same page the same day returned \"We have no availability here between Mon, Mar 15, 2027 and Mon, Mar 22, 2027\" - i.e. SOLD OUT, no price to quote. Both readings are kept; see flag F-24."
   }
  ],
  "shifted_starts_fairfield": [
-  {"window": "2027-02-15 to 2027-02-22", "pretax_usd": 985.6, "all_in_usd": 1158.98, "note": "Lowest (Mon-Mon)"},
-  {"window": "2027-02-16 to 2027-02-23", "pretax_usd": 996.1, "all_in_usd": 1171.02, "note": "+$12.04 vs Mon-Mon"},
-  {"window": "2027-02-17 to 2027-02-24", "pretax_usd": 996.1, "all_in_usd": 1171.02, "note": "+$12.04 vs Mon-Mon"},
-  {"window": "2027-02-18 to 2027-02-25", "pretax_usd": 996.1, "all_in_usd": 1171.02, "note": "+$12.04 vs Mon-Mon"}
+  {
+   "window": "2027-02-15 to 2027-02-22",
+   "pretax_usd": 985.6,
+   "all_in_usd": 1158.98,
+   "note": "Lowest (Mon-Mon)"
+  },
+  {
+   "window": "2027-02-16 to 2027-02-23",
+   "pretax_usd": 996.1,
+   "all_in_usd": 1171.02,
+   "note": "+$12.04 vs Mon-Mon"
+  },
+  {
+   "window": "2027-02-17 to 2027-02-24",
+   "pretax_usd": 996.1,
+   "all_in_usd": 1171.02,
+   "note": "+$12.04 vs Mon-Mon"
+  },
+  {
+   "window": "2027-02-18 to 2027-02-25",
+   "pretax_usd": 996.1,
+   "all_in_usd": 1171.02,
+   "note": "+$12.04 vs Mon-Mon"
+  }
  ],
  "booking_strategy": {
   "winter_outing_2027": "NYC Tourism Winter Outing 2027 (Hotel Week 25% off, Restaurant/Broadway/Must-See 2-for-1) runs 2 Jan - 11 Feb 2027 and ends 4 days BEFORE 15 Feb 2027.",
-  "flight_booking_window": "Expedia 2026 Air Hacks reports US domestic sweet spot 31-45 days out; Google Flights reports ~39 days US domestic (range 22-57d) and 50-133d international (~129d avg) — Feb 15 AMS-JFK sits squarely in the early-booking window now (~81 days out).",
+  "flight_booking_window": "Expedia 2026 Air Hacks reports US domestic sweet spot 31-45 days out; Google Flights reports ~39 days US domestic (range 22-57d) and 50-133d international (~129d avg) \u2014 Feb 15 AMS-JFK sits squarely in the early-booking window now (~81 days out).",
   "hotel_booking_window": "Lock a $0-prepayment free-cancellation Black Friday hotel rate now (Fairfield cancel free until 2027-02-12) and re-check weekly / mid-Jan 2027 in case shoulder promos drop further."
  },
  "hotels": [
@@ -321,10 +341,40 @@
   }
  ],
  "market_cross_checks": [
-  {"hotel": "Pod Times Square", "area": "Hell's Kitchen (400 W 42nd St)", "bed": "1 queen (Pod Queen)", "pretax_7n_usd": 1051.01, "note": "Booking Black Friday deal, room only, excludes taxes/fees — still dearer than Fairfield $985.60 w/ breakfast."},
-  {"hotel": "Pod 51", "area": "Midtown East (230 E 51st St)", "bed": "1 queen", "pretax_7n_usd": 1086.7, "note": "Excludes taxes/fees, no breakfast."},
-  {"hotel": "Pod 39", "area": "Murray Hill (145 E 39th St)", "bed": "1 queen", "pretax_7n_usd": 1115.75, "note": "Excludes taxes/fees, no breakfast."},
-  {"hotel": "Hotel St. James", "area": "Times Square", "bed": "1 full/double bed", "pretax_7n_usd": 805.0, "note": "DISQUALIFIED — full/double bed fails 'queen or bigger' requirement."},
-  {"hotel": "Ace Hotel Brooklyn", "area": "Boerum Hill, Brooklyn", "bed": "1 king/queen", "pretax_7n_usd": 1694.0, "note": "Outer-borough baseline; dearer and farther from Midtown dining."}
+  {
+   "hotel": "Pod Times Square",
+   "area": "Hell's Kitchen (400 W 42nd St)",
+   "bed": "1 queen (Pod Queen)",
+   "pretax_7n_usd": 1051.01,
+   "note": "Booking Black Friday deal, room only, excludes taxes/fees \u2014 still dearer than Fairfield $985.60 w/ breakfast."
+  },
+  {
+   "hotel": "Pod 51",
+   "area": "Midtown East (230 E 51st St)",
+   "bed": "1 queen",
+   "pretax_7n_usd": 1086.7,
+   "note": "Excludes taxes/fees, no breakfast."
+  },
+  {
+   "hotel": "Pod 39",
+   "area": "Murray Hill (145 E 39th St)",
+   "bed": "1 queen",
+   "pretax_7n_usd": 1115.75,
+   "note": "Excludes taxes/fees, no breakfast."
+  },
+  {
+   "hotel": "Hotel St. James",
+   "area": "Times Square",
+   "bed": "1 full/double bed",
+   "pretax_7n_usd": 805.0,
+   "note": "DISQUALIFIED \u2014 full/double bed fails 'queen or bigger' requirement."
+  },
+  {
+   "hotel": "Ace Hotel Brooklyn",
+   "area": "Boerum Hill, Brooklyn",
+   "bed": "1 king/queen",
+   "pretax_7n_usd": 1694.0,
+   "note": "Outer-borough baseline; dearer and farther from Midtown dining."
+  }
  ]
 }
