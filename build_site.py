@@ -262,6 +262,9 @@ def build_index():
 
     n_ig_total = len({s["url"] for grp in SOCIAL["accounts"].values() for s in grp
                       if s["kind"] == "official"})
+    n_vids = sum(1 for grp in SOCIAL["accounts"].values() for s in grp if s["kind"] == "review")
+    n_vid_venues = len([grp for grp in SOCIAL["accounts"].values()
+                        if any(s["kind"] == "review" for s in grp)])
     n_hours = sum(1 for r in ROSTER["restaurants"] if _det.get(_k(r), {}).get("hours"))
     n_price = sum(1 for r in ROSTER["restaurants"] if _det.get(_k(r), {}).get("menu_price_usd"))
     pl_h = "" if n_hours == 1 else "s"
@@ -331,7 +334,7 @@ suggestion S-02.</p>
 <ul class="tight">
 <li><strong>${FR["budget"]["verified_subtotal_usd"]:,.2f} priced subtotal</strong> across hotel, flights, transit, five tickets and two tasting menus; the hotel line is derived and ordinary meals are blank.</li>
 <li><strong>{n_hours} of {n_stars} restaurants have verified hours</strong> and <strong>{n_price} have a verified menu price</strong>. The other 66–70 rows are complete on name, distinction, cuisine, borough and official link — and deliberately blank on hours and price (<a href="restaurants.html">see the table</a>).</li>
-<li><strong>{n_ig_total} verified official social accounts</strong> across restaurants and activities, and <strong>3 verified third-party review videos</strong> (all Le Bernardin). Every other social cell is a search link, labelled as a search — TikTok returned HTTP 400 on every read, so no TikTok account is claimed anywhere.</li>
+<li><strong>{n_ig_total} verified official social accounts</strong> and <strong>{n_vids} verified third-party review videos across {n_vid_venues} venues</strong>, each opened and identified by title, channel and view count. Where nothing could be verified the cell is still a search link, labelled as a search — TikTok returned HTTP 400 on every read, so no TikTok account is claimed anywhere.</li>
 <li><strong>{len(FR['flags'])} flagged items</strong> and <strong>{len(FR['questions'])} open questions</strong>, each with the exact source that would settle it.</li>
 </ul>
 </div>
@@ -1163,7 +1166,7 @@ formula is written down.</li>
 <h3>Social accounts verified</h3>
 <ul class="tight">
 <li>Instagram profiles opened and read and confirmed official by badge plus bio or link-in-bio: Le Bernardin (346,704 followers), Eleven Madison Park (543,313), Per Se (333,776), Daniel (159,355), Gramercy Tavern (145,393), MoMA (6,154,925), The Met (4,752,680), NYC Parks (309,569), The High Line (253,752). Le Coucou's account is private, so nothing could be confirmed from it.</li>
-<li>YouTube: <strong>three</strong> specific Le Bernardin review videos verified by title, channel and view count — the only venue where individual videos (rather than a search link) could be confirmed.</li>
+<li>YouTube: individual review videos were opened and verified by title, channel and view count for Le Bernardin (3), Eleven Madison Park (2), Per Se (2), the American Museum of Natural History, Top of the Rock, the 9/11 Memorial &amp; Museum, and the Statue of Liberty ferry. The remaining cells keep a labelled search link rather than an invented video.</li>
 <li><strong>A lookalike handle was caught:</strong> <code>instagram.com/museumofmodernart</code> has 3,809 followers and has not posted since 2019. It is <em>not</em> MoMA. The real account is <code>themuseumofmodernart</code>.</li>
 <li><strong>TikTok: failed.</strong> Every URL returned HTTP 400.</li>
 </ul>
