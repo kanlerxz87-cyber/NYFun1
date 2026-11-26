@@ -302,8 +302,8 @@
    "id": "F-01",
    "severity": "HIGH",
    "title": "A 14 December 2026 New York ceremony date is reported by a secondary source",
-   "detail": "Eater NY reported on 18 Nov 2026 that the annual New York awards ceremony is Monday 14 December 2026. No official MICHELIN page confirming that date was found in this session, so the date is treated as secondary and flagged (F-25). Stars shown here come from the 18 Nov 2025 ceremony plus 2026-11-26 live status checks.",
-   "source": "https://guide.michelin.com/us/en/articles/michelin-guide-ceremony",
+   "detail": "Eater NY reported on 18 Nov 2026 that the annual New York awards ceremony is Monday 14 December 2026. No official MICHELIN page confirming that date was found in this session, so the date is treated as secondary and flagged (F-25). Stars shown here come from the 18 Nov 2025 ceremony plus 2026-11-26 live status checks. Source upgraded 2026-11-26 from a secondary report to MICHELIN's own press release (michelinmedia.com), which states the ceremony is the evening of 14 Dec 2026 at The Glasshouse.",
+   "source": "https://michelinmedia.com/pages/blog/detail/article/c/a1479/",
    "settle_by": "Read the official MICHELIN Guide ceremony index/article on or after 2026-12-14 and refresh the roster.",
    "status": "Open"
   },
@@ -518,10 +518,10 @@
    "id": "F-25",
    "severity": "MEDIUM",
    "title": "14 Dec 2026 ceremony date lacks official MICHELIN confirmation",
-   "detail": "The date is stated by Eater NY (secondary source). An official MICHELIN ceremony index was checked but did not confirm the date; the claim must not be represented as MICHELIN-official.",
-   "source": "https://guide.michelin.com/us/en/articles/michelin-guide-ceremony",
-   "settle_by": "Read an official MICHELIN announcement for the 2026/27 New York selection.",
-   "status": "Open"
+   "detail": "The date is stated by Eater NY (secondary source). An official MICHELIN ceremony index was checked but did not confirm the date; the claim must not be represented as MICHELIN-official. UPDATE 2026-11-26: official confirmation found — Michelin's own press site (michelinmedia.com) posted the Northeast Cities 2026 selection release stating the ceremony takes place the evening of 14 December 2026 at The Glasshouse (posted 11 Aug 2026). Source upgraded on F-01 as well.",
+   "source": "https://michelinmedia.com/pages/blog/detail/article/c/a1479/",
+   "settle_by": "Done 2026-11-26 — michelinmedia.com press release read directly",
+   "status": "Resolved"
   },
   {
    "id": "F-26",
@@ -530,6 +530,33 @@
    "detail": "NPS Operating Hours & Seasons states standard hours 09:00-16:30 with last statue entrance 15:30; the NPS FAQ states 08:30-17:00 with the last ferry at 15:30. The site shows the hours-page standard and flags the conflict.",
    "source": "https://www.nps.gov/stli/planyourvisit/hours.htm",
    "settle_by": "Check Statue City Cruises seasonal ferry schedule and the NPS operating-status page in the travel week.",
+   "status": "Open"
+  },
+  {
+   "id": "F-27",
+   "severity": "MEDIUM",
+   "title": "CORRECTED 2026-11-26: Jungsik hours contradicted the source cited for them",
+   "detail": "The published Jungsik hours (Mon-Thu 17:00-22:00, Fri-Sun 15:00-22:00, Monday open, sourced to Tock) could not be confirmed on re-read; this supersedes the Jungsik hours claim inside F-16. Same-day official reads: jungsik.com/visit/ states 'JUNGSIK OPENS TUESDAY-SUNDAY 5:00PM-9:30PM'; Tock's date slots run 5:00 PM-9:30 PM on 26-27 Nov 2026 and show 'Jungsik is not offering reservations on Nov 30' (a Monday). Corrected in restaurant_details.json to closed Monday, Tue-Sun 17:00-21:30. ID history: written as F-24, renumbered on two successive parallel merges.",
+   "source": "https://www.jungsik.com/visit/",
+   "settle_by": "Done - corrected from jungsik.com/visit/ and exploretock.com/jungsik, both read 2026-11-26",
+   "status": "Resolved"
+  },
+  {
+   "id": "F-28",
+   "severity": "MEDIUM",
+   "title": "Two booking-countdown entries conflicted with same-day Tock/Resy reads",
+   "detail": "The countdown said February seats at Sushi Sho open 1 Jan 2027, but Tock read 2026-11-26 states 'Now booking through Sunday, February 28, 2027. New reservations will be released on December 1, 2026 at 11:00 AM EST' - the travel dates are inside the current window, so the countdown was corrected. It also gave Eleven Madison Park's February release as 09:00 EST on 1 Jan 2027; the Resy notice read 2026-11-26 publishes only January (Tuesday 1 December 2026, 10:00am), so February's datetime stays unconfirmed (Q-27).",
+   "source": "https://www.exploretock.com/sushi-sho-nyc",
+   "settle_by": "Re-read resy.com/cities/new-york-ny/venues/eleven-madison-park in the first week of January 2027",
+   "status": "Open"
+  },
+  {
+   "id": "F-29",
+   "severity": "LOW",
+   "title": "Secondary press says the Green Star category was retired in May 2026",
+   "detail": "The Philadelphia Inquirer's August 2026 report on the 2026 Northeast ceremony states the Green Star award category was retired in May 2026. The roster on this site still shows the Green Stars awarded in Nov 2025, which remains accurate for that list. No official MICHELIN statement has been read, so nothing on the site was changed.",
+   "source": "https://www.inquirer.com/food/restaurants/michelin-2026-announcement-restaurants-new-york-20260811.html",
+   "settle_by": "Find MICHELIN's own announcement about the Green Star programme for 2026",
    "status": "Open"
   }
  ],
@@ -818,6 +845,17 @@
    "how_to_discover": "Decision directly from the Hotels comparison tables.",
    "owner": "traveller",
    "blocks": "Presentation",
+   "status": "Open"
+  },
+  {
+   "id": "Q-27",
+   "question": "When will Eleven Madison Park open February 2027 reservations, and will Jungsik's $335 hold for February?",
+   "why_it_blocks": "EMP's February release datetime appears in the countdown but is not published on any page read so far; Jungsik's $335 comes from a Tock listing that covers Nov-Dec 2026 only.",
+   "have": "EMP Resy notice (read 2026-11-26): January opens Tuesday 1 December 2026 at 10:00am, releases are month by month, payment in full. Jungsik Tock listing: 'Main Dining Room [November, December 2026]', Signature Menu $335 pp.",
+   "missing": "EMP's February release date and time; Jungsik's Feb-2027 seating price.",
+   "how_to_discover": "Re-read resy.com/cities/new-york-ny/venues/eleven-madison-park and exploretock.com/jungsik in the first week of January 2027.",
+   "owner": "research",
+   "blocks": "Restaurant bookings, budget",
    "status": "Open"
   }
  ],
