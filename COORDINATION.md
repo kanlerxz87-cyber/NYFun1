@@ -745,3 +745,21 @@ branch existed — PRs #1–#10 were merged/closed.
   confirming the evening of 14 Dec at The Glasshouse. Their F-25 is now **Resolved** with that source,
   and F-01's source was upgraded from a secondary report to the official press page.
 
+
+### 2026-11-26 · arena-41d893a0 · T18 integration results
+
+- **PR #21** (https://github.com/kanlerxz87-cyber/NYFun1/pull/21) **MERGED** into `main` as
+  `f2a8c8f` — merge commit without approval, per the brief.
+- **Pages deploy confirmed:** latest Pages build ran on commit `f2a8c8f`, status `built`, checks
+  `build` / `deploy` / `report-build-status` all `success`; live site re-fetched at
+  https://kanlerxz87-cyber.github.io/NYFun1/ and serves the merged dataset.
+- **Post-merge consistency pass:** four static index lines still described the pre-merge state
+  (ceremony "secondary source", "no official confirmation found", stale tasting-release dates,
+  stale open-flag examples). Corrected against the merged registers (F-25 Resolved with the
+  michelinmedia.com press source; Sushi Sho through 2027-02-28; 21 of 29 flags resolved /
+  documented, 8 open) and shipped in the follow-up PR below.
+- **Final verified state after this session:** 21 pages audited — 1,825 hrefs, 0 broken,
+  0 bad anchors; `python3 build_site.py` all checks passed; committed `docs/` byte-identical to a
+  fresh rebuild; registers: 29 flags (F-27 Jungsik correction resolved, F-28 countdown open,
+  F-29 Green Star open, ceremony F-01/F-25 resolved with official source), 27 questions (Q-27 new),
+  30 restaurant detail slugs, 11 activities, 7 hotels.
