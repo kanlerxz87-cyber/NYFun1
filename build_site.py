@@ -300,7 +300,7 @@ all five seasonal weeks, and an explicit register of everything open or resolved
   <div class="card"><div class="k">Hotel, 7 nights all-in</div><div class="v">{money(rec['all_in_7n_usd'])}</div>
    <div class="small">Fairfield Central Park (538 W 58th St) · {money(rec['total_7n_usd'])} pre-tax · king bed · breakfast included · free cancel &lt;12 Feb</div></div>
   <div class="card"><div class="k">MICHELIN NYC stars</div><div class="v">{live_c['total']} live</div>
-   <div class="small">{live_c['3']} three-star · {live_c['2']} two-star · {live_c['1']} one-star (reconciled vs {n_stars_cer} Nov 2025 ceremony entries). <strong>Reported ceremony date: 14 Dec 2026 (secondary source, F-25).</strong></div></div>
+   <div class="small">{live_c['3']} three-star · {live_c['2']} two-star · {live_c['1']} one-star (reconciled vs {n_stars_cer} Nov 2025 ceremony entries). <strong>Ceremony date: 14 Dec 2026 at The Glasshouse — confirmed on MICHELIN's own press site (F-01/F-25 resolved 2026-11-26).</strong></div></div>
   <div class="card"><div class="k">Verified budget subtotal</div><div class="v">{money(FR["budget"]["verified_subtotal_usd"])}</div>
    <div class="small">Hotel w/ tax + AMS–JFK flights + MTA cap + 6 paid attractions (incl. AMNH $74) + 2 tasting dinners.</div></div>
 </div>
@@ -365,15 +365,15 @@ plus ~15–20 min ferry crossing (~62–67 min door-to-island; harbour wind can 
 <li><strong>{money(FR["budget"]["verified_subtotal_usd"])} verified subtotal</strong> across Fairfield hotel, AMS–JFK fares, MTA 7-day cap, 6 paid attractions (incl. AMNH $74), and 2 tasting dinners (food only).</li>
 <li><strong>{n_hours} starred venues with full verified hours</strong>, <strong>{n_price} with verified menu prices or deposit floors</strong>, and <strong>all 11 activities</strong> verified on hours/entry rules (10 priced + Broadway deliberately unpriced).</li>
 <li><strong>{n_ig_total} verified official Instagram accounts</strong>, <strong>{n_yt_rev} verified YouTube video reviews</strong>, and <strong>{n_tt_rev} verified public TikTok tasting videos</strong>.</li>
-<li><strong>{n_res_flags} of {len(FR['flags'])} earlier flags resolved or documented</strong>; {n_open_flags} live items stay <a href="flagged.html">Flagged Open</a> (secondary-source ceremony date, live promo rates, GTFS transit matrix, airline 2-seat checkout).</li>
+<li><strong>{n_res_flags} of {len(FR['flags'])} earlier flags resolved or documented</strong>; {n_open_flags} live items stay <a href="flagged.html">Flagged Open</a> (Jungsik/Tock countdown conflicts, live promo rates, NPS hours disagreement, airline 2-seat checkout).</li>
 </ul>
 </div>
 <div class="card">
 <h3>6 · The three things that could still move before departure</h3>
 <ol class="tight">
-<li><strong>Reported 14 December 2026:</strong> a secondary source says the New York ceremony is that day; no official MICHELIN confirmation was found. Re-check the official ceremony index after that date (F-01/F-25).</li>
+<li><strong>14 December 2026 (official):</strong> MICHELIN's own press release confirms the Northeast Cities ceremony that evening at The Glasshouse (read 2026-11-26, F-25 resolved). Re-read the guide's live NYC filter after that date before finalising the restaurant list (F-01).</li>
 <li><strong>Dynamic hotel &amp; flight pricing:</strong> Fairfield's $985.60 (-30% BF) rate carries $0 prepayment and free cancel until 12 Feb 2027 — lock now and re-check weekly / mid-Jan 2027.</li>
-<li><strong>Non-refundable tasting releases:</strong> Sushi Sho ($495), Atomix ($314–$495), and EMP ($385) open 1st of the prior month (1 Jan 2027 for February); Le Bernardin Resy opens ~30 days out.</li>
+<li><strong>Tasting releases:</strong> Sushi Sho ($495) already sells the travel dates through 2027-02-28 (next release 1 Dec 2026, 11:00 ET); EMP opens month by month (January on 1 Dec 2026, 10:00 ET — February datetime unconfirmed, Q-27); Le Bernardin Resy opens ~30 days out.</li>
 </ol>
 </div>
 </div>
