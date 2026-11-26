@@ -1,117 +1,111 @@
-# NYC 2027 — trip planning dashboard
+# NYC 2027 — trip-planning dashboard
 
-A source-linked plan for **two adults, 15–22 February 2027** in New York City: hotels priced for the
-whole 7-night stay, MICHELIN-starred restaurants reachable within the hour, activities with official
-hours and prices, a budget that says which numbers are real, and an explicit register of everything that
-could **not** be verified.
+A source-linked plan for **two adults visiting New York City in February 2027**. The preferred date window, **15–18 February**, is three hotel nights; the recommended **15–22 February** plan is seven nights so it satisfies the brief’s 1–2-week duration. The site keeps those options distinct, shows dated hotel rates and activity details, and records what remains unmeasured or unresolved.
 
 **Live site:** https://kanlerxz87-cyber.github.io/NYFun1/
 
 ---
 
-## The rules this repository is built on
+## Research rules
 
-1. **Read it or leave it blank.** A value appears only if it was read on the official page linked in the
-   same row. If it could not be read, the cell is blank and the reason is named — never filled in from
-   plausibility.
-2. **Never infer.** No "typical" prices, no assumed opening hours, no guessed social handles.
-3. **Separate the award from the listing.** A star is an award; a venue in the guide carries a different
-   badge and is shown separately.
-4. **Label every derived number.** Arithmetic on a verified figure is marked *derived*, with the formula
-   written down on the Method page.
-5. **Keep disagreements visible.** When two official pages disagree — and they do, on the star count —
-   both numbers are shown and the conflict is flagged.
-6. **Date every snapshot.** All prices and hours were read on **2026-11-25** and will drift.
+1. **Read it or leave it blank.** A value appears only when a linked source supports it; unavailable fields remain blank with the reason stated.
+2. **Never infer.** No typical prices or assumed opening hours. Any indirectly referenced social handle is labelled unconfirmed rather than marked as verified.
+3. **Separate awards from listings.** A MICHELIN star is an award; a Guide-listed venue without a star is a different category.
+4. **Label arithmetic.** Derived amounts show their inputs and are not presented as quotes.
+5. **Keep disagreements visible.** The 2025 MICHELIN ceremony roster and current filtered lists have different totals; both dated views are shown.
+6. **Date each snapshot.** The hotel rates, current MICHELIN filter counts, and refreshed activity records are dated 2026-11-26. Restaurant detail and social records retain their own earlier source dates; the site-generation date does not imply every source was reread that day.
 
-Anything unverified is on [the Flagged page](docs/flagged.html). Anything undecided is on
-[the Questions page](docs/questions.html).
+Anything unresolved is recorded on [Flagged](docs/flagged.html); open decisions are on [Questions](docs/questions.html).
 
 ---
 
-## What the site contains
+## Pages
 
 | Page | What it answers |
 |---|---|
-| [Overview](docs/index.html) | The decision, in six numbered points: hotel, dates, why 7 nights, what is verified, what could invalidate the plan |
-| [Hotels](docs/hotels.html) | 7 hotels × 7 nights with bed, private bathroom, breakfast, advertised vs all-in cost, cancellation terms; ranked by all-in cost and by MICHELIN reach |
-| [MICHELIN](docs/restaurants.html) | All 72 star entries with their distinction (★★★ / ★★ / ★), hours, menu prices and social links where verified; guide-listed venues separately |
-| [Activities](docs/activities.html) | 11 activities with official hours, exceptions, prices for two, and social/video links |
-| [Itinerary](docs/itinerary.html) | Day-by-day for 7 nights, plus 4-night and 14-night variants |
-| [Budget](docs/budget.html) | Every line with its source and whether it is verified, derived or deliberately blank |
-| [Questions](docs/questions.html) | 26 decisions: what we have, what is missing, how to discover it |
-| [Suggestions](docs/suggestions.html) | 12 proposed improvements with effort, impact, risk and a decision field |
-| [Flagged](docs/flagged.html) | 21 irregularities with severity and the source that would close each |
-| [Method & sources](docs/method.html) | Every source URL, what failed, the travel model's assumptions, the build's own checks |
-| [Repo review](docs/repo-review.html) | What this repository contained, what was wrong with it, and verification counted rather than claimed |
+| [Overview](docs/index.html) | Seven-night recommendation, three-night preferred-date option, hotel fee comparison, MICHELIN snapshot, and remaining limits |
+| [Hotels](docs/hotels.html) | Seven dated room offers, addresses, cancellation terms, Booking-line and statutory-component calculations, weekly snapshots, and a clearly labelled proximity proxy |
+| [MICHELIN](docs/restaurants.html) | The 72-entry 2025 ceremony roster, current-filter count difference, hours, menu-price values, and social links where verified |
+| [Activities](docs/activities.html) | Eleven activities with official details where captured and a clear distinction between modelled and unmeasured travel |
+| [Itinerary](docs/itinerary.html) | Day-by-day 7-night plan, exact 3-night preferred-date option, and 14-night alternative |
+| [Budget](docs/budget.html) | Priced items for two adults; the subtotal is incomplete and explicitly excludes ordinary meals and other discretionary spending |
+| [Questions](docs/questions.html) | Twenty-six decisions, current information, missing evidence, and how to check it |
+| [Suggestions](docs/suggestions.html) | Twelve possible improvements with effort, impact, risk, and a decision field |
+| [Flagged](docs/flagged.html) | Open, documented, and resolved audit records with status and next steps |
+| [Method & sources](docs/method.html) | Source dates, fee formulas, travel-model limits, and legacy-build caveat |
+| [Repo review](docs/repo-review.html) | Counted coverage, current repository findings, and verification steps |
 
-`deepdive/` holds an **earlier, independent dataset** from a previous session. It is kept so that work is
-not lost but is **not** canonical: it disagrees with this site on the star count, the hotel shortlist and
-the transit method. See suggestion S-01.
+`deepdive/` is a separate, earlier dataset with its own builder and sources; it is not merged into this dashboard. The active dashboard uses `site_data/` and `build_site.py`.
 
 ---
 
 ## Build
 
-Standard library only. No dependencies, no network access needed at build time.
+Standard-library Python only; no network access is required to generate the dashboard.
 
 ```bash
 python3 build_site.py
 ```
 
-Writes `docs/*.html` and `docs/assets/style.css`. The generator **fails the build** (non-zero exit) if:
+The generator writes the 11 canonical pages into `docs/` and checks:
 
-- any internal link points at a file that does not exist,
-- a template token or escaped markup leaks into the output,
-- a page contains a placeholder link that goes nowhere,
-- two elements share an id,
-- a table row has a different number of cells than its header, or
-- the budget's stated subtotal does not equal the sum of its priced lines.
+- hotel Booking-line and statutory-component calculations against the raw rate/fee inputs;
+- that the priced budget subtotal equals the sum of its priced lines and each priced line has a source;
+- property-specific, date-specific Booking.com hotel URLs and official restaurant/activity source links;
+- the special ferry constraint for Liberty Island (no invalid land-mode journey);
+- internal links, duplicate element IDs, leaked template/escaped markup, and table row widths.
 
-`build.py`, `build_deepdive.py` and `content.py` belong to the earlier dataset and are left untouched.
+The older `python3 build.py` is not the dashboard build. It currently stops because `docs/data/michelin_2025.csv` is absent; when invoked in the old chained command, `build_deepdive.py` does not run after that failure.
 
 ---
 
-## Data
+## Source data
 
-Everything the site renders lives in `site_data/`, one file per concern. Edit the JSON, re-run the build.
+All active dashboard source data is in `site_data/`:
 
 | File | Contents |
 |---|---|
-| `michelin_roster.json` | 72 star entries: name, stars, Green Star, cuisine, borough, MICHELIN URL. Counts: 5 three-star, 15 two-star, 52 one-star |
-| `restaurant_details.json` | Per-venue detail keyed by MICHELIN URL slug: hours (+ `hours_status`), address, price band, menu price (+ `price_source`, `price_note`), coordinates |
-| `hotels.json` | 7 hotels: room, bed, bathroom, breakfast, `total_7n_usd`, `tax_included`, `all_in_7n_usd`, cancellation, `reach`, source URL |
-| `activities.json` | 11 activities: hours, days, exceptions, price per adult and for two, official URL, verification level |
-| `social.json` | Social accounts keyed by venue/activity id. Each entry has `kind`: `official`, `review` or `search`. **Only `official` and `review` may be rendered as an account** |
-| `framework.json` | The plan itself: trip dates, requirement checklist, budget lines, three itineraries, flags, questions, suggestions |
+| `michelin_roster.json` | 72 star entries from the 2025 ceremony article, plus dated current filter counts of 5 three-star, 14 two-star, and 50 one-star |
+| `restaurant_details.json` | Restaurant details keyed by MICHELIN URL slug; blank hours/prices are not guessed |
+| `hotels.json` | Seven rooms, current Booking.com rate snapshots, street addresses, fee inputs, two derived seven-night calculations, and four Fairfield weekly date windows |
+| `activities.json` | Eleven activities, official hours/prices where captured, source URLs, and modelled or explicitly unmeasured travel fields |
+| `social.json` | Directly verified official accounts, one explicitly unconfirmed social reference, individual reviews, and labelled platform-search links; searches are never presented as accounts |
+| `framework.json` | Trip dates, requirements, budget lines, itineraries, flags, questions, and suggestions |
 
-### Two fields to understand before editing
+### Hotel calculations
 
-- **`hours_status`** — `VERIFIED`, `PARTIAL` (only some days could be read) or `UNVERIFIED`. A block that
-  was not read from a page must not be filled in. Six venues carry `UNVERIFIED` deliberately.
-- **`all_in_7n_usd`** — the printed total plus 14.75% tax and $4/night city tax where Booking.com excludes
-  them. Advertised totals are **not** comparable across these seven hotels; this column is. It is
-  arithmetic, not a quote, and the site labels it that way.
+For a base room total `B`, seven nights, a 14.75% displayed tax, Booking fixed fee `F`, and any separately listed tourism fee `T` per night:
+
+- **Booking-line estimate:** `round(B × 1.1475 + 7 × (F + T), 2)`
+- **Statutory-component calculation:** `round(B × 1.1475 + 7 × ($3.50 + T), 2)`
+
+NYC Finance’s fixed hotel-occupancy component is $2/night for rooms at $40+, and NYS lists a separate $1.50/night unit fee. Booking.com displays $4/night on six rows and $6/night for Residence Inn FiDi. The discrepancy is unresolved; both calculations are shown, and neither is a final checkout quote. Resort fees that Booking.com says are already included remain in the selected room rate.
+
+### Travel-time limitation
+
+Activity times (except the Statue of Liberty) are rough straight-line/speed models, not MTA itineraries. The hotel table's 5 km reach column is a straight-line comparison radius only; it does not estimate journey time or establish a one-hour route. Only seven of the 72 restaurant entries have captured coordinates, and six hotel points remain area-level. Liberty Island requires an authorized ferry; its February 2027 sailing schedule and complete journey time were not verified. **No complete measured one-hour route matrix is available.**
 
 ---
 
-## Known limits, stated plainly
+## Known limits
 
-| Limit | Where it is recorded |
+| Limit | Record |
 |---|---|
-| MICHELIN publishes a new New York list on **14 December 2026**, before the trip | F-01 |
-| MICHELIN's ceremony article (72 entries) and its own live filter (69) disagree | F-02, Q-17 |
-| Hotel prices are live snapshots; several depend on a promotion expiring 31 Dec 2027 | F-03 |
-| The one-hour travel rule is **modelled from straight-line distance, not measured** | F-05, Q-19 |
-| 70 of 72 restaurants have no verified hours; 69 have no verified menu price | `repo-review.html` counts them |
-| TikTok returned HTTP 400 on every read, so no TikTok account is asserted anywhere | F-07 |
-| The Met's and The High Line's hours could not be read | F-09 |
-| Flights are a fare, not a quote for two seats | F-15 |
+| The 2026 Northeast Cities MICHELIN ceremony, including New York, is scheduled for **14 December 2026**, before the trip | F-01 |
+| The 2025 ceremony article has 72 entries; current MICHELIN filters show 69 (5/14/50). A name-by-name comparison remains open | F-02, Q-17 |
+| Hotel prices are live snapshots; cancellation terms and promotional rates vary | F-03 |
+| Booking.com’s fixed nightly fee labels differ from the $3.50/night NYC/NYS statutory components | F-04 |
+| The one-hour rule is not measured; activity minutes are estimates and the Liberty Island ferry is not timed | F-05, F-20, Q-19 |
+| Restaurant menu-price coverage is incomplete; blanks are intentional | F-06 |
+| Standard Met, AMNH, High Line, and Chelsea Market details were refreshed; temporary February 2027 notices still need a later check | F-09, Q-09 |
+| Four weekly Fairfield samples do not establish a daily price curve or combined 14-night checkout total | F-12 |
+| Six hotel proximity coordinates remain area-level even though all seven street addresses are now captured | F-13 |
+| The fare snapshot is one adult; doubling it is not a two-seat booking | F-15 |
+| TikTok could not be verified; no TikTok account is asserted | F-07 |
+| The Chelsea Market Instagram handle was referenced by the verified High Line account, but its own profile was not opened; the link is labelled unconfirmed | F-08 |
 
 ---
 
-## Licence and attribution
+## Attribution
 
-No licence file is present; that decision belongs to the repository owner. Star data is attributed to the
-MICHELIN Guide, hotel prices to Booking.com, fares to KAYAK and Google Flights, transit to the MTA, and
-each venue's hours and prices to the venue itself. Every page footer repeats that prices are
-point-in-time snapshots that must be re-checked before booking.
+No licence file is present; that decision belongs to the repository owner. MICHELIN data is attributed to the MICHELIN Guide, hotel rates to Booking.com, activity hours and prices to the linked venues or government pages, MTA fares to the MTA, and the federal-holiday date to OPM. All prices and schedules are point-in-time records and should be rechecked before booking or travel.

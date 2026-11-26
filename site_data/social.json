@@ -1,6 +1,6 @@
 {
  "read_on": "2026-11-25",
- "rule": "A link appears in this file only if the page was opened and read on 2026-11-25. 'kind' = official (the venue's own verified channel) or review (a third party reviewing the venue). TikTok blocked automated reads, so no TikTok link is asserted for any venue - a search URL is given instead and marked 'search-only'. A search URL is never presented as an account.",
+ "rule": "A link appears in this file only when evidence for the URL is recorded. 'official' means the venue's own channel was opened and directly verified; 'unconfirmed' means the handle was referenced by an official third party but its own profile was not opened; 'review' is a third-party review; 'search' is a platform search URL. TikTok automated reads failed, so no TikTok handle is asserted.",
  "accounts": {
   "le-bernardin": [
    {"platform": "Instagram", "kind": "official", "url": "https://www.instagram.com/lebernardinny/", "evidence": "Verified badge present; bio reads '3-Star @michelinguide'; 346,704 followers"},
@@ -56,7 +56,7 @@
    {"platform": "YouTube", "kind": "search", "url": "https://www.youtube.com/results?search_query=Broadway+show+review+2027", "evidence": "Search results page, not a specific video"}
   ],
   "chelsea-market": [
-   {"platform": "Instagram", "kind": "official", "url": "https://www.instagram.com/chelseamarketny/", "evidence": "Handle referenced by the verified High Line account in a post on 2026-11-23 ('our neighbors at @chelseamarketny'); the account page itself was not opened, so treat the handle as unconfirmed"}
+   {"platform": "Instagram", "kind": "unconfirmed", "url": "https://www.instagram.com/chelseamarketny/", "evidence": "Handle referenced by the verified High Line account in a post on 2026-11-23 ('our neighbors at @chelseamarketny'); the account page itself was not opened, so treat the handle as unconfirmed"}
   ],
   "brooklyn-bridge-walk": [
    {"platform": "YouTube", "kind": "search", "url": "https://www.youtube.com/results?search_query=Brooklyn+Bridge+walk+sunset", "evidence": "Search results page, not a specific video"}

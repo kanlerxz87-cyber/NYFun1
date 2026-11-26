@@ -1,6 +1,6 @@
 {
- "read_on": "2026-11-25",
- "rule": "A price is shown only if an official page states it. 'cost_2_adults_usd' is that official per-adult price x2 (arithmetic, not an estimate). Where no official price could be read, the field is null and the row says so.",
+ "read_on": "2026-11-26",
+ "rule": "A price is shown only if an official venue or government page states it. cost_2_adults_usd is the official per-adult price x2 (arithmetic, not an estimate). Current weekly/seasonal hours are transcribed from the linked official source; future date-specific changes remain subject to re-check.",
  "activities": [
   {
    "id": "moma",
@@ -32,13 +32,13 @@
    "category": "Museum",
    "area": "Upper East Side",
    "address": "1000 Fifth Avenue, New York, NY 10028",
-   "hours": null,
-   "days_open": null,
-   "exceptions": "NY State residents may pay what they wish (minimum $0.01). Hours block was not readable on the official page on 2026-11-25 - left blank, see Q-09.",
+   "hours": "Sun-Tue and Thu 10:00-17:00; Fri-Sat 10:00-21:00",
+   "days_open": "Sunday-Tuesday and Thursday-Saturday; closed Wednesday",
+   "exceptions": "Closed Thanksgiving Day, December 25, January 1, and the first Monday in May. New York State residents and NY/NJ/CT students may pay what they wish for general admission (minimum $0.01); standard adult admission is $30. The February 2027 schedule should be rechecked for temporary notices.",
    "adult_usd": 30,
    "cost_2_adults_usd": 60,
-   "official_url": "https://www.metmuseum.org/plan-your-visit",
-   "verification": "PARTIAL - address and adult price verified; hours not captured",
+   "official_url": "https://www.metmuseum.org/visit/plan-your-visit/met-fifth-avenue",
+   "verification": "VERIFIED - current weekly hours and standard adult admission captured from official Met pages",
    "lat": 40.7794,
    "lon": -73.9632,
    "from_hotel": {
@@ -48,7 +48,9 @@
     "transit_min_modelled": 22,
     "within_one_hour": true,
     "method": "MODEL: great-circle km / 4.5 km/h walking, or /12 km/h effective subway speed plus 8 minutes platform access and wait. Not a measured schedule."
-   }
+   },
+   "hours_source_url": "https://www.metmuseum.org/visit/plan-your-visit/met-fifth-avenue",
+   "price_source_url": "https://www.metmuseum.org/visit/plan-your-visit/met-fifth-avenue"
   },
   {
    "id": "amnh",
@@ -58,11 +60,11 @@
    "address": "200 Central Park West, New York, NY 10024",
    "hours": "Daily 10:00-17:30",
    "days_open": "Mon-Sun",
-   "exceptions": "Closed Thanksgiving Day and Christmas Day. Extended holiday hours on select dates (Nov-Jan). Before 10:00 or after 17:00 use the Central Park West / 81st Street entrances. Hall closures are published weekly.",
-   "adult_usd": null,
-   "cost_2_adults_usd": null,
-   "official_url": "https://www.amnh.org/plan-your-visit/hours",
-   "verification": "PARTIAL - hours verified; admission price not read (ticketing is a separate page)",
+   "exceptions": "Closed Thanksgiving Day and Christmas Day. Extended holiday hours apply on selected dates Nov-Jan; hall closures are updated weekly. Standard adult general admission is $37; ticketed exhibitions cost extra. New York State residents may pay what they wish for general admission only.",
+   "adult_usd": 37,
+   "cost_2_adults_usd": 74,
+   "official_url": "https://www.amnh.org/plan-your-visit",
+   "verification": "VERIFIED - current hours and standard adult general-admission price captured from official AMNH pages",
    "lat": 40.7813,
    "lon": -73.974,
    "from_hotel": {
@@ -72,7 +74,10 @@
     "transit_min_modelled": 19,
     "within_one_hour": true,
     "method": "MODEL: great-circle km / 4.5 km/h walking, or /12 km/h effective subway speed plus 8 minutes platform access and wait. Not a measured schedule."
-   }
+   },
+   "price_note": "Standard adult General Admission is $37 ($74 for two). General Admission plus one ticketed exhibition is $43 per adult, and all ticketed exhibitions $48 per adult. NY State residents may pay what they wish for General Admission only; paid exhibitions are extra.",
+   "hours_source_url": "https://www.amnh.org/plan-your-visit/hours",
+   "price_source_url": "https://www.amnh.org/plan-your-visit"
   },
   {
    "id": "911-memorial-museum",
@@ -132,22 +137,24 @@
    "address": "Liberty Island, New York, NY 10004",
    "hours": null,
    "days_open": null,
-   "exceptions": "Ferry ticket is mandatory - Statue City Cruises is the only NPS-authorised operator. Pedestal and Crown access cost a further $0.30 and Crown access is restricted. NPS states no entrance fee is charged, so America the Beautiful passes do not apply here. Ferry departure times were not read - blank.",
+   "exceptions": "Ferry ticket is mandatory; Statue City Cruises is the only NPS-authorized operator. The NPS lists the adult ferry fare at $26, with pedestal/crown access adding $0.30. The Feb 2027 sailing schedule was not available in the schedule read on 2026-11-26. The old 56-minute model treated the island as a land-transit destination and is not a valid route time; ferry crossing, boarding, and waiting are not measured.",
    "adult_usd": 26,
    "cost_2_adults_usd": 52,
    "price_note": "Official NPS fee table: adult (13+) $26.00 ferry. Pedestal/Crown access adds $0.30 per person.",
    "official_url": "https://www.nps.gov/stli/planyourvisit/fees.htm",
-   "verification": "VERIFIED (price); hours not captured",
+   "verification": "PARTIAL - adult ferry price verified; February 2027 sailing timetable and end-to-end journey not verified",
    "lat": 40.6892,
    "lon": -74.0445,
    "from_hotel": {
     "hotel": "Fairfield Inn & Suites by Marriott New York Manhattan/Central Park",
     "km": 9.57,
-    "walk_min_modelled": 128,
-    "transit_min_modelled": 56,
-    "within_one_hour": true,
-    "method": "MODEL: great-circle km / 4.5 km/h walking, or /12 km/h effective subway speed plus 8 minutes platform access and wait. Not a measured schedule."
-   }
+    "walk_min_modelled": null,
+    "transit_min_modelled": null,
+    "within_one_hour": false,
+    "method": "No land-route model is valid for Liberty Island: access requires an authorized ferry. The former straight-line calculation to the island omitted the ferry and was not an itinerary. February 2027 ferry schedule and end-to-end time remain unverified.",
+    "prior_invalid_transit_model_min": 56
+   },
+   "hours_source_url": "https://www.cityexperiences.com/new-york/city-cruises/statue/departure-schedule/"
   },
   {
    "id": "central-park",
@@ -179,13 +186,13 @@
    "category": "Park / Walk",
    "area": "Chelsea",
    "address": "Gansevoort St to 34th St, elevated rail line",
-   "hours": null,
-   "days_open": null,
-   "exceptions": "Official visitor page served a cookie-consent wall on 2026-11-25 and the hours were not readable - left blank, see Q-09. Entry is free.",
+   "hours": "Dec 1-Mar 31 07:00-20:00; Apr 1-Nov 30 07:00-22:00",
+   "days_open": "Mon-Sun",
+   "exceptions": "Entry is free. The Rail Yard Preserve between 30th and 34th Streets closes at dusk. Seasonal hours were readable in the official visitor page on 2026-11-26; check for temporary closures before visiting.",
    "adult_usd": 0,
    "cost_2_adults_usd": 0,
    "official_url": "https://www.thehighline.org/visit/",
-   "verification": "PARTIAL - free entry; hours not captured",
+   "verification": "VERIFIED - current seasonal hours and free entry captured from the official visitor page",
    "lat": 40.748,
    "lon": -74.0048,
    "from_hotel": {
@@ -195,7 +202,8 @@
     "transit_min_modelled": 19,
     "within_one_hour": true,
     "method": "MODEL: great-circle km / 4.5 km/h walking, or /12 km/h effective subway speed plus 8 minutes platform access and wait. Not a measured schedule."
-   }
+   },
+   "hours_source_url": "https://www.thehighline.org/visit/"
   },
   {
    "id": "chelsea-market",
@@ -203,13 +211,13 @@
    "category": "Food hall",
    "area": "Chelsea",
    "address": "75 9th Avenue, New York, NY 10011",
-   "hours": null,
-   "days_open": null,
-   "exceptions": "Individual vendors keep their own hours; free to enter. Official hours not read on 2026-11-25 - blank.",
+   "hours": "Daily 07:00-22:00",
+   "days_open": "Mon-Sun",
+   "exceptions": "Free entry. Vendors set their own opening hours, including on holidays; Christmas Day is listed as closed for the market. Confirm a specific vendor directly.",
    "adult_usd": 0,
    "cost_2_adults_usd": 0,
-   "official_url": "https://www.chelseamarket.com/",
-   "verification": "PARTIAL - hours not captured",
+   "official_url": "https://www.chelseamarket.com/visit",
+   "verification": "VERIFIED - market hours and vendor-hours caveat captured from the official Visit page",
    "lat": 40.7424,
    "lon": -74.0061,
    "from_hotel": {
@@ -219,7 +227,8 @@
     "transit_min_modelled": 22,
     "within_one_hour": true,
     "method": "MODEL: great-circle km / 4.5 km/h walking, or /12 km/h effective subway speed plus 8 minutes platform access and wait. Not a measured schedule."
-   }
+   },
+   "hours_source_url": "https://www.chelseamarket.com/visit"
   },
   {
    "id": "broadway",

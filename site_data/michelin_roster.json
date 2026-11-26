@@ -1,14 +1,27 @@
 {
  "meta": {
   "source_article": "https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025",
-  "read_on": "2026-11-25",
+  "read_on": "2026-11-26",
   "counts": {
    "3": 5,
    "2": 15,
    "1": 52,
    "total": 72
   },
-  "live_list_note": "MICHELIN's own filtered list pages, read the same day, show 5 / 14 / 50 = 69. The three-restaurant gap is flagged (see Flaggled page, F-02) and the next ceremony is 14 Dec 2026."
+  "live_list_note": "On 2026-11-26 MICHELIN's official live filters show 5 three-star, 14 two-star, and 50 one-star entries (69 total). The 2025 ceremony article contains 72 entries (5/15/52). This is a difference between a dated ceremony roster and current filters; a name-by-name comparison remains open (F-02/Q-17). MICHELIN announced the next Northeast Cities ceremony, including New York, for 2026-12-14.",
+  "live_filtered_counts": {
+   "3": 5,
+   "2": 14,
+   "1": 50,
+   "total": 69
+  },
+  "live_filtered_read_on": "2026-11-26",
+  "live_filtered_sources": [
+   "https://guide.michelin.com/us/en/new-york-state/new-york/restaurants/3-stars-michelin",
+   "https://guide.michelin.com/us/en/new-york-state/new-york/restaurants/2-stars-michelin",
+   "https://guide.michelin.com/us/en/new-york-state/new-york/restaurants/1-star-michelin"
+  ],
+  "ceremony_2026_source": "https://michelinmedia.com/pages/blog/detail/article/c/a1479/"
  },
  "restaurants": [
   {
