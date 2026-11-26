@@ -374,10 +374,10 @@
    "id": "F-12",
    "severity": "MEDIUM",
    "title": "The second week of a 14-night trip is unpriced",
-   "detail": "Only the 15-22 Feb window was priced per hotel. A 22 Feb - 1 Mar stay is a different rate and shows signs of being dearer (the same Fairfield room rises from $1,155.48 to about $1,290 once tax is added).",
+   "detail": "Only the 15–22 Feb window was priced per hotel. The same Fairfield king room is $996.10 before tax on 16–23 Feb and $1,020.60 before tax on 22 Feb – 1 Mar, i.e. $1,171.02 and $1,199.14 derived all-in. The second week of a 14-night stay therefore has a known rate for this one hotel, but not for the other six.",
    "source": "https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-22&checkout=2027-03-01&group_adults=2&no_rooms=1&selected_currency=USD",
-   "settle_by": "Price 22 Feb - 1 Mar for the two finalist hotels",
-   "status": "Open"
+   "settle_by": "Price 22 Feb – 1 Mar for the other six hotels",
+   "status": "Documented"
   },
   {
    "id": "F-13",
@@ -494,7 +494,7 @@
    "id": "Q-02",
    "question": "What is the total budget for two people, excluding flights?",
    "why_it_blocks": "Every ranking on this site sorts on price. Without a ceiling there is no way to say whether two starred dinners are affordable.",
-   "have": "A verified subtotal of $4,275.48 for the 7-night plan, excluding ordinary meals.",
+   "have": "A $4,110.98 priced subtotal for the 7-night plan (one derived hotel line), excluding ordinary meals.",
    "missing": "A budget figure.",
    "how_to_discover": "Answer directly.",
    "owner": "traveller",
