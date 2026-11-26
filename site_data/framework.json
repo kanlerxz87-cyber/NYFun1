@@ -9,7 +9,7 @@
   "recommended_nights": 7,
   "brief_window": "2027-02-15 to 2027-03-23",
   "conflict": "The preferred time (15-18 Feb 2027) is 3 nights, but the brief asks for a 1-2 week trip. The plan uses 15-22 Feb 2027 (7 nights, Mon to Mon) and keeps 4-night and 14-night variants as choices.",
-  "calendar_note": "2027-02-15 is the third Monday of February 2027, i.e. the US Presidents' Day holiday. Derived from the calendar, not read from an official page - see F-11."
+  "calendar_note": "Monday 15 February 2027 is Washington's Birthday on the official OPM 2027 federal holiday list: https://www.opm.gov/policy-data-oversight/pay-leave/federal-holidays/"
  },
  "requirements_check": [
   {
@@ -103,10 +103,10 @@
   "lines": [
    {
     "item": "Hotel - Fairfield Inn & Suites Manhattan/Central Park, King Room, 7 nights",
-    "usd": 1155.48,
-    "kind": "VERIFIED",
+    "usd": 1158.98,
+    "kind": "DERIVED - all-in",
     "source": "https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
-    "note": "Booking.com prints this as the total including taxes and fees."
+    "note": "Booking.com prints $985.60 as \"Total before taxes\" and lists 14.75% tax plus $4 city tax per night as excluded. $985.60 x 1.1475 + $28 = $1,158.98 (derived, not a quote)."
    },
    {
     "item": "Flights - 2 adults, AMS to JFK return, 15-22 Feb 2027 (the itinerary's own dates)",
@@ -174,8 +174,8 @@
     "note": "No official source exists for what a couple spends on ordinary meals. Inventing a daily allowance would be a guess, so this line is blank."
    }
   ],
-  "verified_subtotal_usd": 4107.48,
-  "verified_subtotal_note": "Sum of the lines with a read amount. Includes the two MICHELIN dinners and the doubled lowest flight fare.",
+  "verified_subtotal_usd": 4110.98,
+  "verified_subtotal_note": "Sum of the ten priced lines. Hotel is a derived all-in figure, flights are a doubled single-adult fare; the other lines are read amounts. Ordinary meals are blank.",
   "unpriced_lines": 1
  },
  "itineraries": [
@@ -301,9 +301,9 @@
   {
    "id": "F-04",
    "severity": "MEDIUM",
-   "title": "Two hotels quote a total that excludes tax, one includes it",
-   "detail": "Fairfield's $1,155.48 includes taxes and fees. citizenM, Arona and the rest print the rate excluding 14.75% tax and a $4/night city tax, which Booking.com shows separately. The hotel table states which basis each row uses so the rows are never compared like-for-like by accident.",
-   "source": "https://www.booking.com/hotel/us/citizenm-new-york-times-square-new-york.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
+   "title": "All seven hotel totals exclude tax; the per-night city tax is not uniform",
+   "detail": "Every Booking.com room row used here prints \"Total before taxes\" and lists 14.75% tax as excluded. The city tax is $4/night at most properties but $6/night at Residence Inn FiDi. Arlo SoHo and Arlo Midtown also exclude a $1/night tourism fee. The site derives an all-in column per hotel from the fees printed on that hotel's own row.",
+   "source": "https://www.booking.com/hotel/us/residence-inn-new-york-downtown-manhattan-financial-district.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
    "settle_by": "Read the 'Excluded' line on each room row (done) and apply tax where excluded",
    "status": "Documented"
   },
@@ -346,11 +346,11 @@
   {
    "id": "F-09",
    "severity": "HIGH",
-   "title": "Hours for The Met and The High Line were not captured",
-   "detail": "The Met's official hours block did not render in the captured page and the High Line's visitor page served a cookie wall. Neither set of hours is shown, rather than being taken from a secondary source.",
-   "source": "https://www.metmuseum.org/plan-your-visit",
-   "settle_by": "Read the hours block on metmuseum.org and thehighline.org with a browser that renders script",
-   "status": "Open"
+   "title": "The High Line's hours are verified; The Met's hours remain unread",
+   "detail": "The High Line's official visitor page states December–March 07:00–20:00, with the Rail Yard Preserve closing at dusk. The Met's official plan-your-visit page yielded admission prices and directions but no museum-hours block, so that cell stays blank.",
+   "source": "https://www.thehighline.org/visit/",
+   "settle_by": "Read the hours block on metmuseum.org in a browser that renders script",
+   "status": "Partial"
   },
   {
    "id": "F-10",
@@ -364,11 +364,11 @@
   {
    "id": "F-11",
    "severity": "LOW",
-   "title": "The Presidents' Day claim is derived, not sourced",
-   "detail": "15 February 2027 falls on the third Monday of February, which is the US federal Washington's Birthday holiday. This is arithmetic on the calendar plus general knowledge; no official 2027 federal calendar page was read.",
-   "source": null,
-   "settle_by": "Read the OPM federal holidays page for 2027",
-   "status": "Open"
+   "title": "Presidents' Day is confirmed by an official 2027 holiday list",
+   "detail": "OPM's 2027 federal holiday table lists Monday 15 February as Washington's Birthday. The colloquial name Presidents' Day is not used by OPM.",
+   "source": "https://www.opm.gov/policy-data-oversight/pay-leave/federal-holidays/",
+   "settle_by": "Done - OPM 2027 table read 2026-11-26",
+   "status": "Documented"
   },
   {
    "id": "F-12",
@@ -382,11 +382,11 @@
   {
    "id": "F-13",
    "severity": "MEDIUM",
-   "title": "Four of seven hotels show no street address",
-   "detail": "Booking.com's captured text gave the area but not the street address for Fairfield, Arlo SoHo, Pestana, Arlo Midtown, Hyatt Place Chelsea and Residence Inn FiDi. Their coordinates are area-level, so their travel times are less precise than citizenM's, whose address is known.",
-   "source": "https://www.booking.com/",
-   "settle_by": "Read the address line on each hotel page",
-   "status": "Open"
+   "title": "Street addresses for all seven hotels were read from Booking.com property pages",
+   "detail": "Addresses were read on 2026-11-26 from each hotel's own Booking.com page and are now shown in the table. Coordinates used by the travel model remain area-level approximations and have not been recalculated from these addresses.",
+   "source": "https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
+   "settle_by": "Re-run the reach model from street addresses if the one-hour rule becomes decisive",
+   "status": "Documented"
   },
   {
    "id": "F-14",
@@ -418,11 +418,11 @@
   {
    "id": "F-17",
    "severity": "HIGH",
-   "title": "Six of seven hotels advertise a price that excludes tax, which flips the ranking",
-   "detail": "Booking.com prints a tax-exclusive total for six of the seven shortlisted properties. On advertised numbers Fairfield ($1,155.48) looks dearer than Arlo SoHo ($1,021.00) and citizenM ($1,147.00). Once 14.75% tax and $4/night city tax are applied, Fairfield is the cheapest of the seven and citizenM is $188.70 dearer. The site shows both columns and labels the second one derived.",
+   "title": "All seven advertised hotel totals exclude tax; ranking must use the derived all-in column",
+   "detail": "The 25 Nov snapshot used a figure of $1,155.48 for Fairfield and labelled it tax-inclusive. Re-reading the dated Booking.com page on 26 Nov 2026 shows \"Total before taxes $985.60\" and \"Excluded: 14.75 % TAX, $4 City tax per night\". The $1,155.48 figure is therefore withdrawn. On the corrected all-in basis Fairfield is still cheapest at $1,158.98, ahead of Arlo SoHo at $1,206.60.",
    "source": "https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
-   "settle_by": "Confirm the final charge at checkout; local fees beyond the two named can still appear",
-   "status": "Documented"
+   "settle_by": "Confirm the final charge at checkout",
+   "status": "Corrected"
   },
   {
    "id": "F-18",
@@ -454,11 +454,29 @@
   {
    "id": "F-21",
    "severity": "MEDIUM",
-   "title": "Three hotel rows link to a Booking.com search page, not the hotel's own page",
-   "detail": "Arlo SoHo, Hyatt Place Chelsea and Residence Inn FiDi were priced from the search results table, and no venue-specific Booking.com URL was captured for them. Their price is verified; their direct link is not, so the row says 'search page' rather than pretending otherwise. The search URL does reproduce the same dated result.",
-   "source": "https://www.booking.com/searchresults.html?ss=Manhattan%2C+New+York&checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD&order=price",
-   "settle_by": "Open each of the three hotels from the search results and copy its /hotel/us/ URL",
+   "title": "Three prices came from a Booking.com results table; all seven now have direct property-page links",
+   "detail": "Direct hotel pages were found and read for Arlo SoHo, Hyatt Place Chelsea and Residence Inn FiDi on 26 Nov 2026, so every row now links to its own property page. Their room rates on those pages differ from the 25 Nov search snapshot (Arlo SoHo especially), so both reads are published rather than silently replacing one with the other.",
+   "source": "https://www.booking.com/hotel/us/arlo-soho.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
+   "settle_by": "Choose which snapshot to use for booking (new question Q-27)",
+   "status": "Documented"
+  },
+  {
+   "id": "F-22",
+   "severity": "HIGH",
+   "title": "Hotel rates moved between the 25 and 26 November 2026 reads",
+   "detail": "A second read of the dated Booking.com property pages on 26 Nov 2026 found different cheapest qualifying rates at citizenM Times Square ($1,113 vs $1,147), Arlo SoHo ($1,087 vs $1,021), Arlo Midtown ($1,171 vs $1,136.68) and Pestana CR7 ($1,175 vs $1,276). Both snapshots are published; the ranking uses the 25 Nov snapshot consistently and must be re-run before booking.",
+   "source": "https://www.booking.com/hotel/us/arlo-soho.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
+   "settle_by": "Re-read all seven property pages on the booking day and rebuild the ranking",
    "status": "Open"
+  },
+  {
+   "id": "F-23",
+   "severity": "MEDIUM",
+   "title": "The $1,155.48 Fairfield figure published on 25 November was not supportable by its source",
+   "detail": "The source page prints \"Total before taxes $985.60\" and lists the taxes as excluded. The withdrawn figure was used for the hotel total, the executive summary and the budget. All have been corrected to $985.60 advertised and $1,158.98 derived all-in; the budget subtotal moved from $4,107.48 to $4,110.98.",
+   "source": "https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
+   "settle_by": "Done - corrected 2026-11-26",
+   "status": "Corrected"
   }
  ],
  "questions": [
@@ -730,6 +748,17 @@
    "how_to_discover": "Answer directly; the site currently shows advertised first and all-in second.",
    "owner": "traveller",
    "blocks": "Presentation",
+   "status": "Open"
+  },
+  {
+   "id": "Q-27",
+   "question": "Which hotel-price snapshot should the booking decision use?",
+   "why_it_blocks": "Two dated reads of the same Booking.com pages give different cheapest qualifying rates for four of seven hotels.",
+   "have": "A 25 Nov 2026 snapshot used consistently for the ranking, and a 26 Nov 2026 re-check table with direct source links.",
+   "missing": "The traveller's chosen read date, or a fresh read on the booking day.",
+   "how_to_discover": "Re-open the seven dated URLs in one session, record the read time and rebuild the all-in ranking.",
+   "owner": "traveller",
+   "blocks": "Hotel choice and budget",
    "status": "Open"
   }
  ],

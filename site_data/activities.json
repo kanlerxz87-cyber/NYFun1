@@ -34,7 +34,7 @@
    "address": "1000 Fifth Avenue, New York, NY 10028",
    "hours": null,
    "days_open": null,
-   "exceptions": "NY State residents may pay what they wish (minimum $0.01). Hours block was not readable on the official page on 2026-11-25 - left blank, see Q-09.",
+   "exceptions": "NY State residents may pay what they wish (minimum $0.01). The Met official page was re-read on 2026-11-26: admission and directions were present, but no museum-hours block could be captured, so hours stay blank. See Q-09.",
    "adult_usd": 30,
    "cost_2_adults_usd": 60,
    "official_url": "https://www.metmuseum.org/plan-your-visit",
@@ -179,13 +179,13 @@
    "category": "Park / Walk",
    "area": "Chelsea",
    "address": "Gansevoort St to 34th St, elevated rail line",
-   "hours": null,
-   "days_open": null,
-   "exceptions": "Official visitor page served a cookie-consent wall on 2026-11-25 and the hours were not readable - left blank, see Q-09. Entry is free.",
+   "hours": "07:00-20:00 (1 December - 31 March)",
+   "days_open": "Mon-Sun",
+   "exceptions": "Rail Yard Preserve between 30th Street and 34th Street closes at dusk. Free entry. Hours read from the official visitor page on 2026-11-26.",
    "adult_usd": 0,
    "cost_2_adults_usd": 0,
    "official_url": "https://www.thehighline.org/visit/",
-   "verification": "PARTIAL - free entry; hours not captured",
+   "verification": "VERIFIED - hours, free entry and exceptions read on the official visitor page 2026-11-26",
    "lat": 40.748,
    "lon": -74.0048,
    "from_hotel": {
@@ -195,7 +195,8 @@
     "transit_min_modelled": 19,
     "within_one_hour": true,
     "method": "MODEL: great-circle km / 4.5 km/h walking, or /12 km/h effective subway speed plus 8 minutes platform access and wait. Not a measured schedule."
-   }
+   },
+   "hours_source": "https://www.thehighline.org/visit/"
   },
   {
    "id": "chelsea-market",

@@ -1,6 +1,6 @@
 {
  "read_on": "2026-11-25",
- "basis": "Search on Booking.com for check-in 2027-02-15, check-out 2027-02-22, 2 adults, 1 room, USD. The 'total_7n_usd' is the number Booking.com prints for the whole 7-night stay for the room named in 'room'. Where Booking.com prints a tax-inclusive figure, that is what is used and 'tax_included' is true. Nothing is estimated.",
+ "basis": "Search on Booking.com for check-in 2027-02-15, check-out 2027-02-22, 2 adults, 1 room, USD. 'total_7n_usd' is the total Booking.com prints BEFORE taxes ('Total before taxes') for the named room on the 2026-11-25 snapshot. Every row excludes 14.75% tax; see city_tax_per_night and other_excluded_fee_per_night per row. all_in_7n_usd is derived arithmetic, not a quote. A second read on 2026-11-26 is recorded in recheck_2026_11_26.",
  "windows_sampled": [
   {
    "start": "2027-02-15",
@@ -23,8 +23,7 @@
    "id": "fairfield-central-park",
    "name": "Fairfield Inn & Suites by Marriott New York Manhattan/Central Park",
    "area": "Midtown West / Hell's Kitchen",
-   "address": null,
-   "address_flag": "Street address not captured from an official page; MICHELIN/Booking list the area only in the captured text.",
+   "address": "538 West 58th Street, Hell's Kitchen, New York, NY 10019",
    "room": "King Room",
    "bed": "1 king bed",
    "bath": "Attached (private) bathroom",
@@ -32,17 +31,17 @@
    "breakfast": "Included (American breakfast)",
    "cancellation": "Free cancellation until 2027-02-12",
    "rating": "8.0/10 (Booking.com guest score)",
-   "total_7n_usd": 1155.48,
-   "tax_included": true,
-   "list_price_before_discount": 1640.18,
+   "total_7n_usd": 985.6,
+   "tax_included": false,
+   "list_price_before_discount": 1408.0,
    "discount_note": "Black Friday Deal - booking page states a discount for select stays between 19 Nov 2026 and 31 Dec 2027.",
    "source_url": "https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
    "lat": 40.7645,
    "lon": -73.9895,
    "coords_flag": "Area-level coordinates, not the exact building.",
    "window": "2027-02-15 to 2027-02-22",
-   "all_in_7n_usd": 1155.48,
-   "all_in_basis": "Taxes and fees already included in the printed total.",
+   "all_in_7n_usd": 1158.98,
+   "all_in_basis": "Derived: printed total before taxes $985.60 x 1.1475 + $4 city tax x 7 nights.",
    "reach": {
     "venues_with_coords": 7,
     "total_star_entries": 72,
@@ -51,14 +50,16 @@
     "nearest_three_star_km": 0.68,
     "nearest_three_star": "Le Bernardin",
     "method": "Great-circle distance from the hotel's coordinates to each restaurant's coordinates. 5 km is a straight-line proxy for the brief's one-hour door-to-door rule: Manhattan cross-town walking is roughly 1.4 km per 20 minutes, so 5 km is a deliberately generous outer bound."
-   }
+   },
+   "city_tax_per_night": 4,
+   "other_excluded_fee_per_night": 0,
+   "address_source_url": "https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD"
   },
   {
    "id": "arlo-soho",
    "name": "Arlo SoHo",
    "area": "SoHo / Hudson Square",
-   "address": null,
-   "address_flag": "Street address not captured.",
+   "address": "231 Hudson Street, SoHo, New York, NY 10013",
    "room": "Queen Room Courtyard View",
    "bed": "1 queen bed",
    "bath": "Private bathroom (per Booking.com room table)",
@@ -75,8 +76,8 @@
    "lon": -74.0095,
    "coords_flag": "Area-level coordinates.",
    "window": "2027-02-15 to 2027-02-22",
-   "all_in_7n_usd": 1199.6,
-   "all_in_basis": "DERIVED: printed total x 1.1475 (14.75% tax) + $4 city tax x 7 nights. Resort fee, where Booking.com shows it, is already inside the printed total.",
+   "all_in_7n_usd": 1206.6,
+   "all_in_basis": "Derived from the 25 Nov search-page total, plus 14.75% tax, $4 city tax x 7 and the $1/night tourism fee printed on the hotel page. The resort fee is included on the hotel page.",
    "reach": {
     "venues_with_coords": 7,
     "total_star_entries": 72,
@@ -85,14 +86,16 @@
     "nearest_three_star_km": 0.21,
     "nearest_three_star": "Le Bernardin",
     "method": "Great-circle distance from the hotel's coordinates to each restaurant's coordinates. 5 km is a straight-line proxy for the brief's one-hour door-to-door rule: Manhattan cross-town walking is roughly 1.4 km per 20 minutes, so 5 km is a deliberately generous outer bound."
-   }
+   },
+   "city_tax_per_night": 4,
+   "other_excluded_fee_per_night": 1,
+   "address_source_url": "https://www.booking.com/hotel/us/arlo-soho.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD"
   },
   {
    "id": "pestana-cr7-times-square",
    "name": "Pestana CR7 Times Square",
    "area": "Times Square / Theater District",
-   "address": null,
-   "address_flag": "Street address not captured.",
+   "address": "338 West 39th Street, Hell's Kitchen, New York, NY 10018",
    "room": "Comfort Room",
    "bed": "1 queen bed",
    "bath": "Attached bathroom (per room table)",
@@ -121,14 +124,16 @@
     "nearest_three_star_km": 0.97,
     "nearest_three_star": "Le Bernardin",
     "method": "Great-circle distance from the hotel's coordinates to each restaurant's coordinates. 5 km is a straight-line proxy for the brief's one-hour door-to-door rule: Manhattan cross-town walking is roughly 1.4 km per 20 minutes, so 5 km is a deliberately generous outer bound."
-   }
+   },
+   "city_tax_per_night": 4,
+   "other_excluded_fee_per_night": 0,
+   "address_source_url": "https://www.booking.com/hotel/us/pestana-cr7-times-square.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD"
   },
   {
    "id": "arlo-midtown",
    "name": "Arlo Midtown",
    "area": "Midtown West",
-   "address": null,
-   "address_flag": "Street address not captured.",
+   "address": "351 West 38th Street, Hell's Kitchen, New York, NY 10018",
    "room": "King Urban",
    "bed": "1 king bed",
    "bath": "Private bathroom (per Booking.com room table)",
@@ -147,8 +152,8 @@
    "lon": -73.9917,
    "coords_flag": "Area-level coordinates.",
    "window": "2027-02-15 to 2027-02-22",
-   "all_in_7n_usd": 1332.34,
-   "all_in_basis": "DERIVED: printed total x 1.1475 (14.75% tax) + $4 city tax x 7 nights. Resort fee, where Booking.com shows it, is already inside the printed total.",
+   "all_in_7n_usd": 1339.34,
+   "all_in_basis": "Derived: advertised total x 1.1475 + $4 city tax x 7 + $1 tourism fee x 7; $37/night resort fee is included on the hotel page.",
    "reach": {
     "venues_with_coords": 7,
     "total_star_entries": 72,
@@ -157,14 +162,16 @@
     "nearest_three_star_km": 0.81,
     "nearest_three_star": "Le Bernardin",
     "method": "Great-circle distance from the hotel's coordinates to each restaurant's coordinates. 5 km is a straight-line proxy for the brief's one-hour door-to-door rule: Manhattan cross-town walking is roughly 1.4 km per 20 minutes, so 5 km is a deliberately generous outer bound."
-   }
+   },
+   "city_tax_per_night": 4,
+   "other_excluded_fee_per_night": 1,
+   "address_source_url": "https://www.booking.com/hotel/us/arlo-midtown.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD"
   },
   {
    "id": "citizenm-times-square",
    "name": "citizenM New York Times Square",
    "area": "Midtown West (Theater District)",
    "address": "218 West 50th Street, New York, NY 10019",
-   "address_flag": null,
    "room": "King Room - High Floor",
    "bed": "1 king bed",
    "bath": "Attached bathroom",
@@ -191,14 +198,16 @@
     "nearest_three_star_km": 0.8,
     "nearest_three_star": "Le Bernardin",
     "method": "Great-circle distance from the hotel's coordinates to each restaurant's coordinates. 5 km is a straight-line proxy for the brief's one-hour door-to-door rule: Manhattan cross-town walking is roughly 1.4 km per 20 minutes, so 5 km is a deliberately generous outer bound."
-   }
+   },
+   "city_tax_per_night": 4,
+   "other_excluded_fee_per_night": 0,
+   "address_source_url": "https://www.booking.com/hotel/us/citizenm-new-york-times-square-new-york.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD"
   },
   {
    "id": "hyatt-place-chelsea",
    "name": "Hyatt Place New York Chelsea",
    "area": "Chelsea",
-   "address": null,
-   "address_flag": "Street address not captured.",
+   "address": "140 West 24th Street, Chelsea, New York, NY 10011",
    "room": "King Room with Roll-In Shower - Disability Access",
    "bed": "1 king bed",
    "bath": "Private bathroom",
@@ -210,7 +219,7 @@
    "tax_included": false,
    "list_price_before_discount": null,
    "discount_note": "The cheapest qualifying king room on this date was the accessible room type; a non-accessible equivalent may differ in price.",
-   "source_url": "https://www.booking.com/searchresults.html?ss=Manhattan%2C+New+York&checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD&order=price&nflt=ht_id%3D204%3Bclass%3D4%3Breview_score%3D80%3Bhotelfacility%3D2",
+   "source_url": "https://www.booking.com/hotel/us/hyatt-place-new-york-chelsea.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
    "lat": 40.7479,
    "lon": -73.9905,
    "coords_flag": "Area-level coordinates.",
@@ -225,14 +234,16 @@
     "nearest_three_star_km": 0.76,
     "nearest_three_star": "Le Bernardin",
     "method": "Great-circle distance from the hotel's coordinates to each restaurant's coordinates. 5 km is a straight-line proxy for the brief's one-hour door-to-door rule: Manhattan cross-town walking is roughly 1.4 km per 20 minutes, so 5 km is a deliberately generous outer bound."
-   }
+   },
+   "city_tax_per_night": 4,
+   "other_excluded_fee_per_night": 0,
+   "address_source_url": "https://www.booking.com/hotel/us/hyatt-place-new-york-chelsea.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD"
   },
   {
    "id": "residence-inn-fidi",
    "name": "Residence Inn New York Downtown Manhattan/Financial District",
    "area": "Financial District",
-   "address": null,
-   "address_flag": "Street address not captured.",
+   "address": "215 Pearl Street, New York, NY 10038",
    "room": "Studio, 1 King",
    "bed": "1 king bed",
    "bath": "Private bathroom",
@@ -240,17 +251,17 @@
    "breakfast": "Included",
    "cancellation": "Free cancellation, no prepayment",
    "rating": "8.1/10 (Booking.com guest score, 727 reviews)",
-   "total_7n_usd": 1097.0,
+   "total_7n_usd": 1097.25,
    "tax_included": false,
    "list_price_before_discount": 1463.0,
    "discount_note": null,
-   "source_url": "https://www.booking.com/searchresults.html?ss=Manhattan%2C+New+York&checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD&order=price&nflt=ht_id%3D204%3Bclass%3D4%3Breview_score%3D80%3Bhotelfacility%3D2",
+   "source_url": "https://www.booking.com/hotel/us/residence-inn-new-york-downtown-manhattan-financial-district.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
    "lat": 40.7086,
    "lon": -74.0113,
    "coords_flag": "Area-level coordinates.",
    "window": "2027-02-15 to 2027-02-22",
-   "all_in_7n_usd": 1286.81,
-   "all_in_basis": "DERIVED: printed total x 1.1475 (14.75% tax) + $4 city tax x 7 nights. Resort fee, where Booking.com shows it, is already inside the printed total.",
+   "all_in_7n_usd": 1301.09,
+   "all_in_basis": "Derived: $1,097.25 before taxes x 1.1475 + $6 city tax x 7.",
    "reach": {
     "venues_with_coords": 7,
     "total_star_entries": 72,
@@ -259,8 +270,92 @@
     "nearest_three_star_km": 1.15,
     "nearest_three_star": "Le Bernardin",
     "method": "Great-circle distance from the hotel's coordinates to each restaurant's coordinates. 5 km is a straight-line proxy for the brief's one-hour door-to-door rule: Manhattan cross-town walking is roughly 1.4 km per 20 minutes, so 5 km is a deliberately generous outer bound."
-   }
+   },
+   "city_tax_per_night": 6,
+   "other_excluded_fee_per_night": 0,
+   "address_source_url": "https://www.booking.com/hotel/us/residence-inn-new-york-downtown-manhattan-financial-district.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD"
   }
  ],
- "all_in_formula": "all_in_7n_usd = total_7n_usd if tax_included else total_7n_usd * 1.1475 + 28"
+ "all_in_formula": "Derived all-in = printed total before taxes x 1.1475 + (city tax per night x 7) + any other excluded per-night fee shown on the same Booking.com room row. It is arithmetic, not a quote.",
+ "recheck_2026_11_26": [
+  {
+   "hotel": "Fairfield Inn & Suites by Marriott New York Manhattan/Central Park",
+   "room": "King Room",
+   "total_before_taxes_usd": 985.6,
+   "fee_line": "Excluded: 14.75 % TAX, $4 City tax per night",
+   "source": "https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
+   "note": "Same room, same dates as the 25 Nov snapshot; figure is the printed \"Total before taxes\"."
+  },
+  {
+   "hotel": "citizenM New York Times Square",
+   "room": "King Room",
+   "total_before_taxes_usd": 1113.0,
+   "fee_line": "Excluded: 14.75 % TAX, $4 City tax per night",
+   "source": "https://www.booking.com/hotel/us/citizenm-new-york-times-square-new-york.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
+   "note": "Cheapest qualifying king on the hotel page on re-check; snapshot table used a higher rate."
+  },
+  {
+   "hotel": "Arlo SoHo",
+   "room": "Queen Room Courtyard View",
+   "total_before_taxes_usd": 1087.0,
+   "fee_line": "Included: $37 Resort fee per night. Excluded: $1 Tourism fee per night, 14.75 % TAX, $4 City tax per night",
+   "source": "https://www.booking.com/hotel/us/arlo-soho.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
+   "note": "Non-refundable rate; the flexible rate on the same page is $1,632 before taxes."
+  },
+  {
+   "hotel": "Arlo Midtown",
+   "room": "King Room",
+   "total_before_taxes_usd": 1171.0,
+   "fee_line": "Included: $37 Resort fee per night. Excluded: $1 Tourism fee per night, 14.75 % TAX, $4 City tax per night",
+   "source": "https://www.booking.com/hotel/us/arlo-midtown.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
+   "note": "Non-refundable rate; the flexible rate on the same page is $1,772 before taxes."
+  },
+  {
+   "hotel": "Pestana CR7 Times Square",
+   "room": "Comfort Room",
+   "total_before_taxes_usd": 1175.0,
+   "fee_line": "Included: $26 Resort fee per night. Excluded: 14.75 % TAX, $4 City tax per night",
+   "source": "https://www.booking.com/hotel/us/pestana-cr7-times-square.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
+   "note": "Non-refundable rate with resort fee included; a lower $1,073 Partner Offer is also shown on the page."
+  },
+  {
+   "hotel": "Hyatt Place New York Chelsea",
+   "room": "King Room with Roll-In Shower - Disability Access",
+   "total_before_taxes_usd": 1113.0,
+   "fee_line": "Excluded: 14.75 % TAX, $4 City tax per night",
+   "source": "https://www.booking.com/hotel/us/hyatt-place-new-york-chelsea.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
+   "note": "A standard King Room is listed at the same $1,113 on the re-check page."
+  },
+  {
+   "hotel": "Residence Inn New York Downtown Manhattan/Financial District",
+   "room": "Studio, 1 King",
+   "total_before_taxes_usd": 1097.25,
+   "fee_line": "Excluded: 14.75 % TAX, $6 City tax per night",
+   "source": "https://www.booking.com/hotel/us/residence-inn-new-york-downtown-manhattan-financial-district.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
+   "note": "City tax here is $6/night, not the $4 shown on the Midtown properties."
+  }
+ ],
+ "price_windows": [
+  {
+   "start": "2027-02-15",
+   "end": "2027-02-22",
+   "total_before_taxes_usd": 985.6,
+   "all_in_derived_usd": 1158.98,
+   "source": "https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD"
+  },
+  {
+   "start": "2027-02-16",
+   "end": "2027-02-23",
+   "total_before_taxes_usd": 996.1,
+   "all_in_derived_usd": 1171.02,
+   "source": "https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-16&checkout=2027-02-23&group_adults=2&no_rooms=1&selected_currency=USD"
+  },
+  {
+   "start": "2027-02-22",
+   "end": "2027-03-01",
+   "total_before_taxes_usd": 1020.6,
+   "all_in_derived_usd": 1199.14,
+   "source": "https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-22&checkout=2027-03-01&group_adults=2&no_rooms=1&selected_currency=USD"
+  }
+ ]
 }
