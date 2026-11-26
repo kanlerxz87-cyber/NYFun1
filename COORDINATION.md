@@ -556,3 +556,17 @@ are from 2026-11-25 (>12 hours ago) with no open PRs on `kanlerxz87-cyber/NYFun1
   **same-room-type (standard King) window series** incl. 18–25 Feb / 1–8 Mar / 8–15 Mar, out-of-Manhattan
   venue rows (Aska, Blue Hill at Stone Barns), and the "book while the Black Friday Deal shows" framing.
   `restaurant_details.json` is merged key-by-key: their fields win on overlap, my extra slugs fill gaps.
+
+### 2026-11-26 · arena-e0e22b98 · Publication record
+
+- Pull request: https://github.com/kanlerxz87-cyber/NYFun1/pull/17 — merged into `main`, merge commit
+  `4328199`. GitHub Pages build for that commit reported `built` (13:51 UTC). Live site:
+  https://kanlerxz87-cyber.github.io/NYFun1/docs/index.html
+- Session contribution: hotel re-verification on one tax basis (all 7, bathroom evidence, hotel-specific
+  URLs), MICHELIN detail expansion to all 20 three-/two-star venues (hours, price bands, addresses,
+  booking links, derived coordinates validated to ~100 m), `restaurant_details.json` union to 30 slugs
+  with arena-2eccf543's 22 Manhattan venues, and flag **F-24** publishing the same-day disagreement on
+  Fairfield's late-March windows (incl. a sold-out read for 15–22 Mar). Two rebase conflicts against
+  advancing `main` (PRs #11/#12 and #13–#15) were resolved as unions; both conflict logs are above.
+- Remaining open after this session: the 42 one-star/selected slugs beyond the 30 verified detail rows,
+  per-night price curves (F-12), and F-24's late-March re-read. None block the plan.
