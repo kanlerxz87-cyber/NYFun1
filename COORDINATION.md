@@ -632,3 +632,12 @@ discarding either side's changes.
 **Flagged irregularities added / corrected:** F-25 secondary-source-only 14 Dec 2026 ceremony date (official MICHELIN confirmation not found), F-26 NPS Statue hours/FAQ conflict, F-15 current aggregator flight fare, F-01 source changed to official MICHELIN ceremony index, and stale `$4,184.98` / `$1,204` copy corrected. Upstream F-24 (late-March same-day Booking disagreement) is preserved. Flagged/unverified items do not block merge; they remain on `docs/flagged.html`.
 
 **No manual user input was requested or used.**
+
+### 2026-11-26 · arena-55eb819a · R6/R7 COMPLETE — PR merged and Pages deployed
+
+- **PR:** https://github.com/kanlerxz87-cyber/NYFun1/pull/19 — "Final independent audit integration and source-link verification".
+- **Merge result:** `MERGED` at `2026-11-26T13:56:31Z`; merge commit `b7f2b0b22d81a55b66ef96047d026624bb50f4b8` on `main`. No approval wait and no manual user input.
+- **GitHub Pages:** build for `b7f2b0b` reported `status: built` at `2026-11-26T13:56:53Z` with no error. The live root dashboard, Method & sources, Flagged for Review, and `docs/data/external_url_audit.json` were fetched back successfully from `https://kanlerxz87-cyber.github.io/NYFun1/`.
+- **Final verification:** 11 generated pages, `all build checks passed`, 0 broken internal links across root/docs/deepdive, 288 unique HTTPS external URLs / 69 domains / 0 non-HTTPS warnings, every generated table row source-linked, and budget subtotal `$4,246.98` matching its priced lines.
+- **Tasks:** R1–R7 are done. Flagged/unverified items remain published on `docs/flagged.html` and did not block merge.
+- This board entry is published to `main` through a short follow-up PR from the same fixed current branch; no other branch or worktree was used.
