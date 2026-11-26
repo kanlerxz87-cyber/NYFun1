@@ -42,6 +42,7 @@ on base commit `6609129`).
 | T12 | Flagged-for-review register (unverified / irregularities) | `docs/flagged.html` | arena-cfbb0ef6 | done | 2026-11-25 |
 | T13 | Verification pass: every value → official source or blank+flag | all data files | arena-cfbb0ef6 | done | 2026-11-25 |
 | T14 | Integration + GitHub Pages publish + link check | `docs/index.html`, nav, Pages settings | arena-cfbb0ef6 | done | 2026-11-25 |
+| T15 | Fresh-session audit + final corrections / integration | `build_site.py`, `site_data/*.json`, `README.md`, `docs/**` (generated), `index.html`, `COORDINATION.md` | arena-bd056789 | in progress | 2026-11-26 |
 
 ## File ownership (non-overlapping scopes)
 
@@ -267,3 +268,13 @@ ferry) → F-20.
   titles/table headers, and a stated budget subtotal that could drift from the sum of its lines.
 - Counts on the site are now derived from the data (socials 11 official + 3 review videos, flags 20,
   questions 26) rather than typed into prose.
+
+---
+
+## SESSION CLAIM — 2026-11-26 (UTC) — `arena-bd056789` (current branch `arena/bd056789-nyfun1`)
+
+**Task:** T15 — fresh-session audit and final integration/corrections for the New York 2027 planning site.
+
+**Scope:** `build_site.py`, `site_data/*.json`, `README.md`, `index.html`, `docs/**` (generated pages/assets/data), and this append-only board. Existing completed T1–T14 claims are from merged work and are not active owners. The Arena-provided branch is fixed; this session will not create or switch branches. `deepdive/**`, `build.py`, `build_deepdive.py`, and `content.py` are excluded from edits unless a board request is logged.
+
+**Preflight:** `python3 build_site.py` passed. `python3 build.py` failed because it expects the removed `docs/data/michelin_2025.csv`; this is a legacy build-path irregularity to document and resolve/flag without overwriting archived datasets. No open PRs were returned by `gh pr list` at claim time.
