@@ -1,6 +1,6 @@
 {
  "read_on": "2026-11-26",
- "rule": "A price is shown only if an official page states it. 'cost_2_adults_usd' is that official per-adult price x2 (arithmetic, not an estimate). All distances are recomputed from Fairfield Inn Central Park's verified building address (538 W 58th St: 40.77042, -73.98971).",
+ "rule": "A value appears only when an official page states it. Exact/list prices are doubled arithmetically for two adults; official ranges, 'from' floors, and blanks are labelled as such. Travel minutes are a labelled model, not measured MTA journeys. Any field not confirmed is blank and flagged.",
  "activities": [
   {
    "id": "moma",
@@ -8,9 +8,9 @@
    "category": "Museum",
    "area": "Midtown",
    "address": "11 West 53 Street, New York, NY 10019",
-   "hours": "Daily 10:30-17:30; Friday until 20:30",
-   "days_open": "Mon-Sun",
-   "exceptions": "Closed Thanksgiving Day and Christmas Day. Galleries close ~15 min before the building. UNIQLO Friday Nights: free for NY State residents 17:30-20:30 (timed advance ticket required).",
+   "hours": "Daily 10:30–17:30; Friday until 20:30",
+   "days_open": "Mon–Sun",
+   "exceptions": "Closed Thanksgiving Day and Christmas Day; galleries close about 15 minutes before the building; UNIQLO Friday Nights free for NY State residents 17:30–20:30 with advance ticket.",
    "adult_usd": 30,
    "cost_2_adults_usd": 60,
    "official_url": "https://www.moma.org/visit/",
@@ -19,12 +19,19 @@
    "lon": -73.9776,
    "from_hotel": {
     "hotel": "Fairfield Inn & Suites by Marriott New York Manhattan/Central Park",
-    "km": 1.43,
-    "walk_min_modelled": 19,
-    "transit_min_modelled": 15,
+    "km": 1.06,
+    "walk_min_modelled": 14,
+    "transit_min_modelled": 13,
     "within_one_hour": true,
-    "method": "MODEL: great-circle km from 538 W 58th St / 4.5 km/h walking, or / 12 km/h effective subway speed + 8 min access/wait."
-   }
+    "method": "MODEL: straight-line distance with a fixed access allowance; not a measured MTA subway/bus journey. Official one-hour status is blank/flagged.",
+    "one_hour_verified": false
+   },
+   "price_text": "$60 for two ($30 adult general admission)",
+   "price_is_floor": false,
+   "price_is_upper_bound": false,
+   "source_urls": [
+    "https://www.moma.org/visit/"
+   ]
   },
   {
    "id": "met",
@@ -32,23 +39,31 @@
    "category": "Museum",
    "area": "Upper East Side",
    "address": "1000 Fifth Avenue, New York, NY 10028",
-   "hours": "Sun-Tue & Thu 10:00-17:00; Fri-Sat 10:00-21:00; Wednesday CLOSED",
-   "days_open": "Thu-Tue (closed every Wednesday)",
-   "exceptions": "CLOSED WEDNESDAYS (never schedule on Wed!). Also closed Thanksgiving, Dec 25, Jan 1, and first Monday in May. NY/NJ/CT tri-state residents pay-what-you-wish; out-of-state adults $30.",
+   "hours": null,
+   "days_open": null,
+   "exceptions": "Official Fifth Avenue page confirms general admission and location but the fetched text did not expose a weekly public-hours block; hours are blank and flagged. NY State residents and NY/NJ/CT students pay what you wish; online pay-what-you-wish requires a NY State billing address.",
    "adult_usd": 30,
    "cost_2_adults_usd": 60,
    "official_url": "https://www.metmuseum.org/plan-your-visit",
-   "verification": "VERIFIED",
+   "verification": "PARTIAL - admission/address verified; public museum hours blank",
    "lat": 40.7794,
    "lon": -73.9632,
    "from_hotel": {
     "hotel": "Fairfield Inn & Suites by Marriott New York Manhattan/Central Park",
-    "km": 2.45,
-    "walk_min_modelled": 33,
-    "transit_min_modelled": 20,
+    "km": 2.77,
+    "walk_min_modelled": 37,
+    "transit_min_modelled": 22,
     "within_one_hour": true,
-    "method": "MODEL: great-circle km from 538 W 58th St / 4.5 km/h walking, or / 12 km/h effective subway speed + 8 min access/wait."
-   }
+    "method": "MODEL: straight-line distance with a fixed access allowance; not a measured MTA subway/bus journey. Official one-hour status is blank/flagged.",
+    "one_hour_verified": false
+   },
+   "price_text": "$60 for two ($30 adult general admission)",
+   "price_is_floor": false,
+   "price_is_upper_bound": false,
+   "source_urls": [
+    "https://www.metmuseum.org/plan-your-visit",
+    "https://www.metmuseum.org/visit/met-fifth-avenue"
+   ]
   },
   {
    "id": "amnh",
@@ -56,24 +71,33 @@
    "category": "Museum",
    "area": "Upper West Side",
    "address": "200 Central Park West, New York, NY 10024",
-   "hours": "Daily 10:00-17:30",
-   "days_open": "Mon-Sun",
-   "exceptions": "Out-of-state adult General Admission $37 ($74 for two); +1 ticketed exhibition $43; +All exhibitions $48. NY/NJ/CT residents pay-what-you-wish. Closed Thanksgiving & Dec 25. Tickets live through 30 Jun 2027.",
+   "hours": "Daily 10:00–17:30",
+   "days_open": "Mon–Sun",
+   "exceptions": "Closed Thanksgiving Day and Christmas Day; extended holiday hours on select dates; before 10:00 or after 17:00 use the Central Park West / 81st Street entrances; ticketed exhibitions cost extra.",
    "adult_usd": 37,
    "cost_2_adults_usd": 74,
-   "price_note": "Official amnh.org/plan-your-visit (verified 2026-11-26): out-of-state Adult General Admission $37.00 pp.",
    "official_url": "https://www.amnh.org/plan-your-visit",
    "verification": "VERIFIED",
    "lat": 40.7813,
    "lon": -73.974,
    "from_hotel": {
     "hotel": "Fairfield Inn & Suites by Marriott New York Manhattan/Central Park",
-    "km": 1.79,
-    "walk_min_modelled": 24,
-    "transit_min_modelled": 17,
+    "km": 2.28,
+    "walk_min_modelled": 30,
+    "transit_min_modelled": 19,
     "within_one_hour": true,
-    "method": "MODEL: great-circle km from 538 W 58th St / 4.5 km/h walking, or / 12 km/h effective subway speed + 8 min access/wait."
-   }
+    "method": "MODEL: straight-line distance with a fixed access allowance; not a measured MTA subway/bus journey. Official one-hour status is blank/flagged.",
+    "one_hour_verified": false
+   },
+   "price_text": "$74 for two ($37 standard adult general admission)",
+   "price_is_floor": false,
+   "price_is_upper_bound": false,
+   "source_urls": [
+    "https://www.amnh.org/plan-your-visit",
+    "https://www.amnh.org/plan-your-visit/hours",
+    "https://tickets.amnh.org/select"
+   ],
+   "price_note": "NY State residents pay what you wish for general admission; standard out-of-state pricing is used for this couple."
   },
   {
    "id": "911-memorial-museum",
@@ -81,24 +105,31 @@
    "category": "Memorial / Museum",
    "area": "Lower Manhattan",
    "address": "180 Greenwich Street, New York, NY 10007",
-   "hours": "Museum Wed-Mon 09:00-19:00 (last entry 18:00); Memorial daily 08:00-20:00",
-   "days_open": "Museum Wed-Mon (open most Tuesdays holiday weeks); Memorial 7 days",
-   "exceptions": "Timed tickets required in advance; last entry 60 min before closing (18:00, corrected from 17:30). Free Admission Mondays 17:30-19:00 (online tickets released 07:00 ET Mondays, limited). Note Museum normally closed Tuesdays.",
+   "hours": "Museum Wed-Mon 09:00-19:00 (last entry 17:30); Memorial daily 08:00-20:00",
+   "days_open": "Museum Wed-Mon plus select Tuesdays; Memorial 7 days",
+   "exceptions": "Timed tickets required; last admission 60 minutes before closing. Museum Wed–Mon and many Tuesdays 09:00–19:00; Memorial daily 08:00–20:00. Free Monday 17:30–19:00 tickets from 07:00 ET; children 6 and under free but need a ticket.",
    "adult_usd": 36,
    "cost_2_adults_usd": 72,
-   "price_note": "Official page states museum admission as a range, $24-$36. The top of the range is used for the budget so the estimate cannot understate the cost.",
+   "price_note": "Official page states a $24–$36 admission range. The couple range is arithmetic on that official range; the budget uses the upper bound so it cannot understate the line.",
    "official_url": "https://www.911memorial.org/visit/visit-museum-1",
-   "verification": "VERIFIED",
+   "verification": "VERIFIED RANGE",
    "lat": 40.7115,
    "lon": -74.0134,
    "from_hotel": {
     "hotel": "Fairfield Inn & Suites by Marriott New York Manhattan/Central Park",
-    "km": 6.85,
-    "walk_min_modelled": 91,
-    "transit_min_modelled": 42,
+    "km": 6.23,
+    "walk_min_modelled": 83,
+    "transit_min_modelled": 39,
     "within_one_hour": true,
-    "method": "MODEL: great-circle km from 538 W 58th St / 4.5 km/h walking, or / 12 km/h effective subway speed + 8 min access/wait."
-   }
+    "method": "MODEL: straight-line distance with a fixed access allowance; not a measured MTA subway/bus journey. Official one-hour status is blank/flagged.",
+    "one_hour_verified": false
+   },
+   "price_text": "$48–$72 for two (official $24–$36 per adult; $72 upper bound used in budget)",
+   "price_is_floor": false,
+   "price_is_upper_bound": true,
+   "source_urls": [
+    "https://www.911memorial.org/visit/visit-museum-1"
+   ]
   },
   {
    "id": "top-of-the-rock",
@@ -106,99 +137,129 @@
    "category": "Observation deck",
    "area": "Midtown",
    "address": "30 Rockefeller Plaza, New York, NY 10112",
-   "hours": "Daily 08:00-24:00 (last entry ~23:10)",
+   "hours": "08:00-24:00",
    "days_open": "Mon-Sun",
-   "exceptions": "Timed admission; price varies by date and sunset window. All-inclusive pass (deck + The Beam + SKYLIFT) is a higher tier.",
+   "exceptions": "OPEN 8 AM–12 AM; timed admission price varies by date/slot. Skip-the-line from $82 and VIP from $185 are separate products.",
    "adult_usd": 42,
    "cost_2_adults_usd": 84,
-   "price_note": "Official Rockefeller Center page states 'Timed Admission ... From $42'. A 'from' price is a floor, not a fixed sunset quote.",
+   "price_note": "Official page says Timed Admission 'From $42'; the couple total is a derived floor, not a final quote.",
    "official_url": "https://www.rockefellercenter.com/tickets/top-of-the-rock-observation-deck/",
-   "verification": "VERIFIED (floor price)",
+   "verification": "VERIFIED FLOOR",
    "lat": 40.7593,
    "lon": -73.9792,
    "from_hotel": {
     "hotel": "Fairfield Inn & Suites by Marriott New York Manhattan/Central Park",
-    "km": 1.52,
-    "walk_min_modelled": 20,
-    "transit_min_modelled": 16,
+    "km": 1.04,
+    "walk_min_modelled": 14,
+    "transit_min_modelled": 13,
     "within_one_hour": true,
-    "method": "MODEL: great-circle km from 538 W 58th St / 4.5 km/h walking, or / 12 km/h effective subway speed + 8 min access/wait."
-   }
+    "method": "MODEL: straight-line distance with a fixed access allowance; not a measured MTA subway/bus journey. Official one-hour status is blank/flagged.",
+    "one_hour_verified": false
+   },
+   "price_text": "$84+ for two (from $42 per adult; official floor, not a dated quote)",
+   "price_is_floor": true,
+   "price_is_upper_bound": false,
+   "source_urls": [
+    "https://www.rockefellercenter.com/tickets/top-of-the-rock-observation-deck/"
+   ]
   },
   {
    "id": "statue-of-liberty",
    "name": "Statue of Liberty & Ellis Island",
    "category": "Landmark",
    "area": "New York Harbor",
-   "address": "Liberty Island, New York, NY 10004 (ferry from Battery Park)",
-   "hours": "Daily 09:00-16:30 (last entrance into statue 15:30; Information Center 09:30-16:30)",
-   "days_open": "Mon-Sun (closed Thanksgiving & Dec 25)",
-   "exceptions": "Statue City Cruises is the ONLY NPS-authorized ferry operator (departing Battery Park, 7.82 km / ~47 modelled subway min from hotel + ~15-20 min ferry = ~62-67 min door-to-island). Pedestal/Crown adds $0.30 and sells out weeks ahead. High winter wind can suspend harbor landings.",
+   "address": "Liberty Island, New York, NY 10004",
+   "hours": "Standard park hours 09:00–16:30; ferry schedule varies",
+   "days_open": "Every day",
+   "exceptions": "NPS hours page: last entrance into the statue 15:30; closed Thanksgiving 26 Nov 2026 and Christmas 25 Dec 2026; only Statue City Cruises ferry. NPS FAQ separately states 08:30–17:00 and last ferry 15:30. The conflict is flagged; ferry times must be checked on Statue City Cruises.",
    "adult_usd": 26,
    "cost_2_adults_usd": 52,
-   "price_note": "Official NPS fee table: adult (13+) $26.00 Reserve ferry ticket ($26.30 w/ Pedestal or Crown). America the Beautiful passes do not waive ferry cost.",
+   "price_note": "Official NPS fee table: adult (13+) $26.00 ferry. Pedestal/Crown access adds $0.30 per person.",
    "official_url": "https://www.nps.gov/stli/planyourvisit/hours.htm",
-   "verification": "VERIFIED",
+   "verification": "PARTIAL - official NPS hours/FAQ conflict; fare verified",
    "lat": 40.6892,
    "lon": -74.0445,
    "from_hotel": {
     "hotel": "Fairfield Inn & Suites by Marriott New York Manhattan/Central Park",
-    "km": 10.14,
-    "walk_min_modelled": 135,
-    "transit_min_modelled": 59,
-    "battery_park_km": 7.82,
-    "battery_park_transit_min": 47,
-    "within_one_hour": false,
-    "method": "MODEL: 47 min modelled subway to Battery Park Pier (7.82 km) + ~15-20 min Statue City Cruises crossing = ~62-67 min door-to-island; Battery Park gate itself is under 1 hour."
-   }
+    "km": 9.57,
+    "walk_min_modelled": 128,
+    "transit_min_modelled": 56,
+    "within_one_hour": true,
+    "method": "MODEL: straight-line distance with a fixed access allowance; not a measured MTA subway/bus journey. Official one-hour status is blank/flagged.",
+    "one_hour_verified": false
+   },
+   "price_text": "$52 for two ($26 adult ferry; pedestal/crown +$0.30 pp)",
+   "price_is_floor": false,
+   "price_is_upper_bound": false,
+   "source_urls": [
+    "https://www.nps.gov/stli/planyourvisit/hours.htm",
+    "https://www.nps.gov/stli/planyourvisit/fees.htm",
+    "https://www.nps.gov/stli/planyourvisit/frequently-asked-questions.htm"
+   ]
   },
   {
    "id": "central-park",
    "name": "Central Park",
    "category": "Park",
    "area": "Manhattan, 59th to 110th St",
-   "address": "5th Ave to Central Park W, 59th to 110th St",
-   "hours": "Daily 06:00-01:00",
-   "days_open": "Mon-Sun",
-   "exceptions": "Free. Columbus Circle / 59th St SW corner is a 7-minute walk (~0.6 km) from Fairfield Central Park; midpoint coordinates shown here.",
+   "address": "5 Av To Central Park W, 59 St To 110 St",
+   "hours": "Daily 06:00–01:00",
+   "days_open": "Mon–Sun",
+   "exceptions": "Official Conservancy report states the park has no admission fees and is officially open 06:00–01:00, 365 days a year. Individual facilities may charge separately.",
    "adult_usd": 0,
    "cost_2_adults_usd": 0,
-   "official_url": "https://www.nycgovparks.org/parks/central-park",
-   "verification": "VERIFIED (hours, free entry)",
+   "official_url": "https://www.centralparknyc.org/what-to-know-before-you-go",
+   "verification": "VERIFIED",
    "lat": 40.7825,
    "lon": -73.9656,
    "from_hotel": {
     "hotel": "Fairfield Inn & Suites by Marriott New York Manhattan/Central Park",
-    "km": 2.43,
-    "walk_min_modelled": 32,
-    "transit_min_modelled": 20,
+    "km": 2.84,
+    "walk_min_modelled": 38,
+    "transit_min_modelled": 22,
     "within_one_hour": true,
-    "method": "MODEL: 2.43 km to park midpoint (59th St SW entrance is only 0.6 km / ~7 min walk from hotel)."
-   }
+    "method": "MODEL: straight-line distance with a fixed access allowance; not a measured MTA subway/bus journey. Official one-hour status is blank/flagged.",
+    "one_hour_verified": false
+   },
+   "price_text": "$0 for two (official Conservancy report: no admission fees)",
+   "price_is_floor": false,
+   "price_is_upper_bound": false,
+   "source_urls": [
+    "https://www.centralparknyc.org/what-to-know-before-you-go",
+    "https://assets.centralparknyc.org/pdfs/institute/p2p-upelp/3.002_Report+on+the+Public+Use+of+Central+Park.pdf",
+    "https://www.nycgovparks.org/parks/central-park"
+   ]
   },
   {
    "id": "high-line",
    "name": "The High Line",
    "category": "Park / Walk",
-   "area": "Chelsea / Hudson Yards",
-   "address": "Gansevoort St to 34th St (elevated rail park)",
-   "hours": "Dec 1 - Mar 31 (Winter): Daily 07:00-20:00 (Rail Yard Preserve 30th-34th closes at dusk)",
-   "days_open": "Mon-Sun",
-   "exceptions": "Free entry; seasonal hours shift (Winter 07:00-20:00 covers Feb-Mar 2027 trip; Spring 07:00-22:00 starts Apr 1). Snowy/icy stairs may close briefly during storms.",
-   "adult_usd": 0,
-   "cost_2_adults_usd": 0,
+   "area": "Chelsea",
+   "address": "Gansevoort St to 34th St, elevated rail line",
+   "hours": "Dec 1–Mar 31 07:00–20:00; Apr 1–Nov 30 07:00–22:00",
+   "days_open": null,
+   "exceptions": "Rail Yard Preserve between 30th and 34th Streets closes at dusk. Winter trip falls in the Dec–Mar window. Official page calls it a public park and lists free tours but does not state a general admission price or explicit days; those fields are blank.",
+   "adult_usd": null,
+   "cost_2_adults_usd": null,
    "official_url": "https://www.thehighline.org/visit/",
-   "verification": "VERIFIED",
+   "verification": "PARTIAL - seasonal hours verified; days and admission price not explicitly stated",
    "lat": 40.748,
    "lon": -74.0048,
    "from_hotel": {
     "hotel": "Fairfield Inn & Suites by Marriott New York Manhattan/Central Park",
-    "km": 2.8,
-    "walk_min_modelled": 37,
-    "transit_min_modelled": 22,
+    "km": 2.24,
+    "walk_min_modelled": 30,
+    "transit_min_modelled": 19,
     "within_one_hour": true,
-    "method": "MODEL: great-circle km from 538 W 58th St / 4.5 km/h walking, or / 12 km/h effective subway speed + 8 min access/wait."
-   }
+    "method": "MODEL: straight-line distance with a fixed access allowance; not a measured MTA subway/bus journey. Official one-hour status is blank/flagged.",
+    "one_hour_verified": false
+   },
+   "price_text": "Not verified (blank)",
+   "price_is_floor": false,
+   "price_is_upper_bound": false,
+   "source_urls": [
+    "https://www.thehighline.org/visit/"
+   ]
   },
   {
    "id": "chelsea-market",
@@ -206,23 +267,30 @@
    "category": "Food hall",
    "area": "Chelsea",
    "address": "75 9th Avenue, New York, NY 10011",
-   "hours": "Daily 07:00-22:00 (individual vendor hours vary)",
-   "days_open": "Mon-Sun",
-   "exceptions": "Free to enter; individual shops and food stalls open/close within the 07:00-22:00 building hours (most restaurants ~11:00-21:00).",
-   "adult_usd": 0,
-   "cost_2_adults_usd": 0,
-   "official_url": "https://www.chelseamarket.com/visit",
-   "verification": "VERIFIED",
+   "hours": "Concourse 07:00–22:00",
+   "days_open": null,
+   "exceptions": "Official homepage states \"our concourse is open! 7 am - 10 pm\" but does not state which days or a general admission price; vendor hours and purchases vary. Blank fields are flagged.",
+   "adult_usd": null,
+   "cost_2_adults_usd": null,
+   "official_url": "https://www.chelseamarket.com/",
+   "verification": "PARTIAL - concourse hours and official Instagram verified; days and entry price blank",
    "lat": 40.7424,
    "lon": -74.0061,
    "from_hotel": {
     "hotel": "Fairfield Inn & Suites by Marriott New York Manhattan/Central Park",
-    "km": 3.41,
-    "walk_min_modelled": 45,
-    "transit_min_modelled": 25,
+    "km": 2.83,
+    "walk_min_modelled": 38,
+    "transit_min_modelled": 22,
     "within_one_hour": true,
-    "method": "MODEL: great-circle km from 538 W 58th St / 4.5 km/h walking, or / 12 km/h effective subway speed + 8 min access/wait."
-   }
+    "method": "MODEL: straight-line distance with a fixed access allowance; not a measured MTA subway/bus journey. Official one-hour status is blank/flagged.",
+    "one_hour_verified": false
+   },
+   "price_text": "Not verified (blank)",
+   "price_is_floor": false,
+   "price_is_upper_bound": false,
+   "source_urls": [
+    "https://www.chelseamarket.com/"
+   ]
   },
   {
    "id": "broadway",
@@ -230,47 +298,63 @@
    "category": "Theatre",
    "area": "Theatre District",
    "address": "Various theatres around Times Square",
-   "hours": "Schedule varies per production (typical Tue-Sun evenings; Wed/Sat/Sun matinees)",
-   "days_open": "Tue-Sun for most productions (most Broadway shows are dark Monday)",
-   "exceptions": "No single official price exists; depends on show, date and seat tier. Check broadway.org or official show box offices for Feb 2027 runs.",
+   "hours": null,
+   "days_open": null,
+   "exceptions": "No single official price or weekly hours exist for \"Broadway\"; performance times vary by show. Choose a show and verify its official ticketing page.",
    "adult_usd": null,
    "cost_2_adults_usd": null,
-   "official_url": "https://www.broadway.org/",
+   "official_url": "https://www.broadway.org/performance-times",
    "verification": "NOT PRICED - deliberately blank",
    "lat": 40.759,
    "lon": -73.9845,
    "from_hotel": {
     "hotel": "Fairfield Inn & Suites by Marriott New York Manhattan/Central Park",
-    "km": 1.34,
-    "walk_min_modelled": 18,
-    "transit_min_modelled": 15,
+    "km": 0.74,
+    "walk_min_modelled": 10,
+    "transit_min_modelled": 12,
     "within_one_hour": true,
-    "method": "MODEL: great-circle km from 538 W 58th St / 4.5 km/h walking, or / 12 km/h effective subway speed + 8 min access/wait."
-   }
+    "method": "MODEL: straight-line distance with a fixed access allowance; not a measured MTA subway/bus journey. Official one-hour status is blank/flagged.",
+    "one_hour_verified": false
+   },
+   "price_text": "Not verified (blank)",
+   "price_is_floor": false,
+   "price_is_upper_bound": false,
+   "source_urls": [
+    "https://www.broadway.org/",
+    "https://www.broadway.org/performance-times"
+   ]
   },
   {
    "id": "brooklyn-bridge-walk",
    "name": "Brooklyn Bridge pedestrian walkway",
-   "category": "Landmark / Walk",
-   "area": "Lower Manhattan to DUMBO",
-   "address": "Centre St / City Hall Park entrance to Washington St, DUMBO",
-   "hours": "Open 24 hours",
-   "days_open": "Mon-Sun",
-   "exceptions": "Free; no tickets required. Bicycles moved to separate lower roadway lane, leaving the wooden boardwalk exclusively pedestrian. Exposed harbour wind in February — dress warmly.",
+   "category": "Walk",
+   "area": "Lower Manhattan / Brooklyn",
+   "address": "Pedestrian promenade, centre of the bridge, Manhattan to Brooklyn",
+   "hours": "Open at all times / 24 hours",
+   "days_open": "Every day",
+   "exceptions": "NYC DOT says the promenade is open at all times during rehabilitation but portions may be narrowed; an official NYC guide says there is no cost to walk and it is open 24 hours. Shared with cyclists.",
    "adult_usd": 0,
    "cost_2_adults_usd": 0,
    "official_url": "https://www.nyc.gov/html/dot/html/infrastructure/brooklyn-bridge.shtml",
-   "verification": "VERIFIED (open 24h, free entry)",
+   "verification": "VERIFIED",
    "lat": 40.7061,
    "lon": -73.9969,
    "from_hotel": {
     "hotel": "Fairfield Inn & Suites by Marriott New York Manhattan/Central Park",
-    "km": 7.18,
-    "walk_min_modelled": 96,
-    "transit_min_modelled": 44,
+    "km": 6.52,
+    "walk_min_modelled": 87,
+    "transit_min_modelled": 41,
     "within_one_hour": true,
-    "method": "MODEL: great-circle km from 538 W 58th St / 4.5 km/h walking, or / 12 km/h effective subway speed + 8 min access/wait."
-   }
+    "method": "MODEL: straight-line distance with a fixed access allowance; not a measured MTA subway/bus journey. Official one-hour status is blank/flagged.",
+    "one_hour_verified": false
+   },
+   "price_text": "$0 for two (official NYC guide: no cost to walk)",
+   "price_is_floor": false,
+   "price_is_upper_bound": false,
+   "source_urls": [
+    "https://www.nyc.gov/html/dot/html/infrastructure/brooklyn-bridge.shtml",
+    "https://www.nyc.gov/html/dycd/downloads/pdf/2012/SummerFun2012_Brooklyn_Ongoing.pdf"
+   ]
   }
  ]
 }
