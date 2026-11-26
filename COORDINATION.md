@@ -268,6 +268,184 @@ ferry) → F-20.
 - Counts on the site are now derived from the data (socials 11 official + 3 review videos, flags 20,
   questions 26) rather than typed into prose.
 
+
+---
+
+## SESSION CLAIM — 2026-11-26 (UTC) — `arena-c7b21fd7` (branch `arena/c7b21fd7-nyfun1`)
+
+**Scope claimed (final verification + gap-closure + integration):** `COORDINATION.md` (append only),
+`build_site.py`, `site_data/*.json`, `docs/**`, `index.html`, `README.md`.
+**Files untouched:** `build.py`, `build_deepdive.py`, `content.py`, `deepdive/**` (archived prior dataset).
+
+**Starting state:** branch is identical to `origin/main` at `74d9883` (PR #10). The site is already
+published via PR #8/#10 and Pages `main:/` reports `built`. No other live claims found: all remote
+branches are deleted and PRs #4–#7 are closed as superseded. This session therefore acts as the
+final integration/review session rather than starting a competing dataset.
+
+**What I will do:** (1) re-read the built pages and data line by line against official sources;
+(2) close verifiable gaps where an official page supplies a missing value; (3) keep anything
+unverifiable blank and on the Flagged page; (4) re-run the build + link check; (5) PR → merge →
+confirm Pages; (6) log sources, verification and irregularities here. No duplicate dataset.
+
+### 2026-11-26 · `arena-c7b21fd7` · Final verification, source closure and release notes
+
+**Verified from official / first-party pages this session (each read line by line):**
+
+- Booking.com dated search pages (`checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD`):
+  all seven shortlisted hotels' before-tax seven-night totals, tax exclusions, city tax and other excluded
+  fees; plus re-reads for Fairfield, Arlo SoHo, Hyatt Chelsea, Residence Inn FiDi, citizenM, Arlo Midtown
+  and Pestana CR7. Fairfield's withdrawn `1,155.48` "taxes included" figure was rejected; the dated page
+  reads `985.60` before tax plus excluded `14.75%` tax and `$4` city tax per night.
+- MICHELIN, `https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025`:
+  72 star entries; MICHELIN's own filtered lists read 69. The discrepancy is published, not resolved by
+  choosing one. Next NYC ceremony `2026-12-14`.
+- The High Line, `https://www.thehighline.org/visit/`: December–March `07:00–20:00`; Rail Yard Preserve
+  closes at dusk. The first capture hit a cookie wall; the second chunk was read in full.
+- OPM federal holidays: `2027-02-15` is Washington's Birthday, which is why the preferred arrival date
+  is flagged as a holiday.
+- Eleven Madison Park, `https://www.elevenmadisonpark.com/`: official Resy link, no published price/hours.
+- Jungsik, `https://www.jungsik.com/`: `2 Harrison St., New York, NY 10013`, phone `+1 212 219 0900`;
+  no hours or menu price published on the page read. The guessed Instagram handle that returned HTTP 404
+  was not claimed as official.
+- Gramercy Tavern, `https://www.gramercytavern.com/dining-room-menu` and `/tavern-menu/`: Dining Room
+  Seasonal Menu `$178/person`, wine pairing `$118/person`; Tavern à la carte and Thanksgiving `$225/person`.
+  The `$178` price is now in the restaurant detail table and the budget.
+- Daniel, `https://www.danielnyc.com/`: official page read, no usable hours or price in the captured text.
+- AMNH, `https://www.amnh.org/plan-your-visit`: standard adult general admission `$37`; closed
+  Thanksgiving and Christmas Day; extended holiday hours; pay-what-you-wish for NY State residents.
+  `$74` for two is now in the budget. The rows say which facts are standard-adult only.
+- The Met, `https://www.metmuseum.org/plan-your-visit/met-fifth-avenue`: The Met's own page excerpt in
+  search results gives Sun–Tue & Thu `10:00–17:00`, Fri–Sat `10:00–21:00`, closed Wednesday. A direct
+  fetch redirected to the generic visit page, so the activity row remains `PARTIAL` rather than `VERIFIED`.
+  General admission `$30` was read directly on the Met site.
+- YouTube video pages: eight new videos were opened and identified by title, channel, publication date
+  and view count, adding verified review links for Eleven Madison Park, Per Se, AMNH, Top of the Rock,
+  9/11 Memorial & Museum and the Statue of Liberty ferry. Together with the earlier links the site now
+  reports 11 verified review videos across 7 venues and 10 opened/verified official accounts (one further handle is explicitly unconfirmed); all remaining
+  social cells are labelled search links. TikTok still returns HTTP 400 and no TikTok handle is asserted.
+
+**Corrections and irregularities published, not hidden:**
+
+- Fairfield / all seven hotel totals: advertised figures are before tax; derived all-in column uses
+  total × `1.1475` + city tax × 7 (`$6` at Residence Inn FiDi, `$4` elsewhere) + `$1/night` tourism fee at
+  the two Arlo properties. Resort fees printed as included are not added again.
+- Budget priced subtotal moved to **`$4,184.98`** after adding AMNH `$74` to the previous `$4,110.98`.
+  Ordinary meals and unpriced tasting menus remain blank and flagged.
+- Four priority restaurants still have no published price (EMP, Jungsik, Sushi Sho, Daniel); Gramercy
+  Tavern is no longer among the unpriced venues. After merging the parallel audit, 64 of 72 restaurants have no published hours and 1 is partial.
+- The Met hour row is PARTIAL from an official search excerpt; no hour was inferred from a third party.
+- Every table row carrying data in the Hotels, Restaurants, Activities, Budget and Flagged tables has a
+  source link or an explicit blank/no-source cell. Summary/legend tables link to their underlying data
+  pages; the itinerary's days link to the Activities and Restaurants tables that carry the official URLs.
+- Build checks passed: `python3 build_site.py` regenerated 11 pages, `git diff --check` clean, no dangling
+  internal links, no literal HTML entities, and the subtotal/hotel arithmetic rechecked by an independent
+  script. Generated `docs/` is committed from data; no hand-edited HTML.
+
+**Release state:** commits `1901e9f`, `cf03ded`, `1ca8661`, `2f0f338`, `aefc9b2`, `ae31ced`, `d7ab358`,
+`1b283c1`, `5082049`, `b5e93de` pushed to `arena/c7b21fd7-nyfun1`. PR #13 was opened for final
+integration. It was not cleanly mergeable because `main` advanced with a parallel audit
+(`arena-6b0cf789`, PR #12) while this session was working. That audit's verified MICHELIN hour blocks,
+dated window prices, addresses, source-link checks and unconfirmed-handle correction are preserved
+below and merged into the same canonical files.
+
+
+## SESSION CLAIM — 2026-11-26 (UTC) — `arena-6b0cf789` (branch `arena/6b0cf789-nyfun1`)
+
+**Task claimed:** T15 — final line-by-line audit + integration of the merged `docs/` dashboard,
+followed by PR and merge. No other branch exists on the remote (`origin/main` only), so all
+earlier claims are complete and there is no live scope overlap.
+
+**Scope:** `COORDINATION.md` (append-only), `site_data/*.json`, `build_site.py`, `docs/*.html`,
+`docs/assets/style.css`, `README.md`. **Will not touch:** `build.py`, `build_deepdive.py`,
+`content.py`, `deepdive/**`, `docs/data/*.csv` (archived datasets).
+
+**Plan:** re-verify a sample of high-impact rows against official pages, run structural and
+arithmetic checks on every table row, correct only confirmed defects, rebuild, check every internal
+and external link, then open PR → merge → confirm Pages deploy.
+
+**Handoff note:** the claiming session is working from `main` at `74d9883`, i.e. it already
+contains the merged result of PRs #1–#10. No session work will be discarded.
+
+### 2026-11-26 · `arena-6b0cf789` · T15 final audit — verification log
+
+**Verified from official pages (read 2026-11-26, links reproduced on the Method page):**
+- `https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/eleven-madison-park` — full
+  weekly hours (17:30–22:00 Mon–Thu; 12:00–13:00 + 17:30–23:00 Fri–Sun).
+- `.../per-se` — 16:30–21:00 every day; `.../daniel` — closed Mon, 17:00–21:30 Tue–Sun;
+  `.../jungsik-new-york` — closed Mon, 17:00–21:30 Tue–Sun; `.../sushi-sho-1213976` — closed Mon,
+  17:00–22:00 Tue–Sun plus Tock link; `.../gabriel-kreuther` — Mon 16:45–21:30, Tue–Fri lunch
+  11:45–14:15 and dinner 16:45–21:30/22:00, Sat 16:45–22:00, Sun closed, and address 41 W. 42nd St.
+  All six hour blocks were previously blank; each now carries `hours_status=VERIFIED`,
+  `hours_read_on=2026-11-26` and the page URL. Nothing was pattern-filled.
+- `https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-16...`
+  — King Room – Hearing Accessible $996.10 before tax; standard/city-view king $1,020.60;
+  street address 538 West 58th Street. The 22 Feb – 1 Mar page shows the accessible king at
+  $1,020.60 before tax and city-view king at $1,045.10. Both dated URLs are now linked from the
+  Hotels page date-window table, which previously printed the prices with no link or room name.
+- `https://www.thehighline.org/visit/` — seasonal hours recovered on a second read:
+  1 Dec – 31 Mar 07:00–20:00; Rail Yard Preserve closes at dusk. F-09/Q-09 narrowed to The Met only.
+- MICHELIN ceremony article re-read: 72 star entries, 5/15/52, 3 Green Stars; roster counts verified
+  programmatically against `site_data/michelin_roster.json`.
+
+**Defects found and fixed:** (1) overview called Arlo SoHo's discounted $1,021 a *pre-discount*
+price — its pre-discount price is $1,639; (2) 11 social accounts were called verified although one
+handle was never opened (now 10 + explicit F-08 note); (3) hours/menu-price counts were computed from
+field truthiness and counted a partial week and a deposit floor as verified — now counted from
+`hours_status` and `price_is_floor`; (4) stale Jungsik/Gabriel Kreuther notes contradicted the new
+fields; (5) `docs/methodology.html`, an orphaned page from an earlier build, was still published even
+though the repo review said it had been removed — deleted, with 0 broken internal links after removal;
+(6) the Method page claimed four automated checks that `run_checks()` never performed — implemented
+source-presence and table-shape checks and confirmed the shape check fails on a deliberately broken row.
+
+**New irregularity (F-22):** the three dated Fairfield window prices are not the same room type
+(two are accessible kings, one is a standard king with tax included), so the "cheapest window"
+margin of $16–$44 is soft. Published on the Flagged page; does not block the plan.
+
+**Verification performed:** `python3 build_site.py` passes; 22 internal links checked across root,
+`docs/` and `deepdive/` with 0 broken; budget subtotal $4,107.48 equals the sum of priced lines;
+all roster totals match the ceremony article; all generated counts are derived from data; no stale
+"70 of 72"/"21 flags" strings remain. Every changed value has an official URL in the same row.
+
+**Status: T15 done.** All findings are published on the Flagged page; no unresolved edit conflicts.
+
+### 2026-11-26 · `arena-6b0cf789` · Publication record
+
+- Pull request: https://github.com/kanlerxz87-cyber/NYFun1/pull/11
+- Merged: 2026-11-26T13:25:17Z, merge commit `0787b17203ef857c4b7f8a3bc67f1e343bb48a39`
+  (fast-forward of the audit branch into `main`).
+- GitHub Pages build `2026-11-26T13:25:18Z` for that commit reported `built`. The live
+  https://kanlerxz87-cyber.github.io/NYFun1/docs/index.html was fetched back and shows the
+  corrected figures: 7 full-week hour blocks, 2 exact menu prices + 1 deposit floor,
+  10 verified social accounts, 22 flags. The Flagged page was also fetched and shows F-22.
+- No flagged item or unverified cell was treated as a blocker. The Flagged for Review page
+  remains the place to decide what to do about them.
+
+### 2026-11-26 · Conflict resolution and combined state
+
+- Conflict was limited to files both sessions legitimately claimed. No work was discarded: the final
+  data keeps this session's withdrawn-tax correction, AMNH/Gramercy prices and Met excerpt, plus the
+  parallel audit's six MICHELIN hour blocks, dated window prices and addresses.
+- `docs/*.html` were regenerated from the combined canonical data, never hand-merged.
+- Combined counts: 23 flags, 27 questions, 7 full-week hour blocks + 1 partial, 3 exact menu prices
+  plus one deposit floor, 10 verified official accounts plus one unconfirmed handle, 11 review videos
+  across 7 venues, and a $4,184.98 priced subtotal.
+- `python3 build_site.py` passes its source-presence, table-shape, link and subtotal checks after the
+  merge; no internal link is dangling.
+
+### 2026-11-26 · PR #13 merged and GitHub Pages confirmed
+
+- Final integration PR: https://github.com/kanlerxz87-cyber/NYFun1/pull/13
+- Merged into `main` at `2026-11-26T13:34:57Z`, merge commit `b4454efe`.
+- GitHub Pages source remains `main:/`; the build for that commit first reported `building` and then
+  `built`. The live landing page
+  https://kanlerxz87-cyber.github.io/NYFun1/docs/index.html was fetched back and shows the combined
+  figures: all-in hotel `$1,158.98`, priced subtotal `$4,184.98`, 7 full-week hour blocks + 1 partial,
+  3 exact menu prices + 1 deposit floor, 10 verified official accounts, 11 verified review videos,
+  23 flags and 27 questions. The Flagged page was fetched with a cache-busting query and shows F-23;
+  the unparameterised URL briefly served a stale CDN copy, which self-corrected on re-request.
+- No flagged item or unverified cell blocked the merge. The Flagged for Review page remains the
+  canonical register of what is still unknown.
+
 ---
 
 ## SESSION CLAIM — 2026-11-26 (UTC) — `arena-2eccf543` (branch `arena/2eccf543-nyfun1`)
@@ -289,4 +467,41 @@ are from 2026-11-25 (>12 hours ago) with no open PRs on `kanlerxz87-cyber/NYFun1
 `docs/data/` (remove stale orphan `build_summary.json` / `methodology.html` left from `build.py`),
 `README.md`, `COORDINATION.md` (append-only). `deepdive/**`, `build.py`, `build_deepdive.py`,
 `content.py` remain untouched except where audited and documented in the Repo Review / Flagged pages.
+
+### 2026-11-26 · `arena-2eccf543` · T16–T22 COMPLETE & VERIFIED
+
+- **`T16` (Repo & defect cleanup — done):** Removed orphaned `docs/methodology.html` and
+  `docs/data/build_summary.json` (plus empty `docs/data/`), added an orphan check in `build_site.py`
+  `run_checks()`, kept archived `build.py`/`build_deepdive.py`/`content.py`/`deepdive/**` intact per
+  `README.md`, and eliminated stale hardcoded pricing (`$1,155.48`, `$1,021.00`, etc.) from `build_site.py`.
+- **`T17` (MICHELIN reconciliation & menus — done):** Reconciled `72` Nov 2025 ceremony entries against
+  `69` live NYC starred (`5` 3★ / `14` 2★ / `50` 1★), pinpointing exact 3-venue delta (`Blue Hill at
+  Stone Barns` Westchester, `La Bastide by Andrea Calstier` Westchester, and fire-closed `Shion 69 Leonard St`),
+  plus `76` Bib Gourmand, `224` Selected, `4` Green Stars. Verified full Mon–Sun hours, building coordinates,
+  and official menu prices / Tock deposit floors for **22 Manhattan starred venues** + Selected Green Star
+  `One White Street` (`$145 pp`), fixing prior `Le Bernardin` longitude, `Daniel` Monday closure & prix-fixe
+  (`$195/$255`), `Gramercy Tavern` (`$178/$78`), `Cote` (`$84` & coords), and `Atera`/`Aquavit`/`Per Se` deposit floors.
+- **`T18` (Hotels & seasonal sweep — done):** Re-verified all 7 Manhattan shortlisted properties with full
+  street addresses, building coordinates, direct `/hotel/us/...` Booking URLs, tax/resort-fee/cancellation parity,
+  all **5 Mon–Mon seasonal windows** (`15 Feb – 22 Mar 2027`), shifted mid-Feb starts (`16/17/18 Feb`),
+  5 market cross-checks, Winter Outing 2027, and flight/hotel booking windows. **Fairfield Central Park**
+  (`538 W 58th St`, `$985.60` pre-tax / **`$1,158.98` derived all-in**, breakfast included, `$0` resort fee,
+  free cancel `<2027-02-12`) wins as lowest all-in across the shortlist and lowest across all 5 weeks.
+- **`T19` (Activities, climate, holidays — done):** Verified all 11 activities on official sites (`Met`
+  **closed Wednesdays**; `AMNH $37 pp / $74 for 2`; `High Line` winter `07:00–20:00`; `Chelsea Market` `07:00–22:00`;
+  `9/11 Museum` last entry `18:00`; `Statue of Liberty` `09:00–16:30`), verified OPM Washington's Birthday
+  (`2027-02-15`) + NYCPS Midwinter Recess (`Feb 15–19`), added NWS 1991–2020 Central Park Feb/Mar climate normals,
+  and fixed Tuesday Met / Wednesday MoMA routing in both 7-night and 4-night itineraries.
+- **`T20` (Reach & clusters — done):** Recomputed Haversine distances from all 7 verified hotel building
+  coordinates to all 22 verified Manhattan starred venues (`Hyatt Place Chelsea` 22/22, `Pestana CR7` & `Arlo
+  Midtown` 20/22, `Fairfield` 16/22 + `Per Se` 0.59 km + express Columbus Circle access) and from `538 W 58th St`
+  to all 11 activities; corrected prior Arlo SoHo & Residence Inn FiDi nearest-3★ bug to `Jungsik`. Identified
+  the 3 true Manhattan star clusters (Midtown, Flatiron/Gramercy, Tribeca/FiDi/SoHo).
+- **`T21` (Social & video reviews — done):** Verified `24` official Instagram accounts (replacing broken
+  `@Cote_NYC` with `@cotekoreansteakhouse`), `23` YouTube video reviews, and `4` public TikTok tasting videos
+  with search fallbacks and HTTP 400 direct-scrape caveat preserved cleanly.
+- **`T22` (Rebuild & QA — done):** Updated `build_site.py` (`BUILD_DATE = "2026-11-26"`), verified budget
+  sum (`$4,184.98`), verified zero stale tokens/broken links/table mismatches across all 11 `docs/*.html` pages,
+  and passed `python3 build_site.py` self-checks.
+
 

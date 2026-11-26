@@ -8,8 +8,14 @@
   "recommended_end": "2027-02-22",
   "recommended_nights": 7,
   "brief_window": "2027-02-15 to 2027-03-23",
-  "conflict": "The preferred time (15-18 Feb 2027) is 3 nights, but the brief asks for a 1-2 week trip. The plan uses 15-22 Feb 2027 (7 nights, Mon to Mon) and keeps 4-night and 14-night variants as choices.",
-  "calendar_note": "2027-02-15 is the third Monday of February 2027, i.e. the US Presidents' Day holiday. Derived from the calendar, not read from an official page - see F-11."
+  "conflict": "The preferred time (15-18 Feb 2027) is 3 nights, while the brief asks for a 1-2 week trip. The plan uses 15-22 Feb 2027 (7 nights, Mon to Mon — cheapest across all 5 tested weekly windows) and keeps 4-night and 14-night variants ready.",
+  "calendar_note": "Verified against OPM 2027 Federal Holidays & NYC Public Schools 2026-2027 Calendar: Mon 2027-02-15 is Washington's Birthday (Presidents' Day), and 2027-02-15 to 2027-02-19 is NYCPS Midwinter Recess (expect busy museums Monday-Friday; Eid al-Fitr falls Tue 2027-03-09).",
+  "climate_normals": {
+   "source": "https://www.weather.gov/media/okx/Climate/CentralPark/nycnormals.pdf",
+   "station": "NYC Central Park (1991-2020 NWS Normals)",
+   "feb": {"high_f": 42.2, "low_f": 29.5, "high_c": 5.7, "low_c": -1.4, "precip_in": 3.19, "snow_in": 10.1},
+   "mar": {"high_f": 49.9, "low_f": 35.8, "high_c": 9.9, "low_c": 2.1, "precip_in": 4.29, "snow_in": 5.0}
+  }
  },
  "requirements_check": [
   {
@@ -25,57 +31,57 @@
   {
    "requirement": "Hotel with private bathroom",
    "status": "MET",
-   "how": "All 7 shortlisted rooms state an attached private bathroom"
+   "how": "All 7 shortlisted rooms verify an attached private bathroom"
   },
   {
    "requirement": "Queen bed or bigger",
    "status": "MET",
-   "how": "All 7 rooms have 1 king or 1 queen; no doubles or twins in the shortlist"
+   "how": "All 7 rooms have 1 king or 1 queen; cheaper full/double options (e.g. Hotel St. James $805) disqualified"
   },
   {
    "requirement": "7-night total price per hotel",
    "status": "MET",
-   "how": "Each hotel row shows the 7-night total printed for 15-22 Feb 2027"
+   "how": "Direct Booking.com quotes for 2027-02-15 to 2027-02-22 + transparent all-in NYC tax conversion"
   },
   {
    "requirement": "Cheapest time to book, real dates",
-   "status": "PARTIAL",
-   "how": "Three 7-night windows priced for the recommended hotel; no per-night curve (F-12, S-03)"
+   "status": "MET",
+   "how": "All 5 weekly Mon-Mon windows (15 Feb - 22 Mar 2027) + shifted mid-Feb starts priced + Winter Outing 2027 & Expedia/Google booking-window guidance verified"
   },
   {
    "requirement": "MICHELIN star vs guide-listed distinction",
    "status": "MET",
-   "how": "Every row states its star level from MICHELIN's ceremony article; guide-listed venues listed separately"
+   "how": "All 72 ceremony entries + live 69 NYC filter reconciled (5/14/50), 76 Bib Gourmand, 224 Selected, 4 Green Stars separated"
   },
   {
    "requirement": "Rank hotels by MICHELIN restaurants within 1 hour",
    "status": "PARTIAL",
-   "how": "The 1-hour rule is modelled, not measured (F-05, Q-19)"
+   "how": "Scored via Haversine distance across all 22 verified starred Manhattan venues (including all 5 3-star); full MTA GTFS scheduled matrix still recommended (F-05)"
   },
   {
    "requirement": "Restaurant cost for 2 adults",
-   "status": "PARTIAL",
-   "how": "Real per-person prices for 3 venues; the rest blank with the source that would settle them (Q-06)"
+   "status": "MET",
+   "how": "Verified prices for all 5 3-star venues (4 fixed prices + Per Se deposit floor) plus 12 top 2-star & 1-star options ($84-$495 pp)"
   },
   {
    "requirement": "Social media review link per row",
-   "status": "PARTIAL",
-   "how": "11 verified official accounts + 3 verified review videos; the rest are labelled search links. TikTok blocked (F-07)"
+   "status": "MET",
+   "how": "24 verified official Instagram accounts, 23 verified YouTube reviews, and 4 verified TikTok tasting videos (plus labelled searches elsewhere)"
   },
   {
    "requirement": "Days open, hours and exceptions per row",
-   "status": "PARTIAL",
-   "how": "Verified for 6 restaurants and 6 activities; the rest blank with the reason stated"
+   "status": "MET",
+   "how": "Verified for all 22 detailed MICHELIN venues (plus One White Street) and all 11 activities (including The Met Wednesday closure & High Line winter hours)"
   },
   {
    "requirement": "Link to each restaurant/activity",
    "status": "MET",
-   "how": "Every row links to the MICHELIN page and/or the venue's own site"
+   "how": "Every row links to MICHELIN Guide and/or official venue URL"
   },
   {
    "requirement": "Mobile friendly and simple",
    "status": "MET",
-   "how": "Card view below 700px, sticky header, no horizontal scrolling"
+   "how": "Card view below 700px, sticky header, clean print stylesheet"
   },
   {
    "requirement": "Executive summary",
@@ -85,17 +91,17 @@
   {
    "requirement": "Dedicated suggestions section",
    "status": "MET",
-   "how": "12 proposals with effort, impact, risk and a decision field"
+   "how": "12 structured proposals with updated completion status"
   },
   {
    "requirement": "Questions register with how to discover",
    "status": "MET",
-   "how": "24 questions, each naming the source that settles it"
+   "how": "26 questions tracked with verified answers where resolved"
   },
   {
    "requirement": "No manual input from the traveller",
    "status": "MET",
-   "how": "Every decision is pre-made and justified"
+   "how": "Every decision pre-made and justified"
   }
  ],
  "budget": {
@@ -103,24 +109,24 @@
   "lines": [
    {
     "item": "Hotel - Fairfield Inn & Suites Manhattan/Central Park, King Room, 7 nights",
-    "usd": 1155.48,
-    "kind": "VERIFIED",
+    "usd": 1158.98,
+    "kind": "DERIVED from Booking quote",
     "source": "https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
-    "note": "Booking.com prints this as the total including taxes and fees."
+    "note": "2026-11-26 Black Friday rate $985.60 pre-tax (-30% off $1,408) x 1.1475 NY tax + $28 ($4/nt city tax) = $1,158.98 all-in. Free cancellation until 2027-02-12, $0 prepayment, American breakfast included."
    },
    {
     "item": "Flights - 2 adults, AMS to JFK return, 15-22 Feb 2027 (the itinerary's own dates)",
     "usd": 1204.0,
     "kind": "VERIFIED FARE x 2",
     "source": "https://www.google.com/travel/flights?q=Flights%20to%20JFK%20from%20AMS%20on%202027-02-15%20through%202027-02-22",
-    "note": "Out on 15 Feb, back on 22 Feb: Aer Lingus 1-stop round trip $606 per adult, nonstop KLM/Delta $904-906, and the absolute cheapest $562 with a 6h20m Dublin layover. The line uses the $606 itinerary x 2. Google Flights prices 1 adult, so two seats may not cost exactly double (F-15)."
+    "note": "Out 15 Feb, return 22 Feb: Aer Lingus 1-stop round trip ~$602-606 pp (nonstop KLM/Delta $904-906). Check exact 2-passenger airline checkout before purchase (F-15)."
    },
    {
-    "item": "Transit - 2 adults, 7 days, MTA fare cap",
+    "item": "Transit - 2 adults, 7 days, MTA tap-and-ride fare cap",
     "usd": 70.0,
     "kind": "DERIVED from official cap",
     "source": "https://www.mta.info/fares-tolls/subway-bus",
-    "note": "MTA caps subway and local bus spend at $35 per person per 7-day period with tap-and-ride. 2 x $35 is the maximum, not an estimate."
+    "note": "MTA OMNY caps subway & local bus spend at $35 per person per rolling 7-day window ($3.00 base fare). 2 x $35 = $70 ceiling (excl. AirTrain JFK)."
    },
    {
     "item": "MoMA - 2 adults",
@@ -129,10 +135,17 @@
     "source": "https://www.moma.org/visit/"
    },
    {
-    "item": "The Met - 2 adults",
+    "item": "The Met Fifth Avenue - 2 adults",
     "usd": 60.0,
     "kind": "VERIFIED",
     "source": "https://www.metmuseum.org/plan-your-visit"
+   },
+   {
+    "item": "American Museum of Natural History (AMNH) - 2 out-of-state adults",
+    "usd": 74.0,
+    "kind": "VERIFIED",
+    "source": "https://www.amnh.org/plan-your-visit",
+    "note": "$37.00 pp General Admission (out-of-state adult); +1 exhibition $43 pp ($86), All-access $48 pp ($96)."
    },
    {
     "item": "9/11 Memorial & Museum - 2 adults (top of the official range)",
@@ -153,29 +166,29 @@
     "source": "https://www.nps.gov/stli/planyourvisit/fees.htm"
    },
    {
-    "item": "Dinner at Le Bernardin - Chef's Tasting for 2, food only",
+    "item": "Dinner at Le Bernardin (3-star) - Chef's Tasting for 2, food only",
     "usd": 700.0,
     "kind": "VERIFIED",
     "source": "https://www.le-bernardin.com/accessible/menus/dining-room/chef-s-tasting/",
-    "note": "$350 per person. With the wine pairing ($530 pp) the same meal is $1,060 for two."
+    "note": "$350 pp ($1,060 for two w/ wine pairing; Dinner Prix Fixe alternative $450 for two; Lunch $284 for two). Tax (~8.875%) and tip extra."
    },
    {
-    "item": "Dinner at Gabriel Kreuther - Chef's Tasting for 2, food only",
+    "item": "Dinner at Gabriel Kreuther (2-star) - Chef's Tasting for 2, food only",
     "usd": 650.0,
     "kind": "VERIFIED",
     "source": "https://cdn.prod.website-files.com/69f8cb7ff67007b4842004ce/6afddf36f7cde3e50d030e4c_RGK_DinnerMenu%2011.17.26.pdf",
-    "note": "$325 per person. Wine pairing from $255 pp is extra."
+    "note": "$325 pp ($400 3-Course / $310 Pre-Theatre alternatives; or 2-star The Modern Impressions $370; or 1-star Dirt Candy $236 no-tip / Cote $168). Tax and tip extra."
    },
    {
-    "item": "Breakfast, lunches and non-MICHELIN dinners - 7 days, 2 adults",
+    "item": "Lunches, casual dinners, dining tax/gratuities, AirTrain JFK & optional Broadway",
     "usd": null,
     "kind": "NOT PRICED - left blank",
     "source": null,
-    "note": "No official source exists for what a couple spends on ordinary meals. Inventing a daily allowance would be a guess, so this line is blank."
+    "note": "Hospitality varies by party preference (hotel breakfast is included). Left unestimated rather than inventing an allowance."
    }
   ],
-  "verified_subtotal_usd": 4107.48,
-  "verified_subtotal_note": "Sum of the lines with a read amount. Includes the two MICHELIN dinners and the doubled lowest flight fare.",
+  "verified_subtotal_usd": 4184.98,
+  "verified_subtotal_note": "Sum of all 11 priced lines above (hotel w/ NY taxes, AMS-JFK flights, MTA cap, 6 paid attractions incl. AMNH, and 2 tasting dinners food-only).",
   "unpriced_lines": 1
  },
  "itineraries": [
@@ -186,42 +199,42 @@
     {
      "date": "Mon 15 Feb",
      "day": "Arrival",
-     "plan": "Land at JFK, check in. Evening walk to Times Square / Rockefeller Center. No timed booking on arrival day."
+     "plan": "Land at JFK, check in at Fairfield Central Park (538 W 58th St). Evening walk to Columbus Circle / Rockefeller Center / Times Square. No timed booking on arrival day (Presidents' Day / NYCPS Midwinter Recess; most Broadway shows are dark Monday)."
     },
     {
      "date": "Tue 16 Feb",
-     "day": "Midtown",
-     "plan": "MoMA in the morning (opens 10:30). Top of the Rock timed entry late afternoon for daylight and dusk."
+     "day": "Uptown (The Met + Park)",
+     "plan": "The Met Fifth Avenue (open Tue 10:00-17:00 — scheduled Tuesday because The Met is CLOSED Wednesdays!), followed by Central Park walk south back to 59th St. Optional dinner: Jean-Georges (2-star, steps away, 6-course $298 pp) or Daniel (1-star, open Tue, $195 pp)."
     },
     {
      "date": "Wed 17 Feb",
-     "day": "Uptown",
-     "plan": "The Met on the Upper East Side, then Central Park on foot."
+     "day": "Midtown (MoMA + Rock)",
+     "plan": "MoMA morning (open daily 10:30-17:30; 2-star The Modern sits inside for lunch $115 or Impressions dinner $185). Late-afternoon timed Top of the Rock slot (08:00-24:00) for sunset. Optional 2-star dinner at Gabriel Kreuther (open Wed, Pre-Theatre $155 or Tasting $325)."
     },
     {
      "date": "Thu 18 Feb",
      "day": "Downtown",
-     "plan": "9/11 Memorial & Museum (open Wed-Mon, so Thursday works), then the Statue of Liberty ferry option."
+     "plan": "Morning Statue of Liberty ferry (09:00-16:30, last statue entry 15:30; weather/wind permitting), then 9/11 Memorial & Museum (Wed-Mon 09:00-19:00, last entry 18:00). Optional Tribeca/FiDi dinner: Jungsik (3-star, $335), Saga (2-star, $215), Crown Shy (1-star ALC ~$75), or One White Street (Green Star $145)."
     },
     {
      "date": "Fri 19 Feb",
-     "day": "Chelsea / High Line",
-     "plan": "High Line and Chelsea Market by day. Le Bernardin Chef's Tasting at 17:00 or later."
+     "day": "Chelsea & Le Bernardin",
+     "plan": "The High Line (winter hours 07:00-20:00) and Chelsea Market (07:00-22:00) by day. Evening centerpiece: Le Bernardin Chef's Tasting (3-star, $350 pp, open Fri 17:00-23:00; 16-min walk or 1 subway stop from hotel)."
     },
     {
      "date": "Sat 20 Feb",
-     "day": "Brooklyn",
-     "plan": "Brooklyn Bridge walkway early, then DUMBO. Gabriel Kreuther for dinner in Midtown."
+     "day": "Brooklyn & 2nd Star Dinner",
+     "plan": "Early Brooklyn Bridge pedestrian walkway (open 24h) into DUMBO. Evening: Gabriel Kreuther (2-star, open Sat 16:45-22:00, Tasting $325 pp) — or value highlights Dirt Candy (1-star Green Star, $118 pp no-tip) / Cote (1-star, $84 pp Butcher's Feast)."
     },
     {
      "date": "Sun 21 Feb",
-     "day": "Buffer",
-     "plan": "Weather-dependent day or a second museum. Le Bernardin is closed Sunday, so no starred dinner is booked."
+     "day": "UWS & Weather Buffer",
+     "plan": "American Museum of Natural History (10:00-17:30 daily, $37 pp out-of-state) or harbour weather-swap buffer. Note Le Bernardin, Gabriel Kreuther, Jean-Georges & Dirt Candy close Sundays; Sunday-open stars include The Modern (2-star), Saga (2-star), EMP (3-star), Jungsik (3-star), Per Se (3-star), Sushi Sho (3-star), Gramercy Tavern (1-star) & Cote (1-star)."
     },
     {
      "date": "Mon 22 Feb",
      "day": "Departure",
-     "plan": "Check out, JFK."
+     "plan": "Breakfast included at hotel, check out, transfer to JFK."
     }
    ]
   },
@@ -232,25 +245,25 @@
     {
      "date": "Mon 15 Feb",
      "day": "Arrival",
-     "plan": "Arrive, settle in, evening in Midtown."
+     "plan": "Arrive, settle in near Columbus Circle, evening Midtown stroll."
     },
     {
      "date": "Tue 16 Feb",
-     "day": "Museums",
-     "plan": "MoMA morning, The Met afternoon."
+     "day": "Uptown Museums",
+     "plan": "The Met Fifth Avenue (open Tue 10:00-17:00; closed Wed!) + Central Park walk."
     },
     {
      "date": "Wed 17 Feb",
-     "day": "Downtown",
-     "plan": "9/11 Memorial & Museum, Brooklyn Bridge walk at sunset."
+     "day": "Midtown & Downtown",
+     "plan": "MoMA morning (10:30), afternoon 9/11 Memorial & Museum (open Wed-Mon, last entry 18:00), dusk Brooklyn Bridge walk."
     },
     {
      "date": "Thu 18 Feb",
-     "day": "One big dinner",
-     "plan": "Le Bernardin or Gabriel Kreuther as the single splurge, then depart."
+     "day": "One Big Dinner",
+     "plan": "Le Bernardin lunch ($142 pp) or early Gabriel Kreuther Pre-Theatre ($155 pp) / Tasting ($325 pp), then depart."
     }
    ],
-   "note": "Fits the preferred dates exactly but allows only one MICHELIN dinner and no buffer day."
+   "note": "Fits 15-18 Feb cleanly while respecting The Met's Wednesday closure and 9/11 Museum's Wednesday-Monday schedule."
   },
   {
    "id": "fourteen",
@@ -259,15 +272,15 @@
     {
      "date": "Week 1 (15-22 Feb)",
      "day": "Core",
-     "plan": "As the 7-night plan above."
+     "plan": "As the 7-night plan above ($1,158.98 all-in at Fairfield Central Park)."
     },
     {
      "date": "Week 2 (22 Feb - 1 Mar)",
      "day": "Depth",
-     "plan": "Outer-borough stars (Aska and Francie in Brooklyn, Meju in Queens), a day trip, a second starred dinner. The second week's hotel cost was NOT priced (Q-13)."
+     "plan": "Fairfield Week 2 priced at $1,020.60 pre-tax (~$1,199.14 all-in, +3.6% vs Week 1 — combined 14-night hotel ~$2,358.12 all-in). Ideal for Brooklyn stars (Aska 2-star, Francie 1-star), Queens (Meju), Broadway matinee, and relaxed museum pacing."
     }
    ],
-   "note": "Two weeks doubles the hotel line. The second week's real price must be captured before this can be budgeted."
+   "note": "Both Week 1 and Week 2 hotel quotes are now verified on Booking.com for Fairfield Central Park."
   }
  ],
  "flags": [
@@ -275,385 +288,416 @@
    "id": "F-01",
    "severity": "HIGH",
    "title": "The MICHELIN New York list changes on 14 December 2026 - before the trip",
-   "detail": "The next New York star ceremony is scheduled for Monday 14 December 2026. Every star shown on this site is the list published at the 18 November 2025 ceremony. Between now and February 2027 the entire roster can change.",
+   "detail": "The next New York star ceremony is scheduled for Monday 14 December 2026. Every star shown on this site comes from the 18 Nov 2025 ceremony plus live 2026-11-26 status checks; stars can still move before February 2027.",
    "source": "https://ny.eater.com/news/414985/michelin-guide-new-york-additions-2026-bib-gourmands-michelin-recommendations",
-   "settle_by": "Re-read https://guide.michelin.com/us/en/article/michelin-guide-ceremony after 2026-12-14 and re-run the star tables",
+   "settle_by": "Re-read guide.michelin.com ceremony news on/after 2026-12-14 and refresh michelin_roster.json",
    "status": "Open"
   },
   {
    "id": "F-02",
-   "severity": "HIGH",
-   "title": "MICHELIN's own two official sources disagree on the star count",
-   "detail": "The ceremony article lists 72 star entries (5 three-star / 15 two-star / 52 one-star). MICHELIN's own filtered list pages, read the same day, show 69 (5 / 14 / 50). The site publishes the 72-entry roster because it is the authoritative ceremony publication, and shows the 69 figure next to it rather than silently picking one.",
+   "severity": "MEDIUM",
+   "title": "RESOLVED 2026-11-26: Ceremony 72 vs Live NYC Filter 69 reconciled name-by-name",
+   "detail": "Full programmatic diff completed: the Nov 2025 ceremony article listed 72 entries (5/15/52), whereas the live NYC filtered list holds 69 (5/14/50) because 2 entries are in Westchester County (Blue Hill at Stone Barns in Tarrytown; La Bastide by Andrea Calstier in North Salem) and 1 venue closed after a Dec 2025 fire (Shion 69 Leonard Street, URL now delisted).",
    "source": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurants/1-star-michelin",
-   "settle_by": "Compare the two lists name by name and record which 3 are missing",
-   "status": "Open"
+   "settle_by": "Done; both counts and every status tag are now published in site_data/michelin_roster.json",
+   "status": "Resolved"
   },
   {
    "id": "F-03",
    "severity": "HIGH",
-   "title": "Hotel prices are a live snapshot, and every one carries a time-limited promotion",
-   "detail": "All hotel totals were read on 2026-11-25 and several rely on a 'Black Friday Deal' the booking page says is valid for select stays between 19 Nov 2026 and 31 Dec 2027. The undiscounted list prices are shown alongside so the real rate is visible. Any price here can change before booking.",
+   "title": "Hotel prices are live snapshots carrying time-limited Black Friday / Bonus promotions",
+   "detail": "All 7 hotels were re-priced on Booking.com on 2026-11-26 and rely on Black Friday (-30% to -36%) or Bonus (-25%) promos. List prices before discount are shown alongside; lock a $0-prepay free-cancellation rate early and re-check weekly / mid-Jan 2027.",
    "source": "https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
-   "settle_by": "Re-check the same URL the day of booking",
+   "settle_by": "Re-check the direct /hotel/us/ URL at booking time (and before free-cancel deadline 2027-02-12)",
    "status": "Open"
   },
   {
    "id": "F-04",
    "severity": "MEDIUM",
-   "title": "Two hotels quote a total that excludes tax, one includes it",
-   "detail": "Fairfield's $1,155.48 includes taxes and fees. citizenM, Arona and the rest print the rate excluding 14.75% tax and a $4/night city tax, which Booking.com shows separately. The hotel table states which basis each row uses so the rows are never compared like-for-like by accident.",
-   "source": "https://www.booking.com/hotel/us/citizenm-new-york-times-square-new-york.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
-   "settle_by": "Read the 'Excluded' line on each room row (done) and apply tax where excluded",
+   "title": "All 7 Booking.com property quotes exclude NY 14.75% tax + $4-$6/night city/unit occupancy fees",
+   "detail": "On 2026-11-26 all 7 properties advertise pre-tax totals; Arlo SoHo, Arlo Midtown and Pestana CR7 include resort fees ($26-$37/nt) inside the pre-tax figure while excluding taxes, whereas Fairfield and Residence Inn have $0 resort fees. The All-In column applies exact NYC Occupancy Tax math.",
+   "source": "https://www.nyc.gov/site/finance/business/business-hotel-room-occupancy-tax.page",
+   "settle_by": "Confirm exact Booking checkout tax line before final payment",
    "status": "Documented"
   },
   {
    "id": "F-05",
    "severity": "HIGH",
-   "title": "The one-hour MICHELIN rule is modelled, not measured",
-   "detail": "Travel times on this site are computed from straight-line distance at an assumed average speed, then labelled MODEL. Only a handful of legs were checked against a real transit router. A model can be wrong in either direction, especially across the East River where there is no direct subway.",
-   "source": "https://api.transitous.org/api/v1/plan",
-   "settle_by": "Run each hotel-to-restaurant pair through an MTA-scheduled journey planner for a weekday 19:00 departure",
+   "title": "The one-hour MICHELIN reach rule uses straight-line distance, not an MTA GTFS schedule matrix",
+   "detail": "Reach is now computed across 22 verified starred Manhattan venues (including all 5 three-stars), but remains straight-line Haversine distance (<=5 km proxy) rather than live scheduled subway legs. Express lines (e.g. A/D from 59th St-Columbus Circle) make Downtown stars faster than straight distance implies.",
+   "source": "https://www.mta.info/",
+   "settle_by": "Batch-query an MTA GTFS / scheduled router at 19:00 weekday departure when transit API is available",
    "status": "Open"
   },
   {
    "id": "F-06",
-   "severity": "MEDIUM",
-   "title": "Most restaurant menu prices could not be read",
-   "detail": "Only Le Bernardin, Gabriel Kreuther and Per Se published a readable price. Eleven Madison Park, Jungsik, Sushi Sho, Daniel and Gramercy Tavern either publish no price, hide it behind a booking flow, or serve their menu as an image.",
-   "source": "https://www.elevenmadisonpark.com/",
-   "settle_by": "Open each venue's Resy/Tock booking page, where the tasting-menu price is displayed before payment",
-   "status": "Open"
+   "severity": "LOW",
+   "title": "RESOLVED 2026-11-26: Priority restaurant prices & hours verified from venues & Tock/Resy",
+   "detail": "Verified fixed prices for 4 of 5 three-stars (Le Bernardin $142/$225/$350, EMP $255/$385, Jungsik $335, Sushi Sho $495) + Per Se deposit floor ($150/$200), plus 12 major 2-star & 1-star venues (The Modern, Gabriel Kreuther, Saga, Jean-Georges, Atomix, Daniel, Gramercy Tavern, Le Coucou, Dirt Candy, Cote, Crown Shy, Semma, Jeju, Casa Mono, Blue Hill) & One White Street.",
+   "source": "https://www.exploretock.com/jungsik",
+   "settle_by": "Done; Per Se, Atera & Aquavit keep honest Tock deposit floors ($200 / $200 / $50) where full menus sit behind slot checkout",
+   "status": "Resolved"
   },
   {
    "id": "F-07",
-   "severity": "MEDIUM",
-   "title": "TikTok could not be verified at all",
-   "detail": "Every TikTok URL returned HTTP 400 to an automated read on 2026-11-25. No TikTok handle is asserted anywhere on this site; where TikTok appears it is a search link, labelled as a search.",
-   "source": "https://www.tiktok.com/",
-   "settle_by": "Open the venue's own website and look for a TikTok icon, or search TikTok manually",
-   "status": "Open"
+   "severity": "LOW",
+   "title": "TikTok blocks direct unauthenticated scrapes (HTTP 400); search-verified public videos added",
+   "detail": "Direct curl/fetch of tiktok.com profile pages returns HTTP 400, so no guessed profile URLs appear. However, 4 genuine public TikTok tasting videos (Le Bernardin, EMP, Jungsik, Semma) were verified via web search and linked cleanly.",
+   "source": "https://www.tiktok.com/@eater/video/7356398018435861803",
+   "settle_by": "Documented; direct public video URLs kept with honest label",
+   "status": "Documented"
   },
   {
    "id": "F-08",
-   "severity": "MEDIUM",
-   "title": "One Instagram handle was inferred, not opened",
-   "detail": "The Chelsea Market handle @chelseamarketny was read in a post by the verified High Line account, not by opening the Chelsea Market profile itself. It is labelled as unconfirmed.",
-   "source": "https://www.instagram.com/highlinenyc/",
-   "settle_by": "Open https://www.instagram.com/chelseamarketny/ directly",
-   "status": "Open"
+   "severity": "LOW",
+   "title": "RESOLVED 2026-11-26: Verified @chelseamarketny, @cotekoreansteakhouse & @amnh",
+   "detail": "Verified @chelseamarketny and @cotekoreansteakhouse (moved from empty @Cote_NYC, 166K followers) plus @amnh, @911memorial, @rockefellercenter, @centralparknyc, @jungsik_nyc, @sushishonyc, @gabrielkreuther, @themodernnyc, @saga_nyc, @atomixnyc, @dirtcandynyc, @crownshynyc, @semmanyc, @onewhitestreet.",
+   "source": "https://www.instagram.com/cotekoreansteakhouse/",
+   "settle_by": "Done across 24 verified official Instagram accounts",
+   "status": "Resolved"
   },
   {
    "id": "F-09",
-   "severity": "HIGH",
-   "title": "Hours for The Met and The High Line were not captured",
-   "detail": "The Met's official hours block did not render in the captured page and the High Line's visitor page served a cookie wall. Neither set of hours is shown, rather than being taken from a secondary source.",
+   "severity": "LOW",
+   "title": "RESOLVED 2026-11-26: Hours & pricing verified for The Met, AMNH, High Line, Chelsea Market & Statue of Liberty",
+   "detail": "All 5 previously partial/blank activities resolved: The Met Sun-Tue & Thu 10-17, Fri-Sat 10-21, CLOSED WEDNESDAYS (itinerary updated!); AMNH $37 pp out-of-state; High Line Winter Dec 1-Mar 31 07:00-20:00; Chelsea Market 07:00-22:00 daily; Statue of Liberty 09:00-16:30 (last entry 15:30). 9/11 Museum last entry corrected to 18:00.",
    "source": "https://www.metmuseum.org/plan-your-visit",
-   "settle_by": "Read the hours block on metmuseum.org and thehighline.org with a browser that renders script",
-   "status": "Open"
+   "settle_by": "Done; Tue/Wed swapped on both 7-night and 4-night itineraries so The Met never falls on Wednesday",
+   "status": "Resolved"
   },
   {
    "id": "F-10",
-   "severity": "MEDIUM",
-   "title": "Restaurant hours conflict between MICHELIN and the restaurant",
-   "detail": "Gramercy Tavern's MICHELIN listing shows dinner ending at 21:00, while the restaurant's own Instagram says the Tavern is open until 23:00 seven days a week. Both are official; they describe different rooms. The row is flagged rather than resolved.",
-   "source": "https://www.instagram.com/gramercytavern/",
-   "settle_by": "Check gramercytavern.com hours for each room separately",
-   "status": "Open"
+   "severity": "LOW",
+   "title": "Documented: Gramercy Tavern Dining Room vs Tavern room keep distinct hours",
+   "detail": "Verified on gramercytavern.com/dining-room-menu/: Dining Room Seasonal Tasting ($178 pp; $78 lunch) serves dinner 17:00-21:00 Sun-Thu and 17:00-22:00 Fri-Sat, while the walk-in front Tavern serves a la carte 11:30-23:00 daily.",
+   "source": "https://www.gramercytavern.com/dining-room-menu/",
+   "settle_by": "Resolved — both room hours and menu prices published cleanly side by side",
+   "status": "Resolved"
   },
   {
    "id": "F-11",
    "severity": "LOW",
-   "title": "The Presidents' Day claim is derived, not sourced",
-   "detail": "15 February 2027 falls on the third Monday of February, which is the US federal Washington's Birthday holiday. This is arithmetic on the calendar plus general knowledge; no official 2027 federal calendar page was read.",
-   "source": null,
-   "settle_by": "Read the OPM federal holidays page for 2027",
-   "status": "Open"
+   "title": "RESOLVED 2026-11-26: Federal holiday, NYCPS Midwinter Recess & NWS climate normals verified",
+   "detail": "Verified Mon 2027-02-15 Washington's Birthday (OPM 2027 schedule), Feb 15-19 NYC Public Schools Midwinter Recess, Mar 9 Eid al-Fitr, plus NWS 1991-2020 Central Park normals (Feb 42.2/29.5F, 10.1 in snow; Mar 49.9/35.8F, 5.0 in snow).",
+   "source": "https://www.weather.gov/media/okx/Climate/CentralPark/nycnormals.pdf",
+   "settle_by": "Done",
+   "status": "Resolved"
   },
   {
    "id": "F-12",
-   "severity": "MEDIUM",
-   "title": "The second week of a 14-night trip is unpriced",
-   "detail": "Only the 15-22 Feb window was priced per hotel. A 22 Feb - 1 Mar stay is a different rate and shows signs of being dearer (the same Fairfield room rises from $1,155.48 to about $1,290 once tax is added).",
-   "source": "https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-22&checkout=2027-03-01&group_adults=2&no_rooms=1&selected_currency=USD",
-   "settle_by": "Price 22 Feb - 1 Mar for the two finalist hotels",
-   "status": "Open"
+   "severity": "LOW",
+   "title": "RESOLVED 2026-11-26: All 5 weekly Mon-Mon windows (15 Feb - 22 Mar 2027) & shifted starts priced",
+   "detail": "Priced all 5 weeks across the 15 Feb - 23 Mar brief window plus Feb 16/17/18 shifted starts: Week 1 (15-22 Feb, $985.60 pre-tax / $1,158.98 all-in at Fairfield) is the lowest of the entire 5-week period; March jumps +26% to +39%.",
+   "source": "https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
+   "settle_by": "Done — full 5-week table published on Hotels page",
+   "status": "Resolved"
   },
   {
    "id": "F-13",
-   "severity": "MEDIUM",
-   "title": "Four of seven hotels show no street address",
-   "detail": "Booking.com's captured text gave the area but not the street address for Fairfield, Arlo SoHo, Pestana, Arlo Midtown, Hyatt Place Chelsea and Residence Inn FiDi. Their coordinates are area-level, so their travel times are less precise than citizenM's, whose address is known.",
-   "source": "https://www.booking.com/",
-   "settle_by": "Read the address line on each hotel page",
-   "status": "Open"
+   "severity": "LOW",
+   "title": "RESOLVED 2026-11-26: All 7 shortlisted hotel street addresses & building coordinates verified",
+   "detail": "Verified building-level addresses and coordinates for all 7 shortlisted hotels (e.g. Fairfield 538 W 58th St, Arlo SoHo 231 Hudson St, Pestana CR7 338 W 39th St, Residence Inn FiDi 215 Pearl St, Hyatt Place Chelsea 140 W 24th St, citizenM TS 218 W 50th St, Arlo Midtown 351 W 38th St) and recomputed reach/distances.",
+   "source": "https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html",
+   "settle_by": "Done — fixed earlier Arlo SoHo / Residence Inn FiDi nearest-3-star bug too",
+   "status": "Resolved"
   },
   {
    "id": "F-14",
    "severity": "LOW",
-   "title": "Accessible room types were the cheapest qualifying rooms at two hotels",
-   "detail": "At Hyatt Place Chelsea the cheapest king room on these dates was the roll-in-shower accessible room, and at citizenM Bowery the accessible king. Those rooms are bookable by anyone, but a standard room may price differently.",
+   "title": "Hyatt Place Chelsea cheapest room tier is disability-accessible",
+   "detail": "At Hyatt Place Chelsea ($1,113 pre-tax) the lowest qualifying king room on Booking.com is the Roll-In Shower Disability Access tier. Bookable by anyone; standard king tier may cost more.",
    "source": "https://www.booking.com/hotel/us/hyatt-place-new-york-chelsea.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
-   "settle_by": "Compare the standard king rate on the same dates",
+   "settle_by": "Confirm standard vs accessible king rate at checkout if switching to Hyatt Place",
    "status": "Documented"
   },
   {
    "id": "F-15",
-   "severity": "LOW",
-   "title": "The flight price is a fare, not a booking",
-   "detail": "The AMS-JFK fares quoted ($543-$686 one adult, round trip) were read on aggregator pages. Fares change hourly and the cheapest itineraries have long layovers or are basic tickets without checked bags.",
-   "source": "https://www.kayak.com/flights/AMS-NYC/2027-02-14/2027-02-23?sort=bestflight_a",
-   "settle_by": "Price the same dates for 2 adults on the airline's own site",
+   "severity": "MEDIUM",
+   "title": "The flight price is an indicative 1-adult fare, not a 2-seat airline checkout quote",
+   "detail": "AMS-JFK 15-22 Feb fares ($562-$606 1-stop / $904-$906 nonstop) are per-adult fares from aggregators. Two-seat bucket pricing and checked-bag / seat fees can raise the checkout total.",
+   "source": "https://www.google.com/travel/flights?q=Flights%20to%20JFK%20from%20AMS%20on%202027-02-15%20through%202027-02-22",
+   "settle_by": "Check exact 2-passenger fare with bags on Aer Lingus / KLM / Delta before buying",
    "status": "Open"
   },
   {
    "id": "F-16",
    "severity": "LOW",
-   "title": "One venue's hours exist in MICHELIN's data but not as text",
-   "detail": "Le Bernardin's Friday closing time is 23:00 and Saturday opens at 17:00; both were read from the structured hours block. Jungsik has no hours block at all on its MICHELIN page.",
-   "source": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/jungsik-new-york",
-   "settle_by": "Read jungsik.com reservations page",
-   "status": "Open"
+   "title": "RESOLVED 2026-11-26: Jungsik, EMP, Per Se, Sushi Sho, Daniel & 14 more hours verified",
+   "detail": "Jungsik Mon-Thu 17-22 / Fri-Sun 15-22 verified on Tock; Daniel closed Monday (corrected from Sunday); Per Se, EMP, Sushi Sho, Gabriel Kreuther, The Modern, Saga, Jean-Georges, Atomix, Atera, Aquavit, Le Coucou, Dirt Candy, Cote, Crown Shy, Semma, Jeju, Casa Mono, Blue Hill & One White Street hours all verified.",
+   "source": "https://www.exploretock.com/jungsik",
+   "settle_by": "Done",
+   "status": "Resolved"
   },
   {
    "id": "F-17",
    "severity": "HIGH",
-   "title": "Six of seven hotels advertise a price that excludes tax, which flips the ranking",
-   "detail": "Booking.com prints a tax-exclusive total for six of the seven shortlisted properties. On advertised numbers Fairfield ($1,155.48) looks dearer than Arlo SoHo ($1,021.00) and citizenM ($1,147.00). Once 14.75% tax and $4/night city tax are applied, Fairfield is the cheapest of the seven and citizenM is $188.70 dearer. The site shows both columns and labels the second one derived.",
+   "title": "Pre-tax vs all-in hotel totals + resort fees + cancellation parity flip visual rankings",
+   "detail": "On 2026-11-26, all 7 Booking.com hotel headlines exclude taxes; Arlo SoHo ($1,087) and Pestana Partner ($1,224.76 all-in) restrict cancellation and exclude breakfast ($25-$30 pp), while Fairfield ($985.60 pre-tax = $1,158.98 all-in) includes American breakfast, $0 resort fee, $0 prepay and free cancellation until 2027-02-12.",
    "source": "https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
-   "settle_by": "Confirm the final charge at checkout; local fees beyond the two named can still appear",
+   "settle_by": "Compare hotels strictly on the derived all-in column plus breakfast/cancellation parity",
    "status": "Documented"
   },
   {
    "id": "F-18",
-   "severity": "HIGH",
-   "title": "A 'star cluster' cannot be demonstrated from this dataset",
-   "detail": "Coordinates were verified for only 7 of the 72 star entries. Among those 7, only Eleven Madison Park and Gramercy Tavern sit within a kilometre of another scored venue (353 m). The others are each more than 1 km from the next one, so Manhattan star dining is dispersed rather than clustered. Any neighbourhood-level cluster map would be invented.",
-   "source": "https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025",
-   "settle_by": "Verify coordinates for all 72 entries and compute density",
-   "status": "Open"
+   "severity": "MEDIUM",
+   "title": "Cluster geometry expanded from 7 to 22 verified starred venues (47 outer/other 1-stars still roster-only)",
+   "detail": "With 22 verified-coord starred Manhattan venues, three real spatial clusters emerge (Midtown, Flatiron/Gramercy, Tribeca/FiDi/SoHo). The remaining 47 live NYC 1-star & outer-borough venues remain roster-only unless full scraping of all 69 pages is requested.",
+   "source": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurants/all-starred",
+   "settle_by": "Verify remaining 47 1-star coordinates only if choosing an outer-borough or neighborhood 1-star focus",
+   "status": "Documented"
   },
   {
    "id": "F-19",
    "severity": "MEDIUM",
-   "title": "The hotel reach ranking covers 7 restaurants, not 72",
-   "detail": "The brief asks hotels to be ranked by how many MICHELIN restaurants are reachable within an hour. Only the 7 venues with verified coordinates can be scored, so the ranking is out of 7 rather than out of 72. The five Midtown and Chelsea hotels are effectively tied on it, which is why cost decides the recommendation.",
-   "source": "https://api.transitous.org/api/v1/plan",
-   "settle_by": "Verify all 72 coordinates and run a measured journey matrix",
-   "status": "Open"
+   "title": "Hotel reach ranking covers 22 verified Manhattan starred venues (including all 5 three-stars), not all 69",
+   "detail": "Upgraded from 7 to 22 scored venues (all 5 three-star, 7 top two-star, 10 key one-star). Hyatt Place Chelsea reaches 22/22 within 5 km; Pestana/Arlo Midtown 20/22; Arlo SoHo/citizenM 18/22; Fairfield 16/22 (with express A/B/C/D/1 subway at Columbus Circle); Residence Inn FiDi 14/22.",
+   "source": "https://www.mta.info/",
+   "settle_by": "Score remaining 47 1-star locations or replace 5 km radius with scheduled GTFS travel times (S-02)",
+   "status": "Documented"
   },
   {
    "id": "F-20",
    "severity": "MEDIUM",
-   "title": "Activity travel times are modelled, and the Statue of Liberty only just qualifies",
-   "detail": "All eleven activities fall inside the modelled one-hour reach of the recommended hotel, but the Statue of Liberty does so at 56 modelled minutes to Battery Park, before the roughly 15-minute ferry to the island. It is the one activity where the rule is satisfied by a margin thin enough that a real schedule could break it.",
-   "source": "https://www.nps.gov/stli/planyourvisit/fees.htm",
-   "settle_by": "Query a scheduled journey planner for the hotel-to-Battery-Park leg at 09:00 on a weekday",
-   "status": "Open"
+   "title": "Statue of Liberty door-to-island trip slightly exceeds 1 hour (~62-67 min); Battery Park gate is ~47 min",
+   "detail": "From Fairfield's true 538 W 58th St coordinates, Battery Park Ferry Terminal is 7.82 km (~47 modelled subway min, inside 1 hour), while adding the ~15-20 min Statue City Cruises ferry crossing puts Liberty Island arrival at ~62-67 min door-to-island.",
+   "source": "https://www.nps.gov/stli/planyourvisit/hours.htm",
+   "settle_by": "Allow half-day morning buffer + check winter wind/weather advisory before departure",
+   "status": "Documented"
   },
   {
    "id": "F-21",
+   "severity": "LOW",
+   "title": "RESOLVED 2026-11-26: Direct Booking.com /hotel/us/ URLs captured for all 7 shortlisted properties",
+   "detail": "Captured direct /hotel/us/ Booking URLs for Arlo SoHo, Hyatt Place Chelsea and Residence Inn FiDi alongside Fairfield, citizenM, Pestana CR7 and Arlo Midtown.",
+   "source": "https://www.booking.com/hotel/us/arlo-soho.html",
+   "settle_by": "Done — zero searchresults fallback URLs remain in hotels.json",
+   "status": "Resolved"
+  },
+  {
+   "id": "F-22",
    "severity": "MEDIUM",
-   "title": "Three hotel rows link to a Booking.com search page, not the hotel's own page",
-   "detail": "Arlo SoHo, Hyatt Place Chelsea and Residence Inn FiDi were priced from the search results table, and no venue-specific Booking.com URL was captured for them. Their price is verified; their direct link is not, so the row says 'search page' rather than pretending otherwise. The search URL does reproduce the same dated result.",
-   "source": "https://www.booking.com/searchresults.html?ss=Manhattan%2C+New+York&checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD&order=price",
-   "settle_by": "Open each of the three hotels from the search results and copy its /hotel/us/ URL",
-   "status": "Open"
+   "title": "Hotel rates moved between 25 Nov and 26 Nov 2026 & shifted Fairfield windows mix accessible/standard king tiers",
+   "detail": "Direct property-page re-reads on 2026-11-26 shifted cheapest qualifying rates vs 25 Nov (citizenM $1,113 vs $1,147; Arlo SoHo $1,087 vs $1,021; Arlo Midtown $1,171 vs $1,136.68; Pestana free-cancel $1,175 vs $1,276) and revealed shifted Feb 16-23/22-Mar 1 lowest Fairfield quotes ($996.10/$1,020.60) are Hearing Accessible kings while Standard/City-View kings sit ~$24 higher.",
+   "source": "https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
+   "settle_by": "All 7 hotels & 5 seasonal weeks updated consistently to 2026-11-26 direct reads; re-check live rates before Feb 12 deadline",
+   "status": "Documented"
+  },
+  {
+   "id": "F-23",
+   "severity": "MEDIUM",
+   "title": "RESOLVED 2026-11-26: Withdrawn 25 Nov Fairfield $1,155.48 tax-inclusive figure",
+   "detail": "Fairfield's Booking.com page explicitly prints 'Total before taxes $985.60' with NY taxes excluded. Corrected across hotels.json, budget subtotal ($4,184.98), and executive summary to $985.60 pre-tax / $1,158.98 derived all-in.",
+   "source": "https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
+   "settle_by": "Done — all references updated to $985.60 pre-tax / $1,158.98 all-in",
+   "status": "Resolved"
   }
  ],
  "questions": [
   {
    "id": "Q-01",
    "question": "Does the trip run 4 nights, 7 nights or 14 nights?",
-   "why_it_blocks": "Hotel cost, the number of MICHELIN dinners affordable, and which hotels stay in contention all change with trip length.",
-   "have": "Real 7-night prices for 7 hotels and real activity prices.",
-   "missing": "The traveller's actual leave allowance and total budget.",
-   "how_to_discover": "Answer directly; then price the exact dates on Booking.com for the finalist hotel.",
+   "why_it_blocks": "Hotel cost, the number of MICHELIN dinners affordable, and museum pacing change with trip length.",
+   "have": "Verified 7-night ($1,158.98 all-in), 14-night (Week 1 + Week 2 ~$2,358 all-in) and 4-night plans at Fairfield.",
+   "missing": "Traveller's leave allowance and preferred trip length.",
+   "how_to_discover": "Traveller decision directly; all three itinerary variants are ready.",
    "owner": "traveller",
-   "blocks": "Budget, itinerary, hotel choice"
+   "blocks": "Budget, itinerary, hotel choice",
+   "status": "Open"
   },
   {
    "id": "Q-02",
    "question": "What is the total budget for two people, excluding flights?",
-   "why_it_blocks": "Every ranking on this site sorts on price. Without a ceiling there is no way to say whether two starred dinners are affordable.",
-   "have": "A verified subtotal of $4,275.48 for the 7-night plan, excluding ordinary meals.",
-   "missing": "A budget figure.",
-   "how_to_discover": "Answer directly.",
+   "why_it_blocks": "Determines whether two high-end tastings ($1,350 food-only) or mixed 1-star value picks fit comfortably.",
+   "have": "Verified 7-night subtotal of $4,184.98 ($2,980.98 excluding $1,204 flights) plus menu tiers from $168 (Cote) to $990 (Sushi Sho) for two.",
+   "missing": "Traveller target spend ceiling.",
+   "how_to_discover": "Traveller decision directly.",
    "owner": "traveller",
-   "blocks": "Dinner count, hotel tier"
+   "blocks": "Dinner count, hotel tier",
+   "status": "Open"
   },
   {
    "id": "Q-03",
    "question": "Which departure airport, and are flights already booked?",
-   "why_it_blocks": "The budget assumes AMS-JFK. Departing from Brussels or Dusseldorf changes the fare materially.",
-   "have": "AMS-JFK fares of $543-$686 per adult round trip for 14-23 Feb 2027.",
-   "missing": "Confirmed origin airport and whether flights are booked.",
-   "how_to_discover": "Answer directly; then check the airline site for 2 adults.",
+   "why_it_blocks": "The budget assumes AMS-JFK. Departing Brussels/Dusseldorf or choosing nonstop vs 1-stop changes fares by ~$600/couple.",
+   "have": "AMS-JFK 15-22 Feb indicative fares (~$602-606 1-stop, ~$904-906 nonstop pp).",
+   "missing": "Confirmed origin airport and booking status.",
+   "how_to_discover": "Traveller confirmation + live airline checkout for 2 seats.",
    "owner": "traveller",
-   "blocks": "Budget"
+   "blocks": "Budget",
+   "status": "Open"
   },
   {
    "id": "Q-04",
-   "question": "Is one MICHELIN dinner enough, or do you want three-star twice?",
-   "why_it_blocks": "Le Bernardin's tasting menu is $350 pp food only; the wine pairing is another $530 pp. Two three-star dinners with pairings is over $3,500 for the pair.",
-   "have": "Real prices for Le Bernardin and Gabriel Kreuther.",
-   "missing": "The traveller's appetite for splurge vs. spread.",
-   "how_to_discover": "Answer directly.",
+   "question": "Do you prefer two splurge tastings (3-star + 2-star) or adding value 1-stars?",
+   "why_it_blocks": "Two 3-stars cost $1,370-$1,980 food-only vs Le Bernardin ($700) + Cote ($168) + Dirt Candy ($236 no-tip) = $1,104 for THREE 1-to-3-star nights!",
+   "have": "Verified couple prices across 17 starred + Green Star venues.",
+   "missing": "Traveller culinary style & spend preference.",
+   "how_to_discover": "Pick from the Restaurant price cards on the MICHELIN page.",
    "owner": "traveller",
-   "blocks": "Restaurant shortlist"
+   "blocks": "Restaurant shortlist",
+   "status": "Open"
   },
   {
    "id": "Q-05",
-   "question": "Do you drink wine with dinner?",
-   "why_it_blocks": "Pairings roughly double the food cost at every starred venue.",
-   "have": "Le Bernardin pairing $530 pp; Gabriel Kreuther $255-$595 pp.",
-   "missing": "Preference.",
-   "how_to_discover": "Answer directly.",
+   "question": "Do you drink wine pairings with dinner?",
+   "why_it_blocks": "Pairings add $190-$530 pp ($380-$1,060 per couple per meal).",
+   "have": "Verified pairing prices: Le Bernardin $530 total (w/ tasting), Gabriel Kreuther $255-$595, Gramercy $118, Cote $110, One White St $95.",
+   "missing": "Traveller beverage preference.",
+   "how_to_discover": "Traveller decision directly.",
    "owner": "traveller",
-   "blocks": "Budget"
+   "blocks": "Budget",
+   "status": "Open"
   },
   {
    "id": "Q-06",
-   "question": "What are the actual menu prices at EMP, Jungsik, Sushi Sho, Daniel and Gramercy Tavern?",
-   "why_it_blocks": "These five cannot be budgeted, so the dinner plan can only be costed for the venues with a published price.",
-   "have": "Two verified prices and one deposit floor.",
-   "missing": "The published menu price at each remaining venue.",
-   "how_to_discover": "Open each venue's Resy or Tock booking page - the tasting-menu price is shown before payment.",
+   "question": "What do EMP, Jungsik, Sushi Sho, Daniel and Gramercy Tavern cost?",
+   "why_it_blocks": "Previously blank; needed to price alternative 3-star & 1-star dining plans.",
+   "have": "RESOLVED 2026-11-26: EMP $385 full / $255 bar; Jungsik $335 tasting; Sushi Sho $495 incl. admin; Daniel $195 3-course / $255 5-course; Gramercy $178 tasting / $78 lunch; plus 8 more verified venues.",
+   "missing": "Only Per Se ($200 MDR / $150 Salon deposit floor), Atera ($200 deposit) & Aquavit ($50/$25 deposit) sit behind live Tock slot selection.",
+   "how_to_discover": "Done for 17 menus; open Tock slot calendar only if booking Per Se, Atera or Aquavit.",
    "owner": "research",
    "blocks": "Budget",
-   "status": "Open"
+   "status": "Resolved"
   },
   {
    "id": "Q-07",
    "question": "Which three-star restaurant should be the anchor dinner?",
-   "why_it_blocks": "It determines the travel pattern for that evening and which hotel is best placed.",
-   "have": "Le Bernardin (Midtown, $350 pp) is the only three-star with a verified precio and an easy walk from two shortlisted hotels.",
-   "missing": "EMP and Jungsik prices and availability.",
-   "how_to_discover": "Check Resy availability for 15-22 Feb 2027, which opens roughly 30 days ahead.",
-   "owner": "research",
-   "blocks": "Restaurant shortlist"
+   "why_it_blocks": "Determines reservation release date (1 Jan vs 15 Jan) and evening neighborhood logistics.",
+   "have": "RESOLVED pricing & hours for all 5 three-stars: Le Bernardin ($350 pp dinner / $225 PF / $142 lunch, closed Sun), Jungsik ($335 pp, daily), EMP ($385 pp / $255 bar, daily), Sushi Sho ($495 pp, closed Mon), Per Se ($200 deposit floor, daily).",
+   "missing": "Traveller cuisine choice + booking slot availability.",
+   "how_to_discover": "Book Le Bernardin (Resy, ~30d prior) as primary Midtown anchor or EMP/Jungsik/Sushi Sho at their Jan 1/mid-Jan releases.",
+   "owner": "traveller",
+   "blocks": "Restaurant shortlist",
+   "status": "Resolved (research)"
   },
   {
    "id": "Q-08",
-   "question": "How important is a view or a specific neighbourhood?",
-   "why_it_blocks": "Midtown is best for starred dining; Downtown is cheaper but adds 20-30 minutes to every Midtown dinner.",
-   "have": "All shortlisted hotels are within modelled reach of the verified stars.",
-   "missing": "Preference.",
-   "how_to_discover": "Answer directly.",
+   "question": "How important is boutique neighborhood feel (Chelsea / SoHo) vs price & breakfast?",
+   "why_it_blocks": "Fairfield Central Park ($1,158.98 all-in w/ breakfast) beats Hyatt Place Chelsea ($1,305.17 w/ breakfast, 22/22 stars <=5 km) by $146/week.",
+   "have": "Full address, reach out of 22 stars, and all-in cost for all 7 hotels.",
+   "missing": "Traveller preference between lowest all-in cost vs Chelsea/SoHo neighborhood vibe.",
+   "how_to_discover": "Traveller choice between #1 Fairfield ($1,158.98) and #4 Hyatt Place Chelsea ($1,305.17, highest reach 22/22).",
    "owner": "traveller",
-   "blocks": "Hotel choice"
-  },
-  {
-   "id": "Q-09",
-   "question": "What are The Met's and The High Line's opening hours in February 2027?",
-   "why_it_blocks": "Both are anchor daytime activities and neither has verified hours.",
-   "have": "Prices and addresses for both.",
-   "missing": "Hours and closure days.",
-   "how_to_discover": "Read the hours block on metmuseum.org and thehighline.org in a script-rendering browser.",
-   "owner": "research",
-   "blocks": "Itinerary",
+   "blocks": "Hotel choice",
    "status": "Open"
   },
   {
+   "id": "Q-09",
+   "question": "What are The Met's, AMNH's, High Line's, Chelsea Market's and Statue of Liberty's exact hours/prices?",
+   "why_it_blocks": "Anchor daytime activities needed verified closure days and ticket totals.",
+   "have": "RESOLVED 2026-11-26: The Met closed Wednesdays (Sun-Tue & Thu 10-17, Fri-Sat 10-21); AMNH $37 pp; High Line Winter 07-20; Chelsea Market 07-22; Statue of Liberty 09-16:30 (last entry 15:30).",
+   "missing": "Nothing for these 5 venues — itinerary swapped Tue/Wed to avoid Wednesday Met closure!",
+   "how_to_discover": "Done; verified on all 5 official websites.",
+   "owner": "research",
+   "blocks": "Itinerary",
+   "status": "Resolved"
+  },
+  {
    "id": "Q-10",
-   "question": "Is the hotel's breakfast worth counting as a real saving?",
-   "why_it_blocks": "Fairfield includes breakfast; citizenM charges $23.50 per person per night. Over 7 nights that is $329 for two, which can wipe out citizenM's apparent advantage.",
-   "have": "Both facts verified.",
-   "missing": "Whether the traveller would actually eat hotel breakfast.",
-   "how_to_discover": "Answer directly.",
+   "question": "Is hotel breakfast worth counting as a real saving?",
+   "why_it_blocks": "Fairfield and Hyatt Chelsea include breakfast; citizenM ($23.50/pp/nt = $329/week) and Arlos do not.",
+   "have": "Exact breakfast pricing across all 7 hotels.",
+   "missing": "Whether traveller eats hotel breakfast or NYC cafes/bakeries.",
+   "how_to_discover": "Traveller decision directly.",
    "owner": "traveller",
-   "blocks": "Hotel ranking"
+   "blocks": "Hotel ranking",
+   "status": "Open"
   },
   {
    "id": "Q-11",
    "question": "Will you be travelling with hand luggage only?",
-   "why_it_blocks": "The cheapest AMS-JFK fares are basic tickets that exclude checked bags and seat selection.",
-   "have": "Fare levels identified (Saver, Light buckets).",
+   "why_it_blocks": "Transatlantic Basic Economy tickets exclude checked bags (~$70-75/bag each way).",
+   "have": "Fare tiers identified.",
    "missing": "Bag plan.",
-   "how_to_discover": "Answer directly; add bag fees on the airline site.",
+   "how_to_discover": "Traveller decision directly at airline booking.",
    "owner": "traveller",
-   "blocks": "Budget"
-  },
-  {
-   "id": "Q-12",
-   "question": "Do you need step-free access or any accessibility feature?",
-   "why_it_blocks": "Two of the cheapest qualifying rooms are accessible room types; if accessibility is needed, those become required rather than incidental.",
-   "have": "Room types and accessibility flags on each hotel page.",
-   "missing": "Requirement.",
-   "how_to_discover": "Answer directly.",
-   "owner": "traveller",
-   "blocks": "Hotel choice"
-  },
-  {
-   "id": "Q-13",
-   "question": "What does the second week cost if you stay 14 nights?",
-   "why_it_blocks": "The 14-night variant cannot be budgeted without pricing 22 Feb - 1 Mar at the finalist hotel.",
-   "have": "One indicative snapshot ($1,020.60 before tax for the same Fairfield room).",
-   "missing": "A full second-week quote including tax.",
-   "how_to_discover": "Price 22 Feb - 1 Mar at the two finalist hotels on Booking.com.",
-   "owner": "research",
    "blocks": "Budget",
    "status": "Open"
   },
   {
+   "id": "Q-12",
+   "question": "Do you need step-free access or any accessibility feature?",
+   "why_it_blocks": "Hyatt Place Chelsea's cheapest $1,113 room is the roll-in-shower accessible king tier.",
+   "have": "Room specifications documented.",
+   "missing": "Requirement.",
+   "how_to_discover": "Traveller confirmation.",
+   "owner": "traveller",
+   "blocks": "Hotel choice",
+   "status": "Open"
+  },
+  {
+   "id": "Q-13",
+   "question": "What do the remaining weeks of the 15 Feb - 23 Mar window (including Week 2 for 14 nights) cost?",
+   "why_it_blocks": "Needed to verify whether February or March is genuinely cheapest.",
+   "have": "RESOLVED 2026-11-26: All 5 Mon-Mon weeks priced! Week 1 (15-22 Feb, $985.60) is cheapest; Week 2 ($1,020.60, +3.6%); Weeks 3-5 ($1,247-$1,366, +26% to +39%).",
+   "missing": "Nothing for the 5 weekly snapshots; dynamic rates still shift until booked.",
+   "how_to_discover": "Done; 5-week matrix published on Hotels page.",
+   "owner": "research",
+   "blocks": "Budget & Dates",
+   "status": "Resolved"
+  },
+  {
    "id": "Q-14",
    "question": "How much time do you want per museum?",
-   "why_it_blocks": "MoMA and The Met on one day is possible but rushed; the itinerary currently splits them.",
-   "have": "Prices and MoMA's verified hours.",
+   "why_it_blocks": "The Met and AMNH each easily take half a day.",
+   "have": "MoMA, The Met and AMNH placed on separate mornings (Tue/Wed/Sun).",
    "missing": "Pace preference.",
-   "how_to_discover": "Answer directly.",
+   "how_to_discover": "Traveller preference.",
    "owner": "traveller",
-   "blocks": "Itinerary"
+   "blocks": "Itinerary",
+   "status": "Open"
   },
   {
    "id": "Q-15",
-   "question": "Is the Statue of Liberty worth a half-day in February?",
-   "why_it_blocks": "The ferry is $26 pp and the harbour is cold in February; it competes with an indoor museum for the same slot.",
-   "have": "Verified ferry price and the NPS rule that only Statue City Cruises may dock.",
-   "missing": "Weather tolerance and schedule.",
-   "how_to_discover": "Answer directly; check the NPS operating status page in the week before travel.",
+   "question": "Is Statue of Liberty (Liberty Island landing) worth a cold-harbor half day?",
+   "why_it_blocks": "Ferry (~62-67 min total door-to-island from hotel) exceeds 60 min marginally and is wind/weather-sensitive in February (42F high / 30F low).",
+   "have": "Verified NPS hours (09:00-16:30, last entry 15:30), $26 pp fare, and NWS Feb normals.",
+   "missing": "Traveller tolerance for winter harbor conditions vs indoor/Staten Island Ferry alternative.",
+   "how_to_discover": "Traveller preference; keep Sunday buffer day ready to swap.",
    "owner": "traveller",
-   "blocks": "Itinerary"
+   "blocks": "Itinerary",
+   "status": "Open"
   },
   {
    "id": "Q-16",
    "question": "Should a Broadway show be booked, and for which night?",
-   "why_it_blocks": "Broadway has no single price; picking a show and a night is a separate decision with its own budget line.",
-   "have": "A link to the official Broadway League site.",
-   "missing": "Show choice, night, seat tier.",
-   "how_to_discover": "Choose a show, then price it on the show's official ticketing page.",
+   "why_it_blocks": "Most Broadway shows are dark Monday (arrival Feb 15); Wed/Sat matinees or Tue/Thu evenings fit best.",
+   "have": "Broadway League link + schedule pattern + Midtown proximity (1.34 km from Fairfield).",
+   "missing": "Show selection and seat budget.",
+   "how_to_discover": "Choose a show on broadway.org and fit into Tue/Thu/Sat open evening.",
    "owner": "traveller",
-   "blocks": "Itinerary, budget"
+   "blocks": "Itinerary, budget",
+   "status": "Open"
   },
   {
    "id": "Q-17",
-   "question": "Which three of the 72 star entries are actually missing from MICHELIN's live list?",
-   "why_it_blocks": "If the live list is the current truth, several rows on this site may already be out of date.",
-   "have": "Both official counts.",
-   "missing": "A name-by-name diff.",
-   "how_to_discover": "Export both lists and compare programmatically.",
+   "question": "Which three of the 72 star entries are missing from MICHELIN's live 69-venue list?",
+   "why_it_blocks": "Required reconciling two official MICHELIN figures.",
+   "have": "RESOLVED 2026-11-26: Exact diff confirmed — (1) Blue Hill at Stone Barns (Tarrytown, Westchester 2-star), (2) La Bastide by Andrea Calstier (North Salem, Westchester 1-star), (3) Shion 69 Leonard Street (closed after Dec 27, 2025 fire & delisted).",
+   "missing": "None (fully reconciled).",
+   "how_to_discover": "Done; documented in michelin_roster.json and F-02.",
    "owner": "research",
    "blocks": "Restaurant table accuracy",
-   "status": "Open"
+   "status": "Resolved"
   },
   {
    "id": "Q-18",
    "question": "Does the 14 December 2026 ceremony change any venue's star level?",
-   "why_it_blocks": "The trip is after the ceremony, so a venue may gain or lose a star before you dine there.",
-   "have": "The ceremony date.",
-   "missing": "The new list.",
-   "how_to_discover": "Read the MICHELIN article published on or after 2026-12-14.",
+   "why_it_blocks": "Travel occurs 2 months after the Dec 14, 2026 MICHELIN NY ceremony.",
+   "have": "Confirmed ceremony date (2026-12-14) and live Nov 2026 status.",
+   "missing": "Dec 14, 2026 announcement itself.",
+   "how_to_discover": "Re-read MICHELIN Guide NY ceremony post on/after 2026-12-14.",
    "owner": "research",
    "blocks": "Restaurant table accuracy",
    "status": "Blocked until 2026-12-14"
   },
   {
    "id": "Q-19",
-   "question": "Are the real door-to-door transit times under an hour?",
-   "why_it_blocks": "The brief's central rule is a one-hour trip; the site currently models it.",
-   "have": "A model plus a few measured legs.",
-   "missing": "Measured times for every hotel/restaurant pair.",
-   "how_to_discover": "Query an MTA-scheduled journey planner for each pair at 19:00 on a weekday.",
+   "question": "Are the real door-to-door transit times under an hour across all pairs?",
+   "why_it_blocks": "Straight-line Haversine proxy covers 22 verified starred venues; exact MTA GTFS timetable legs are unmeasured.",
+   "have": "Building-level coordinates for all 7 hotels & 22 priority stars + express subway station mapping (Columbus Circle A/B/C/D/1).",
+   "missing": "Automated weekday 19:00 scheduled GTFS trip-planner matrix.",
+   "how_to_discover": "Run batch GTFS transit query against MTA OpenTripPlanner/Transitous.",
    "owner": "research",
    "blocks": "Hotel ranking",
    "status": "Open"
@@ -661,73 +705,76 @@
   {
    "id": "Q-20",
    "question": "Will you eat at the hotel or out for breakfast?",
-   "why_it_blocks": "It changes the daily food allowance, which is currently blank rather than guessed.",
-   "have": "Which hotels include breakfast.",
+   "why_it_blocks": "Determines daily non-tasting dining spend.",
+   "have": "Hotel breakfast inclusions verified across all 7 properties.",
    "missing": "Habit.",
-   "how_to_discover": "Answer directly.",
+   "how_to_discover": "Traveller decision directly.",
    "owner": "traveller",
-   "blocks": "Budget"
+   "blocks": "Budget",
+   "status": "Open"
   },
   {
    "id": "Q-21",
-   "question": "Do you want travel insurance, and does it cover non-refundable restaurant deposits?",
-   "why_it_blocks": "EMP and other venues charge the full tasting menu at booking and do not refund.",
-   "have": "The non-refundable policy, read on Resy.",
-   "missing": "Insurance decision.",
-   "how_to_discover": "Check the insurer's terms for pre-paid dining.",
+   "question": "Do you want travel insurance, and does it cover prepaid non-refundable tasting reservations?",
+   "why_it_blocks": "EMP, Atomix, Sushi Sho and Jungsik take prepaid non-refundable deposits/full payments ($200-$495 pp).",
+   "have": "Verified booking deposit & cancellation policies on Resy & Tock.",
+   "missing": "Insurance policy choice.",
+   "how_to_discover": "Check trip cancellation policy wording before paying non-refundable reservations.",
    "owner": "traveller",
-   "blocks": "Risk"
+   "blocks": "Risk",
+   "status": "Open"
   },
   {
    "id": "Q-22",
-   "question": "Is there a hard return date?",
-   "why_it_blocks": "The cheapest 7-night windows sit either side of the preferred dates; flexibility of a day or two can move the hotel price by hundreds.",
-   "have": "Three priced windows.",
-   "missing": "Fixed commitments.",
-   "how_to_discover": "Answer directly.",
+   "question": "Is there flexibility to shift start dates by 1-3 days?",
+   "why_it_blocks": "Mon 15-Mon 22 Feb ($985.60) beats Tue 16/Wed 17/Thu 18 starts ($996.10) and is 26-39% cheaper than March weeks.",
+   "have": "Shifted starts + all 5 weekly windows verified.",
+   "missing": "Flight schedule & leave lock.",
+   "how_to_discover": "Confirm 15-22 Feb flights.",
    "owner": "traveller",
-   "blocks": "Hotel choice"
+   "blocks": "Hotel choice",
+   "status": "Open"
   },
   {
    "id": "Q-23",
-   "question": "Should the site be one dashboard or two?",
-   "why_it_blocks": "An earlier session published a second dataset that disagrees with this one; both are live today.",
-   "have": "Both datasets and the itemised disagreements.",
-   "missing": "A decision on which becomes canonical.",
-   "how_to_discover": "Review suggestions S-01 and S-02 and pick one.",
+   "question": "Should deepdive/ remain archived as prior session output?",
+   "why_it_blocks": "Maintains repo clarity between the canonical dashboard and the earlier parallel-session research tree.",
+   "have": "Orphaned legacy build files (docs/methodology.html, docs/data/build_summary.json) removed; deepdive/ documented clearly as archived.",
+   "missing": "Final sign-off if owner wants deepdive/ deleted vs preserved.",
+   "how_to_discover": "Owner preference (S-01).",
    "owner": "traveller",
    "blocks": "Site structure",
    "status": "Open"
   },
   {
    "id": "Q-24",
-   "question": "What should be removed from the site before it is shared?",
-   "why_it_blocks": "Anything unverified is either labelled or blank; a reader should not have to guess which is which.",
-   "have": "A flag register with 16 items.",
-   "missing": "Sign-off.",
-   "how_to_discover": "Read flagged.html and confirm each label is clear.",
+   "question": "Sign-off on remaining open flags before final bookings?",
+   "why_it_blocks": "Ensures Dec 14 ceremony check, flight checkout and GTFS verification aren't overlooked.",
+   "have": "14 of 21 earlier flags resolved/documented cleanly; remaining live operational flags highlighted.",
+   "missing": "Traveller review.",
+   "how_to_discover": "Review Flagged page.",
    "owner": "traveller",
    "blocks": "Publishing",
    "status": "Open"
   },
   {
    "id": "Q-25",
-   "question": "Which of the 72 star restaurants actually sit within an hour of the hotel?",
-   "why_it_blocks": "The brief's hotel ranking depends on it, and only 7 of 72 venues could be scored.",
-   "have": "A reach ranking on the 7 verified venues.",
-   "missing": "Verified coordinates for the other 65.",
-   "how_to_discover": "Read the address on each MICHELIN detail page and geocode it, then run a journey matrix.",
+   "question": "How many of the 22 scored Manhattan starred venues sit within 5 km / 1 hour?",
+   "why_it_blocks": "Determines whether location separates the 7 hotels.",
+   "have": "Recomputed across 22 verified venues: Hyatt Chelsea 22/22 (5/5 3-star), Pestana/Arlo Midtown 20/22 (5/5 3-star), Arlo SoHo/citizenM 18/22 (4/5 3-star), Fairfield 16/22 (4/5 3-star), Residence Inn FiDi 14/22 (2/5 3-star).",
+   "missing": "Full 69-venue GTFS transit matrix if exhaustive 1-star reach is desired.",
+   "how_to_discover": "Score remaining 47 1-stars only if needed; current 22-venue + express subway check is clear.",
    "owner": "research",
    "blocks": "Hotel ranking",
-   "status": "Open"
+   "status": "Documented"
   },
   {
    "id": "Q-26",
-   "question": "Is an advertised hotel price or an all-in price the one to rank on?",
-   "why_it_blocks": "The two produce opposite winners: Arlo SoHo on advertised, Fairfield on all-in.",
-   "have": "Both figures for all seven hotels.",
-   "missing": "Which basis the traveller wants to see first.",
-   "how_to_discover": "Answer directly; the site currently shows advertised first and all-in second.",
+   "question": "Should hotels rank on all-in cost + breakfast/free-cancellation parity, or pre-tax headline?",
+   "why_it_blocks": "Fairfield wins decisively on free-cancel + breakfast + all-in ($1,158.98), while Hyatt Chelsea wins pure 5 km reach (22/22, $1,305.17 all-in).",
+   "have": "Both columns and cancellation/breakfast parity verified for all 7 hotels.",
+   "missing": "Traveller choice between saving $146/week (Fairfield) vs peak Chelsea central reach (Hyatt Place Chelsea).",
+   "how_to_discover": "Decision directly from the Hotels comparison tables.",
    "owner": "traveller",
    "blocks": "Presentation",
    "status": "Open"
@@ -736,21 +783,21 @@
  "suggestions": [
   {
    "id": "S-01",
-   "title": "Make this dashboard the single canonical site and retire the duplicate dataset",
-   "problem": "Two independently researched datasets are published side by side and disagree on the star count (72 vs 69), the hotel shortlist and the transit method. A reader cannot tell which to trust.",
-   "proposal": "Keep this dashboard as the canonical dataset, move the older deep dive to an 'archive' page with a one-line explanation, and delete the cross-links that present them as equal.",
-   "effort": "1 hour",
+   "title": "Keep this dashboard canonical and archive deepdive/ cleanly",
+   "problem": "An older parallel-branch research tree (deepdive/) coexists alongside docs/ with superseded numbers.",
+   "proposal": "Keep this canonical site in docs/ (with orphaned docs/methodology.html and docs/data/build_summary.json removed) and treat deepdive/ strictly as preserved prior-session archive.",
+   "effort": "Done (orphan cleanup)",
    "cost": "0",
    "impact": "High",
-   "risk": "Low - nothing is deleted that is not first archived",
-   "decision": "Pending",
+   "risk": "Low - prior work remains readable in deepdive/",
+   "decision": "Done",
    "recommended": "Yes"
   },
   {
    "id": "S-02",
-   "title": "Replace modelled travel times with measured ones",
-   "problem": "The one-hour rule is the brief's central constraint and it is currently a straight-line model.",
-   "proposal": "Batch-query an MTA-scheduled journey planner for all 7 hotels x the star restaurants that matter, cache the JSON, and show the measured door-to-door minutes with the query time and date. Keep the model only as a fallback, clearly labelled.",
+   "title": "Batch-run MTA GTFS scheduled travel times when transit API is reachable",
+   "problem": "The one-hour rule currently uses straight-line distance (5 km proxy across 22 verified starred venues) rather than scheduled subway + walking legs.",
+   "proposal": "Batch-query a public MTA-scheduled router at weekday 19:00 across all 7 hotels x priority stars and store measured minutes alongside Haversine km.",
    "effort": "3-4 hours",
    "cost": "0 (public API)",
    "impact": "High",
@@ -760,10 +807,10 @@
   },
   {
    "id": "S-03",
-   "title": "Add a price-watch column with a re-check date",
-   "problem": "Every price on the site is a 2026-11-25 snapshot, and the booking pages say promotions expire.",
-   "proposal": "Add 'price checked on' and 're-check by' columns, and a single page listing every external URL with the date it was last read, so re-verification is a checklist rather than a memory exercise.",
-   "effort": "2 hours",
+   "title": "Re-verify dynamic hotel & flight quotes in mid-Jan 2027 (and post-Dec 14 MICHELIN)",
+   "problem": "All prices reflect 2026-11-26 Black Friday / Bonus promos and early fares; Winter Outing 2027 ends Feb 11 (4 days before trip).",
+   "proposal": "Book the $0-prepayment free-cancel Fairfield rate now, then re-run hotel URLs in mid-January 2027 and update the star table after 2026-12-14.",
+   "effort": "30 min",
    "cost": "0",
    "impact": "High",
    "risk": "None",
@@ -772,34 +819,34 @@
   },
   {
    "id": "S-04",
-   "title": "Finish the menu-price matrix from booking platforms",
-   "problem": "Five of the eight priority restaurants have no price, which makes the dinner plan impossible to budget.",
-   "proposal": "Open each venue's Resy or Tock page, where the tasting-menu price is shown before payment, and record it with the URL and the date. Where a venue only sells on the day, record that as the answer.",
-   "effort": "2 hours",
+   "title": "Menu-price matrix expanded across 3-star, 2-star & 1-star options (DONE)",
+   "problem": "Previously only 2 starred menus and 1 floor had verified prices.",
+   "proposal": "RESOLVED 2026-11-26: Verified fixed prices for Le Bernardin, EMP, Jungsik, Sushi Sho, Gabriel Kreuther, The Modern, Saga, Jean-Georges, Atomix, Daniel, Gramercy Tavern, Le Coucou, Dirt Candy, Cote, One White Street + deposit floors for Per Se, Atera & Aquavit.",
+   "effort": "Done",
    "cost": "0",
    "impact": "High",
    "risk": "Low",
-   "decision": "Pending",
+   "decision": "Done",
    "recommended": "Yes"
   },
   {
    "id": "S-05",
-   "title": "Give every table a mobile card view, not just a scrolling table",
-   "problem": "Seven-column tables on a 390px phone require horizontal scrolling, which is where readers give up.",
-   "proposal": "Below 640px, render each row as a stacked card with the name, star level, hours and links visible without scrolling; keep the true table for desktop.",
-   "effort": "3 hours",
+   "title": "Responsive mobile card views for every table (DONE)",
+   "problem": "Wide multi-column tables force awkward scrolling on phones.",
+   "proposal": "Already active in build_site.py below 700px.",
+   "effort": "Done",
    "cost": "0",
    "impact": "High",
    "risk": "Low",
-   "decision": "Pending",
+   "decision": "Done",
    "recommended": "Yes"
   },
   {
    "id": "S-06",
-   "title": "Add a printable one-page trip card",
-   "problem": "The site is a research document; on the day you need one page with addresses, hours and confirmation numbers.",
-   "proposal": "A print stylesheet plus a single page containing only confirmed bookings, with blank fields for confirmation numbers that the traveller fills in.",
-   "effort": "2 hours",
+   "title": "Add a printable one-page confirmation itinerary card",
+   "problem": "Travellers need a single clean sheet with addresses, confirmation codes & emergency backups while out in Manhattan.",
+   "proposal": "Add a dedicated print-optimized summary card once flights and two dinners are booked.",
+   "effort": "1-2 hours",
    "cost": "0",
    "impact": "Medium",
    "risk": "None",
@@ -808,21 +855,9 @@
   },
   {
    "id": "S-07",
-   "title": "Automate the link and data-integrity check",
-   "problem": "Manual checking does not scale past a few dozen rows and silently rots.",
-   "proposal": "A script run on every commit that (a) checks every internal link resolves, (b) checks every external URL returns 200, (c) fails the build if a table row has no source, and (d) fails if any numeric cell is non-numeric.",
-   "effort": "4 hours",
-   "cost": "0",
-   "impact": "High",
-   "risk": "Low - external checks can be flaky, so warn rather than fail on those",
-   "decision": "Pending",
-   "recommended": "Yes"
-  },
-  {
-   "id": "S-08",
-   "title": "Separate 'starred' from 'guide-listed' into two visually distinct badges",
-   "problem": "A reader can mistake a Bib Gourmand or a plain listing for a star.",
-   "proposal": "Use one badge per distinction - three-star, two-star, one-star, Green Star, Bib Gourmand, Selected - with the badge drawn from MICHELIN's own icons and a legend at the top of the table.",
+   "title": "Add GitHub Actions CI running build_site.py checks automatically on PRs",
+   "problem": "Checks run locally in build_site.py today, not automatically on GitHub pull requests.",
+   "proposal": "Add a lightweight workflow running python3 build_site.py + schema validation on pull requests.",
    "effort": "1 hour",
    "cost": "0",
    "impact": "Medium",
@@ -831,51 +866,63 @@
    "recommended": "Yes"
   },
   {
+   "id": "S-08",
+   "title": "Distinguish Starred vs Green Star vs Bib Gourmand vs Selected badges (DONE)",
+   "problem": "Readers can confuse MICHELIN Selected or Bib Gourmand venues with red stars.",
+   "proposal": "Implemented on the MICHELIN page with explicit reconciled counts (69 live starred, 76 Bib, 224 Selected, 4 Green Stars).",
+   "effort": "Done",
+   "cost": "0",
+   "impact": "Medium",
+   "risk": "None",
+   "decision": "Done",
+   "recommended": "Yes"
+  },
+  {
    "id": "S-09",
-   "title": "Show the all-in hotel cost, not the advertised rate",
-   "problem": "Some rows include tax and some do not, so the cheapest-looking row is not always the cheapest.",
-   "proposal": "Compute and display one 'total for 7 nights, taxes and fees included' figure per hotel in a single sortable column, and keep the advertised rate visible only as a secondary detail.",
-   "effort": "2 hours",
+   "title": "Show all-in NYC tax-adjusted hotel totals alongside pre-tax headlines (DONE)",
+   "problem": "Pre-tax Booking rates and resort-fee differences invert visual hotel rankings.",
+   "proposal": "Implemented with full NYC tax math (14.75% + $4-$6 city fees), resort-fee disclosures, and Partner vs Free-cancel notes.",
+   "effort": "Done",
    "cost": "0",
    "impact": "High",
-   "risk": "Medium - the tax treatment differs by property and must be read per room, not assumed",
-   "decision": "Pending",
+   "risk": "Low",
+   "decision": "Done",
    "recommended": "Yes"
   },
   {
    "id": "S-10",
-   "title": "Add a February-specific weather and packing section",
-   "problem": "February in New York is cold and the itinerary includes outdoor walks; nothing on the site warns about it.",
-   "proposal": "Add a small panel with historical February temperature ranges from an official climate source and a packing list tied to the outdoor activities actually planned.",
-   "effort": "1 hour",
+   "title": "Add verified NWS Central Park climate normals & winter packing panel (DONE)",
+   "problem": "February outdoor itinerary items had no official weather baseline.",
+   "proposal": "RESOLVED 2026-11-26: Integrated NWS 1991-2020 Central Park normals (Feb 42.2F/29.5F, 10.1 in snow; Mar 49.9F/35.8F, 5.0 in snow) on the Itinerary page.",
+   "effort": "Done",
    "cost": "0",
    "impact": "Medium",
-   "risk": "Low",
-   "decision": "Pending",
+   "risk": "None",
+   "decision": "Done",
    "recommended": "Yes"
   },
   {
    "id": "S-11",
-   "title": "Replace social search links with verified posts wherever an account is confirmed",
-   "problem": "Most social cells are search links, which is honest but not what the brief asked for.",
-   "proposal": "Where an official account is verified, link two or three specific posts (the profile page exposes recent post URLs) instead of the profile. Where no account exists, keep the labelled search link.",
-   "effort": "3 hours",
+   "title": "Verify direct Instagram handles, YouTube reviews & TikTok videos (DONE)",
+   "problem": "Previously 10 official accounts and 3 videos only.",
+   "proposal": "RESOLVED 2026-11-26: Expanded to 24 verified official Instagram accounts, 23 verified YouTube reviews, and 4 verified TikTok tasting videos.",
+   "effort": "Done",
    "cost": "0",
    "impact": "Medium",
-   "risk": "Low - post URLs can be deleted by the venue",
-   "decision": "Pending",
+   "risk": "Low",
+   "decision": "Done",
    "recommended": "Yes"
   },
   {
    "id": "S-12",
-   "title": "Add a booking countdown and deadline tracker",
-   "problem": "Eighty percent of the starred restaurants take reservations about 30 days ahead, and the hotel's free-cancellation deadline is 12 February 2027.",
-   "proposal": "A dated checklist of the actions in the order they must happen, each with the exact deadline (open booking date, free-cancel date, ticket release date).",
-   "effort": "1 hour",
+   "title": "Booking timeline & exact release dates tracker (DONE)",
+   "problem": "High-demand stars (Sushi Sho, Atomix, EMP, Le Bernardin) release reservations strictly on fixed monthly/rolling schedules.",
+   "proposal": "Added exact release windows (e.g., Dec 14 ceremony refresh -> Jan 1 Sushi Sho/Atomix/EMP releases -> mid-Jan Le Bernardin Resy -> Feb 12 hotel free-cancel deadline).",
+   "effort": "Done",
    "cost": "0",
    "impact": "High",
-   "risk": "None - the 30-day rule is a common pattern, so verify each venue's own window before relying on it",
-   "decision": "Pending",
+   "risk": "None",
+   "decision": "Done",
    "recommended": "Yes"
   }
  ]
