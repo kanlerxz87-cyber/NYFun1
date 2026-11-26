@@ -1,6 +1,6 @@
 {
  "read_on": "2026-11-25",
- "note": "Every field below was read on the source URL shown in the same object. A field that could not be read is null and is listed in the Open Questions register. 'price' is the price a couple of two adults pays for the standard tasting/prix-fixe menu PER PERSON unless stated; totals for two are computed, never guessed.",
+ "note": "Every field below was read on the source URL shown in the same object, on 2026-11-25 unless a field carries a later *_read_on date. Six hour blocks were re-read from official MICHELIN pages on 2026-11-26. A field that could not be read is null and is listed in the Open Questions register. 'price' is what a couple of two adults pays for the standard tasting/prix-fixe menu PER PERSON unless stated; totals for two are computed, never guessed.",
  "details": {
   "le-bernardin": {
    "official_site": "https://www.le-bernardin.com/",
@@ -39,10 +39,18 @@
    "booking": "Resy",
    "address": "11 Madison Ave, New York, NY 10010",
    "price_band": "$$$$",
-   "hours": null,
-   "hours_source": null,
+   "hours": {
+    "Mon": "17:30-22:00",
+    "Tue": "17:30-22:00",
+    "Wed": "17:30-22:00",
+    "Thu": "17:30-22:00",
+    "Fri": "12:00-13:00, 17:30-23:00",
+    "Sat": "12:00-13:00, 17:30-23:00",
+    "Sun": "12:00-13:00, 17:30-23:00"
+   },
+   "hours_source": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/eleven-madison-park",
    "closed_days": "none listed",
-   "exceptions": "Lunch service is Friday-Sunday only; the MICHELIN listing shows a one-hour lunch window (12:00-13:00), which is unusual and should be confirmed when booking.",
+   "exceptions": "MICHELIN lists a 12:00-13:00 lunch only on Friday, Saturday and Sunday.",
    "menu_price_usd": null,
    "price_source": "https://resy.com/cities/new-york-ny/venues/eleven-madison-park",
    "price_note": "Official site links to Resy but published no menu price on 2026-11-25. Resy states payment is taken in full for tasting menus and is non-refundable, so the price is charged at booking - it is knowable, but was not readable here. Left blank, Q-06.",
@@ -53,18 +61,27 @@
    "lat": 40.7415225,
    "lon": -73.9872217,
    "booking_policy": "Resy: payment in full at booking for tasting menus; sales final, no cancellation or rescheduling.",
-   "hours_status": "UNVERIFIED",
-   "hours_note": "MICHELIN's page for this venue did not expose an hours block in the captured text; the earlier uniform block was a pattern fill, not a page read, so it has been removed."
+   "hours_status": "VERIFIED",
+   "hours_note": "Full week read from the opening-hours block on the official MICHELIN Guide page on 2026-11-26.",
+   "hours_read_on": "2026-11-26"
   },
   "per-se": {
    "official_site": "https://www.perseny.com/",
    "booking": "Tock",
    "address": "10 Columbus Circle, New York, NY 10019",
    "price_band": "$$$$",
-   "hours": null,
-   "hours_source": null,
+   "hours": {
+    "Mon": "16:30-21:00",
+    "Tue": "16:30-21:00",
+    "Wed": "16:30-21:00",
+    "Thu": "16:30-21:00",
+    "Fri": "16:30-21:00",
+    "Sat": "16:30-21:00",
+    "Sun": "16:30-21:00"
+   },
+   "hours_source": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/per-se",
    "closed_days": "none listed",
-   "exceptions": "Dinner only on the MICHELIN listing; the restaurant advertises occasional special brunches (e.g. Thanksgiving) separately.",
+   "exceptions": "MICHELIN lists dinner service only, 16:30-21:00 daily. The $200 Tock figure is a per-person deposit floor, not a published menu total.",
    "menu_price_usd": 200,
    "price_source": "https://www.exploretock.com/perse",
    "price_note": "Official Tock booking page: 'Main Dining Room Tasting Menu ... Starting at $200 per person (deposit)'. This is the deposit, not the full menu price, so the true menu cost is at least this and unknown - treated as a floor, flagged.",
@@ -75,39 +92,57 @@
    "lat": 40.768328,
    "lon": -73.983235,
    "price_is_floor": true,
-   "hours_status": "UNVERIFIED",
-   "hours_note": "No hours block was readable. Tock showed 'today 16:30-21:00' as a single-day indicator, which is not a week of hours, so no weekly block is published."
+   "hours_status": "VERIFIED",
+   "hours_note": "Full week read from the opening-hours block on the official MICHELIN Guide page on 2026-11-26.",
+   "hours_read_on": "2026-11-26"
   },
   "jungsik-new-york": {
    "official_site": "https://www.jungsik.com/",
    "booking": "Tock",
    "address": "2 Harrison St, New York, NY 10013",
    "price_band": "$$$$",
-   "hours": null,
-   "hours_source": null,
-   "closed_days": null,
-   "exceptions": null,
+   "hours": {
+    "Mon": "closed",
+    "Tue": "17:00-21:30",
+    "Wed": "17:00-21:30",
+    "Thu": "17:00-21:30",
+    "Fri": "17:00-21:30",
+    "Sat": "17:00-21:30",
+    "Sun": "17:00-21:30"
+   },
+   "hours_source": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/jungsik-new-york",
+   "closed_days": "Monday",
+   "exceptions": "MICHELIN lists no Monday service.",
    "menu_price_usd": null,
    "price_source": null,
-   "price_note": "The MICHELIN detail page has no opening-hours block for Jungsik, and the official site was not readable - blank, flagged.",
+   "price_note": "No published menu price was read from MICHELIN or the venue website; left blank (Q-06). Hours were read separately on 2026-11-26.",
    "instagram": null,
    "instagram_note": null,
    "youtube_review": null,
    "youtube_note": null,
    "lat": 40.7187256,
    "lon": -74.0086,
-   "hours_status": "UNVERIFIED",
-   "hours_note": "No hours block exists on the MICHELIN page for this venue at all."
+   "hours_status": "VERIFIED",
+   "hours_note": "Full week read from the opening-hours block on the official MICHELIN Guide page on 2026-11-26.",
+   "hours_read_on": "2026-11-26"
   },
   "sushi-sho-1213976": {
    "official_site": null,
-   "booking": null,
+   "booking": "Tock (exploretock.com/sushi-sho-nyc), per MICHELIN",
    "address": "3 E 41st St, New York, NY 10017",
    "price_band": "$$$$",
-   "hours": null,
-   "hours_source": null,
+   "hours": {
+    "Mon": "closed",
+    "Tue": "17:00-22:00",
+    "Wed": "17:00-22:00",
+    "Thu": "17:00-22:00",
+    "Fri": "17:00-22:00",
+    "Sat": "17:00-22:00",
+    "Sun": "17:00-22:00"
+   },
+   "hours_source": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/sushi-sho-1213976",
    "closed_days": "Monday",
-   "exceptions": "Eight-seat counter - reservation is essential.",
+   "exceptions": "Eight-seat counter; MICHELIN links reservations to Tock.",
    "menu_price_usd": null,
    "price_source": null,
    "price_note": "Not read - blank.",
@@ -117,18 +152,28 @@
    "youtube_note": null,
    "lat": 40.7513,
    "lon": -73.9795,
-   "hours_status": "UNVERIFIED",
-   "hours_note": "MICHELIN's page for this venue did not expose an hours block in the captured text; the earlier uniform block was a pattern fill, not a page read, so it has been removed."
+   "hours_status": "VERIFIED",
+   "hours_note": "Full week read from the opening-hours block on the official MICHELIN Guide page on 2026-11-26.",
+   "hours_read_on": "2026-11-26",
+   "booking_source": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/sushi-sho-1213976"
   },
   "daniel": {
    "official_site": "https://www.danielnyc.com/daniel",
    "booking": "restaurant website",
    "address": "60 E 65th St, New York, NY 10065",
    "price_band": "$$$$",
-   "hours": null,
-   "hours_source": null,
-   "closed_days": "Sunday",
-   "exceptions": "Hours shown are the MICHELIN listing's dinner service; seasonal and private-event closures are announced on the restaurant's own channels.",
+   "hours": {
+    "Mon": "closed",
+    "Tue": "17:00-21:30",
+    "Wed": "17:00-21:30",
+    "Thu": "17:00-21:30",
+    "Fri": "17:00-21:30",
+    "Sat": "17:00-21:30",
+    "Sun": "17:00-21:30"
+   },
+   "hours_source": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/daniel",
+   "closed_days": "Monday",
+   "exceptions": "MICHELIN lists no Monday service.",
    "menu_price_usd": null,
    "price_source": null,
    "price_note": "Not read - blank.",
@@ -138,8 +183,9 @@
    "youtube_note": null,
    "lat": 40.7669,
    "lon": -73.9665,
-   "hours_status": "UNVERIFIED",
-   "hours_note": "MICHELIN's page for this venue did not expose an hours block in the captured text; the earlier uniform block was a pattern fill, not a page read, so it has been removed."
+   "hours_status": "VERIFIED",
+   "hours_note": "Full week read from the opening-hours block on the official MICHELIN Guide page on 2026-11-26.",
+   "hours_read_on": "2026-11-26"
   },
   "gramercy-tavern": {
    "official_site": "https://www.gramercytavern.com/",
@@ -173,13 +219,20 @@
   "gabriel-kreuther": {
    "official_site": "https://www.gknyc.com/",
    "booking": "Resy",
-   "address": null,
-   "address_flag": "Street address not captured from the official page.",
+   "address": "41 W. 42nd St., New York, NY 10036",
    "price_band": "$$$$",
-   "hours": null,
-   "hours_source": null,
-   "closed_days": null,
-   "exceptions": null,
+   "hours": {
+    "Mon": "16:45-21:30",
+    "Tue": "11:45-14:15, 16:45-21:30",
+    "Wed": "11:45-14:15, 16:45-21:30",
+    "Thu": "11:45-14:15, 16:45-21:30",
+    "Fri": "11:45-14:15, 16:45-22:00",
+    "Sat": "16:45-22:00",
+    "Sun": "closed"
+   },
+   "hours_source": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/gabriel-kreuther",
+   "closed_days": "Sunday",
+   "exceptions": "Lunch is listed Tuesday to Friday only; Saturday is dinner only.",
    "menu_price_usd": 325,
    "price_source": "https://cdn.prod.website-files.com/69f8cb7ff67007b4842004ce/6afddf36f7cde3e50d030e4c_RGK_DinnerMenu%2011.17.26.pdf",
    "price_note": "Official dinner menu PDF (dated 11.17.26): Chef's Tasting Menu $325 per person. Wine pairings $255 classic / $595 reserve. Prix fixe also offered (price not stated on the page captured).",
@@ -190,9 +243,11 @@
    "youtube_note": null,
    "lat": null,
    "lon": null,
-   "hours_status": "UNVERIFIED",
-   "hours_note": "The venue's own site did not publish opening hours in the captured text.",
-   "coords_note": "No address or coordinates were read for this venue, so its coordinates were removed rather than approximated."
+   "hours_status": "VERIFIED",
+   "hours_note": "Full week read from the opening-hours block on the official MICHELIN Guide page on 2026-11-26.",
+   "coords_note": "Street address was read from MICHELIN on 2026-11-26; coordinates have NOT been read, so none are published.",
+   "hours_read_on": "2026-11-26",
+   "address_source": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/gabriel-kreuther"
   }
  }
 }

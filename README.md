@@ -21,7 +21,7 @@ could **not** be verified.
    written down on the Method page.
 5. **Keep disagreements visible.** When two official pages disagree — and they do, on the star count —
    both numbers are shown and the conflict is flagged.
-6. **Date every snapshot.** All prices and hours were read on **2026-11-25** and will drift.
+6. **Date every snapshot.** Most prices were read on **2026-11-25**; six MICHELIN hour blocks, three dated Booking.com window prices and two street addresses were re-read on **2026-11-26**. All will drift.
 
 Anything unverified is on [the Flagged page](docs/flagged.html). Anything undecided is on
 [the Questions page](docs/questions.html).
@@ -40,7 +40,7 @@ Anything unverified is on [the Flagged page](docs/flagged.html). Anything undeci
 | [Budget](docs/budget.html) | Every line with its source and whether it is verified, derived or deliberately blank |
 | [Questions](docs/questions.html) | 26 decisions: what we have, what is missing, how to discover it |
 | [Suggestions](docs/suggestions.html) | 12 proposed improvements with effort, impact, risk and a decision field |
-| [Flagged](docs/flagged.html) | 21 irregularities with severity and the source that would close each |
+| [Flagged](docs/flagged.html) | 22 irregularities with severity and the source that would close each |
 | [Method & sources](docs/method.html) | Every source URL, what failed, the travel model's assumptions, the build's own checks |
 | [Repo review](docs/repo-review.html) | What this repository contained, what was wrong with it, and verification counted rather than claimed |
 
@@ -102,9 +102,9 @@ Everything the site renders lives in `site_data/`, one file per concern. Edit th
 | MICHELIN's ceremony article (72 entries) and its own live filter (69) disagree | F-02, Q-17 |
 | Hotel prices are live snapshots; several depend on a promotion expiring 31 Dec 2027 | F-03 |
 | The one-hour travel rule is **modelled from straight-line distance, not measured** | F-05, Q-19 |
-| 70 of 72 restaurants have no verified hours; 69 have no verified menu price | `repo-review.html` counts them |
+| 65 of 72 restaurants have no full week of verified hours (1 is partial); 70 have no exact published menu price | `repo-review.html` counts them |
 | TikTok returned HTTP 400 on every read, so no TikTok account is asserted anywhere | F-07 |
-| The Met's and The High Line's hours could not be read | F-09 |
+| The Met's hours could not be read; The High Line's seasonal hours were recovered on 2026-11-26 | F-09 |
 | Flights are a fare, not a quote for two seats | F-15 |
 
 ---

@@ -179,13 +179,13 @@
    "category": "Park / Walk",
    "area": "Chelsea",
    "address": "Gansevoort St to 34th St, elevated rail line",
-   "hours": null,
-   "days_open": null,
-   "exceptions": "Official visitor page served a cookie-consent wall on 2026-11-25 and the hours were not readable - left blank, see Q-09. Entry is free.",
+   "hours": "Dec 1 – Mar 31: 07:00-20:00 (Apr 1 – Nov 30: 07:00-22:00)",
+   "days_open": "Mon-Sun",
+   "exceptions": "The Rail Yard Preserve between 30th and 34th Streets closes at dusk.",
    "adult_usd": 0,
    "cost_2_adults_usd": 0,
    "official_url": "https://www.thehighline.org/visit/",
-   "verification": "PARTIAL - free entry; hours not captured",
+   "verification": "VERIFIED (hours, free entry; price not applicable)",
    "lat": 40.748,
    "lon": -74.0048,
    "from_hotel": {
@@ -195,7 +195,9 @@
     "transit_min_modelled": 19,
     "within_one_hour": true,
     "method": "MODEL: great-circle km / 4.5 km/h walking, or /12 km/h effective subway speed plus 8 minutes platform access and wait. Not a measured schedule."
-   }
+   },
+   "hours_source": "https://www.thehighline.org/visit/",
+   "hours_read_on": "2026-11-26"
   },
   {
    "id": "chelsea-market",

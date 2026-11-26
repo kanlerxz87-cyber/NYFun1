@@ -5,17 +5,42 @@
   {
    "start": "2027-02-15",
    "end": "2027-02-22",
-   "label": "Preferred window (Mon-Mon, 7 nights)"
+   "label": "Recommended window",
+   "room": "King Room",
+   "total_7n_usd": 1155.48,
+   "tax_included": true,
+   "source_url": "https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
+   "note": "Taxes and fees included in Booking.com printed total. Read 2026-11-25."
+  },
+  {
+   "start": "2027-02-16",
+   "end": "2027-02-23",
+   "label": "Shifted one day",
+   "room": "King Room - Hearing Accessible",
+   "total_7n_usd": 996.1,
+   "tax_included": false,
+   "source_url": "https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-16&checkout=2027-02-23&group_adults=2&no_rooms=1&selected_currency=USD",
+   "note": "Black Friday rate on an accessible king room; standard/city-view king rooms on this date were dearer. Read 2026-11-26."
   },
   {
    "start": "2027-02-22",
    "end": "2027-03-01",
-   "label": "Shifted one week (Mon-Mon, 7 nights)"
+   "label": "Shifted one week",
+   "room": "King Room - Hearing Accessible",
+   "total_7n_usd": 1020.6,
+   "tax_included": false,
+   "source_url": "https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-22&checkout=2027-03-01&group_adults=2&no_rooms=1&selected_currency=USD",
+   "note": "Black Friday rate on an accessible king room; the city-view king was $1,045.10 before tax. Read 2026-11-26."
   },
   {
    "start": "2027-03-08",
    "end": "2027-03-15",
-   "label": "Late window inside the brief (Mon-Mon, 7 nights)"
+   "label": "Late window in the brief",
+   "room": null,
+   "total_7n_usd": null,
+   "tax_included": null,
+   "source_url": null,
+   "note": "Window sampled by an earlier session but not re-read on 2026-11-26; no price is published in this data layer."
   }
  ],
  "hotels": [
@@ -23,8 +48,8 @@
    "id": "fairfield-central-park",
    "name": "Fairfield Inn & Suites by Marriott New York Manhattan/Central Park",
    "area": "Midtown West / Hell's Kitchen",
-   "address": null,
-   "address_flag": "Street address not captured from an official page; MICHELIN/Booking list the area only in the captured text.",
+   "address": "538 West 58th Street, Hell's Kitchen, New York, NY 10019",
+   "address_flag": null,
    "room": "King Room",
    "bed": "1 king bed",
    "bath": "Attached (private) bathroom",
@@ -51,7 +76,9 @@
     "nearest_three_star_km": 0.68,
     "nearest_three_star": "Le Bernardin",
     "method": "Great-circle distance from the hotel's coordinates to each restaurant's coordinates. 5 km is a straight-line proxy for the brief's one-hour door-to-door rule: Manhattan cross-town walking is roughly 1.4 km per 20 minutes, so 5 km is a deliberately generous outer bound."
-   }
+   },
+   "address_source": "https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-16&checkout=2027-02-23&group_adults=2&no_rooms=1&selected_currency=USD",
+   "address_read_on": "2026-11-26"
   },
   {
    "id": "arlo-soho",

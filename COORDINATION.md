@@ -267,3 +267,64 @@ ferry) → F-20.
   titles/table headers, and a stated budget subtotal that could drift from the sum of its lines.
 - Counts on the site are now derived from the data (socials 11 official + 3 review videos, flags 20,
   questions 26) rather than typed into prose.
+
+---
+
+## SESSION CLAIM — 2026-11-26 (UTC) — `arena-6b0cf789` (branch `arena/6b0cf789-nyfun1`)
+
+**Task claimed:** T15 — final line-by-line audit + integration of the merged `docs/` dashboard,
+followed by PR and merge. No other branch exists on the remote (`origin/main` only), so all
+earlier claims are complete and there is no live scope overlap.
+
+**Scope:** `COORDINATION.md` (append-only), `site_data/*.json`, `build_site.py`, `docs/*.html`,
+`docs/assets/style.css`, `README.md`. **Will not touch:** `build.py`, `build_deepdive.py`,
+`content.py`, `deepdive/**`, `docs/data/*.csv` (archived datasets).
+
+**Plan:** re-verify a sample of high-impact rows against official pages, run structural and
+arithmetic checks on every table row, correct only confirmed defects, rebuild, check every internal
+and external link, then open PR → merge → confirm Pages deploy.
+
+**Handoff note:** the claiming session is working from `main` at `74d9883`, i.e. it already
+contains the merged result of PRs #1–#10. No session work will be discarded.
+
+### 2026-11-26 · `arena-6b0cf789` · T15 final audit — verification log
+
+**Verified from official pages (read 2026-11-26, links reproduced on the Method page):**
+- `https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/eleven-madison-park` — full
+  weekly hours (17:30–22:00 Mon–Thu; 12:00–13:00 + 17:30–23:00 Fri–Sun).
+- `.../per-se` — 16:30–21:00 every day; `.../daniel` — closed Mon, 17:00–21:30 Tue–Sun;
+  `.../jungsik-new-york` — closed Mon, 17:00–21:30 Tue–Sun; `.../sushi-sho-1213976` — closed Mon,
+  17:00–22:00 Tue–Sun plus Tock link; `.../gabriel-kreuther` — Mon 16:45–21:30, Tue–Fri lunch
+  11:45–14:15 and dinner 16:45–21:30/22:00, Sat 16:45–22:00, Sun closed, and address 41 W. 42nd St.
+  All six hour blocks were previously blank; each now carries `hours_status=VERIFIED`,
+  `hours_read_on=2026-11-26` and the page URL. Nothing was pattern-filled.
+- `https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-16...`
+  — King Room – Hearing Accessible $996.10 before tax; standard/city-view king $1,020.60;
+  street address 538 West 58th Street. The 22 Feb – 1 Mar page shows the accessible king at
+  $1,020.60 before tax and city-view king at $1,045.10. Both dated URLs are now linked from the
+  Hotels page date-window table, which previously printed the prices with no link or room name.
+- `https://www.thehighline.org/visit/` — seasonal hours recovered on a second read:
+  1 Dec – 31 Mar 07:00–20:00; Rail Yard Preserve closes at dusk. F-09/Q-09 narrowed to The Met only.
+- MICHELIN ceremony article re-read: 72 star entries, 5/15/52, 3 Green Stars; roster counts verified
+  programmatically against `site_data/michelin_roster.json`.
+
+**Defects found and fixed:** (1) overview called Arlo SoHo's discounted $1,021 a *pre-discount*
+price — its pre-discount price is $1,639; (2) 11 social accounts were called verified although one
+handle was never opened (now 10 + explicit F-08 note); (3) hours/menu-price counts were computed from
+field truthiness and counted a partial week and a deposit floor as verified — now counted from
+`hours_status` and `price_is_floor`; (4) stale Jungsik/Gabriel Kreuther notes contradicted the new
+fields; (5) `docs/methodology.html`, an orphaned page from an earlier build, was still published even
+though the repo review said it had been removed — deleted, with 0 broken internal links after removal;
+(6) the Method page claimed four automated checks that `run_checks()` never performed — implemented
+source-presence and table-shape checks and confirmed the shape check fails on a deliberately broken row.
+
+**New irregularity (F-22):** the three dated Fairfield window prices are not the same room type
+(two are accessible kings, one is a standard king with tax included), so the "cheapest window"
+margin of $16–$44 is soft. Published on the Flagged page; does not block the plan.
+
+**Verification performed:** `python3 build_site.py` passes; 22 internal links checked across root,
+`docs/` and `deepdive/` with 0 broken; budget subtotal $4,107.48 equals the sum of priced lines;
+all roster totals match the ceremony article; all generated counts are derived from data; no stale
+"70 of 72"/"21 flags" strings remain. Every changed value has an official URL in the same row.
+
+**Status: T15 done.** All findings are published on the Flagged page; no unresolved edit conflicts.
