@@ -1,71 +1,213 @@
 {
  "read_on": "2026-11-25",
- "rule": "A link appears in this file only if the page was opened and read on 2026-11-25. 'kind' = official (the venue's own verified channel) or review (a third party reviewing the venue). TikTok blocked automated reads, so no TikTok link is asserted for any venue - a search URL is given instead and marked 'search-only'. A search URL is never presented as an account.",
+ "rule": "A link appears here only if it was opened and read on 2026-11-25 or 2026-11-26; the one Instagram handle inferred from another account's post is explicitly labelled unconfirmed and is not counted as verified. 'kind' = official (the venue's own channel), review (a third-party video) or search. TikTok blocked automated reads, so no TikTok link is asserted for any venue — a search URL is given instead and marked 'search-only'. A search URL is never presented as an account.",
  "accounts": {
   "le-bernardin": [
-   {"platform": "Instagram", "kind": "official", "url": "https://www.instagram.com/lebernardinny/", "evidence": "Verified badge present; bio reads '3-Star @michelinguide'; 346,704 followers"},
-   {"platform": "YouTube", "kind": "review", "url": "https://www.youtube.com/watch?v=eRPhZXnJCtQ", "evidence": "'Eating at Le Bernardin. NYC. 3 Michelin Stars. An Amazing 8 Course $310 Tasting Menu' - 606K views, 16:00"},
-   {"platform": "YouTube", "kind": "review", "url": "https://www.youtube.com/watch?v=oZa5QrxUOM8", "evidence": "'French Girl Reviews America's Best French Restaurant (Le Bernardin)' - Lucile channel, 92K views"},
-   {"platform": "YouTube", "kind": "review", "url": "https://www.youtube.com/watch?v=il_uUGZCx_o", "evidence": "'Inside New York's ICONIC Seafood Restaurant - Le Bernardin (3 Michelin Star)' - Alexander The Guest, 471K views"}
+   {
+    "platform": "Instagram",
+    "kind": "official",
+    "url": "https://www.instagram.com/lebernardinny/",
+    "evidence": "Verified badge present; bio reads '3-Star @michelinguide'; 346,704 followers"
+   },
+   {
+    "platform": "YouTube",
+    "kind": "review",
+    "url": "https://www.youtube.com/watch?v=eRPhZXnJCtQ",
+    "evidence": "'Eating at Le Bernardin. NYC. 3 Michelin Stars. An Amazing 8 Course $310 Tasting Menu' - 606K views, 16:00"
+   },
+   {
+    "platform": "YouTube",
+    "kind": "review",
+    "url": "https://www.youtube.com/watch?v=oZa5QrxUOM8",
+    "evidence": "'French Girl Reviews America's Best French Restaurant (Le Bernardin)' - Lucile channel, 92K views"
+   },
+   {
+    "platform": "YouTube",
+    "kind": "review",
+    "url": "https://www.youtube.com/watch?v=il_uUGZCx_o",
+    "evidence": "'Inside New York's ICONIC Seafood Restaurant - Le Bernardin (3 Michelin Star)' - Alexander The Guest, 471K views"
+   }
   ],
   "eleven-madison-park": [
-   {"platform": "Instagram", "kind": "official", "url": "https://www.instagram.com/elevenmadisonpark/", "evidence": "Verified badge; 543,313 followers; links to the restaurant's own link-in-bio"},
-   {"platform": "YouTube", "kind": "search", "url": "https://www.youtube.com/results?search_query=eleven+madison+park+review", "evidence": "Search results page, not a specific video - no individual video was verified for this restaurant"}
+   {
+    "platform": "Instagram",
+    "kind": "official",
+    "url": "https://www.instagram.com/elevenmadisonpark/",
+    "evidence": "Verified badge; 543,313 followers; links to the restaurant's own link-in-bio"
+   },
+   {
+    "platform": "YouTube",
+    "kind": "review",
+    "url": "https://www.youtube.com/watch?v=aSE3P9REZVc",
+    "evidence": "Read 2026-11-26: \"Eating at Eleven Madison Park. NYC. 3 Michelin Stars. BEST RESTAURANT in The World Winner\", James Andrews, 2024-11-04, 19:43, 447,871 views."
+   },
+   {
+    "platform": "YouTube",
+    "kind": "review",
+    "url": "https://www.youtube.com/watch?v=Rly9cRzs8IM",
+    "evidence": "Read 2026-11-26: \"Dining at a 3 Michelin Star Restaurant in NYC! | Eleven Madison Park Food Review\", DIY's With Sabs, 2025-08-10, 14:18, 780 views."
+   }
   ],
   "per-se": [
-   {"platform": "Instagram", "kind": "official", "url": "https://www.instagram.com/perseny/", "evidence": "Bio: 'Chef Thomas Keller's 3-Star Michelin restaurant overlooking Columbus Circle'; 333,776 followers; links to official Tock page"},
-   {"platform": "YouTube", "kind": "search", "url": "https://www.youtube.com/results?search_query=per+se+new+york+review", "evidence": "Search results page, not a specific video"}
+   {
+    "platform": "Instagram",
+    "kind": "official",
+    "url": "https://www.instagram.com/perseny/",
+    "evidence": "Bio: 'Chef Thomas Keller's 3-Star Michelin restaurant overlooking Columbus Circle'; 333,776 followers; links to official Tock page"
+   },
+   {
+    "platform": "YouTube",
+    "kind": "review",
+    "url": "https://www.youtube.com/watch?v=dkDIfCwJwN8",
+    "evidence": "Read 2026-11-26: \"New York's Per Se Restaurant - Thomas Keller's 3 Michelin Star Cousin To French Laundry Restaurant\", that place, 2022-08-14, 06:30, 1,667 views."
+   },
+   {
+    "platform": "YouTube",
+    "kind": "review",
+    "url": "https://www.youtube.com/watch?v=OmsC0Thm3Kg",
+    "evidence": "Read 2026-11-26: \"PER SE ✽✽✽ | New York City\", Victor Kaine, 2024-09-10, 48:14, 2,385 views."
+   }
   ],
   "daniel": [
-   {"platform": "Instagram", "kind": "official", "url": "https://www.instagram.com/restaurantdaniel/", "evidence": "Verified badge; 159,355 followers; bio links to danielnyc.com"},
-   {"platform": "YouTube", "kind": "search", "url": "https://www.youtube.com/results?search_query=restaurant+daniel+boulud+review", "evidence": "Search results page, not a specific video"}
+   {
+    "platform": "Instagram",
+    "kind": "official",
+    "url": "https://www.instagram.com/restaurantdaniel/",
+    "evidence": "Verified badge; 159,355 followers; bio links to danielnyc.com"
+   },
+   {
+    "platform": "YouTube",
+    "kind": "search",
+    "url": "https://www.youtube.com/results?search_query=restaurant+daniel+boulud+review",
+    "evidence": "Search results page, not a specific video"
+   }
   ],
   "gramercy-tavern": [
-   {"platform": "Instagram", "kind": "official", "url": "https://www.instagram.com/gramercytavern/", "evidence": "Verified badge; 145,393 followers; bio links to gramercytavern.com/reservations"},
-   {"platform": "YouTube", "kind": "search", "url": "https://www.youtube.com/results?search_query=gramercy+tavern+review", "evidence": "Search results page, not a specific video"}
+   {
+    "platform": "Instagram",
+    "kind": "official",
+    "url": "https://www.instagram.com/gramercytavern/",
+    "evidence": "Verified badge; 145,393 followers; bio links to gramercytavern.com/reservations"
+   },
+   {
+    "platform": "YouTube",
+    "kind": "search",
+    "url": "https://www.youtube.com/results?search_query=gramercy+tavern+review",
+    "evidence": "Search results page, not a specific video"
+   }
   ],
   "le-coucou": [
-   {"platform": "Instagram", "kind": "official", "url": "https://www.instagram.com/lecoucounyc/", "evidence": "Bio: 'Michelin Star Parisian restaurant in NYC'; the account is set to private, so posts are not public"}
+   {
+    "platform": "Instagram",
+    "kind": "official",
+    "url": "https://www.instagram.com/lecoucounyc/",
+    "evidence": "Bio: 'Michelin Star Parisian restaurant in NYC'; the account is set to private, so posts are not public"
+   }
   ],
   "moma": [
-   {"platform": "Instagram", "kind": "official", "url": "https://www.instagram.com/themuseumofmodernart/", "evidence": "Verified badge; 6,154,925 followers; bio '#MoMANYC'"},
-   {"platform": "YouTube", "kind": "search", "url": "https://www.youtube.com/results?search_query=MoMA+New+York+visit+review", "evidence": "Search results page, not a specific video"}
+   {
+    "platform": "Instagram",
+    "kind": "official",
+    "url": "https://www.instagram.com/themuseumofmodernart/",
+    "evidence": "Verified badge; 6,154,925 followers; bio '#MoMANYC'"
+   },
+   {
+    "platform": "YouTube",
+    "kind": "search",
+    "url": "https://www.youtube.com/results?search_query=MoMA+New+York+visit+review",
+    "evidence": "Search results page, not a specific video"
+   }
   ],
   "met": [
-   {"platform": "Instagram", "kind": "official", "url": "https://www.instagram.com/metmuseum/", "evidence": "Verified badge; 4,752,680 followers; bio 'Explore 5,000 years of history'"}
+   {
+    "platform": "Instagram",
+    "kind": "official",
+    "url": "https://www.instagram.com/metmuseum/",
+    "evidence": "Verified badge; 4,752,680 followers; bio 'Explore 5,000 years of history'"
+   }
   ],
   "central-park": [
-   {"platform": "Instagram", "kind": "official", "url": "https://www.instagram.com/nycparks/", "evidence": "NYC Parks, the agency that runs the park - verified badge; 309,569 followers"}
+   {
+    "platform": "Instagram",
+    "kind": "official",
+    "url": "https://www.instagram.com/nycparks/",
+    "evidence": "NYC Parks, the agency that runs the park - verified badge; 309,569 followers"
+   }
   ],
   "high-line": [
-   {"platform": "Instagram", "kind": "official", "url": "https://www.instagram.com/highlinenyc/", "evidence": "Verified badge; 253,752 followers; bio 'NYC's park in the sky, operated by Friends of the High Line'"}
+   {
+    "platform": "Instagram",
+    "kind": "official",
+    "url": "https://www.instagram.com/highlinenyc/",
+    "evidence": "Verified badge; 253,752 followers; bio 'NYC's park in the sky, operated by Friends of the High Line'"
+   }
   ],
   "amnh": [
-   {"platform": "YouTube", "kind": "search", "url": "https://www.youtube.com/results?search_query=American+Museum+of+Natural+History+review", "evidence": "Search results page, not a specific video"}
+   {
+    "platform": "YouTube",
+    "kind": "review",
+    "url": "https://www.youtube.com/watch?v=UphcGvF-bsc",
+    "evidence": "Read 2026-11-26: \"American Museum of Natural History Tour & Review | Must-See Exhibits, Tips & Full Visitor Guide NYC\", Cruising Addicts, 2025-12-03, 06:45, 22,467 views."
+   }
   ],
   "911-memorial-museum": [
-   {"platform": "YouTube", "kind": "search", "url": "https://www.youtube.com/results?search_query=9%2F11+Memorial+Museum+visit", "evidence": "Search results page, not a specific video"}
+   {
+    "platform": "YouTube",
+    "kind": "review",
+    "url": "https://www.youtube.com/watch?v=YEx-6W_tZ4g",
+    "evidence": "Read 2026-11-26: \"I Visit The 9-11 Memorial & Museum In New York\", Walk With Me Tim, 2023-12-01, 16:02, 3,644,973 views."
+   }
   ],
   "top-of-the-rock": [
-   {"platform": "YouTube", "kind": "search", "url": "https://www.youtube.com/results?search_query=Top+of+the+Rock+review", "evidence": "Search results page, not a specific video"}
+   {
+    "platform": "YouTube",
+    "kind": "review",
+    "url": "https://www.youtube.com/watch?v=2fO_xQg4Kxs",
+    "evidence": "Read 2026-11-26: \"I Visit Top of the Rock Observation Deck in New York City...\", Travels with Mark Peter, 2025-02-08, 13:37, 10,733 views."
+   }
   ],
   "statue-of-liberty": [
-   {"platform": "YouTube", "kind": "search", "url": "https://www.youtube.com/results?search_query=Statue+of+Liberty+ferry+visit+review", "evidence": "Search results page, not a specific video"}
+   {
+    "platform": "YouTube",
+    "kind": "review",
+    "url": "https://www.youtube.com/watch?v=8nsgU9sMr1g",
+    "evidence": "Read 2026-11-26: \"Statue of Liberty and Ellis Island, New York, USA - Boat tour with magnificent views of Manhattan\", Travelling Pigs, 2026-08-01, 12:39, 428 views."
+   }
   ],
   "broadway": [
-   {"platform": "YouTube", "kind": "search", "url": "https://www.youtube.com/results?search_query=Broadway+show+review+2027", "evidence": "Search results page, not a specific video"}
+   {
+    "platform": "YouTube",
+    "kind": "search",
+    "url": "https://www.youtube.com/results?search_query=Broadway+show+review+2027",
+    "evidence": "Search results page, not a specific video"
+   }
   ],
   "chelsea-market": [
-   {"platform": "Instagram", "kind": "official", "url": "https://www.instagram.com/chelseamarketny/", "evidence": "Handle referenced by the verified High Line account in a post on 2026-11-23 ('our neighbors at @chelseamarketny'); the account page itself was not opened, so treat the handle as unconfirmed"}
+   {
+    "platform": "Instagram",
+    "kind": "official",
+    "url": "https://www.instagram.com/chelseamarketny/",
+    "evidence": "Handle referenced by the verified High Line account in a post on 2026-11-23 ('our neighbors at @chelseamarketny'); the account page itself was not opened, so treat the handle as unconfirmed"
+   }
   ],
   "brooklyn-bridge-walk": [
-   {"platform": "YouTube", "kind": "search", "url": "https://www.youtube.com/results?search_query=Brooklyn+Bridge+walk+sunset", "evidence": "Search results page, not a specific video"}
+   {
+    "platform": "YouTube",
+    "kind": "search",
+    "url": "https://www.youtube.com/results?search_query=Brooklyn+Bridge+walk+sunset",
+    "evidence": "Search results page, not a specific video"
+   }
   ]
  },
  "tiktok_note": "TikTok returned HTTP 400 to every automated read on 2026-11-25 (profile and discovery URLs). No TikTok account or video is asserted anywhere on this site. Where a TikTok link is shown it is a search URL, labelled as such.",
  "coverage": {
   "venues_with_a_verified_official_social_account": 10,
-  "venues_with_a_verified_third_party_video_review": 1,
-  "venues_with_search_links_only": "the remainder"
+  "official_labelled_entries": 11,
+  "unconfirmed_official_labelled_handles": 1,
+  "verified_official_links": 10,
+  "verified_third_party_videos": 11,
+  "venues_with_a_verified_third_party_video": 7,
+  "search_links_remaining": 5,
+  "note": "Ten official accounts, eleven review videos and all remaining search URLs were opened and read. The Chelsea Market Instagram handle is inferred from a verified High Line post, labelled unconfirmed, and excluded from the verified count. TikTok returned HTTP 400 on every automated read."
  }
 }

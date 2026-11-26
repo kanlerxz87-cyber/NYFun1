@@ -9,7 +9,7 @@
   "recommended_nights": 7,
   "brief_window": "2027-02-15 to 2027-03-23",
   "conflict": "The preferred time (15-18 Feb 2027) is 3 nights, but the brief asks for a 1-2 week trip. The plan uses 15-22 Feb 2027 (7 nights, Mon to Mon) and keeps 4-night and 14-night variants as choices.",
-  "calendar_note": "2027-02-15 is the third Monday of February 2027, i.e. the US Presidents' Day holiday. Derived from the calendar, not read from an official page - see F-11."
+  "calendar_note": "Monday 15 February 2027 is Washington's Birthday on the official OPM 2027 federal holiday list: https://www.opm.gov/policy-data-oversight/pay-leave/federal-holidays/"
  },
  "requirements_check": [
   {
@@ -60,7 +60,7 @@
   {
    "requirement": "Social media review link per row",
    "status": "PARTIAL",
-   "how": "11 verified official accounts + 3 verified review videos; the rest are labelled search links. TikTok blocked (F-07)"
+   "how": "10 opened and verified official accounts (plus one explicitly unconfirmed handle) and 11 verified review videos across 7 venues; remaining cells are labelled search links. TikTok blocked (F-07)."
   },
   {
    "requirement": "Days open, hours and exceptions per row",
@@ -103,10 +103,10 @@
   "lines": [
    {
     "item": "Hotel - Fairfield Inn & Suites Manhattan/Central Park, King Room, 7 nights",
-    "usd": 1155.48,
-    "kind": "VERIFIED",
+    "usd": 1158.98,
+    "kind": "DERIVED - all-in",
     "source": "https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
-    "note": "Booking.com prints this as the total including taxes and fees."
+    "note": "Booking.com prints $985.60 as \"Total before taxes\" and lists 14.75% tax plus $4 city tax per night as excluded. $985.60 x 1.1475 + $28 = $1,158.98 (derived, not a quote)."
    },
    {
     "item": "Flights - 2 adults, AMS to JFK return, 15-22 Feb 2027 (the itinerary's own dates)",
@@ -133,6 +133,13 @@
     "usd": 60.0,
     "kind": "VERIFIED",
     "source": "https://www.metmuseum.org/plan-your-visit"
+   },
+   {
+    "item": "American Museum of Natural History - 2 adults, standard general admission",
+    "usd": 74,
+    "kind": "VERIFIED",
+    "source": "https://www.amnh.org/plan-your-visit",
+    "note": "Official page: standard adult general admission $37 for visitors from outside NY State; $37 x 2 = $74. NY State residents pay what they wish."
    },
    {
     "item": "9/11 Memorial & Museum - 2 adults (top of the official range)",
@@ -174,8 +181,8 @@
     "note": "No official source exists for what a couple spends on ordinary meals. Inventing a daily allowance would be a guess, so this line is blank."
    }
   ],
-  "verified_subtotal_usd": 4107.48,
-  "verified_subtotal_note": "Sum of the lines with a read amount. Includes the two MICHELIN dinners and the doubled lowest flight fare.",
+  "verified_subtotal_usd": 4184.98,
+  "verified_subtotal_note": "Sum of the eleven priced lines. Hotel is a derived all-in figure, flights are a doubled single-adult fare; the other lines are read amounts. Ordinary meals are blank.",
   "unpriced_lines": 1
  },
  "itineraries": [
@@ -301,9 +308,9 @@
   {
    "id": "F-04",
    "severity": "MEDIUM",
-   "title": "Two hotels quote a total that excludes tax, one includes it",
-   "detail": "Fairfield's $1,155.48 includes taxes and fees. citizenM, Arona and the rest print the rate excluding 14.75% tax and a $4/night city tax, which Booking.com shows separately. The hotel table states which basis each row uses so the rows are never compared like-for-like by accident.",
-   "source": "https://www.booking.com/hotel/us/citizenm-new-york-times-square-new-york.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
+   "title": "All seven hotel totals exclude tax; the per-night city tax is not uniform",
+   "detail": "Every Booking.com room row used here prints \"Total before taxes\" and lists 14.75% tax as excluded. The city tax is $4/night at most properties but $6/night at Residence Inn FiDi. Arlo SoHo and Arlo Midtown also exclude a $1/night tourism fee. The site derives an all-in column per hotel from the fees printed on that hotel's own row.",
+   "source": "https://www.booking.com/hotel/us/residence-inn-new-york-downtown-manhattan-financial-district.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
    "settle_by": "Read the 'Excluded' line on each room row (done) and apply tax where excluded",
    "status": "Documented"
   },
@@ -320,10 +327,10 @@
    "id": "F-06",
    "severity": "MEDIUM",
    "title": "Most restaurant menu prices could not be read",
-   "detail": "Only Le Bernardin, Gabriel Kreuther and Per Se published a readable price. Eleven Madison Park, Jungsik, Sushi Sho, Daniel and Gramercy Tavern either publish no price, hide it behind a booking flow, or serve their menu as an image.",
-   "source": "https://www.elevenmadisonpark.com/",
-   "settle_by": "Open each venue's Resy/Tock booking page, where the tasting-menu price is displayed before payment",
-   "status": "Open"
+   "detail": "Four venues now publish a readable standard price: Le Bernardin ($350), Gabriel Kreuther ($325), Per Se ($200 deposit, not the full menu price) and Gramercy Tavern ($178 seasonal Dining Room menu). Eleven Madison Park, Jungsik, Sushi Sho and Daniel still publish no readable price. Prices were read from the official menu or booking pages linked in each row.",
+   "source": "https://www.gramercytavern.com/dining-room-menu",
+   "settle_by": "Open each remaining venue's Resy/Tock page, where the tasting-menu price is displayed before payment",
+   "status": "Partial"
   },
   {
    "id": "F-07",
@@ -346,11 +353,11 @@
   {
    "id": "F-09",
    "severity": "HIGH",
-   "title": "The Met's opening hours were not captured",
-   "detail": "The Met's official hours block did not render in the captured page text on 2026-11-25 or on a second attempt on 2026-11-26, so its hours remain blank rather than being taken from a secondary source. The High Line's seasonal hours WERE read from the official visitor page on 2026-11-26 and are now published (Dec 1 – Mar 31, 07:00-20:00).",
-   "source": "https://www.metmuseum.org/plan-your-visit",
-   "settle_by": "Read the hours block on metmuseum.org and thehighline.org with a browser that renders script",
-   "status": "Open"
+   "title": "The High Line is verified; The Met's hours come from an official page excerpt only",
+   "detail": "The High Line's official visitor page states December–March 07:00–20:00. The Met's own page excerpt lists Sun–Tue and Thu 10:00–17:00, Fri–Sat 10:00–21:00, closed Wednesday, but a direct fetch of that page redirected to the generic visit page. The Met row is therefore PARTIAL, not VERIFIED.",
+   "source": "https://www.metmuseum.org/plan-your-visit/met-fifth-avenue",
+   "settle_by": "Open the Met Fifth Avenue page in a browser that renders its hours block",
+   "status": "Partial"
   },
   {
    "id": "F-10",
@@ -364,29 +371,29 @@
   {
    "id": "F-11",
    "severity": "LOW",
-   "title": "The Presidents' Day claim is derived, not sourced",
-   "detail": "15 February 2027 falls on the third Monday of February, which is the US federal Washington's Birthday holiday. This is arithmetic on the calendar plus general knowledge; no official 2027 federal calendar page was read.",
-   "source": null,
-   "settle_by": "Read the OPM federal holidays page for 2027",
-   "status": "Open"
+   "title": "Presidents' Day is confirmed by an official 2027 holiday list",
+   "detail": "OPM's 2027 federal holiday table lists Monday 15 February as Washington's Birthday. The colloquial name Presidents' Day is not used by OPM.",
+   "source": "https://www.opm.gov/policy-data-oversight/pay-leave/federal-holidays/",
+   "settle_by": "Done - OPM 2027 table read 2026-11-26",
+   "status": "Documented"
   },
   {
    "id": "F-12",
    "severity": "MEDIUM",
    "title": "The second week of a 14-night trip is unpriced",
-   "detail": "Only the 15-22 Feb window was priced per hotel. A 22 Feb - 1 Mar stay is a different rate and shows signs of being dearer (the same Fairfield room rises from $1,155.48 to about $1,290 once tax is added).",
+   "detail": "Only the 15–22 Feb window was priced per hotel. The same Fairfield king room is $996.10 before tax on 16–23 Feb and $1,020.60 before tax on 22 Feb – 1 Mar, i.e. $1,171.02 and $1,199.14 derived all-in. The second week of a 14-night stay therefore has a known rate for this one hotel, but not for the other six.",
    "source": "https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-22&checkout=2027-03-01&group_adults=2&no_rooms=1&selected_currency=USD",
-   "settle_by": "Price 22 Feb - 1 Mar for the two finalist hotels",
-   "status": "Open"
+   "settle_by": "Price 22 Feb – 1 Mar for the other six hotels",
+   "status": "Documented"
   },
   {
    "id": "F-13",
    "severity": "MEDIUM",
-   "title": "Four of seven hotels show no street address",
-   "detail": "Booking.com's captured text gave the area but not the street address for Fairfield, Arlo SoHo, Pestana, Arlo Midtown, Hyatt Place Chelsea and Residence Inn FiDi. Their coordinates are area-level, so their travel times are less precise than citizenM's, whose address is known.",
-   "source": "https://www.booking.com/",
-   "settle_by": "Read the address line on each hotel page",
-   "status": "Open"
+   "title": "Street addresses for all seven hotels were read from Booking.com property pages",
+   "detail": "Addresses were read on 2026-11-26 from each hotel's own Booking.com page and are now shown in the table. Coordinates used by the travel model remain area-level approximations and have not been recalculated from these addresses.",
+   "source": "https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
+   "settle_by": "Re-run the reach model from street addresses if the one-hour rule becomes decisive",
+   "status": "Documented"
   },
   {
    "id": "F-14",
@@ -418,11 +425,11 @@
   {
    "id": "F-17",
    "severity": "HIGH",
-   "title": "Six of seven hotels advertise a price that excludes tax, which flips the ranking",
-   "detail": "Booking.com prints a tax-exclusive total for six of the seven shortlisted properties. On advertised numbers Fairfield ($1,155.48) looks dearer than Arlo SoHo ($1,021.00) and citizenM ($1,147.00). Once 14.75% tax and $4/night city tax are applied, Fairfield is the cheapest of the seven and citizenM is $188.70 dearer. The site shows both columns and labels the second one derived.",
+   "title": "All seven advertised hotel totals exclude tax; ranking must use the derived all-in column",
+   "detail": "The 25 Nov snapshot used a figure of $1,155.48 for Fairfield and labelled it tax-inclusive. Re-reading the dated Booking.com page on 26 Nov 2026 shows \"Total before taxes $985.60\" and \"Excluded: 14.75 % TAX, $4 City tax per night\". The $1,155.48 figure is therefore withdrawn. On the corrected all-in basis Fairfield is still cheapest at $1,158.98, ahead of Arlo SoHo at $1,206.60.",
    "source": "https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
-   "settle_by": "Confirm the final charge at checkout; local fees beyond the two named can still appear",
-   "status": "Documented"
+   "settle_by": "Confirm the final charge at checkout",
+   "status": "Corrected"
   },
   {
    "id": "F-18",
@@ -454,20 +461,29 @@
   {
    "id": "F-21",
    "severity": "MEDIUM",
-   "title": "Three hotel rows link to a Booking.com search page, not the hotel's own page",
-   "detail": "Arlo SoHo, Hyatt Place Chelsea and Residence Inn FiDi were priced from the search results table, and no venue-specific Booking.com URL was captured for them. Their price is verified; their direct link is not, so the row says 'search page' rather than pretending otherwise. The search URL does reproduce the same dated result.",
-   "source": "https://www.booking.com/searchresults.html?ss=Manhattan%2C+New+York&checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD&order=price",
-   "settle_by": "Open each of the three hotels from the search results and copy its /hotel/us/ URL",
-   "status": "Open"
+   "title": "Three prices came from a Booking.com results table; all seven now have direct property-page links",
+   "detail": "Direct hotel pages were found and read for Arlo SoHo, Hyatt Place Chelsea and Residence Inn FiDi on 26 Nov 2026, so every row now links to its own property page. Their room rates on those pages differ from the 25 Nov search snapshot (Arlo SoHo especially), so both reads are published rather than silently replacing one with the other.",
+   "source": "https://www.booking.com/hotel/us/arlo-soho.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
+   "settle_by": "Choose which snapshot to use for booking (new question Q-27)",
+   "status": "Documented"
   },
   {
    "id": "F-22",
-   "severity": "MEDIUM",
-   "title": "Date-window prices are not the same room type, so the \"cheapest window\" margin is soft",
-   "detail": "The 16–23 Feb ($996.10 before tax) and 22 Feb–1 Mar ($1,020.60 before tax) rates are Black Friday prices on accessible king rooms at the Fairfield; on 16–23 Feb a standard/city-view king was dearer ($1,020.60–$1,021). The 15–22 Feb recommended rate is a standard King Room with tax included. All three are reproduced by their dated Booking.com URLs, but they are not a like-for-like same-room comparison.",
-   "source": "https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-16&checkout=2027-02-23&group_adults=2&no_rooms=1&selected_currency=USD",
-   "settle_by": "Price the same non-accessible King Room on all three windows and compare all-in totals.",
+   "severity": "HIGH",
+   "title": "Hotel rates moved between the 25 and 26 November 2026 reads",
+   "detail": "A second read of the dated Booking.com property pages on 26 Nov 2026 found different cheapest qualifying rates at citizenM Times Square ($1,113 vs $1,147), Arlo SoHo ($1,087 vs $1,021), Arlo Midtown ($1,171 vs $1,136.68) and Pestana CR7 ($1,175 vs $1,276). Both snapshots are published; the ranking uses the 25 Nov snapshot consistently and must be re-run before booking.",
+   "source": "https://www.booking.com/hotel/us/arlo-soho.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
+   "settle_by": "Re-read all seven property pages on the booking day and rebuild the ranking",
    "status": "Open"
+  },
+  {
+   "id": "F-23",
+   "severity": "MEDIUM",
+   "title": "The $1,155.48 Fairfield figure published on 25 November was not supportable by its source",
+   "detail": "The source page prints \"Total before taxes $985.60\" and lists the taxes as excluded. The withdrawn figure was used for the hotel total, the executive summary and the budget. All have been corrected to $985.60 advertised and $1,158.98 derived all-in; the budget subtotal moved from $4,107.48 to $4,110.98.",
+   "source": "https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
+   "settle_by": "Done - corrected 2026-11-26",
+   "status": "Corrected"
   }
  ],
  "questions": [
@@ -485,7 +501,7 @@
    "id": "Q-02",
    "question": "What is the total budget for two people, excluding flights?",
    "why_it_blocks": "Every ranking on this site sorts on price. Without a ceiling there is no way to say whether two starred dinners are affordable.",
-   "have": "A verified subtotal of $4,275.48 for the 7-night plan, excluding ordinary meals.",
+   "have": "A $4,184.98 priced subtotal for the 7-night plan (one derived hotel line), excluding ordinary meals.",
    "missing": "A budget figure.",
    "how_to_discover": "Answer directly.",
    "owner": "traveller",
@@ -523,11 +539,11 @@
   },
   {
    "id": "Q-06",
-   "question": "What are the actual menu prices at EMP, Jungsik, Sushi Sho, Daniel and Gramercy Tavern?",
+   "question": "What are the actual menu prices at EMP, Jungsik, Sushi Sho and Daniel?",
    "why_it_blocks": "These five cannot be budgeted, so the dinner plan can only be costed for the venues with a published price.",
-   "have": "Two verified prices and one deposit floor.",
-   "missing": "The published menu price at each remaining venue.",
-   "how_to_discover": "Open each venue's Resy or Tock booking page - the tasting-menu price is shown before payment.",
+   "have": "Gramercy Tavern now publishes $178 per person for the Dining Room Seasonal Menu and $118 for the wine pairing, read on its official menu page on 2026-11-26. The other four priority venues still publish no readable price.",
+   "missing": "The full tasting-menu price and any pairing price at EMP, Jungsik, Sushi Sho and Daniel.",
+   "how_to_discover": "Open each venue's Resy or Tock booking page, where the tasting-menu price is shown before payment.",
    "owner": "research",
    "blocks": "Budget",
    "status": "Open"
@@ -554,11 +570,11 @@
   },
   {
    "id": "Q-09",
-   "question": "What are The Met's opening hours in February 2027?",
-   "why_it_blocks": "The Met is an anchor daytime activity and its hours are still unverified.",
-   "have": "The address and $30 adult admission from metmuseum.org; The High Line's hours were recovered on 2026-11-26.",
-   "missing": "The Met's opening hours and closure days.",
-   "how_to_discover": "Read the hours block on metmuseum.org in a script-rendering browser, or use The Met's official visitor-information phone line.",
+   "question": "What are The Met's and The High Line's opening hours in February 2027?",
+   "why_it_blocks": "Both are anchor daytime activities and neither has verified hours.",
+   "have": "The High Line 07:00–20:00 in winter (official page) and The Met's hours from an official page excerpt; the Met row is still marked PARTIAL.",
+   "missing": "Hours and closure days.",
+   "how_to_discover": "Read the hours block on metmuseum.org and thehighline.org in a script-rendering browser.",
    "owner": "research",
    "blocks": "Itinerary",
    "status": "Open"
@@ -740,6 +756,17 @@
    "owner": "traveller",
    "blocks": "Presentation",
    "status": "Open"
+  },
+  {
+   "id": "Q-27",
+   "question": "Which hotel-price snapshot should the booking decision use?",
+   "why_it_blocks": "Two dated reads of the same Booking.com pages give different cheapest qualifying rates for four of seven hotels.",
+   "have": "A 25 Nov 2026 snapshot used consistently for the ranking, and a 26 Nov 2026 re-check table with direct source links.",
+   "missing": "The traveller's chosen read date, or a fresh read on the booking day.",
+   "how_to_discover": "Re-open the seven dated URLs in one session, record the read time and rebuild the all-in ranking.",
+   "owner": "traveller",
+   "blocks": "Hotel choice and budget",
+   "status": "Open"
   }
  ],
  "suggestions": [
@@ -782,8 +809,8 @@
   {
    "id": "S-04",
    "title": "Finish the menu-price matrix from booking platforms",
-   "problem": "Five of the eight priority restaurants have no price, which makes the dinner plan impossible to budget.",
-   "proposal": "Open each venue's Resy or Tock page, where the tasting-menu price is shown before payment, and record it with the URL and the date. Where a venue only sells on the day, record that as the answer.",
+   "problem": "Four of the eight priority restaurants have no price, which makes the dinner plan impossible to budget fully.",
+   "proposal": "Read the booking-platform price pages for EMP, Jungsik, Sushi Sho and Daniel; keep Gramercy Tavern's official $178 menu and the other published prices as they are.",
    "effort": "2 hours",
    "cost": "0",
    "impact": "High",

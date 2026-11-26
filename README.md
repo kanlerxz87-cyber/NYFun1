@@ -21,7 +21,7 @@ could **not** be verified.
    written down on the Method page.
 5. **Keep disagreements visible.** When two official pages disagree — and they do, on the star count —
    both numbers are shown and the conflict is flagged.
-6. **Date every snapshot.** Most prices were read on **2026-11-25**; six MICHELIN hour blocks, three dated Booking.com window prices and two street addresses were re-read on **2026-11-26**. All will drift.
+6. **Date every snapshot.** The core data was read on **2026-11-25**; hotel pages, six MICHELIN hour blocks, AMNH and Gramercy Tavern prices, Jungsik's address and the High Line hours were re-read on **2026-11-26** and both reads are published. Prices and hours will keep drifting.
 
 Anything unverified is on [the Flagged page](docs/flagged.html). Anything undecided is on
 [the Questions page](docs/questions.html).
@@ -38,9 +38,9 @@ Anything unverified is on [the Flagged page](docs/flagged.html). Anything undeci
 | [Activities](docs/activities.html) | 11 activities with official hours, exceptions, prices for two, and social/video links |
 | [Itinerary](docs/itinerary.html) | Day-by-day for 7 nights, plus 4-night and 14-night variants |
 | [Budget](docs/budget.html) | Every line with its source and whether it is verified, derived or deliberately blank |
-| [Questions](docs/questions.html) | 26 decisions: what we have, what is missing, how to discover it |
+| [Questions](docs/questions.html) | 27 decisions: what we have, what is missing, how to discover it |
 | [Suggestions](docs/suggestions.html) | 12 proposed improvements with effort, impact, risk and a decision field |
-| [Flagged](docs/flagged.html) | 22 irregularities with severity and the source that would close each |
+| [Flagged](docs/flagged.html) | 23 irregularities with severity and the source that would close each |
 | [Method & sources](docs/method.html) | Every source URL, what failed, the travel model's assumptions, the build's own checks |
 | [Repo review](docs/repo-review.html) | What this repository contained, what was wrong with it, and verification counted rather than claimed |
 
@@ -79,7 +79,7 @@ Everything the site renders lives in `site_data/`, one file per concern. Edit th
 |---|---|
 | `michelin_roster.json` | 72 star entries: name, stars, Green Star, cuisine, borough, MICHELIN URL. Counts: 5 three-star, 15 two-star, 52 one-star |
 | `restaurant_details.json` | Per-venue detail keyed by MICHELIN URL slug: hours (+ `hours_status`), address, price band, menu price (+ `price_source`, `price_note`), coordinates |
-| `hotels.json` | 7 hotels: room, bed, bathroom, breakfast, `total_7n_usd`, `tax_included`, `all_in_7n_usd`, cancellation, `reach`, source URL |
+| `hotels.json` | 7 hotels: room, bed, bathroom, breakfast, `total_7n_usd` (before tax), `city_tax_per_night`, `all_in_7n_usd` (derived), cancellation, `reach`, `address`, source URL; plus `price_windows` and `recheck_2026_11_26` with dated source links |
 | `activities.json` | 11 activities: hours, days, exceptions, price per adult and for two, official URL, verification level |
 | `social.json` | Social accounts keyed by venue/activity id. Each entry has `kind`: `official`, `review` or `search`. **Only `official` and `review` may be rendered as an account** |
 | `framework.json` | The plan itself: trip dates, requirement checklist, budget lines, three itineraries, flags, questions, suggestions |
@@ -88,9 +88,9 @@ Everything the site renders lives in `site_data/`, one file per concern. Edit th
 
 - **`hours_status`** — `VERIFIED`, `PARTIAL` (only some days could be read) or `UNVERIFIED`. A block that
   was not read from a page must not be filled in. Six venues carry `UNVERIFIED` deliberately.
-- **`all_in_7n_usd`** — the printed total plus 14.75% tax and $4/night city tax where Booking.com excludes
-  them. Advertised totals are **not** comparable across these seven hotels; this column is. It is
-  arithmetic, not a quote, and the site labels it that way.
+- **`all_in_7n_usd`** — the printed total times 1.1475 plus the city tax printed on that room row
+  ($4/night except $6 at Residence Inn FiDi) and any other excluded per-night fee. **Every** advertised
+  total is before tax. This column is derived arithmetic, not a quote.
 
 ---
 
@@ -100,12 +100,14 @@ Everything the site renders lives in `site_data/`, one file per concern. Edit th
 |---|---|
 | MICHELIN publishes a new New York list on **14 December 2026**, before the trip | F-01 |
 | MICHELIN's ceremony article (72 entries) and its own live filter (69) disagree | F-02, Q-17 |
-| Hotel prices are live snapshots; several depend on a promotion expiring 31 Dec 2027 | F-03 |
+| Hotel prices are live snapshots; four cheapest qualifying rates changed between 25 and 26 Nov 2026 | F-03, F-22 |
+| Gramercy Tavern ($178 seasonal menu), AMNH ($37 standard adult) and Jungsik's address were added from official pages on 26 Nov 2026 | Budget, Restaurants, Activities |
 | The one-hour travel rule is **modelled from straight-line distance, not measured** | F-05, Q-19 |
-| 65 of 72 restaurants have no full week of verified hours (1 is partial); 70 have no exact published menu price | `repo-review.html` counts them |
+| 64 of 72 restaurants have no published hours (1 partial); 69 have no exact published menu price | `repo-review.html` counts them |
 | TikTok returned HTTP 400 on every read, so no TikTok account is asserted anywhere | F-07 |
-| The Met's hours could not be read; The High Line's seasonal hours were recovered on 2026-11-26 | F-09 |
+| The Met's hours come from an official page excerpt only (row stays PARTIAL); The High Line's winter hours are verified | F-09 |
 | Flights are a fare, not a quote for two seats | F-15 |
+| The published $1,155.48 Fairfield total was withdrawn: the dated source says "Total before taxes $985.60" | F-17, F-23 |
 
 ---
 
@@ -115,3 +117,25 @@ No licence file is present; that decision belongs to the repository owner. Star 
 MICHELIN Guide, hotel prices to Booking.com, fares to KAYAK and Google Flights, transit to the MTA, and
 each venue's hours and prices to the venue itself. Every page footer repeats that prices are
 point-in-time snapshots that must be re-checked before booking.
+
+---
+
+## Verification addendum — 26 November 2026
+
+A second line-by-line read of the dated Booking.com property pages changed one recommendation figure
+and exposed pricing drift. Both are recorded on the site; nothing was silently overwritten.
+
+| Check | What the official page said | Change made |
+|---|---|---|
+| [Fairfield, 15–22 Feb](https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD) | "Total before taxes $985.60"; "Excluded: 14.75 % TAX, $4 City tax per night" | Withdrawn $1,155.48 "taxes included" figure. Advertised $985.60, derived all-in $1,158.98. Budget subtotal **$4,184.98** after adding AMNH $74. |
+| [Residence Inn FiDi](https://www.booking.com/hotel/us/residence-inn-new-york-downtown-manhattan-financial-district.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD) | "Total before taxes $1,097.25"; "Excluded: 14.75 % TAX, $6 City tax per night" | Rounded $1,097.00 corrected to $1,097.25; city tax is $6/night here, not $4. All-in $1,301.09. |
+| [Arlo SoHo](https://www.booking.com/hotel/us/arlo-soho.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD), [Arlo Midtown](https://www.booking.com/hotel/us/arlo-midtown.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD) | $1 tourism fee per night excluded, $37 resort fee per night included | All-in columns now include the tourism fee and state that the resort fee is included on the hotel page. |
+| [The High Line](https://www.thehighline.org/visit/) | "December 1 – March 31: 7am to 8pm"; Rail Yard Preserve closes at dusk | Winter hours and exception published, source linked. |
+| [OPM federal holidays](https://www.opm.gov/policy-data-oversight/pay-leave/federal-holidays/) | 2027 table lists Monday 15 February as Washington's Birthday | The holiday claim is now sourced, not derived from a calendar. |
+| Four hotel pages re-read | Cheapest qualifying rates differ from the 25 Nov snapshot | Published in the *Price re-check: 26 November 2026* table on the Hotels page; ranking still uses the consistent 25 Nov snapshot. |
+
+`docs/methodology.html` and `docs/data/build_summary.json` were left over from an earlier build and
+contradicted the current data; they were removed. The repo review page already recorded their removal.
+The final integration also merged a second audit pass that verified six MICHELIN hour blocks, sourced
+the date-window prices and caught an unconfirmed Instagram handle; the combined counts above reflect
+both passes.

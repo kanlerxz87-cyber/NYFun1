@@ -288,6 +288,9 @@ def build_index():
     n_floor = sum(1 for r in ROSTER["restaurants"]
                   if _det.get(_k(r), {}).get("price_is_floor"))
     _arlo = [x for x in HOTELS["hotels"] if x["id"] == "arlo-soho"][0]
+    n_vids = sum(1 for grp in SOCIAL["accounts"].values() for x in grp if x["kind"] == "review")
+    n_vid_venues = len([grp for grp in SOCIAL["accounts"].values()
+                        if any(x["kind"] == "review" for x in grp)])
     return f"""
 <p class="lede">A source-linked plan for two adults: one 7-night base in Manhattan, MICHELIN-starred
 dinners that are reachable within the hour, verified hotel pricing, and an explicit register of
@@ -296,12 +299,12 @@ everything that could <em>not</em> be verified.</p>
 <div class="kpi">
   <div class="card"><div class="k">Recommended dates</div><div class="v">15–22 Feb 2027</div>
    <div class="small">7 nights, Mon→Mon. Contains the preferred 15–18 Feb window.</div></div>
-  <div class="card"><div class="k">Hotel, 7 nights all-in</div><div class="v">{money(rec['total_7n_usd'])}</div>
-   <div class="small">Fairfield Inn &amp; Suites Manhattan/Central Park · king bed · private bathroom · breakfast included · taxes included</div></div>
+  <div class="card"><div class="k">Hotel, 7 nights all-in</div><div class="v">{money(rec['all_in_7n_usd'])}</div>
+   <div class="small">Fairfield Inn &amp; Suites Manhattan/Central Park · king bed · private bathroom · breakfast included · all-in derived</div></div>
   <div class="card"><div class="k">MICHELIN star entries</div><div class="v">{n_stars}</div>
    <div class="small">5 three-star · 15 two-star · 52 one-star, from the 18 Nov 2025 ceremony. <strong>Changes 14 Dec 2026.</strong></div></div>
-  <div class="card"><div class="k">Verified budget subtotal</div><div class="v">{money(FR["budget"]["verified_subtotal_usd"])}</div>
-   <div class="small">Hotel + flights + transit + tickets + 2 tasting menus. Ordinary meals are deliberately unpriced.</div></div>
+  <div class="card"><div class="k">Budget subtotal, priced lines</div><div class="v">{money(FR["budget"]["verified_subtotal_usd"])}</div>
+   <div class="small">Hotel + flights + transit + six tickets + 2 tasting menus. Ordinary meals are deliberately unpriced.</div></div>
 </div>
 
 <h2>Executive summary</h2>
@@ -309,15 +312,14 @@ everything that could <em>not</em> be verified.</p>
 <div class="card">
 <h3>1 · The decision</h3>
 <p>Book <strong>Fairfield Inn &amp; Suites by Marriott New York Manhattan/Central Park</strong>, King Room,
-for <strong>15–22 February 2027</strong> at <strong>{money(rec['total_7n_usd'])} including taxes and fees</strong>, on the
+for <strong>15–22 February 2027</strong> at <strong>{money(rec['total_7n_usd'])} before taxes</strong> ({money(rec['all_in_7n_usd'])} derived all-in), on the
 free-cancellation rate (cancel free until 12 Feb 2027). Once tax is included it is the cheapest of the
 seven, it includes breakfast for two, the bed is a king and the bathroom is attached.</p>
-<p class="hint">Six of the seven advertise a total that <em>excludes</em> 14.75% tax and a $4/night city
-tax, so their headline numbers flatter them. Fairfield's headline already includes everything. On
-list price before discounts Arlo SoHo advertised {money(_arlo['list_price_before_discount'])} against
-Fairfield's {money(rec['list_price_before_discount'])}, so Fairfield would lose on list price &mdash; the
-ranking here is driven by the discounted all-in figure, and the discount is disclosed on the
-<a href="hotels.html">Hotels page</a> rather than absorbed (F-03).</p>
+<p class="hint">Every Booking.com total is printed <em>before</em> tax. Arlo SoHo advertises
+{money(1021.00)} against Fairfield's {money(rec['total_7n_usd'])}, but on the derived all-in basis
+Fairfield is {money(rec['all_in_7n_usd'])} and Arlo SoHo is {money(1206.60)}. The 25 November figure of
+$1,155.48 for Fairfield was withdrawn after a line-by-line re-read of its source (F-17, F-23);
+the ranking uses the corrected all-in column and discloses the promotion (F-03).</p>
 </div>
 <div class="card">
 <h3>2 · Why 7 nights, not 3</h3>
@@ -325,8 +327,7 @@ ranking here is driven by the discounted all-in figure, and the discount is disc
 Those two statements cannot both be satisfied, so the plan uses <strong>7 nights</strong> and keeps a
 4-night variant and a 14-night variant on the <a href="itinerary.html">Itinerary page</a> as choices.
 No re-planning is needed to switch.</p>
-<p class="hint">15 February 2027 is the third Monday of February — the US Presidents' Day holiday — so
-expect holiday demand and thinner restaurant availability.</p>
+<p class="hint">15 February 2027 is Washington's Birthday on <a href="https://www.opm.gov/policy-data-oversight/pay-leave/federal-holidays/" target="_blank" rel="noopener noreferrer">OPM's official 2027 holiday list</a>. Holiday demand and thinner restaurant availability are plausible but not measured.</p>
 </div>
 </div>
 
@@ -355,9 +356,9 @@ suggestion S-02.</p>
 <div class="card">
 <h3>5 · What is verified, and what is not</h3>
 <ul class="tight">
-<li><strong>${FR["budget"]["verified_subtotal_usd"]:,.2f} verified subtotal</strong> across hotel, flights, transit, five tickets and two tasting menus.</li>
+<li><strong>${FR["budget"]["verified_subtotal_usd"]:,.2f} priced subtotal</strong> across hotel, flights, transit, six tickets and two tasting menus; the hotel line is derived and ordinary meals are blank.</li>
 <li><strong>{n_hours} of {n_stars} restaurants have a full week of verified hours</strong> (read on official MICHELIN or venue pages on 25&ndash;26 Nov 2026); {n_hours_partial} more is partial and the rest are blank rather than guessed. <strong>{n_price} have an exact published menu price</strong> and {n_floor} more publishes only a booking-deposit floor. Every other row is complete on name, distinction, cuisine, borough and official link (<a href="restaurants.html">see the table</a>).</li>
-<li><strong>{n_ig_total} verified official social accounts</strong> across restaurants and activities, and <strong>3 verified third-party review videos</strong> (all Le Bernardin). One further handle is inferred rather than opened (F-08) and is not counted as verified. Every other social cell is a search link, labelled as a search &mdash; TikTok returned HTTP 400 on every read, so no TikTok account is claimed anywhere.</li>
+<li><strong>{n_ig_total} verified official social accounts</strong> and <strong>{n_vids} verified third-party review videos across {n_vid_venues} venues</strong>, each opened and identified by title, channel and view count. One further handle is inferred rather than opened (F-08) and is not counted as verified. Where nothing could be verified the cell is still a search link, labelled as a search — TikTok returned HTTP 400 on every read, so no TikTok account is claimed anywhere.</li>
 <li><strong>{len(FR['flags'])} flagged items</strong> and <strong>{len(FR['questions'])} open questions</strong>, each with the exact source that would settle it.</li>
 </ul>
 </div>
@@ -366,7 +367,7 @@ suggestion S-02.</p>
 <ol class="tight">
 <li><strong>14 December 2026:</strong> MICHELIN publishes a new New York list. Stars can move before you travel.</li>
 <li><strong>Hotel prices are live:</strong> every total here is a 25 Nov 2026 snapshot and several depend on a time-limited promotion.</li>
-<li><strong>Menu prices are mostly unknown:</strong> five priority restaurants publish no readable price, so the food budget is incomplete by design rather than by accident.</li>
+<li><strong>Menu prices are mostly unknown:</strong> four priority restaurants publish no readable price, so the food budget is incomplete by design rather than by accident.</li>
 </ol>
 </div>
 </div>
@@ -396,7 +397,7 @@ def theme_table():
         ['<span class="pill p-open">not verified</span>', "Left blank on purpose. The Flagged page says which source would settle it."],
         ['<span class="pill p-documented">model</span>', "Computed from other data (a formula, not an observation). The formula is on the Method page."],
     ]
-    return table(["Label", "What it means"], rows, caption="A value is never inferred to fill a gap.")
+    return table(["Label", "What it means"], rows, caption="A value is never inferred to fill a gap. Prices were re-checked on 26 November 2026; see the Hotels page.")
 
 
 def build_hotels():
@@ -419,7 +420,9 @@ def build_hotels():
             f'{esc(h["cancellation"])}<div class="small">guest score {esc(h["rating"])}</div>',
             (ext(h["source_url"], "Booking.com (hotel page)")
              if "/hotel/us/" in h["source_url"]
-             else ext(h["source_url"], "Booking.com (search page)")),
+             else ext(h["source_url"], "Booking.com (search snapshot)")
+             + '<div class="small">Hotel page: '
+             + ext(h.get("address_source_url", ""), "address and current rates") + '</div>'),
         ])
     rk = sorted(HOTELS["hotels"], key=lambda z: (-z["reach"]["stars_within_5km"],
                                                   -z["reach"]["three_star_within_5km"]))
@@ -434,12 +437,13 @@ def build_hotels():
             '<span class="num">' + str(r["three_star_within_5km"]) + ' / 5</span>',
             f'{r["nearest_three_star_km"]:.2f} km',
             money(h["all_in_7n_usd"]),
+            ext(h["source_url"], "Booking.com"),
         ])
     reach_table = table(
-        ["#", "Hotel", "Star venues within 5 km", "Three-star within 5 km", "Nearest three-star", "All-in 7 nights"],
+        ["#", "Hotel", "Star venues within 5 km", "Three-star within 5 km", "Nearest three-star", "All-in 7 nights", "Source"],
         rr,
         caption="Ranked on reach, then on count of three-star venues. Only 7 of the 72 star entries could be scored.",
-        card_labels=["Rank", "Hotel", "Within 5 km", "Three-star", "Nearest", "All-in"])
+        card_labels=["Rank", "Hotel", "Within 5 km", "Three-star", "Nearest", "All-in", "Source"])
 
     ranked = sorted(HOTELS["hotels"], key=lambda z: z["all_in_7n_usd"])
     rrows = []
@@ -452,12 +456,13 @@ def build_hotels():
             money(h["total_7n_usd"]),
             esc(h["breakfast"]),
             esc(h["cancellation"]),
+            ext(h["source_url"], "Booking.com"),
         ])
     rank_table = table(
-        ["#", "Hotel", "All-in 7 nights", "Advertised", "Breakfast", "Cancellation"],
+        ["#", "Hotel", "All-in 7 nights", "Advertised", "Breakfast", "Cancellation", "Source"],
         rrows,
-        caption="All-in = advertised total + 14.75% tax + $4/night city tax where those were excluded. Arithmetic, not a quote.",
-        card_labels=["Rank", "Hotel", "All-in", "Advertised", "Breakfast", "Cancellation"])
+        caption="All-in = advertised total × 1.1475 + the city tax and other excluded per-night fee printed on that room row. Arithmetic, not a quote.",
+        card_labels=["Rank", "Hotel", "All-in", "Advertised", "Breakfast", "Cancellation", "Source"])
 
     wrows = []
     for w in HOTELS["windows_sampled"]:
@@ -491,16 +496,16 @@ def build_hotels():
     return f"""
 <p class="lede">Seven hotels, each verified for a king-or-queen bed and a private bathroom for
 two adults, priced for the whole 7-night stay 15–22 February 2027.
-The <strong>basis</strong> column matters: some totals already include tax, some do not.</p>
+The <strong>basis</strong> column matters: every total is printed before tax, and the per-night city
+tax is different at one property.</p>
 
 <div class="warnbox"><strong>Read the tax basis before comparing.</strong>
-Booking.com prints a total that excludes tax for six of these seven properties. Only Fairfield's
-{money(1155.48)} already includes everything. The <strong>All-in</strong> column converts the rest by
-multiplying by 1.1475 (14.75% New York tax) and adding $4 city tax per night &mdash; that is arithmetic
-on the printed total and is labelled <em>derived</em>, not read. Once converted, the order changes
-completely: Arlo SoHo looks cheapest at {money(1021.00)} and is still second at
-{money(1199.60)}; citizenM looks cheaper than Fairfield at {money(1147.00)} and is actually
-<strong>{money(188.70)} dearer</strong> all-in, before you add its $23.50 breakfast.</div>
+Booking.com prints every total before tax. The <strong>All-in</strong> column multiplies each by
+1.1475 (14.75% New York tax) and adds the city tax printed on that room row — $4/night except
+$6/night at Residence Inn FiDi — plus the $1/night tourism fee at the two Arlo properties. That is
+arithmetic, labelled <em>derived</em>, not a quote. Fairfield remains cheapest at
+{money(1158.98)} all-in; Arlo SoHo is second at {money(1206.60)}. The old
+$1,155.48 "taxes included" figure was withdrawn (F-17, F-23).</div>
 
 <h2>Shortlist, 15–22 February 2027 (7 nights, 2 adults)</h2>
 {table(
@@ -530,8 +535,8 @@ per-night price curve across the whole 15 Feb – 23 Mar window, which is <stron
 (F-05), the ranking turns on all-in cost and what that cost buys &mdash; bed, bathroom, breakfast and
 cancellation terms &mdash; not on location. Sorted by the derived all-in column:</p>
 {rank_table}
-<div class="note"><strong>Why Fairfield wins.</strong> It is the cheapest <em>after</em> tax is included
-({money(1155.48)}), it includes breakfast for two, its bed is a king and the bathroom is attached.
+<div class="note"><strong>Why Fairfield wins.</strong> It is the cheapest <em>after</em> tax is derived
+({money(1158.98)}), it includes breakfast for two, its bed is a king and the bathroom is attached.
 Arlo SoHo and Arlo Midtown are cheaper only on paper: add tax and neither includes breakfast, and Arlo
 Midtown's rate is non-refundable. citizenM has the best guest score (8.9) and the most central address for
 Midtown dining, but {money(1344.18)} all-in plus $23.50 per person for breakfast makes it the third
@@ -652,27 +657,32 @@ def build_restaurants():
                 near.append(by_key[k2]["name"] + f" ({d * 1000:.0f} m)")
         geo.append([stars_badge(by_key[k]["stars"]),
                     '<strong>' + esc(by_key[k]["name"]) + '</strong><div class="small">' + esc(by_key[k]["cuisine"]) + '</div>',
-                    (", ".join(near) if near else '<span class="blank">no other scored star venue within 1 km</span>')])
+                    (", ".join(near) if near else '<span class="blank">no other scored star venue within 1 km</span>'),
+                    ext(by_key[k]["michelin_url"], "MICHELIN")])
     geo.sort(key=lambda r: r[2].startswith('<span'))
     cluster_table = table(
-        ["Borough", "Star entries", "Three-star entries", "What it means for the trip"],
+        ["Borough", "Star entries", "Three-star entries", "What it means for the trip", "Source"],
         [
             ["Manhattan", str(bor.get("Manhattan", 0)), str(sum(1 for r in ROSTER["restaurants"] if r["borough"] == "Manhattan" and r["stars"] == 3)),
-             "The only borough with a full spread of star levels. Every three-star dinner on the itinerary is here."],
+             "The only borough with a full spread of star levels. Every three-star dinner on the itinerary is here.",
+             ext(ROSTER["meta"]["source_article"], "MICHELIN")],
             ["Brooklyn", str(bor.get("Brooklyn", 0)), "0",
-             "Six entries, no three-star. A dinner here costs a 40-minute trip each way (Aska and Francie are the names to check)."],
+             "Six entries, no three-star. A dinner here costs a 40-minute trip each way (Aska and Francie are the names to check).",
+             ext(ROSTER["meta"]["source_article"], "MICHELIN")],
             ["Queens", str(bor.get("Queens", 0)), "0",
-             "One entry. Worth a lunch, not a dinner run from Midtown."],
+             "One entry. Worth a lunch, not a dinner run from Midtown.",
+             ext(ROSTER["meta"]["source_article"], "MICHELIN")],
             ["Outside NYC", str(bor.get("Tarrytown, NY (outside NYC)", 0) + bor.get("North Salem, NY (outside NYC)", 0)), "0",
-             "Blue Hill at Stone Barns (Tarrytown) and La Bastide (North Salem). Both fail the one-hour rule outright."],
+             "Blue Hill at Stone Barns (Tarrytown) and La Bastide (North Salem). Both fail the one-hour rule outright.",
+             ext(ROSTER["meta"]["source_article"], "MICHELIN")],
         ],
         caption="Borough counts cover all 72 entries. This is the only cluster claim the data supports on its own.",
-        card_labels=["Borough", "Entries", "Three-star", "Meaning"])
+        card_labels=["Borough", "Entries", "Three-star", "Meaning", "Source"])
     geo_table = table(
-        ["Rating", "Venue", "Scored star venue within 1 km"],
+        ["Rating", "Venue", "Scored star venue within 1 km", "Source"],
         geo,
         caption="Straight-line distances between the 7 venues whose coordinates were verified. A 7-venue sample, not a neighbourhood map.",
-        card_labels=["Rating", "Venue", "Within 1 km"])
+        card_labels=["Rating", "Venue", "Within 1 km", "Source"])
 
     return f"""
 <p class="lede">All {len(ROSTER['restaurants'])} star entries from MICHELIN's
@@ -807,12 +817,12 @@ exists. Prices are per adult and doubled arithmetically for two.</p>
 
 <div class="note"><strong>Free and almost-free:</strong> Central Park, The High Line, the Brooklyn Bridge
 promenade and Chelsea Market cost nothing to enter. The paid items that matter are MoMA ($30),
-The Met ($30), AMNH (price not read), the 9/11 Museum ($24–$36) and the Statue of Liberty ferry ($26).</div>
+The Met ($30), AMNH ($37 standard adult), the 9/11 Museum ($24–$36) and the Statue of Liberty ferry ($26).</div>
 
 {table(
     ["Activity", "Days &amp; hours", "Exceptions that matter", "Cost for 2", "From the hotel", "Status", "Links"],
     rows,
-    caption="Read on each venue's own site on 2026-11-25. A blank means the official page did not yield the value.",
+    caption="Read on each venue's own site on 2026-11-25, with official re-reads on 2026-11-26 where a row says so. A blank means the official page did not yield the value.",
     card_labels=["Activity", "Hours", "Exceptions", "Cost for 2", "From the hotel", "Status", "Links"])}
 
 <h2>Tickets: what to buy in advance</h2>
@@ -867,10 +877,14 @@ HTTP 400 to an automated read on 2026-11-25. No TikTok account is asserted anywh
 def build_itinerary():
     out = []
     for it in FR["itineraries"]:
-        rows = [[esc(d["date"]), esc(d["day"]), esc(d["plan"])] for d in it["days"]]
+        rows = [[esc(d["date"]), esc(d["day"]),
+                 esc(d["plan"]) + '<div class="small">Official sources for every named venue are in the '
+                 + '<a href="activities.html">Activities</a> and <a href="restaurants.html">Restaurants</a> tables.</div>',
+                 '<a href="activities.html">Activities</a> · <a href="restaurants.html">Restaurants</a>']
+                for d in it["days"]]
         note = f'<p class="hint">{esc(it["note"])}</p>' if it.get("note") else ""
         out.append(f"""<h2>{esc(it["title"])}</h2>{note}
-{table(["Date", "Day", "Plan"], rows, card_labels=["Date", "Day", "Plan"])}""")
+{table(["Date", "Day", "Plan", "Sources"], rows, card_labels=["Date", "Day", "Plan", "Sources"])}""")
     return f"""
 <p class="lede">Three concrete variants, so switching length is a choice rather than a re-plan.
 The 7-night version is the recommendation; the 4-night version is the literal preferred window;
@@ -945,8 +959,8 @@ cheapest flight fare found, which may not hold for two seats.</div>
 <ul class="tight">
 <li>Wine pairing at Le Bernardin — {money(530,0)} per person (i.e. {money(1060,0)} for two).</li>
 <li>Wine pairing at Gabriel Kreuther — from {money(255,0)} per person.</li>
-<li>American Museum of Natural History — price not read; the ticketing page is a separate system.</li>
-<li>A second week of hotel, 22 Feb – 1 Mar — about {money(1199,0)} all-in for the same Fairfield room (F-12).</li>
+<li>American Museum of Natural History — {money(37,0)} standard adult, {money(74,0)} for two, from the official Plan Your Visit page; NY State residents pay what they wish.</li>
+<li>A second week of hotel, 22 Feb – 1 Mar — {money(1199.14)} derived all-in for the same Fairfield room, from a $1,020.60 before-tax total (F-12).</li>
 <li>Broadway — no single official price; depends entirely on the show.</li>
 </ul>
 </div>
@@ -994,8 +1008,8 @@ to run — the recommendation already assumes an answer to each — but each one
 <div class="grid two">
 <div class="card"><h3>Q-01 · How long?</h3><p class="small">4, 7 or 14 nights changes the hotel cost, the number of starred dinners and which hotel wins.</p></div>
 <div class="card"><h3>Q-02 · What is the budget?</h3><p class="small">Every ranking sorts on price; without a ceiling there is no way to say whether two splurge dinners are sensible.</p></div>
-<div class="card"><h3>Q-06 · What do the other menus cost?</h3><p class="small">Five priority venues have no published price, so the food budget is incomplete.</p></div>
-<div class="card"><h3>Q-09 · The Met hours?</h3><p class="small">One anchor daytime activity still has no verified opening hours; High Line hours were recovered on 26 Nov.</p></div>
+<div class="card"><h3>Q-06 · What do the other menus cost?</h3><p class="small">Four priority venues still have no published price, so the food budget is incomplete.</p></div>
+<div class="card"><h3>Q-09 · The Met hours?</h3><p class="small">The High Line is verified; The Met's hours come from an official page excerpt and remain PARTIAL.</p></div>
 <div class="card"><h3>Q-19 · Are the trips really under an hour?</h3><p class="small">The brief's central rule is currently modelled, not measured.</p></div>
 </div>
 """
@@ -1121,7 +1135,7 @@ a different badge.</li>
 <li><strong>Label every derived number.</strong> Arithmetic on a verified figure is marked DERIVED and the
 formula is written down.</li>
 <li><strong>Keep disagreements visible.</strong> When two official pages disagree, both numbers are shown.</li>
-<li><strong>Date every snapshot.</strong> Most values were read on 2026-11-25; six MICHELIN hour blocks, three dated Booking.com window prices, two street addresses and The High Line's seasonal hours were re-read on 2026-11-26. All will drift.</li>
+<li><strong>Date every snapshot.</strong> Most values were read on 2026-11-25; six MICHELIN hour blocks, hotel rates, AMNH and Gramercy Tavern prices, Jungsik's address, The Met's hours excerpt and The High Line's seasonal hours were re-read on 2026-11-26. All will drift.</li>
 </ol>
 </div>
 
@@ -1159,9 +1173,10 @@ formula is written down.</li>
 
 <h3>Activities, transit and flights</h3>
 <ul class="tight">
-<li>{ext("https://www.moma.org/visit/", "MoMA: hours and admission")} · {ext("https://www.metmuseum.org/plan-your-visit", "The Met: tickets")} · {ext("https://www.amnh.org/plan-your-visit/hours", "AMNH: hours")}</li>
+<li>{ext("https://www.moma.org/visit/", "MoMA: hours and admission")} · {ext("https://www.metmuseum.org/plan-your-visit", "The Met: tickets")} · {ext("https://www.metmuseum.org/plan-your-visit/met-fifth-avenue", "The Met Fifth Avenue: hours excerpt")} · {ext("https://www.amnh.org/plan-your-visit", "AMNH: hours and standard admission")}</li>
 <li>{ext("https://www.911memorial.org/visit/visit-museum-1", "9/11 Memorial &amp; Museum: hours and tickets")} · {ext("https://www.rockefellercenter.com/tickets/top-of-the-rock-observation-deck/", "Top of the Rock: tickets")} · {ext("https://www.nps.gov/stli/planyourvisit/fees.htm", "Statue of Liberty: NPS fees")}</li>
-<li>{ext("https://www.nycgovparks.org/parks/central-park", "NYC Parks: Central Park")} · {ext("https://www.thehighline.org/visit/", "The High Line: visitor info")}</li>
+<li>{ext("https://www.nycgovparks.org/parks/central-park", "NYC Parks: Central Park")} · {ext("https://www.thehighline.org/visit/", "The High Line: visitor info")} — winter hours 07:00–20:00, read 2026-11-26.</li>
+<li>{ext("https://www.opm.gov/policy-data-oversight/pay-leave/federal-holidays/", "OPM: 2027 federal holidays")} — Washington's Birthday on Monday 15 February 2027.</li>
 <li>{ext("https://www.mta.info/fares-tolls/subway-bus", "MTA subway and bus fares")} — $3 fare, $35 seven-day tap-and-ride cap.</li>
 <li>{ext("https://www.google.com/travel/flights?q=Flights%20to%20JFK%20from%20AMS%20on%202027-02-15%20through%202027-02-22", "Google Flights: AMS–JFK, 15–22 Feb 2027")} &mdash; $606 per adult round trip (Aer Lingus, 1 stop via Dublin), $562 with a 6h20m layover, $904–906 nonstop. These are the itinerary's own dates.</li>
 <li>{ext("https://www.kayak.com/flights/AMS-NYC/2027-02-14/2027-02-23?sort=bestflight_a", "KAYAK AMS–NYC, 14–23 Feb 2027")} &mdash; a cross-check on adjacent dates: $686 cheapest, $908 nonstop. The extra night costs money, which is why the plan does not add one.</li>
@@ -1170,7 +1185,7 @@ formula is written down.</li>
 <h3>Social accounts verified</h3>
 <ul class="tight">
 <li>Instagram profiles opened and read and confirmed official by badge plus bio or link-in-bio: Le Bernardin (346,704 followers), Eleven Madison Park (543,313), Per Se (333,776), Daniel (159,355), Gramercy Tavern (145,393), MoMA (6,154,925), The Met (4,752,680), NYC Parks (309,569), The High Line (253,752). Le Coucou's account is private, so nothing could be confirmed from it.</li>
-<li>YouTube: <strong>three</strong> specific Le Bernardin review videos verified by title, channel and view count &mdash; the only venue where individual videos (rather than a search link) could be confirmed.</li>
+<li>YouTube: <strong>eleven</strong> specific review videos across seven venues were opened and identified by title, channel and view count; every remaining social cell is a labelled search link.</li>
 <li><strong>A lookalike handle was caught:</strong> <code>instagram.com/museumofmodernart</code> has 3,809 followers and has not posted since 2019. It is <em>not</em> MoMA. The real account is <code>themuseumofmodernart</code>.</li>
 <li><strong>TikTok: failed.</strong> Every URL returned HTTP 400.</li>
 </ul>
@@ -1192,7 +1207,7 @@ a per-field <code>hours_read_on</code> value; nothing was pattern-filled:</p>
 {ext("https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-22&checkout=2027-03-01&group_adults=2&no_rooms=1&selected_currency=USD", "22 Feb – 1 Mar 2027")} ($1,020.60 before tax). Both are accessible king rooms — flag F-22.</li>
 <li>{ext("https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-16&checkout=2027-02-23&group_adults=2&no_rooms=1&selected_currency=USD", "Booking.com")} also published the Fairfield's street address (538 West 58th Street);
 {ext("https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/gabriel-kreuther", "MICHELIN")} published Gabriel Kreuther's (41 W. 42nd St.).</li>
-<li>{ext("https://www.thehighline.org/visit/", "The High Line's official visitor page")} published seasonal hours on the second read. The Met's hours still did not render.</li>
+<li>{ext("https://www.thehighline.org/visit/", "The High Line's official visitor page")} published seasonal hours on the second read; {ext("https://www.amnh.org/plan-your-visit", "AMNH")} published $37 standard adult admission, and {ext("https://www.gramercytavern.com/dining-room-menu", "Gramercy Tavern")} published a $178 seasonal menu. The Met's own search excerpt lists hours but a direct fetch redirected, so that row remains PARTIAL.</li>
 </ul>
 <p class="small">Also corrected in this pass: the overview called Arlo SoHo's discounted $1,021 rate
 "pre-discount" (its pre-discount rate is $1,639); the social-account headline counted an unread
@@ -1203,13 +1218,13 @@ build was removed.</p>
 <h2>What failed, and what was done about it</h2>
 <div class="card">
 <table class="tbl"><thead><tr><th>Source</th><th>What happened</th><th>Result</th></tr></thead><tbody>
-<tr><td>amnh.org admission prices</td><td>Ticketing sits on a separate system</td><td>Price left blank</td></tr>
-<tr><td>thehighline.org hours</td><td>Cookie-consent wall blocked the first read on 25 Nov</td><td>Recovered from a second page read on 26 Nov: Dec 1 – Mar 31, 07:00-20:00</td></tr>
-<tr><td>metmuseum.org hours block</td><td>Did not render in the captured page</td><td>Hours left blank</td></tr>
+<tr><td>{ext("https://www.amnh.org/plan-your-visit", "amnh.org admission prices")}</td><td>The first read covered hours only; the full Plan Your Visit page was read again on 2026-11-26</td><td>Standard adult $37, or $74 for two, now published with source</td></tr>
+<tr><td>{ext("https://www.thehighline.org/visit/", "thehighline.org hours")}</td><td>Cookie-consent wall blocked the first read on 25 Nov</td><td>Recovered from a second page read on 26 Nov: Dec 1 – Mar 31, 07:00-20:00</td></tr>
+<tr><td>{ext("https://www.metmuseum.org/plan-your-visit/met-fifth-avenue", "metmuseum.org hours block")}</td><td>The direct capture redirected; The Met's own page excerpt in search results does list the hours</td><td>Hours shown, but the activity row remains PARTIAL rather than VERIFIED</td></tr>
 <tr><td>tiktok.com (profile and discovery)</td><td>HTTP 400 on every attempt</td><td>No TikTok asserted anywhere</td></tr>
-<tr><td>elevenmadisonpark.com menu</td><td>Site publishes no price</td><td>Blank, Resy policy noted</td></tr>
-<tr><td>gramercytavern.com/menus</td><td>Fetch failed</td><td>Blank</td></tr>
-<tr><td>le-bernardin.com/menus</td><td>JavaScript-only page</td><td>Solved: the site's accessible ("/accessible/") menus carry the same prices as text</td></tr>
+<tr><td>{ext("https://www.elevenmadisonpark.com/", "elevenmadisonpark.com menu")}</td><td>Site publishes no price</td><td>Blank, Resy policy noted</td></tr>
+<tr><td>{ext("https://www.gramercytavern.com/dining-room-menu", "gramercytavern.com Dining Room menu")}</td><td>The generic menus URL failed; the dedicated Dining Room menu page was read on 2026-11-26</td><td>Seasonal Menu $178 per person now published with source; $118 wine pairing noted</td></tr>
+<tr><td>{ext("https://www.le-bernardin.com/accessible/", "le-bernardin.com/menus")}</td><td>JavaScript-only page</td><td>Solved: the site's accessible ("/accessible/") menus carry the same prices as text</td></tr>
 </tbody></table>
 </div>
 
@@ -1263,14 +1278,21 @@ def build_repo_review():
     n_price = sum(1 for r in roster if det.get(key(r), {}).get("menu_price_usd")
                   and not det.get(key(r), {}).get("price_is_floor"))
     n_page = sum(1 for r in roster if det.get(key(r)))
+    def verified(s):
+        return s["kind"] == "official" and "unconfirmed" not in s.get("evidence", "").lower()
     n_ig = sum(1 for r in roster if any(
-        s["kind"] == "official" for s in SOCIAL["accounts"].get(key(r), [])))
+        verified(s) for s in SOCIAL["accounts"].get(key(r), [])))
     n_vid = sum(1 for r in roster if any(
         s["kind"] == "review" for s in SOCIAL["accounts"].get(key(r), [])))
+    n_vids = sum(1 for grp in SOCIAL["accounts"].values() for s in grp if s["kind"] == "review")
+    n_vid_venues = sum(1 for grp in SOCIAL["accounts"].values()
+                       if any(s["kind"] == "review" for s in grp))
     a_ver = sum(1 for a in acts if a["verification"].startswith("VERIFIED"))
     a_part = sum(1 for a in acts if a["verification"].startswith("PARTIAL"))
     a_ig = sum(1 for a in acts if any(
-        s["kind"] == "official" for s in SOCIAL["accounts"].get(a["id"], [])))
+        verified(s) for s in SOCIAL["accounts"].get(a["id"], [])))
+    a_vid = sum(1 for a in acts if any(
+        s["kind"] == "review" for s in SOCIAL["accounts"].get(a["id"], [])))
     h_priced = sum(1 for h in HOTELS["hotels"] if h["total_7n_usd"])
 
     coverage = table(
@@ -1279,7 +1301,7 @@ def build_repo_review():
             ["Restaurants (star roster)", str(len(roster)),
              f'{n_page} with a detail page',
              f'{len(roster)} (MICHELIN page on every row)',
-             f'{n_ig} official Instagram · {n_vid} review video',
+             f'{n_ig} official Instagram · {n_vid} review-video venues',
              f'{len(roster) - n_page} roster-only'],
             ["Restaurants (hours)", str(len(roster)), f'{n_hours} full · {n_partial} partial',
              f'{n_hours + n_partial}', "—", f'{len(roster) - n_hours - n_partial} blank'],
@@ -1289,7 +1311,7 @@ def build_repo_review():
              f'{len(HOTELS["hotels"])}', "—",
              f'{sum(1 for h in HOTELS["hotels"] if not h["address"])} without a street address'],
             ["Activities", str(len(acts)), f'{a_ver} verified · {a_part} partial',
-             f'{len(acts)}', f'{a_ig} official Instagram', f'{len(acts) - a_ver - a_part} roster-only'],
+             f'{len(acts)}', f'{a_ig} official Instagram · {a_vid} review-video venues', f'{len(acts) - a_ver - a_part} roster-only'],
         ],
         caption="What is actually verified on this site, counted rather than claimed.",
         card_labels=["Dataset", "Rows", "Verified", "Source link", "Social", "Blank"])
@@ -1318,13 +1340,13 @@ def build_repo_review():
              "Out of scope for a research task and left to the owner; noted rather than guessed at.",
              "Open"],
             ["R6", "Old generated pages survived a rebuild and linked to pages that no longer exist.",
-             "docs/methodology.html and docs/repo-review.html from a prior build were superseded by method.html",
+             "docs/methodology.html from a prior build was superseded by method.html and removed",
              "The superseded page is removed and this one is regenerated from data; the build fails if any internal link dangles.",
              "Resolved"],
             ["R7", "Three official pages failed to render during research, so their values are absent.",
              "metmuseum.org hours block, thehighline.org consent wall, amnh.org ticketing",
-             "The Met hours left blank and flagged (F-09, F-10); High Line hours read from its own visitor page on 2026-11-26.",
-             "Open"],
+             "High Line hours, AMNH admission and Gramercy Tavern's menu price were read from official pages; The Met's hours remain an official search excerpt only (F-09).",
+             "Partly addressed"],
             ["R8", "An Instagram handle was inferred from another account's post, not opened directly.",
              "@chelseamarketny, read in a verified High Line post",
              "Labelled as unconfirmed in F-08 rather than presented as verified.",
@@ -1347,6 +1369,7 @@ def build_repo_review():
         + str(len(roster)) + ' star restaurants, ' + str(n_hours) + ' have a full week of verified hours ('
         + str(n_partial) + ' partial) and ' + str(n_price) + ' have an exact published menu price. '
         'The roster is complete; the operational detail is not. '
+        + str(n_vids) + ' review videos across ' + str(n_vid_venues) + ' venues were individually opened and identified. '
         'That is a research limit, not a formatting choice, and the Flagged page says what would close it.</div>'
 
         '<h2>Repository review</h2>'
