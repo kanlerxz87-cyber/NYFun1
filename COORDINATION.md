@@ -504,7 +504,78 @@ are from 2026-11-25 (>12 hours ago) with no open PRs on `kanlerxz87-cyber/NYFun1
   sum (`$4,184.98`), verified zero stale tokens/broken links/table mismatches across all 11 `docs/*.html` pages,
   and passed `python3 build_site.py` self-checks.
 
+## SESSION CLAIM — 2026-11-26 (UTC) — `arena-e0e22b98` (branch `arena/e0e22b98-nyfun1`)
 
+**Scope claimed (T15):** line-by-line verification pass + gap-fill on the consolidated dataset:
+1. Hotel requirement verification (private bathroom, queen+ bed) from official hotel sources — currently
+   `bathroom: null` on all 7 hotel rows, which is a hard brief requirement.
+2. Restaurant detail expansion: hours / price band / coordinates / official site from each venue's official
+   MICHELIN page (72 rows currently have only 8 detail rows; 69 menu prices missing).
+3. Coordinates for all 72 venues derived from the official MICHELIN page map image URL (formula documented,
+   labelled *derived*), enabling a real cluster analysis and a per-hotel Michelin count.
+4. Verified social / video review links (real accounts or videos only; search links stay where nothing real exists).
+5. Additional booking-window price samples for the "cheapest time to book" question (actual dates in the brief's range).
+6. Rebuild, re-verify every internal link, PR → merge, Pages confirmation.
+
+**Files I will write:** `site_data/*.json`, `build_site.py`, `docs/*.html` + `docs/assets/style.css` (generated),
+`README.md`, `COORDINATION.md` (append-only). **Files I will NOT touch:** `build.py`, `build_deepdive.py`,
+`content.py`, `deepdive/**`.
+
+**Branch note:** Arena pins this session to `arena/e0e22b98-nyfun1`; branch naming cannot be changed, so the
+`session-<id>/<task>` convention is satisfied in spirit only. No other live session claims exist on the remote
+(only `main` is present), so single-writer scopes are uncontested.
+
+**Status:** claimed 2026-11-26, in progress (claim posted after arena-6b0cf789 closed out; its audit state is the base for this pass).
+
+### 2026-11-26 · arena-e0e22b98 · Merge-conflict log (protocol step 4)
+
+- `git pull --rebase` before my second commit found that session `arena-6b0cf789` had merged PRs #11/#12
+  into `main` while I was working. My claim commit conflicted with theirs **in `COORDINATION.md` only**
+  (both sessions appended a claim block to the end of the file).
+- Resolution: kept **both** claim blocks and both verification logs, theirs first, mine after — no line of
+  the other session's work was dropped. This entry records the conflict and the resolution.
+- Scope overlap noted: both sessions claimed T15-type work in `site_data/*.json`, `build_site.py`, `docs/*`.
+  Their audit finished first (PR #11, merged 13:25 UTC). My session is a verification + gap-fill pass on top
+  of their state; where their audit and my captures disagree, the newer capture wins **only** with its own
+  source URL in the row, and both readings stay visible in this log.
+- **Flag ID collision:** `arena-6b0cf789` published an F-22 (Fairfield window prices mix room types). My
+  new Arlo SoHo bathroom flag is renumbered **F-23** to avoid overwriting theirs.
+- Their verified additions are adopted into my data layer: Fairfield street address **538 West 58th Street**,
+  six MICHELIN hour blocks (EMP, Per Se, Daniel, Jungsik, Sushi Sho, Gabriel Kreuther), High Line seasonal
+  hours, the dated window-price links on the Hotels page.
+
+### 2026-11-26 · arena-e0e22b98 · Second merge-conflict log (protocol step 4)
+
+- While pushing, `git pull --rebase` found session `arena-2eccf543` had merged PR #13 (T16–T22) into
+  `main` — a full audit that also covers this session's TODOs (window series, activities, socials,
+  reach, MICHELIN detail). COORDINATION.md conflicted again; resolved as a union: their blocks first,
+  mine after. Nothing of theirs was dropped.
+- Overlapping data files resolved in favour of `arena-2eccf543`'s combined captures where they are
+  richer (22 Manhattan venues with menu prices, 5 seasonal windows, activity hours, socials). My
+  unique findings are re-applied as a delta commit on top: the **15–22 Mar sold-out window**, the
+  **same-room-type (standard King) window series** incl. 18–25 Feb / 1–8 Mar / 8–15 Mar, out-of-Manhattan
+  venue rows (Aska, Blue Hill at Stone Barns), and the "book while the Black Friday Deal shows" framing.
+  `restaurant_details.json` is merged key-by-key: their fields win on overlap, my extra slugs fill gaps.
+
+### 2026-11-26 · arena-e0e22b98 · Publication record
+
+- Pull request: https://github.com/kanlerxz87-cyber/NYFun1/pull/17 — merged into `main`, merge commit
+  `4328199`. GitHub Pages build for that commit reported `built` (13:51 UTC). Live site:
+  https://kanlerxz87-cyber.github.io/NYFun1/docs/index.html
+- Session contribution: hotel re-verification on one tax basis (all 7, bathroom evidence, hotel-specific
+  URLs), MICHELIN detail expansion to all 20 three-/two-star venues (hours, price bands, addresses,
+  booking links, derived coordinates validated to ~100 m), `restaurant_details.json` union to 30 slugs
+  with arena-2eccf543's 22 Manhattan venues, and flag **F-24** publishing the same-day disagreement on
+  Fairfield's late-March windows (incl. a sold-out read for 15–22 Mar). Two rebase conflicts against
+  advancing `main` (PRs #11/#12 and #13–#15) were resolved as unions; both conflict logs are above.
+- Remaining open after this session: the 42 one-star/selected slugs beyond the 30 verified detail rows,
+  per-night price curves (F-12), and F-24's late-March re-read. None block the plan.
+
+
+### 2026-11-26 · arena-55eb819a · second upstream integration note
+
+- `origin/main` advanced again through PRs #17–#18 while this session was finishing. A `git pull --rebase origin main` attempt conflicted; the rebase was aborted and a `-X theirs` merge was used instead so all newer upstream files are preserved.
+- This session’s board entries are appended below. The richer 30-slug restaurant dataset, late-March window disagreement flag, and all other upstream changes are kept; our independent ledger and build/source-link checks are layered on top without discarding upstream work.
 ## SESSION CLAIM — 2026-11-26 (UTC) — `arena-55eb819a` (current branch `arena/55eb819a-nyfun1`)
 
 **Status:** active final integration / independent verification session. The platform fixes this workspace to
@@ -558,6 +629,6 @@ discarding either side's changes.
 | External URL audit | 280 unique HTTPS URLs across 62 domains; 0 non-HTTPS warnings; 14 manual `fetch_page` spot checks; 3 broken official URLs replaced | `docs/data/external_url_audit.json`, `site_data/independent_verification.json` |
 | Build & reproducibility | `python3 build_site.py` → 11 pages; `all build checks passed`; generated `docs/` committed | `build_site.py`, `docs/*.html` |
 
-**Flagged irregularities added / corrected:** F-24 secondary-source-only 14 Dec 2026 ceremony date (official MICHELIN confirmation not found), F-25 NPS Statue hours/FAQ conflict, F-15 current aggregator flight fare, F-01 source changed to official MICHELIN ceremony index, and stale `$4,184.98` / `$1,204` copy corrected. Flagged/unverified items do not block merge; they remain on `docs/flagged.html`.
+**Flagged irregularities added / corrected:** F-25 secondary-source-only 14 Dec 2026 ceremony date (official MICHELIN confirmation not found), F-26 NPS Statue hours/FAQ conflict, F-15 current aggregator flight fare, F-01 source changed to official MICHELIN ceremony index, and stale `$4,184.98` / `$1,204` copy corrected. Upstream F-24 (late-March same-day Booking disagreement) is preserved. Flagged/unverified items do not block merge; they remain on `docs/flagged.html`.
 
 **No manual user input was requested or used.**

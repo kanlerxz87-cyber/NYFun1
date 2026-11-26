@@ -40,7 +40,7 @@ Anything unverified is on [the Flagged page](docs/flagged.html). Anything undeci
 | [Budget](docs/budget.html) | $4,246.98 verified subtotal across 11 priced lines + unpriced casual dining, verified dinner swaps & wine pairings |
 | [Questions](docs/questions.html) | 26 decisions: research items resolved vs traveller preferences & date-blocked reported 14 Dec 2026 check (secondary source; F-24) |
 | [Suggestions](docs/suggestions.html) | 12 structured improvements (8 implemented on 2026-11-26, 4 operational checks pending) |
-| [Flagged](docs/flagged.html) | 25 tracked items (resolved, documented, and live open flags) with primary sources |
+| [Flagged](docs/flagged.html) | 26 tracked items (resolved, documented, and live open flags) with primary sources |
 | [Method & sources](docs/method.html) | Every primary source URL, final independent audit ledger, lexical external URL audit, scraping limits, travel model formula, and build assertions |
 | [Repo review](docs/repo-review.html) | Verification inventory, audit findings, orphan cleanup, and reproduction guide |
 
@@ -85,7 +85,7 @@ Everything the site renders lives in `site_data/`, one file per concern. Edit th
 | `hotels.json` | 7 hotels: verified street addresses, direct Booking `/hotel/us/...` URLs, pre-tax & NYC-tax all-in 7-night totals, resort-fee parity, 5-week seasonal comparison, shifted Feb starts, 22-star reach |
 | `activities.json` | 11 activities: verified 2026-11-26 hours (incl. Met Wed closure, High Line winter hours, 9/11 18:00 last entry), out-of-state prices (incl. AMNH $37), distances from `538 W 58th St` |
 | `social.json` | Social & video links across 28 venue/activity keys: 24 official Instagram handles (incl. `@cotekoreansteakhouse`), 23 YouTube reviews, 4 TikTok tasting videos, honest search fallbacks |
-| `framework.json` | Trip dates, OPM/NYCPS holidays, NWS Central Park climate normals, $4,246.98 budget subtotal, 7/4/14-night itineraries (Tue Met / Wed MoMA), 25 flags, 26 questions, 12 suggestions |
+| `framework.json` | Trip dates, OPM/NYCPS holidays, NWS Central Park climate normals, $4,246.98 budget subtotal, 7/4/14-night itineraries (Tue Met / Wed MoMA), 26 flags, 26 questions, 12 suggestions |
 | `independent_verification.json` | Final session’s 60 independent official-source reads, corrections, and irregularities; rendered on the Method page |
 
 ### Two fields to understand before editing
@@ -99,7 +99,7 @@ Everything the site renders lives in `site_data/`, one file per concern. Edit th
 
 | Limit | Where it is recorded |
 |---|---|
-| A **14 December 2026** New York ceremony date is reported by Eater NY but not confirmed by an official MICHELIN page | F-01 / F-24 |
+| A **14 December 2026** New York ceremony date is reported by Eater NY but not confirmed by an official MICHELIN page | F-01 / F-25 |
 | 72 ceremony vs 69 live NYC discrepancy reconciled (`Blue Hill at Stone Barns`, `La Bastide`, fire-closed `Shion 69 Leonard St`) | F-02 (Resolved) |
 | Hotel prices carry live Black Friday / Bonus promos (`-30%` to `-36%`); lock $0-prepay free-cancel and re-check in Jan 2027 | F-03 |
 | Reach across 22 verified Manhattan stars uses Haversine 5 km radius pending full 69-venue weekday GTFS routing | F-05, Q-19, S-02 |

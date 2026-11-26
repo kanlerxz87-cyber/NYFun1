@@ -300,7 +300,7 @@ all five seasonal weeks, and an explicit register of everything open or resolved
   <div class="card"><div class="k">Hotel, 7 nights all-in</div><div class="v">{money(rec['all_in_7n_usd'])}</div>
    <div class="small">Fairfield Central Park (538 W 58th St) · {money(rec['total_7n_usd'])} pre-tax · king bed · breakfast included · free cancel &lt;12 Feb</div></div>
   <div class="card"><div class="k">MICHELIN NYC stars</div><div class="v">{live_c['total']} live</div>
-   <div class="small">{live_c['3']} three-star · {live_c['2']} two-star · {live_c['1']} one-star (reconciled vs {n_stars_cer} Nov 2025 ceremony entries). <strong>Reported ceremony date: 14 Dec 2026 (secondary source, F-24).</strong></div></div>
+   <div class="small">{live_c['3']} three-star · {live_c['2']} two-star · {live_c['1']} one-star (reconciled vs {n_stars_cer} Nov 2025 ceremony entries). <strong>Reported ceremony date: 14 Dec 2026 (secondary source, F-25).</strong></div></div>
   <div class="card"><div class="k">Verified budget subtotal</div><div class="v">{money(FR["budget"]["verified_subtotal_usd"])}</div>
    <div class="small">Hotel w/ tax + AMS–JFK flights + MTA cap + 6 paid attractions (incl. AMNH $74) + 2 tasting dinners.</div></div>
 </div>
@@ -371,7 +371,7 @@ plus ~15–20 min ferry crossing (~62–67 min door-to-island; harbour wind can 
 <div class="card">
 <h3>6 · The three things that could still move before departure</h3>
 <ol class="tight">
-<li><strong>Reported 14 December 2026:</strong> a secondary source says the New York ceremony is that day; no official MICHELIN confirmation was found. Re-check the official ceremony index after that date (F-01/F-24).</li>
+<li><strong>Reported 14 December 2026:</strong> a secondary source says the New York ceremony is that day; no official MICHELIN confirmation was found. Re-check the official ceremony index after that date (F-01/F-25).</li>
 <li><strong>Dynamic hotel &amp; flight pricing:</strong> Fairfield's $985.60 (-30% BF) rate carries $0 prepayment and free cancel until 12 Feb 2027 — lock now and re-check weekly / mid-Jan 2027.</li>
 <li><strong>Non-refundable tasting releases:</strong> Sushi Sho ($495), Atomix ($314–$495), and EMP ($385) open 1st of the prior month (1 Jan 2027 for February); Le Bernardin Resy opens ~30 days out.</li>
 </ol>
@@ -749,7 +749,7 @@ Live guide totals today: <strong>{live_c['total']} starred</strong>, <strong>{li
 ({live_c.get('bib_by_price', {}).get('$', 7)} $, {live_c.get('bib_by_price', {}).get('$$', 60)} $$, {live_c.get('bib_by_price', {}).get('$$$', 9)} $$$),
 <strong>{live_c.get('selected', 224)} Selected</strong>, and <strong>{live_c.get('green_star', 4)} Green Stars</strong> (3 starred + 1 Selected).</div>
 
-<div class="badbox"><strong>Reported ceremony date: 14 December 2026 (secondary source only).</strong> Eater NY reports this date; no official MICHELIN page confirmed it in this session. Stars shown here reflect the live 2025/2026 list. Re-check the official MICHELIN ceremony index after that date (F-01/F-24).</div>
+<div class="badbox"><strong>Reported ceremony date: 14 December 2026 (secondary source only).</strong> Eater NY reports this date; no official MICHELIN page confirmed it in this session. Stars shown here reflect the live 2025/2026 list. Re-check the official MICHELIN ceremony index after that date (F-01/F-25).</div>
 
 <div class="note"><strong>Coverage summary:</strong> {n_hours_pub} priority Manhattan restaurants now carry
 verified weekly hours and coordinates (including all 5 three-stars, 7 key two-stars, and 10 value/highlight one-stars),
@@ -938,7 +938,7 @@ engineered around actual museum closure days, winter hours, holiday crowds, and 
 <div class="card">
 <ol class="tight">
 <li><strong>Now (Nov 2026):</strong> Lock Fairfield Central Park ($985.60 pre-tax / $1,158.98 all-in) at $0 prepayment with free cancellation until <strong>2027-02-12</strong>; monitor flight checkout for 2 seats.</li>
-<li><strong>After the reported 14 Dec 2026 date:</strong> Re-check official MICHELIN Guide NYC 2026 ceremony announcements before confirming the final restaurant list (F-01/F-24).</li>
+<li><strong>After the reported 14 Dec 2026 date:</strong> Re-check official MICHELIN Guide NYC 2026 ceremony announcements before confirming the final restaurant list (F-01/F-25).</li>
 <li><strong>1 Jan 2027 (11:00–15:00 EST):</strong> Monthly releases open for February at <strong>Sushi Sho</strong> (11:00 EST, Tock), <strong>Atomix</strong> (15:00 EST, Tock), and <strong>Eleven Madison Park</strong> (09:00 EST, Resy).</li>
 <li><strong>Mid-Jan 2027 (~30 days out):</strong> Book <strong>Le Bernardin</strong> &amp; <strong>Gabriel Kreuther</strong> (Resy), <strong>Dirt Candy</strong> (30d midnight EST), timed <strong>9/11 Museum</strong>, <strong>Statue of Liberty Crown/Pedestal</strong>, and re-verify Booking.com hotel rate (S-03).</li>
 <li><strong>Week of 8–12 Feb 2027:</strong> Check NWS marine/winter forecast for Liberty Island ferry; free-cancel hotel deadline hits <strong>12 Feb 2027</strong>.</li>
@@ -1138,7 +1138,7 @@ items requiring timing or external updates.</p>
 <h2>The four live items that still matter before travel</h2>
 <div class="badbox">
 <ol class="tight">
-<li><strong>F-01/F-24</strong> &mdash; a secondary source reports a 14 December 2026 New York ceremony; no official MICHELIN page confirmed it in this session.</li>
+<li><strong>F-01/F-25</strong> &mdash; a secondary source reports a 14 December 2026 New York ceremony; no official MICHELIN page confirmed it in this session.</li>
 <li><strong>F-03</strong> &mdash; Hotel rates carry live Black Friday / Bonus promos; lock $0-prepay free-cancel now and re-check in mid-Jan 2027.</li>
 <li><strong>F-05</strong> &mdash; The one-hour travel rule is modelled via Haversine across 22 stars, pending scheduled GTFS timetable verification.</li>
 <li><strong>F-15</strong> &mdash; AMS–JFK fare ($1,266 for 2) is an indicative 1-adult aggregator quote until checked for 2 seats w/ bags on airline checkout.</li>
@@ -1190,7 +1190,7 @@ the few remaining third-party walls, and the automated integrity checks run on e
 <li>{ext("https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025", "2025 NY Star Ceremony Article (72 entries)")} · {ext("https://guide.michelin.com/us/en/new-york-state/new-york/restaurants/all-starred", "Live NYC Starred Filter (69 venues)")} · {ext("https://guide.michelin.com/us/en/best-of/least-expensive-one-michelin-star-restaurants-in-new-york", "Least Expensive 1-Star NYC Picks")}.</li>
 <li>All 5 Three-Stars: {ext("https://www.le-bernardin.com/accessible/menus/dining-room/chef-s-tasting/", "Le Bernardin")}, {ext("https://www.elevenmadisonpark.com/", "Eleven Madison Park")}, {ext("https://www.exploretock.com/jungsik", "Jungsik (Tock)")}, {ext("https://www.exploretock.com/perse", "Per Se (Tock)")}, {ext("https://www.exploretock.com/sushi-sho-new-york", "Sushi Sho (Tock)")}.</li>
 <li>Two- &amp; One-Stars + Green Star: {ext("https://www.gknyc.com/menus", "Gabriel Kreuther")}, {ext("https://www.themodernnyc.com/the-modern/", "The Modern")}, {ext("https://www.saga-nyc.com/", "Saga")}, {ext("https://www.jean-georgesrestaurant.com/accessible/jean-georges/menus/dinner-tasting-menu/six-course-tasting/", "Jean-Georges")}, {ext("https://www.exploretock.com/atomixnyc", "Atomix (Tock)")}, {ext("https://www.exploretock.com/atera", "Atera (Tock)")}, {ext("https://www.exploretock.com/aquavit", "Aquavit (Tock)")}, {ext("https://www.danielnyc.com/cuisine/prix-fixe", "Daniel")}, {ext("https://www.gramercytavern.com/dining-room-menu/", "Gramercy Tavern")}, {ext("https://lecoucou.com/", "Le Coucou")}, {ext("https://www.dirtcandynyc.com/", "Dirt Candy")}, {ext("https://www.cotekoreansteakhouse.com/nycdinnermenu?tab=newyork-dinner", "Cote")}, {ext("https://www.crownshy.nyc/menus/", "Crown Shy")}, {ext("https://www.onewhitestreetnyc.com/tasting", "One White Street")}.</li>
-<li>Reported ceremony date (14 Dec 2026): {ext("https://ny.eater.com/news/414985/michelin-guide-new-york-additions-2026-bib-gourmands-michelin-recommendations", "Eater New York (secondary, flagged F-24)")} · {ext("https://guide.michelin.com/us/en/articles/michelin-guide-ceremony", "official MICHELIN ceremony index (no confirmation found)")}.</li>
+<li>Reported ceremony date (14 Dec 2026): {ext("https://ny.eater.com/news/414985/michelin-guide-new-york-additions-2026-bib-gourmands-michelin-recommendations", "Eater New York (secondary, flagged F-25)")} · {ext("https://guide.michelin.com/us/en/articles/michelin-guide-ceremony", "official MICHELIN ceremony index (no confirmation found)")}.</li>
 </ul>
 
 <h3>Hotels, NYC Taxes &amp; Seasonal Windows</h3>

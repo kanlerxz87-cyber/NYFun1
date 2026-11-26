@@ -302,7 +302,7 @@
    "id": "F-01",
    "severity": "HIGH",
    "title": "A 14 December 2026 New York ceremony date is reported by a secondary source",
-   "detail": "Eater NY reported on 18 Nov 2026 that the annual New York awards ceremony is Monday 14 December 2026. No official MICHELIN page confirming that date was found in this session, so the date is treated as secondary and flagged (F-24). Stars shown here come from the 18 Nov 2025 ceremony plus 2026-11-26 live status checks.",
+   "detail": "Eater NY reported on 18 Nov 2026 that the annual New York awards ceremony is Monday 14 December 2026. No official MICHELIN page confirming that date was found in this session, so the date is treated as secondary and flagged (F-25). Stars shown here come from the 18 Nov 2025 ceremony plus 2026-11-26 live status checks.",
    "source": "https://guide.michelin.com/us/en/articles/michelin-guide-ceremony",
    "settle_by": "Read the official MICHELIN Guide ceremony index/article on or after 2026-12-14 and refresh the roster.",
    "status": "Open"
@@ -508,6 +508,15 @@
   {
    "id": "F-24",
    "severity": "MEDIUM",
+   "title": "Two same-day captures disagree on Fairfield weeks 4-5 (8-15 Mar and 15-22 Mar 2027)",
+   "detail": "Reads made on 2026-11-26 of the same Booking.com hotel page disagree: one capture priced the standard King Room at $1,247 before tax for both 8-15 Mar and 15-22 Mar (identical figures, shown in the window table), while a second capture the same day priced 8-15 Mar at $1,660 before tax (non-refundable) and reported NO AVAILABILITY for 15-22 Mar (\"We have no availability here between Mon, Mar 15, 2027 and Mon, Mar 22, 2027\"). Per the disagreement rule both readings are published. Practical reading: late-March inventory at this property is unstable or exhausted, which argues for booking early on a free-cancellation rate rather than waiting.",
+   "source": "https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-03-15&checkout=2027-03-22&group_adults=2&no_rooms=1&selected_currency=USD",
+   "status": "Open",
+   "settle_by": "Re-read the two windows before booking; if the page shows sold out again, treat late March as unavailable at this property."
+  },
+  {
+   "id": "F-25",
+   "severity": "MEDIUM",
    "title": "14 Dec 2026 ceremony date lacks official MICHELIN confirmation",
    "detail": "The date is stated by Eater NY (secondary source). An official MICHELIN ceremony index was checked but did not confirm the date; the claim must not be represented as MICHELIN-official.",
    "source": "https://guide.michelin.com/us/en/articles/michelin-guide-ceremony",
@@ -515,7 +524,7 @@
    "status": "Open"
   },
   {
-   "id": "F-25",
+   "id": "F-26",
    "severity": "MEDIUM",
    "title": "Two official NPS pages give different Statue of Liberty hours",
    "detail": "NPS Operating Hours & Seasons states standard hours 09:00-16:30 with last statue entrance 15:30; the NPS FAQ states 08:30-17:00 with the last ferry at 15:30. The site shows the hours-page standard and flags the conflict.",
@@ -716,7 +725,7 @@
    "id": "Q-18",
    "question": "Does the reported 14 December 2026 ceremony change any venue’s star level?",
    "why_it_blocks": "Travel occurs 2 months after the Dec 14, 2026 MICHELIN NY ceremony.",
-   "have": "A secondary source reports the date; no official MICHELIN confirmation was found in this session (F-24).",
+   "have": "A secondary source reports the date; no official MICHELIN confirmation was found in this session (F-25).",
    "missing": "Dec 14, 2026 announcement itself.",
    "how_to_discover": "Check the official MICHELIN Guide ceremony index/article on or after 2026-12-14.",
    "owner": "research",
@@ -782,7 +791,7 @@
    "id": "Q-24",
    "question": "Sign-off on remaining open flags before final bookings?",
    "why_it_blocks": "Ensures Dec 14 ceremony check, flight checkout and GTFS verification aren't overlooked.",
-   "have": "A flag register with 25 items.",
+   "have": "A flag register with 26 items.",
    "missing": "Traveller review.",
    "how_to_discover": "Review Flagged page.",
    "owner": "traveller",
