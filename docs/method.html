@@ -29,7 +29,7 @@ a different badge.</li>
 <li><strong>Label every derived number.</strong> Arithmetic on a verified figure is marked DERIVED and the
 formula is written down.</li>
 <li><strong>Keep disagreements visible.</strong> When two official pages disagree, both numbers are shown.</li>
-<li><strong>Date every snapshot.</strong> Prices and hours were read on 2026-11-25 and will drift.</li>
+<li><strong>Date every snapshot.</strong> Most values were read on 2026-11-25; six MICHELIN hour blocks, three dated Booking.com window prices, two street addresses and The High Line's seasonal hours were re-read on 2026-11-26. All will drift.</li>
 </ol>
 </div>
 
@@ -83,11 +83,36 @@ formula is written down.</li>
 <li><strong>TikTok: failed.</strong> Every URL returned HTTP 400.</li>
 </ul>
 
+<h2>Re-verified on 26 November 2026</h2>
+<div class="card">
+<p>Six hour blocks that the first pass had marked <em>UNVERIFIED</em> were readable in a second
+read of MICHELIN's own restaurant pages. They were replaced with the published weekly hours and given
+a per-field <code>hours_read_on</code> value; nothing was pattern-filled:</p>
+<ul class="tight">
+<li><a class="" href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/eleven-madison-park" target="_blank" rel="noopener noreferrer">Eleven Madison Park</a> ·
+<a class="" href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/per-se" target="_blank" rel="noopener noreferrer">Per Se</a> ·
+<a class="" href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/daniel" target="_blank" rel="noopener noreferrer">Daniel</a> ·
+<a class="" href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/jungsik-new-york" target="_blank" rel="noopener noreferrer">Jungsik</a> ·
+<a class="" href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/sushi-sho-1213976" target="_blank" rel="noopener noreferrer">Sushi Sho</a> ·
+<a class="" href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/gabriel-kreuther" target="_blank" rel="noopener noreferrer">Gabriel Kreuther</a></li>
+<li>Two dates previously quoted without a clickable source are now tied to their exact Booking.com URLs:
+<a class="" href="https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-16&amp;checkout=2027-02-23&amp;group_adults=2&amp;no_rooms=1&amp;selected_currency=USD" target="_blank" rel="noopener noreferrer">16–23 Feb 2027</a> ($996.10 before tax) and
+<a class="" href="https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-22&amp;checkout=2027-03-01&amp;group_adults=2&amp;no_rooms=1&amp;selected_currency=USD" target="_blank" rel="noopener noreferrer">22 Feb – 1 Mar 2027</a> ($1,020.60 before tax). Both are accessible king rooms — flag F-22.</li>
+<li><a class="" href="https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-16&amp;checkout=2027-02-23&amp;group_adults=2&amp;no_rooms=1&amp;selected_currency=USD" target="_blank" rel="noopener noreferrer">Booking.com</a> also published the Fairfield's street address (538 West 58th Street);
+<a class="" href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/gabriel-kreuther" target="_blank" rel="noopener noreferrer">MICHELIN</a> published Gabriel Kreuther's (41 W. 42nd St.).</li>
+<li><a class="" href="https://www.thehighline.org/visit/" target="_blank" rel="noopener noreferrer">The High Line's official visitor page</a> published seasonal hours on the second read. The Met's hours still did not render.</li>
+</ul>
+<p class="small">Also corrected in this pass: the overview called Arlo SoHo's discounted $1,021 rate
+"pre-discount" (its pre-discount rate is $1,639); the social-account headline counted an unread
+Instagram handle as verified; and an orphaned, stale <code>docs/methodology.html</code> from an earlier
+build was removed.</p>
+</div>
+
 <h2>What failed, and what was done about it</h2>
 <div class="card">
 <table class="tbl"><thead><tr><th>Source</th><th>What happened</th><th>Result</th></tr></thead><tbody>
 <tr><td>amnh.org admission prices</td><td>Ticketing sits on a separate system</td><td>Price left blank</td></tr>
-<tr><td>thehighline.org hours</td><td>Cookie-consent wall blocked the content</td><td>Hours left blank</td></tr>
+<tr><td>thehighline.org hours</td><td>Cookie-consent wall blocked the first read on 25 Nov</td><td>Recovered from a second page read on 26 Nov: Dec 1 – Mar 31, 07:00-20:00</td></tr>
 <tr><td>metmuseum.org hours block</td><td>Did not render in the captured page</td><td>Hours left blank</td></tr>
 <tr><td>tiktok.com (profile and discovery)</td><td>HTTP 400 on every attempt</td><td>No TikTok asserted anywhere</td></tr>
 <tr><td>elevenmadisonpark.com menu</td><td>Site publishes no price</td><td>Blank, Resy policy noted</td></tr>

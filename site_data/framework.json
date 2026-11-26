@@ -346,8 +346,8 @@
   {
    "id": "F-09",
    "severity": "HIGH",
-   "title": "Hours for The Met and The High Line were not captured",
-   "detail": "The Met's official hours block did not render in the captured page and the High Line's visitor page served a cookie wall. Neither set of hours is shown, rather than being taken from a secondary source.",
+   "title": "The Met's opening hours were not captured",
+   "detail": "The Met's official hours block did not render in the captured page text on 2026-11-25 or on a second attempt on 2026-11-26, so its hours remain blank rather than being taken from a secondary source. The High Line's seasonal hours WERE read from the official visitor page on 2026-11-26 and are now published (Dec 1 – Mar 31, 07:00-20:00).",
    "source": "https://www.metmuseum.org/plan-your-visit",
    "settle_by": "Read the hours block on metmuseum.org and thehighline.org with a browser that renders script",
    "status": "Open"
@@ -459,6 +459,15 @@
    "source": "https://www.booking.com/searchresults.html?ss=Manhattan%2C+New+York&checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD&order=price",
    "settle_by": "Open each of the three hotels from the search results and copy its /hotel/us/ URL",
    "status": "Open"
+  },
+  {
+   "id": "F-22",
+   "severity": "MEDIUM",
+   "title": "Date-window prices are not the same room type, so the \"cheapest window\" margin is soft",
+   "detail": "The 16–23 Feb ($996.10 before tax) and 22 Feb–1 Mar ($1,020.60 before tax) rates are Black Friday prices on accessible king rooms at the Fairfield; on 16–23 Feb a standard/city-view king was dearer ($1,020.60–$1,021). The 15–22 Feb recommended rate is a standard King Room with tax included. All three are reproduced by their dated Booking.com URLs, but they are not a like-for-like same-room comparison.",
+   "source": "https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-16&checkout=2027-02-23&group_adults=2&no_rooms=1&selected_currency=USD",
+   "settle_by": "Price the same non-accessible King Room on all three windows and compare all-in totals.",
+   "status": "Open"
   }
  ],
  "questions": [
@@ -545,11 +554,11 @@
   },
   {
    "id": "Q-09",
-   "question": "What are The Met's and The High Line's opening hours in February 2027?",
-   "why_it_blocks": "Both are anchor daytime activities and neither has verified hours.",
-   "have": "Prices and addresses for both.",
-   "missing": "Hours and closure days.",
-   "how_to_discover": "Read the hours block on metmuseum.org and thehighline.org in a script-rendering browser.",
+   "question": "What are The Met's opening hours in February 2027?",
+   "why_it_blocks": "The Met is an anchor daytime activity and its hours are still unverified.",
+   "have": "The address and $30 adult admission from metmuseum.org; The High Line's hours were recovered on 2026-11-26.",
+   "missing": "The Met's opening hours and closure days.",
+   "how_to_discover": "Read the hours block on metmuseum.org in a script-rendering browser, or use The Met's official visitor-information phone line.",
    "owner": "research",
    "blocks": "Itinerary",
    "status": "Open"
