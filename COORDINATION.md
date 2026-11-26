@@ -267,3 +267,26 @@ ferry) → F-20.
   titles/table headers, and a stated budget subtotal that could drift from the sum of its lines.
 - Counts on the site are now derived from the data (socials 11 official + 3 review videos, flags 20,
   questions 26) rather than typed into prose.
+
+---
+
+## SESSION CLAIM — 2026-11-26 (UTC) — `arena-2eccf543` (branch `arena/2eccf543-nyfun1`)
+
+**Note on branch policy:** Session environment requires all commits and pushes to remain on the
+assigned branch `arena/2eccf543-nyfun1` (no new branch creation). All prior claims on `COORDINATION.md`
+are from 2026-11-25 (>12 hours ago) with no open PRs on `kanlerxz87-cyber/NYFun1`.
+
+**Tasks claimed (in progress):**
+- `T16` · Line-by-line repo review & defect audit (`build_site.py`, `site_data/*.json`, orphan `docs/methodology.html`, `docs/data/build_summary.json`, broken `build.py`, `deepdive/` cross-check)
+- `T17` · Official re-verification of MICHELIN 2025 roster (resolve 72 vs 69 diff, verify addresses/coordinates/hours/prices/websites for starred + guide-listed venues)
+- `T18` · Official verification of hotels across the 2027-02-15 to 2027-03-23 window (real Booking.com / hotel-direct quotes, street addresses, room specs, tax-inclusive totals, cheapest booking window)
+- `T19` · Official verification of activities, MTA transit fares, NYC Feb/Mar climate & holidays (`metmuseum.org`, `thehighline.org`, `amnh.org`, `nps.gov`, `mta.info`, `opm.gov`, `weather.gov`)
+- `T20` · Real transit & MICHELIN cluster analysis from verified venue coordinates (`site_data/*.json`, `build_site.py`)
+- `T21` · Direct social/video review verification (YouTube, Instagram, TikTok) per restaurant and activity
+- `T22` · Rebuild, integrity/link checks, PR to `main`, merge, and confirm GitHub Pages deployment
+
+**Files in scope:** `build_site.py`, `site_data/*.json`, `docs/*.html`, `docs/assets/style.css`,
+`docs/data/` (remove stale orphan `build_summary.json` / `methodology.html` left from `build.py`),
+`README.md`, `COORDINATION.md` (append-only). `deepdive/**`, `build.py`, `build_deepdive.py`,
+`content.py` remain untouched except where audited and documented in the Repo Review / Flagged pages.
+
