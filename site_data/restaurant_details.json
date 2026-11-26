@@ -96,17 +96,17 @@
    "address": "2 Harrison St., New York, NY 10013",
    "price_band": "$$$$",
    "hours": {
-    "Mon": "17:00-22:00",
-    "Tue": "17:00-22:00",
-    "Wed": "17:00-22:00",
-    "Thu": "17:00-22:00",
-    "Fri": "15:00-22:00",
-    "Sat": "15:00-22:00",
-    "Sun": "15:00-22:00"
+    "Mon": "closed",
+    "Tue": "17:00-21:30",
+    "Wed": "17:00-21:30",
+    "Thu": "17:00-21:30",
+    "Fri": "17:00-21:30",
+    "Sat": "17:00-21:30",
+    "Sun": "17:00-21:30"
    },
-   "hours_source": "https://www.exploretock.com/jungsik",
-   "closed_days": "none listed",
-   "exceptions": "Dinner 7 days (Fri-Sun opens early at 15:00). Nearest 3-star venue to Arlo SoHo (0.64 km) and Residence Inn FiDi (1.30 km).",
+   "hours_source": "https://www.jungsik.com/visit/",
+   "closed_days": "Monday",
+   "exceptions": "Closed Mondays (corrected 2026-11-26: Tock shows 'Jungsik is not offering reservations' on Mon 30 Nov 2026). Dinner served Tue-Sun 17:00-21:30. Nearest 3-star venue to Arlo SoHo (0.64 km) and Residence Inn FiDi (1.30 km).",
    "menu_price_usd": 335,
    "price_source": "https://www.exploretock.com/jungsik",
    "price_note": "Signature Tasting Menu $335 pp ($670 for two; $200 pp deposit at booking on Tock). Bar a la carte reservations require $50 pp deposit.",
@@ -115,7 +115,7 @@
    "lat": 40.7187256,
    "lon": -74.0091114,
    "hours_status": "VERIFIED",
-   "hours_note": "Hours and Signature Tasting price ($335 pp) verified from Tock booking page."
+   "hours_note": "CORRECTED 2026-11-26 (F-27): the earlier hours (Mon-Thu 17:00-22:00, Fri-Sun 15:00-22:00, Monday open) could not be confirmed on the source cited for them. Same-day official reads: jungsik.com/visit/ states 'JUNGSIK OPENS TUESDAY-SUNDAY 5:00PM-9:30PM'; Tock's own date slots run 5:00 PM-9:30 PM on 26-27 Nov 2026, with no Monday availability on 30 Nov 2026."
   },
   "sushi-sho-1213976": {
    "official_site": "https://sushi-sho.com/",
@@ -160,7 +160,7 @@
    },
    "hours_source": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/daniel",
    "closed_days": "Monday",
-   "exceptions": "Holds 1 MICHELIN Star (2025). Open Sunday evenings (closed Monday \u2014 corrected from earlier entry). Jackets recommended.",
+   "exceptions": "Holds 1 MICHELIN Star (2025). Open Sunday evenings (closed Monday — corrected from earlier entry). Jackets recommended.",
    "menu_price_usd": 195,
    "price_dinner_tasting_usd": 255,
    "price_pairing_usd": 195,

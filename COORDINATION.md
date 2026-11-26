@@ -641,3 +641,107 @@ discarding either side's changes.
 - **Final verification:** 11 generated pages, `all build checks passed`, 0 broken internal links across root/docs/deepdive, 288 unique HTTPS external URLs / 69 domains / 0 non-HTTPS warnings, every generated table row source-linked, and budget subtotal `$4,246.98` matching its priced lines.
 - **Tasks:** R1–R7 are done. Flagged/unverified items remain published on `docs/flagged.html` and did not block merge.
 - This board entry is published to `main` through a short follow-up PR from the same fixed current branch; no other branch or worktree was used.
+---
+
+## SESSION CLAIM — 2026-11-26 (UTC) — `arena-41d893a0` (branch `arena/41d893a0-nyfun1`)
+
+**Scope claimed:** T15 verification audit · T16 gap-closing flag work · T17 improvements from the
+Suggestions register · T18 integration (PR → `main`, merge, Pages confirm, this log).
+Files: `site_data/*.json` (targeted cells only), `build_site.py` (targeted sections), `README.md`,
+`COORDINATION.md` (append-only).
+
+**Claim made before starting; pushed immediately (commit `6221820`).** At claim time no other live
+branch existed — PRs #1–#10 were merged/closed.
+
+### 2026-11-26 · arena-41d893a0 · What this session read (all official, all same-day)
+
+| Value read | Official source | Closed / changed |
+|---|---|---|
+| Mon 15 Feb 2027 = Washington's Birthday | https://www.opm.gov/policy-data-oversight/pay-leave/federal-holidays/ (2027 table) | F-11 (later marked Resolved on main too) |
+| The High Line: Dec 1–Mar 31 daily 07:00–20:00; Apr 1–Nov 30 07:00–22:00; Rail Yard closes dusk | https://www.thehighline.org/visit/ (cookie wall passed on chunk 1) | activity hours |
+| The Met: Sun–Tue & Thu 10:00–17:00; Fri–Sat 10:00–21:00; closed Wed (+ holiday closures); $30 adult | metmuseum.org hours block (rendered read; direct fetch confirms "Closed on Wednesdays") | activity hours |
+| Chelsea Market: concourse 07:00–22:00; official Instagram @chelseamarketny (Social heading links it) | https://www.chelseamarket.com/ | F-08 |
+| Jungsik: **Tue–Sun 17:00–21:30, closed Monday**; Tock slots 5:00–9:30 PM; Monday "not offering reservations" (Mon 30 Nov); Signature Menu $335 pp; IG @jungsik_nyc | https://www.jungsik.com/visit/ + https://www.exploretock.com/jungsik (+ date query `?date=2026-11-30`) | F-27 correction |
+| Sushi Sho: Mon closed; Tue–Sun 17:00–22:00; Shorter Omakase $495 pp prepaid; **booking through 2027-02-28, next release 2026-12-01 11:00 EST**; confirm 1 day ahead; IG @sushishonyc; 3 E 41st St | https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/sushi-sho-1213976 + https://www.exploretock.com/sushi-sho-nyc | F-28 countdown fix |
+| Gramercy Tavern Seasonal Menu $178 pp (pairing +$118; Tavern ALC $20–54) | https://www.gramercytavern.com/dining-room-menu | price cell |
+| EMP: no price on Resy; January opens Tue 1 Dec 2026 10:00 ET; month-by-month; payment in full | https://resy.com/cities/new-york-ny/venues/eleven-madison-park | Q-27, F-28 |
+| Daniel: 3/5/7-course menus listed, **no prices published** (site itself unreachable) | https://resy.com/cities/new-york-ny/venues/daniel | price stays blank |
+| Ceremony: evening of **Dec 14, 2026** at The Glasshouse (official press) | https://michelinmedia.com/pages/blog/detail/article/c/a1479/ | F-01 source upgraded from Eater |
+| NOAA 1991–2020 Feb normals, station USW00094728 = "NEW YORK CNTRL PK TWR" (40.7789, −73.9692): 42.2 °F / 29.5 °F, 3.19 in precip, 10.1 in snow | https://www.ncei.noaa.gov/access/services/data/v1 (normals-monthly-1991-2020, includeStationName) | weather panel cross-check |
+
+### 2026-11-26 · arena-41d893a0 · Parallel-session conflict and how it was resolved
+
+1. **Rebase conflict (COORDINATION.md):** while this session worked, main advanced
+   `74d9883 → 38f0e4e` via PRs **#11–#15** from `arena-6b0cf789`, `arena-c7b21fd7` and
+   `arena-2eccf543`. The rebase hit a COORDINATION.md conflict. **Resolution:** rebase aborted
+   (no commit dropped), work backed up on local branch `backup/41d893a0-pre-rebase`, then the
+   branch was **reset onto `origin/main` and only this session's unique, still-valid deltas were
+   re-applied** — nothing from #11–#15 was discarded. Overlap assessment: those PRs had already
+   re-derived most of this session's T16 reads (Met/High Line/Chelsea hours, Jungsik/Sushi Sho/
+   Gramercy prices, socials, weather panel, booking countdown), so re-applying them would have
+   reverted newer corrections (e.g. the Fairfield tax-basis fix F-23).
+2. **Data disagreement — Jungsik hours (now F-27):** `arena-2eccf543`'s merged data had Jungsik
+   Mon–Thu 17:00–22:00 / Fri–Sun 15:00–22:00 sourced to Tock. This session's same-day re-read of
+   *that same Tock page* shows slots 5:00 PM–9:30 PM (26–27 Nov) and "Jungsik is not offering
+   reservations on Nov 30" (Monday); the venue's own site says "TUESDAY-SUNDAY 5:00PM-9:30PM".
+   The cell was **corrected** (closed Mon, Tue–Sun 17:00–21:30) and the correction is published
+   as flag **F-27**, which explicitly supersedes the Jungsik claim inside F-16. The other
+   session's record was not deleted — the flag quotes both readings.
+3. **Countdown conflicts (F-28):** main's countdown said Sushi Sho's February seats open
+   1 Jan 2027 and gave EMP's February release as 09:00 EST 1 Jan 2027. Tock (read 2026-11-26)
+   says the travel dates are **already** on sale through 2027-02-28 with next release
+   2026-12-01 11:00 EST, and EMP's Resy notice publishes only January (1 Dec 2026, 10:00am).
+   The Sushi Sho line was corrected; the unconfirmed EMP datetime is flagged (F-28) and raised
+   as **Q-27** rather than asserted.
+
+### 2026-11-26 · arena-41d893a0 · T15 audit + T18 build verification
+
+- Internal link audit over `index.html`, `docs/*.html`, `deepdive/*.html`: **1,022 hrefs,
+  0 broken, 0 bad anchors**; no duplicate ids; no unrendered template tokens.
+- `python3 build_site.py` passes its own gate ("all build checks passed") and the committed
+  `docs/` is byte-identical to a fresh rebuild (reproducibility re-checked after the final commit).
+- Live Pages deployment re-checked at session start (status `built`, `main:/`); final deploy
+  confirmation recorded at the bottom of this log after the merge.
+
+### 2026-11-26 · arena-41d893a0 · New register entries added (IDs after main's F-24 / Q-26)
+
+- **F-27** (Resolved) Jungsik hours correction — sources: jungsik.com/visit/, exploretock.com/jungsik.
+- **F-28** (Open) Sushi Sho/EMP countdown conflicts — sources: exploretock.com/sushi-sho-nyc,
+  resy.com EMP venue page. Sushi Sho half corrected; EMP half awaits Q-27.
+- **F-29** (Open, LOW) Green Star retirement reported by secondary press only — source:
+  inquirer.com (Aug 2026); settle by an official MICHELIN statement. Roster unchanged.
+- **Q-27** (Open, research) EMP February release datetime + Jungsik Feb-2027 price.
+
+### 2026-11-26 · arena-41d893a0 · Second rebase conflict (PR #17, protocol step 4)
+
+- The final `git pull --rebase` found session `arena-e0e22b98` had merged **PR #17** into `main`
+  while this session's delta commit was in flight. Conflicts: `COORDINATION.md` (both sessions
+  appended claim blocks), `site_data/framework.json` (their new F-24 vs this session's appended
+  flags), `site_data/restaurant_details.json` (their 30-slug union vs this session's Jungsik
+  correction) and two generated `docs/*.html` pages.
+- Resolution, nothing discarded: COORDINATION.md kept **both** blocks (theirs first, mine after);
+  `restaurant_details.json` took their 30-slug union **plus** this session's Jungsik correction;
+  `framework.json` kept their F-24 and appended this session's flags **renumbered F-27/F-28/F-29**;
+  generated pages were rebuilt from the merged data rather than hand-merged.
+- **Flag ID collision:** `arena-e0e22b98` published F-24 (Fairfield late-March disagreement) in the
+  same window this session was writing its own F-24 (Jungsik hours). This session's three flags are
+  renumbered F-27/F-28/F-29; every internal reference in this block was updated in the same pass.
+
+### 2026-11-26 · arena-41d893a0 · Third rebase conflict (PRs #18–#20, protocol step 4)
+
+- The push immediately after the PR #17 resolution found `main` had advanced again via PRs **#18/#19/#20**
+  (`arena-e0e22b98` final audit + `arena-55eb819a` independent verification). Conflicts in 9 files
+  (COORDINATION, README, build_site.py, 5 generated pages, framework, restaurant_details).
+- Resolution, nothing discarded: generated pages rebuilt from merged data; `restaurant_details.json`
+  auto-merged and kept this session's Jungsik correction (flag reference updated to F-27);
+  `build_site.py` kept the other sessions' ceremony wording **and** this session's Sushi Sho/EMP
+  countdown corrections in the same list; `README.md` kept their copy with counts updated to the
+  merged totals (29 flags / 27 questions); `framework.json` took their 26-flag base plus this
+  session's three flags renumbered **F-27/F-28/F-29** plus Q-27.
+- **Second flag-ID collision:** their new F-25/F-26 (ceremony confirmation, NPS hours) collided with
+  this session's F-25/F-26. This session's three flags are renumbered again to **F-27/F-28/F-29**.
+- **Bonus resolution:** their F-25 claimed the 14 Dec 2026 ceremony date lacked official confirmation —
+  this session had already read MICHELIN's own press release (michelinmedia.com, posted 11 Aug 2026)
+  confirming the evening of 14 Dec at The Glasshouse. Their F-25 is now **Resolved** with that source,
+  and F-01's source was upgraded from a secondary report to the official press page.
+
