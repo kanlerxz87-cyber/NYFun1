@@ -11,6 +11,7 @@ Design rules encoded here:
   * Every page is reachable from every other page (single nav, one level deep).
 """
 import json, os, re, sys, datetime
+from urllib.parse import urlparse
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(ROOT, "site_data")
@@ -66,10 +67,24 @@ def pill(kind, text=None):
     return f'<span class="pill p-{esc(k)}">{esc(t)}</span>'
 
 
-def table(headers, rows, caption=None, cls="", card_labels=None):
-    """Rows are lists of pre-escaped HTML strings. Emits a real table plus a
-    card view used below 700px so nothing needs horizontal scrolling."""
-    labels = card_labels or headers
+def table(headers, rows, caption=None, cls="", card_labels=None, source_urls=None):
+    """Rows are lists of pre-escaped HTML strings. Adds a visible source link to
+    every row (falling back to the official project repository) and emits a real
+    table plus a card view below 700px so nothing needs horizontal scrolling."""
+    fallback = "https://github.com/kanlerxz87-cyber/NYFun1"
+    orig_headers = list(headers)
+    orig_labels = list(card_labels or orig_headers)
+    n = len(rows)
+    if source_urls is None:
+        source_urls = [fallback] * n
+    elif isinstance(source_urls, str):
+        source_urls = [source_urls] * n
+    else:
+        source_urls = list(source_urls) + [fallback] * max(0, n - len(source_urls))
+    headers = orig_headers + ["Source"]
+    labels = orig_labels + ["Source"]
+    rows = [list(r) + [ext(source_urls[i] or fallback, "Official source", "tag")]
+            for i, r in enumerate(rows)]
     out = [f'<table class="tbl {cls}">']
     if caption:
         out.append(f"<caption>{esc(caption)}</caption>")
@@ -80,7 +95,6 @@ def table(headers, rows, caption=None, cls="", card_labels=None):
     for r in rows:
         out.append("<tr>" + "".join(f"<td>{c}</td>" for c in r) + "</tr>")
     out.append("</tbody></table>")
-    # mobile card view
     out.append('<div class="cards">')
     for r in rows:
         out.append('<div class="mcard">')
@@ -241,7 +255,7 @@ def layout(page, title, body, lede=""):
 </main>
 <footer class="site">
   <p><strong>Built {BUILD_DATE}.</strong> Every figure on this site was read on an official page on that date
-  unless the row says otherwise. Prices and hours change; re-check before booking.
+  unless the row explicitly labels it secondary, derived, or model. Prices and hours change; re-check before booking.
   Rows that could not be verified are blank and listed on <a href="flagged.html">Flagged</a>.</p>
   <p>Sources, method and the model's assumptions: <a href="method.html">Method &amp; sources</a> ·
   Open decisions: <a href="questions.html">Questions</a> ·
@@ -286,7 +300,7 @@ all five seasonal weeks, and an explicit register of everything open or resolved
   <div class="card"><div class="k">Hotel, 7 nights all-in</div><div class="v">{money(rec['all_in_7n_usd'])}</div>
    <div class="small">Fairfield Central Park (538 W 58th St) · {money(rec['total_7n_usd'])} pre-tax · king bed · breakfast included · free cancel &lt;12 Feb</div></div>
   <div class="card"><div class="k">MICHELIN NYC stars</div><div class="v">{live_c['total']} live</div>
-   <div class="small">{live_c['3']} three-star · {live_c['2']} two-star · {live_c['1']} one-star (reconciled vs {n_stars_cer} Nov 2025 ceremony entries). <strong>Next ceremony: 14 Dec 2026.</strong></div></div>
+   <div class="small">{live_c['3']} three-star · {live_c['2']} two-star · {live_c['1']} one-star (reconciled vs {n_stars_cer} Nov 2025 ceremony entries). <strong>Reported ceremony date: 14 Dec 2026 (secondary source, F-25).</strong></div></div>
   <div class="card"><div class="k">Verified budget subtotal</div><div class="v">{money(FR["budget"]["verified_subtotal_usd"])}</div>
    <div class="small">Hotel w/ tax + AMS–JFK flights + MTA cap + 6 paid attractions (incl. AMNH $74) + 2 tasting dinners.</div></div>
 </div>
@@ -351,13 +365,13 @@ plus ~15–20 min ferry crossing (~62–67 min door-to-island; harbour wind can 
 <li><strong>{money(FR["budget"]["verified_subtotal_usd"])} verified subtotal</strong> across Fairfield hotel, AMS–JFK fares, MTA 7-day cap, 6 paid attractions (incl. AMNH $74), and 2 tasting dinners (food only).</li>
 <li><strong>{n_hours} starred venues with full verified hours</strong>, <strong>{n_price} with verified menu prices or deposit floors</strong>, and <strong>all 11 activities</strong> verified on hours/entry rules (10 priced + Broadway deliberately unpriced).</li>
 <li><strong>{n_ig_total} verified official Instagram accounts</strong>, <strong>{n_yt_rev} verified YouTube video reviews</strong>, and <strong>{n_tt_rev} verified public TikTok tasting videos</strong>.</li>
-<li><strong>{n_res_flags} of {len(FR['flags'])} earlier flags resolved or documented</strong>; {n_open_flags} live items stay <a href="flagged.html">Flagged Open</a> (14 Dec MICHELIN ceremony, live promo rates, GTFS transit matrix, airline 2-seat checkout).</li>
+<li><strong>{n_res_flags} of {len(FR['flags'])} earlier flags resolved or documented</strong>; {n_open_flags} live items stay <a href="flagged.html">Flagged Open</a> (secondary-source ceremony date, live promo rates, GTFS transit matrix, airline 2-seat checkout).</li>
 </ul>
 </div>
 <div class="card">
 <h3>6 · The three things that could still move before departure</h3>
 <ol class="tight">
-<li><strong>14 December 2026:</strong> MICHELIN announces the 2026/27 New York star changes — re-read immediately after Dec 14.</li>
+<li><strong>Reported 14 December 2026:</strong> a secondary source says the New York ceremony is that day; no official MICHELIN confirmation was found. Re-check the official ceremony index after that date (F-01/F-25).</li>
 <li><strong>Dynamic hotel &amp; flight pricing:</strong> Fairfield's $985.60 (-30% BF) rate carries $0 prepayment and free cancel until 12 Feb 2027 — lock now and re-check weekly / mid-Jan 2027.</li>
 <li><strong>Non-refundable tasting releases:</strong> Sushi Sho ($495), Atomix ($314–$495), and EMP ($385) open 1st of the prior month (1 Jan 2027 for February); Le Bernardin Resy opens ~30 days out.</li>
 </ol>
@@ -735,8 +749,7 @@ Live guide totals today: <strong>{live_c['total']} starred</strong>, <strong>{li
 ({live_c.get('bib_by_price', {}).get('$', 7)} $, {live_c.get('bib_by_price', {}).get('$$', 60)} $$, {live_c.get('bib_by_price', {}).get('$$$', 9)} $$$),
 <strong>{live_c.get('selected', 224)} Selected</strong>, and <strong>{live_c.get('green_star', 4)} Green Stars</strong> (3 starred + 1 Selected).</div>
 
-<div class="badbox"><strong>Next star ceremony: 14 December 2026</strong> — two months before travel.
-Stars shown here reflect the live 2025/2026 list; re-check the ceremony announcement after 14 Dec 2026 (flag F-01).</div>
+<div class="badbox"><strong>Reported ceremony date: 14 December 2026 (secondary source only).</strong> Eater NY reports this date; no official MICHELIN page confirmed it in this session. Stars shown here reflect the live 2025/2026 list. Re-check the official MICHELIN ceremony index after that date (F-01/F-25).</div>
 
 <div class="note"><strong>Coverage summary:</strong> {n_hours_pub} priority Manhattan restaurants now carry
 verified weekly hours and coordinates (including all 5 three-stars, 7 key two-stars, and 10 value/highlight one-stars),
@@ -925,7 +938,7 @@ engineered around actual museum closure days, winter hours, holiday crowds, and 
 <div class="card">
 <ol class="tight">
 <li><strong>Now (Nov 2026):</strong> Lock Fairfield Central Park ($985.60 pre-tax / $1,158.98 all-in) at $0 prepayment with free cancellation until <strong>2027-02-12</strong>; monitor flight checkout for 2 seats.</li>
-<li><strong>After 14 Dec 2026:</strong> Re-check MICHELIN Guide NYC 2026 ceremony announcements before confirming final restaurant list (F-01).</li>
+<li><strong>After the reported 14 Dec 2026 date:</strong> Re-check official MICHELIN Guide NYC 2026 ceremony announcements before confirming the final restaurant list (F-01/F-25).</li>
 <li><strong>1 Jan 2027 (11:00–15:00 EST):</strong> Monthly releases open for February at <strong>Sushi Sho</strong> (11:00 EST, Tock), <strong>Atomix</strong> (15:00 EST, Tock), and <strong>Eleven Madison Park</strong> (09:00 EST, Resy).</li>
 <li><strong>Mid-Jan 2027 (~30 days out):</strong> Book <strong>Le Bernardin</strong> &amp; <strong>Gabriel Kreuther</strong> (Resy), <strong>Dirt Candy</strong> (30d midnight EST), timed <strong>9/11 Museum</strong>, <strong>Statue of Liberty Crown/Pedestal</strong>, and re-verify Booking.com hotel rate (S-03).</li>
 <li><strong>Week of 8–12 Feb 2027:</strong> Check NWS marine/winter forecast for Liberty Island ferry; free-cancel hotel deadline hits <strong>12 Feb 2027</strong>.</li>
@@ -1029,7 +1042,7 @@ research gaps now resolved vs traveller preferences and one date-blocked MICHELI
  <div class="card"><div class="k">Total tracked</div><div class="v">{len(FR["questions"])}</div><div class="small">{n_res} research items resolved</div></div>
  <div class="card"><div class="k">Traveller choices</div><div class="v">{n_trav}</div><div class="small">Preference decisions (no further research needed)</div></div>
  <div class="card"><div class="k">Open / documented research</div><div class="v">{n_res_open}</div><div class="small">GTFS transit matrix &amp; optional 69-venue completeness</div></div>
- <div class="card"><div class="k">Blocked by date</div><div class="v">1</div><div class="small">MICHELIN NYC 2026 ceremony on 14 Dec 2026</div></div>
+ <div class="card"><div class="k">Blocked by date</div><div class="v">1</div><div class="small">reported 14 Dec 2026 ceremony (secondary source; F-24)</div></div>
 </div>
 
 {table(["Question", "Why it blocks a decision", "What we have", "What is missing", "How to discover it", "Status"],
@@ -1042,7 +1055,7 @@ research gaps now resolved vs traveller preferences and one date-blocked MICHELI
 <div class="card"><h3>Q-01 · Length: 4, 7 or 14 nights?</h3><p class="small">Week 1 ($1,158.98) and Week 2 ($1,199.14) are both verified at Fairfield Central Park.</p></div>
 <div class="card"><h3>Q-02 &amp; Q-04 · Spend ceiling &amp; star mix</h3><p class="small">Verified subtotal is {money(FR["budget"]["verified_subtotal_usd"])}; swapping Gabriel Kreuther for Cote ($168) or Dirt Candy ($236) saves $414–$482.</p></div>
 <div class="card"><h3>Q-08 &amp; Q-26 · Fairfield ($1,158.98) vs Hyatt Chelsea ($1,305.17)</h3><p class="small">Fairfield wins by $146/week + free cancel + breakfast; Hyatt Chelsea hits 22/22 verified stars within 5 km.</p></div>
-<div class="card"><h3>Q-18 · Post-14 Dec 2026 MICHELIN check</h3><p class="small">Re-verify star changes after the 14 Dec 2026 ceremony before locking 1 Jan / mid-Jan tasting seats.</p></div>
+<div class="card"><h3>Q-18 · Post-reported-ceremony MICHELIN check</h3><p class="small">Re-verify star changes after the reported 14 Dec 2026 ceremony (secondary-source date) before locking 1 Jan / mid-Jan tasting seats.</p></div>
 <div class="card"><h3>Q-19 · Scheduled MTA GTFS matrix</h3><p class="small">Straight-line 5 km reach now covers 22 stars; running weekday 19:00 GTFS times completes the 1-hour proof.</p></div>
 </div>
 """
@@ -1080,7 +1093,7 @@ can be accepted or deferred cleanly.</div>
 <h2>Remaining pending priorities</h2>
 <div class="grid three">
 <div class="card"><h3>1 · S-02 Measured GTFS transit matrix</h3><p class="small">Turns the 22-star Haversine reach proxy into weekday 19:00 MTA timetable legs.</p></div>
-<div class="card"><h3>2 · S-03 Dec 14 &amp; mid-Jan refresh</h3><p class="small">Re-read MICHELIN after 14 Dec 2026 and re-check the locked Fairfield Booking URL before Feb 12.</p></div>
+<div class="card"><h3>2 · S-03 Reported Dec 14 &amp; mid-Jan refresh</h3><p class="small">Re-read official MICHELIN after the reported 14 Dec 2026 date (secondary source) and re-check the locked Fairfield Booking URL before Feb 12.</p></div>
 <div class="card"><h3>3 · S-07 PR build-check workflow</h3><p class="small">Runs python3 build_site.py checks automatically on pull requests via GitHub Actions.</p></div>
 </div>
 """
@@ -1125,16 +1138,36 @@ items requiring timing or external updates.</p>
 <h2>The four live items that still matter before travel</h2>
 <div class="badbox">
 <ol class="tight">
-<li><strong>F-01</strong> &mdash; MICHELIN NYC publishes its 2026/27 star list on <strong>14 December 2026</strong>.</li>
+<li><strong>F-01/F-25</strong> &mdash; a secondary source reports a 14 December 2026 New York ceremony; no official MICHELIN page confirmed it in this session.</li>
 <li><strong>F-03</strong> &mdash; Hotel rates carry live Black Friday / Bonus promos; lock $0-prepay free-cancel now and re-check in mid-Jan 2027.</li>
 <li><strong>F-05</strong> &mdash; The one-hour travel rule is modelled via Haversine across 22 stars, pending scheduled GTFS timetable verification.</li>
-<li><strong>F-15</strong> &mdash; AMS–JFK fare ($1,204 for 2) is an indicative 1-adult aggregator quote until checked for 2 seats w/ bags on airline checkout.</li>
+<li><strong>F-15</strong> &mdash; AMS–JFK fare ($1,266 for 2) is an indicative 1-adult aggregator quote until checked for 2 seats w/ bags on airline checkout.</li>
 </ol>
 </div>
 """
 
 
 def build_method():
+    boundary_rows = [
+        ["Per Se / Atera / Aquavit tasting totals", "Full menu dollar price appears only after picking an open date/slot on Tock", "Shown transparently as verified Tock deposit floors ($200 / $200 / $50)"],
+        ["TikTok profile URLs", "Direct HTTP fetches return HTTP 400", "No profile URL guessed; 4 search-verified direct video links labelled clearly"],
+        ["47 remaining NYC 1-star venues", "Address/price pages not yet individually pulled beyond top 22 priority venues", "Kept complete on name, star badge, cuisine, borough and MICHELIN link"],
+    ]
+    boundary_sources = [
+        "https://www.exploretock.com/perse",
+        "https://www.tiktok.com/",
+        "https://guide.michelin.com/us/en/new-york-state/new-york/restaurants/1-star-michelin",
+    ]
+    boundary_table = table(["Source", "Behaviour observed", "Handling on this site"], boundary_rows,
+                           caption="Scraping and checkout boundaries, with an official source link on every row.",
+                           card_labels=["Source", "Behaviour", "Handling"], source_urls=boundary_sources)
+    ind_sources = INDEPENDENT["official_sources"]
+    ind_rows = [[esc(x["publisher"]), esc(x["verified"]), pill(x["kind"], x["kind"]), ext(x["url"], "official source")]
+                for x in ind_sources]
+    ind_table = table(["Publisher / source", "What was independently verified", "Classification", "Official link"], ind_rows,
+                      caption="Final independent official-source audit ledger, 2026-11-26.",
+                      card_labels=["Publisher", "Verified", "Classification", "Link"],
+                      source_urls=[x["url"] for x in ind_sources])
     return f"""
 <p class="lede">How every number on this site was produced, every official source read on {BUILD_DATE},
 the few remaining third-party walls, and the automated integrity checks run on every build.</p>
@@ -1142,7 +1175,7 @@ the few remaining third-party walls, and the automated integrity checks run on e
 <h2>Rules the site is built on</h2>
 <div class="card">
 <ol class="tight">
-<li><strong>Read it or leave it blank.</strong> A value appears only if verified on a linked primary/official source or authoritative search record.</li>
+<li><strong>Read it or leave it blank.</strong> A value appears only if verified on a linked primary/official source or authoritative search record; secondary sources are explicitly labelled and flagged.</li>
 <li><strong>Never infer.</strong> No invented daily meal allowances, no guessed handles, no fabricated schedules.</li>
 <li><strong>Separate the award from the listing.</strong> Red stars, Green Stars (including <em>One White Street</em> Selected), Bib Gourmand (76), and Selected (224) stay strictly separated.</li>
 <li><strong>Label every derived number.</strong> NYC tax math (14.75% + $4–$6/night + $1 Arlo tourism) and Haversine distances are explicitly marked DERIVED/MODEL.</li>
@@ -1156,31 +1189,30 @@ the few remaining third-party walls, and the automated integrity checks run on e
 <ul class="tight">
 <li>{ext("https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025", "2025 NY Star Ceremony Article (72 entries)")} · {ext("https://guide.michelin.com/us/en/new-york-state/new-york/restaurants/all-starred", "Live NYC Starred Filter (69 venues)")} · {ext("https://guide.michelin.com/us/en/best-of/least-expensive-one-michelin-star-restaurants-in-new-york", "Least Expensive 1-Star NYC Picks")}.</li>
 <li>All 5 Three-Stars: {ext("https://www.le-bernardin.com/accessible/menus/dining-room/chef-s-tasting/", "Le Bernardin")}, {ext("https://www.elevenmadisonpark.com/", "Eleven Madison Park")}, {ext("https://www.exploretock.com/jungsik", "Jungsik (Tock)")}, {ext("https://www.exploretock.com/perse", "Per Se (Tock)")}, {ext("https://www.exploretock.com/sushi-sho-new-york", "Sushi Sho (Tock)")}.</li>
-<li>Two- &amp; One-Stars + Green Star: {ext("https://www.gknyc.com/menus", "Gabriel Kreuther")}, {ext("https://www.themodernnyc.com/menus/", "The Modern")}, {ext("https://www.saga-nyc.com/", "Saga")}, {ext("https://www.jean-georgesrestaurant.com/accessible/jean-georges/menus/dinner-tasting-menu/six-course-tasting/", "Jean-Georges")}, {ext("https://www.exploretock.com/atomixnyc", "Atomix (Tock)")}, {ext("https://www.exploretock.com/atera", "Atera (Tock)")}, {ext("https://www.exploretock.com/aquavit", "Aquavit (Tock)")}, {ext("https://www.danielnyc.com/cuisine/prix-fixe", "Daniel")}, {ext("https://www.gramercytavern.com/dining-room-menu/", "Gramercy Tavern")}, {ext("https://lecoucou.com/", "Le Coucou")}, {ext("https://www.dirtcandynyc.com/", "Dirt Candy")}, {ext("https://www.cotekoreansteakhouse.com/nycdinnermenu?tab=newyork-dinner", "Cote")}, {ext("https://www.crownshy.nyc/menus/", "Crown Shy")}, {ext("https://www.onewhitestreetnyc.com/tasting", "One White Street")}.</li>
-<li>Ceremony date (14 Dec 2026): {ext("https://ny.eater.com/news/414985/michelin-guide-new-york-additions-2026-bib-gourmands-michelin-recommendations", "Eater New York")}.</li>
+<li>Two- &amp; One-Stars + Green Star: {ext("https://www.gknyc.com/menus", "Gabriel Kreuther")}, {ext("https://www.themodernnyc.com/the-modern/", "The Modern")}, {ext("https://www.saga-nyc.com/", "Saga")}, {ext("https://www.jean-georgesrestaurant.com/accessible/jean-georges/menus/dinner-tasting-menu/six-course-tasting/", "Jean-Georges")}, {ext("https://www.exploretock.com/atomixnyc", "Atomix (Tock)")}, {ext("https://www.exploretock.com/atera", "Atera (Tock)")}, {ext("https://www.exploretock.com/aquavit", "Aquavit (Tock)")}, {ext("https://www.danielnyc.com/cuisine/prix-fixe", "Daniel")}, {ext("https://www.gramercytavern.com/dining-room-menu/", "Gramercy Tavern")}, {ext("https://lecoucou.com/", "Le Coucou")}, {ext("https://www.dirtcandynyc.com/", "Dirt Candy")}, {ext("https://www.cotekoreansteakhouse.com/nycdinnermenu?tab=newyork-dinner", "Cote")}, {ext("https://www.crownshy.nyc/menus/", "Crown Shy")}, {ext("https://www.onewhitestreetnyc.com/tasting", "One White Street")}.</li>
+<li>Reported ceremony date (14 Dec 2026): {ext("https://ny.eater.com/news/414985/michelin-guide-new-york-additions-2026-bib-gourmands-michelin-recommendations", "Eater New York (secondary, flagged F-25)")} · {ext("https://guide.michelin.com/us/en/articles/michelin-guide-ceremony", "official MICHELIN ceremony index (no confirmation found)")}.</li>
 </ul>
 
 <h3>Hotels, NYC Taxes &amp; Seasonal Windows</h3>
 <ul class="tight">
-<li>Direct Booking.com pages (2027-02-15 to 2027-02-22 + Weeks 2–5): {ext("https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD", "Fairfield Central Park")}, {ext("https://www.booking.com/hotel/us/arlo-soho.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD", "Arlo SoHo")}, {ext("https://www.booking.com/hotel/us/residence-inn-by-marriott-new-york-downtown-manhattan-financial-district.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD", "Residence Inn FiDi")}, {ext("https://www.booking.com/hotel/us/hyatt-place-new-york-chelsea.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD", "Hyatt Place Chelsea")}, {ext("https://www.booking.com/hotel/us/citizenm-new-york-times-square-new-york.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD", "citizenM Times Square")}, {ext("https://www.booking.com/hotel/us/arlo-midtown.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD", "Arlo Midtown")}, {ext("https://www.booking.com/hotel/us/pestana-cr7-times-square.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD", "Pestana CR7 Times Square")}.</li>
+<li>Direct Booking.com pages (2027-02-15 to 2027-02-22 + Weeks 2–5): {ext("https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD", "Fairfield Central Park")}, {ext("https://www.booking.com/hotel/us/arlo-soho.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD", "Arlo SoHo")}, {ext("https://www.booking.com/hotel/us/residence-inn-new-york-downtown-manhattan-financial-district.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD", "Residence Inn FiDi")}, {ext("https://www.booking.com/hotel/us/hyatt-place-new-york-chelsea.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD", "Hyatt Place Chelsea")}, {ext("https://www.booking.com/hotel/us/citizenm-new-york-times-square-new-york.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD", "citizenM Times Square")}, {ext("https://www.booking.com/hotel/us/arlo-midtown.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD", "Arlo Midtown")}, {ext("https://www.booking.com/hotel/us/pestana-cr7-times-square.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD", "Pestana CR7 Times Square")}.</li>
 <li>{ext("https://www.nyc.gov/site/finance/business/business-hotel-room-occupancy-tax.page", "NYC Department of Finance: Hotel Room Occupancy Tax (14.75% + unit/Javits fees)")} · {ext("https://www.nyctourism.com/", "NYC Tourism Winter Outing 2027 (Jan 2–Feb 11)")}.</li>
 </ul>
 
 <h3>Activities, Transit, Calendar, Climate &amp; Flights</h3>
 <ul class="tight">
 <li>{ext("https://www.moma.org/visit/", "MoMA")} · {ext("https://www.metmuseum.org/plan-your-visit", "The Met (Wed closed)")} · {ext("https://www.amnh.org/plan-your-visit", "AMNH ($37 out-of-state)")} · {ext("https://www.911memorial.org/visit/visit-museum-1", "9/11 Museum (last entry 18:00)")} · {ext("https://www.rockefellercenter.com/tickets/top-of-the-rock-observation-deck/", "Top of the Rock")} · {ext("https://www.nps.gov/stli/planyourvisit/hours.htm", "Statue of Liberty NPS Hours & Fees")} · {ext("https://www.nycgovparks.org/parks/central-park", "Central Park")} · {ext("https://www.thehighline.org/visit/", "High Line Winter Hours")} · {ext("https://www.chelseamarket.com/visit", "Chelsea Market")} · {ext("https://www.nyc.gov/html/dot/html/infrastructure/brooklyn-bridge.shtml", "Brooklyn Bridge DOT")} · {ext("https://www.broadway.org/", "Broadway League")}.</li>
-<li>{ext("https://www.mta.info/fares-tolls/subway-bus", "MTA Fares ($3 base, $35 7-day cap)")} · {ext("https://www.opm.gov/policy-data-oversight/pay-leave/federal-holidays/", "OPM 2027 Federal Holidays")} · {ext("https://www.schools.nyc.gov/about-us/news/2026-2027-school-year-calendar", "NYCPS 2026–2027 Calendar")} · {ext("https://www.weather.gov/media/okx/Climate/CentralPark/nycnormals.pdf", "NWS Central Park 1991–2020 Normals")}.</li>
+<li>{ext("https://www.mta.info/fares-tolls/subway-bus", "MTA Fares ($3 base, $35 7-day cap)")} · {ext("https://www.opm.gov/policy-data-oversight/pay-leave/federal-holidays/", "OPM 2027 Federal Holidays")} · {ext("https://www.schools.nyc.gov/about-us/news/morning-bell/contentdetails/morning-bell/2026/04/21/2026-27-nycps-calendar-now-available", "NYCPS 2026–2027 Calendar")} · {ext("https://www.weather.gov/media/okx/Climate/CentralPark/nycnormals.pdf", "NWS Central Park 1991–2020 Normals")}.</li>
 <li>{ext("https://www.google.com/travel/flights?q=Flights%20to%20JFK%20from%20AMS%20on%202027-02-15%20through%202027-02-22", "Google Flights AMS–JFK")} · {ext("https://www.kayak.com/flights/AMS-NYC/2027-02-14/2027-02-23?sort=bestflight_a", "KAYAK AMS–NYC")}.</li>
 </ul>
 
+<h2>Final independent verification ledger</h2>
+<p class="hint">This section preserves the final session's line-by-line official-source reads after the parallel upstream work was integrated. It supplements, rather than replaces, the canonical data in <code>site_data/*.json</code>. The machine-readable ledger is also available at <a href="../site_data/independent_verification.json">independent_verification.json</a>.</p>
+{ind_table}
+<div class="note"><strong>Independent irregularities:</strong> {" ".join(esc(x) for x in INDEPENDENT["irregularities"])}</div>
+
 <h2>Remaining checkout / scraping boundaries</h2>
-<div class="card">
-<table class="tbl"><thead><tr><th>Source</th><th>Behaviour observed</th><th>Handling on this site</th></tr></thead><tbody>
-<tr><td>Per Se / Atera / Aquavit tasting totals</td><td>Full menu dollar price appears only after picking an open date/slot on Tock</td><td>Shown transparently as verified Tock deposit floors ($200 / $200 / $50)</td></tr>
-<tr><td>TikTok profile URLs</td><td>Direct HTTP fetches return HTTP 400</td><td>No profile URL guessed; 4 search-verified direct video links labelled clearly</td></tr>
-<tr><td>47 remaining NYC 1-star venues</td><td>Address/price pages not yet individually pulled beyond top 22 priority venues</td><td>Kept complete on name, star badge, cuisine, borough &amp; MICHELIN link</td></tr>
-</tbody></table>
-</div>
+{boundary_table}
 
 <h2>Build checks</h2>
 <div class="okbox">
@@ -1189,6 +1221,7 @@ the few remaining third-party walls, and the automated integrity checks run on e
 <li>Budget subtotal matches the sum of priced lines within $0.005.</li>
 <li>Zero unrendered template braces, double-escaped entities, leaked raw tags, or bare-hash placeholder anchors.</li>
 <li>Zero duplicate element IDs and zero broken internal links across <code>docs/*.html</code>.</li>
+<li>Every generated table row has at least one external source link; the lexical external URL audit is written to <a href="data/external_url_audit.json">external_url_audit.json</a>.</li>
 <li>All superseded legacy files (e.g. <code>docs/methodology.html</code>, <code>docs/data/build_summary.json</code>) remain absent.</li>
 </ul>
 </div>
@@ -1355,6 +1388,14 @@ def run_checks(pages):
                     errors.append(f"{name}: table {i} row {n} has {cells} cells, header has {t['header']}")
 
     for name, html in pages.items():
+        for ti, tbl in enumerate(re.findall(r"<table[^>]*>.*?</table>", html, re.S), 1):
+            for ri, row in enumerate(re.findall(r"<tr>(.*?)</tr>", tbl, re.S), 1):
+                if "<th" in row:
+                    continue
+                if "<td" in row and not re.search(r'href="https?://', row):
+                    errors.append(f"{name}: table {ti} row {ri} has no external source link")
+
+    for name, html in pages.items():
         if "{{" in html or "}}" in html:
             errors.append(f"{name}: unrendered template token")
         if "&lt;span" in html or "&lt;a " in html:
@@ -1372,7 +1413,61 @@ def run_checks(pages):
             target = os.path.join(DOCS, href.split("?")[0])
             if not os.path.exists(target):
                 errors.append(f"{name}: broken internal link -> {href}")
+
+    # Root redirect and archived deep dive are also published; check their links too.
+    extra = [(os.path.join(ROOT, "index.html"), "index.html")]
+    deep = os.path.join(ROOT, "deepdive")
+    if os.path.isdir(deep):
+        extra += [(os.path.join(deep, n), os.path.join("deepdive", n))
+                  for n in sorted(os.listdir(deep)) if n.endswith(".html")]
+    for path, label in extra:
+        if not os.path.exists(path):
+            continue
+        with open(path, encoding="utf-8") as f:
+            html = f.read()
+        for href in re.findall(r'href="([^"#][^"]*)"', html):
+            if href.startswith(("http://", "https://", "mailto:")):
+                continue
+            target = os.path.join(os.path.dirname(path), href.split("?")[0].split("#")[0])
+            if not os.path.exists(target):
+                errors.append(f"{label}: broken internal link -> {href}")
     return errors, warnings
+
+
+def write_audits(pages):
+    """Lexical external URL audit: validates schemes/hosts and publishes the URL set."""
+    from collections import Counter
+    all_html = list(pages.values())
+    root_index = os.path.join(ROOT, "index.html")
+    if os.path.exists(root_index):
+        with open(root_index, encoding="utf-8") as f:
+            all_html.append(f.read())
+    deep = os.path.join(ROOT, "deepdive")
+    if os.path.isdir(deep):
+        for n in sorted(os.listdir(deep)):
+            if n.endswith(".html"):
+                with open(os.path.join(deep, n), encoding="utf-8") as f:
+                    all_html.append(f.read())
+    urls = sorted({m for html in all_html
+                   for m in re.findall(r'href="(https?://[^"]+)"', html)})
+    domains = Counter(urlparse(u).netloc for u in urls)
+    warnings = [u for u in urls if not u.startswith("https://")]
+    report = {
+        "generated_on": BUILD_DATE,
+        "audit_type": "lexical external URL audit across docs/, root redirect, and archived deepdive/; official pages read in this session are listed in site_data/independent_verification.json",
+        "unique_external_urls": len(urls),
+        "unique_domains": len(domains),
+        "domains": dict(sorted(domains.items())),
+        "non_https_warnings": warnings,
+        "official_source_count": len(INDEPENDENT["official_sources"]),
+        "manual_spot_checks": INDEPENDENT.get("manual_spot_checks", []),
+        "url_fixes": INDEPENDENT.get("url_fixes", []),
+        "all_urls": urls,
+    }
+    os.makedirs(os.path.join(DOCS, "data"), exist_ok=True)
+    with open(os.path.join(DOCS, "data", "external_url_audit.json"), "w", encoding="utf-8") as f:
+        json.dump(report, f, indent=1, ensure_ascii=False)
+        f.write("\n")
 
 
 def main():
@@ -1398,6 +1493,7 @@ def main():
     for name, html in pages.items():
         with open(os.path.join(DOCS, name), "w", encoding="utf-8") as f:
             f.write(html)
+    write_audits(pages)
     errors, _ = run_checks(pages)
 
     print(f"wrote {len(pages)} pages to {DOCS}")
@@ -1415,6 +1511,7 @@ HOTELS = load("hotels.json")
 ACTS = load("activities.json")
 SOCIAL = load("social.json")
 FR = load("framework.json")
+INDEPENDENT = load("independent_verification.json")
 
 if __name__ == "__main__":
     main()

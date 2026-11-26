@@ -8,7 +8,7 @@
   "recommended_end": "2027-02-22",
   "recommended_nights": 7,
   "brief_window": "2027-02-15 to 2027-03-23",
-  "conflict": "The preferred time (15-18 Feb 2027) is 3 nights, while the brief asks for a 1-2 week trip. The plan uses 15-22 Feb 2027 (7 nights, Mon to Mon \u2014 cheapest across all 5 tested weekly windows) and keeps 4-night and 14-night variants ready.",
+  "conflict": "The preferred time (15-18 Feb 2027) is 3 nights, while the brief asks for a 1-2 week trip. The plan uses 15-22 Feb 2027 (7 nights, Mon to Mon — cheapest across all 5 tested weekly windows) and keeps 4-night and 14-night variants ready.",
   "calendar_note": "Verified against OPM 2027 Federal Holidays & NYC Public Schools 2026-2027 Calendar: Mon 2027-02-15 is Washington's Birthday (Presidents' Day), and 2027-02-15 to 2027-02-19 is NYCPS Midwinter Recess (expect busy museums Monday-Friday; Eid al-Fitr falls Tue 2027-03-09).",
   "climate_normals": {
    "source": "https://www.weather.gov/media/okx/Climate/CentralPark/nycnormals.pdf",
@@ -130,10 +130,10 @@
    },
    {
     "item": "Flights - 2 adults, AMS to JFK return, 15-22 Feb 2027 (the itinerary's own dates)",
-    "usd": 1204.0,
+    "usd": 1266.0,
     "kind": "VERIFIED FARE x 2",
     "source": "https://www.google.com/travel/flights?q=Flights%20to%20JFK%20from%20AMS%20on%202027-02-15%20through%202027-02-22",
-    "note": "Out 15 Feb, return 22 Feb: Aer Lingus 1-stop round trip ~$602-606 pp (nonstop KLM/Delta $904-906). Check exact 2-passenger airline checkout before purchase (F-15)."
+    "note": "Out 15 Feb, return 22 Feb: Google Flights read 2026-11-26 shows cheapest from $599, Aer Lingus 1-stop top result $633 pp round trip, and nonstop KLM/Delta $904-$905 pp. The budget uses the $633 top one-stop fare × 2. This is a 1-adult aggregator quote, not a 2-seat airline checkout (F-15)."
    },
    {
     "item": "Transit - 2 adults, 7 days, MTA tap-and-ride fare cap",
@@ -201,8 +201,8 @@
     "note": "Hospitality varies by party preference (hotel breakfast is included). Left unestimated rather than inventing an allowance."
    }
   ],
-  "verified_subtotal_usd": 4184.98,
-  "verified_subtotal_note": "Sum of all 11 priced lines above (hotel w/ NY taxes, AMS-JFK flights, MTA cap, 6 paid attractions incl. AMNH, and 2 tasting dinners food-only).",
+  "verified_subtotal_usd": 4246.98,
+  "verified_subtotal_note": "Sum of priced lines: derived hotel all-in, doubled Google Flights 1-adult fare, MTA cap, official attraction prices/floors/ranges, and two exact tasting-menu totals. Not a full trip budget.",
   "unpriced_lines": 1
  },
  "itineraries": [
@@ -218,7 +218,7 @@
     {
      "date": "Tue 16 Feb",
      "day": "Uptown (The Met + Park)",
-     "plan": "The Met Fifth Avenue (open Tue 10:00-17:00 \u2014 scheduled Tuesday because The Met is CLOSED Wednesdays!), followed by Central Park walk south back to 59th St. Optional dinner: Jean-Georges (2-star, steps away, 6-course $298 pp) or Daniel (1-star, open Tue, $195 pp)."
+     "plan": "The Met Fifth Avenue (open Tue 10:00-17:00 — scheduled Tuesday because The Met is CLOSED Wednesdays!), followed by Central Park walk south back to 59th St. Optional dinner: Jean-Georges (2-star, steps away, 6-course $298 pp) or Daniel (1-star, open Tue, $195 pp)."
     },
     {
      "date": "Wed 17 Feb",
@@ -238,7 +238,7 @@
     {
      "date": "Sat 20 Feb",
      "day": "Brooklyn & 2nd Star Dinner",
-     "plan": "Early Brooklyn Bridge pedestrian walkway (open 24h) into DUMBO. Evening: Gabriel Kreuther (2-star, open Sat 16:45-22:00, Tasting $325 pp) \u2014 or value highlights Dirt Candy (1-star Green Star, $118 pp no-tip) / Cote (1-star, $84 pp Butcher's Feast)."
+     "plan": "Early Brooklyn Bridge pedestrian walkway (open 24h) into DUMBO. Evening: Gabriel Kreuther (2-star, open Sat 16:45-22:00, Tasting $325 pp) — or value highlights Dirt Candy (1-star Green Star, $118 pp no-tip) / Cote (1-star, $84 pp Butcher's Feast)."
     },
     {
      "date": "Sun 21 Feb",
@@ -291,7 +291,7 @@
     {
      "date": "Week 2 (22 Feb - 1 Mar)",
      "day": "Depth",
-     "plan": "Fairfield Week 2 priced at $1,020.60 pre-tax (~$1,199.14 all-in, +3.6% vs Week 1 \u2014 combined 14-night hotel ~$2,358.12 all-in). Ideal for Brooklyn stars (Aska 2-star, Francie 1-star), Queens (Meju), Broadway matinee, and relaxed museum pacing."
+     "plan": "Fairfield Week 2 priced at $1,020.60 pre-tax (~$1,199.14 all-in, +3.6% vs Week 1 — combined 14-night hotel ~$2,358.12 all-in). Ideal for Brooklyn stars (Aska 2-star, Francie 1-star), Queens (Meju), Broadway matinee, and relaxed museum pacing."
     }
    ],
    "note": "Both Week 1 and Week 2 hotel quotes are now verified on Booking.com for Fairfield Central Park."
@@ -301,10 +301,10 @@
   {
    "id": "F-01",
    "severity": "HIGH",
-   "title": "The MICHELIN New York list changes on 14 December 2026 - before the trip",
-   "detail": "The next New York star ceremony is scheduled for Monday 14 December 2026. Every star shown on this site comes from the 18 Nov 2025 ceremony plus live 2026-11-26 status checks; stars can still move before February 2027.",
-   "source": "https://ny.eater.com/news/414985/michelin-guide-new-york-additions-2026-bib-gourmands-michelin-recommendations",
-   "settle_by": "Re-read guide.michelin.com ceremony news on/after 2026-12-14 and refresh michelin_roster.json",
+   "title": "A 14 December 2026 New York ceremony date is reported by a secondary source",
+   "detail": "Eater NY reported on 18 Nov 2026 that the annual New York awards ceremony is Monday 14 December 2026. No official MICHELIN page confirming that date was found in this session, so the date is treated as secondary and flagged (F-25). Stars shown here come from the 18 Nov 2025 ceremony plus 2026-11-26 live status checks.",
+   "source": "https://guide.michelin.com/us/en/articles/michelin-guide-ceremony",
+   "settle_by": "Read the official MICHELIN Guide ceremony index/article on or after 2026-12-14 and refresh the roster.",
    "status": "Open"
   },
   {
@@ -385,7 +385,7 @@
    "title": "Documented: Gramercy Tavern Dining Room vs Tavern room keep distinct hours",
    "detail": "Verified on gramercytavern.com/dining-room-menu/: Dining Room Seasonal Tasting ($178 pp; $78 lunch) serves dinner 17:00-21:00 Sun-Thu and 17:00-22:00 Fri-Sat, while the walk-in front Tavern serves a la carte 11:30-23:00 daily.",
    "source": "https://www.gramercytavern.com/dining-room-menu/",
-   "settle_by": "Resolved \u2014 both room hours and menu prices published cleanly side by side",
+   "settle_by": "Resolved — both room hours and menu prices published cleanly side by side",
    "status": "Resolved"
   },
   {
@@ -403,7 +403,7 @@
    "title": "RESOLVED 2026-11-26: All 5 weekly Mon-Mon windows (15 Feb - 22 Mar 2027) & shifted starts priced",
    "detail": "Priced all 5 weeks across the 15 Feb - 23 Mar brief window plus Feb 16/17/18 shifted starts: Week 1 (15-22 Feb, $985.60 pre-tax / $1,158.98 all-in at Fairfield) is the lowest of the entire 5-week period; March jumps +26% to +39%.",
    "source": "https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
-   "settle_by": "Done \u2014 full 5-week table published on Hotels page",
+   "settle_by": "Done — full 5-week table published on Hotels page",
    "status": "Resolved"
   },
   {
@@ -412,7 +412,7 @@
    "title": "RESOLVED 2026-11-26: All 7 shortlisted hotel street addresses & building coordinates verified",
    "detail": "Verified building-level addresses and coordinates for all 7 shortlisted hotels (e.g. Fairfield 538 W 58th St, Arlo SoHo 231 Hudson St, Pestana CR7 338 W 39th St, Residence Inn FiDi 215 Pearl St, Hyatt Place Chelsea 140 W 24th St, citizenM TS 218 W 50th St, Arlo Midtown 351 W 38th St) and recomputed reach/distances.",
    "source": "https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html",
-   "settle_by": "Done \u2014 fixed earlier Arlo SoHo / Residence Inn FiDi nearest-3-star bug too",
+   "settle_by": "Done — fixed earlier Arlo SoHo / Residence Inn FiDi nearest-3-star bug too",
    "status": "Resolved"
   },
   {
@@ -428,7 +428,7 @@
    "id": "F-15",
    "severity": "MEDIUM",
    "title": "The flight price is an indicative 1-adult fare, not a 2-seat airline checkout quote",
-   "detail": "AMS-JFK 15-22 Feb fares ($562-$606 1-stop / $904-$906 nonstop) are per-adult fares from aggregators. Two-seat bucket pricing and checked-bag / seat fees can raise the checkout total.",
+   "detail": "Google Flights AMS-JFK 15-22 Feb read 2026-11-26: cheapest from $599, Aer Lingus 1-stop top result $633 pp, nonstop KLM/Delta $904-$905 pp. The $1,266 budget line is 2 × $633, but two-seat bucket pricing and bag/seat fees can change the airline checkout total.",
    "source": "https://www.google.com/travel/flights?q=Flights%20to%20JFK%20from%20AMS%20on%202027-02-15%20through%202027-02-22",
    "settle_by": "Check exact 2-passenger fare with bags on Aer Lingus / KLM / Delta before buying",
    "status": "Open"
@@ -484,7 +484,7 @@
    "title": "RESOLVED 2026-11-26: Direct Booking.com /hotel/us/ URLs captured for all 7 shortlisted properties",
    "detail": "Captured direct /hotel/us/ Booking URLs for Arlo SoHo, Hyatt Place Chelsea and Residence Inn FiDi alongside Fairfield, citizenM, Pestana CR7 and Arlo Midtown.",
    "source": "https://www.booking.com/hotel/us/arlo-soho.html",
-   "settle_by": "Done \u2014 zero searchresults fallback URLs remain in hotels.json",
+   "settle_by": "Done — zero searchresults fallback URLs remain in hotels.json",
    "status": "Resolved"
   },
   {
@@ -500,9 +500,9 @@
    "id": "F-23",
    "severity": "MEDIUM",
    "title": "RESOLVED 2026-11-26: Withdrawn 25 Nov Fairfield $1,155.48 tax-inclusive figure",
-   "detail": "Fairfield's Booking.com page explicitly prints 'Total before taxes $985.60' with NY taxes excluded. Corrected across hotels.json, budget subtotal ($4,184.98), and executive summary to $985.60 pre-tax / $1,158.98 derived all-in.",
+   "detail": "Fairfield's Booking.com page explicitly prints 'Total before taxes $985.60' with NY taxes excluded. Corrected across hotels.json, budget subtotal ($4,246.98), and executive summary to $985.60 pre-tax / $1,158.98 derived all-in.",
    "source": "https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
-   "settle_by": "Done \u2014 all references updated to $985.60 pre-tax / $1,158.98 all-in",
+   "settle_by": "Done — all references updated to $985.60 pre-tax / $1,158.98 all-in",
    "status": "Resolved"
   },
   {
@@ -513,6 +513,24 @@
    "source": "https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-03-15&checkout=2027-03-22&group_adults=2&no_rooms=1&selected_currency=USD",
    "status": "Open",
    "settle_by": "Re-read the two windows before booking; if the page shows sold out again, treat late March as unavailable at this property."
+  },
+  {
+   "id": "F-25",
+   "severity": "MEDIUM",
+   "title": "14 Dec 2026 ceremony date lacks official MICHELIN confirmation",
+   "detail": "The date is stated by Eater NY (secondary source). An official MICHELIN ceremony index was checked but did not confirm the date; the claim must not be represented as MICHELIN-official.",
+   "source": "https://guide.michelin.com/us/en/articles/michelin-guide-ceremony",
+   "settle_by": "Read an official MICHELIN announcement for the 2026/27 New York selection.",
+   "status": "Open"
+  },
+  {
+   "id": "F-26",
+   "severity": "MEDIUM",
+   "title": "Two official NPS pages give different Statue of Liberty hours",
+   "detail": "NPS Operating Hours & Seasons states standard hours 09:00-16:30 with last statue entrance 15:30; the NPS FAQ states 08:30-17:00 with the last ferry at 15:30. The site shows the hours-page standard and flags the conflict.",
+   "source": "https://www.nps.gov/stli/planyourvisit/hours.htm",
+   "settle_by": "Check Statue City Cruises seasonal ferry schedule and the NPS operating-status page in the travel week.",
+   "status": "Open"
   }
  ],
  "questions": [
@@ -531,7 +549,7 @@
    "id": "Q-02",
    "question": "What is the total budget for two people, excluding flights?",
    "why_it_blocks": "Determines whether two high-end tastings ($1,350 food-only) or mixed 1-star value picks fit comfortably.",
-   "have": "Verified 7-night subtotal of $4,184.98 ($2,980.98 excluding $1,204 flights) plus menu tiers from $168 (Cote) to $990 (Sushi Sho) for two.",
+   "have": "Verified 7-night subtotal of $4,246.98 ($2,980.98 excluding $1,266 flights) plus menu tiers from $168 (Cote) to $990 (Sushi Sho) for two.",
    "missing": "Traveller target spend ceiling.",
    "how_to_discover": "Traveller decision directly.",
    "owner": "traveller",
@@ -542,7 +560,7 @@
    "id": "Q-03",
    "question": "Which departure airport, and are flights already booked?",
    "why_it_blocks": "The budget assumes AMS-JFK. Departing Brussels/Dusseldorf or choosing nonstop vs 1-stop changes fares by ~$600/couple.",
-   "have": "AMS-JFK 15-22 Feb indicative fares (~$602-606 1-stop, ~$904-906 nonstop pp).",
+   "have": "Google Flights AMS-JFK 15-22 Feb 2027: cheapest from $599, Aer Lingus 1-stop top result $633 pp round trip, nonstop $904-$905 pp.",
    "missing": "Confirmed origin airport and booking status.",
    "how_to_discover": "Traveller confirmation + live airline checkout for 2 seats.",
    "owner": "traveller",
@@ -609,7 +627,7 @@
    "question": "What are The Met's, AMNH's, High Line's, Chelsea Market's and Statue of Liberty's exact hours/prices?",
    "why_it_blocks": "Anchor daytime activities needed verified closure days and ticket totals.",
    "have": "RESOLVED 2026-11-26: The Met closed Wednesdays (Sun-Tue & Thu 10-17, Fri-Sat 10-21); AMNH $37 pp; High Line Winter 07-20; Chelsea Market 07-22; Statue of Liberty 09-16:30 (last entry 15:30).",
-   "missing": "Nothing for these 5 venues \u2014 itinerary swapped Tue/Wed to avoid Wednesday Met closure!",
+   "missing": "Nothing for these 5 venues — itinerary swapped Tue/Wed to avoid Wednesday Met closure!",
    "how_to_discover": "Done; verified on all 5 official websites.",
    "owner": "research",
    "blocks": "Itinerary",
@@ -696,7 +714,7 @@
    "id": "Q-17",
    "question": "Which three of the 72 star entries are missing from MICHELIN's live 69-venue list?",
    "why_it_blocks": "Required reconciling two official MICHELIN figures.",
-   "have": "RESOLVED 2026-11-26: Exact diff confirmed \u2014 (1) Blue Hill at Stone Barns (Tarrytown, Westchester 2-star), (2) La Bastide by Andrea Calstier (North Salem, Westchester 1-star), (3) Shion 69 Leonard Street (closed after Dec 27, 2025 fire & delisted).",
+   "have": "RESOLVED 2026-11-26: Exact diff confirmed — (1) Blue Hill at Stone Barns (Tarrytown, Westchester 2-star), (2) La Bastide by Andrea Calstier (North Salem, Westchester 1-star), (3) Shion 69 Leonard Street (closed after Dec 27, 2025 fire & delisted).",
    "missing": "None (fully reconciled).",
    "how_to_discover": "Done; documented in michelin_roster.json and F-02.",
    "owner": "research",
@@ -705,11 +723,11 @@
   },
   {
    "id": "Q-18",
-   "question": "Does the 14 December 2026 ceremony change any venue's star level?",
+   "question": "Does the reported 14 December 2026 ceremony change any venue’s star level?",
    "why_it_blocks": "Travel occurs 2 months after the Dec 14, 2026 MICHELIN NY ceremony.",
-   "have": "Confirmed ceremony date (2026-12-14) and live Nov 2026 status.",
+   "have": "A secondary source reports the date; no official MICHELIN confirmation was found in this session (F-25).",
    "missing": "Dec 14, 2026 announcement itself.",
-   "how_to_discover": "Re-read MICHELIN Guide NY ceremony post on/after 2026-12-14.",
+   "how_to_discover": "Check the official MICHELIN Guide ceremony index/article on or after 2026-12-14.",
    "owner": "research",
    "blocks": "Restaurant table accuracy",
    "status": "Blocked until 2026-12-14"
@@ -773,7 +791,7 @@
    "id": "Q-24",
    "question": "Sign-off on remaining open flags before final bookings?",
    "why_it_blocks": "Ensures Dec 14 ceremony check, flight checkout and GTFS verification aren't overlooked.",
-   "have": "14 of 21 earlier flags resolved/documented cleanly; remaining live operational flags highlighted.",
+   "have": "A flag register with 26 items.",
    "missing": "Traveller review.",
    "how_to_discover": "Review Flagged page.",
    "owner": "traveller",

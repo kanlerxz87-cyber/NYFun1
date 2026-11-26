@@ -570,3 +570,65 @@ are from 2026-11-25 (>12 hours ago) with no open PRs on `kanlerxz87-cyber/NYFun1
   advancing `main` (PRs #11/#12 and #13–#15) were resolved as unions; both conflict logs are above.
 - Remaining open after this session: the 42 one-star/selected slugs beyond the 30 verified detail rows,
   per-night price curves (F-12), and F-24's late-March re-read. None block the plan.
+
+
+### 2026-11-26 · arena-55eb819a · second upstream integration note
+
+- `origin/main` advanced again through PRs #17–#18 while this session was finishing. A `git pull --rebase origin main` attempt conflicted; the rebase was aborted and a `-X theirs` merge was used instead so all newer upstream files are preserved.
+- This session’s board entries are appended below. The richer 30-slug restaurant dataset, late-March window disagreement flag, and all other upstream changes are kept; our independent ledger and build/source-link checks are layered on top without discarding upstream work.
+## SESSION CLAIM — 2026-11-26 (UTC) — `arena-55eb819a` (current branch `arena/55eb819a-nyfun1`)
+
+**Status:** active final integration / independent verification session. The platform fixes this workspace to
+the current branch, so this branch itself is used as the integration branch; no additional branch or git
+worktree will be created. Earlier claims are historical (dated 2026-11-25, all published work merged) and no
+live claim on the current branch was present at claim time.
+
+**Scope claimed (non-overlapping with legacy generators):**
+`COORDINATION.md` (append-only), `README.md`, `index.html`, `build_site.py`, `site_data/*.json`,
+`docs/*.html`, `docs/assets/style.css`.
+
+**Explicitly out of scope / preserved as archived research:** `build.py`, `build_deepdive.py`, `content.py`,
+`deepdive/**`, and historical log entries. Those generators are not canonical and will not be run to
+overwrite the dashboard.
+
+**Tasks claimed:**
+| ID | Task | Status |
+|---|---|---|
+| R1 | Line-by-line source/claim audit of the consolidated data and generated pages | in progress |
+| R2 | Official-source verification available in this environment; blank/flag anything not confirmed | in progress |
+| R3 | Review all site rows for official links, opening days/hours/exceptions, social links, and totals | in progress |
+| R4 | Repair confirmed defects only; add mobile-friendly executive summary, questions, suggestions, and flagged page | unclaimed until R1-R3 |
+| R5 | Clean build, reproducibility, and internal/external URL audit | pending |
+| R6 | PR from the current branch to `main`, merge without review wait, and confirm Pages deployment | pending |
+| R7 | Record sources, line-by-line verification, irregularities, PR link, and merge result here | pending |
+
+**Coordination rule:** if another session claims a file in the scope above while this claim is active, this
+session will not overwrite that work; it will append a handoff/conflict note here and resolve without
+discarding either side's changes.
+
+
+### 2026-11-26 · arena-55eb819a · rebase/handoff correction
+
+- `origin/main` advanced while this session was auditing (PRs #11–#15 from other live sessions). First rebase conflict resolution mistakenly selected the replayed commit’s data files; this correction restores every upstream `site_data/*.json` file byte-for-byte from `origin/main`.
+- The richer parallel upstream dataset is preserved. This session’s independent official-source reads are preserved in `site_data/independent_verification.json` and in the appended claim below instead of overwriting canonical data.
+- No upstream work was discarded; no conflicting file remains.
+
+### 2026-11-26 · arena-55eb819a · final independent integration audit
+
+**Branch integration:** `origin/main` advanced through PRs #11–#15 during this session. The branch was rebased onto `origin/main`; a first conflict-resolution mistake was corrected by restoring every upstream `site_data/*.json` file byte-for-byte and appending this session's original claim. The richer parallel upstream dataset, generator, and generated pages are preserved. This session's independent source reads are preserved in `site_data/independent_verification.json` and rendered on `docs/method.html`.
+
+**Tasks R1–R5: done.** R6 (PR/merge/Pages) and R7 (record PR link and merge result) are pending the final publish step below.
+
+| Check | Result | Source / evidence |
+|---|---|---|
+| Line-by-line official-source audit | 60 official/trusted source reads recorded; MICHELIN 2025 article chunks 0–4 compared with all 72 roster names; live filtered pages confirm 69 active NYC stars | `site_data/independent_verification.json`, `docs/method.html` |
+| Hotel pricing | Fairfield $985.60 pre-tax / $1,158.98 derived all-in preserved; current Google Flights top one-stop fare $633 pp → $1,266 for two; budget subtotal $4,246.98 | `site_data/hotels.json`, `site_data/framework.json`, Google Flights source |
+| Activity/source corrections | High Line winter hours, Chelsea Market hours, AMNH $37, Central Park hours/free access, NPS hours conflict, OPM holiday, MTA cap, and official social links recorded | `site_data/independent_verification.json` |
+| Every table row source link | Enforced in `build_site.py` `table()` and `run_checks()`; all generated table rows have an external link | `build_site.py`, `docs/data/external_url_audit.json` |
+| Internal links | 0 broken links across root `index.html`, `docs/*.html`, and archived `deepdive/*.html` | `build_site.py` cross-tree check |
+| External URL audit | 280 unique HTTPS URLs across 62 domains; 0 non-HTTPS warnings; 14 manual `fetch_page` spot checks; 3 broken official URLs replaced | `docs/data/external_url_audit.json`, `site_data/independent_verification.json` |
+| Build & reproducibility | `python3 build_site.py` → 11 pages; `all build checks passed`; generated `docs/` committed | `build_site.py`, `docs/*.html` |
+
+**Flagged irregularities added / corrected:** F-25 secondary-source-only 14 Dec 2026 ceremony date (official MICHELIN confirmation not found), F-26 NPS Statue hours/FAQ conflict, F-15 current aggregator flight fare, F-01 source changed to official MICHELIN ceremony index, and stale `$4,184.98` / `$1,204` copy corrected. Upstream F-24 (late-March same-day Booking disagreement) is preserved. Flagged/unverified items do not block merge; they remain on `docs/flagged.html`.
+
+**No manual user input was requested or used.**

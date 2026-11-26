@@ -1,0 +1,538 @@
+{
+ "session": "arena-55eb819a",
+ "read_on": "2026-11-26",
+ "purpose": "Independent official-source audit ledger preserved after rebasing onto parallel upstream work. This file does not overwrite the richer upstream dataset; it records source reads and irregularities for manual review.",
+ "official_sources": [
+  {
+   "publisher": "MICHELIN 2025 star article",
+   "url": "https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025",
+   "verified": "Article chunks 0–4 read; 18 Nov 2025 ceremony, 5/15/52 = 72 star entries and 4 Green Stars; all 72 roster names compared.",
+   "kind": "official",
+   "read_on": "2026-11-26"
+  },
+  {
+   "publisher": "MICHELIN filtered 1-star page",
+   "url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurants/1-star-michelin",
+   "verified": "Live filter shows 50 one-star, 14 two-star, 5 three-star, 76 Bib Gourmand, 224 Selected.",
+   "kind": "official",
+   "read_on": "2026-11-26"
+  },
+  {
+   "publisher": "MICHELIN filtered 2-star page",
+   "url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurants/2-stars-michelin",
+   "verified": "Live filter confirms 14 two-star NYC entries.",
+   "kind": "official",
+   "read_on": "2026-11-26"
+  },
+  {
+   "publisher": "MICHELIN filtered 3-star page",
+   "url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurants/3-stars-michelin",
+   "verified": "Live filter confirms 5 three-star NYC entries.",
+   "kind": "official",
+   "read_on": "2026-11-26"
+  },
+  {
+   "publisher": "MICHELIN ceremony index",
+   "url": "https://guide.michelin.com/us/en/articles/michelin-guide-ceremony",
+   "verified": "Official MICHELIN ceremony index checked; no official New York 14 Dec 2026 announcement was found in this session.",
+   "kind": "official",
+   "read_on": "2026-11-26"
+  },
+  {
+   "publisher": "Ai Fiori MICHELIN listing",
+   "url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/ai-fiori",
+   "verified": "Guide-listed, no star icon; address, cuisine, price band and weekly hours read.",
+   "kind": "official",
+   "read_on": "2026-11-26"
+  },
+  {
+   "publisher": "Café Carmellini MICHELIN listing",
+   "url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/cafe-carmellini",
+   "verified": "Guide-listed, no star icon; address, cuisine and price band read.",
+   "kind": "official",
+   "read_on": "2026-11-26"
+  },
+  {
+   "publisher": "Ci Siamo MICHELIN listing",
+   "url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/ci-siamo",
+   "verified": "Guide-listed, no star icon; address, cuisine and price band read.",
+   "kind": "official",
+   "read_on": "2026-11-26"
+  },
+  {
+   "publisher": "Chambers MICHELIN listing",
+   "url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/chambers",
+   "verified": "Guide-listed, no star icon; weekly hours read.",
+   "kind": "official",
+   "read_on": "2026-11-26"
+  },
+  {
+   "publisher": "Farra MICHELIN listing",
+   "url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/farra",
+   "verified": "Guide-listed, no star icon; weekly hours read.",
+   "kind": "official",
+   "read_on": "2026-11-26"
+  },
+  {
+   "publisher": "Ito MICHELIN listing",
+   "url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/ito-1201767",
+   "verified": "Guide-listed, no star icon; closed Mon/Sun and two-seating hours Tue–Sat read.",
+   "kind": "official",
+   "read_on": "2026-11-26"
+  },
+  {
+   "publisher": "One White Street MICHELIN listing",
+   "url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/one-white-street",
+   "verified": "Guide-listed with sustainability/Green Star icon but no Michelin star; weekly hours read.",
+   "kind": "official",
+   "read_on": "2026-11-26"
+  },
+  {
+   "publisher": "Le Bernardin MICHELIN detail",
+   "url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/le-bernardin",
+   "verified": "Three-star status, address and full weekly hours read.",
+   "kind": "official",
+   "read_on": "2026-11-26"
+  },
+  {
+   "publisher": "Gramercy Tavern MICHELIN detail",
+   "url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/gramercy-tavern",
+   "verified": "One-star status, address, price band and partial hours read.",
+   "kind": "official",
+   "read_on": "2026-11-26"
+  },
+  {
+   "publisher": "Fairfield Booking room table",
+   "url": "https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
+   "verified": "King Room, 1 king, attached bath, 226 ft², breakfast included, free cancel before 12 Feb, $985.60 before taxes; excluded 14.75% + $4/night.",
+   "kind": "official",
+   "read_on": "2026-11-26"
+  },
+  {
+   "publisher": "Arlo SoHo Booking room table",
+   "url": "https://www.booking.com/hotel/us/arlo-soho.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
+   "verified": "Courtyard Queen ADA, 1 queen, $1,087 before taxes; $37/night resort included; $1 tourism, 14.75% tax, $4 city tax excluded.",
+   "kind": "official",
+   "read_on": "2026-11-26"
+  },
+  {
+   "publisher": "Arlo SoHo official accessible room",
+   "url": "https://arlohotels.com/soho/rooms/accessible-courtyard-queen/",
+   "verified": "Official room page confirms bathroom facilities for the accessible Courtyard Queen.",
+   "kind": "official",
+   "read_on": "2026-11-26"
+  },
+  {
+   "publisher": "Pestana CR7 Booking room table",
+   "url": "https://www.booking.com/hotel/us/pestana-cr7-times-square.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
+   "verified": "Comfort Room with 1 queen/attached bath; multiple tiers from $1,073 to $1,276 before taxes; $26/night resort included on most tiers.",
+   "kind": "official",
+   "read_on": "2026-11-26"
+  },
+  {
+   "publisher": "Arlo Midtown Booking room table",
+   "url": "https://www.booking.com/hotel/us/arlo-midtown.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
+   "verified": "King Room, 1 king, 160 ft², $1,171 before taxes; $37/night resort included; $1 tourism, 14.75% tax, $4 city tax excluded.",
+   "kind": "official",
+   "read_on": "2026-11-26"
+  },
+  {
+   "publisher": "citizenM Times Square Booking room table",
+   "url": "https://www.booking.com/hotel/us/citizenm-new-york-times-square-new-york.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
+   "verified": "King Room, 1 king, attached bath, $1,113 before taxes; breakfast $23.50 pp/night; 14.75% + $4/night excluded.",
+   "kind": "official",
+   "read_on": "2026-11-26"
+  },
+  {
+   "publisher": "Hyatt Place Chelsea Booking room table",
+   "url": "https://www.booking.com/hotel/us/hyatt-place-new-york-chelsea.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
+   "verified": "King Room and accessible King both 1 king/attached bath/180 ft², $1,113 before taxes; breakfast included; 14.75% + $4/night excluded.",
+   "kind": "official",
+   "read_on": "2026-11-26"
+  },
+  {
+   "publisher": "Residence Inn FiDi Booking room table",
+   "url": "https://www.booking.com/hotel/us/residence-inn-new-york-downtown-manhattan-financial-district.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
+   "verified": "Studio 1 King, attached bath, 255 ft², $1,097.25 before taxes; 14.75% + $6/night city tax excluded.",
+   "kind": "official",
+   "read_on": "2026-11-26"
+  },
+  {
+   "publisher": "Fairfield 16–23 Feb Booking table",
+   "url": "https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-16&checkout=2027-02-23&group_adults=2&no_rooms=1&selected_currency=USD",
+   "verified": "Same King Room $996.10 before taxes; 14.75% + $4/night excluded.",
+   "kind": "official",
+   "read_on": "2026-11-26"
+  },
+  {
+   "publisher": "Fairfield 22 Feb–1 Mar Booking table",
+   "url": "https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-22&checkout=2027-03-01&group_adults=2&no_rooms=1&selected_currency=USD",
+   "verified": "Same King Room $1,020.60 before taxes; 14.75% + $4/night excluded.",
+   "kind": "official",
+   "read_on": "2026-11-26"
+  },
+  {
+   "publisher": "Fairfield 8–15 Mar Booking table",
+   "url": "https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-03-08&checkout=2027-03-15&group_adults=2&no_rooms=1&selected_currency=USD",
+   "verified": "Non-refundable $1,660 and free-cancellation $1,953 before taxes; 14.75% + $4/night excluded.",
+   "kind": "official",
+   "read_on": "2026-11-26"
+  },
+  {
+   "publisher": "Booking Manhattan search",
+   "url": "https://www.booking.com/searchresults.html?ss=Manhattan%2C+New+York&checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD&order=price",
+   "verified": "Market cross-check: 124 filtered properties; citizenM Bowery appeared first but its room table was not used in the shortlist.",
+   "kind": "official",
+   "read_on": "2026-11-26"
+  },
+  {
+   "publisher": "Le Bernardin Chef’s Tasting",
+   "url": "https://www.le-bernardin.com/accessible/menus/dining-room/chef-s-tasting/",
+   "verified": "$350 pp; $530 pp with wine pairing; both are totals per person, not an add-on.",
+   "kind": "official",
+   "read_on": "2026-11-26"
+  },
+  {
+   "publisher": "Gabriel Kreuther menus",
+   "url": "https://www.gknyc.com/menus",
+   "verified": "Official menus page links the current dinner PDF.",
+   "kind": "official",
+   "read_on": "2026-11-26"
+  },
+  {
+   "publisher": "Gabriel Kreuther dinner PDF",
+   "url": "https://cdn.prod.website-files.com/69f8cb7ff67007b4842004ce/6afddf36f7cde3e50d030e4c_RGK_DinnerMenu%2011.17.26.pdf",
+   "verified": "Chef’s Tasting $325 pp; classic/reserve pairings $255/$595 pp.",
+   "kind": "official",
+   "read_on": "2026-11-26"
+  },
+  {
+   "publisher": "Per Se Tock",
+   "url": "https://www.exploretock.com/perse",
+   "verified": "Main Dining Room starting at $200 pp deposit; Salon four-course $150 pp deposit; deposits are floors, not full menu prices.",
+   "kind": "official",
+   "read_on": "2026-11-26"
+  },
+  {
+   "publisher": "Per Se official menus",
+   "url": "https://www.thomaskeller.com/new-york-new-york/per-se/todays-menus/",
+   "verified": "Official page says two nine-course tasting menus are offered daily; no price shown.",
+   "kind": "official",
+   "read_on": "2026-11-26"
+  },
+  {
+   "publisher": "MoMA visit",
+   "url": "https://www.moma.org/visit/",
+   "verified": "Adult $30; daily 10:30–17:30, Friday to 20:30; UNIQLO Friday Nights and closure exceptions.",
+   "kind": "official",
+   "read_on": "2026-11-26"
+  },
+  {
+   "publisher": "Met plan your visit",
+   "url": "https://www.metmuseum.org/plan-your-visit",
+   "verified": "Adult $30, NY residents/students pay-what-you-wish; official page chunk did not expose the weekly public-hours block in this session.",
+   "kind": "official",
+   "read_on": "2026-11-26"
+  },
+  {
+   "publisher": "Met Fifth Avenue visit",
+   "url": "https://www.metmuseum.org/visit/met-fifth-avenue",
+   "verified": "Official admission and address read; public weekly hours block not exposed in captured text.",
+   "kind": "official",
+   "read_on": "2026-11-26"
+  },
+  {
+   "publisher": "Met Perspectives YouTube",
+   "url": "https://www.metmuseum.org/perspectives/connections-greenhouse",
+   "verified": "Official Met page links youtube.com/user/metmuseum.",
+   "kind": "official",
+   "read_on": "2026-11-26"
+  },
+  {
+   "publisher": "AMNH plan your visit",
+   "url": "https://www.amnh.org/plan-your-visit",
+   "verified": "Open daily 10:00–17:30; standard adult $37; NY State residents pay what you wish; holiday exceptions.",
+   "kind": "official",
+   "read_on": "2026-11-26"
+  },
+  {
+   "publisher": "AMNH hours",
+   "url": "https://www.amnh.org/plan-your-visit/hours",
+   "verified": "Daily 10:00–17:30 and closure/holiday notes.",
+   "kind": "official",
+   "read_on": "2026-11-26"
+  },
+  {
+   "publisher": "9/11 Memorial visit",
+   "url": "https://www.911memorial.org/visit/visit-museum-1",
+   "verified": "Museum Wed–Mon 09:00–19:00; admission $24–$36; timed tickets and Monday free-entry rules.",
+   "kind": "official",
+   "read_on": "2026-11-26"
+  },
+  {
+   "publisher": "9/11 Memorial social connect",
+   "url": "https://www.911memorial.org/connect/blog/connect-911-memorial",
+   "verified": "Official connect page names YouTube.com/Sept11MM.",
+   "kind": "official",
+   "read_on": "2026-11-26"
+  },
+  {
+   "publisher": "9/11 Memorial 2026 backgrounder",
+   "url": "https://911memorial.org/sites/default/files/inline-files/Institutional%20Backgrounder%20Sept%202026.pdf",
+   "verified": "Official PDF names Instagram @911memorial and TikTok @sept11memorial.",
+   "kind": "official",
+   "read_on": "2026-11-26"
+  },
+  {
+   "publisher": "Top of the Rock tickets",
+   "url": "https://www.rockefellercenter.com/tickets/top-of-the-rock-observation-deck/",
+   "verified": "OPEN 8 AM–12 AM; timed admission from $42, skip-the-line from $82, VIP from $185.",
+   "kind": "official",
+   "read_on": "2026-11-26"
+  },
+  {
+   "publisher": "Rockefeller Center sports page",
+   "url": "https://www.rockefellercenter.com/sports/",
+   "verified": "Official structured social data names Instagram @rockefellercenter and TikTok @rockefellercenter.",
+   "kind": "official",
+   "read_on": "2026-11-26"
+  },
+  {
+   "publisher": "NPS Statue fees",
+   "url": "https://www.nps.gov/stli/planyourvisit/fees.htm",
+   "verified": "Adult ferry $26; pedestal/crown +$0.30; no NPS entrance fee; Statue City Cruises only authorised ferry.",
+   "kind": "official",
+   "read_on": "2026-11-26"
+  },
+  {
+   "publisher": "NPS Statue hours",
+   "url": "https://www.nps.gov/stli/planyourvisit/hours.htm",
+   "verified": "Standard hours 09:00–16:30; last statue entrance 15:30; 2026–2027 Thanksgiving/Christmas closures.",
+   "kind": "official",
+   "read_on": "2026-11-26"
+  },
+  {
+   "publisher": "NPS Statue FAQ",
+   "url": "https://www.nps.gov/stli/planyourvisit/frequently-asked-questions.htm",
+   "verified": "FAQ states 08:30–17:00 and last ferry 15:30; this conflicts with the hours page and is flagged.",
+   "kind": "official",
+   "read_on": "2026-11-26"
+  },
+  {
+   "publisher": "NYC Parks Central Park",
+   "url": "https://www.nycgovparks.org/parks/central-park",
+   "verified": "Official park page links NYC Parks Instagram and YouTube @nycparks.",
+   "kind": "official",
+   "read_on": "2026-11-26"
+  },
+  {
+   "publisher": "Central Park Conservancy know-before-you-go",
+   "url": "https://www.centralparknyc.org/what-to-know-before-you-go",
+   "verified": "Daily 06:00–01:00 hours.",
+   "kind": "official",
+   "read_on": "2026-11-26"
+  },
+  {
+   "publisher": "Central Park Conservancy use report",
+   "url": "https://assets.centralparknyc.org/pdfs/institute/p2p-upelp/3.002_Report+on+the+Public+Use+of+Central+Park.pdf",
+   "verified": "Official report states no turnstiles/admission fees and official hours 06:00–01:00.",
+   "kind": "official",
+   "read_on": "2026-11-26"
+  },
+  {
+   "publisher": "The High Line visitor info",
+   "url": "https://www.thehighline.org/visit/",
+   "verified": "Winter Dec 1–Mar 31 07:00–20:00; Apr 1–Nov 30 07:00–22:00; Rail Yard Preserve closes at dusk.",
+   "kind": "official",
+   "read_on": "2026-11-26"
+  },
+  {
+   "publisher": "The High Line home",
+   "url": "https://www.thehighline.org/",
+   "verified": "Official site says follow @highlinenyc on Instagram.",
+   "kind": "official",
+   "read_on": "2026-11-26"
+  },
+  {
+   "publisher": "Chelsea Market home",
+   "url": "https://www.chelseamarket.com/",
+   "verified": "Official homepage states concourse 7 am–10 pm and links Instagram @chelseamarketny plus specific posts.",
+   "kind": "official",
+   "read_on": "2026-11-26"
+  },
+  {
+   "publisher": "Broadway.org",
+   "url": "https://www.broadway.org/",
+   "verified": "The Broadway League official online headquarters; show list and ticket guide.",
+   "kind": "official",
+   "read_on": "2026-11-26"
+  },
+  {
+   "publisher": "Broadway performance times",
+   "url": "https://www.broadway.org/performance-times",
+   "verified": "Official performance-times page; no single price for all shows.",
+   "kind": "official",
+   "read_on": "2026-11-26"
+  },
+  {
+   "publisher": "NYC DOT Brooklyn Bridge",
+   "url": "https://www.nyc.gov/html/dot/html/infrastructure/brooklyn-bridge.shtml",
+   "verified": "Pedestrian promenade open at all times during rehabilitation; portions may be narrowed.",
+   "kind": "official",
+   "read_on": "2026-11-26"
+  },
+  {
+   "publisher": "NYC Brooklyn walking guide",
+   "url": "https://www.nyc.gov/html/dycd/downloads/pdf/2012/SummerFun2012_Brooklyn_Ongoing.pdf",
+   "verified": "Official NYC guide says no cost to walk and open 24 hours.",
+   "kind": "official",
+   "read_on": "2026-11-26"
+  },
+  {
+   "publisher": "MTA fares",
+   "url": "https://www.mta.info/fares-tolls/subway-bus",
+   "verified": "$3 fare and $35 7-day tap-and-ride cap.",
+   "kind": "official",
+   "read_on": "2026-11-26"
+  },
+  {
+   "publisher": "MTA official apps",
+   "url": "https://www.mta.info/guides/apps",
+   "verified": "MYmta/TrainTime provide official trip planning; used as the official source for the one-hour-rule limitation.",
+   "kind": "official",
+   "read_on": "2026-11-26"
+  },
+  {
+   "publisher": "OPM federal holidays",
+   "url": "https://www.opm.gov/policy-data-oversight/pay-leave/federal-holidays/",
+   "verified": "2027 table confirms Monday 15 February 2027 is Washington’s Birthday.",
+   "kind": "official",
+   "read_on": "2026-11-26"
+  },
+  {
+   "publisher": "Google Flights AMS–JFK",
+   "url": "https://www.google.com/travel/flights?q=Flights%20to%20JFK%20from%20AMS%20on%202027-02-15%20through%202027-02-22",
+   "verified": "15–22 Feb 2027 search: cheapest from $599; Aer Lingus 1-stop top result $633 pp round trip; nonstop $904/$905 pp.",
+   "kind": "trusted aggregator",
+   "read_on": "2026-11-26"
+  },
+  {
+   "publisher": "Eater NY ceremony report",
+   "url": "https://ny.eater.com/news/414985/michelin-guide-new-york-additions-2026-bib-gourmands-michelin-recommendations",
+   "verified": "Secondary source states annual awards ceremony Monday 14 Dec 2026; not an official MICHELIN page and flagged as secondary.",
+   "kind": "secondary / flagged",
+   "read_on": "2026-11-26"
+  }
+ ],
+ "corrections": [
+  "Fairfield’s Booking total is $985.60 before taxes, not a tax-inclusive $1,155.48; derived all-in is $1,158.98.",
+  "All seven Booking shortlist headlines exclude tax/fees; Arlo SoHo and Arlo Midtown also exclude $1/night tourism fees, and Residence Inn FiDi excludes $6/night city tax rather than $4.",
+  "The MICHELIN 2025 ceremony article contains 72 entries while the live NYC filtered pages show 69; both are official and the difference is flagged.",
+  "High Line seasonal winter hours, Chelsea Market concourse hours, AMNH standard admission, Central Park hours/free access, NPS Statue hours, and OPM’s 15 Feb 2027 holiday were read from official pages.",
+  "Chelsea Market Instagram, NYC Parks YouTube, The Met YouTube, MoMA YouTube, 9/11 Memorial YouTube/Instagram/TikTok, and Rockefeller Center Instagram/TikTok were verified from official venue/agency documents."
+ ],
+ "irregularities": [
+  "A 14 Dec 2026 MICHELIN ceremony date is supported by a secondary Eater NY article, not by an official MICHELIN page found in this session; it must be labelled secondary/flagged.",
+  "NPS Statue of Liberty hours page (09:00–16:30) and FAQ (08:30–17:00) conflict.",
+  "Booking.com exposes multiple rate tiers for Pestana CR7, Arlo SoHo and Arlo Midtown; a single headline price cannot be compared without cancellation and fee parity.",
+  "Google Flights is an aggregator and its 1-adult fare is not a 2-seat airline checkout quote.",
+  "The brief’s one-hour subway/bus rule was not measured for every hotel/restaurant pair; the official MTA trip planner is the source that would close the gap."
+ ],
+ "final_updates": [
+  "Google Flights current top one-stop fare $633 pp -> $1,266 for two; budget subtotal updated to $4,246.98.",
+  "14 Dec 2026 ceremony date is Eater NY secondary-source only; flagged F-25.",
+  "NPS Statue hours/FAQ conflict flagged F-26."
+ ],
+ "url_fixes": [
+  {
+   "old_url": "https://www.schools.nyc.gov/about-us/news/2026-2027-school-year-calendar",
+   "new_url": "https://www.schools.nyc.gov/about-us/news/morning-bell/contentdetails/morning-bell/2026/04/21/2026-27-nycps-calendar-now-available",
+   "reason": "Old NYCPS calendar URL failed to fetch; new official NYCPS news page fetched successfully and confirms Midwinter Recess 15–19 Feb 2027.",
+   "checked_on": "2026-11-26"
+  },
+  {
+   "old_url": "https://www.themodernnyc.com/menus/",
+   "new_url": "https://www.themodernnyc.com/the-modern/",
+   "reason": "Old The Modern /menus/ URL failed to fetch; new official menu page fetched successfully and shows Impressions $185 pp.",
+   "checked_on": "2026-11-26"
+  },
+  {
+   "old_url": "https://www.booking.com/hotel/us/residence-inn-by-marriott-new-york-downtown-manhattan-financial-district.html",
+   "new_url": "https://www.booking.com/hotel/us/residence-inn-new-york-downtown-manhattan-financial-district.html",
+   "reason": "Old Residence Inn FiDi Booking slug failed to fetch; new /hotel/us/ slug fetched successfully with 215 Pearl Street address.",
+   "checked_on": "2026-11-26"
+  }
+ ],
+ "manual_spot_checks": [
+  {
+   "url": "https://www.chelseamarket.com/visit",
+   "status": "success",
+   "note": "Mon–Sun 07:00–22:00 and holiday exceptions."
+  },
+  {
+   "url": "https://www.nyctourism.com/",
+   "status": "success",
+   "note": "NYC Hotel Week Jan 2–Feb 11 2027."
+  },
+  {
+   "url": "https://www.weather.gov/media/okx/Climate/CentralPark/nycnormals.pdf",
+   "status": "success",
+   "note": "NWS 1991–2020 Central Park normals."
+  },
+  {
+   "url": "https://www.schools.nyc.gov/about-us/news/morning-bell/contentdetails/morning-bell/2026/04/21/2026-27-nycps-calendar-now-available",
+   "status": "success",
+   "note": "NYCPS 2026–27 calendar article and Midwinter Recess."
+  },
+  {
+   "url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurants/all-starred",
+   "status": "success",
+   "note": "69 active NYC starred restaurants."
+  },
+  {
+   "url": "https://www.exploretock.com/jungsik",
+   "status": "success",
+   "note": "Jungsik $335 pp and $200 deposit."
+  },
+  {
+   "url": "https://www.themodernnyc.com/the-modern/",
+   "status": "success",
+   "note": "The Modern Impressions $185 pp."
+  },
+  {
+   "url": "https://www.jean-georgesrestaurant.com/accessible/jean-georges/menus/dinner-tasting-menu/six-course-tasting/",
+   "status": "success",
+   "note": "Six-course $298."
+  },
+  {
+   "url": "https://www.saga-nyc.com/",
+   "status": "success",
+   "note": "Official Saga site."
+  },
+  {
+   "url": "https://www.crownshy.nyc/menus/",
+   "status": "success",
+   "note": "Official Crown Shy menu."
+  },
+  {
+   "url": "https://www.onewhitestreetnyc.com/tasting",
+   "status": "success",
+   "note": "Tasting $145 pp."
+  },
+  {
+   "url": "https://www.cotekoreansteakhouse.com/nycdinnermenu?tab=newyork-dinner",
+   "status": "success",
+   "note": "Butcher's Feast $84 pp."
+  },
+  {
+   "url": "https://www.kayak.com/flights/AMS-NYC/2027-02-14/2027-02-23?sort=bestflight_a",
+   "status": "success",
+   "note": "Adjacent-date flight cross-check."
+  },
+  {
+   "url": "https://www.booking.com/hotel/us/residence-inn-new-york-downtown-manhattan-financial-district.html",
+   "status": "success",
+   "note": "Residence Inn FiDi official Booking page."
+  }
+ ]
+}
