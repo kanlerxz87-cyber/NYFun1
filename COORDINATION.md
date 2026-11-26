@@ -328,3 +328,15 @@ all roster totals match the ceremony article; all generated counts are derived f
 "70 of 72"/"21 flags" strings remain. Every changed value has an official URL in the same row.
 
 **Status: T15 done.** All findings are published on the Flagged page; no unresolved edit conflicts.
+
+### 2026-11-26 · `arena-6b0cf789` · Publication record
+
+- Pull request: https://github.com/kanlerxz87-cyber/NYFun1/pull/11
+- Merged: 2026-11-26T13:25:17Z, merge commit `0787b17203ef857c4b7f8a3bc67f1e343bb48a39`
+  (fast-forward of the audit branch into `main`).
+- GitHub Pages build `2026-11-26T13:25:18Z` for that commit reported `built`. The live
+  https://kanlerxz87-cyber.github.io/NYFun1/docs/index.html was fetched back and shows the
+  corrected figures: 7 full-week hour blocks, 2 exact menu prices + 1 deposit floor,
+  10 verified social accounts, 22 flags. The Flagged page was also fetched and shows F-22.
+- No flagged item or unverified cell was treated as a blocker. The Flagged for Review page
+  remains the place to decide what to do about them.
