@@ -271,6 +271,30 @@
     "within_one_hour": true,
     "method": "MODEL: great-circle km from 538 W 58th St / 4.5 km/h walking, or / 12 km/h effective subway speed + 8 min access/wait."
    }
+  },
+  {
+   "id": "brooklyn-bridge-park",
+   "name": "Brooklyn Bridge Park (DUMBO / Piers 1–6)",
+   "category": "Waterfront park",
+   "area": "Brooklyn (DUMBO / Brooklyn Heights)",
+   "address": "334 Furman Street, Brooklyn, NY 11201",
+   "hours": "Daily 06:00–01:00",
+   "days_open": "Mon–Sun",
+   "exceptions": "Free entry. Pier 2 08:00–21:00 (seasonal), Pier 5 06:00–23:00, playgrounds sunrise–sunset.",
+   "adult_usd": 0,
+   "cost_2_adults_usd": 0,
+   "official_url": "https://brooklynbridgepark.org/",
+   "verification": "VERIFIED - hours (06:00-01:00 daily), free entry, and official IG/TikTok links read on brooklynbridgepark.org on 2026-11-26",
+   "lat": 40.7003,
+   "lon": -73.9967,
+   "from_hotel": {
+    "hotel": "Fairfield Inn & Suites by Marriott New York Manhattan/Central Park",
+    "km": 7.82,
+    "walk_min_modelled": 104,
+    "transit_min_modelled": 47,
+    "within_one_hour": true,
+    "method": "MODEL: great-circle km / 4.5 km/h walking, or /12 km/h effective subway speed plus 8 minutes platform access and wait."
+   }
   }
  ]
 }

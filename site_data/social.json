@@ -3,124 +3,569 @@
  "rule": "A link appears here only if it was directly verified via profile/video fetch or authoritative search snippets on 2026-11-26. 'kind' = official (venue's own verified channel) or review (third-party YouTube or TikTok dining/visit video). Where a platform blocks unauthenticated direct video scrapes (TikTok returns HTTP 400 to direct page fetches), verified public video URLs discovered via web search are marked review while unverified slots carry explicit search links.",
  "accounts": {
   "le-bernardin": [
-   {"platform": "Instagram", "kind": "official", "url": "https://www.instagram.com/lebernardinny/", "evidence": "Verified badge; 346,704 followers; bio '3-Star @michelinguide'"},
-   {"platform": "YouTube", "kind": "review", "url": "https://www.youtube.com/watch?v=eRPhZXnJCtQ", "evidence": "Eating at Le Bernardin. NYC. 3 Michelin Stars (606K views, 16:00)"},
-   {"platform": "YouTube", "kind": "review", "url": "https://www.youtube.com/watch?v=oZa5QrxUOM8", "evidence": "Lucile: French Girl Reviews America's Best French Restaurant (92K views)"},
-   {"platform": "YouTube", "kind": "review", "url": "https://www.youtube.com/watch?v=il_uUGZCx_o", "evidence": "Alexander The Guest: Inside New York's ICONIC Seafood Restaurant (471K views)"},
-   {"platform": "TikTok", "kind": "review", "url": "https://www.tiktok.com/@eater/video/7356398018435861803", "evidence": "Eater TikTok video feature on Le Bernardin 3-star tasting experience"}
+   {
+    "platform": "Instagram",
+    "kind": "official",
+    "url": "https://www.instagram.com/lebernardinny/",
+    "evidence": "Verified badge; 346,704 followers; bio '3-Star @michelinguide'"
+   },
+   {
+    "platform": "YouTube",
+    "kind": "review",
+    "url": "https://www.youtube.com/watch?v=eRPhZXnJCtQ",
+    "evidence": "Eating at Le Bernardin. NYC. 3 Michelin Stars (606K views, 16:00)"
+   },
+   {
+    "platform": "YouTube",
+    "kind": "review",
+    "url": "https://www.youtube.com/watch?v=oZa5QrxUOM8",
+    "evidence": "Lucile: French Girl Reviews America's Best French Restaurant (92K views)"
+   },
+   {
+    "platform": "YouTube",
+    "kind": "review",
+    "url": "https://www.youtube.com/watch?v=il_uUGZCx_o",
+    "evidence": "Alexander The Guest: Inside New York's ICONIC Seafood Restaurant (471K views)"
+   },
+   {
+    "platform": "TikTok",
+    "kind": "review",
+    "url": "https://www.tiktok.com/@eater/video/7356398018435861803",
+    "evidence": "Eater TikTok video feature on Le Bernardin 3-star tasting experience"
+   }
   ],
   "eleven-madison-park": [
-   {"platform": "Instagram", "kind": "official", "url": "https://www.instagram.com/elevenmadisonpark/", "evidence": "Verified badge; 543,313 followers"},
-   {"platform": "YouTube", "kind": "review", "url": "https://www.youtube.com/watch?v=aSE3P9REZVc", "evidence": "Verified YouTube tasting review of Eleven Madison Park NYC"},
-   {"platform": "YouTube", "kind": "review", "url": "https://www.youtube.com/watch?v=Rly9cRzs8IM", "evidence": "Verified second YouTube dining review of Eleven Madison Park"},
-   {"platform": "TikTok", "kind": "review", "url": "https://www.tiktok.com/@eat_figs_not_pigs/video/7425727380456541471", "evidence": "Public TikTok video tasting review of Eleven Madison Park"}
+   {
+    "platform": "Instagram",
+    "kind": "official",
+    "url": "https://www.instagram.com/elevenmadisonpark/",
+    "evidence": "Verified badge; 543,313 followers"
+   },
+   {
+    "platform": "YouTube",
+    "kind": "review",
+    "url": "https://www.youtube.com/watch?v=aSE3P9REZVc",
+    "evidence": "Verified YouTube tasting review of Eleven Madison Park NYC"
+   },
+   {
+    "platform": "YouTube",
+    "kind": "review",
+    "url": "https://www.youtube.com/watch?v=Rly9cRzs8IM",
+    "evidence": "Verified second YouTube dining review of Eleven Madison Park"
+   },
+   {
+    "platform": "TikTok",
+    "kind": "review",
+    "url": "https://www.tiktok.com/@eat_figs_not_pigs/video/7425727380456541471",
+    "evidence": "Public TikTok video tasting review of Eleven Madison Park"
+   }
   ],
   "jungsik-new-york": [
-   {"platform": "Instagram", "kind": "official", "url": "https://www.instagram.com/jungsik_nyc/", "evidence": "Official Jungsik NYC handle linked from Tock booking page"},
-   {"platform": "YouTube", "kind": "review", "url": "https://www.youtube.com/watch?v=_Q56V0ISF5o", "evidence": "Verified YouTube review of Jungsik NYC 3-star tasting menu"},
-   {"platform": "TikTok", "kind": "review", "url": "https://www.tiktok.com/@johnsfoodreviews/video/7202657553459793198", "evidence": "Public TikTok video review of Jungsik Tribeca"}
+   {
+    "platform": "Instagram",
+    "kind": "official",
+    "url": "https://www.instagram.com/jungsik_nyc/",
+    "evidence": "Official Jungsik NYC handle linked from Tock booking page"
+   },
+   {
+    "platform": "YouTube",
+    "kind": "review",
+    "url": "https://www.youtube.com/watch?v=_Q56V0ISF5o",
+    "evidence": "Verified YouTube review of Jungsik NYC 3-star tasting menu"
+   },
+   {
+    "platform": "TikTok",
+    "kind": "review",
+    "url": "https://www.tiktok.com/@johnsfoodreviews/video/7202657553459793198",
+    "evidence": "Public TikTok video review of Jungsik Tribeca"
+   }
   ],
   "per-se": [
-   {"platform": "Instagram", "kind": "official", "url": "https://www.instagram.com/perseny/", "evidence": "Verified Per Se NYC Instagram (333,776 followers); links to Tock"},
-   {"platform": "YouTube", "kind": "review", "url": "https://www.youtube.com/watch?v=YOaJo5a-MCw", "evidence": "Verified YouTube review of Per Se 9-course tasting at Columbus Circle"}
+   {
+    "platform": "Instagram",
+    "kind": "official",
+    "url": "https://www.instagram.com/perseny/",
+    "evidence": "Verified Per Se NYC Instagram (333,776 followers); links to Tock"
+   },
+   {
+    "platform": "YouTube",
+    "kind": "review",
+    "url": "https://www.youtube.com/watch?v=YOaJo5a-MCw",
+    "evidence": "Verified YouTube review of Per Se 9-course tasting at Columbus Circle"
+   }
   ],
   "sushi-sho-1213976": [
-   {"platform": "Instagram", "kind": "official", "url": "https://www.instagram.com/sushishonyc/", "evidence": "Verified official Sushi Sho NYC Instagram profile"},
-   {"platform": "YouTube", "kind": "search", "url": "https://www.youtube.com/results?search_query=Sushi+Sho+NYC+review", "evidence": "Search URL (few long-form videos permitted at intimate counter)"}
+   {
+    "platform": "Instagram",
+    "kind": "official",
+    "url": "https://www.instagram.com/sushishonyc/",
+    "evidence": "Verified official Sushi Sho NYC Instagram profile"
+   },
+   {
+    "platform": "YouTube",
+    "kind": "search",
+    "url": "https://www.youtube.com/results?search_query=Sushi+Sho+NYC+review",
+    "evidence": "Search URL (few long-form videos permitted at intimate counter)"
+   }
   ],
   "gabriel-kreuther": [
-   {"platform": "Instagram", "kind": "official", "url": "https://www.instagram.com/gabrielkreuther/", "evidence": "Verified official Gabriel Kreuther NYC Instagram account"},
-   {"platform": "YouTube", "kind": "review", "url": "https://www.youtube.com/watch?v=z_8L3TBrk1Q", "evidence": "Verified YouTube tasting review of Gabriel Kreuther NYC"}
+   {
+    "platform": "Instagram",
+    "kind": "official",
+    "url": "https://www.instagram.com/gabrielkreuther/",
+    "evidence": "Verified official Gabriel Kreuther NYC Instagram account"
+   },
+   {
+    "platform": "YouTube",
+    "kind": "review",
+    "url": "https://www.youtube.com/watch?v=z_8L3TBrk1Q",
+    "evidence": "Verified YouTube tasting review of Gabriel Kreuther NYC"
+   }
   ],
   "the-modern": [
-   {"platform": "Instagram", "kind": "official", "url": "https://www.instagram.com/themodernnyc/", "evidence": "Verified official Instagram for The Modern at MoMA"},
-   {"platform": "YouTube", "kind": "review", "url": "https://www.youtube.com/watch?v=RTkrEpQ0iqA", "evidence": "Verified YouTube review of The Modern NYC 2-star dining room"}
+   {
+    "platform": "Instagram",
+    "kind": "official",
+    "url": "https://www.instagram.com/themodernnyc/",
+    "evidence": "Verified official Instagram for The Modern at MoMA"
+   },
+   {
+    "platform": "YouTube",
+    "kind": "review",
+    "url": "https://www.youtube.com/watch?v=RTkrEpQ0iqA",
+    "evidence": "Verified YouTube review of The Modern NYC 2-star dining room"
+   }
   ],
   "saga": [
-   {"platform": "Instagram", "kind": "official", "url": "https://www.instagram.com/saga_nyc/", "evidence": "Verified official Instagram for Saga 70 Pine St"},
-   {"platform": "YouTube", "kind": "review", "url": "https://www.youtube.com/watch?v=H4EFAReKGwE", "evidence": "Verified YouTube review of Saga 63rd-floor tasting menu"}
+   {
+    "platform": "Instagram",
+    "kind": "official",
+    "url": "https://www.instagram.com/saga_nyc/",
+    "evidence": "Verified official Instagram for Saga 70 Pine St"
+   },
+   {
+    "platform": "YouTube",
+    "kind": "review",
+    "url": "https://www.youtube.com/watch?v=H4EFAReKGwE",
+    "evidence": "Verified YouTube review of Saga 63rd-floor tasting menu"
+   }
   ],
   "atomix": [
-   {"platform": "Instagram", "kind": "official", "url": "https://www.instagram.com/atomixnyc/", "evidence": "Verified official Instagram for Atomix NYC"},
-   {"platform": "YouTube", "kind": "search", "url": "https://www.youtube.com/results?search_query=Atomix+NYC+review", "evidence": "Search results URL"}
+   {
+    "platform": "Instagram",
+    "kind": "official",
+    "url": "https://www.instagram.com/atomixnyc/",
+    "evidence": "Verified official Instagram for Atomix NYC"
+   },
+   {
+    "platform": "YouTube",
+    "kind": "search",
+    "url": "https://www.youtube.com/results?search_query=Atomix+NYC+review",
+    "evidence": "Search results URL"
+   }
   ],
   "daniel": [
-   {"platform": "Instagram", "kind": "official", "url": "https://www.instagram.com/restaurantdaniel/", "evidence": "Verified badge; 159,355 followers; links to danielnyc.com"},
-   {"platform": "YouTube", "kind": "review", "url": "https://www.youtube.com/watch?v=thLoDbneJ4E", "evidence": "Verified YouTube review of Restaurant Daniel NYC"}
+   {
+    "platform": "Instagram",
+    "kind": "official",
+    "url": "https://www.instagram.com/restaurantdaniel/",
+    "evidence": "Verified badge; 159,355 followers; links to danielnyc.com"
+   },
+   {
+    "platform": "YouTube",
+    "kind": "review",
+    "url": "https://www.youtube.com/watch?v=thLoDbneJ4E",
+    "evidence": "Verified YouTube review of Restaurant Daniel NYC"
+   }
   ],
   "gramercy-tavern": [
-   {"platform": "Instagram", "kind": "official", "url": "https://www.instagram.com/gramercytavern/", "evidence": "Verified badge; 145,393 followers; links to gramercytavern.com"},
-   {"platform": "YouTube", "kind": "review", "url": "https://www.youtube.com/watch?v=gLunwbHmtTw", "evidence": "Verified YouTube review of Gramercy Tavern"},
-   {"platform": "YouTube", "kind": "review", "url": "https://www.youtube.com/watch?v=UMaYPc5bnLQ", "evidence": "Verified second YouTube feature on Gramercy Tavern"}
+   {
+    "platform": "Instagram",
+    "kind": "official",
+    "url": "https://www.instagram.com/gramercytavern/",
+    "evidence": "Verified badge; 145,393 followers; links to gramercytavern.com"
+   },
+   {
+    "platform": "YouTube",
+    "kind": "review",
+    "url": "https://www.youtube.com/watch?v=gLunwbHmtTw",
+    "evidence": "Verified YouTube review of Gramercy Tavern"
+   },
+   {
+    "platform": "YouTube",
+    "kind": "review",
+    "url": "https://www.youtube.com/watch?v=UMaYPc5bnLQ",
+    "evidence": "Verified second YouTube feature on Gramercy Tavern"
+   }
   ],
   "le-coucou": [
-   {"platform": "Instagram", "kind": "official", "url": "https://www.instagram.com/lecoucounyc/", "evidence": "Official account (set to private; bio identifies Michelin-starred Parisian restaurant in NYC)"},
-   {"platform": "YouTube", "kind": "review", "url": "https://www.youtube.com/watch?v=C_8S5mCOAIk", "evidence": "Verified YouTube review of Le Coucou NYC"}
+   {
+    "platform": "Instagram",
+    "kind": "official",
+    "url": "https://www.instagram.com/lecoucounyc/",
+    "evidence": "Official account (set to private; bio identifies Michelin-starred Parisian restaurant in NYC)"
+   },
+   {
+    "platform": "YouTube",
+    "kind": "review",
+    "url": "https://www.youtube.com/watch?v=C_8S5mCOAIk",
+    "evidence": "Verified YouTube review of Le Coucou NYC"
+   }
   ],
   "dirt-candy": [
-   {"platform": "Instagram", "kind": "official", "url": "https://www.instagram.com/dirtcandynyc/", "evidence": "Verified official Dirt Candy Instagram account"},
-   {"platform": "YouTube", "kind": "review", "url": "https://www.youtube.com/watch?v=_TeihxTOSgE", "evidence": "Verified YouTube review of Dirt Candy NYC Green Star tasting"}
+   {
+    "platform": "Instagram",
+    "kind": "official",
+    "url": "https://www.instagram.com/dirtcandynyc/",
+    "evidence": "Verified official Dirt Candy Instagram account"
+   },
+   {
+    "platform": "YouTube",
+    "kind": "review",
+    "url": "https://www.youtube.com/watch?v=_TeihxTOSgE",
+    "evidence": "Verified YouTube review of Dirt Candy NYC Green Star tasting"
+   }
   ],
   "cote": [
-   {"platform": "Instagram", "kind": "official", "url": "https://www.instagram.com/cotekoreansteakhouse/", "evidence": "Verified official COTE Korean Steakhouse Instagram (166K followers; migrated from @Cote_NYC)"},
-   {"platform": "YouTube", "kind": "review", "url": "https://www.youtube.com/watch?v=nKCDLN01UOg", "evidence": "Verified YouTube review of Cote Butcher's Feast"}
+   {
+    "platform": "Instagram",
+    "kind": "official",
+    "url": "https://www.instagram.com/cotekoreansteakhouse/",
+    "evidence": "Verified official COTE Korean Steakhouse Instagram (166K followers; migrated from @Cote_NYC)"
+   },
+   {
+    "platform": "YouTube",
+    "kind": "review",
+    "url": "https://www.youtube.com/watch?v=nKCDLN01UOg",
+    "evidence": "Verified YouTube review of Cote Butcher's Feast"
+   }
   ],
   "crown-shy": [
-   {"platform": "Instagram", "kind": "official", "url": "https://www.instagram.com/crownshynyc/", "evidence": "Verified official Crown Shy 70 Pine St Instagram"},
-   {"platform": "YouTube", "kind": "search", "url": "https://www.youtube.com/results?search_query=Crown+Shy+NYC+review", "evidence": "Search results URL"}
+   {
+    "platform": "Instagram",
+    "kind": "official",
+    "url": "https://www.instagram.com/crownshynyc/",
+    "evidence": "Verified official Crown Shy 70 Pine St Instagram"
+   },
+   {
+    "platform": "YouTube",
+    "kind": "search",
+    "url": "https://www.youtube.com/results?search_query=Crown+Shy+NYC+review",
+    "evidence": "Search results URL"
+   }
   ],
   "semma": [
-   {"platform": "Instagram", "kind": "official", "url": "https://www.instagram.com/semmanyc/", "evidence": "Verified official Semma NYC Instagram"},
-   {"platform": "TikTok", "kind": "review", "url": "https://www.tiktok.com/@mostasting/video/7545636669848964383", "evidence": "Public TikTok food review of Semma NYC"}
+   {
+    "platform": "Instagram",
+    "kind": "official",
+    "url": "https://www.instagram.com/semmanyc/",
+    "evidence": "Verified official Semma NYC Instagram"
+   },
+   {
+    "platform": "TikTok",
+    "kind": "review",
+    "url": "https://www.tiktok.com/@mostasting/video/7545636669848964383",
+    "evidence": "Public TikTok food review of Semma NYC"
+   }
   ],
   "one-white-street": [
-   {"platform": "Instagram", "kind": "official", "url": "https://www.instagram.com/onewhitestreet/", "evidence": "Verified official One White Street Tribeca Instagram"}
+   {
+    "platform": "Instagram",
+    "kind": "official",
+    "url": "https://www.instagram.com/onewhitestreet/",
+    "evidence": "Verified official One White Street Tribeca Instagram"
+   }
   ],
   "moma": [
-   {"platform": "Instagram", "kind": "official", "url": "https://www.instagram.com/themuseumofmodernart/", "evidence": "Verified badge; 6,154,925 followers (#MoMANYC)"},
-   {"platform": "YouTube", "kind": "review", "url": "https://www.youtube.com/watch?v=iKhkApixPYA", "evidence": "Verified MoMA visitor walk-through / highlights video"}
+   {
+    "platform": "Instagram",
+    "kind": "official",
+    "url": "https://www.instagram.com/themuseumofmodernart/",
+    "evidence": "Verified badge; 6,154,925 followers (#MoMANYC)"
+   },
+   {
+    "platform": "YouTube",
+    "kind": "review",
+    "url": "https://www.youtube.com/watch?v=iKhkApixPYA",
+    "evidence": "Verified MoMA visitor walk-through / highlights video"
+   },
+   {
+    "platform": "YouTube",
+    "kind": "official",
+    "url": "https://www.youtube.com/@themuseumofmodernart",
+    "evidence": "Official MoMA YouTube channel (@themuseumofmodernart)."
+   }
   ],
   "met": [
-   {"platform": "Instagram", "kind": "official", "url": "https://www.instagram.com/metmuseum/", "evidence": "Verified badge; 4,752,680 followers"},
-   {"platform": "YouTube", "kind": "review", "url": "https://www.youtube.com/watch?v=2jPNwPmVUrk", "evidence": "Verified YouTube guide to visiting The Met Fifth Avenue"}
+   {
+    "platform": "Instagram",
+    "kind": "official",
+    "url": "https://www.instagram.com/metmuseum/",
+    "evidence": "Verified badge; 4,752,680 followers"
+   },
+   {
+    "platform": "YouTube",
+    "kind": "review",
+    "url": "https://www.youtube.com/watch?v=2jPNwPmVUrk",
+    "evidence": "Verified YouTube guide to visiting The Met Fifth Avenue"
+   },
+   {
+    "platform": "YouTube",
+    "kind": "official",
+    "url": "https://www.youtube.com/@metmuseum",
+    "evidence": "Official Met YouTube channel (@metmuseum)."
+   }
   ],
   "amnh": [
-   {"platform": "Instagram", "kind": "official", "url": "https://www.instagram.com/amnh/", "evidence": "Verified official American Museum of Natural History Instagram"},
-   {"platform": "YouTube", "kind": "review", "url": "https://www.youtube.com/watch?v=y_mchW6F59U", "evidence": "Verified YouTube tour/review of AMNH NYC"}
+   {
+    "platform": "Instagram",
+    "kind": "official",
+    "url": "https://www.instagram.com/amnh/",
+    "evidence": "Verified official American Museum of Natural History Instagram"
+   },
+   {
+    "platform": "YouTube",
+    "kind": "review",
+    "url": "https://www.youtube.com/watch?v=y_mchW6F59U",
+    "evidence": "Verified YouTube tour/review of AMNH NYC"
+   },
+   {
+    "platform": "YouTube",
+    "kind": "official",
+    "url": "https://www.youtube.com/@AmericanMuseumofNaturalHistory",
+    "evidence": "Official AMNH YouTube channel (@AmericanMuseumofNaturalHistory)."
+   }
   ],
   "911-memorial-museum": [
-   {"platform": "Instagram", "kind": "official", "url": "https://www.instagram.com/911memorial/", "evidence": "Verified official 9/11 Memorial & Museum Instagram"},
-   {"platform": "YouTube", "kind": "review", "url": "https://www.youtube.com/watch?v=0CPy2kle-AI", "evidence": "Verified YouTube guide to 9/11 Memorial & Museum"}
+   {
+    "platform": "Instagram",
+    "kind": "official",
+    "url": "https://www.instagram.com/911memorial/",
+    "evidence": "Verified official 9/11 Memorial & Museum Instagram"
+   },
+   {
+    "platform": "YouTube",
+    "kind": "review",
+    "url": "https://www.youtube.com/watch?v=0CPy2kle-AI",
+    "evidence": "Verified YouTube guide to 9/11 Memorial & Museum"
+   }
   ],
   "top-of-the-rock": [
-   {"platform": "Instagram", "kind": "official", "url": "https://www.instagram.com/rockefellercenter/", "evidence": "Verified official Rockefeller Center / Top of the Rock Instagram"},
-   {"platform": "YouTube", "kind": "review", "url": "https://www.youtube.com/watch?v=k_EnhKGsU4U", "evidence": "Verified YouTube sunset visit review of Top of the Rock"}
+   {
+    "platform": "Instagram",
+    "kind": "official",
+    "url": "https://www.instagram.com/rockefellercenter/",
+    "evidence": "Verified official Rockefeller Center / Top of the Rock Instagram"
+   },
+   {
+    "platform": "YouTube",
+    "kind": "review",
+    "url": "https://www.youtube.com/watch?v=k_EnhKGsU4U",
+    "evidence": "Verified YouTube sunset visit review of Top of the Rock"
+   },
+   {
+    "platform": "YouTube",
+    "kind": "official",
+    "url": "https://www.youtube.com/@RockefellerCenterNYC",
+    "evidence": "Official Rockefeller Center YouTube channel (@RockefellerCenterNYC)."
+   }
   ],
   "statue-of-liberty": [
-   {"platform": "YouTube", "kind": "review", "url": "https://www.youtube.com/watch?v=xTSvwfdVHA8", "evidence": "Verified YouTube Statue of Liberty & Ellis Island ferry guide"}
+   {
+    "platform": "YouTube",
+    "kind": "review",
+    "url": "https://www.youtube.com/watch?v=xTSvwfdVHA8",
+    "evidence": "Verified YouTube Statue of Liberty & Ellis Island ferry guide"
+   }
   ],
   "central-park": [
-   {"platform": "Instagram", "kind": "official", "url": "https://www.instagram.com/centralparknyc/", "evidence": "Verified Central Park Conservancy official Instagram (alongside @nycparks)"},
-   {"platform": "YouTube", "kind": "review", "url": "https://www.youtube.com/watch?v=GzBPdJT8rq4", "evidence": "Verified YouTube winter walk & highlights guide to Central Park"}
+   {
+    "platform": "Instagram",
+    "kind": "official",
+    "url": "https://www.instagram.com/centralparknyc/",
+    "evidence": "Verified Central Park Conservancy official Instagram (alongside @nycparks)"
+   },
+   {
+    "platform": "YouTube",
+    "kind": "review",
+    "url": "https://www.youtube.com/watch?v=GzBPdJT8rq4",
+    "evidence": "Verified YouTube winter walk & highlights guide to Central Park"
+   }
   ],
   "high-line": [
-   {"platform": "Instagram", "kind": "official", "url": "https://www.instagram.com/highlinenyc/", "evidence": "Verified badge; 253,752 followers (Friends of the High Line)"},
-   {"platform": "YouTube", "kind": "review", "url": "https://www.youtube.com/watch?v=rOhaKygVT44", "evidence": "Verified YouTube walk-through review of The High Line"}
+   {
+    "platform": "Instagram",
+    "kind": "official",
+    "url": "https://www.instagram.com/highlinenyc/",
+    "evidence": "Verified badge; 253,752 followers (Friends of the High Line)"
+   },
+   {
+    "platform": "YouTube",
+    "kind": "review",
+    "url": "https://www.youtube.com/watch?v=rOhaKygVT44",
+    "evidence": "Verified YouTube walk-through review of The High Line"
+   }
   ],
   "chelsea-market": [
-   {"platform": "Instagram", "kind": "official", "url": "https://www.instagram.com/chelseamarketny/", "evidence": "Official Chelsea Market Instagram handle verified via search & High Line neighbor cross-link"},
-   {"platform": "YouTube", "kind": "review", "url": "https://www.youtube.com/watch?v=_YL2Z0aIfGM", "evidence": "Verified YouTube Chelsea Market food tour"}
+   {
+    "platform": "Instagram",
+    "kind": "official",
+    "url": "https://www.instagram.com/chelseamarketny/",
+    "evidence": "Official Chelsea Market Instagram handle verified via search & High Line neighbor cross-link"
+   },
+   {
+    "platform": "YouTube",
+    "kind": "review",
+    "url": "https://www.youtube.com/watch?v=_YL2Z0aIfGM",
+    "evidence": "Verified YouTube Chelsea Market food tour"
+   }
   ],
   "broadway": [
-   {"platform": "YouTube", "kind": "review", "url": "https://www.youtube.com/watch?v=U3E0Aa08T-o", "evidence": "Verified YouTube guide to seeing Broadway shows in NYC"}
+   {
+    "platform": "YouTube",
+    "kind": "review",
+    "url": "https://www.youtube.com/watch?v=U3E0Aa08T-o",
+    "evidence": "Verified YouTube guide to seeing Broadway shows in NYC"
+   }
   ],
   "brooklyn-bridge-walk": [
-   {"platform": "YouTube", "kind": "review", "url": "https://www.youtube.com/watch?v=1TG1eHNOtJ4", "evidence": "Verified YouTube Brooklyn Bridge pedestrian crossing guide"}
+   {
+    "platform": "YouTube",
+    "kind": "review",
+    "url": "https://www.youtube.com/watch?v=1TG1eHNOtJ4",
+    "evidence": "Verified YouTube Brooklyn Bridge pedestrian crossing guide"
+   }
+  ],
+  "atera": [
+   {
+    "platform": "Instagram",
+    "kind": "official",
+    "url": "https://www.instagram.com/ateranyc/",
+    "evidence": "Verified 2026-11-26: @ateranyc (65K followers)."
+   }
+  ],
+  "chef-s-table-at-brooklyn-fare": [
+   {
+    "platform": "Instagram",
+    "kind": "official",
+    "url": "https://www.instagram.com/brooklynfare/",
+    "evidence": "Verified 2026-11-26: @brooklynfare (5,184 followers)."
+   }
+  ],
+  "masa": [
+   {
+    "platform": "Instagram",
+    "kind": "official",
+    "url": "https://www.instagram.com/chefmasanyc/",
+    "evidence": "Linked directly on Masa's official Tock page (exploretock.com/masa)."
+   }
+  ],
+  "odo": [
+   {
+    "platform": "Instagram",
+    "kind": "official",
+    "url": "https://www.instagram.com/odo.nyc/",
+    "evidence": "Linked directly on Odo's official Tock page (exploretock.com/odo-new-york)."
+   }
+  ],
+  "cesar": [
+   {
+    "platform": "Instagram",
+    "kind": "official",
+    "url": "https://www.instagram.com/cesar.newyork/",
+    "evidence": "Linked directly on César's official Tock page (exploretock.com/cesarrestaurant)."
+   }
+  ],
+  "aquavit": [
+   {
+    "platform": "Instagram",
+    "kind": "official",
+    "url": "https://www.instagram.com/aquavitnyc/",
+    "evidence": "Linked directly on Aquavit's official Tock page (exploretock.com/aquavit)."
+   }
+  ],
+  "aska": [
+   {
+    "platform": "Instagram",
+    "kind": "official",
+    "url": "https://www.instagram.com/askanyc/",
+    "evidence": "Linked directly in footer of askanyc.com."
+   }
+  ],
+  "sushi-noz": [
+   {
+    "platform": "Instagram",
+    "kind": "official",
+    "url": "https://www.instagram.com/sushinoznyc/",
+    "evidence": "Verified 2026-11-26: @sushinoznyc (51K followers)."
+   }
+  ],
+  "tonchin": [
+   {
+    "platform": "Instagram",
+    "kind": "official",
+    "url": "https://www.instagram.com/tonchinus/",
+    "evidence": "Verified 2026-11-26: @tonchinus (39K followers)."
+   }
+  ],
+  "ai-fiori": [
+   {
+    "platform": "Instagram",
+    "kind": "official",
+    "url": "https://www.instagram.com/aifiori/",
+    "evidence": "Verified 2026-11-26: @aifiori (28K followers)."
+   }
+  ],
+  "ci-siamo": [
+   {
+    "platform": "Instagram",
+    "kind": "official",
+    "url": "https://www.instagram.com/cisiamonyc/",
+    "evidence": "Verified 2026-11-26: @cisiamonyc (58K followers)."
+   }
+  ],
+  "cafe-carmellini": [
+   {
+    "platform": "Instagram",
+    "kind": "official",
+    "url": "https://www.instagram.com/cafecarmellini/",
+    "evidence": "Verified 2026-11-26: @cafecarmellini (28K followers)."
+   }
+  ],
+  "chambers": [
+   {
+    "platform": "Instagram",
+    "kind": "official",
+    "url": "https://www.instagram.com/chambers.nyc/",
+    "evidence": "Verified 2026-11-26: @chambers.nyc (19K followers)."
+   }
+  ],
+  "ito-1201767": [
+   {
+    "platform": "Instagram",
+    "kind": "official",
+    "url": "https://www.instagram.com/ito_tribeca/",
+    "evidence": "Linked directly in footer of ito-omakase.com/ito-new-york."
+   }
+  ],
+  "brooklyn-bridge-park": [
+   {
+    "platform": "Instagram",
+    "kind": "official",
+    "url": "https://www.instagram.com/brooklynbridgepark/",
+    "evidence": "Linked directly in header of brooklynbridgepark.org."
+   },
+   {
+    "platform": "TikTok",
+    "kind": "official",
+    "url": "https://www.tiktok.com/@brooklynbridgepark",
+    "evidence": "Linked directly in header of brooklynbridgepark.org."
+   }
   ]
  },
  "tiktok_note": "TikTok returns HTTP 400 to direct unauthenticated profile fetches, so no TikTok profile handle is guessed. Four direct public tasting-review TikTok video links (Le Bernardin, Eleven Madison Park, Jungsik, Semma) were verified via web search and are tagged 'TikTok review'.",
  "coverage": {
-  "venues_with_a_verified_official_social_account": 24,
+  "venues_with_a_verified_official_social_account": 40,
   "venues_with_a_verified_third_party_video_review": 23,
   "venues_with_verified_tiktok_videos": 4
  }

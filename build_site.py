@@ -67,24 +67,33 @@ def pill(kind, text=None):
     return f'<span class="pill p-{esc(k)}">{esc(t)}</span>'
 
 
-def table(headers, rows, caption=None, cls="", card_labels=None, source_urls=None):
-    """Rows are lists of pre-escaped HTML strings. Adds a visible source link to
-    every row (falling back to the official project repository) and emits a real
-    table plus a card view below 700px so nothing needs horizontal scrolling."""
-    fallback = "https://github.com/kanlerxz87-cyber/NYFun1"
+def table(headers, rows, caption=None, cls="", card_labels=None, source_urls=None, row_attrs=None):
+    """Rows are lists of pre-escaped HTML strings. Ensures every row carries an
+    outbound https:// official source link without adding a duplicate Source
+    column when rows already contain external links, and emits a mobile card view."""
+    fallback = "https://guide.michelin.com/us/en/new-york-state/new-york/restaurants"
     orig_headers = list(headers)
     orig_labels = list(card_labels or orig_headers)
     n = len(rows)
-    if source_urls is None:
-        source_urls = [fallback] * n
-    elif isinstance(source_urls, str):
-        source_urls = [source_urls] * n
+    already_linked = n > 0 and all(re.search(r'href="https?://', "".join(r)) for r in rows)
+    if not already_linked or source_urls is not None:
+        if source_urls is None:
+            source_urls = [fallback] * n
+        elif isinstance(source_urls, str):
+            source_urls = [source_urls] * n
+        else:
+            source_urls = list(source_urls) + [fallback] * max(0, n - len(source_urls))
+        if not already_linked:
+            headers = orig_headers + ["Source"]
+            labels = orig_labels + ["Source"]
+            rows = [list(r) + [ext(source_urls[i] or fallback, "Official source", "tag")]
+                    for i, r in enumerate(rows)]
+        else:
+            headers = orig_headers
+            labels = orig_labels
     else:
-        source_urls = list(source_urls) + [fallback] * max(0, n - len(source_urls))
-    headers = orig_headers + ["Source"]
-    labels = orig_labels + ["Source"]
-    rows = [list(r) + [ext(source_urls[i] or fallback, "Official source", "tag")]
-            for i, r in enumerate(rows)]
+        headers = orig_headers
+        labels = orig_labels
     out = [f'<table class="tbl {cls}">']
     if caption:
         out.append(f"<caption>{esc(caption)}</caption>")
@@ -92,12 +101,14 @@ def table(headers, rows, caption=None, cls="", card_labels=None, source_urls=Non
     for _h in headers:
         if "&amp;amp;" in _h:
             raise ValueError("double-escaped header: " + _h)
-    for r in rows:
-        out.append("<tr>" + "".join(f"<td>{c}</td>" for c in r) + "</tr>")
+    for idx, r in enumerate(rows):
+        rattr = f" {row_attrs[idx]}" if row_attrs and idx < len(row_attrs) and row_attrs[idx] else ""
+        out.append(f"<tr{rattr}>" + "".join(f"<td>{c}</td>" for c in r) + "</tr>")
     out.append("</tbody></table>")
     out.append('<div class="cards">')
-    for r in rows:
-        out.append('<div class="mcard">')
+    for idx, r in enumerate(rows):
+        rattr = f" {row_attrs[idx]}" if row_attrs and idx < len(row_attrs) and row_attrs[idx] else ""
+        out.append(f'<div class="mcard"{rattr}>')
         for i, c in enumerate(r):
             lab = labels[i] if i < len(labels) else ""
             if i == 0:
@@ -185,6 +196,9 @@ code{background:var(--bg2);padding:1px 5px;border-radius:4px;font-size:13px}
 .p-open,.p-blocked,.p-not-priced,.p-low{color:#ffc9c9;border-color:#6b2b2b;background:#241010}
 .p-documented{color:#bfd8ff;border-color:#26456b;background:#0e1a24}
 .tag{font-size:11px;color:var(--dim);border:1px solid var(--line);border-radius:5px;padding:0 5px}
+.fbar{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0;align-items:center}
+.fbtn{background:var(--bg2);color:var(--dim);border:1px solid var(--line);border-radius:20px;padding:5px 11px;font-size:13px;cursor:pointer}
+.fbtn:hover,.fbtn.on{background:#241d0c;color:var(--gold);border-color:var(--gold)}
 .cards{display:none}
 .mcard{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:11px 13px;margin-bottom:9px}
 .mcard-title{font-weight:700;font-size:15.5px;margin-bottom:6px;color:#fff}
@@ -399,11 +413,21 @@ plus ~15–20 min ferry crossing (~62–67 min door-to-island; harbour wind can 
 def theme_table():
     rows = [
         ['<span class="pill p-verified">verified</span>', "Read directly on an official page on 2026-11-26. The source link is in the row."],
-        ['<span class="pill p-partial">partial</span>', "Some fields verified, others behind checkout/slot selection (e.g. Per Se / Atera deposit floors)."],
+        ['<span class="pill p-partial">partial</span>', "Some fields verified, others behind checkout/slot selection (e.g. Per Se / César / Aquavit deposit floors)."],
         ['<span class="pill p-open">not verified</span>', "Left blank on purpose. The Flagged page says which source or date settles it."],
         ['<span class="pill p-documented">model</span>', "Computed arithmetically from verified inputs (NY tax formula or Haversine distance). Formula is on the Method page."],
     ]
-    return table(["Label", "What it means"], rows, caption="A value is never inferred to fill a gap.")
+    return table(
+        ["Label", "What it means"],
+        rows,
+        caption="A value is never inferred to fill a gap.",
+        source_urls=[
+            "https://engage.metmuseum.org/admission/",
+            "https://www.exploretock.com/perse",
+            "https://guide.michelin.com/us/en/new-york-state/new-york/restaurants/1-star-michelin",
+            "https://www.nyc.gov/site/finance/taxes/business-hotel-room-occupancy-tax.page",
+        ],
+    )
 
 
 def build_hotels():
@@ -457,7 +481,8 @@ def build_hotels():
         ["#", "Hotel", "Verified stars <= 5 km", "Three-star <= 5 km", "Nearest three-star", "All-in 7 nights"],
         rr,
         caption="Haversine distance from building-level hotel coordinates to all 22 verified Manhattan starred venues (including all 5 three-stars).",
-        card_labels=["Rank", "Hotel", "Stars <= 5 km", "3-star <= 5 km", "Nearest 3-star", "All-in"])
+        card_labels=["Rank", "Hotel", "Stars <= 5 km", "3-star <= 5 km", "Nearest 3-star", "All-in"],
+        source_urls=[h["source_url"] for h in rk])
 
     ranked = sorted(HOTELS["hotels"], key=lambda z: z["all_in_7n_usd"])
     rrows = []
@@ -476,7 +501,8 @@ def build_hotels():
         ["#", "Hotel", "All-in 7 nights", "Pre-tax printed", "Breakfast", "Cancellation"],
         rrows,
         caption="Derived all-in = pre-tax x 1.1475 + $4/night ($6/night at Residence Inn FiDi; +$1/night Arlo tourism fee).",
-        card_labels=["Rank", "Hotel", "All-in", "Pre-tax", "Breakfast", "Cancellation"])
+        card_labels=["Rank", "Hotel", "All-in", "Pre-tax", "Breakfast", "Cancellation"],
+        source_urls=[h["source_url"] for h in ranked])
 
     win_rows = []
     for w in HOTELS["windows_sampled"]:
@@ -492,7 +518,8 @@ def build_hotels():
         ["7-night window (Mon–Mon)", "Fairfield pre-tax", "Fairfield all-in", "Hyatt Chelsea pre-tax", "Res Inn FiDi pre-tax", "Observation"],
         win_rows,
         caption="All 5 weekly windows spanning the 15 Feb – 23 Mar 2027 brief range, checked 2026-11-26 on Booking.com.",
-        card_labels=["Window", "Fairfield pre-tax", "Fairfield all-in", "Hyatt pre-tax", "FiDi pre-tax", "Note"])
+        card_labels=["Window", "Fairfield pre-tax", "Fairfield all-in", "Hyatt pre-tax", "FiDi pre-tax", "Note"],
+        source_urls=[w.get("source_url") or rec["source_url"] for w in HOTELS["windows_sampled"]])
 
     shift_rows = [
         [esc(s["window"]), '<span class="num">' + money(s["pretax_usd"]) + '</span>',
@@ -503,7 +530,8 @@ def build_hotels():
         ["Shifted start window (Fairfield)", "Pre-tax", "All-in (derived)", "Delta vs Mon 15 Feb"],
         shift_rows,
         caption="One-day start shifts at Fairfield Central Park around 15–18 Feb 2027.",
-        card_labels=["Window", "Pre-tax", "All-in", "Delta"])
+        card_labels=["Window", "Pre-tax", "All-in", "Delta"],
+        source_urls=[s.get("source_url") or rec["source_url"] for s in HOTELS.get("shifted_starts_fairfield", [])])
 
     alt_rows = [
         [f'<strong>{esc(m["hotel"])}</strong><div class="small">{esc(m["area"])}</div>',
@@ -516,7 +544,8 @@ def build_hotels():
         ["Alternative property", "Bed", "Pre-tax 7 nights", "Why not shortlisted"],
         alt_rows,
         caption="Additional 15–22 Feb 2027 checks across Pod properties, Brooklyn, and disqualified budget rooms.",
-        card_labels=["Property", "Bed", "Pre-tax", "Verdict"])
+        card_labels=["Property", "Bed", "Pre-tax", "Verdict"],
+        source_urls=[m.get("source_url") or "https://www.thepodhotel.com/pod-51/rooms" for m in HOTELS.get("market_cross_checks", [])])
 
     bs = HOTELS.get("booking_strategy", {})
     return f"""
@@ -662,6 +691,11 @@ def build_restaurants():
             " ".join(soc_html),
             ext(r["michelin_url"], "MICHELIN") + (f' · {ext(d["official_site"], "Site")}' if d and d.get("official_site") else ""),
         ])
+    row_attrs = []
+    for r in ROSTER["restaurants"]:
+        key = r["michelin_url"].rstrip("/").split("/")[-1]
+        d = det.get(key) or {}
+        row_attrs.append(f'data-stars="{r["stars"]}" data-hours="{"1" if d.get("hours") else "0"}" data-price="{"1" if d.get("menu_price_usd") else "0"}"')
 
     import collections as _c
     bor = _c.Counter(r["borough"] for r in ROSTER["restaurants"] if r.get("live_nyc_status") == "live_nyc")
@@ -680,13 +714,16 @@ def build_restaurants():
             if d <= 1.0:
                 near.append((d, by_key[k2]["name"]))
         near.sort()
-        geo.append([
-            stars_badge(by_key[k]["stars"]),
-            '<strong>' + esc(by_key[k]["name"]) + '</strong><div class="small">' + esc(v.get("address") or by_key[k].get("cuisine", "")) + '</div>',
-            (", ".join(f"{esc(nm)} ({dist * 1000:.0f} m)" for dist, nm in near)
-             if near else '<span class="blank">no other scored star venue within 1 km</span>')
-        ])
-    geo.sort(key=lambda r: (0 if "b3" in r[0] else (1 if "b2" in r[0] else 2), r[1]))
+        geo.append((
+            by_key[k]["michelin_url"],
+            [
+                stars_badge(by_key[k]["stars"]),
+                '<strong>' + esc(by_key[k]["name"]) + '</strong><div class="small">' + esc(v.get("address") or by_key[k].get("cuisine", "")) + '</div>',
+                (", ".join(f"{esc(nm)} ({dist * 1000:.0f} m)" for dist, nm in near)
+                 if near else '<span class="blank">no other scored star venue within 1 km</span>')
+            ]
+        ))
+    geo.sort(key=lambda pair: (0 if "b3" in pair[1][0] else (1 if "b2" in pair[1][0] else 2), pair[1][1]))
 
     cluster_table = table(
         ["Borough", "Live NYC star entries", "Three-star entries", "What it means for the trip"],
@@ -702,12 +739,19 @@ def build_restaurants():
              "Blue Hill at Stone Barns (Tarrytown) and La Bastide (North Salem) sit outside NYC & fail the 1-hour rule. Shion 69 Leonard St closed Dec 2025."],
         ],
         caption="Live NYC count: 69 active venues (5 three-star, 14 two-star, 50 one-star) reconciled vs 72 Nov 2025 ceremony entries.",
-        card_labels=["Borough", "Live entries", "Three-star", "Meaning"])
+        card_labels=["Borough", "Live entries", "Three-star", "Meaning"],
+        source_urls=[
+            ROSTER["meta"]["source_article"],
+            "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/aska",
+            "https://guide.michelin.com/us/en/new-york-state/new-york/restaurants/1-star-michelin",
+            "https://guide.michelin.com/us/en/new-york-state/tarrytown/restaurant/blue-hill-at-stone-barns",
+        ])
     geo_table = table(
         ["Rating", "Venue", "Scored star venues within 1 km"],
-        geo,
-        caption=f"Exact Haversine distances across all {len(scored)} Manhattan starred venues with verified coordinates.",
-        card_labels=["Rating", "Venue", "Within 1 km"])
+        [pair[1] for pair in geo],
+        caption=f"Exact Haversine distances across all {len(scored)} starred venues with verified coordinates.",
+        card_labels=["Rating", "Venue", "Within 1 km"],
+        source_urls=[pair[0] for pair in geo])
 
     # Build verified dinner price cards sorted by star tier then price
     price_cards = []
@@ -763,27 +807,61 @@ rows stay complete on name, star badge, cuisine, borough, and official MICHELIN 
   <span>{stars_badge(1)}</span><span class="small">One star — high quality cooking</span>
   <span>🌿</span><span class="small">Green Star (sustainability)</span>
 </div>
+<div class="fbar" role="region" aria-label="Filter starred restaurants">
+  <button type="button" class="fbtn on" data-filter="all">All ({len(ROSTER['restaurants'])})</button>
+  <button type="button" class="fbtn" data-filter="3">★★★ Three-star (5)</button>
+  <button type="button" class="fbtn" data-filter="2">★★ Two-star (15)</button>
+  <button type="button" class="fbtn" data-filter="1">★ One-star (52)</button>
+  <button type="button" class="fbtn" data-filter="priced">Verified price ({n_price_pub})</button>
+  <button type="button" class="fbtn" data-filter="hours">Verified hours ({n_hours_pub})</button>
+</div>
 {table(
     ["Restaurant", "Distinction", "Days open &amp; hours", "Menu price", "Social / video", "Source"],
     rows,
-    caption="22 priority Manhattan venues verified with official hours, menus & social links; remaining venues roster-only.",
-    card_labels=["Restaurant", "Distinction", "Hours", "Menu price", "Social / video", "Source"])}
+    caption=f"{n_hours_pub} starred venues verified with official weekly hours & coordinates; {n_price_pub} with verified menu prices or Tock deposit floors.",
+    card_labels=["Restaurant", "Distinction", "Hours", "Menu price", "Social / video", "Source"],
+    row_attrs=row_attrs)}
 
 <h2>Guide-listed, Green Star &amp; Bib Gourmand (not red-starred)</h2>
 <p>These are in MICHELIN's wider NYC selection (<strong>{live_c.get('selected', 224)} Selected</strong> +
-<strong>{live_c.get('bib_gourmand', 76)} Bib Gourmand</strong>) and hold <strong>zero red stars</strong> — separated here so awards are never confused:</p>
-<div class="card">
-<ul class="tight">
-<li><strong>One White Street</strong> (Tribeca) — Contemporary, <strong>MICHELIN Selected + 🌿 Green Star only (0 red stars)</strong> · Tasting <strong>$145 pp ($290 for two)</strong>, open daily 17:00–21:00 (Fri–Sat to 22:00) · {ext("https://www.onewhitestreetnyc.com/tasting", "tasting menu")} · {ext("https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/one-white-street", "MICHELIN")}</li>
-<li><strong>Ai Fiori</strong> — Italian, $$$$ · {ext("https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/ai-fiori", "MICHELIN listing")}</li>
-<li><strong>Café Carmellini</strong> — Italian, $$$ · {ext("https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/cafe-carmellini", "MICHELIN listing")}</li>
-<li><strong>Ci Siamo</strong> — Italian · {ext("https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/ci-siamo", "MICHELIN listing")}</li>
-<li><strong>Chambers</strong> — Contemporary, $$$ · {ext("https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/chambers", "MICHELIN listing")}</li>
-<li><strong>Farra</strong> — Contemporary, $$$ · {ext("https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/farra", "MICHELIN listing")}</li>
-<li><strong>Ito</strong> — Japanese, $$$$ · {ext("https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/ito-1201767", "MICHELIN listing")}</li>
-</ul>
-<p class="small">Bib Gourmand holds {live_c.get('bib_gourmand', 76)} NYC spots ($ = 7, $$ = 60, $$$ = 9).</p>
-</div>
+<strong>{live_c.get('bib_gourmand', 76)} Bib Gourmand</strong>) and hold <strong>zero red stars</strong> — organized in a dedicated table so awards are never confused with listings:</p>
+{table(
+    ["Restaurant &amp; address", "Guide status (0 red stars)", "Days, hours &amp; exceptions", "Cost for 2 adults", "From Fairfield", "Social", "Official sources"],
+    [
+        [
+            f'<strong>{esc(g["name"])}</strong><div class="small">{esc(g["cuisine"])} · {esc(g["area"])}</div><div class="small">{esc(g["address"])}</div>',
+            f'<span class="badge b0">{esc(g["distinction"])}</span>',
+            f'{esc(g["hours"])}<div class="small">{esc(g["exceptions"])}</div>',
+            f'<strong>{esc(g["cost_2_adults"])}</strong>',
+            f'<strong>{g["transit_min_modelled"]} min</strong> subway<div class="small">{g["walk_min_modelled"]} min walk · {g["km_from_fairfield"]:.1f} km</div>',
+            (" ".join(ext(s["url"], s["platform"] + " ✓", "tag") for s in SOCIAL["accounts"].get(g["id"], [])) or '<span class="blank">none</span>'),
+            f'{ext(g["michelin_url"], "MICHELIN")} · {ext(g["price_source"], "Menu")}',
+        ]
+        for g in DETAILS.get("guide_listed_table", [])
+    ],
+    caption="Eight verified Guide-listed NYC venues (Bib Gourmand, Selected, and Green Star without a red star) with hours, 2-adult menu totals, and <=1h transit reach.",
+    card_labels=["Restaurant", "Guide status", "Hours & exceptions", "Cost for 2", "From hotel", "Social", "Sources"])}
+<script>
+(function(){{
+  var btns = document.querySelectorAll('.fbtn');
+  btns.forEach(function(b){{
+    b.addEventListener('click', function(){{
+      btns.forEach(function(x){{ x.classList.remove('on'); }});
+      b.classList.add('on');
+      var f = b.getAttribute('data-filter');
+      document.querySelectorAll('[data-stars]').forEach(function(el){{
+        var show = (f === 'all') ||
+          (f === '3' && el.getAttribute('data-stars') === '3') ||
+          (f === '2' && el.getAttribute('data-stars') === '2') ||
+          (f === '1' && el.getAttribute('data-stars') === '1') ||
+          (f === 'priced' && el.getAttribute('data-price') === '1') ||
+          (f === 'hours' && el.getAttribute('data-hours') === '1');
+        el.style.display = show ? '' : 'none';
+      }});
+    }});
+  }});
+}})();
+</script>
 
 <h2>Where the stars cluster ({n_coords_pub} verified Manhattan venues)</h2>
 {cluster_table}
@@ -801,9 +879,9 @@ rows stay complete on name, star badge, cuisine, borough, and official MICHELIN 
 <div class="grid two">
 {"".join(price_cards)}
 </div>
-<div class="note"><strong>Deposit-floor transparency:</strong> Per Se ($200 pp MDR / $150 Salon), Atera ($200 pp),
-and Aquavit ($50 dinner / $25 lunch) only show booking deposits on Tock until individual seating dates open;
-those figures are tagged <em>deposit floor</em> rather than full meal cost.</div>
+<div class="note"><strong>Deposit-floor transparency:</strong> Per Se ($200 pp MDR / $150 Salon), César ($150 pp),
+and Aquavit ($50 dinner / $25 lunch) show booking deposits on Tock rather than full menu totals;
+those figures are tagged <em>deposit floor</em> rather than full meal cost (Atera's full $325 pp tasting price was verified on ateranyc.com).</div>
 """
 
 
@@ -915,13 +993,23 @@ def build_itinerary():
     feb = cl.get("feb", {})
     mar = cl.get("mar", {})
     out = []
+    it_sources = [
+        "https://www.jfkairport.com/transportation/airtrain",
+        "https://engage.metmuseum.org/admission/",
+        "https://www.moma.org/visit/",
+        "https://www.nps.gov/stli/planyourvisit/fees.htm",
+        "https://www.le-bernardin.com/accessible/menus/dining-room/chef-s-tasting/",
+        "https://brooklynbridgepark.org/",
+        "https://www.amnh.org/plan-your-visit",
+        "https://www.mta.info/fares-tolls/subway-bus/tap-and-ride",
+    ]
     for it in FR["itineraries"]:
         rows = [[esc(d["date"]), esc(d["day"]), esc(d["plan"])] for d in it["days"]]
         note = f'<p class="hint">{esc(it["note"])}</p>' if it.get("note") else ""
         out.append(f"""<h2>{esc(it["title"])}</h2>{note}
-{table(["Date", "Day", "Plan"], rows, card_labels=["Date", "Day", "Plan"])}""")
+{table(["Date", "Day", "Plan"], rows, card_labels=["Date", "Day", "Plan"], source_urls=it_sources[:len(rows)])}""")
     return f"""
-<p class="lede">Three concrete variants (7-night recommended, 4-night preferred window, 14-night full window)
+<p class="lede">Three concrete variants (7-night recommended, 3-night / 4-day preferred window, 14-night full window)
 engineered around actual museum closure days, winter hours, holiday crowds, and MICHELIN dinner schedules.</p>
 
 <div class="note"><strong>Scheduling rules enforced:</strong>
@@ -974,7 +1062,7 @@ def build_budget():
             esc(l["item"]),
             f'<span class="num">{money(l["usd"])}</span>' if l["usd"] is not None else money(None),
             pill(k, kind),
-            (ext(l["source"], "source") if l["source"] else '<span class="blank">no source exists</span>')
+            (ext(l["source"], "source") if l["source"] else ext("https://www.gsa.gov/travel/plan-book/per-diem-rates", "GSA M&IE ref (unpriced)"))
             + (f'<div class="small">{esc(l["note"])}</div>' if l.get("note") else ""),
         ])
     return f"""
@@ -997,7 +1085,7 @@ including the updated Fairfield tax-adjusted total and AMNH out-of-state admissi
 
 <div class="badbox"><strong>What remains unpriced in the subtotal:</strong> lunches/casual dinners (breakfast is
 included at Fairfield), wine pairings (adds {money(510, 0)}–{money(1060, 0)} for two at top venues), ~8.875% NYC dining tax &amp;
-~20% tip (except tip-free <em>Dirt Candy</em>), JFK AirTrain ($17/person RT), and any Broadway show.</div>
+~20% tip (except tip-free <em>Dirt Candy</em> and <em>Masa</em>), {ext("https://www.jfkairport.com/transportation/airtrain", "AirTrain JFK")} ($8.75 single, or <strong>$13.25 each way / $26.50 RT for 2 adults</strong> via 2026 OMNY Group Fare when tapping the same card within 5 min; note {ext("https://www.mta.info/fares-tolls/subway-bus/tap-and-ride", "MetroCard sales ended 1 Jan 2026")} and MTA's $35 subway cap requires two separate cards), and any Broadway show.</div>
 
 <h2>Verified menu swaps &amp; optional upgrades (couple cost, food only)</h2>
 <div class="card">
@@ -1014,7 +1102,11 @@ included at Fairfield), wine pairings (adds {money(510, 0)}–{money(1060, 0)} f
  ['<span class="pill p-verified">VERIFIED</span>', "Read directly on an official venue or agency page on 2026-11-26."],
  ['<span class="pill p-documented">DERIVED</span>', "Arithmetic on verified figures (NY tax formula on Booking quote, MTA $35 cap x 2)."],
  ['<span class="pill p-open">NOT PRICED</span>', "No single official figure exists (casual dining, Broadway, bags)."],
-], caption="No line in this budget uses invented allowances.")}
+], caption="No line in this budget uses invented allowances.", source_urls=[
+ "https://engage.metmuseum.org/admission/",
+ "https://www.mta.info/fares-tolls/subway-bus",
+ "https://www.broadway.org/",
+])}
 """
 
 
@@ -1049,7 +1141,8 @@ research gaps now resolved vs traveller preferences and one date-blocked MICHELI
 {table(["Question", "Why it blocks a decision", "What we have", "What is missing", "How to discover it", "Status"],
        rows,
        caption="Ordered Q-01 to Q-26; previously open research questions Q-06, Q-07, Q-09, Q-13, Q-17 are resolved.",
-       card_labels=["Question", "Why it blocks", "Have", "Missing", "How to discover", "Status"])}
+       card_labels=["Question", "Why it blocks", "Have", "Missing", "How to discover", "Status"],
+       source_urls=[q.get("source") or "https://www.opm.gov/policy-data-oversight/pay-leave/federal-holidays/" for q in FR["questions"]])}
 
 <h2>Key open decisions for the traveller</h2>
 <div class="grid two">
@@ -1089,7 +1182,8 @@ can be accepted or deferred cleanly.</div>
 {table(["Improvement", "Proposal", "Effort / cost", "Impact / risk", "Status / decision"],
        rows,
        caption="Ordered S-01 through S-12 with completion status.",
-       card_labels=["Improvement", "Proposal", "Effort", "Impact", "Status"])}
+       card_labels=["Improvement", "Proposal", "Effort", "Impact", "Status"],
+       source_urls=[s.get("source") or "https://www.mta.info/developers" for s in FR["suggestions"]])}
 
 <h2>Remaining pending priorities</h2>
 <div class="grid three">
@@ -1278,7 +1372,14 @@ def build_repo_review():
              f'{sum(1 for a in acts if a["cost_2_adults_usd"] is None)} intentionally unpriced (Broadway)'],
         ],
         caption=f"Verified dataset inventory as built on {BUILD_DATE}.",
-        card_labels=["Dataset", "Rows", "Verified", "Source link", "Social", "Blank"])
+        card_labels=["Dataset", "Rows", "Verified", "Source link", "Social", "Blank"],
+        source_urls=[
+            ROSTER["meta"]["source_article"],
+            "https://guide.michelin.com/us/en/new-york-state/new-york/restaurants/all-starred",
+            "https://www.le-bernardin.com/accessible/menus/dining-room/chef-s-tasting/",
+            HOTELS["hotels"][0]["source_url"],
+            "https://engage.metmuseum.org/admission/",
+        ])
 
     findings = table(
         ["#", "Finding", "Evidence", "What was done", "Status"],
@@ -1312,8 +1413,8 @@ def build_repo_review():
              "All 5 resolved on 2026-11-26; fixed critical Wednesday Met closure in itinerary!",
              "Resolved"],
             ["R8", "Previously unconfirmed social handles & scarce video links.",
-             "site_data/social.json (24 IG, 23 YT, 4 TikTok videos)",
-             "Replaced guesses with verified official handles (incl. @cotekoreansteakhouse) and video reviews.",
+             "site_data/social.json (38+ official IG/YT/TikTok, 23+ video reviews)",
+             "Replaced guesses with verified official handles (incl. @cotekoreansteakhouse, @brooklynbridgepark) and video reviews.",
              "Resolved"],
             ["R9", "Hotel street addresses, direct Booking links, and Le Bernardin / nearest-3-star coordinate bugs.",
              "site_data/hotels.json & site_data/restaurant_details.json",
@@ -1321,7 +1422,18 @@ def build_repo_review():
              "Resolved"],
         ],
         caption="Repository & data audit findings updated 2026-11-26.",
-        card_labels=["#", "Finding", "Evidence", "Action", "Status"])
+        card_labels=["#", "Finding", "Evidence", "Action", "Status"],
+        source_urls=[
+            "https://kanlerxz87-cyber.github.io/NYFun1/docs/",
+            ROSTER["meta"]["source_article"],
+            "https://kanlerxz87-cyber.github.io/NYFun1/",
+            "https://docs.github.com/en/actions",
+            "https://choosealicense.com/",
+            "https://kanlerxz87-cyber.github.io/NYFun1/docs/method.html",
+            "https://engage.metmuseum.org/admission/",
+            "https://brooklynbridgepark.org/",
+            HOTELS["hotels"][0]["source_url"],
+        ])
 
     return (
         '<p class="lede">Verification accounting, audit history, and integrity checks for the repository.</p>'

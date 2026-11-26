@@ -1,0 +1,48 @@
+{
+ "nyc_statutory_tax_note": {
+  "formula": "14.75% (5.875% NYC Hotel Room Occupancy Tax + 8.875% combined NYS/NYC/MCTD sales tax) + $3.50/night ($2.00 NYC room occupancy fee + $1.50 NYS hotel unit fee)",
+  "booking_display_note": "Booking.com rounds the $3.50 statutory flat unit fee up to '$4 City tax per night' on most Manhattan listings ($6/night on multi-room/suite classifications such as Residence Inn FiDi).",
+  "official_sources": [
+   "https://www.nyc.gov/site/finance/taxes/business-hotel-room-occupancy-tax.page",
+   "https://portal.311.nyc.gov/article/?kanumber=KA-02794"
+  ]
+ },
+ "reach_scored_star_venues": 23,
+ "hotels_summary": [
+  {
+   "id": "fairfield-central-park",
+   "all_in_7n_usd": 1158.98,
+   "stars_within_5km": 18
+  },
+  {
+   "id": "arlo-soho",
+   "all_in_7n_usd": 1206.6,
+   "stars_within_5km": 16
+  },
+  {
+   "id": "pestana-cr7-times-square",
+   "all_in_7n_usd": 1492.21,
+   "stars_within_5km": 19
+  },
+  {
+   "id": "arlo-midtown",
+   "all_in_7n_usd": 1339.34,
+   "stars_within_5km": 20
+  },
+  {
+   "id": "citizenm-times-square",
+   "all_in_7n_usd": 1344.18,
+   "stars_within_5km": 18
+  },
+  {
+   "id": "hyatt-place-chelsea",
+   "all_in_7n_usd": 1305.17,
+   "stars_within_5km": 23
+  },
+  {
+   "id": "residence-inn-fidi",
+   "all_in_7n_usd": 1301.09,
+   "stars_within_5km": 12
+  }
+ ]
+}
