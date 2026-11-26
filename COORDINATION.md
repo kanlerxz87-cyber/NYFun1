@@ -285,3 +285,61 @@ final integration/review session rather than starting a competing dataset.
 (2) close verifiable gaps where an official page supplies a missing value; (3) keep anything
 unverifiable blank and on the Flagged page; (4) re-run the build + link check; (5) PR → merge →
 confirm Pages; (6) log sources, verification and irregularities here. No duplicate dataset.
+
+### 2026-11-26 · `arena-c7b21fd7` · Final verification, source closure and release notes
+
+**Verified from official / first-party pages this session (each read line by line):**
+
+- Booking.com dated search pages (`checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD`):
+  all seven shortlisted hotels' before-tax seven-night totals, tax exclusions, city tax and other excluded
+  fees; plus re-reads for Fairfield, Arlo SoHo, Hyatt Chelsea, Residence Inn FiDi, citizenM, Arlo Midtown
+  and Pestana CR7. Fairfield's withdrawn `1,155.48` "taxes included" figure was rejected; the dated page
+  reads `985.60` before tax plus excluded `14.75%` tax and `$4` city tax per night.
+- MICHELIN, `https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025`:
+  72 star entries; MICHELIN's own filtered lists read 69. The discrepancy is published, not resolved by
+  choosing one. Next NYC ceremony `2026-12-14`.
+- The High Line, `https://www.thehighline.org/visit/`: December–March `07:00–20:00`; Rail Yard Preserve
+  closes at dusk. The first capture hit a cookie wall; the second chunk was read in full.
+- OPM federal holidays: `2027-02-15` is Washington's Birthday, which is why the preferred arrival date
+  is flagged as a holiday.
+- Eleven Madison Park, `https://www.elevenmadisonpark.com/`: official Resy link, no published price/hours.
+- Jungsik, `https://www.jungsik.com/`: `2 Harrison St., New York, NY 10013`, phone `+1 212 219 0900`;
+  no hours or menu price published on the page read. The guessed Instagram handle that returned HTTP 404
+  was not claimed as official.
+- Gramercy Tavern, `https://www.gramercytavern.com/dining-room-menu` and `/tavern-menu/`: Dining Room
+  Seasonal Menu `$178/person`, wine pairing `$118/person`; Tavern à la carte and Thanksgiving `$225/person`.
+  The `$178` price is now in the restaurant detail table and the budget.
+- Daniel, `https://www.danielnyc.com/`: official page read, no usable hours or price in the captured text.
+- AMNH, `https://www.amnh.org/plan-your-visit`: standard adult general admission `$37`; closed
+  Thanksgiving and Christmas Day; extended holiday hours; pay-what-you-wish for NY State residents.
+  `$74` for two is now in the budget. The rows say which facts are standard-adult only.
+- The Met, `https://www.metmuseum.org/plan-your-visit/met-fifth-avenue`: The Met's own page excerpt in
+  search results gives Sun–Tue & Thu `10:00–17:00`, Fri–Sat `10:00–21:00`, closed Wednesday. A direct
+  fetch redirected to the generic visit page, so the activity row remains `PARTIAL` rather than `VERIFIED`.
+  General admission `$30` was read directly on the Met site.
+- YouTube video pages: eight new videos were opened and identified by title, channel, publication date
+  and view count, adding verified review links for Eleven Madison Park, Per Se, AMNH, Top of the Rock,
+  9/11 Memorial & Museum and the Statue of Liberty ferry. Together with the earlier links the site now
+  reports 11 verified review videos across 7 venues and 11 verified official accounts; all remaining
+  social cells are labelled search links. TikTok still returns HTTP 400 and no TikTok handle is asserted.
+
+**Corrections and irregularities published, not hidden:**
+
+- Fairfield / all seven hotel totals: advertised figures are before tax; derived all-in column uses
+  total × `1.1475` + city tax × 7 (`$6` at Residence Inn FiDi, `$4` elsewhere) + `$1/night` tourism fee at
+  the two Arlo properties. Resort fees printed as included are not added again.
+- Budget priced subtotal moved to **`$4,184.98`** after adding AMNH `$74` to the previous `$4,110.98`.
+  Ordinary meals and unpriced tasting menus remain blank and flagged.
+- Four priority restaurants still have no published price (EMP, Jungsik, Sushi Sho, Daniel); Gramercy
+  Tavern is no longer among the unpriced venues. 70 of 72 restaurants still have no verified hours.
+- The Met hour row is PARTIAL from an official search excerpt; no hour was inferred from a third party.
+- Every table row carrying data in the Hotels, Restaurants, Activities, Budget and Flagged tables has a
+  source link or an explicit blank/no-source cell. Summary/legend tables link to their underlying data
+  pages; the itinerary's days link to the Activities and Restaurants tables that carry the official URLs.
+- Build checks passed: `python3 build_site.py` regenerated 11 pages, `git diff --check` clean, no dangling
+  internal links, no literal HTML entities, and the subtotal/hotel arithmetic rechecked by an independent
+  script. Generated `docs/` is committed from data; no hand-edited HTML.
+
+**Release state:** commits `1901e9f`, `cf03ded`, `1ca8661`, `2f0f338`, `aefc9b2`, `ae31ced`, `d7ab358`,
+`1b283c1`, `5082049` pushed to `arena/c7b21fd7-nyfun1`. Ready for final PR to `main`, immediate merge,
+and a Pages recheck; PR result will be appended below after merge.
