@@ -377,7 +377,7 @@ plus ~15–20 min ferry crossing (~62–67 min door-to-island; harbour wind can 
 <h3>5 · What is verified, and what remains open</h3>
 <ul class="tight">
 <li><strong>{money(FR["budget"]["verified_subtotal_usd"])} verified subtotal</strong> across Fairfield hotel, AMS–JFK fares, MTA 7-day cap, 6 paid attractions (incl. AMNH $74), and 2 tasting dinners (food only).</li>
-<li><strong>{n_hours} starred venues with full verified hours</strong>, <strong>{n_price} with verified menu prices or deposit floors</strong>, and <strong>all 11 activities</strong> verified on hours/entry rules (10 priced + Broadway deliberately unpriced).</li>
+<li><strong>{n_hours} starred venues with full verified hours</strong>, <strong>{n_price} with verified menu prices or deposit floors</strong>, and <strong>all {len(ACTS['activities'])} activities</strong> verified on hours/entry rules ({sum(1 for a in ACTS['activities'] if a['cost_2_adults_usd'] is not None)} priced + Broadway deliberately unpriced).</li>
 <li><strong>{n_ig_total} verified official Instagram accounts</strong>, <strong>{n_yt_rev} verified YouTube video reviews</strong>, and <strong>{n_tt_rev} verified public TikTok tasting videos</strong>.</li>
 <li><strong>{n_res_flags} of {len(FR['flags'])} earlier flags resolved or documented</strong>; {n_open_flags} live items stay <a href="flagged.html">Flagged Open</a> (Jungsik/Tock countdown conflicts, live promo rates, NPS hours disagreement, airline 2-seat checkout).</li>
 </ul>
@@ -929,7 +929,7 @@ def build_activities():
             " ".join([soc_html, ext(a["official_url"], "Official")]),
         ])
     return f"""
-<p class="lede">All eleven candidate activities verified on official venue/agency websites on 2026-11-26:
+<p class="lede">All {len(ACTS['activities'])} candidate activities verified on official venue/agency websites on 2026-11-26:
 exact winter/2027 hours, closure days (including The Met's Wednesday closure), out-of-state adult prices
 for two, modelled travel times from Fairfield Central Park (538 W 58th St), and direct video/social reviews.</p>
 

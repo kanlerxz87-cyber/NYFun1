@@ -349,7 +349,7 @@
    "title": "RESOLVED 2026-11-26: Priority restaurant prices & hours verified from venues & Tock/Resy",
    "detail": "Verified fixed prices for 4 of 5 three-stars (Le Bernardin $142/$225/$350, EMP $255/$385, Jungsik $335, Sushi Sho $495) + Per Se deposit floor ($150/$200), plus 12 major 2-star & 1-star venues (The Modern, Gabriel Kreuther, Saga, Jean-Georges, Atomix, Daniel, Gramercy Tavern, Le Coucou, Dirt Candy, Cote, Crown Shy, Semma, Jeju, Casa Mono, Blue Hill) & One White Street.",
    "source": "https://www.exploretock.com/jungsik",
-   "settle_by": "Done; Per Se, Atera & Aquavit keep honest Tock deposit floors ($200 / $200 / $50) where full menus sit behind slot checkout",
+   "settle_by": "Done; Per Se, César & Aquavit keep honest Tock deposit floors ($200 / $150 / $50) where full menus sit behind slot checkout",
    "status": "Resolved"
   },
   {
