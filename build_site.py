@@ -332,7 +332,7 @@ suggestion S-02.</p>
 <div class="card">
 <h3>5 · What is verified, and what is not</h3>
 <ul class="tight">
-<li><strong>${FR["budget"]["verified_subtotal_usd"]:,.2f} priced subtotal</strong> across hotel, flights, transit, five tickets and two tasting menus; the hotel line is derived and ordinary meals are blank.</li>
+<li><strong>${FR["budget"]["verified_subtotal_usd"]:,.2f} priced subtotal</strong> across hotel, flights, transit, six tickets and two tasting menus; the hotel line is derived and ordinary meals are blank.</li>
 <li><strong>{n_hours} of {n_stars} restaurants have verified hours</strong> and <strong>{n_price} have a verified menu price</strong>. The other 66–70 rows are complete on name, distinction, cuisine, borough and official link — and deliberately blank on hours and price (<a href="restaurants.html">see the table</a>).</li>
 <li><strong>{n_ig_total} verified official social accounts</strong> and <strong>{n_vids} verified third-party review videos across {n_vid_venues} venues</strong>, each opened and identified by title, channel and view count. Where nothing could be verified the cell is still a search link, labelled as a search — TikTok returned HTTP 400 on every read, so no TikTok account is claimed anywhere.</li>
 <li><strong>{len(FR['flags'])} flagged items</strong> and <strong>{len(FR['questions'])} open questions</strong>, each with the exact source that would settle it.</li>
@@ -800,7 +800,7 @@ exists. Prices are per adult and doubled arithmetically for two.</p>
 
 <div class="note"><strong>Free and almost-free:</strong> Central Park, The High Line, the Brooklyn Bridge
 promenade and Chelsea Market cost nothing to enter. The paid items that matter are MoMA ($30),
-The Met ($30), AMNH (price not read), the 9/11 Museum ($24–$36) and the Statue of Liberty ferry ($26).</div>
+The Met ($30), AMNH ($37 standard adult), the 9/11 Museum ($24–$36) and the Statue of Liberty ferry ($26).</div>
 
 {table(
     ["Activity", "Days &amp; hours", "Exceptions that matter", "Cost for 2", "From the hotel", "Status", "Links"],
@@ -939,7 +939,7 @@ cheapest flight fare found, which may not hold for two seats.</div>
 <ul class="tight">
 <li>Wine pairing at Le Bernardin — {money(530,0)} per person (i.e. {money(1060,0)} for two).</li>
 <li>Wine pairing at Gabriel Kreuther — from {money(255,0)} per person.</li>
-<li>American Museum of Natural History — price not read; the ticketing page is a separate system.</li>
+<li>American Museum of Natural History — {money(37,0)} standard adult, {money(74,0)} for two, from the official Plan Your Visit page; NY State residents pay what they wish.</li>
 <li>A second week of hotel, 22 Feb – 1 Mar — {money(1199.14)} derived all-in for the same Fairfield room, from a $1,020.60 before-tax total (F-12).</li>
 <li>Broadway — no single official price; depends entirely on the show.</li>
 </ul>
@@ -1153,7 +1153,7 @@ formula is written down.</li>
 
 <h3>Activities, transit and flights</h3>
 <ul class="tight">
-<li>{ext("https://www.moma.org/visit/", "MoMA: hours and admission")} · {ext("https://www.metmuseum.org/plan-your-visit", "The Met: tickets")} · {ext("https://www.amnh.org/plan-your-visit/hours", "AMNH: hours")}</li>
+<li>{ext("https://www.moma.org/visit/", "MoMA: hours and admission")} · {ext("https://www.metmuseum.org/plan-your-visit", "The Met: tickets")} · {ext("https://www.metmuseum.org/plan-your-visit/met-fifth-avenue", "The Met Fifth Avenue: hours excerpt")} · {ext("https://www.amnh.org/plan-your-visit", "AMNH: hours and standard admission")}</li>
 <li>{ext("https://www.911memorial.org/visit/visit-museum-1", "9/11 Memorial &amp; Museum: hours and tickets")} · {ext("https://www.rockefellercenter.com/tickets/top-of-the-rock-observation-deck/", "Top of the Rock: tickets")} · {ext("https://www.nps.gov/stli/planyourvisit/fees.htm", "Statue of Liberty: NPS fees")}</li>
 <li>{ext("https://www.nycgovparks.org/parks/central-park", "NYC Parks: Central Park")} · {ext("https://www.thehighline.org/visit/", "The High Line: visitor info")} — winter hours 07:00–20:00, read 2026-11-26.</li>
 <li>{ext("https://www.opm.gov/policy-data-oversight/pay-leave/federal-holidays/", "OPM: 2027 federal holidays")} — Washington's Birthday on Monday 15 February 2027.</li>
