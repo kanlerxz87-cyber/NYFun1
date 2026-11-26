@@ -59,6 +59,9 @@ code{background:var(--bg2);padding:1px 5px;border-radius:4px;font-size:13px}
 .p-open,.p-blocked,.p-not-priced,.p-low{color:#ffc9c9;border-color:#6b2b2b;background:#241010}
 .p-documented{color:#bfd8ff;border-color:#26456b;background:#0e1a24}
 .tag{font-size:11px;color:var(--dim);border:1px solid var(--line);border-radius:5px;padding:0 5px}
+.fbar{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0;align-items:center}
+.fbtn{background:var(--bg2);color:var(--dim);border:1px solid var(--line);border-radius:20px;padding:5px 11px;font-size:13px;cursor:pointer}
+.fbtn:hover,.fbtn.on{background:#241d0c;color:var(--gold);border-color:var(--gold)}
 .cards{display:none}
 .mcard{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:11px 13px;margin-bottom:9px}
 .mcard-title{font-weight:700;font-size:15.5px;margin-bottom:6px;color:#fff}

@@ -422,6 +422,118 @@
    "verified": "Secondary source states annual awards ceremony Monday 14 Dec 2026; not an official MICHELIN page and flagged as secondary.",
    "kind": "secondary / flagged",
    "read_on": "2026-11-26"
+  },
+  {
+   "publisher": "Atera official website",
+   "url": "https://ateranyc.com/",
+   "verified": "Seasonal Tasting Menu $325 pp ($650 for two); wine pairing $218 pp.",
+   "kind": "official",
+   "read_on": "2026-11-26"
+  },
+  {
+   "publisher": "Chef's Table at Brooklyn Fare",
+   "url": "https://www.brooklynfare.com/chefs-table/",
+   "verified": "Tasting Menu $385 pp ($770 for two); Tue–Sun hours verified.",
+   "kind": "official",
+   "read_on": "2026-11-26"
+  },
+  {
+   "publisher": "Masa on Tock",
+   "url": "https://www.exploretock.com/masa",
+   "verified": "Dinner Table $750 pp, Hinoki Dinner Counter $950 pp, Lunch Counter $495 pp (hospitality included).",
+   "kind": "official",
+   "read_on": "2026-11-26"
+  },
+  {
+   "publisher": "Odo on Tock",
+   "url": "https://www.exploretock.com/odo-new-york",
+   "verified": "Dinner Kaiseki $270 pp ($540 for two); Lunch Kaiseki $150 pp ($300 for two).",
+   "kind": "official",
+   "read_on": "2026-11-26"
+  },
+  {
+   "publisher": "César on Tock",
+   "url": "https://www.exploretock.com/cesarrestaurant",
+   "verified": "$150 pp reservation deposit floor verified; IG @cesar.newyork.",
+   "kind": "official",
+   "read_on": "2026-11-26"
+  },
+  {
+   "publisher": "Tonchin NYC official menu",
+   "url": "https://www.tonchinus.com/new-york-menu",
+   "verified": "Bib Gourmand: Mon–Fri Lunch Set $28 pp ($56 for two); ramen $22–$25.",
+   "kind": "official",
+   "read_on": "2026-11-26"
+  },
+  {
+   "publisher": "Pranakhon official menu PDF",
+   "url": "https://pranakhonnyc.com/pdf/qrcode_menu.pdf",
+   "verified": "Bib Gourmand: starters $14–$20, noodles/curries/mains $24–$45.",
+   "kind": "official",
+   "read_on": "2026-11-26"
+  },
+  {
+   "publisher": "Ai Fiori official menus",
+   "url": "https://www.aifiorinyc.com/holidays",
+   "verified": "MICHELIN Selected: 2-course Business Lunch $54 pp ($108/2); 3-course Sunday Supper $70 pp ($140/2).",
+   "kind": "official",
+   "read_on": "2026-11-26"
+  },
+  {
+   "publisher": "Ci Siamo official menu",
+   "url": "https://www.cisiamo.com/menus/",
+   "verified": "MICHELIN Selected: antipasti $15–$27, pastas $25–$35.",
+   "kind": "official",
+   "read_on": "2026-11-26"
+  },
+  {
+   "publisher": "Café Carmellini dinner menu",
+   "url": "https://www.cafecarmellini.com/menu/dinner/",
+   "verified": "MICHELIN Selected: starters $24–$38, entrées $52–$84.",
+   "kind": "official",
+   "read_on": "2026-11-26"
+  },
+  {
+   "publisher": "Chambers official menu",
+   "url": "https://www.chambers.nyc/menu",
+   "verified": "MICHELIN Selected: starters $24–$36, mains $36–$45, ribeye for two $180.",
+   "kind": "official",
+   "read_on": "2026-11-26"
+  },
+  {
+   "publisher": "Ito New York official page",
+   "url": "https://www.ito-omakase.com/ito-new-york",
+   "verified": "MICHELIN Selected: Omakase $295 pp ($590 for two).",
+   "kind": "official",
+   "read_on": "2026-11-26"
+  },
+  {
+   "publisher": "Brooklyn Bridge Park official site",
+   "url": "https://brooklynbridgepark.org/",
+   "verified": "Open daily 06:00–01:00, free entry, official IG & TikTok @brooklynbridgepark in header.",
+   "kind": "official",
+   "read_on": "2026-11-26"
+  },
+  {
+   "publisher": "AirTrain JFK official page",
+   "url": "https://www.jfkairport.com/transportation/airtrain",
+   "verified": "Single ride $8.75; 2026 OMNY Group Fare $8.75 + $4.50 = $13.25 each way ($26.50 RT for 2 adults).",
+   "kind": "official",
+   "read_on": "2026-11-26"
+  },
+  {
+   "publisher": "MTA Tap & Ride official page",
+   "url": "https://www.mta.info/fares-tolls/subway-bus/tap-and-ride",
+   "verified": "MetroCard sales ended 1 Jan 2026; $35 7-day cap requires separate cards/devices per rider.",
+   "kind": "official",
+   "read_on": "2026-11-26"
+  },
+  {
+   "publisher": "Pod 51 official rooms & FAQ",
+   "url": "https://www.thepodhotel.com/pod-51/rooms",
+   "verified": "Confirms Bunk/Single Pods use shared bathrooms (Queen/Studio Pods have private baths; $29.84/nt facility fee).",
+   "kind": "official",
+   "read_on": "2026-11-26"
   }
  ],
  "corrections": [

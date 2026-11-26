@@ -254,7 +254,7 @@
   },
   {
    "id": "four",
-   "title": "4 nights - the literal preferred window (15-18 Feb 2027)",
+   "title": "3 nights (4 days) - the literal preferred window (15-18 Feb 2027)",
    "days": [
     {
      "date": "Mon 15 Feb",
@@ -558,6 +558,15 @@
    "source": "https://www.inquirer.com/food/restaurants/michelin-2026-announcement-restaurants-new-york-20260811.html",
    "settle_by": "Find MICHELIN's own announcement about the Green Star programme for 2026",
    "status": "Open"
+  },
+  {
+   "id": "F-30",
+   "severity": "LOW",
+   "title": "MetroCard sales ended 1 Jan 2026; OMNY cap requires separate cards while AirTrain JFK discounts same-card groups",
+   "detail": "Official MTA pages (mta.info/fares-tolls/subway-bus/tap-and-ride) confirm MetroCard purchase/refill ended 1 Jan 2026 and each adult must tap a separate contactless card/device to earn the $35 7-day subway/bus cap. Conversely, JFK AirTrain ($8.75 single) offers a 2026 OMNY Group Fare ($8.75 + $4.50 = $13.25 each way / $26.50 return for 2 adults) when tapping the SAME card within 5 minutes.",
+   "source": "https://www.jfkairport.com/transportation/airtrain",
+   "settle_by": "Tap ONE card twice at AirTrain JFK ($13.25), then TWO separate cards/phones on MTA subways ($35 cap each)",
+   "status": "Documented"
   }
  ],
  "questions": [

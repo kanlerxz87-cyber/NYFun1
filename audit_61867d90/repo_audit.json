@@ -1,0 +1,55 @@
+{
+ "session": "arena-61867d90",
+ "audited_against_commit": "9989778",
+ "date": "2026-11-26",
+ "defects_found_and_fixed": [
+  {
+   "id": "D-01",
+   "severity": "CRITICAL",
+   "location": "site_data/framework.json -> itineraries[0].days[2]",
+   "defect": "Recommended 7-night itinerary scheduled The Met on Wednesday 17 Feb 2027, when The Met is closed every Wednesday.",
+   "fix": "Swapped Wednesday 17 Feb (now 9/11 Memorial & Museum + Statue of Liberty ferry, both open Wednesdays) and Thursday 18 Feb (now The Met + Central Park, open Thursdays 10:00-17:00).",
+   "official_source": "https://engage.metmuseum.org/admission/"
+  },
+  {
+   "id": "D-02",
+   "severity": "MEDIUM",
+   "location": "site_data/framework.json -> itineraries[1] & prose",
+   "defect": "Check-in 2027-02-15 to check-out 2027-02-18 is 3 nights (4 days), but itineraries[1] and index/questions prose called it '4 nights'.",
+   "fix": "Corrected label to '3 nights / 4 days - the literal preferred window (15-18 Feb 2027)' everywhere.",
+   "official_source": "https://www.opm.gov/policy-data-oversight/pay-leave/federal-holidays/"
+  },
+  {
+   "id": "D-03",
+   "severity": "HIGH",
+   "location": "build_site.py -> build_budget() KPI card",
+   "defect": "Hotel share KPI card hardcoded withdrawn figure $1,155.48 instead of deriving $1,158.98 from budget lines.",
+   "fix": "Computed all KPI shares dynamically from FR['budget']['lines'].",
+   "official_source": "https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD"
+  },
+  {
+   "id": "D-04",
+   "severity": "MEDIUM",
+   "location": "build_site.py -> build_hotels()",
+   "defect": "Stale prose claimed 15-22 Feb window total already included tax and that 6 of 7 hotel street addresses were missing.",
+   "fix": "Updated prose to match verified before-tax basis and verified street addresses across all 7 hotels.",
+   "official_source": "https://www.nyc.gov/site/finance/taxes/business-hotel-room-occupancy-tax.page"
+  },
+  {
+   "id": "D-05",
+   "severity": "LOW",
+   "location": "site_data/framework.json -> Q-07",
+   "defect": "Typo 'verified precio' and outdated claim that only Le Bernardin had a verified 3-star menu price.",
+   "fix": "Fixed typo and updated with newly verified official 3-star prices at Eleven Madison Park ($385/$255), Jungsik ($335), and Sushi Sho ($495).",
+   "official_source": "https://www.elevenmadisonpark.com/faq"
+  },
+  {
+   "id": "D-06",
+   "severity": "HIGH",
+   "location": "build_site.py -> secondary tables & Guide-listed section",
+   "defect": "Secondary tables (itinerary, questions, suggestions, repo-review, label legends) lacked direct official outbound source links per row, and Guide-listed (no-star) restaurants were a bullet list instead of an organized table with hours, 2-adult costs, and social links.",
+   "fix": "Added official source URLs to every row of every table across all 11 pages (enforced by run_checks()) and added a full 8-venue Guide-listed (Bib Gourmand / Selected / Green Star) table.",
+   "official_source": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurants"
+  }
+ ]
+}

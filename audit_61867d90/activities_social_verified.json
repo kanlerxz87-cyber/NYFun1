@@ -1,0 +1,43 @@
+{
+ "activities_count": 12,
+ "social_coverage": {
+  "venues_with_a_verified_official_social_account": 37,
+  "official_labelled_entries": 48,
+  "unconfirmed_official_labelled_handles": 0,
+  "verified_official_links": 48,
+  "verified_third_party_videos": 11,
+  "venues_with_a_verified_third_party_video": 7,
+  "search_links_remaining": 4,
+  "note": "48 unique verified official social accounts (Instagram, YouTube, TikTok) and 11 verified YouTube review videos across 7 venues; @chelseamarketny was directly opened and confirmed on 2026-11-26."
+ },
+ "mta_2026_verified": {
+  "subway_local_bus_fare_usd": 3.0,
+  "express_bus_fare_usd": 7.25,
+  "omny_7day_cap_per_person_usd": 35.0,
+  "metrocard_cutoff": "As of January 1, 2026, riders can no longer buy or refill a MetroCard; each adult must tap a separate contactless card/device to earn the $35 7-day cap.",
+  "airtrain_jfk_single_usd": 8.75,
+  "airtrain_jfk_2_adults_group_omny_usd": 13.25,
+  "sources": [
+   "https://www.mta.info/fares-tolls/subway-bus",
+   "https://www.mta.info/fares-tolls/subway-bus/tap-and-ride",
+   "https://www.jfkairport.com/transportation/airtrain"
+  ]
+ },
+ "climate_normals_central_park_1991_2020": {
+  "february": {
+   "max_f": 42.2,
+   "min_f": 29.5,
+   "mean_f": 35.9,
+   "precip_in": 3.19,
+   "snow_in": 10.1
+  },
+  "march": {
+   "max_f": 49.9,
+   "min_f": 35.8,
+   "mean_f": 42.8,
+   "precip_in": 4.29,
+   "snow_in": 5.0
+  },
+  "source": "https://www.weather.gov/media/okx/Climate/CentralPark/nycnormals.pdf"
+ }
+}
