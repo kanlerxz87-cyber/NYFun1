@@ -267,3 +267,22 @@ ferry) → F-20.
   titles/table headers, and a stated budget subtotal that could drift from the sum of its lines.
 - Counts on the site are now derived from the data (socials 11 official + 3 review videos, flags 20,
   questions 26) rather than typed into prose.
+
+---
+
+## SESSION CLAIM — 2026-11-26 (UTC) — `arena-6b0cf789` (branch `arena/6b0cf789-nyfun1`)
+
+**Task claimed:** T15 — final line-by-line audit + integration of the merged `docs/` dashboard,
+followed by PR and merge. No other branch exists on the remote (`origin/main` only), so all
+earlier claims are complete and there is no live scope overlap.
+
+**Scope:** `COORDINATION.md` (append-only), `site_data/*.json`, `build_site.py`, `docs/*.html`,
+`docs/assets/style.css`, `README.md`. **Will not touch:** `build.py`, `build_deepdive.py`,
+`content.py`, `deepdive/**`, `docs/data/*.csv` (archived datasets).
+
+**Plan:** re-verify a sample of high-impact rows against official pages, run structural and
+arithmetic checks on every table row, correct only confirmed defects, rebuild, check every internal
+and external link, then open PR → merge → confirm Pages deploy.
+
+**Handoff note:** the claiming session is working from `main` at `74d9883`, i.e. it already
+contains the merged result of PRs #1–#10. No session work will be discarded.
