@@ -320,7 +320,7 @@ confirm Pages; (6) log sources, verification and irregularities here. No duplica
 - YouTube video pages: eight new videos were opened and identified by title, channel, publication date
   and view count, adding verified review links for Eleven Madison Park, Per Se, AMNH, Top of the Rock,
   9/11 Memorial & Museum and the Statue of Liberty ferry. Together with the earlier links the site now
-  reports 11 verified review videos across 7 venues and 11 verified official accounts; all remaining
+  reports 11 verified review videos across 7 venues and 10 opened/verified official accounts (one further handle is explicitly unconfirmed); all remaining
   social cells are labelled search links. TikTok still returns HTTP 400 and no TikTok handle is asserted.
 
 **Corrections and irregularities published, not hidden:**
@@ -331,7 +331,7 @@ confirm Pages; (6) log sources, verification and irregularities here. No duplica
 - Budget priced subtotal moved to **`$4,184.98`** after adding AMNH `$74` to the previous `$4,110.98`.
   Ordinary meals and unpriced tasting menus remain blank and flagged.
 - Four priority restaurants still have no published price (EMP, Jungsik, Sushi Sho, Daniel); Gramercy
-  Tavern is no longer among the unpriced venues. 70 of 72 restaurants still have no verified hours.
+  Tavern is no longer among the unpriced venues. After merging the parallel audit, 64 of 72 restaurants have no published hours and 1 is partial.
 - The Met hour row is PARTIAL from an official search excerpt; no hour was inferred from a third party.
 - Every table row carrying data in the Hotels, Restaurants, Activities, Budget and Flagged tables has a
   source link or an explicit blank/no-source cell. Summary/legend tables link to their underlying data
@@ -341,5 +341,92 @@ confirm Pages; (6) log sources, verification and irregularities here. No duplica
   script. Generated `docs/` is committed from data; no hand-edited HTML.
 
 **Release state:** commits `1901e9f`, `cf03ded`, `1ca8661`, `2f0f338`, `aefc9b2`, `ae31ced`, `d7ab358`,
-`1b283c1`, `5082049` pushed to `arena/c7b21fd7-nyfun1`. Ready for final PR to `main`, immediate merge,
-and a Pages recheck; PR result will be appended below after merge.
+`1b283c1`, `5082049`, `b5e93de` pushed to `arena/c7b21fd7-nyfun1`. PR #13 was opened for final
+integration. It was not cleanly mergeable because `main` advanced with a parallel audit
+(`arena-6b0cf789`, PR #12) while this session was working. That audit's verified MICHELIN hour blocks,
+dated window prices, addresses, source-link checks and unconfirmed-handle correction are preserved
+below and merged into the same canonical files.
+
+
+## SESSION CLAIM — 2026-11-26 (UTC) — `arena-6b0cf789` (branch `arena/6b0cf789-nyfun1`)
+
+**Task claimed:** T15 — final line-by-line audit + integration of the merged `docs/` dashboard,
+followed by PR and merge. No other branch exists on the remote (`origin/main` only), so all
+earlier claims are complete and there is no live scope overlap.
+
+**Scope:** `COORDINATION.md` (append-only), `site_data/*.json`, `build_site.py`, `docs/*.html`,
+`docs/assets/style.css`, `README.md`. **Will not touch:** `build.py`, `build_deepdive.py`,
+`content.py`, `deepdive/**`, `docs/data/*.csv` (archived datasets).
+
+**Plan:** re-verify a sample of high-impact rows against official pages, run structural and
+arithmetic checks on every table row, correct only confirmed defects, rebuild, check every internal
+and external link, then open PR → merge → confirm Pages deploy.
+
+**Handoff note:** the claiming session is working from `main` at `74d9883`, i.e. it already
+contains the merged result of PRs #1–#10. No session work will be discarded.
+
+### 2026-11-26 · `arena-6b0cf789` · T15 final audit — verification log
+
+**Verified from official pages (read 2026-11-26, links reproduced on the Method page):**
+- `https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/eleven-madison-park` — full
+  weekly hours (17:30–22:00 Mon–Thu; 12:00–13:00 + 17:30–23:00 Fri–Sun).
+- `.../per-se` — 16:30–21:00 every day; `.../daniel` — closed Mon, 17:00–21:30 Tue–Sun;
+  `.../jungsik-new-york` — closed Mon, 17:00–21:30 Tue–Sun; `.../sushi-sho-1213976` — closed Mon,
+  17:00–22:00 Tue–Sun plus Tock link; `.../gabriel-kreuther` — Mon 16:45–21:30, Tue–Fri lunch
+  11:45–14:15 and dinner 16:45–21:30/22:00, Sat 16:45–22:00, Sun closed, and address 41 W. 42nd St.
+  All six hour blocks were previously blank; each now carries `hours_status=VERIFIED`,
+  `hours_read_on=2026-11-26` and the page URL. Nothing was pattern-filled.
+- `https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-16...`
+  — King Room – Hearing Accessible $996.10 before tax; standard/city-view king $1,020.60;
+  street address 538 West 58th Street. The 22 Feb – 1 Mar page shows the accessible king at
+  $1,020.60 before tax and city-view king at $1,045.10. Both dated URLs are now linked from the
+  Hotels page date-window table, which previously printed the prices with no link or room name.
+- `https://www.thehighline.org/visit/` — seasonal hours recovered on a second read:
+  1 Dec – 31 Mar 07:00–20:00; Rail Yard Preserve closes at dusk. F-09/Q-09 narrowed to The Met only.
+- MICHELIN ceremony article re-read: 72 star entries, 5/15/52, 3 Green Stars; roster counts verified
+  programmatically against `site_data/michelin_roster.json`.
+
+**Defects found and fixed:** (1) overview called Arlo SoHo's discounted $1,021 a *pre-discount*
+price — its pre-discount price is $1,639; (2) 11 social accounts were called verified although one
+handle was never opened (now 10 + explicit F-08 note); (3) hours/menu-price counts were computed from
+field truthiness and counted a partial week and a deposit floor as verified — now counted from
+`hours_status` and `price_is_floor`; (4) stale Jungsik/Gabriel Kreuther notes contradicted the new
+fields; (5) `docs/methodology.html`, an orphaned page from an earlier build, was still published even
+though the repo review said it had been removed — deleted, with 0 broken internal links after removal;
+(6) the Method page claimed four automated checks that `run_checks()` never performed — implemented
+source-presence and table-shape checks and confirmed the shape check fails on a deliberately broken row.
+
+**New irregularity (F-22):** the three dated Fairfield window prices are not the same room type
+(two are accessible kings, one is a standard king with tax included), so the "cheapest window"
+margin of $16–$44 is soft. Published on the Flagged page; does not block the plan.
+
+**Verification performed:** `python3 build_site.py` passes; 22 internal links checked across root,
+`docs/` and `deepdive/` with 0 broken; budget subtotal $4,107.48 equals the sum of priced lines;
+all roster totals match the ceremony article; all generated counts are derived from data; no stale
+"70 of 72"/"21 flags" strings remain. Every changed value has an official URL in the same row.
+
+**Status: T15 done.** All findings are published on the Flagged page; no unresolved edit conflicts.
+
+### 2026-11-26 · `arena-6b0cf789` · Publication record
+
+- Pull request: https://github.com/kanlerxz87-cyber/NYFun1/pull/11
+- Merged: 2026-11-26T13:25:17Z, merge commit `0787b17203ef857c4b7f8a3bc67f1e343bb48a39`
+  (fast-forward of the audit branch into `main`).
+- GitHub Pages build `2026-11-26T13:25:18Z` for that commit reported `built`. The live
+  https://kanlerxz87-cyber.github.io/NYFun1/docs/index.html was fetched back and shows the
+  corrected figures: 7 full-week hour blocks, 2 exact menu prices + 1 deposit floor,
+  10 verified social accounts, 22 flags. The Flagged page was also fetched and shows F-22.
+- No flagged item or unverified cell was treated as a blocker. The Flagged for Review page
+  remains the place to decide what to do about them.
+
+### 2026-11-26 · Conflict resolution and combined state
+
+- Conflict was limited to files both sessions legitimately claimed. No work was discarded: the final
+  data keeps this session's withdrawn-tax correction, AMNH/Gramercy prices and Met excerpt, plus the
+  parallel audit's six MICHELIN hour blocks, dated window prices and addresses.
+- `docs/*.html` were regenerated from the combined canonical data, never hand-merged.
+- Combined counts: 23 flags, 27 questions, 7 full-week hour blocks + 1 partial, 3 exact menu prices
+  plus one deposit floor, 10 verified official accounts plus one unconfirmed handle, 11 review videos
+  across 7 venues, and a $4,184.98 priced subtotal.
+- `python3 build_site.py` passes its source-presence, table-shape, link and subtotal checks after the
+  merge; no internal link is dangling.

@@ -5,17 +5,42 @@
   {
    "start": "2027-02-15",
    "end": "2027-02-22",
-   "label": "Preferred window (Mon-Mon, 7 nights)"
+   "label": "Preferred window (Mon-Mon, 7 nights)",
+   "room": "King Room",
+   "total_7n_usd": 985.6,
+   "tax_included": false,
+   "source_url": "https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
+   "note": "Booking.com printed \"Total before taxes $985.60\" with 14.75% tax and $4 city tax per night excluded. The 25 Nov $1,155.48 \"taxes included\" figure was withdrawn. Dated source: read 2026-11-26."
+  },
+  {
+   "start": "2027-02-16",
+   "end": "2027-02-23",
+   "label": "Shifted one day",
+   "room": "King Room - Hearing Accessible",
+   "total_7n_usd": 996.1,
+   "tax_included": false,
+   "source_url": "https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-16&checkout=2027-02-23&group_adults=2&no_rooms=1&selected_currency=USD",
+   "note": "Black Friday rate on an accessible king room; standard/city-view king rooms on this date were dearer. Read 2026-11-26."
   },
   {
    "start": "2027-02-22",
    "end": "2027-03-01",
-   "label": "Shifted one week (Mon-Mon, 7 nights)"
+   "label": "Shifted one week (Mon-Mon, 7 nights)",
+   "room": "King Room - Hearing Accessible",
+   "total_7n_usd": 1020.6,
+   "tax_included": false,
+   "source_url": "https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-22&checkout=2027-03-01&group_adults=2&no_rooms=1&selected_currency=USD",
+   "note": "Black Friday rate on an accessible king room; the city-view king was $1,045.10 before tax. Read 2026-11-26."
   },
   {
    "start": "2027-03-08",
    "end": "2027-03-15",
-   "label": "Late window inside the brief (Mon-Mon, 7 nights)"
+   "label": "Late window inside the brief (Mon-Mon, 7 nights)",
+   "room": null,
+   "total_7n_usd": null,
+   "tax_included": null,
+   "source_url": null,
+   "note": "Window sampled by an earlier session but not re-read on 2026-11-26; no price is published in this data layer."
   }
  ],
  "hotels": [

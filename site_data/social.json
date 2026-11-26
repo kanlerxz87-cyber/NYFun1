@@ -1,6 +1,6 @@
 {
  "read_on": "2026-11-25",
- "rule": "A link appears in this file only if the page was opened and read on 2026-11-25 or 2026-11-26. 'kind' = official (the venue's own verified channel) or review (a third party reviewing the venue). TikTok blocked automated reads, so no TikTok link is asserted for any venue - a search URL is given instead and marked 'search-only'. A search URL is never presented as an account.",
+ "rule": "A link appears here only if it was opened and read on 2026-11-25 or 2026-11-26; the one Instagram handle inferred from another account's post is explicitly labelled unconfirmed and is not counted as verified. 'kind' = official (the venue's own channel), review (a third-party video) or search. TikTok blocked automated reads, so no TikTok link is asserted for any venue — a search URL is given instead and marked 'search-only'. A search URL is never presented as an account.",
  "accounts": {
   "le-bernardin": [
    {
@@ -201,11 +201,13 @@
  },
  "tiktok_note": "TikTok returned HTTP 400 to every automated read on 2026-11-25 (profile and discovery URLs). No TikTok account or video is asserted anywhere on this site. Where a TikTok link is shown it is a search URL, labelled as such.",
  "coverage": {
-  "venues_with_a_verified_official_social_account": 11,
-  "verified_official_links": 11,
+  "venues_with_a_verified_official_social_account": 10,
+  "official_labelled_entries": 11,
+  "unconfirmed_official_labelled_handles": 1,
+  "verified_official_links": 10,
   "verified_third_party_videos": 11,
   "venues_with_a_verified_third_party_video": 7,
   "search_links_remaining": 5,
-  "note": "Every URL in this file was opened and read. Search URLs are labelled search, never presented as an account. TikTok returned HTTP 400 on every automated read."
+  "note": "Ten official accounts, eleven review videos and all remaining search URLs were opened and read. The Chelsea Market Instagram handle is inferred from a verified High Line post, labelled unconfirmed, and excluded from the verified count. TikTok returned HTTP 400 on every automated read."
  }
 }
