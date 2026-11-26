@@ -437,5 +437,102 @@
   "Booking.com exposes multiple rate tiers for Pestana CR7, Arlo SoHo and Arlo Midtown; a single headline price cannot be compared without cancellation and fee parity.",
   "Google Flights is an aggregator and its 1-adult fare is not a 2-seat airline checkout quote.",
   "The brief’s one-hour subway/bus rule was not measured for every hotel/restaurant pair; the official MTA trip planner is the source that would close the gap."
+ ],
+ "final_updates": [
+  "Google Flights current top one-stop fare $633 pp -> $1,266 for two; budget subtotal updated to $4,246.98.",
+  "14 Dec 2026 ceremony date is Eater NY secondary-source only; flagged F-24.",
+  "NPS Statue hours/FAQ conflict flagged F-25."
+ ],
+ "url_fixes": [
+  {
+   "old_url": "https://www.schools.nyc.gov/about-us/news/2026-2027-school-year-calendar",
+   "new_url": "https://www.schools.nyc.gov/about-us/news/morning-bell/contentdetails/morning-bell/2026/04/21/2026-27-nycps-calendar-now-available",
+   "reason": "Old NYCPS calendar URL failed to fetch; new official NYCPS news page fetched successfully and confirms Midwinter Recess 15–19 Feb 2027.",
+   "checked_on": "2026-11-26"
+  },
+  {
+   "old_url": "https://www.themodernnyc.com/menus/",
+   "new_url": "https://www.themodernnyc.com/the-modern/",
+   "reason": "Old The Modern /menus/ URL failed to fetch; new official menu page fetched successfully and shows Impressions $185 pp.",
+   "checked_on": "2026-11-26"
+  },
+  {
+   "old_url": "https://www.booking.com/hotel/us/residence-inn-by-marriott-new-york-downtown-manhattan-financial-district.html",
+   "new_url": "https://www.booking.com/hotel/us/residence-inn-new-york-downtown-manhattan-financial-district.html",
+   "reason": "Old Residence Inn FiDi Booking slug failed to fetch; new /hotel/us/ slug fetched successfully with 215 Pearl Street address.",
+   "checked_on": "2026-11-26"
+  }
+ ],
+ "manual_spot_checks": [
+  {
+   "url": "https://www.chelseamarket.com/visit",
+   "status": "success",
+   "note": "Mon–Sun 07:00–22:00 and holiday exceptions."
+  },
+  {
+   "url": "https://www.nyctourism.com/",
+   "status": "success",
+   "note": "NYC Hotel Week Jan 2–Feb 11 2027."
+  },
+  {
+   "url": "https://www.weather.gov/media/okx/Climate/CentralPark/nycnormals.pdf",
+   "status": "success",
+   "note": "NWS 1991–2020 Central Park normals."
+  },
+  {
+   "url": "https://www.schools.nyc.gov/about-us/news/morning-bell/contentdetails/morning-bell/2026/04/21/2026-27-nycps-calendar-now-available",
+   "status": "success",
+   "note": "NYCPS 2026–27 calendar article and Midwinter Recess."
+  },
+  {
+   "url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurants/all-starred",
+   "status": "success",
+   "note": "69 active NYC starred restaurants."
+  },
+  {
+   "url": "https://www.exploretock.com/jungsik",
+   "status": "success",
+   "note": "Jungsik $335 pp and $200 deposit."
+  },
+  {
+   "url": "https://www.themodernnyc.com/the-modern/",
+   "status": "success",
+   "note": "The Modern Impressions $185 pp."
+  },
+  {
+   "url": "https://www.jean-georgesrestaurant.com/accessible/jean-georges/menus/dinner-tasting-menu/six-course-tasting/",
+   "status": "success",
+   "note": "Six-course $298."
+  },
+  {
+   "url": "https://www.saga-nyc.com/",
+   "status": "success",
+   "note": "Official Saga site."
+  },
+  {
+   "url": "https://www.crownshy.nyc/menus/",
+   "status": "success",
+   "note": "Official Crown Shy menu."
+  },
+  {
+   "url": "https://www.onewhitestreetnyc.com/tasting",
+   "status": "success",
+   "note": "Tasting $145 pp."
+  },
+  {
+   "url": "https://www.cotekoreansteakhouse.com/nycdinnermenu?tab=newyork-dinner",
+   "status": "success",
+   "note": "Butcher's Feast $84 pp."
+  },
+  {
+   "url": "https://www.kayak.com/flights/AMS-NYC/2027-02-14/2027-02-23?sort=bestflight_a",
+   "status": "success",
+   "note": "Adjacent-date flight cross-check."
+  },
+  {
+   "url": "https://www.booking.com/hotel/us/residence-inn-new-york-downtown-manhattan-financial-district.html",
+   "status": "success",
+   "note": "Residence Inn FiDi official Booking page."
+  }
  ]
 }

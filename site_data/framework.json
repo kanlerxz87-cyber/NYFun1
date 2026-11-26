@@ -13,8 +13,22 @@
   "climate_normals": {
    "source": "https://www.weather.gov/media/okx/Climate/CentralPark/nycnormals.pdf",
    "station": "NYC Central Park (1991-2020 NWS Normals)",
-   "feb": {"high_f": 42.2, "low_f": 29.5, "high_c": 5.7, "low_c": -1.4, "precip_in": 3.19, "snow_in": 10.1},
-   "mar": {"high_f": 49.9, "low_f": 35.8, "high_c": 9.9, "low_c": 2.1, "precip_in": 4.29, "snow_in": 5.0}
+   "feb": {
+    "high_f": 42.2,
+    "low_f": 29.5,
+    "high_c": 5.7,
+    "low_c": -1.4,
+    "precip_in": 3.19,
+    "snow_in": 10.1
+   },
+   "mar": {
+    "high_f": 49.9,
+    "low_f": 35.8,
+    "high_c": 9.9,
+    "low_c": 2.1,
+    "precip_in": 4.29,
+    "snow_in": 5.0
+   }
   }
  },
  "requirements_check": [
@@ -116,10 +130,10 @@
    },
    {
     "item": "Flights - 2 adults, AMS to JFK return, 15-22 Feb 2027 (the itinerary's own dates)",
-    "usd": 1204.0,
+    "usd": 1266.0,
     "kind": "VERIFIED FARE x 2",
     "source": "https://www.google.com/travel/flights?q=Flights%20to%20JFK%20from%20AMS%20on%202027-02-15%20through%202027-02-22",
-    "note": "Out 15 Feb, return 22 Feb: Aer Lingus 1-stop round trip ~$602-606 pp (nonstop KLM/Delta $904-906). Check exact 2-passenger airline checkout before purchase (F-15)."
+    "note": "Out 15 Feb, return 22 Feb: Google Flights read 2026-11-26 shows cheapest from $599, Aer Lingus 1-stop top result $633 pp round trip, and nonstop KLM/Delta $904-$905 pp. The budget uses the $633 top one-stop fare × 2. This is a 1-adult aggregator quote, not a 2-seat airline checkout (F-15)."
    },
    {
     "item": "Transit - 2 adults, 7 days, MTA tap-and-ride fare cap",
@@ -187,8 +201,8 @@
     "note": "Hospitality varies by party preference (hotel breakfast is included). Left unestimated rather than inventing an allowance."
    }
   ],
-  "verified_subtotal_usd": 4184.98,
-  "verified_subtotal_note": "Sum of all 11 priced lines above (hotel w/ NY taxes, AMS-JFK flights, MTA cap, 6 paid attractions incl. AMNH, and 2 tasting dinners food-only).",
+  "verified_subtotal_usd": 4246.98,
+  "verified_subtotal_note": "Sum of priced lines: derived hotel all-in, doubled Google Flights 1-adult fare, MTA cap, official attraction prices/floors/ranges, and two exact tasting-menu totals. Not a full trip budget.",
   "unpriced_lines": 1
  },
  "itineraries": [
@@ -287,10 +301,10 @@
   {
    "id": "F-01",
    "severity": "HIGH",
-   "title": "The MICHELIN New York list changes on 14 December 2026 - before the trip",
-   "detail": "The next New York star ceremony is scheduled for Monday 14 December 2026. Every star shown on this site comes from the 18 Nov 2025 ceremony plus live 2026-11-26 status checks; stars can still move before February 2027.",
-   "source": "https://ny.eater.com/news/414985/michelin-guide-new-york-additions-2026-bib-gourmands-michelin-recommendations",
-   "settle_by": "Re-read guide.michelin.com ceremony news on/after 2026-12-14 and refresh michelin_roster.json",
+   "title": "A 14 December 2026 New York ceremony date is reported by a secondary source",
+   "detail": "Eater NY reported on 18 Nov 2026 that the annual New York awards ceremony is Monday 14 December 2026. No official MICHELIN page confirming that date was found in this session, so the date is treated as secondary and flagged (F-24). Stars shown here come from the 18 Nov 2025 ceremony plus 2026-11-26 live status checks.",
+   "source": "https://guide.michelin.com/us/en/articles/michelin-guide-ceremony",
+   "settle_by": "Read the official MICHELIN Guide ceremony index/article on or after 2026-12-14 and refresh the roster.",
    "status": "Open"
   },
   {
@@ -414,7 +428,7 @@
    "id": "F-15",
    "severity": "MEDIUM",
    "title": "The flight price is an indicative 1-adult fare, not a 2-seat airline checkout quote",
-   "detail": "AMS-JFK 15-22 Feb fares ($562-$606 1-stop / $904-$906 nonstop) are per-adult fares from aggregators. Two-seat bucket pricing and checked-bag / seat fees can raise the checkout total.",
+   "detail": "Google Flights AMS-JFK 15-22 Feb read 2026-11-26: cheapest from $599, Aer Lingus 1-stop top result $633 pp, nonstop KLM/Delta $904-$905 pp. The $1,266 budget line is 2 × $633, but two-seat bucket pricing and bag/seat fees can change the airline checkout total.",
    "source": "https://www.google.com/travel/flights?q=Flights%20to%20JFK%20from%20AMS%20on%202027-02-15%20through%202027-02-22",
    "settle_by": "Check exact 2-passenger fare with bags on Aer Lingus / KLM / Delta before buying",
    "status": "Open"
@@ -486,10 +500,28 @@
    "id": "F-23",
    "severity": "MEDIUM",
    "title": "RESOLVED 2026-11-26: Withdrawn 25 Nov Fairfield $1,155.48 tax-inclusive figure",
-   "detail": "Fairfield's Booking.com page explicitly prints 'Total before taxes $985.60' with NY taxes excluded. Corrected across hotels.json, budget subtotal ($4,184.98), and executive summary to $985.60 pre-tax / $1,158.98 derived all-in.",
+   "detail": "Fairfield's Booking.com page explicitly prints 'Total before taxes $985.60' with NY taxes excluded. Corrected across hotels.json, budget subtotal ($4,246.98), and executive summary to $985.60 pre-tax / $1,158.98 derived all-in.",
    "source": "https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
    "settle_by": "Done — all references updated to $985.60 pre-tax / $1,158.98 all-in",
    "status": "Resolved"
+  },
+  {
+   "id": "F-24",
+   "severity": "MEDIUM",
+   "title": "14 Dec 2026 ceremony date lacks official MICHELIN confirmation",
+   "detail": "The date is stated by Eater NY (secondary source). An official MICHELIN ceremony index was checked but did not confirm the date; the claim must not be represented as MICHELIN-official.",
+   "source": "https://guide.michelin.com/us/en/articles/michelin-guide-ceremony",
+   "settle_by": "Read an official MICHELIN announcement for the 2026/27 New York selection.",
+   "status": "Open"
+  },
+  {
+   "id": "F-25",
+   "severity": "MEDIUM",
+   "title": "Two official NPS pages give different Statue of Liberty hours",
+   "detail": "NPS Operating Hours & Seasons states standard hours 09:00-16:30 with last statue entrance 15:30; the NPS FAQ states 08:30-17:00 with the last ferry at 15:30. The site shows the hours-page standard and flags the conflict.",
+   "source": "https://www.nps.gov/stli/planyourvisit/hours.htm",
+   "settle_by": "Check Statue City Cruises seasonal ferry schedule and the NPS operating-status page in the travel week.",
+   "status": "Open"
   }
  ],
  "questions": [
@@ -508,7 +540,7 @@
    "id": "Q-02",
    "question": "What is the total budget for two people, excluding flights?",
    "why_it_blocks": "Determines whether two high-end tastings ($1,350 food-only) or mixed 1-star value picks fit comfortably.",
-   "have": "Verified 7-night subtotal of $4,184.98 ($2,980.98 excluding $1,204 flights) plus menu tiers from $168 (Cote) to $990 (Sushi Sho) for two.",
+   "have": "Verified 7-night subtotal of $4,246.98 ($2,980.98 excluding $1,266 flights) plus menu tiers from $168 (Cote) to $990 (Sushi Sho) for two.",
    "missing": "Traveller target spend ceiling.",
    "how_to_discover": "Traveller decision directly.",
    "owner": "traveller",
@@ -519,7 +551,7 @@
    "id": "Q-03",
    "question": "Which departure airport, and are flights already booked?",
    "why_it_blocks": "The budget assumes AMS-JFK. Departing Brussels/Dusseldorf or choosing nonstop vs 1-stop changes fares by ~$600/couple.",
-   "have": "AMS-JFK 15-22 Feb indicative fares (~$602-606 1-stop, ~$904-906 nonstop pp).",
+   "have": "Google Flights AMS-JFK 15-22 Feb 2027: cheapest from $599, Aer Lingus 1-stop top result $633 pp round trip, nonstop $904-$905 pp.",
    "missing": "Confirmed origin airport and booking status.",
    "how_to_discover": "Traveller confirmation + live airline checkout for 2 seats.",
    "owner": "traveller",
@@ -682,11 +714,11 @@
   },
   {
    "id": "Q-18",
-   "question": "Does the 14 December 2026 ceremony change any venue's star level?",
+   "question": "Does the reported 14 December 2026 ceremony change any venue’s star level?",
    "why_it_blocks": "Travel occurs 2 months after the Dec 14, 2026 MICHELIN NY ceremony.",
-   "have": "Confirmed ceremony date (2026-12-14) and live Nov 2026 status.",
+   "have": "A secondary source reports the date; no official MICHELIN confirmation was found in this session (F-24).",
    "missing": "Dec 14, 2026 announcement itself.",
-   "how_to_discover": "Re-read MICHELIN Guide NY ceremony post on/after 2026-12-14.",
+   "how_to_discover": "Check the official MICHELIN Guide ceremony index/article on or after 2026-12-14.",
    "owner": "research",
    "blocks": "Restaurant table accuracy",
    "status": "Blocked until 2026-12-14"
@@ -750,7 +782,7 @@
    "id": "Q-24",
    "question": "Sign-off on remaining open flags before final bookings?",
    "why_it_blocks": "Ensures Dec 14 ceremony check, flight checkout and GTFS verification aren't overlooked.",
-   "have": "14 of 21 earlier flags resolved/documented cleanly; remaining live operational flags highlighted.",
+   "have": "A flag register with 25 items.",
    "missing": "Traveller review.",
    "how_to_discover": "Review Flagged page.",
    "owner": "traveller",
