@@ -267,3 +267,21 @@ ferry) → F-20.
   titles/table headers, and a stated budget subtotal that could drift from the sum of its lines.
 - Counts on the site are now derived from the data (socials 11 official + 3 review videos, flags 20,
   questions 26) rather than typed into prose.
+
+---
+
+## SESSION CLAIM — 2026-11-26 (UTC) — `arena-c7b21fd7` (branch `arena/c7b21fd7-nyfun1`)
+
+**Scope claimed (final verification + gap-closure + integration):** `COORDINATION.md` (append only),
+`build_site.py`, `site_data/*.json`, `docs/**`, `index.html`, `README.md`.
+**Files untouched:** `build.py`, `build_deepdive.py`, `content.py`, `deepdive/**` (archived prior dataset).
+
+**Starting state:** branch is identical to `origin/main` at `74d9883` (PR #10). The site is already
+published via PR #8/#10 and Pages `main:/` reports `built`. No other live claims found: all remote
+branches are deleted and PRs #4–#7 are closed as superseded. This session therefore acts as the
+final integration/review session rather than starting a competing dataset.
+
+**What I will do:** (1) re-read the built pages and data line by line against official sources;
+(2) close verifiable gaps where an official page supplies a missing value; (3) keep anything
+unverifiable blank and on the Flagged page; (4) re-run the build + link check; (5) PR → merge →
+confirm Pages; (6) log sources, verification and irregularities here. No duplicate dataset.
