@@ -430,3 +430,17 @@ all roster totals match the ceremony article; all generated counts are derived f
   across 7 venues, and a $4,184.98 priced subtotal.
 - `python3 build_site.py` passes its source-presence, table-shape, link and subtotal checks after the
   merge; no internal link is dangling.
+
+### 2026-11-26 · PR #13 merged and GitHub Pages confirmed
+
+- Final integration PR: https://github.com/kanlerxz87-cyber/NYFun1/pull/13
+- Merged into `main` at `2026-11-26T13:34:57Z`, merge commit `b4454efe`.
+- GitHub Pages source remains `main:/`; the build for that commit first reported `building` and then
+  `built`. The live landing page
+  https://kanlerxz87-cyber.github.io/NYFun1/docs/index.html was fetched back and shows the combined
+  figures: all-in hotel `$1,158.98`, priced subtotal `$4,184.98`, 7 full-week hour blocks + 1 partial,
+  3 exact menu prices + 1 deposit floor, 10 verified official accounts, 11 verified review videos,
+  23 flags and 27 questions. The Flagged page was fetched with a cache-busting query and shows F-23;
+  the unparameterised URL briefly served a stale CDN copy, which self-corrected on re-request.
+- No flagged item or unverified cell blocked the merge. The Flagged for Review page remains the
+  canonical register of what is still unknown.
