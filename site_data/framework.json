@@ -539,11 +539,11 @@
   },
   {
    "id": "Q-06",
-   "question": "What are the actual menu prices at EMP, Jungsik, Sushi Sho, Daniel and Gramercy Tavern?",
+   "question": "What are the actual menu prices at EMP, Jungsik, Sushi Sho and Daniel?",
    "why_it_blocks": "These five cannot be budgeted, so the dinner plan can only be costed for the venues with a published price.",
-   "have": "Two verified prices and one deposit floor.",
-   "missing": "The published menu price at each remaining venue.",
-   "how_to_discover": "Open each venue's Resy or Tock booking page - the tasting-menu price is shown before payment.",
+   "have": "Gramercy Tavern now publishes $178 per person for the Dining Room Seasonal Menu and $118 for the wine pairing, read on its official menu page on 2026-11-26. The other four priority venues still publish no readable price.",
+   "missing": "The full tasting-menu price and any pairing price at EMP, Jungsik, Sushi Sho and Daniel.",
+   "how_to_discover": "Open each venue's Resy or Tock booking page, where the tasting-menu price is shown before payment.",
    "owner": "research",
    "blocks": "Budget",
    "status": "Open"
@@ -809,8 +809,8 @@
   {
    "id": "S-04",
    "title": "Finish the menu-price matrix from booking platforms",
-   "problem": "Five of the eight priority restaurants have no price, which makes the dinner plan impossible to budget.",
-   "proposal": "Open each venue's Resy or Tock page, where the tasting-menu price is shown before payment, and record it with the URL and the date. Where a venue only sells on the day, record that as the answer.",
+   "problem": "Four of the eight priority restaurants have no price, which makes the dinner plan impossible to budget fully.",
+   "proposal": "Read the booking-platform price pages for EMP, Jungsik, Sushi Sho and Daniel; keep Gramercy Tavern's official $178 menu and the other published prices as they are.",
    "effort": "2 hours",
    "cost": "0",
    "impact": "High",

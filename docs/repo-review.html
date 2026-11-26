@@ -72,8 +72,8 @@
 <tr><td>R3</td><td>GitHub Pages builds from main:/ with a root index.html that redirects into docs/. Nothing on this branch is live until it is merged.</td><td>gh api repos/.../pages -> source main:/, build_type legacy</td><td>Every page here is generated into docs/, and the root redirect already points at docs/. Publishing is a merge, not a setting.</td><td>Needs merge</td></tr>
 <tr><td>R4</td><td>No CI of any kind: no link checker, no data validation.</td><td>.github does not exist</td><td>build_site.py now runs its own checks and exits non-zero on failure. A CI job that calls it is proposed as S-07.</td><td>Partly addressed</td></tr>
 <tr><td>R5</td><td>No LICENSE file, so the repository's reuse terms are undefined.</td><td>no LICENSE at root</td><td>Out of scope for a research task and left to the owner; noted rather than guessed at.</td><td>Open</td></tr>
-<tr><td>R6</td><td>Old generated pages survived a rebuild and linked to pages that no longer exist.</td><td>docs/methodology.html and docs/repo-review.html from a prior build were superseded by method.html</td><td>The superseded page is removed and this one is regenerated from data; the build fails if any internal link dangles.</td><td>Resolved</td></tr>
-<tr><td>R7</td><td>Three official pages failed to render during research, so their values are absent.</td><td>metmuseum.org hours block, thehighline.org consent wall, amnh.org ticketing</td><td>Left blank and flagged (F-09, F-10); never filled from a secondary source.</td><td>Open</td></tr>
+<tr><td>R6</td><td>Old generated pages survived a rebuild and linked to pages that no longer exist.</td><td>docs/methodology.html from a prior build was superseded by method.html and removed</td><td>The superseded page is removed and this one is regenerated from data; the build fails if any internal link dangles.</td><td>Resolved</td></tr>
+<tr><td>R7</td><td>Three official pages failed to render during research, so their values are absent.</td><td>metmuseum.org hours block, thehighline.org consent wall, amnh.org ticketing</td><td>High Line winter hours, AMNH standard admission and Gramercy Tavern's menu price were later read from official pages; The Met's hours remain an official search excerpt only (F-09).</td><td>Partly addressed</td></tr>
 <tr><td>R8</td><td>An Instagram handle was inferred from another account's post, not opened directly.</td><td>@chelseamarketny, read in a verified High Line post</td><td>Labelled as unconfirmed in F-08 rather than presented as verified.</td><td>Open</td></tr>
 <tr><td>R9</td><td>No .gitignore rule for the generated site, so build output and source live in the same tree.</td><td>.gitignore contains only __pycache__, *.pyc, .DS_Store</td><td>Deliberate: docs/ is the published artefact and must be committed. The generated CSS and HTML are reproducible from site_data/ plus build_site.py.</td><td>Accepted</td></tr>
 </tbody></table>
@@ -116,7 +116,7 @@
 <div class="mcard">
 <div class="mcard-title">R6</div>
 <div class="mcard-row"><span class="k">Finding</span><span class="v">Old generated pages survived a rebuild and linked to pages that no longer exist.</span></div>
-<div class="mcard-row"><span class="k">Evidence</span><span class="v">docs/methodology.html and docs/repo-review.html from a prior build were superseded by method.html</span></div>
+<div class="mcard-row"><span class="k">Evidence</span><span class="v">docs/methodology.html from a prior build was superseded by method.html and removed</span></div>
 <div class="mcard-row"><span class="k">Action</span><span class="v">The superseded page is removed and this one is regenerated from data; the build fails if any internal link dangles.</span></div>
 <div class="mcard-row"><span class="k">Status</span><span class="v">Resolved</span></div>
 </div>
@@ -124,8 +124,8 @@
 <div class="mcard-title">R7</div>
 <div class="mcard-row"><span class="k">Finding</span><span class="v">Three official pages failed to render during research, so their values are absent.</span></div>
 <div class="mcard-row"><span class="k">Evidence</span><span class="v">metmuseum.org hours block, thehighline.org consent wall, amnh.org ticketing</span></div>
-<div class="mcard-row"><span class="k">Action</span><span class="v">Left blank and flagged (F-09, F-10); never filled from a secondary source.</span></div>
-<div class="mcard-row"><span class="k">Status</span><span class="v">Open</span></div>
+<div class="mcard-row"><span class="k">Action</span><span class="v">High Line winter hours, AMNH standard admission and Gramercy Tavern's menu price were later read from official pages; The Met's hours remain an official search excerpt only (F-09).</span></div>
+<div class="mcard-row"><span class="k">Status</span><span class="v">Partly addressed</span></div>
 </div>
 <div class="mcard">
 <div class="mcard-title">R8</div>

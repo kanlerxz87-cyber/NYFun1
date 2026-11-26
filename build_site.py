@@ -343,7 +343,7 @@ suggestion S-02.</p>
 <ol class="tight">
 <li><strong>14 December 2026:</strong> MICHELIN publishes a new New York list. Stars can move before you travel.</li>
 <li><strong>Hotel prices are live:</strong> every total here is a 25 Nov 2026 snapshot and several depend on a time-limited promotion.</li>
-<li><strong>Menu prices are mostly unknown:</strong> five priority restaurants publish no readable price, so the food budget is incomplete by design rather than by accident.</li>
+<li><strong>Menu prices are mostly unknown:</strong> four priority restaurants publish no readable price, so the food budget is incomplete by design rather than by accident.</li>
 </ol>
 </div>
 </div>
@@ -413,12 +413,13 @@ def build_hotels():
             '<span class="num">' + str(r["three_star_within_5km"]) + ' / 5</span>',
             f'{r["nearest_three_star_km"]:.2f} km',
             money(h["all_in_7n_usd"]),
+            ext(h["source_url"], "Booking.com"),
         ])
     reach_table = table(
-        ["#", "Hotel", "Star venues within 5 km", "Three-star within 5 km", "Nearest three-star", "All-in 7 nights"],
+        ["#", "Hotel", "Star venues within 5 km", "Three-star within 5 km", "Nearest three-star", "All-in 7 nights", "Source"],
         rr,
         caption="Ranked on reach, then on count of three-star venues. Only 7 of the 72 star entries could be scored.",
-        card_labels=["Rank", "Hotel", "Within 5 km", "Three-star", "Nearest", "All-in"])
+        card_labels=["Rank", "Hotel", "Within 5 km", "Three-star", "Nearest", "All-in", "Source"])
 
     ranked = sorted(HOTELS["hotels"], key=lambda z: z["all_in_7n_usd"])
     rrows = []
@@ -431,12 +432,13 @@ def build_hotels():
             money(h["total_7n_usd"]),
             esc(h["breakfast"]),
             esc(h["cancellation"]),
+            ext(h["source_url"], "Booking.com"),
         ])
     rank_table = table(
-        ["#", "Hotel", "All-in 7 nights", "Advertised", "Breakfast", "Cancellation"],
+        ["#", "Hotel", "All-in 7 nights", "Advertised", "Breakfast", "Cancellation", "Source"],
         rrows,
         caption="All-in = advertised total + 14.75% tax + $4/night city tax where those were excluded. Arithmetic, not a quote.",
-        card_labels=["Rank", "Hotel", "All-in", "Advertised", "Breakfast", "Cancellation"])
+        card_labels=["Rank", "Hotel", "All-in", "Advertised", "Breakfast", "Cancellation", "Source"])
 
     window_reasons = {
         "2027-02-15": "Recommended window: contains 15–18 Feb; Mon→Mon was the cheapest pattern priced.",
@@ -645,27 +647,32 @@ def build_restaurants():
                 near.append(by_key[k2]["name"] + f" ({d * 1000:.0f} m)")
         geo.append([stars_badge(by_key[k]["stars"]),
                     '<strong>' + esc(by_key[k]["name"]) + '</strong><div class="small">' + esc(by_key[k]["cuisine"]) + '</div>',
-                    (", ".join(near) if near else '<span class="blank">no other scored star venue within 1 km</span>')])
+                    (", ".join(near) if near else '<span class="blank">no other scored star venue within 1 km</span>'),
+                    ext(by_key[k]["michelin_url"], "MICHELIN")])
     geo.sort(key=lambda r: r[2].startswith('<span'))
     cluster_table = table(
-        ["Borough", "Star entries", "Three-star entries", "What it means for the trip"],
+        ["Borough", "Star entries", "Three-star entries", "What it means for the trip", "Source"],
         [
             ["Manhattan", str(bor.get("Manhattan", 0)), str(sum(1 for r in ROSTER["restaurants"] if r["borough"] == "Manhattan" and r["stars"] == 3)),
-             "The only borough with a full spread of star levels. Every three-star dinner on the itinerary is here."],
+             "The only borough with a full spread of star levels. Every three-star dinner on the itinerary is here.",
+             ext(ROSTER["meta"]["source_article"], "MICHELIN")],
             ["Brooklyn", str(bor.get("Brooklyn", 0)), "0",
-             "Six entries, no three-star. A dinner here costs a 40-minute trip each way (Aska and Francie are the names to check)."],
+             "Six entries, no three-star. A dinner here costs a 40-minute trip each way (Aska and Francie are the names to check).",
+             ext(ROSTER["meta"]["source_article"], "MICHELIN")],
             ["Queens", str(bor.get("Queens", 0)), "0",
-             "One entry. Worth a lunch, not a dinner run from Midtown."],
+             "One entry. Worth a lunch, not a dinner run from Midtown.",
+             ext(ROSTER["meta"]["source_article"], "MICHELIN")],
             ["Outside NYC", str(bor.get("Tarrytown, NY (outside NYC)", 0) + bor.get("North Salem, NY (outside NYC)", 0)), "0",
-             "Blue Hill at Stone Barns (Tarrytown) and La Bastide (North Salem). Both fail the one-hour rule outright."],
+             "Blue Hill at Stone Barns (Tarrytown) and La Bastide (North Salem). Both fail the one-hour rule outright.",
+             ext(ROSTER["meta"]["source_article"], "MICHELIN")],
         ],
         caption="Borough counts cover all 72 entries. This is the only cluster claim the data supports on its own.",
-        card_labels=["Borough", "Entries", "Three-star", "Meaning"])
+        card_labels=["Borough", "Entries", "Three-star", "Meaning", "Source"])
     geo_table = table(
-        ["Rating", "Venue", "Scored star venue within 1 km"],
+        ["Rating", "Venue", "Scored star venue within 1 km", "Source"],
         geo,
         caption="Straight-line distances between the 7 venues whose coordinates were verified. A 7-venue sample, not a neighbourhood map.",
-        card_labels=["Rating", "Venue", "Within 1 km"])
+        card_labels=["Rating", "Venue", "Within 1 km", "Source"])
 
     return f"""
 <p class="lede">All {len(ROSTER['restaurants'])} star entries from MICHELIN's
@@ -860,10 +867,14 @@ HTTP 400 to an automated read on 2026-11-25. No TikTok account is asserted anywh
 def build_itinerary():
     out = []
     for it in FR["itineraries"]:
-        rows = [[esc(d["date"]), esc(d["day"]), esc(d["plan"])] for d in it["days"]]
+        rows = [[esc(d["date"]), esc(d["day"]),
+                 esc(d["plan"]) + '<div class="small">Official sources for every named venue are in the '
+                 + '<a href="activities.html">Activities</a> and <a href="restaurants.html">Restaurants</a> tables.</div>',
+                 '<a href="activities.html">Activities</a> · <a href="restaurants.html">Restaurants</a>']
+                for d in it["days"]]
         note = f'<p class="hint">{esc(it["note"])}</p>' if it.get("note") else ""
         out.append(f"""<h2>{esc(it["title"])}</h2>{note}
-{table(["Date", "Day", "Plan"], rows, card_labels=["Date", "Day", "Plan"])}""")
+{table(["Date", "Day", "Plan", "Sources"], rows, card_labels=["Date", "Day", "Plan", "Sources"])}""")
     return f"""
 <p class="lede">Three concrete variants, so switching length is a choice rather than a re-plan.
 The 7-night version is the recommendation; the 4-night version is the literal preferred window;
@@ -1174,13 +1185,13 @@ formula is written down.</li>
 <h2>What failed, and what was done about it</h2>
 <div class="card">
 <table class="tbl"><thead><tr><th>Source</th><th>What happened</th><th>Result</th></tr></thead><tbody>
-<tr><td>amnh.org admission prices</td><td>Ticketing sits on a separate system</td><td>Price left blank</td></tr>
+<tr><td>{ext("https://www.amnh.org/plan-your-visit", "amnh.org admission prices")}</td><td>The first read covered hours only; the full Plan Your Visit page was read again on 2026-11-26</td><td>Standard adult ${{37}}, or ${{74}} for two, now published with source</td></tr>
 <tr><td>thehighline.org hours</td><td>Cookie wall blocked the first read; the visitor page was read past the banner on 2026-11-26</td><td>Winter hours 07:00–20:00 now published with source</td></tr>
 <tr><td>Fairfield 7-night total</td><td>The published $1,155.48 "taxes included" figure was contradicted by the dated source page</td><td>Withdrawn; $985.60 before tax and $1,158.98 derived all-in published instead</td></tr>
-<tr><td>metmuseum.org hours block</td><td>Did not render in the captured page</td><td>Hours left blank</td></tr>
+<tr><td>{ext("https://www.metmuseum.org/plan-your-visit/met-fifth-avenue", "metmuseum.org hours block")}</td><td>The direct capture redirected to the generic visit page; The Met's own page excerpt in search results does list the hours</td><td>Hours shown, but the activity row remains PARTIAL rather than VERIFIED</td></tr>
 <tr><td>tiktok.com (profile and discovery)</td><td>HTTP 400 on every attempt</td><td>No TikTok asserted anywhere</td></tr>
 <tr><td>elevenmadisonpark.com menu</td><td>Site publishes no price</td><td>Blank, Resy policy noted</td></tr>
-<tr><td>gramercytavern.com/menus</td><td>Fetch failed</td><td>Blank</td></tr>
+<tr><td>{ext("https://www.gramercytavern.com/dining-room-menu", "gramercytavern.com Dining Room menu")}</td><td>The generic menus URL failed; the dedicated Dining Room menu page was read on 2026-11-26</td><td>Seasonal Menu $178 per person now published with source; $118 wine pairing noted</td></tr>
 <tr><td>le-bernardin.com/menus</td><td>JavaScript-only page</td><td>Solved: the site's accessible ("/accessible/") menus carry the same prices as text</td></tr>
 </tbody></table>
 </div>
@@ -1288,13 +1299,13 @@ def build_repo_review():
              "Out of scope for a research task and left to the owner; noted rather than guessed at.",
              "Open"],
             ["R6", "Old generated pages survived a rebuild and linked to pages that no longer exist.",
-             "docs/methodology.html and docs/repo-review.html from a prior build were superseded by method.html",
+             "docs/methodology.html from a prior build was superseded by method.html and removed",
              "The superseded page is removed and this one is regenerated from data; the build fails if any internal link dangles.",
              "Resolved"],
             ["R7", "Three official pages failed to render during research, so their values are absent.",
              "metmuseum.org hours block, thehighline.org consent wall, amnh.org ticketing",
-             "Left blank and flagged (F-09, F-10); never filled from a secondary source.",
-             "Open"],
+             "High Line winter hours, AMNH standard admission and Gramercy Tavern's menu price were later read from official pages; The Met's hours remain an official search excerpt only (F-09).",
+             "Partly addressed"],
             ["R8", "An Instagram handle was inferred from another account's post, not opened directly.",
              "@chelseamarketny, read in a verified High Line post",
              "Labelled as unconfirmed in F-08 rather than presented as verified.",

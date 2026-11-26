@@ -101,10 +101,11 @@ Everything the site renders lives in `site_data/`, one file per concern. Edit th
 | MICHELIN publishes a new New York list on **14 December 2026**, before the trip | F-01 |
 | MICHELIN's ceremony article (72 entries) and its own live filter (69) disagree | F-02, Q-17 |
 | Hotel prices are live snapshots; four cheapest qualifying rates changed between 25 and 26 Nov 2026 | F-03, F-22 |
+| Gramercy Tavern ($178 seasonal menu), AMNH ($37 standard adult) and Jungsik's address were added from official pages on 26 Nov 2026 | Budget, Restaurants, Activities |
 | The one-hour travel rule is **modelled from straight-line distance, not measured** | F-05, Q-19 |
-| 70 of 72 restaurants have no verified hours; 69 have no verified menu price | `repo-review.html` counts them |
+| 70 of 72 restaurants have no verified hours; 68 have no verified menu price | `repo-review.html` counts them |
 | TikTok returned HTTP 400 on every read, so no TikTok account is asserted anywhere | F-07 |
-| The Met's hours could not be read; The High Line's winter hours are now verified | F-09 |
+| The Met's hours come from an official page excerpt only (row stays PARTIAL); The High Line's winter hours are verified | F-09 |
 | Flights are a fare, not a quote for two seats | F-15 |
 | The published $1,155.48 Fairfield total was withdrawn: the dated source says "Total before taxes $985.60" | F-17, F-23 |
 
