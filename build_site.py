@@ -86,7 +86,7 @@ def table(headers, rows, caption=None, cls="", card_labels=None, source_urls=Non
         if not already_linked:
             headers = orig_headers + ["Source"]
             labels = orig_labels + ["Source"]
-            rows = [list(r) + [ext(source_urls[i] or fallback, "Official source", "tag")]
+            rows = [list(r) + [ext(source_urls[i] or fallback, "Source", "tag")]
                     for i, r in enumerate(rows)]
         else:
             headers = orig_headers
@@ -269,9 +269,7 @@ def layout(page, title, body, lede=""):
 {body}
 </main>
 <footer class="site">
-  <p><strong>Built {BUILD_DATE}.</strong> Every figure on this site was read on an official page on that date
-  unless the row explicitly labels it secondary, derived, or model. Prices and hours change; re-check before booking.
-  Rows that could not be verified are blank and listed on <a href="flagged.html">Flagged</a>.</p>
+  <p><strong>Built {BUILD_DATE}.</strong> Values are dated source snapshots, with official, secondary, aggregator, derived, and modelled bases identified in the row or source ledger. Prices and hours change; re-check before booking. Unverified fields are left blank where no dated source supports a value and are listed on <a href="flagged.html">Flagged</a>.</p>
   <p>Sources, method and the model's assumptions: <a href="method.html">Method &amp; sources</a> ·
   Open decisions: <a href="questions.html">Questions</a> ·
   Improvement ideas: <a href="suggestions.html">Suggestions</a></p>
@@ -316,8 +314,8 @@ all five seasonal weeks, and an explicit register of everything open or resolved
    <div class="small">Fairfield Central Park (538 W 58th St) · {money(rec['total_7n_usd'])} pre-tax · king bed · breakfast included · free cancel &lt;12 Feb</div></div>
   <div class="card"><div class="k">MICHELIN NYC stars</div><div class="v">{live_c['total']} live</div>
    <div class="small">{live_c['3']} three-star · {live_c['2']} two-star · {live_c['1']} one-star (reconciled vs {n_stars_cer} Nov 2025 ceremony entries). <strong>Ceremony date: 14 Dec 2026 at The Glasshouse — confirmed on MICHELIN's own press site (F-01/F-25 resolved 2026-11-26).</strong></div></div>
-  <div class="card"><div class="k">Verified budget subtotal</div><div class="v">{money(FR["budget"]["verified_subtotal_usd"])}</div>
-   <div class="small">Hotel w/ tax + AMS–JFK flights + MTA cap + 6 paid attractions (incl. AMNH $74) + 2 tasting dinners.</div></div>
+  <div class="card"><div class="k">Priced subtotal (airfare excluded)</div><div class="v">{money(FR["budget"]["verified_subtotal_usd"])}</div>
+   <div class="small">Hotel w/ tax + MTA cap + priced attractions + 2 tasting dinners; airfare excluded because origin and two-seat checkout are unknown.</div></div>
 </div>
 
 <h2>Executive summary</h2>
@@ -342,7 +340,7 @@ pick with breakfast is <strong>Hyatt Place Chelsea</strong> ({money(hyatt['all_i
 windows</strong> across the entire brief range (Week 2 rises +3.6%; March weeks jump +26% to +39%).
 4-night and 14-night variants remain ready on the <a href="itinerary.html">Itinerary page</a>.</p>
 <p class="hint">Verified against OPM &amp; NYCPS calendars: Mon 15 Feb 2027 is Washington's Birthday and
-15–19 Feb is NYC Public Schools Midwinter Recess — book timed museums early. <strong>The Met's Wednesday closure is reported by secondary sources and not yet confirmed on metmuseum.org (F-31)</strong>, so our itinerary routes Uptown/The Met on Tuesday 16 Feb and MoMA on Wednesday 17 Feb.</p>
+15–19 Feb is NYC Public Schools Midwinter Recess — book timed museums early. <strong>The Met hours and reported Wednesday closure are unconfirmed on metmuseum.org (F-31)</strong>; Tue 16 Feb is only a tentative placeholder pending the official schedule.</p>
 </div>
 </div>
 
@@ -376,8 +374,8 @@ plus ~15–20 min ferry crossing (~62–67 min door-to-island; harbour wind can 
 <div class="card">
 <h3>5 · What is verified, and what remains open</h3>
 <ul class="tight">
-<li><strong>{money(FR["budget"]["verified_subtotal_usd"])} verified subtotal</strong> across Fairfield hotel, AMS–JFK fares, MTA 7-day cap, 6 paid attractions (incl. AMNH $74), and 2 tasting dinners (food only).</li>
-<li><strong>{n_hours} starred venues with full verified hours</strong>, <strong>{n_price} with verified menu prices or deposit floors</strong>, and <strong>all {len(ACTS['activities'])} activities</strong> verified on hours/entry rules ({sum(1 for a in ACTS['activities'] if a['cost_2_adults_usd'] is not None)} priced + Broadway deliberately unpriced).</li>
+<li><strong>{money(FR["budget"]["verified_subtotal_usd"])} priced subtotal</strong> across the hotel, MTA 7-day cap, paid attractions and two tasting dinners (food only). Airfare is excluded because origin and a two-seat checkout are unconfirmed (F-15).</li>
+<li><strong>{n_hours} starred venues with full verified hours</strong>, <strong>{n_price} with verified menu prices or deposit floors</strong>, and <strong>{sum(1 for a in ACTS['activities'] if a['verification'].startswith('VERIFIED'))} of {len(ACTS['activities'])} activities</strong> with verified hours/entry details; Met, AMNH, High Line and Broadway remain partial (F-31, F-41, F-33).</li>
 <li><strong>{n_ig_total} verified official Instagram accounts</strong>, <strong>{n_yt_rev} verified YouTube video reviews</strong>, and <strong>{n_tt_rev} verified public TikTok tasting videos</strong>.</li>
 <li><strong>{n_res_flags} of {len(FR['flags'])} earlier flags resolved or documented</strong>; {n_open_flags} live items stay <a href="flagged.html">Flagged Open</a> (Jungsik/Tock countdown conflicts, live promo rates, NPS hours disagreement, airline 2-seat checkout).</li>
 </ul>
@@ -386,7 +384,7 @@ plus ~15–20 min ferry crossing (~62–67 min door-to-island; harbour wind can 
 <h3>6 · The three things that could still move before departure</h3>
 <ol class="tight">
 <li><strong>14 December 2026 (official):</strong> MICHELIN's own press release confirms the Northeast Cities ceremony that evening at The Glasshouse (read 2026-11-26, F-25 resolved). Re-read the guide's live NYC filter after that date before finalising the restaurant list (F-01).</li>
-<li><strong>Dynamic hotel &amp; flight pricing:</strong> Fairfield's $985.60 (-30% BF) rate carries $0 prepayment and free cancel until 12 Feb 2027 — lock now and re-check weekly / mid-Jan 2027.</li>
+<li><strong>Dynamic hotel pricing:</strong> Fairfield's $985.60 (-30% BF) rate carries $0 prepayment and free cancel until 12 Feb 2027 — re-check before booking. Airfare is excluded until the origin and two-seat airline checkout are known (F-15).</li>
 <li><strong>Tasting releases:</strong> Sushi Sho ($495) already sells the travel dates through 2027-02-28 (next release 1 Dec 2026, 11:00 ET); EMP opens month by month (January on 1 Dec 2026, 10:00 ET — February datetime unconfirmed, Q-27); Le Bernardin Resy opens ~30 days out.</li>
 </ol>
 </div>
@@ -397,23 +395,23 @@ plus ~15–20 min ferry crossing (~62–67 min door-to-island; harbour wind can 
 
 <h2>Where to go next</h2>
 <div class="grid three">
-<div class="card"><h3><a href="requirements.html">Requirements</a></h3><p class="small">Every requirement from the brief, its status (met or partial), the reason, the official source and the related flag.</p></div>
+<div class="card"><h3><a href="requirements.html">Requirements</a></h3><p class="small">Every requirement from the brief, its status, the reason, its source and related flag.</p></div>
 <div class="card"><h3><a href="hotels.html">Hotels</a></h3><p class="small">7 hotels w/ verified street addresses, 5-week seasonal table, resort fees, all-in tax math, and reach across 22 stars.</p></div>
 <div class="card"><h3><a href="restaurants.html">MICHELIN</a></h3><p class="small">72 ceremony / 69 live NYC reconciled roster, 22 detailed menus &amp; hours, cluster analysis, and verified video links.</p></div>
-<div class="card"><h3><a href="activities.html">Activities</a></h3><p class="small">12 activities with verified 2026-11-26 hours (The Met hours unconfirmed, see F-31; High Line winter schedule), prices &amp; reviews.</p></div>
-<div class="card"><h3><a href="itinerary.html">Itinerary</a></h3><p class="small">4-, 7- &amp; 14-night plans routed around The Met's reported Wednesday closure (F-31), NWS Central Park Feb climate normals &amp; booking timeline.</p></div>
+<div class="card"><h3><a href="activities.html">Activities</a></h3><p class="small">12 activities: {sum(1 for a in ACTS['activities'] if a['verification'].startswith('VERIFIED'))} with verified hours/entry details; The Met (F-31), AMNH and High Line (F-41), and Broadway (F-33) remain partial.</p></div>
+<div class="card"><h3><a href="itinerary.html">Itinerary</a></h3><p class="small">4-, 7- &amp; 14-night plans with a tentative Met visit pending official hours (F-31), NWS Central Park Feb climate normals &amp; booking timeline.</p></div>
 <div class="card"><h3><a href="budget.html">Budget</a></h3><p class="small">Every line item for two adults with exact tax math and lower-cost Michelin alternatives.</p></div>
 <div class="card"><h3><a href="questions.html">Questions</a></h3><p class="small">{len(FR['questions'])} decisions tracked (research questions resolved; traveller choices ready).</p></div>
 <div class="card"><h3><a href="suggestions.html">Suggestions</a></h3><p class="small">{len(FR['suggestions'])} improvements tracked (9 implemented, remaining operational checks queued).</p></div>
 <div class="card"><h3><a href="flagged.html">Flagged</a></h3><p class="small">{len(FR['flags'])} tracked items ({n_open_flags} live open, {n_res_flags} resolved/documented).</p></div>
-<div class="card"><h3><a href="method.html">Method &amp; sources</a></h3><p class="small">Rules, all official URLs read on 2026-11-26, remaining edge cases, and build checks.</p></div>
+<div class="card"><h3><a href="method.html">Method &amp; sources</a></h3><p class="small">Rules, per-source read dates, remaining edge cases, and build checks.</p></div>
 </div>
 """
 
 
 def theme_table():
     rows = [
-        ['<span class="pill p-verified">verified</span>', "Read directly on an official page on 2026-11-26. The source link is in the row."],
+        ['<span class="pill p-verified">verified</span>', "Read directly on the cited official page on the date recorded in the row or source ledger."],
         ['<span class="pill p-partial">partial</span>', "Some fields verified, others behind checkout/slot selection (e.g. Per Se / César / Aquavit deposit floors)."],
         ['<span class="pill p-open">not verified</span>', "Left blank on purpose. The Flagged page says which source or date settles it."],
         ['<span class="pill p-documented">model</span>', "Computed arithmetically from verified inputs (NY tax formula or Haversine distance). Formula is on the Method page."],
@@ -915,7 +913,7 @@ def build_activities():
         cost = (f'{money(a["cost_2_adults_usd"])}<div class="small">for two · {money(a["adult_usd"])} pp</div>'
                 if a["cost_2_adults_usd"] is not None else
                 '<span class="blank">no single official price</span>')
-        hours = esc(a["hours"]) if a["hours"] else '<span class="blank">schedule varies per production</span>'
+        hours = esc(a["hours"]) if a["hours"] else f'<span class="blank">not verified — see {"F-31" if a["id"] == "met" else ("F-33" if a["id"] == "broadway" else "F-41")}</span>'
         days = esc(a["days_open"]) if a["days_open"] else ""
         vk = "verified" if a["verification"].startswith("VERIFIED") else (
             "partial" if a["verification"].startswith("PARTIAL") else "open")
@@ -930,9 +928,8 @@ def build_activities():
             " ".join([soc_html, ext(a["official_url"], "Official")]),
         ])
     return f"""
-<p class="lede">All {len(ACTS['activities'])} candidate activities verified on official venue/agency websites on 2026-11-26:
-exact winter/2027 hours, closure days (including The Met's reported Wednesday closure, F-31), out-of-state adult prices
-for two, modelled travel times from Fairfield Central Park (538 W 58th St), and direct video/social reviews.</p>
+<p class="lede">Activity candidates reviewed against official venue/agency pages on 2026-11-26 and re-read where noted on 2026-11-27:
+published winter/2027 hours where confirmed, source-dated prices for two, modelled travel times from Fairfield Central Park (538 W 58th St), and direct video/social reviews. Met hours (F-31), AMNH/High Line details (F-41), and Broadway dates (F-33) remain partial.</p>
 
 <div class="note"><strong>Free vs paid overview:</strong> Central Park, The High Line (Dec 1–Mar 31 winter
 07:00–20:00), Chelsea Market (07:00–22:00), and Brooklyn Bridge (24h) cost $0. Paid museum/harbor
@@ -942,7 +939,7 @@ highlights: MoMA ($30 pp), The Met ($30 pp; hours and Wednesday closure unconfir
 {table(
     ["Activity", "Days &amp; hours", "Exceptions that matter", "Cost for 2", "From Fairfield (538 W 58th St)", "Status", "Links"],
     rows,
-    caption="Verified 2026-11-26 from official pages. Only Broadway stays unpriced because ticket price depends on show & seat.",
+    caption="Activity candidates with row-level sources; unverified dates/hours and show-dependent Broadway prices remain blank and flagged.",
     card_labels=["Activity", "Hours", "Exceptions", "Cost for 2", "From hotel", "Status", "Links"])}
 
 <h2>Tickets: what to buy in advance</h2>
@@ -956,10 +953,10 @@ highlights: MoMA ($30 pp), The Met ($30 pp; hours and Wednesday closure unconfir
 </ul></div>
 <div class="card"><h3>Can be decided on the day</h3>
 <ul class="tight">
-<li><strong>The Met Fifth Avenue</strong> — Sun–Tue &amp; Thu 10–17, Fri–Sat 10–21, <strong>closed Wednesdays</strong> (not rendered on the official page as read 2026-11-27; see F-31).</li>
+<li><strong>The Met Fifth Avenue</strong> — hours and days remain blank because they were not confirmed on the official page read 2026-11-27 (F-31); check the official schedule before planning.</li>
 <li><strong>Central Park, High Line, Brooklyn Bridge</strong> — free entry, no tickets.</li>
 <li><strong>Chelsea Market</strong> — free entry (07:00–22:00), pay each food vendor.</li>
-<li><strong>Broadway</strong> — choose show first on broadway.org; most shows are dark Mondays.</li>
+<li><strong>Broadway</strong> — choose a production first, then verify its official date-specific calendar and two-seat box-office price (F-33).</li>
 </ul></div>
 </div>
 
@@ -982,7 +979,7 @@ Sunday's buffer ready (Q-15).</p></div>
 </div>
 
 <h2>Social media and video reviews</h2>
-<p>Every activity links to verified official Instagram accounts (<code>@themuseumofmodernart</code>,
+<p>Activity rows link to venue accounts and reviews where verified; examples of official Instagram accounts include (<code>@themuseumofmodernart</code>,
 <code>@metmuseum</code>, <code>@amnh</code>, <code>@911memorial</code>, <code>@rockefellercenter</code>,
 <code>@centralparknyc</code>, <code>@highlinenyc</code>, <code>@chelseamarketny</code>) and verified YouTube
 walk-through guides.</p>
@@ -1015,9 +1012,9 @@ engineered around actual museum closure days, winter hours, holiday crowds, and 
 
 <div class="note"><strong>Scheduling rules enforced:</strong>
 <ul class="tight">
-<li><strong>The Met: Wednesday closure reported by secondary sources, not yet confirmed on metmuseum.org (F-31)</strong> — placed on <strong>Tue 16 Feb</strong> across both the 7-night and 4-night plans (never Wed 17 Feb!).</li>
+<li><strong>The Met hours and reported Wednesday closure remain unconfirmed on its official site (F-31)</strong> — Tue 16 Feb is a tentative placeholder in the 7-night and 4-night plans; recheck before scheduling.</li>
 <li><strong>9/11 Museum is open Wed–Mon (last entry 18:00; closed most Tuesdays)</strong> — scheduled <strong>Thu 18 Feb</strong> (or Wed 17 on 4-night).</li>
-<li><strong>Most Broadway shows are dark Monday</strong> — Mon 15 Feb arrival stays flexible.</li>
+<li><strong>Broadway availability is production-specific</strong> — Mon 15 Feb arrival stays flexible; verify the selected show's official calendar.</li>
 <li><strong>Sunday-closed vs Sunday-open stars:</strong> Le Bernardin, Gabriel Kreuther, Jean-Georges, Atomix, Aquavit &amp; Dirt Candy close Sundays; <strong>EMP, Jungsik, Per Se, Sushi Sho, The Modern, Saga, Gramercy Tavern, Crown Shy &amp; Cote</strong> all serve Sundays.</li>
 </ul></div>
 
@@ -1074,12 +1071,12 @@ including the updated Fairfield tax-adjusted total and AMNH out-of-state admissi
        caption="7 nights, 15–22 February 2027, two adults.",
        card_labels=["Item", "Amount", "Basis", "Source"])}
 
-<h2>Verified subtotal breakdown</h2>
+<h2>Priced subtotal breakdown</h2>
 <div class="kpi">
- <div class="card"><div class="k">Verified subtotal</div><div class="v">{money(b["verified_subtotal_usd"])}</div>
-  <div class="small">All 11 priced lines above ({money(b["verified_subtotal_usd"] - flights_usd)} ex-flights).</div></div>
+ <div class="card"><div class="k">Priced subtotal</div><div class="v">{money(b["verified_subtotal_usd"])}</div>
+  <div class="small">{sum(1 for line in b["lines"] if line["usd"] is not None)} priced lines above; unpriced costs excluded.</div></div>
  <div class="card"><div class="k">Hotel share (all-in)</div><div class="v">{money(hotel_usd)}</div><div class="small">{hotel_usd / b["verified_subtotal_usd"] * 100:.0f}% · includes breakfast &amp; NY tax</div></div>
- <div class="card"><div class="k">Flights share</div><div class="v">{money(flights_usd)}</div><div class="small">{flights_usd / b["verified_subtotal_usd"] * 100:.0f}% · AMS–JFK 1-stop x 2 (F-15)</div></div>
+ <div class="card"><div class="k">Flights</div><div class="v">{money(flights_usd) if flights_usd is not None else "Not priced"}</div><div class="small">Departure airport and two-seat airline checkout are unconfirmed (Q-03/F-15).</div></div>
  <div class="card"><div class="k">Attractions + Transit</div><div class="v">{money(attr_usd + 70)}</div><div class="small">6 paid tickets ({money(attr_usd, 0)}) + MTA $70 cap</div></div>
  <div class="card"><div class="k">2 Tasting Dinners</div><div class="v">{money(dining_usd)}</div><div class="small">{dining_usd / b["verified_subtotal_usd"] * 100:.0f}% · food only (no wine/tax/tip)</div></div>
 </div>
@@ -1102,7 +1099,7 @@ included at Fairfield), wine pairings (adds {money(510, 0)}–{money(1060, 0)} f
 {table(["Label", "Meaning"], [
  ['<span class="pill p-verified">VERIFIED</span>', "Read directly on an official venue or agency page on 2026-11-26."],
  ['<span class="pill p-documented">DERIVED</span>', "Arithmetic on verified figures (NY tax formula on Booking quote, MTA $35 cap x 2)."],
- ['<span class="pill p-open">NOT PRICED</span>', "No single official figure exists (casual dining, Broadway, bags)."],
+ ['<span class="pill p-open">NOT PRICED</span>', "No verified figure is available without required choices or checkout (airfare, casual dining, Broadway, bags)."],
 ], caption="No line in this budget uses invented allowances.", source_urls=[
  "https://engage.metmuseum.org/admission/",
  "https://www.mta.info/fares-tolls/subway-bus",
@@ -1125,32 +1122,48 @@ def build_questions():
             esc(q["how_to_discover"]),
             f'{pill(k, st)}<div class="small">{esc(q["owner"])}</div>',
         ])
+    q_sources = {
+        "Q-01": "https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
+        "Q-02": "https://www.le-bernardin.com/accessible/menus/dining-room/chef-s-tasting/", "Q-03": "https://www.google.com/travel/flights?q=Flights%20to%20JFK%20from%20AMS%20on%202027-02-15%20through%202027-02-22",
+        "Q-04": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurants/all-starred", "Q-05": "https://www.le-bernardin.com/accessible/menus/dining-room/chef-s-tasting/",
+        "Q-06": "https://resy.com/cities/new-york-ny/venues/eleven-madison-park", "Q-07": "https://www.le-bernardin.com/accessible/menus/dining-room/chef-s-tasting/",
+        "Q-08": "https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
+        "Q-09": "https://www.metmuseum.org/plan-your-visit", "Q-10": "https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
+        "Q-11": "https://www.aerlingus.com/prepare/bags/", "Q-12": "https://www.booking.com/hotel/us/hyatt-place-new-york-chelsea.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
+        "Q-13": "https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-22&checkout=2027-03-01&group_adults=2&no_rooms=1&selected_currency=USD",
+        "Q-14": "https://www.moma.org/visit/", "Q-15": "https://www.nps.gov/stli/planyourvisit/hours.htm", "Q-16": "https://www.broadway.org/performance-times",
+        "Q-17": "https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025", "Q-18": "https://michelinmedia.com/pages/blog/detail/article/c/a1479/",
+        "Q-19": "https://www.mta.info/guides/apps", "Q-20": "https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
+        "Q-21": "https://resy.com/cities/new-york-ny/venues/eleven-madison-park", "Q-22": "https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
+        "Q-23": "https://github.com/kanlerxz87-cyber/NYFun1", "Q-24": "https://kanlerxz87-cyber.github.io/NYFun1/docs/flagged.html",
+        "Q-25": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurants/all-starred", "Q-26": "https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
+        "Q-27": "https://resy.com/cities/new-york-ny/venues/eleven-madison-park",
+    }
     n_res = sum(1 for q in FR["questions"] if q.get("status", "").startswith("Resolved"))
     n_trav = sum(1 for q in FR["questions"] if q["owner"] == "traveller" and q.get("status", "Open") == "Open")
     n_res_open = sum(1 for q in FR["questions"] if q["owner"] == "research" and q.get("status", "Open") in ("Open", "Documented"))
     return f"""
-<p class="lede">Every decision tracked from initial planning through the 2026-11-26 verification pass:
-research gaps now resolved vs traveller preferences and one date-blocked MICHELIN update.</p>
+<p class="lede">Every decision tracked through the 2026-11-27 source re-read. Resolved entries remain visible; unresolved venue details, traveller preferences and post-ceremony MICHELIN changes stay open or partial.</p>
 
 <div class="kpi">
  <div class="card"><div class="k">Total tracked</div><div class="v">{len(FR["questions"])}</div><div class="small">{n_res} research items resolved</div></div>
  <div class="card"><div class="k">Traveller choices</div><div class="v">{n_trav}</div><div class="small">Preference decisions (no further research needed)</div></div>
  <div class="card"><div class="k">Open / documented research</div><div class="v">{n_res_open}</div><div class="small">GTFS transit matrix &amp; optional 69-venue completeness</div></div>
- <div class="card"><div class="k">Blocked by date</div><div class="v">1</div><div class="small">reported 14 Dec 2026 ceremony (secondary source; F-24)</div></div>
+ <div class="card"><div class="k">Blocked by date</div><div class="v">1</div><div class="small">2026 MICHELIN selection results pending the officially announced 14 Dec ceremony (F-01/F-25)</div></div>
 </div>
 
 {table(["Question", "Why it blocks a decision", "What we have", "What is missing", "How to discover it", "Status"],
        rows,
-       caption="Ordered Q-01 to Q-26; previously open research questions Q-06, Q-07, Q-09, Q-13, Q-17 are resolved.",
+       caption=f"Ordered Q-01 to Q-{len(FR['questions']):02d}; status is shown per item.",
        card_labels=["Question", "Why it blocks", "Have", "Missing", "How to discover", "Status"],
-       source_urls=[q.get("source") or "https://www.opm.gov/policy-data-oversight/pay-leave/federal-holidays/" for q in FR["questions"]])}
+       source_urls=[q.get("source") or q_sources.get(q["id"], "https://github.com/kanlerxz87-cyber/NYFun1") for q in FR["questions"]])}
 
 <h2>Key open decisions for the traveller</h2>
 <div class="grid two">
 <div class="card"><h3>Q-01 · Length: 4, 7 or 14 nights?</h3><p class="small">Week 1 ($1,158.98) and Week 2 ($1,199.14) are both verified at Fairfield Central Park.</p></div>
 <div class="card"><h3>Q-02 &amp; Q-04 · Spend ceiling &amp; star mix</h3><p class="small">Verified subtotal is {money(FR["budget"]["verified_subtotal_usd"])}; swapping Gabriel Kreuther for Cote ($168) or Dirt Candy ($236) saves $414–$482.</p></div>
 <div class="card"><h3>Q-08 &amp; Q-26 · Fairfield ($1,158.98) vs Hyatt Chelsea ($1,305.17)</h3><p class="small">Fairfield wins by $146/week + free cancel + breakfast; Hyatt Chelsea hits 22/22 verified stars within 5 km.</p></div>
-<div class="card"><h3>Q-18 · Post-reported-ceremony MICHELIN check</h3><p class="small">Re-verify star changes after the reported 14 Dec 2026 ceremony (secondary-source date) before locking 1 Jan / mid-Jan tasting seats.</p></div>
+<div class="card"><h3>Q-18 · Post-reported-ceremony MICHELIN check</h3><p class="small">The 14 Dec 2026 ceremony date is confirmed by MICHELIN Media; recheck the published NYC roster after the event before final bookings.</p></div>
 <div class="card"><h3>Q-19 · Scheduled MTA GTFS matrix</h3><p class="small">Straight-line 5 km reach now covers 22 stars; running weekday 19:00 GTFS times completes the 1-hour proof.</p></div>
 </div>
 """
@@ -1189,7 +1202,7 @@ can be accepted or deferred cleanly.</div>
 <h2>Remaining pending priorities</h2>
 <div class="grid three">
 <div class="card"><h3>1 · S-02 Measured GTFS transit matrix</h3><p class="small">Turns the 22-star Haversine reach proxy into weekday 19:00 MTA timetable legs.</p></div>
-<div class="card"><h3>2 · S-03 Reported Dec 14 &amp; mid-Jan refresh</h3><p class="small">Re-read official MICHELIN after the reported 14 Dec 2026 date (secondary source) and re-check the locked Fairfield Booking URL before Feb 12.</p></div>
+<div class="card"><h3>2 · S-03 Reported Dec 14 &amp; mid-Jan refresh</h3><p class="small">Re-read official MICHELIN after the confirmed 14 Dec 2026 date and re-check the locked Fairfield Booking URL before Feb 12.</p></div>
 <div class="card"><h3>3 · S-07 PR build-check workflow</h3><p class="small">Runs python3 build_site.py checks automatically on pull requests via GitHub Actions.</p></div>
 </div>
 """
@@ -1213,18 +1226,18 @@ def build_requirements():
         ])
     tbl = table(
         ["Requirement from the brief", "Status", "How it is answered, and what is still missing",
-         "Where on the site", "Official source", "Related flags / questions"],
+         "Where on the site", "Source", "Related flags / questions"],
         rows,
         caption=f"All {len(rq)} requirements from the brief, checked on 2026-11-27 against the data on this site.",
-        card_labels=["Requirement", "Status", "How it is answered", "Where", "Official source", "Flags / questions"])
+        card_labels=["Requirement", "Status", "How it is answered", "Where", "Source", "Flags / questions"])
     return f"""
 <p class="lede">Every requirement from the brief in one table. <strong>MET</strong> means the data on this site answers it
-from an official source read on or before 2026-11-27. <strong>PARTIAL</strong> means something is still missing or unconfirmed,
+from its linked source or site feature; source dates and limitations are recorded per row. <strong>PARTIAL</strong> means something is still missing or unconfirmed,
 and the flag or question in the last column says what. Nothing here is a new price or a new opinion.</p>
 
 <div class="kpi">
  <div class="card"><div class="k">Requirements</div><div class="v">{len(rq)}</div></div>
- <div class="card"><div class="k">Met</div><div class="v">{n_met}</div><div class="small">answered from an official source</div></div>
+ <div class="card"><div class="k">Met</div><div class="v">{n_met}</div><div class="small">answered from a cited source</div></div>
  <div class="card"><div class="k">Partial</div><div class="v">{n_part}</div><div class="small">a decision or a re-check is still needed</div></div>
 </div>
 
@@ -1239,7 +1252,7 @@ def build_flagged():
         st = f.get("status", "Open")
         st_kind = "verified" if st == "Resolved" else ("documented" if st == "Documented" else "open")
         k = sev_kind.get(f["severity"], "open")
-        src_cell = ext(f["source"], "official page") if f["source"] else '<span class="blank">no source captured</span>'
+        src_cell = ext(f["source"], "source page") if f["source"] else '<span class="blank">no source captured</span>'
         rows.append([
             '<strong>' + esc(f["id"]) + '</strong> ' + pill(k, f["severity"]) + ' ' + pill(st_kind, st)
             + '<div class="small">' + esc(f["title"]) + '</div>',
@@ -1274,7 +1287,7 @@ items requiring timing or external updates.</p>
 <li><strong>F-01</strong> &mdash; the 14 December 2026 ceremony date is confirmed by MICHELIN's own press release (F-25 resolved); the live star roster must be re-read after the ceremony.</li>
 <li><strong>F-03</strong> &mdash; Hotel rates carry live Black Friday / Bonus promos; lock $0-prepay free-cancel now and re-check in mid-Jan 2027.</li>
 <li><strong>F-05</strong> &mdash; The one-hour travel rule is modelled via Haversine across 22 stars, pending scheduled GTFS timetable verification.</li>
-<li><strong>F-15</strong> &mdash; AMS–JFK fare ($1,266 for 2) is an indicative 1-adult aggregator quote until checked for 2 seats w/ bags on airline checkout.</li>
+<li><strong>F-15</strong> &mdash; airfare is excluded because the departure airport is unknown and the saved one-adult aggregator result is not a two-seat airline checkout.</li>
 </ol>
 </div>
 """
@@ -1295,14 +1308,14 @@ def build_method():
                            caption="Scraping and checkout boundaries, with an official source link on every row.",
                            card_labels=["Source", "Behaviour", "Handling"], source_urls=boundary_sources)
     ind_sources = INDEPENDENT["official_sources"]
-    ind_rows = [[esc(x["publisher"]), esc(x["verified"]), pill(x["kind"], x["kind"]), ext(x["url"], "official source")]
+    ind_rows = [[esc(x["publisher"]), esc(x["verified"]), pill(x["kind"], x["kind"]), ext(x["url"], "source page")]
                 for x in ind_sources]
     ind_table = table(["Publisher / source", "What was independently verified", "Classification", "Official link"], ind_rows,
-                      caption="Final independent official-source audit ledger, 2026-11-26.",
+                      caption="Independent source ledger; each entry retains its own source class and read date.",
                       card_labels=["Publisher", "Verified", "Classification", "Link"],
                       source_urls=[x["url"] for x in ind_sources])
     return f"""
-<p class="lede">How every number on this site was produced, every official source read on {BUILD_DATE},
+<p class="lede">How values on this site were sourced, including dates of official-source reads,
 the few remaining third-party walls, and the automated integrity checks run on every build.</p>
 
 <h2>Rules the site is built on</h2>
@@ -1448,7 +1461,7 @@ def build_repo_review():
              "Resolved"],
             ["R7", "Previously unverified museum hours & AMNH admission (Met, High Line, Chelsea Market, AMNH, Statue of Liberty).",
              "Verified on metmuseum.org, amnh.org, thehighline.org, chelseamarket.com, nps.gov",
-             "All 5 resolved on 2026-11-26; fixed critical Wednesday Met closure in itinerary!",
+             "Four activity values were confirmed in the prior source pass. Met hours remain unconfirmed (F-31); AMNH and High Line could not be re-confirmed in the 2026-11-27 read (F-41).",
              "Resolved"],
             ["R8", "Previously unconfirmed social handles & scarce video links.",
              "site_data/social.json (38+ official IG/YT/TikTok, 23+ video reviews)",
