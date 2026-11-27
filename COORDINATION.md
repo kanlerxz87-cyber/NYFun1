@@ -884,3 +884,25 @@ No other session holds a live claim on these files. Open PR #16 (`arena/bd056789
 ### 2026-11-27 · `arena-ffbfaf4f` · Publication
 - Changes: `build_site.py` (text), `site_data/framework.json` (F-01 re-titled; F-31 added), regenerated `docs/`, this log.
 - PR and merge result: recorded below after merge.
+---
+
+## SESSION CLAIM & COMPLETION — 2026-11-27 (UTC) — `arena-dd2c43b7` (fixed branch `arena/dd2c43b7-nyfun1`)
+
+**Coordination check:** Read the existing board before work. The listed prior tasks were complete at the start of this pass; a concurrent verification entry arrived while this work was in flight and was preserved during rebase. Its read-only scope does not overlap this count-label correction. Per the workspace's fixed-branch rule, this session stayed on `arena/dd2c43b7-nyfun1` (did not create or switch to a `session-*` branch).
+
+| Task ID | Task | Scope | Owner | Status | Updated |
+|---|---|---|---|---|---|
+| DD2-1 | Reconcile published activity and audit-register counts across source data, generated landing page, and README; rebuild and rerun integrity checks | `COORDINATION.md`, `README.md`, `build_site.py`, `site_data/framework.json`, generated `docs/index.html` | `arena-dd2c43b7` | done | 2026-11-27 |
+
+### 2026-11-27 · DD2-1 · Verification & irregularities
+
+- The canonical activity data in `site_data/activities.json` contains **12** entries; the generated Activities page independently renders 12. The landing-page card, framework answer, and README incorrectly said 11. Corrected those stale counts to 12.
+- The canonical `site_data/framework.json` contains **30** flags and `docs/flagged.html` renders a 30-item audit ledger; README still said 26 flags and 29 in its data inventory. Corrected both README counts to 30.
+- Verification performed: `python3 build_site.py` completed with “all build checks passed”; `python3 audit_61867d90/verify_site_integrity.py` verified 21 HTML pages, 356 desktop/mobile table rows, 336 unique HTTPS URLs, no duplicate Source columns, and the expected `$4,246.98` budget subtotal, with 0 errors. Searched the canonical data, builder, README and generated docs for the superseded counts; no stale `11 activities`, `26 tracked items`, or `29 flags` references remain.
+- Official sources for every site row remain in the row-level links and the existing `site_data/independent_verification.json` ledger; this maintenance task changed only count labels and did not re-verify the underlying venues, dynamic hotel rates, or hours. **Irregularity retained for review:** hotel prices are dynamic snapshots last checked 2026-11-26; current prices must be rechecked on the official Booking.com links before reservation (see existing F-03).
+
+### 2026-11-27 · `arena-dd2c43b7` · Rebase follow-up after concurrent PR #27
+
+- Concurrent PR #27 (`arena/ffbfaf4f`) landed while PR #26 was open. Rebased using `git pull --rebase origin main`; retained both sessions' coordination entries and kept the upstream F-31 official-source update, which raised the live audit ledger from 30 to 31 flags. Its framework copy still said 11 activities, so reapplied the 12-entry activity count and updated the README ledger counts to 31. No upstream research or F-31 changes were dropped.
+- Rebuilt and re-verified after the rebase: `python3 build_site.py` passed; `python3 audit_61867d90/verify_site_integrity.py` verified 21 HTML pages, 357 desktop/mobile rows, 336 unique HTTPS URLs, no duplicate Source columns, budget subtotal `$4,246.98`, 0 errors. Direct count assertions confirmed 12 canonical activity rows, 31 canonical flags, a generated landing-page count of 12, and a Flagged caption of 31.
+- The upstream official-source verification for F-31 and the Met-hours caveat is recorded in the adjacent `arena-ffbfaf4f` log above. This follow-up only reconciles counts; no additional venue/hotel fact was re-verified.
