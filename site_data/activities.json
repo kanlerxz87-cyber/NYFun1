@@ -1,6 +1,6 @@
 {
  "read_on": "2026-11-26",
- "rule": "A price is shown only if an official page states it. 'cost_2_adults_usd' is that official per-adult price x2 (arithmetic, not an estimate). All distances are recomputed from Fairfield Inn Central Park's verified building address (538 W 58th St: 40.77042, -73.98971).",
+ "rule": "A price is shown only if an official page states it. 'cost_2_adults_usd' is that official per-adult price x2 (arithmetic, not an estimate). All distances are recomputed from Fairfield Inn Central Park's verified building address (538 W 58th St: 40.77042, -73.98971). 2026-11-27 spot re-reads are recorded per row and in framework.json flags F-30 to F-37.",
  "activities": [
   {
    "id": "moma",
@@ -34,11 +34,11 @@
    "address": "1000 Fifth Avenue, New York, NY 10028",
    "hours": "Sun-Tue & Thu 10:00-17:00; Fri-Sat 10:00-21:00; Wednesday CLOSED",
    "days_open": "Thu-Tue (closed every Wednesday)",
-   "exceptions": "CLOSED WEDNESDAYS (never schedule on Wed!). Also closed Thanksgiving, Dec 25, Jan 1, and first Monday in May. NY/NJ/CT tri-state residents pay-what-you-wish; out-of-state adults $30.",
+   "exceptions": "CLOSED WEDNESDAYS per the 2026-11-26 read (not re-confirmed 2026-11-27, see F-32). Also closed Thanksgiving, Dec 25, Jan 1, and first Monday in May (not re-read 2026-11-27). Pay-what-you-wish: New York State residents (NY State billing address needed online) and NY, NJ or CT students; all other adults pay $30 (corrected 2026-11-27, see F-33). $30 adult admission re-read 2026-11-27.",
    "adult_usd": 30,
    "cost_2_adults_usd": 60,
    "official_url": "https://www.metmuseum.org/plan-your-visit",
-   "verification": "VERIFIED",
+   "verification": "PARTIAL: admission and pay-what-you-wish re-read 2026-11-27; Wednesday closure and hours NOT re-confirmed (F-32)",
    "lat": 40.7794,
    "lon": -73.9632,
    "from_hotel": {
@@ -58,12 +58,12 @@
    "address": "200 Central Park West, New York, NY 10024",
    "hours": "Daily 10:00-17:30",
    "days_open": "Mon-Sun",
-   "exceptions": "Out-of-state adult General Admission $37 ($74 for two); +1 ticketed exhibition $43; +All exhibitions $48. NY/NJ/CT residents pay-what-you-wish. Closed Thanksgiving & Dec 25. Tickets live through 30 Jun 2027.",
+   "exceptions": "Out-of-state adult General Admission $37 ($74 for two); +1 ticketed exhibition $43; +All exhibitions $48. NY/NJ/CT residents pay-what-you-wish (2026-11-26 wording; not re-confirmed 2026-11-27, see F-35). Closed Thanksgiving & Dec 25. Tickets live through 30 Jun 2027.",
    "adult_usd": 37,
    "cost_2_adults_usd": 74,
    "price_note": "Official amnh.org/plan-your-visit (verified 2026-11-26): out-of-state Adult General Admission $37.00 pp.",
    "official_url": "https://www.amnh.org/plan-your-visit",
-   "verification": "VERIFIED",
+   "verification": "PARTIAL: read 2026-11-26; re-read 2026-11-27 returned no hours or price block (F-35)",
    "lat": 40.7813,
    "lon": -73.974,
    "from_hotel": {
@@ -82,8 +82,8 @@
    "area": "Lower Manhattan",
    "address": "180 Greenwich Street, New York, NY 10007",
    "hours": "Museum Wed-Mon 09:00-19:00 (last entry 18:00); Memorial daily 08:00-20:00",
-   "days_open": "Museum Wed-Mon (open most Tuesdays holiday weeks); Memorial 7 days",
-   "exceptions": "Timed tickets required in advance; last entry 60 min before closing (18:00, corrected from 17:30). Free Admission Mondays 17:30-19:00 (online tickets released 07:00 ET Mondays, limited). Note Museum normally closed Tuesdays.",
+   "days_open": "Museum Wed-Mon and many Tuesdays (official wording, read 2026-11-27); Memorial 7 days",
+   "exceptions": "Timed tickets required in advance; last entry 60 min before closing (18:00, corrected from 17:30). Free Admission Mondays 17:30-19:00 (online tickets released 07:00 ET Mondays, limited). Tuesday opening is date-specific: check the official special-hours page before booking a Tuesday (corrected 2026-11-27, see F-34).",
    "adult_usd": 36,
    "cost_2_adults_usd": 72,
    "price_note": "Official page states museum admission as a range, $24-$36. The top of the range is used for the budget so the estimate cannot understate the cost.",
@@ -188,7 +188,7 @@
    "adult_usd": 0,
    "cost_2_adults_usd": 0,
    "official_url": "https://www.thehighline.org/visit/",
-   "verification": "VERIFIED",
+   "verification": "PARTIAL: read 2026-11-26; re-read 2026-11-27 returned cookie-notice text only (F-35)",
    "lat": 40.748,
    "lon": -74.0048,
    "from_hotel": {

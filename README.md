@@ -21,7 +21,7 @@ could **not** be verified.
    written down on the Method page.
 5. **Keep disagreements visible.** When two official pages disagree — and they do, on the star count —
    both numbers are shown and the conflict is flagged.
-6. **Date every snapshot.** All prices, hours, coordinates, and calendars were verified on **2026-11-26** and will drift.
+6. **Date every snapshot.** All prices, hours, coordinates, and calendars were verified on **2026-11-26** and will drift. A 2026-11-27 re-read of 13 official URLs corrected three statements (Met pay-what-you-wish rule, 9/11 Tuesday wording, MetroCard citation) and flagged what could not be re-confirmed (F-30 to F-37).
 
 Anything unverified is on [the Flagged page](docs/flagged.html). Anything undecided is on
 [the Questions page](docs/questions.html).
@@ -33,6 +33,7 @@ Anything unverified is on [the Flagged page](docs/flagged.html). Anything undeci
 | Page | What it answers |
 |---|---|
 | [Overview](docs/index.html) | The decision, in six numbered points: hotel ($1,158.98 all-in), dates (15–22 Feb 2027), reconciled stars (69 live vs 72 ceremony), budget subtotal ($4,246.98), what is open |
+| [Requirements](docs/requirements.html) | Every requirement from the brief: MET or PARTIAL, the reason, the official source and the related flag or question (checked 2026-11-27) |
 | [Hotels](docs/hotels.html) | 7 hotels × 7 nights with verified street addresses, direct Booking URLs, tax/resort-fee parity, 5-week seasonal table, shifted Feb starts & 22-star reach |
 | [MICHELIN](docs/restaurants.html) | 72 Nov 2025 ceremony entries reconciled to 69 live NYC stars (5/14/50), 22 verified Manhattan menus/hours/coordinates, 3 spatial clusters, Green Star / Bib separation |
 | [Activities](docs/activities.html) | 11 activities with verified 2026-11-26 hours (incl. Met Wed closure & High Line winter hours), out-of-state pricing (incl. AMNH $37), distances & reviews |
@@ -40,7 +41,7 @@ Anything unverified is on [the Flagged page](docs/flagged.html). Anything undeci
 | [Budget](docs/budget.html) | $4,246.98 verified subtotal across 11 priced lines + unpriced casual dining, verified dinner swaps & wine pairings |
 | [Questions](docs/questions.html) | 27 decisions: research items resolved vs traveller preferences & date-blocked official 14 Dec 2026 check (MICHELIN press site; ceremony flag resolved 2026-11-26) |
 | [Suggestions](docs/suggestions.html) | 12 structured improvements (8 implemented on 2026-11-26, 4 operational checks pending) |
-| [Flagged](docs/flagged.html) | 26 tracked items (resolved, documented, and live open flags) with primary sources |
+| [Flagged](docs/flagged.html) | 37 tracked items (resolved, documented, and live open flags) with primary sources; F-30 to F-37 added 2026-11-27 |
 | [Method & sources](docs/method.html) | Every primary source URL, final independent audit ledger, lexical external URL audit, scraping limits, travel model formula, and build assertions |
 | [Repo review](docs/repo-review.html) | Verification inventory, audit findings, orphan cleanup, and reproduction guide |
 

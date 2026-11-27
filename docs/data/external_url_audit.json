@@ -1,8 +1,8 @@
 {
  "generated_on": "2026-11-26",
  "audit_type": "lexical external URL audit across docs/, root redirect, and archived deepdive/; official pages read in this session are listed in site_data/independent_verification.json",
- "unique_external_urls": 336,
- "unique_domains": 85,
+ "unique_external_urls": 337,
+ "unique_domains": 86,
  "domains": {
   "911memorial.org": 1,
   "api.transitous.org": 1,
@@ -15,6 +15,7 @@
   "choosealicense.com": 1,
   "docs.github.com": 1,
   "engage.metmuseum.org": 2,
+  "github.com": 1,
   "guide.michelin.com": 104,
   "jejunoodlebar.com": 1,
   "kanlerxz87-cyber.github.io": 3,
@@ -197,6 +198,7 @@
   "https://docs.github.com/en/actions",
   "https://engage.metmuseum.org/admission",
   "https://engage.metmuseum.org/admission/",
+  "https://github.com/kanlerxz87-cyber/NYFun1",
   "https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025",
   "https://guide.michelin.com/us/en/articles/michelin-guide-ceremony",
   "https://guide.michelin.com/us/en/best-of/least-expensive-one-michelin-star-restaurants-in-new-york",

@@ -815,3 +815,51 @@ branch existed — PRs #1–#10 were merged/closed.
 - **GitHub Pages:** build `1405683018` for commit `1b1d6cf` reported `status: built` (`error: null`) at `2026-11-26T14:18:07Z`.
 - **Live site verification:** fetched back `https://kanlerxz87-cyber.github.io/NYFun1/docs/index.html`, `restaurants.html`, `activities.html`, and `flagged.html` (`200 OK`), confirming all 30 hour-verified starred venues, 21 priced/floor starred venues, 8-row structured Guide-listed table, 12 verified activities, 30 flags, and single clean `Source` columns across all tables.
 - Follow-up commit restores full `d9e88da` `COORDINATION.md` history alongside this session log and aligns dynamic activity count (`12`) and `F-06` deposit-floor note (`Per Se / César / Aquavit`).
+
+## SESSION CLAIM — 2026-11-27 (UTC) — `arena-093628c2` (branch `arena/093628c2-nyfun1`)
+
+**Branch & scope:** The workspace assigns one branch per session (`arena/093628c2-nyfun1`, based on `main` at `28315d8`). The `session-<id>/<task>` naming in the brief is not used because this session may only commit to its assigned branch. Scope is limited to the files listed below. `build.py`, `build_deepdive.py`, `content.py` and `deepdive/**` are untouched.
+
+**Parallel-session check:** `gh pr list --state open` at claim time shows one open PR, #16 (`arena/bd056789-nyfun1`, "T15: audit and refresh NYC 2027 planning site", opened 2026-11-26). It belongs to another session and was **not** merged, closed or edited. Its contents are not integrated here. No other live claims appear on the board.
+
+| Task ID | Task | Scope (files) | Owner | Status | Updated |
+|---|---|---|---|---|---|
+| S27-1 | Re-read official sources, correct wrong statements, log irregularities as flags | `site_data/activities.json`, `site_data/hotels.json`, `site_data/framework.json` (flags F-26, F-30 to F-37) | `arena-093628c2` | done | 2026-11-27 |
+| S27-2 | Requirements check page: every requirement in the brief → MET/PARTIAL → reason → official source → flag | `site_data/framework.json` (`requirements_check`), `build_site.py` (new builder, nav, overview card), `docs/requirements.html` | `arena-093628c2` | done | 2026-11-27 |
+| S27-3 | Rebuild, run the integrity verifier, PR to `main`, merge, confirm GitHub Pages | `docs/**`, `README.md`, `audit_61867d90/verify_site_integrity.py` (page list only), `COORDINATION.md` | `arena-093628c2` | in progress | 2026-11-27 |
+
+### 2026-11-27 · `arena-093628c2` · Re-verification log (official sources, read on 2026-11-27)
+
+Each row below is an official URL fetched on 2026-11-27, and what the fetch showed against the site.
+
+| URL (official) | Read result | Outcome |
+|---|---|---|
+| guide.michelin.com/us/en/new-york-state/new-york/restaurants/all-starred | 3★ 5, 2★ 14, 1★ 50; Bib Gourmand 76; Selected 224; "NYC and surroundings: 1-48 of 69" | Confirmed (matches roster 5/14/50 = 69) |
+| guide.michelin.com/us/en/article/michelin-guide-ceremony | Fetch error | No data. Ceremony date stays open (F-01) |
+| mta.info/fares-tolls/subway-bus | $3 most riders; express $7.25; "As of January 1, 2026, you can no longer buy or refill a MetroCard"; cash on buses to stop in 2026, date TBA | Confirmed; MetroCard citation corrected (F-30); new flag F-36 |
+| mta.info/fares-tolls/subway-bus/tap-and-ride | $35 weekly subway and local bus cap for one card; $67 with express | Confirmed. This page does **not** contain the MetroCard sentence the old flag cited |
+| metmuseum.org/plan-your-visit (chunks 0–1) | Adult $30; NY State residents and NY/NJ/CT **students** pay what you wish; other adults $30. Hours block not in chunks 0–1 | Pay-what-you-wish rule **corrected** (F-33). Wednesday closure **not confirmed** (F-32) |
+| metmuseum.org/visit/met-fifth-avenue | Redirected to the plan-your-visit content; no hours block | No data (F-32) |
+| moma.org/visit/ | Mon–Thu, Sat, Sun 10:30–17:30; Fri 10:30–20:30; $30 adult; Uniqlo Friday free for NY State residents 17:30–20:30 | Confirmed |
+| nps.gov/stli/planyourvisit/hours.htm | Every day 9:00 AM–4:30 PM; last entrance into the statue 3:30 PM; Info Center 9:30–4:30 | Confirmed (matches 09:00–16:30 / 15:30). FAQ conflict stays open (F-26) |
+| 911memorial.org/visit/visit-museum-1 | Museum Wed–Mon and many Tuesdays 9 a.m.–7 p.m.; $24–$36 admission; last admission 60 min before close; Memorial 8 a.m.–8 p.m.; Free Admission Mon 5:30–7 p.m. | Confirmed; "normally closed Tuesdays" **corrected** (F-34) |
+| amnh.org/plan-your-visit and /plan-your-visit/hours | Navigation text only; no hours or admission block in fetched chunks | No data. AMNH hours, $37 price and pay-what-you-wish unconfirmed (F-35) |
+| thehighline.org/visit/ | Cookie-notice text only | No data. Winter hours unconfirmed (F-35) |
+| booking.com … fairfield-inn-suites … (15–22 Feb 2027, 2 adults, 1 room) — German locale | Guest score 7.9/10 from 631 reviews; "aktualisierte Preise für 2027" title; price block not in fetched chunk | Score **conflicts** with the recorded 8.0 (F-31). $985.60 not re-read |
+
+**Corrections and new flags recorded in `site_data/framework.json`:** F-30 (citation corrected), F-31 (Fairfield score and price), F-32 (Met hours), F-33 (Met pay-what-you-wish, corrected), F-34 (9/11 Tuesday wording, corrected), F-35 (AMNH and High Line), F-36 (MTA bus cash end date), F-37 (social-link counts differ between two summaries). Affected rows in `activities.json` and `hotels.json` now carry `PARTIAL` verification text or a dated note. Nothing was filled in from memory.
+
+**Verification checks passed on this branch:** `python3 build_site.py` → `wrote 12 pages` / `all build checks passed`; `python3 audit_61867d90/verify_site_integrity.py` → `Verified 22 HTML pages, 383 desktop+mobile table rows, 337 unique HTTPS external URLs, 0 duplicate Source columns, and budget subtotal $4,246.98` / `ALL INDEPENDENT SITE INTEGRITY CHECKS PASSED (0 errors)`.
+
+**Not done in this session (stated plainly):**
+- The brief asks for a timed transit model (1 hour by subway or bus). That still uses straight-line distance (F-05). No GTFS timetable matrix was built.
+- Not every restaurant or activity has a verified YouTube, TikTok or Instagram link (see the requirements page for the counts).
+- The 1–2 week trip versus the 3-night preferred window needs your decision (Q-01).
+- Flight prices, the full set of 93 cited URLs and the 69-venue roster were not re-read in this session. They keep their 2026-11-26 dates.
+- Hotel prices are dynamic and change daily. A price is valid only on the day it is read.
+
+### 2026-11-27 · `arena-093628c2` · Publication record
+
+- **Pull request:** recorded below after creation.
+- **Merge:** recorded below after merge.
+- **GitHub Pages:** recorded below after the deploy check.
