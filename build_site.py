@@ -793,7 +793,7 @@ Live guide totals today: <strong>{live_c['total']} starred</strong>, <strong>{li
 ({live_c.get('bib_by_price', {}).get('$', 7)} $, {live_c.get('bib_by_price', {}).get('$$', 60)} $$, {live_c.get('bib_by_price', {}).get('$$$', 9)} $$$),
 <strong>{live_c.get('selected', 224)} Selected</strong>, and <strong>{live_c.get('green_star', 4)} Green Stars</strong> (3 starred + 1 Selected).</div>
 
-<div class="badbox"><strong>Reported ceremony date: 14 December 2026 (secondary source only).</strong> Eater NY reports this date; no official MICHELIN page confirmed it in this session. Stars shown here reflect the live 2025/2026 list. Re-check the official MICHELIN ceremony index after that date (F-01/F-25).</div>
+<div class="badbox"><strong>Ceremony date: 14 December 2026 at The Glasshouse, Manhattan.</strong> Confirmed by MICHELIN North America's own press release (michelinmedia.com, posted 11 Aug 2026; F-01/F-25 resolved). Stars shown here reflect the live 2025/2026 list. Re-read the live guide after the ceremony (F-01).</div>
 
 <div class="note"><strong>Coverage summary:</strong> {n_hours_pub} priority Manhattan restaurants now carry
 verified weekly hours and coordinates (including all 5 three-stars, 7 key two-stars, and 10 value/highlight one-stars),
@@ -955,7 +955,7 @@ highlights: MoMA ($30 pp), The Met ($30 pp, <strong>closed Wednesdays</strong>),
 </ul></div>
 <div class="card"><h3>Can be decided on the day</h3>
 <ul class="tight">
-<li><strong>The Met Fifth Avenue</strong> — Sun–Tue &amp; Thu 10–17, Fri–Sat 10–21, <strong>closed Wednesdays</strong>.</li>
+<li><strong>The Met Fifth Avenue</strong> — Sun–Tue &amp; Thu 10–17, Fri–Sat 10–21, <strong>closed Wednesdays</strong> (not rendered on the official page as read 2026-11-27; see F-31).</li>
 <li><strong>Central Park, High Line, Brooklyn Bridge</strong> — free entry, no tickets.</li>
 <li><strong>Chelsea Market</strong> — free entry (07:00–22:00), pay each food vendor.</li>
 <li><strong>Broadway</strong> — choose show first on broadway.org; most shows are dark Mondays.</li>
@@ -1233,7 +1233,7 @@ items requiring timing or external updates.</p>
 <h2>The four live items that still matter before travel</h2>
 <div class="badbox">
 <ol class="tight">
-<li><strong>F-01/F-25</strong> &mdash; a secondary source reports a 14 December 2026 New York ceremony; no official MICHELIN page confirmed it in this session.</li>
+<li><strong>F-01</strong> &mdash; the 14 December 2026 ceremony date is confirmed by MICHELIN's own press release (F-25 resolved); the live star roster must be re-read after the ceremony.</li>
 <li><strong>F-03</strong> &mdash; Hotel rates carry live Black Friday / Bonus promos; lock $0-prepay free-cancel now and re-check in mid-Jan 2027.</li>
 <li><strong>F-05</strong> &mdash; The one-hour travel rule is modelled via Haversine across 22 stars, pending scheduled GTFS timetable verification.</li>
 <li><strong>F-15</strong> &mdash; AMS–JFK fare ($1,266 for 2) is an indicative 1-adult aggregator quote until checked for 2 seats w/ bags on airline checkout.</li>
@@ -1285,7 +1285,7 @@ the few remaining third-party walls, and the automated integrity checks run on e
 <li>{ext("https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025", "2025 NY Star Ceremony Article (72 entries)")} · {ext("https://guide.michelin.com/us/en/new-york-state/new-york/restaurants/all-starred", "Live NYC Starred Filter (69 venues)")} · {ext("https://guide.michelin.com/us/en/best-of/least-expensive-one-michelin-star-restaurants-in-new-york", "Least Expensive 1-Star NYC Picks")}.</li>
 <li>All 5 Three-Stars: {ext("https://www.le-bernardin.com/accessible/menus/dining-room/chef-s-tasting/", "Le Bernardin")}, {ext("https://www.elevenmadisonpark.com/", "Eleven Madison Park")}, {ext("https://www.exploretock.com/jungsik", "Jungsik (Tock)")}, {ext("https://www.exploretock.com/perse", "Per Se (Tock)")}, {ext("https://www.exploretock.com/sushi-sho-new-york", "Sushi Sho (Tock)")}.</li>
 <li>Two- &amp; One-Stars + Green Star: {ext("https://www.gknyc.com/menus", "Gabriel Kreuther")}, {ext("https://www.themodernnyc.com/the-modern/", "The Modern")}, {ext("https://www.saga-nyc.com/", "Saga")}, {ext("https://www.jean-georgesrestaurant.com/accessible/jean-georges/menus/dinner-tasting-menu/six-course-tasting/", "Jean-Georges")}, {ext("https://www.exploretock.com/atomixnyc", "Atomix (Tock)")}, {ext("https://www.exploretock.com/atera", "Atera (Tock)")}, {ext("https://www.exploretock.com/aquavit", "Aquavit (Tock)")}, {ext("https://www.danielnyc.com/cuisine/prix-fixe", "Daniel")}, {ext("https://www.gramercytavern.com/dining-room-menu/", "Gramercy Tavern")}, {ext("https://lecoucou.com/", "Le Coucou")}, {ext("https://www.dirtcandynyc.com/", "Dirt Candy")}, {ext("https://www.cotekoreansteakhouse.com/nycdinnermenu?tab=newyork-dinner", "Cote")}, {ext("https://www.crownshy.nyc/menus/", "Crown Shy")}, {ext("https://www.onewhitestreetnyc.com/tasting", "One White Street")}.</li>
-<li>Reported ceremony date (14 Dec 2026): {ext("https://ny.eater.com/news/414985/michelin-guide-new-york-additions-2026-bib-gourmands-michelin-recommendations", "Eater New York (secondary, flagged F-25)")} · {ext("https://guide.michelin.com/us/en/articles/michelin-guide-ceremony", "official MICHELIN ceremony index (no confirmation found)")}.</li>
+<li>Ceremony date (14 Dec 2026): {ext("https://michelinmedia.com/pages/blog/detail/article/c/a1479/", "MICHELIN North America press release (official)")}.</li>
 </ul>
 
 <h3>Hotels, NYC Taxes &amp; Seasonal Windows</h3>
