@@ -34,7 +34,7 @@
   {
    "publisher": "MICHELIN ceremony index",
    "url": "https://guide.michelin.com/us/en/articles/michelin-guide-ceremony",
-   "verified": "Official MICHELIN ceremony index checked; no official New York 14 Dec 2026 announcement was found in this session.",
+   "verified": "Official index checked on 2026-11-26; the specific date is confirmed separately in MICHELIN Media press release (see following source).",
    "kind": "official",
    "read_on": "2026-11-26"
   },
@@ -419,7 +419,7 @@
   {
    "publisher": "Eater NY ceremony report",
    "url": "https://ny.eater.com/news/414985/michelin-guide-new-york-additions-2026-bib-gourmands-michelin-recommendations",
-   "verified": "Secondary source states annual awards ceremony Monday 14 Dec 2026; not an official MICHELIN page and flagged as secondary.",
+   "verified": "Secondary report of 14 Dec 2026 date, corroborated by MICHELIN Media official announcement; secondary status remains.",
    "kind": "secondary / flagged",
    "read_on": "2026-11-26"
   },
@@ -534,6 +534,13 @@
    "verified": "Confirms Bunk/Single Pods use shared bathrooms (Queen/Studio Pods have private baths; $29.84/nt facility fee).",
    "kind": "official",
    "read_on": "2026-11-26"
+  },
+  {
+   "publisher": "MICHELIN Media official ceremony announcement",
+   "url": "https://michelinmedia.com/pages/blog/detail/article/c/a1479/",
+   "verified": "Official post dated 11 Aug 2026 states the 2026 Northeast Cities ceremony will take place the evening of 14 Dec at The Glasshouse; read directly 2026-11-27.",
+   "kind": "official",
+   "read_on": "2026-11-27"
   }
  ],
  "corrections": [
@@ -544,16 +551,17 @@
   "Chelsea Market Instagram, NYC Parks YouTube, The Met YouTube, MoMA YouTube, 9/11 Memorial YouTube/Instagram/TikTok, and Rockefeller Center Instagram/TikTok were verified from official venue/agency documents."
  ],
  "irregularities": [
-  "A 14 Dec 2026 MICHELIN ceremony date is supported by a secondary Eater NY article, not by an official MICHELIN page found in this session; it must be labelled secondary/flagged.",
+  "The 14 Dec 2026 MICHELIN ceremony date is officially confirmed; the 2026 selection/star changes remain pending the event, so current restaurant statuses use the 2025 ceremony and 2026-11-26 live checks.",
   "NPS Statue of Liberty hours page (09:00–16:30) and FAQ (08:30–17:00) conflict.",
   "Booking.com exposes multiple rate tiers for Pestana CR7, Arlo SoHo and Arlo Midtown; a single headline price cannot be compared without cancellation and fee parity.",
-  "Google Flights is an aggregator and its 1-adult fare is not a 2-seat airline checkout quote.",
-  "The brief’s one-hour subway/bus rule was not measured for every hotel/restaurant pair; the official MTA trip planner is the source that would close the gap."
+  "Airfare is not included in the priced subtotal: the only saved AMS–JFK fare was a one-adult aggregator snapshot, and the traveller's departure airport/two-seat checkout total is unknown.",
+  "The brief’s one-hour subway/bus rule was not measured for every hotel/restaurant pair; an official MTA routing matrix would close the gap.",
+  "Broadway performance days/times and two-seat price depend on the production; no show was selected, so the schedule and cost remain blank (F-33)."
  ],
  "final_updates": [
-  "Google Flights current top one-stop fare $633 pp -> $1,266 for two; budget subtotal updated to $4,246.98.",
-  "14 Dec 2026 ceremony date is Eater NY secondary-source only; flagged F-25.",
-  "NPS Statue hours/FAQ conflict flagged F-26."
+  "2026-11-26: MICHELIN Media's official press announcement confirmed the 14 Dec 2026 ceremony date; the remaining open item is the post-ceremony 2026 selection refresh (F-01).",
+  "NPS Statue hours/FAQ conflict flagged F-26.",
+  "2026-11-27: removed the prior $1,266 AMS–JFK one-adult × 2 airfare proxy from the priced subtotal because departure airport and two-seat checkout are not established; the revised $2,980.98 sum covers 10 priced lines only."
  ],
  "url_fixes": [
   {

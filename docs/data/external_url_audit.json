@@ -1,8 +1,8 @@
 {
  "generated_on": "2026-11-26",
  "audit_type": "lexical external URL audit across docs/, root redirect, and archived deepdive/; official pages read in this session are listed in site_data/independent_verification.json",
- "unique_external_urls": 337,
- "unique_domains": 86,
+ "unique_external_urls": 339,
+ "unique_domains": 87,
  "domains": {
   "911memorial.org": 1,
   "api.transitous.org": 1,
@@ -18,7 +18,7 @@
   "github.com": 1,
   "guide.michelin.com": 104,
   "jejunoodlebar.com": 1,
-  "kanlerxz87-cyber.github.io": 3,
+  "kanlerxz87-cyber.github.io": 4,
   "lecoucou.com": 1,
   "michelinmedia.com": 1,
   "nominatim.openstreetmap.org": 1,
@@ -29,6 +29,7 @@
   "sushi-sho.com": 1,
   "visit.moma.org": 1,
   "www.911memorial.org": 2,
+  "www.aerlingus.com": 1,
   "www.aifiorinyc.com": 1,
   "www.amnh.org": 2,
   "www.aquavit.org": 1,
@@ -92,7 +93,7 @@
   "www.youtube.com": 34
  },
  "non_https_warnings": [],
- "official_source_count": 76,
+ "official_source_count": 77,
  "manual_spot_checks": [
   {
    "url": "https://www.chelseamarket.com/visit",
@@ -306,6 +307,7 @@
   "https://jejunoodlebar.com/",
   "https://kanlerxz87-cyber.github.io/NYFun1/",
   "https://kanlerxz87-cyber.github.io/NYFun1/docs/",
+  "https://kanlerxz87-cyber.github.io/NYFun1/docs/flagged.html",
   "https://kanlerxz87-cyber.github.io/NYFun1/docs/method.html",
   "https://lecoucou.com/",
   "https://michelinmedia.com/pages/blog/detail/article/c/a1479/",
@@ -321,6 +323,7 @@
   "https://visit.moma.org/select",
   "https://www.911memorial.org/connect/blog/connect-911-memorial",
   "https://www.911memorial.org/visit/visit-museum-1",
+  "https://www.aerlingus.com/prepare/bags/",
   "https://www.aifiorinyc.com/holidays",
   "https://www.amnh.org/plan-your-visit",
   "https://www.amnh.org/plan-your-visit/hours",

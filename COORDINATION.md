@@ -1021,3 +1021,23 @@ Each row below is an official URL fetched on 2026-11-27, and what the fetch show
 - **GitHub Pages:** build for `f4c5353` reported `status: built`, `error: null`. Live check: `https://kanlerxz87-cyber.github.io/NYFun1/docs/requirements.html` returns the new 21-row table.
 - **Cache note for reviewers:** the un-parameterised `…/NYFun1/docs/index.html` URL returned a stale copy of the Overview after the deploy; the same URL with a query string returned the new build (`24 of 37 earlier flags`, corrected Met wording). Check with a query string if a page looks out of date.
 - **Follow-up:** a small PR (F-43 detail now also records the Overview's third Instagram figure, `45`) records these publication results. Its number and merge are logged below when it lands.
+
+## SESSION CLAIM & COMPLETION — 2026-11-27 UTC — `arena-bfb2c10c` (`arena/bfb2c10c-nyfun1`)
+
+**Scope:** reconcile stale pricing, activity verification, source labeling, summary/requirement coverage, and generated pages; preserve concurrent upstream work. Branch is fixed by Arena. No other session's claims or data were edited intentionally.
+
+**Integrated corrections:**
+- Keep activity rows honest: The Met (F-31) hours and Broadway (F-33) show schedule/price remain partial; don't claim a secondary-reported Met Wednesday closure as officially verified. The Tuesday plan is a tentative placeholder; Broadway availability depends on production selection.
+- Exclude airfare from the priced subtotal because the origin and two-seat checkout are unconfirmed; $2,980.98 is the subtotal of 10 priced lines in the integrated 2026-11-27 tree.
+- Correct topic-specific question links, expose checklist coverage, and align generated statements with canonical data. Reconcile README counts and source ledger attribution.
+- Preserve the official MICHELIN Media ceremony date confirmation; only the post-event roster refresh remains open.
+
+**Latest upstream integration note:** `origin/main` advanced from `a5250cb` to `643c0b4` (PR #33) while PR #34 was open. The first PR conflict report was resolved by rebasing onto `origin/main`. Upstream now includes the independent `arena-093628c2` audit and its data corrections (including flags F-38 through F-43, 21 requirements, 12 generated pages); these supersede this session's earlier baseline counts. Re-audit and adapt the unique corrections against the latest canonical JSON rather than restoring old counts or replacing upstream records. This note records the upstream state; final verification/counts will be added after the replay completes.
+
+### 2026-11-27 · `arena-bfb2c10c` · Latest-main integration complete
+
+- Rebase onto `origin/main` at `643c0b4` completed after preserving the latest `arena-093628c2` audit, its updated data and F-38–F-43 findings. Upstream's 21-item requirements page and F-31 Met / F-41 AMNH-High Line evidence remain intact. Broadway is F-33; no competing F-32 was introduced.
+- Reconciled the unique changes against the latest tree: Broadway schedule and cost blank; Met hours blank and its Tuesday itinerary position explicitly tentative; AMNH/High Line remain PARTIAL per the newer official-source re-read; Q-09 reopened; Q-03 no longer assumes AMS as the travellers' actual origin; the historic one-adult AMS quote is retained only as a labelled non-priced artifact. Airfare is excluded from the subtotal.
+- Latest integrated canonical state: **38 flags, 27 questions, 21 requirements, 12 activity candidates (8 VERIFIED and 4 PARTIAL), 77 source-ledger rows (75 official, one trusted aggregator, one secondary/flagged), and $2,980.98 across 10 priced budget lines**. The count differences from earlier notes are due to later upstream re-verification and this session's Broadway flag; this entry supersedes all earlier interim counts.
+- Final checks on the integrated tree: `python3 -m py_compile build_site.py`; `python3 build_site.py` (12 pages, all build checks passed); `python3 audit_61867d90/verify_site_integrity.py` (22 HTML pages, 386 desktop/mobile table rows, 339 unique HTTPS URLs, 0 duplicate Source columns, $2,980.98 subtotal, 0 errors); `git diff --check`; all `site_data/*.json` parse.
+- PR #34 was created before the latest main update and must be updated/rechecked after this rebase. No merge or deployment is recorded here. Remaining open items: Met hours (F-31); AMNH/High Line current official detail recheck (F-41); Broadway production (F-33); airfare origin/checkout (F-15); dynamic hotel rates (F-38); post-ceremony MICHELIN list refresh (F-01).
