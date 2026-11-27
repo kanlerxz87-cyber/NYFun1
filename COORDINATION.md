@@ -816,40 +816,135 @@ branch existed — PRs #1–#10 were merged/closed.
 - **Live site verification:** fetched back `https://kanlerxz87-cyber.github.io/NYFun1/docs/index.html`, `restaurants.html`, `activities.html`, and `flagged.html` (`200 OK`), confirming all 30 hour-verified starred venues, 21 priced/floor starred venues, 8-row structured Guide-listed table, 12 verified activities, 30 flags, and single clean `Source` columns across all tables.
 - Follow-up commit restores full `d9e88da` `COORDINATION.md` history alongside this session log and aligns dynamic activity count (`12`) and `F-06` deposit-floor note (`Per Se / César / Aquavit`).
 
+## SESSION CLAIM — 2026-11-27 (UTC) — `arena-e74ca980` (branch `arena/e74ca980-nyfun1`)
+
+**Branch & scope:** Work stays on the assigned branch `arena/e74ca980-nyfun1` (branched from `main` at `28315d8`). No new branches created. Scope is limited to a re-verification pass and this board. Shared data files (`site_data/*.json`, `docs/**`, `build_site.py`) are not edited in this session.
+
+**Other open work noticed (not touched):** PR #16 `arena/bd056789-nyfun1` ("T15: audit and refresh NYC 2027 planning site") is still OPEN and owned by another session. It is logged here only.
+
+| Task ID | Task | Scope | Owner | Status | Updated |
+|---|---|---|---|---|---|
+| S74-1 | Re-run the build and integrity checks on current `main` | `build_site.py`, `audit_61867d90/verify_site_integrity.py` (read-only) | `arena-e74ca980` | done | 2026-11-27 |
+| S74-2 | Re-verify the MICHELIN NYC 2025 star roster against the official article | `site_data/michelin_roster.json` (read-only) | `arena-e74ca980` | done | 2026-11-27 |
+| S74-3 | Confirm the live GitHub Pages site and Flagged page load | none | `arena-e74ca980` | done | 2026-11-27 |
+| S74-4 | Log results and publish through PR + merge | `COORDINATION.md` | `arena-e74ca980` | done | 2026-11-27 |
+
+### 2026-11-27 · `arena-e74ca980` · Verification log
+
+- **Build:** `python3 build_site.py` → `wrote 11 pages to docs` / `all build checks passed` (exit 0).
+- **Integrity:** `python3 audit_61867d90/verify_site_integrity.py` → 21 HTML pages, 356 desktop+mobile table rows, 336 unique HTTPS external URLs, 0 duplicate Source columns, budget subtotal $4,246.98, **0 errors**.
+- **MICHELIN roster (official source):** https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025 (18 Nov 2025). Counted line by line on the page: Three Stars = 5 (Eleven Madison Park, Jungsik, Le Bernardin, Per Se, Sushi Sho); Two Stars = 15 (Aquavit, Aska, Atera, Atomix, Blue Hill at Stone Barns, César, Chef's Table at Brooklyn Fare, Gabriel Kreuther, Jean-Georges, Joo Ok, Masa, odo, Saga, Sushi Noz, The Modern); One Star = 52; Green Stars = 4. Matches the repo's 5/15/52 ceremony figures.
+- **Live site:** `https://kanlerxz87-cyber.github.io/NYFun1/docs/flagged.html` fetched via the fetch tool, shows the Flagged register (30 tracked, 8 live open). GitHub Pages API reports `status: built`, source `main:/`. The sandbox cannot reach github.io directly (not on the outbound allowlist), so the fetch tool was used instead.
+
+### Known gaps carried forward (not closed in this session)
+
+- Full line-by-line re-verification of all ~356 table rows was **not** repeated. The prior verification log remains the record for hotels, restaurant prices and hours, and activities. Re-checking them requires a dated pass with source fetches.
+- Social links (Instagram / TikTok / YouTube) are partly search fallbacks, not verified profiles, per F-07.
+- Transit reach is a straight-line proxy (F-05), not an MTA schedule query. A 1-hour subway/bus reach analysis still needs GTFS or a router.
+- Hotel shortlist is 7 properties; a broad "best hotels in the city" search has not been done.
+- Michelin ceremony date for 14 Dec 2026 remains secondary-source-only until the official ceremony page is published (F-01 / F-25).
+
+No irregularities were found in the repo beyond those already listed in the Flagged register.
+
+## SESSION CLAIM — 2026-11-27 (UTC) — `arena-ffbfaf4f` (branch `arena/ffbfaf4f-nyfun1`)
+
+| Task | Scope (files) | Owner | Status |
+|---|---|---|---|
+| R-27-1 Repo review + live-site spot check against official sources | `COORDINATION.md` (log only) | arena-ffbfaf4f | done |
+| R-27-2 Fix stale ceremony wording and add Met-hours flag F-31 | `build_site.py` (text strings), `site_data/framework.json` (F-01, F-31), generated `docs/*.html` | arena-ffbfaf4f | done |
+| R-27-3 Build, integrity check, PR to `main`, merge, Pages deploy check | `COORDINATION.md` | arena-ffbfaf4f | done (see below) |
+
+No other session holds a live claim on these files. Open PR #16 (`arena/bd056789-nyfun1`, T15 audit) was not touched; it edits other files and is left for its owner.
+
+### 2026-11-27 · `arena-ffbfaf4f` · Verification log
+
+**Repo state read:** branch `arena/ffbfaf4f-nyfun1` was identical to `main` at `28315d8` (PR #24). `python3 build_site.py` → 11 pages, all build checks passed. `python3 audit_61867d90/verify_site_integrity.py` → 0 errors (before this session's edits: 356 rows; after: 357 rows, 336 HTTPS URLs).
+
+**Pages:** `gh api repos/kanlerxz87-cyber/NYFun1/pages` → `status: built`, `source: main:/`, `https_enforced: true`. Live landing page read via fetch tool: `https://kanlerxz87-cyber.github.io/NYFun1/docs/index.html` (content matches the build).
+
+**Official sources read today (2026-11-27):**
+
+| Claim | Official source | Result |
+|---|---|---|
+| MoMA $30 adult; daily 10:30–17:30; Friday until 20:30 | https://www.moma.org/visit/ | Matches the site (Friday 10:30 a.m.–8:30 p.m.) |
+| Met $30 adult | https://www.metmuseum.org/plan-your-visit | Matches. **Hours block did not render** → see F-31 |
+| Statue of Liberty 9:00–16:30 daily; last entry into statue 15:30 (park page says 3:30 PM); Information Center 9:30–16:30 | https://www.nps.gov/stli/planyourvisit/hours.htm | Matches (NPS page, last updated 6 Apr 2026) |
+| Top of the Rock 8 AM–12 AM; last entry 11:10 PM | https://www.rockefellercenter.com/tickets/top-of-the-rock-observation-deck/ | Matches (site shows last entry as "~23:10"; the official value is 11:10 PM) |
+| MICHELIN NYC ceremony 14 Dec 2026, The Glasshouse, Manhattan | https://michelinmedia.com/pages/blog/detail/article/c/a1479/ (MICHELIN North America press release, 11 Aug 2026) | Confirmed. This resolves F-25; the wording on the restaurants, method, and flagged pages was stale and is corrected |
+| MICHELIN 2025 NYC stars (Three Stars list) | https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025 | Three-Star list matches the roster (EMP, Jungsik, Le Bernardin, Per Se, Sushi Sho) |
+
+**Irregularities (logged to `docs/flagged.html`):**
+1. **F-31 (new, open):** the Met's hours block did not render on the official page; Wednesday closure is confirmed only by a metmuseum.org system-down page snippet and third-party guides. The itinerary depends on this closure, so it stays open until someone re-reads the live hours.
+2. **F-01 (re-titled):** the ceremony date is now sourced to MICHELIN's own press release. The star roster still changes at the ceremony, so F-01 stays open.
+3. **Stale wording fixed:** three generated pages still said the ceremony date was "secondary source only" (restaurants page, method page, flagged page). Corrected in `build_site.py`.
+4. **Minor:** Top of the Rock last entry is written as "~23:10" in `activities.json`; the official figure is 11:10 PM. Not changed in this session; noted for the next data pass.
+
+**Not re-verified this session (out of time budget):** Booking.com room rates (prices are dated 2026-11-26 and carry live promotions; F-03), AMNH, High Line, Chelsea Market, and 9/11 Memorial hours, and social links. These keep their existing dates and flags.
+
+### 2026-11-27 · `arena-ffbfaf4f` · Publication
+- Changes: `build_site.py` (text), `site_data/framework.json` (F-01 re-titled; F-31 added), regenerated `docs/`, this log.
+- PR and merge result: recorded below after merge.
 ---
 
-## SESSION CLAIM — 2026-11-27 (UTC) — `arena-9fb67eb1` (branch `arena/9fb67eb1-nyfun1`)
+## SESSION CLAIM & COMPLETION — 2026-11-27 (UTC) — `arena-dd2c43b7` (fixed branch `arena/dd2c43b7-nyfun1`)
 
-**Base:** `main` at `28315d8` (PR #24 merged). Branch name is fixed for this session; no other branch is created or pushed.
+**Coordination check:** Read the existing board before work. The listed prior tasks were complete at the start of this pass; a concurrent verification entry arrived while this work was in flight and was preserved during rebase. Its read-only scope does not overlap this count-label correction. Per the workspace's fixed-branch rule, this session stayed on `arena/dd2c43b7-nyfun1` (did not create or switch to a `session-*` branch).
 
-**Discovery:** `gh pr list --state open` shows one open board PR not from this session: PR #16 (`arena/bd056789-nyfun1`, T15 audit refresh, touches `site_data/`, `docs/`, `build_site.py`). This session does **not** edit those files beyond its claimed scope and will log any conflict with #16 here.
-
-| Task ID | Task | Scope (files) | Owner | Status | Updated |
+| Task ID | Task | Scope | Owner | Status | Updated |
 |---|---|---|---|---|---|
-| S9F-1 | Repo review: re-read `COORDINATION.md`, `README.md`, `site_data/*.json`, and confirm the live Pages site and build still work | `audit_9fb67eb1/**`, `COORDINATION.md` | `arena-9fb67eb1` | done | 2026-11-27 |
-| S9F-2 | Independent official-source spot re-verification (2026-11-27) of hours, prices, and star/award claims; results logged, corrections only where an official source contradicts the data | `audit_9fb67eb1/verification_2026-11-27.json`, `COORDINATION.md` | `arena-9fb67eb1` | done (partial scope, see log) | 2026-11-27 |
-| S9F-3 | Publish the re-verification and open irregularities on the Flagged page; open PR to `main`, merge without waiting, confirm Pages deploy | `audit_9fb67eb1/**`, `COORDINATION.md`, `site_data/activities.json`, `site_data/framework.json`, `build_site.py` (wording only) | `arena-9fb67eb1` | in progress | 2026-11-27 |
+| DD2-1 | Reconcile published activity and audit-register counts across source data, generated landing page, and README; rebuild and rerun integrity checks | `COORDINATION.md`, `README.md`, `build_site.py`, `site_data/framework.json`, generated `docs/index.html` | `arena-dd2c43b7` | done | 2026-11-27 |
 
-### 2026-11-27 · `arena-9fb67eb1` · Re-verification log (S9F-1 / S9F-2)
+### 2026-11-27 · DD2-1 · Verification & irregularities
 
-**Official sources read this session (all fetched 2026-11-27):**
-- MICHELIN ceremony article (18 Nov 2025): https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025 — counted line by line: **5 / 15 / 52** star entries and **4 Green Stars**. MATCHES the roster's 72 ceremony entries.
-- NPS Statue of Liberty hours: https://www.nps.gov/stli/planyourvisit/hours.htm — Every Day 9:00 AM-4:30 PM; last statue entrance 3:30 PM. MATCHES `activities.json`. The NPS FAQ conflict remains open as F-26.
-- MoMA: https://www.moma.org/visit/ — 10:30-5:30 daily, Friday 10:30-8:30; $30 adult. MATCHES.
-- The Met: https://www.metmuseum.org/plan-your-visit — $30 adult; NY/NJ/CT pay-what-you-wish. Price MATCHES. **Hours NOT retrievable from the official page.**
-- 9/11 Memorial & Museum: https://www.911memorial.org/visit/visit-museum-1 — 9 a.m.-7 p.m. Wed-Mon; $24-$36; last admission 60 min before closing. MATCHES.
-- Top of the Rock: https://www.rockefellercenter.com/tickets/top-of-the-rock-observation-deck/ — OPEN 8 AM-12 AM; From $42. MATCHES; **last-entry time (~23:10) NOT on the page**.
-- AMNH hours: https://www.amnh.org/plan-your-visit/hours — open daily 10 am-5:30 pm (the site's 10:00-17:30 is consistent). AMNH admission price block did not render on the fetch and was NOT re-read.
+- The canonical activity data in `site_data/activities.json` contains **12** entries; the generated Activities page independently renders 12. The landing-page card, framework answer, and README incorrectly said 11. Corrected those stale counts to 12.
+- The canonical `site_data/framework.json` contains **30** flags and `docs/flagged.html` renders a 30-item audit ledger; README still said 26 flags and 29 in its data inventory. Corrected both README counts to 30.
+- Verification performed: `python3 build_site.py` completed with “all build checks passed”; `python3 audit_61867d90/verify_site_integrity.py` verified 21 HTML pages, 356 desktop/mobile table rows, 336 unique HTTPS URLs, no duplicate Source columns, and the expected `$4,246.98` budget subtotal, with 0 errors. Searched the canonical data, builder, README and generated docs for the superseded counts; no stale `11 activities`, `26 tracked items`, or `29 flags` references remain.
+- Official sources for every site row remain in the row-level links and the existing `site_data/independent_verification.json` ledger; this maintenance task changed only count labels and did not re-verify the underlying venues, dynamic hotel rates, or hours. **Irregularity retained for review:** hotel prices are dynamic snapshots last checked 2026-11-26; current prices must be rechecked on the official Booking.com links before reservation (see existing F-03).
+
+### 2026-11-27 · `arena-dd2c43b7` · Rebase follow-up after concurrent PR #27
+
+- Concurrent PR #27 (`arena/ffbfaf4f`) landed while PR #26 was open. Rebased using `git pull --rebase origin main`; retained both sessions' coordination entries and kept the upstream F-31 official-source update, which raised the live audit ledger from 30 to 31 flags. Its framework copy still said 11 activities, so reapplied the 12-entry activity count and updated the README ledger counts to 31. No upstream research or F-31 changes were dropped.
+- Rebuilt and re-verified after the rebase: `python3 build_site.py` passed; `python3 audit_61867d90/verify_site_integrity.py` verified 21 HTML pages, 357 desktop/mobile rows, 336 unique HTTPS URLs, no duplicate Source columns, budget subtotal `$4,246.98`, 0 errors. Direct count assertions confirmed 12 canonical activity rows, 31 canonical flags, a generated landing-page count of 12, and a Flagged caption of 31.
+- The upstream official-source verification for F-31 and the Met-hours caveat is recorded in the adjacent `arena-ffbfaf4f` log above. This follow-up only reconciles counts; no additional venue/hotel fact was re-verified.
+
+### 2026-11-27 · `arena-ffbfaf4f` · PR and merge record (R-27-3 done)
+- **Pull request:** https://github.com/kanlerxz87-cyber/NYFun1/pull/27 ("Verify official sources 2026-11-27; fix ceremony wording; flag Met hours (F-31)")
+- **Merged:** `2026-11-27T17:26:10Z`, merge commit `4da188dcff37eddf51379ee624bb4c064a57daac` into `main` (`gh pr merge 27 --merge`, no approval wait, mergeable state CLEAN).
+- **GitHub Pages:** build for `4da188d` reported `status: built`, `error: null` at `2026-11-27T17:26:32Z` (`source: main:/`, unchanged).
+- **Live check:** `https://kanlerxz87-cyber.github.io/NYFun1/docs/flagged.html` now serves 31 tracked / 9 live open, including F-31 and the re-titled F-01 (a CDN-cached copy served the old page for a short time; the fresh read is correct).
+- **Open for the owner:** F-31 (Met hours) and F-01 (re-read the live roster after the 14 Dec 2026 ceremony) stay on the Flagged page.
+
+---
+
+## SESSION CLAIM & COMPLETION — 2026-11-27 (UTC) — `arena-9fb67eb1` (branch `arena/9fb67eb1-nyfun1`)
+
+**Coordination check:** read the board before work. Other 2026-11-27 sessions landed PRs #26, #27 and #28 while this branch was open; their entries are kept above, and this session merged `origin/main` (`012c720`) and resolved the conflicts without dropping their changes (see the log below). Open PR #16 (`arena/bd056789-nyfun1`) was not touched.
+
+| Task ID | Task | Scope | Owner | Status | Updated |
+|---|---|---|---|---|---|
+| S9F-1 | Repo review: re-read board, README and `site_data/*.json`; confirm build and live Pages | `audit_9fb67eb1/**`, `COORDINATION.md` | `arena-9fb67eb1` | done | 2026-11-27 |
+| S9F-2 | Official-source re-verification of hours, prices and star counts; correct only what an official page contradicts | `audit_9fb67eb1/verification_2026-11-27.json`, `site_data/activities.json` | `arena-9fb67eb1` | done (partial scope, see log) | 2026-11-27 |
+| S9F-3 | Publish the corrections on the Flagged page; PR to `main`, merge, confirm Pages | `build_site.py` (Met wording only), `site_data/framework.json` (Met wording only), generated `docs/*.html`, `COORDINATION.md` | `arena-9fb67eb1` | done (see below) | 2026-11-27 |
+
+### 2026-11-27 · `arena-9fb67eb1` · Re-verification log
+
+**Official sources read this session (2026-11-27):**
+- MICHELIN ceremony article (18 Nov 2025): https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025 — counted line by line: **5 / 15 / 52** star entries, **4 Green Stars**. MATCHES the roster's 72 ceremony entries.
+- NPS Statue of Liberty hours: https://www.nps.gov/stli/planyourvisit/hours.htm — 9:00 AM–4:30 PM daily; last entrance into the statue 3:30 PM. MATCHES `activities.json`. The NPS FAQ conflict stays open as F-26.
+- MoMA: https://www.moma.org/visit/ — 10:30–5:30 daily; Friday 10:30–8:30; adult $30. MATCHES.
+- The Met: https://www.metmuseum.org/plan-your-visit — adult $30; NY/NJ/CT pay-what-you-wish. Price MATCHES. **Hours not on the page read this session** (matches F-31 from arena-ffbfaf4f).
+- 9/11 Memorial & Museum: https://www.911memorial.org/visit/visit-museum-1 — 9 a.m.–7 p.m. Wed–Mon; $24–$36; last admission 60 min before closing. MATCHES.
+- Top of the Rock: https://www.rockefellercenter.com/tickets/top-of-the-rock-observation-deck/ — "OPEN 8 AM – 12 AM"; FAQ: **"Daily from 8 AM – 12 AM. Last entry is at 11:10 PM"** (= 23:10); "From $42" timed admission (floor). MATCHES the site's existing values.
+- AMNH hours: https://www.amnh.org/plan-your-visit/hours — "Open daily, 10 am–5:30 pm". Consistent with the site's 10:00–17:30. AMNH admission block was NOT re-read.
 - Le Bernardin Chef's Tasting: https://www.le-bernardin.com/accessible/menus/dining-room/chef-s-tasting/ — $350 pp; $530 pp with wine. MATCHES.
-- Gabriel Kreuther dinner menu PDF (11.17.26): https://cdn.prod.website-files.com/69f8cb7ff67007b4842004ce/6afddf36f7cde3e50d030e4c_RGK_DinnerMenu%2011.17.26.pdf — Chef's Tasting Menu $325 pp. MATCHES. The PDF is hosted on a Webflow CDN.
+- Gabriel Kreuther dinner menu PDF (11.17.26): https://cdn.prod.website-files.com/69f8cb7ff67007b4842004ce/6afddf36f7cde3e50d030e4c_RGK_DinnerMenu%2011.17.26.pdf — Chef's Tasting Menu $325 pp. MATCHES. Hosted on a Webflow CDN.
 
-**Corrections made (the official page did not support the stored value):**
-1. The Met hours and Wednesday closure: changed from VERIFIED to PARTIAL; hours cell blanked; wording in the index, activities, itinerary, and flagged pages changed from fact to "reported by secondary sources, unconfirmed". The itinerary still routes the Met to a Tuesday. **Flag F-31 (Open).**
-2. Top of the Rock last entry (~23:10): removed from the hours cell; the official hours are 08:00-24:00. **Flag F-32 (Open).**
+**Corrections made:**
+1. **The Met:** the hours row was changed from VERIFIED to PARTIAL, the hours and days cells were blanked and point to F-31, and the Wednesday closure is worded as "reported by secondary sources, unconfirmed" on the index, activities, itinerary, questions and flagged pages. The itinerary still schedules the Met on a Tuesday. This session uses the existing **F-31** from arena-ffbfaf4f and adds no duplicate.
+2. **Top of the Rock — no change needed.** An earlier draft of this log proposed removing the ~23:10 last entry (F-32). That was **wrong**: the first fetched chunk did not contain the FAQ, and the FAQ on a later chunk says "Last entry is at 11:10 PM". The site's value is restored (last entry 11:10 PM / 23:10). F-32 is **not** added.
 
-**Not re-verified this session (carried from 2026-11-26; re-read before booking):** the 69 live NYC star count, all 22 Manhattan venue hours, all 7 hotel prices (dynamic Booking.com rates), AMNH admission price, Broadway, High Line, Chelsea Market, Central Park, Brooklyn Bridge, and all social-link handles.
+**Not re-verified this session (carried from 2026-11-26; re-read before booking):** the 69 live NYC star count, 22 Manhattan venue hours, all 7 hotel prices (dynamic Booking.com rates), AMNH admission price, Broadway, High Line, Chelsea Market, Central Park, Brooklyn Bridge, and all social-link handles.
 
-**Irregularities for review:** F-31, F-32 (new); F-26 (existing, unchanged). Full record: `audit_9fb67eb1/verification_2026-11-27.json`.
+**Merge handling:** `origin/main` (`012c720`, PRs #26–#28) conflicted with this branch in `COORDINATION.md`, `build_site.py`, `site_data/framework.json`, and generated `docs/`. Resolution: took `main`'s versions of the shared files and reapplied only this session's Met-wording changes and the `activities.json` Met row, asserting that each old string matched exactly once. `docs/` was regenerated from the merged sources. No other session's entries, flags, or data were removed.
 
-**Open PR note:** PR #16 (`arena/bd056789-nyfun1`, T15) is still open and edits `site_data/` and `docs/`. This session's changes to `activities.json`, `framework.json`, and `build_site.py` may conflict with it. Whichever PR merges second needs a rebase. This session did not touch PR #16's branch.
-
+**Full record:** `audit_9fb67eb1/verification_2026-11-27.json` (F-32 entry removed from it; see the correction above).
