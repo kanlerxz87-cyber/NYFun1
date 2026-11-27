@@ -1048,3 +1048,16 @@ Each row below is an official URL fetched on 2026-11-27, and what the fetch show
 - **Merge commit:** `030bc319e72113fe1da8d76270686f82d10f17a2`.
 - **GitHub Pages:** deployment run `46043445083` completed successfully (build, report-build-status, and deploy all passed). Pages API reports `status: built`, `error: null`, commit `030bc319e72113fe1da8d76270686f82d10f17a2` at `2026-11-27T17:38:59Z`.
 - **Post-merge repository state:** rebased this session branch onto the merge commit before recording this publication note; no site data or generated page content changed in this follow-up.
+---
+
+## Session `arena-98a7f510` (2026-11-27) — final integration & re-verification
+
+**Branch:** `arena/98a7f510-nyfun1` (branched from `28315d8`, PR #24 merge into `main`).
+**Scope claimed:** `COORDINATION.md` (append-only), `site_data/*.json` (verification corrections only), `build_site.py` (build-date / defect fixes only), `docs/**` (generated), `index.html`, `README.md` (generated-content alignment only).
+**Status:** in progress — re-verifying every table row against official sources, rebuilding, link-checking, then PR → merge → Pages deploy, all without manual input.
+
+| Task ID | Task | Scope | Owner | Status | Updated |
+|---|---|---|---|---|---|
+| S98-1 | Line-by-line re-verification of all site_data rows vs official sources; blank/flag anything unconfirmed | `site_data/*.json`, `COORDINATION.md` | `arena-98a7f510` | in progress | 2026-11-27 |
+| S98-2 | Rebuild `docs/` + run build checks & independent verifier; fix any defects | `build_site.py`, `docs/**` | `arena-98a7f510` | pending | 2026-11-27 |
+| S98-3 | Open PR to `main`, merge without waiting, confirm GitHub Pages deploy, log result | `COORDINATION.md` | `arena-98a7f510` | pending | 2026-11-27 |
