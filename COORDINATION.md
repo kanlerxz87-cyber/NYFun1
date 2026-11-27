@@ -815,3 +815,33 @@ branch existed — PRs #1–#10 were merged/closed.
 - **GitHub Pages:** build `1405683018` for commit `1b1d6cf` reported `status: built` (`error: null`) at `2026-11-26T14:18:07Z`.
 - **Live site verification:** fetched back `https://kanlerxz87-cyber.github.io/NYFun1/docs/index.html`, `restaurants.html`, `activities.html`, and `flagged.html` (`200 OK`), confirming all 30 hour-verified starred venues, 21 priced/floor starred venues, 8-row structured Guide-listed table, 12 verified activities, 30 flags, and single clean `Source` columns across all tables.
 - Follow-up commit restores full `d9e88da` `COORDINATION.md` history alongside this session log and aligns dynamic activity count (`12`) and `F-06` deposit-floor note (`Per Se / César / Aquavit`).
+
+## SESSION CLAIM — 2026-11-27 (UTC) — `arena-e74ca980` (branch `arena/e74ca980-nyfun1`)
+
+**Branch & scope:** Work stays on the assigned branch `arena/e74ca980-nyfun1` (branched from `main` at `28315d8`). No new branches created. Scope is limited to a re-verification pass and this board. Shared data files (`site_data/*.json`, `docs/**`, `build_site.py`) are not edited in this session.
+
+**Other open work noticed (not touched):** PR #16 `arena/bd056789-nyfun1` ("T15: audit and refresh NYC 2027 planning site") is still OPEN and owned by another session. It is logged here only.
+
+| Task ID | Task | Scope | Owner | Status | Updated |
+|---|---|---|---|---|---|
+| S74-1 | Re-run the build and integrity checks on current `main` | `build_site.py`, `audit_61867d90/verify_site_integrity.py` (read-only) | `arena-e74ca980` | done | 2026-11-27 |
+| S74-2 | Re-verify the MICHELIN NYC 2025 star roster against the official article | `site_data/michelin_roster.json` (read-only) | `arena-e74ca980` | done | 2026-11-27 |
+| S74-3 | Confirm the live GitHub Pages site and Flagged page load | none | `arena-e74ca980` | done | 2026-11-27 |
+| S74-4 | Log results and publish through PR + merge | `COORDINATION.md` | `arena-e74ca980` | done | 2026-11-27 |
+
+### 2026-11-27 · `arena-e74ca980` · Verification log
+
+- **Build:** `python3 build_site.py` → `wrote 11 pages to docs` / `all build checks passed` (exit 0).
+- **Integrity:** `python3 audit_61867d90/verify_site_integrity.py` → 21 HTML pages, 356 desktop+mobile table rows, 336 unique HTTPS external URLs, 0 duplicate Source columns, budget subtotal $4,246.98, **0 errors**.
+- **MICHELIN roster (official source):** https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025 (18 Nov 2025). Counted line by line on the page: Three Stars = 5 (Eleven Madison Park, Jungsik, Le Bernardin, Per Se, Sushi Sho); Two Stars = 15 (Aquavit, Aska, Atera, Atomix, Blue Hill at Stone Barns, César, Chef's Table at Brooklyn Fare, Gabriel Kreuther, Jean-Georges, Joo Ok, Masa, odo, Saga, Sushi Noz, The Modern); One Star = 52; Green Stars = 4. Matches the repo's 5/15/52 ceremony figures.
+- **Live site:** `https://kanlerxz87-cyber.github.io/NYFun1/docs/flagged.html` fetched via the fetch tool, shows the Flagged register (30 tracked, 8 live open). GitHub Pages API reports `status: built`, source `main:/`. The sandbox cannot reach github.io directly (not on the outbound allowlist), so the fetch tool was used instead.
+
+### Known gaps carried forward (not closed in this session)
+
+- Full line-by-line re-verification of all ~356 table rows was **not** repeated. The prior verification log remains the record for hotels, restaurant prices and hours, and activities. Re-checking them requires a dated pass with source fetches.
+- Social links (Instagram / TikTok / YouTube) are partly search fallbacks, not verified profiles, per F-07.
+- Transit reach is a straight-line proxy (F-05), not an MTA schedule query. A 1-hour subway/bus reach analysis still needs GTFS or a router.
+- Hotel shortlist is 7 properties; a broad "best hotels in the city" search has not been done.
+- Michelin ceremony date for 14 Dec 2026 remains secondary-source-only until the official ceremony page is published (F-01 / F-25).
+
+No irregularities were found in the repo beyond those already listed in the Flagged register.
