@@ -1,0 +1,109 @@
+{
+ "session": "arena-9fb67eb1",
+ "branch": "arena/9fb67eb1-nyfun1",
+ "date_read": "2026-11-27",
+ "scope": "Spot re-verification of hours, admission prices, and MICHELIN star counts against official pages. Not a full line-by-line re-read of all 72 MICHELIN rows, 7 hotel prices (dynamic Booking.com rates cannot be re-read reliably by this session), or all social links.",
+ "checks": [
+  {
+   "item": "MICHELIN ceremony article: star counts",
+   "official_url": "https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025",
+   "observed": "Counted line by line from the article: Three Stars 5 (Eleven Madison Park, Jungsik, Le Bernardin, Per Se, Sushi Sho); Two Stars 15 (Aquavit, Aska, Atera, Atomix, Blue Hill at Stone Barns, César, Chef's Table at Brooklyn Fare, Gabriel Kreuther, Jean-Georges, Joo Ok, Masa, odo, Saga, Sushi Noz, The Modern); One Star 52; Green Stars 4 (Blue Hill at Stone Barns, Dirt Candy, Family Meal at Blue Hill, One White Street). Article published 18 Nov 2025.",
+   "site_value": "72 entries: 5 / 15 / 52; 4 Green Stars",
+   "result": "MATCH"
+  },
+  {
+   "item": "MICHELIN live NYC 69 count (5/14/50)",
+   "official_url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurants/all-starred",
+   "observed": "Not re-read in this session. The page URL is cited in michelin_roster.json meta; the 69 figure rests on the 2026-11-26 read.",
+   "site_value": "69 live NYC (5/14/50)",
+   "result": "NOT RE-VERIFIED (carried from 2026-11-26)"
+  },
+  {
+   "item": "Statue of Liberty hours",
+   "official_url": "https://www.nps.gov/stli/planyourvisit/hours.htm",
+   "observed": "Every Day 9:00 AM-4:30 PM; last entrance into the statue 3:30 PM; Liberty Island Information Center 9:30 AM-4:30 PM; page 'Last updated: April 6, 2026'.",
+   "site_value": "Daily 09:00-16:30; last entrance into statue 15:30; Information Center 09:30-16:30",
+   "result": "MATCH (the NPS FAQ conflict stays open as F-26)"
+  },
+  {
+   "item": "MoMA hours and admission",
+   "official_url": "https://www.moma.org/visit/",
+   "observed": "Mon-Thu, Sat, Sun 10:30-5:30; Friday 10:30-8:30; adult admission $30; Uniqlo Friday Nights free for NY State residents 5:30-8:30 pm (timed reservation).",
+   "site_value": "Daily 10:30-17:30; Friday until 20:30; adult $30",
+   "result": "MATCH"
+  },
+  {
+   "item": "The Met admission",
+   "official_url": "https://www.metmuseum.org/plan-your-visit",
+   "observed": "General Admission: Adults $30; NY residents pay-what-you-wish; NY/NJ/CT students pay-what-you-wish; children 12 and under free.",
+   "site_value": "adult $30; out-of-state adults $30; NY/NJ/CT pay-what-you-wish",
+   "result": "MATCH"
+  },
+  {
+   "item": "The Met hours (Wednesday closure)",
+   "official_url": "https://www.metmuseum.org/plan-your-visit",
+   "observed": "Hours table not returned by the fetch tool (5 chunks read; the Location/Hours section did not render). metmuseum.org/visit/plan-your-visit/hours returned a fetch error. Secondary sites (metropolitan.museum, hourslocator.com, what2book.com, Sept-Nov 2026) report Sun-Tue & Thu 10-17, Fri-Sat 10-21, closed Wednesdays.",
+   "site_value": "Sun-Tue & Thu 10-17; Fri-Sat 10-21; Wednesday CLOSED (previously marked VERIFIED)",
+   "result": "NOT CONFIRMED on official page. Changed to PARTIAL; hours cell blanked; flag F-31."
+  },
+  {
+   "item": "AMNH admission (out-of-state adult $37)",
+   "official_url": "https://www.amnh.org/plan-your-visit",
+   "observed": "Fetched pages did not render the admissions price block (navigation only in the returned chunks). Not re-read in this session.",
+   "site_value": "$37 pp out-of-state General Admission",
+   "result": "NOT RE-VERIFIED (carried from 2026-11-26)"
+  },
+  {
+   "item": "AMNH hours",
+   "official_url": "https://www.amnh.org/plan-your-visit/hours",
+   "observed": "Open daily, 10 am-5:30 pm. Closed Thanksgiving Day and Christmas Day. Extended holiday hours on select dates Nov 7-Jan 30 (for example Sat 2 Jan 10-8 pm).",
+   "site_value": "Daily 10:00-17:30",
+   "result": "MATCH on closing time as stated (10 am-5:30 pm). Site figure 10:00-17:30 is correct."
+  },
+  {
+   "item": "9/11 Memorial & Museum hours and admission",
+   "official_url": "https://www.911memorial.org/visit/visit-museum-1",
+   "observed": "Museum open Wednesday through Monday and many Tuesdays, 9 a.m.-7 p.m.; admission $24-$36; last admission 60 minutes before closing; Free Admission Mondays 5:30-7 p.m. with tickets released 7 a.m. ET Mondays; Memorial free 8 a.m.-8 p.m.",
+   "site_value": "Museum Wed-Mon 09:00-19:00 (last entry 18:00); admission $24-$36; Free Mondays 17:30-19:00",
+   "result": "MATCH"
+  },
+  {
+   "item": "Top of the Rock hours and floor price",
+   "official_url": "https://www.rockefellercenter.com/tickets/top-of-the-rock-observation-deck/",
+   "observed": "OPEN 8 AM - 12 AM (page header). FAQ on a later chunk: 'Daily from 8 AM - 12 AM. Last entry is at 11:10 PM'. Timed Admission 'From $42' (floor, date-dependent). The first chunk read did not contain the FAQ; an earlier draft wrongly concluded the last entry was absent.",
+   "site_value": "Daily 08:00-24:00; last entry 11:10 PM (23:10); From $42",
+   "result": "MATCH (correction: earlier F-32 proposal withdrawn)"
+  },
+  {
+   "item": "Le Bernardin Chef's Tasting",
+   "official_url": "https://www.le-bernardin.com/accessible/menus/dining-room/chef-s-tasting/",
+   "observed": "Chef's Tasting Menu $350 per person; $530 with wine pairing per person.",
+   "site_value": "$350 pp ($1,060 for two with wine pairing; $700 food only)",
+   "result": "MATCH (wine-pairing total is derived: 2 x $530)"
+  },
+  {
+   "item": "Gabriel Kreuther Chef's Tasting Menu",
+   "official_url": "https://cdn.prod.website-files.com/69f8cb7ff67007b4842004ce/6afddf36f7cde3e50d030e4c_RGK_DinnerMenu%2011.17.26.pdf",
+   "observed": "Dinner menu PDF (dated 11.17.26): CHEF'S TASTING MENU 325; Wine pairings Classic 255, Reserve 595. The PDF is hosted on a Webflow CDN, not the restaurant's own domain; the domain and the PDF's provenance were not separately confirmed.",
+   "site_value": "$325 pp ($650 for two)",
+   "result": "MATCH to the PDF; PDF host is a CDN (noted)"
+  },
+  {
+   "item": "Museums and landmarks not re-read this session",
+   "official_url": "various",
+   "observed": "Not re-read in this session: Broadway, High Line, Chelsea Market, Central Park, Brooklyn Bridge, all 22 Manhattan venue hours, all social links, all hotel prices.",
+   "site_value": "as on 2026-11-26",
+   "result": "NOT RE-VERIFIED (carried from 2026-11-26; the next re-read is due before booking)"
+  }
+ ],
+ "changes_made": [
+  "site_data/activities.json: The Met hours/days/exceptions and verification changed to PARTIAL; hours cell blanked and points to F-31 (flag from arena-ffbfaf4f).",
+  "site_data/activities.json: The Met hours/days/exceptions and verification changed to PARTIAL; hours cell blanked and pointed to F-31.",
+  "site_data/framework.json: no new flags added (F-31 from arena-ffbfaf4f covers the Met hours); Met Wednesday wording changed from fact to 'reported, unconfirmed' across itinerary, activities, questions and index prose.",
+  "build_site.py: Met Wednesday wording changed from fact to 'reported, unconfirmed' on the index, activities, itinerary and flagged pages."
+ ],
+ "irregularities_for_review": [
+  "F-31 (existing, arena-ffbfaf4f): The Met hours block not confirmed on the official page; Wednesday closure is secondary-source only.",
+  "F-26 (existing): NPS hours page and NPS FAQ disagree on Statue of Liberty hours."
+ ]
+}

@@ -920,3 +920,38 @@ No other session holds a live claim on these files. Open PR #16 (`arena/bd056789
 - **Merged:** `2026-11-27T17:27:03Z`, merge commit `54b3d70f6dba2e7ef0fbbdeef9f0f519fe7ee062` into `main` (`gh pr merge 26 --merge`; PR was CLEAN/MERGEABLE at merge time).
 - **Pages deployment:** the run for merge commit `54b3d70` was cancelled when a concurrent main commit arrived; the subsequent deployment run `46041969391` for main commit `012c72071f8967336abd5dfb4016602092956c6f` completed successfully (build, deploy, and report-build-status passed). GitHub Pages API reports `status: built`, source `main:/`, HTTPS enforced.
 - **Live review caveat:** `docs/index.html` fetched from the published site reflected the 12-activity/31-flag copy, while one fetch of `docs/flagged.html` returned an older 30-flag cached response. The committed `main:docs/flagged.html` is the current 31-row version and the Pages deployment succeeded; the differing fetch response appears cache-stale, so do not treat that one response as a new data verification.
+
+---
+
+## SESSION CLAIM & COMPLETION — 2026-11-27 (UTC) — `arena-9fb67eb1` (branch `arena/9fb67eb1-nyfun1`)
+
+**Coordination check:** read the board before work. Other 2026-11-27 sessions landed PRs #26, #27 and #28 while this branch was open; their entries are kept above, and this session merged `origin/main` (`012c720`) and resolved the conflicts without dropping their changes (see the log below). Open PR #16 (`arena/bd056789-nyfun1`) was not touched.
+
+| Task ID | Task | Scope | Owner | Status | Updated |
+|---|---|---|---|---|---|
+| S9F-1 | Repo review: re-read board, README and `site_data/*.json`; confirm build and live Pages | `audit_9fb67eb1/**`, `COORDINATION.md` | `arena-9fb67eb1` | done | 2026-11-27 |
+| S9F-2 | Official-source re-verification of hours, prices and star counts; correct only what an official page contradicts | `audit_9fb67eb1/verification_2026-11-27.json`, `site_data/activities.json` | `arena-9fb67eb1` | done (partial scope, see log) | 2026-11-27 |
+| S9F-3 | Publish the corrections on the Flagged page; PR to `main`, merge, confirm Pages | `build_site.py` (Met wording only), `site_data/framework.json` (Met wording only), generated `docs/*.html`, `COORDINATION.md` | `arena-9fb67eb1` | done (see below) | 2026-11-27 |
+
+### 2026-11-27 · `arena-9fb67eb1` · Re-verification log
+
+**Official sources read this session (2026-11-27):**
+- MICHELIN ceremony article (18 Nov 2025): https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025 — counted line by line: **5 / 15 / 52** star entries, **4 Green Stars**. MATCHES the roster's 72 ceremony entries.
+- NPS Statue of Liberty hours: https://www.nps.gov/stli/planyourvisit/hours.htm — 9:00 AM–4:30 PM daily; last entrance into the statue 3:30 PM. MATCHES `activities.json`. The NPS FAQ conflict stays open as F-26.
+- MoMA: https://www.moma.org/visit/ — 10:30–5:30 daily; Friday 10:30–8:30; adult $30. MATCHES.
+- The Met: https://www.metmuseum.org/plan-your-visit — adult $30; NY/NJ/CT pay-what-you-wish. Price MATCHES. **Hours not on the page read this session** (matches F-31 from arena-ffbfaf4f).
+- 9/11 Memorial & Museum: https://www.911memorial.org/visit/visit-museum-1 — 9 a.m.–7 p.m. Wed–Mon; $24–$36; last admission 60 min before closing. MATCHES.
+- Top of the Rock: https://www.rockefellercenter.com/tickets/top-of-the-rock-observation-deck/ — "OPEN 8 AM – 12 AM"; FAQ: **"Daily from 8 AM – 12 AM. Last entry is at 11:10 PM"** (= 23:10); "From $42" timed admission (floor). MATCHES the site's existing values.
+- AMNH hours: https://www.amnh.org/plan-your-visit/hours — "Open daily, 10 am–5:30 pm". Consistent with the site's 10:00–17:30. AMNH admission block was NOT re-read.
+- Le Bernardin Chef's Tasting: https://www.le-bernardin.com/accessible/menus/dining-room/chef-s-tasting/ — $350 pp; $530 pp with wine. MATCHES.
+- Gabriel Kreuther dinner menu PDF (11.17.26): https://cdn.prod.website-files.com/69f8cb7ff67007b4842004ce/6afddf36f7cde3e50d030e4c_RGK_DinnerMenu%2011.17.26.pdf — Chef's Tasting Menu $325 pp. MATCHES. Hosted on a Webflow CDN.
+
+**Corrections made:**
+1. **The Met:** the hours row was changed from VERIFIED to PARTIAL, the hours and days cells were blanked and point to F-31, and the Wednesday closure is worded as "reported by secondary sources, unconfirmed" on the index, activities, itinerary, questions and flagged pages. The itinerary still schedules the Met on a Tuesday. This session uses the existing **F-31** from arena-ffbfaf4f and adds no duplicate.
+2. **Top of the Rock — no change needed.** An earlier draft of this log proposed removing the ~23:10 last entry (F-32). That was **wrong**: the first fetched chunk did not contain the FAQ, and the FAQ on a later chunk says "Last entry is at 11:10 PM". The site's value is restored (last entry 11:10 PM / 23:10). F-32 is **not** added.
+
+**Not re-verified this session (carried from 2026-11-26; re-read before booking):** the 69 live NYC star count, 22 Manhattan venue hours, all 7 hotel prices (dynamic Booking.com rates), AMNH admission price, Broadway, High Line, Chelsea Market, Central Park, Brooklyn Bridge, and all social-link handles.
+
+**Merge handling:** `origin/main` (`012c720`, PRs #26–#28) conflicted with this branch in `COORDINATION.md`, `build_site.py`, `site_data/framework.json`, and generated `docs/`. Resolution: took `main`'s versions of the shared files and reapplied only this session's Met-wording changes and the `activities.json` Met row, asserting that each old string matched exactly once. `docs/` was regenerated from the merged sources. No other session's entries, flags, or data were removed.
+
+**Full record:** `audit_9fb67eb1/verification_2026-11-27.json` (F-32 entry removed from it; see the correction above).
