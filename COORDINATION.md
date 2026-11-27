@@ -1041,3 +1041,10 @@ Each row below is an official URL fetched on 2026-11-27, and what the fetch show
 - Latest integrated canonical state: **38 flags, 27 questions, 21 requirements, 12 activity candidates (8 VERIFIED and 4 PARTIAL), 77 source-ledger rows (75 official, one trusted aggregator, one secondary/flagged), and $2,980.98 across 10 priced budget lines**. The count differences from earlier notes are due to later upstream re-verification and this session's Broadway flag; this entry supersedes all earlier interim counts.
 - Final checks on the integrated tree: `python3 -m py_compile build_site.py`; `python3 build_site.py` (12 pages, all build checks passed); `python3 audit_61867d90/verify_site_integrity.py` (22 HTML pages, 386 desktop/mobile table rows, 339 unique HTTPS URLs, 0 duplicate Source columns, $2,980.98 subtotal, 0 errors); `git diff --check`; all `site_data/*.json` parse.
 - PR #34 was created before the latest main update and must be updated/rechecked after this rebase. No merge or deployment is recorded here. Remaining open items: Met hours (F-31); AMNH/High Line current official detail recheck (F-41); Broadway production (F-33); airfare origin/checkout (F-15); dynamic hotel rates (F-38); post-ceremony MICHELIN list refresh (F-01).
+
+### 2026-11-27 · `arena-bfb2c10c` · PR #34 merged and Pages built
+
+- **Pull request:** https://github.com/kanlerxz87-cyber/NYFun1/pull/34 (`arena/bfb2c10c-nyfun1` → `main`). After rebasing on `643c0b4` and force-with-lease updating this session branch, PR #34 was merged with a merge commit at `2026-11-27T17:38:36Z`.
+- **Merge commit:** `030bc319e72113fe1da8d76270686f82d10f17a2`.
+- **GitHub Pages:** deployment run `46043445083` completed successfully (build, report-build-status, and deploy all passed). Pages API reports `status: built`, `error: null`, commit `030bc319e72113fe1da8d76270686f82d10f17a2` at `2026-11-27T17:38:59Z`.
+- **Post-merge repository state:** rebased this session branch onto the merge commit before recording this publication note; no site data or generated page content changed in this follow-up.
