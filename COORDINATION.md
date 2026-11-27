@@ -1021,3 +1021,15 @@ Each row below is an official URL fetched on 2026-11-27, and what the fetch show
 - **GitHub Pages:** build for `f4c5353` reported `status: built`, `error: null`. Live check: `https://kanlerxz87-cyber.github.io/NYFun1/docs/requirements.html` returns the new 21-row table.
 - **Cache note for reviewers:** the un-parameterised `…/NYFun1/docs/index.html` URL returned a stale copy of the Overview after the deploy; the same URL with a query string returned the new build (`24 of 37 earlier flags`, corrected Met wording). Check with a query string if a page looks out of date.
 - **Follow-up:** a small PR (F-43 detail now also records the Overview's third Instagram figure, `45`) records these publication results. Its number and merge are logged below when it lands.
+
+## SESSION CLAIM & COMPLETION — 2026-11-27 UTC — `arena-bfb2c10c` (`arena/bfb2c10c-nyfun1`)
+
+**Scope:** reconcile stale pricing, activity verification, source labeling, summary/requirement coverage, and generated pages; preserve concurrent upstream work. Branch is fixed by Arena. No other session's claims or data were edited intentionally.
+
+**Integrated corrections:**
+- Keep activity rows honest: The Met (F-31) hours and Broadway (F-33) show schedule/price remain partial; don't claim a secondary-reported Met Wednesday closure as officially verified. The Tuesday plan is a tentative placeholder; Broadway availability depends on production selection.
+- Exclude airfare from the priced subtotal because the origin and two-seat checkout are unconfirmed; $2,980.98 is the subtotal of 10 priced lines in the integrated 2026-11-27 tree.
+- Correct topic-specific question links, expose checklist coverage, and align generated statements with canonical data. Reconcile README counts and source ledger attribution.
+- Preserve the official MICHELIN Media ceremony date confirmation; only the post-event roster refresh remains open.
+
+**Latest upstream integration note:** `origin/main` advanced from `a5250cb` to `643c0b4` (PR #33) while PR #34 was open. The first PR conflict report was resolved by rebasing onto `origin/main`. Upstream now includes the independent `arena-093628c2` audit and its data corrections (including flags F-38 through F-43, 21 requirements, 12 generated pages); these supersede this session's earlier baseline counts. Re-audit and adapt the unique corrections against the latest canonical JSON rather than restoring old counts or replacing upstream records. This note records the upstream state; final verification/counts will be added after the replay completes.
