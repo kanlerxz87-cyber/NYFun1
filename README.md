@@ -35,12 +35,12 @@ Anything unverified is on [the Flagged page](docs/flagged.html). Anything undeci
 | [Overview](docs/index.html) | The decision, in six numbered points: hotel ($1,158.98 all-in), dates (15–22 Feb 2027), reconciled stars (69 live vs 72 ceremony), budget subtotal ($4,246.98), what is open |
 | [Hotels](docs/hotels.html) | 7 hotels × 7 nights with verified street addresses, direct Booking URLs, tax/resort-fee parity, 5-week seasonal table, shifted Feb starts & 22-star reach |
 | [MICHELIN](docs/restaurants.html) | 72 Nov 2025 ceremony entries reconciled to 69 live NYC stars (5/14/50), 22 verified Manhattan menus/hours/coordinates, 3 spatial clusters, Green Star / Bib separation |
-| [Activities](docs/activities.html) | 11 activities with verified 2026-11-26 hours (incl. Met Wed closure & High Line winter hours), out-of-state pricing (incl. AMNH $37), distances & reviews |
+| [Activities](docs/activities.html) | 12 activities with verified 2026-11-26 hours (incl. Met Wed closure & High Line winter hours), out-of-state pricing (incl. AMNH $37), distances & reviews |
 | [Itinerary](docs/itinerary.html) | Day-by-day for 7 nights, plus 4-night and 14-night variants (routed around Met Wed & 9/11 Museum hours), booking countdown, NWS Feb/Mar climate normals |
 | [Budget](docs/budget.html) | $4,246.98 verified subtotal across 11 priced lines + unpriced casual dining, verified dinner swaps & wine pairings |
 | [Questions](docs/questions.html) | 27 decisions: research items resolved vs traveller preferences & date-blocked official 14 Dec 2026 check (MICHELIN press site; ceremony flag resolved 2026-11-26) |
 | [Suggestions](docs/suggestions.html) | 12 structured improvements (8 implemented on 2026-11-26, 4 operational checks pending) |
-| [Flagged](docs/flagged.html) | 26 tracked items (resolved, documented, and live open flags) with primary sources |
+| [Flagged](docs/flagged.html) | 31 tracked items (resolved, documented, and live open flags) with primary sources |
 | [Method & sources](docs/method.html) | Every primary source URL, final independent audit ledger, lexical external URL audit, scraping limits, travel model formula, and build assertions |
 | [Repo review](docs/repo-review.html) | Verification inventory, audit findings, orphan cleanup, and reproduction guide |
 
@@ -83,9 +83,9 @@ Everything the site renders lives in `site_data/`, one file per concern. Edit th
 | `michelin_roster.json` | 72 Nov 2025 ceremony entries reconciled with `live_nyc_status` to 69 active NYC stars (`5` 3★ / `14` 2★ / `50` 1★), plus 76 Bib Gourmand, 224 Selected, 4 Green Stars |
 | `restaurant_details.json` | 22 verified Manhattan starred venues + Selected Green Star `One White Street`: full Mon–Sun hours, menu prices or Tock deposit floors, official URLs, verified building coordinates |
 | `hotels.json` | 7 hotels: verified street addresses, direct Booking `/hotel/us/...` URLs, pre-tax & NYC-tax all-in 7-night totals, resort-fee parity, 5-week seasonal comparison, shifted Feb starts, 22-star reach |
-| `activities.json` | 11 activities: verified 2026-11-26 hours (incl. Met Wed closure, High Line winter hours, 9/11 18:00 last entry), out-of-state prices (incl. AMNH $37), distances from `538 W 58th St` |
+| `activities.json` | 12 activities: verified 2026-11-26 hours (incl. Met Wed closure, High Line winter hours, 9/11 18:00 last entry), out-of-state prices (incl. AMNH $37), distances from `538 W 58th St` |
 | `social.json` | Social & video links across 28 venue/activity keys: 24 official Instagram handles (incl. `@cotekoreansteakhouse`), 23 YouTube reviews, 4 TikTok tasting videos, honest search fallbacks |
-| `framework.json` | Trip dates, OPM/NYCPS holidays, NWS Central Park climate normals, $4,246.98 budget subtotal, 7/4/14-night itineraries (Tue Met / Wed MoMA), 29 flags, 27 questions, 12 suggestions |
+| `framework.json` | Trip dates, OPM/NYCPS holidays, NWS Central Park climate normals, $4,246.98 budget subtotal, 7/4/14-night itineraries (Tue Met / Wed MoMA), 31 flags, 27 questions, 12 suggestions |
 | `independent_verification.json` | Final session’s 60 independent official-source reads, corrections, and irregularities; rendered on the Method page |
 
 ### Two fields to understand before editing
