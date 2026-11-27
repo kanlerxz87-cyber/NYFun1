@@ -955,3 +955,12 @@ No other session holds a live claim on these files. Open PR #16 (`arena/bd056789
 **Merge handling:** `origin/main` (`012c720`, PRs #26–#28) conflicted with this branch in `COORDINATION.md`, `build_site.py`, `site_data/framework.json`, and generated `docs/`. Resolution: took `main`'s versions of the shared files and reapplied only this session's Met-wording changes and the `activities.json` Met row, asserting that each old string matched exactly once. `docs/` was regenerated from the merged sources. No other session's entries, flags, or data were removed.
 
 **Full record:** `audit_9fb67eb1/verification_2026-11-27.json` (F-32 entry removed from it; see the correction above).
+
+### 2026-11-27 · `arena-9fb67eb1` · PR #29 merged & GitHub Pages verified (S9F-3 done)
+
+- **Pull request:** https://github.com/kanlerxz87-cyber/NYFun1/pull/29 (`arena/9fb67eb1-nyfun1` → `main`)
+- **Merged:** `2026-11-27T17:29:32Z`, merge commit `253a0fcc1c5ffa03953e065baa13ec9ced6ede9a` into `main`. The first merge attempt failed (conflicts with PRs #26–#28, then PR #30). Each time, `origin/main` was merged into the branch, the conflicts were resolved as logged above, the build was re-run, and the merge was retried. No other session's entries or flags were removed.
+- **Build before merge:** `python3 build_site.py` → 11 pages, all build checks passed; `python3 audit_61867d90/verify_site_integrity.py` → 0 errors (21 HTML pages, 357 table rows, 336 HTTPS URLs, 0 duplicate Source columns, budget subtotal $4,246.98).
+- **GitHub Pages:** build `1409316566` for commit `253a0fc` reported `status: built`, `error: null`.
+- **Live check:** the merged `docs/activities.html` contains the F-31 Met wording and the Top of the Rock 11:10 PM last entry; `docs/flagged.html` on `main` contains the revised F-09 wording. (A cached fetch of the live flagged page briefly showed the pre-merge F-09 text. The committed file and the Pages build on `253a0fc` are correct.)
+- **Sandbox limit:** outbound access from this sandbox excludes `github.io`, so the live site was read through the fetch tool rather than curl.
