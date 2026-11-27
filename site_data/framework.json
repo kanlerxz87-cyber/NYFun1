@@ -85,7 +85,7 @@
   {
    "requirement": "Days open, hours and exceptions per row",
    "status": "MET",
-   "how": "Verified for all 22 detailed MICHELIN venues (plus One White Street) and all 11 activities (including The Met Wednesday closure & High Line winter hours)"
+   "how": "Verified for all 22 detailed MICHELIN venues (plus One White Street) and all 11 activities (The Met hours unconfirmed, F-31; High Line winter hours)"
   },
   {
    "requirement": "Link to each restaurant/activity",
@@ -218,7 +218,7 @@
     {
      "date": "Tue 16 Feb",
      "day": "Uptown (The Met + Park)",
-     "plan": "The Met Fifth Avenue (open Tue 10:00-17:00 — scheduled Tuesday because The Met is CLOSED Wednesdays!), followed by Central Park walk south back to 59th St. Optional dinner: Jean-Georges (2-star, steps away, 6-course $298 pp) or Daniel (1-star, open Tue, $195 pp)."
+     "plan": "The Met Fifth Avenue (scheduled Tuesday; Wednesday closure is reported but unconfirmed, F-31), followed by Central Park walk south back to 59th St. Optional dinner: Jean-Georges (2-star, steps away, 6-course $298 pp) or Daniel (1-star, open Tue, $195 pp)."
     },
     {
      "date": "Wed 17 Feb",
@@ -264,7 +264,7 @@
     {
      "date": "Tue 16 Feb",
      "day": "Uptown Museums",
-     "plan": "The Met Fifth Avenue (open Tue 10:00-17:00; closed Wed!) + Central Park walk."
+     "plan": "The Met Fifth Avenue (scheduled Tue; Wednesday closure reported, F-31) + Central Park walk."
     },
     {
      "date": "Wed 17 Feb",
@@ -277,7 +277,7 @@
      "plan": "Le Bernardin lunch ($142 pp) or early Gabriel Kreuther Pre-Theatre ($155 pp) / Tasting ($325 pp), then depart."
     }
    ],
-   "note": "Fits 15-18 Feb cleanly while respecting The Met's Wednesday closure and 9/11 Museum's Wednesday-Monday schedule."
+   "note": "Fits 15-18 Feb cleanly while respecting The Met's reported Wednesday closure (F-31) and 9/11 Museum's Wednesday-Monday schedule."
   },
   {
    "id": "fourteen",
@@ -374,9 +374,9 @@
    "id": "F-09",
    "severity": "LOW",
    "title": "RESOLVED 2026-11-26: Hours & pricing verified for The Met, AMNH, High Line, Chelsea Market & Statue of Liberty",
-   "detail": "All 5 previously partial/blank activities resolved: The Met Sun-Tue & Thu 10-17, Fri-Sat 10-21, CLOSED WEDNESDAYS (itinerary updated!); AMNH $37 pp out-of-state; High Line Winter Dec 1-Mar 31 07:00-20:00; Chelsea Market 07:00-22:00 daily; Statue of Liberty 09:00-16:30 (last entry 15:30). 9/11 Museum last entry corrected to 18:00.",
+   "detail": "All 5 previously partial/blank activities resolved: The Met hours left unconfirmed on the official page (F-31); itinerary routed off Wednesdays; AMNH $37 pp out-of-state; High Line Winter Dec 1-Mar 31 07:00-20:00; Chelsea Market 07:00-22:00 daily; Statue of Liberty 09:00-16:30 (last entry 15:30). 9/11 Museum last entry corrected to 18:00.",
    "source": "https://www.metmuseum.org/plan-your-visit",
-   "settle_by": "Done; Tue/Wed swapped on both 7-night and 4-night itineraries so The Met never falls on Wednesday",
+   "settle_by": "Routing done (Tue/Wed swapped on 7-night and 4-night itineraries); Met hours confirmation open (F-31)",
    "status": "Resolved"
   },
   {
@@ -567,6 +567,24 @@
    "source": "https://www.jfkairport.com/transportation/airtrain",
    "settle_by": "Tap ONE card twice at AirTrain JFK ($13.25), then TWO separate cards/phones on MTA subways ($35 cap each)",
    "status": "Documented"
+  },
+  {
+   "id": "F-31",
+   "severity": "MEDIUM",
+   "title": "The Met (Fifth Avenue) hours could not be confirmed on an official page; Wednesday closure is secondary-source only",
+   "detail": "Verification 2026-11-27: https://www.metmuseum.org/plan-your-visit was read and confirms adult general admission $30 and NY-resident pay-what-you-wish. Its hours table was not returned by the fetch tool, and the hours sub-page tried (metmuseum.org/visit/plan-your-visit/hours) returned an error. Secondary sites (metropolitan.museum, hourslocator.com, what2book.com) report Sun-Tue & Thu 10-17, Fri-Sat 10-21, closed Wednesdays. The row was previously marked VERIFIED; it is now PARTIAL and its hours cell is blank. Itinerary routing keeps the Met off Wednesdays until confirmed.",
+   "source": "https://www.metmuseum.org/plan-your-visit",
+   "settle_by": "Confirm hours on metmuseum.org before booking, including the Wednesday closure and any Friday/Saturday late openings.",
+   "status": "Open"
+  },
+  {
+   "id": "F-32",
+   "severity": "LOW",
+   "title": "Top of the Rock last-entry time (~23:10) is not stated on the official page",
+   "detail": "Verification 2026-11-27: https://www.rockefellercenter.com/tickets/top-of-the-rock-observation-deck/ states OPEN 8 AM - 12 AM and 'Timed Admission ... From $42' (a floor that varies by date). It does not state a last-entry time. The earlier '~23:10' value was removed from the hours cell because the official page read does not contain it.",
+   "source": "https://www.rockefellercenter.com/tickets/top-of-the-rock-observation-deck/",
+   "settle_by": "Read the last timed slot on the Top of the Rock booking page for the chosen date before booking.",
+   "status": "Open"
   }
  ],
  "questions": [
@@ -662,8 +680,8 @@
    "id": "Q-09",
    "question": "What are The Met's, AMNH's, High Line's, Chelsea Market's and Statue of Liberty's exact hours/prices?",
    "why_it_blocks": "Anchor daytime activities needed verified closure days and ticket totals.",
-   "have": "RESOLVED 2026-11-26: The Met closed Wednesdays (Sun-Tue & Thu 10-17, Fri-Sat 10-21); AMNH $37 pp; High Line Winter 07-20; Chelsea Market 07-22; Statue of Liberty 09-16:30 (last entry 15:30).",
-   "missing": "Nothing for these 5 venues — itinerary swapped Tue/Wed to avoid Wednesday Met closure!",
+   "have": "2026-11-26 secondary sources: The Met closed Wednesdays (Sun-Tue & Thu 10-17, Fri-Sat 10-21); not confirmed on an official page on 2026-11-27 (F-31); AMNH $37 pp; High Line Winter 07-20; Chelsea Market 07-22; Statue of Liberty 09-16:30 (last entry 15:30).",
+   "missing": "Nothing for these 5 venues — itinerary swapped Tue/Wed to avoid the reported Wednesday Met closure (F-31).",
    "how_to_discover": "Done; verified on all 5 official websites.",
    "owner": "research",
    "blocks": "Itinerary",

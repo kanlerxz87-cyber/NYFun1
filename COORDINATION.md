@@ -826,6 +826,30 @@ branch existed — PRs #1–#10 were merged/closed.
 
 | Task ID | Task | Scope (files) | Owner | Status | Updated |
 |---|---|---|---|---|---|
-| S9F-1 | Repo review: re-read `COORDINATION.md`, `README.md`, `site_data/*.json`, and confirm the live Pages site and build still work | `audit_9fb67eb1/**`, `COORDINATION.md` | `arena-9fb67eb1` | in progress | 2026-11-27 |
-| S9F-2 | Independent official-source spot re-verification (2026-11-27) of hours, prices, and star/award claims; results logged, corrections only where an official source contradicts the data | `audit_9fb67eb1/verification_2026-11-27.json`, `COORDINATION.md` | `arena-9fb67eb1` | in progress | 2026-11-27 |
-| S9F-3 | Publish the re-verification and open irregularities on the Flagged page; open PR to `main`, merge without waiting, confirm Pages deploy | `audit_9fb67eb1/**`, `COORDINATION.md` | `arena-9fb67eb1` | unclaimed | 2026-11-27 |
+| S9F-1 | Repo review: re-read `COORDINATION.md`, `README.md`, `site_data/*.json`, and confirm the live Pages site and build still work | `audit_9fb67eb1/**`, `COORDINATION.md` | `arena-9fb67eb1` | done | 2026-11-27 |
+| S9F-2 | Independent official-source spot re-verification (2026-11-27) of hours, prices, and star/award claims; results logged, corrections only where an official source contradicts the data | `audit_9fb67eb1/verification_2026-11-27.json`, `COORDINATION.md` | `arena-9fb67eb1` | done (partial scope, see log) | 2026-11-27 |
+| S9F-3 | Publish the re-verification and open irregularities on the Flagged page; open PR to `main`, merge without waiting, confirm Pages deploy | `audit_9fb67eb1/**`, `COORDINATION.md`, `site_data/activities.json`, `site_data/framework.json`, `build_site.py` (wording only) | `arena-9fb67eb1` | in progress | 2026-11-27 |
+
+### 2026-11-27 · `arena-9fb67eb1` · Re-verification log (S9F-1 / S9F-2)
+
+**Official sources read this session (all fetched 2026-11-27):**
+- MICHELIN ceremony article (18 Nov 2025): https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025 — counted line by line: **5 / 15 / 52** star entries and **4 Green Stars**. MATCHES the roster's 72 ceremony entries.
+- NPS Statue of Liberty hours: https://www.nps.gov/stli/planyourvisit/hours.htm — Every Day 9:00 AM-4:30 PM; last statue entrance 3:30 PM. MATCHES `activities.json`. The NPS FAQ conflict remains open as F-26.
+- MoMA: https://www.moma.org/visit/ — 10:30-5:30 daily, Friday 10:30-8:30; $30 adult. MATCHES.
+- The Met: https://www.metmuseum.org/plan-your-visit — $30 adult; NY/NJ/CT pay-what-you-wish. Price MATCHES. **Hours NOT retrievable from the official page.**
+- 9/11 Memorial & Museum: https://www.911memorial.org/visit/visit-museum-1 — 9 a.m.-7 p.m. Wed-Mon; $24-$36; last admission 60 min before closing. MATCHES.
+- Top of the Rock: https://www.rockefellercenter.com/tickets/top-of-the-rock-observation-deck/ — OPEN 8 AM-12 AM; From $42. MATCHES; **last-entry time (~23:10) NOT on the page**.
+- AMNH hours: https://www.amnh.org/plan-your-visit/hours — open daily 10 am-5:30 pm (the site's 10:00-17:30 is consistent). AMNH admission price block did not render on the fetch and was NOT re-read.
+- Le Bernardin Chef's Tasting: https://www.le-bernardin.com/accessible/menus/dining-room/chef-s-tasting/ — $350 pp; $530 pp with wine. MATCHES.
+- Gabriel Kreuther dinner menu PDF (11.17.26): https://cdn.prod.website-files.com/69f8cb7ff67007b4842004ce/6afddf36f7cde3e50d030e4c_RGK_DinnerMenu%2011.17.26.pdf — Chef's Tasting Menu $325 pp. MATCHES. The PDF is hosted on a Webflow CDN.
+
+**Corrections made (the official page did not support the stored value):**
+1. The Met hours and Wednesday closure: changed from VERIFIED to PARTIAL; hours cell blanked; wording in the index, activities, itinerary, and flagged pages changed from fact to "reported by secondary sources, unconfirmed". The itinerary still routes the Met to a Tuesday. **Flag F-31 (Open).**
+2. Top of the Rock last entry (~23:10): removed from the hours cell; the official hours are 08:00-24:00. **Flag F-32 (Open).**
+
+**Not re-verified this session (carried from 2026-11-26; re-read before booking):** the 69 live NYC star count, all 22 Manhattan venue hours, all 7 hotel prices (dynamic Booking.com rates), AMNH admission price, Broadway, High Line, Chelsea Market, Central Park, Brooklyn Bridge, and all social-link handles.
+
+**Irregularities for review:** F-31, F-32 (new); F-26 (existing, unchanged). Full record: `audit_9fb67eb1/verification_2026-11-27.json`.
+
+**Open PR note:** PR #16 (`arena/bd056789-nyfun1`, T15) is still open and edits `site_data/` and `docs/`. This session's changes to `activities.json`, `framework.json`, and `build_site.py` may conflict with it. Whichever PR merges second needs a rebase. This session did not touch PR #16's branch.
+

@@ -341,8 +341,7 @@ pick with breakfast is <strong>Hyatt Place Chelsea</strong> ({money(hyatt['all_i
 windows</strong> across the entire brief range (Week 2 rises +3.6%; March weeks jump +26% to +39%).
 4-night and 14-night variants remain ready on the <a href="itinerary.html">Itinerary page</a>.</p>
 <p class="hint">Verified against OPM &amp; NYCPS calendars: Mon 15 Feb 2027 is Washington's Birthday and
-15–19 Feb is NYC Public Schools Midwinter Recess — book timed museums early. <strong>The Met is closed
-Wednesdays</strong>, so our itinerary routes Uptown/The Met on Tuesday 16 Feb and MoMA on Wednesday 17 Feb.</p>
+15–19 Feb is NYC Public Schools Midwinter Recess — book timed museums early. <strong>The Met's Wednesday closure is reported by secondary sources and not yet confirmed on metmuseum.org (F-31)</strong>, so our itinerary routes Uptown/The Met on Tuesday 16 Feb and MoMA on Wednesday 17 Feb.</p>
 </div>
 </div>
 
@@ -399,8 +398,8 @@ plus ~15–20 min ferry crossing (~62–67 min door-to-island; harbour wind can 
 <div class="grid three">
 <div class="card"><h3><a href="hotels.html">Hotels</a></h3><p class="small">7 hotels w/ verified street addresses, 5-week seasonal table, resort fees, all-in tax math, and reach across 22 stars.</p></div>
 <div class="card"><h3><a href="restaurants.html">MICHELIN</a></h3><p class="small">72 ceremony / 69 live NYC reconciled roster, 22 detailed menus &amp; hours, cluster analysis, and verified video links.</p></div>
-<div class="card"><h3><a href="activities.html">Activities</a></h3><p class="small">11 activities with verified 2026-11-26 hours (incl. Met Wed closure &amp; High Line winter schedule), prices &amp; reviews.</p></div>
-<div class="card"><h3><a href="itinerary.html">Itinerary</a></h3><p class="small">4-, 7- &amp; 14-night plans fixed for The Met Wed closure, NWS Central Park Feb climate normals &amp; booking timeline.</p></div>
+<div class="card"><h3><a href="activities.html">Activities</a></h3><p class="small">11 activities with verified 2026-11-26 hours (The Met hours unconfirmed, see F-31; High Line winter schedule), prices &amp; reviews.</p></div>
+<div class="card"><h3><a href="itinerary.html">Itinerary</a></h3><p class="small">4-, 7- &amp; 14-night plans routed around The Met's reported Wednesday closure (F-31), NWS Central Park Feb climate normals &amp; booking timeline.</p></div>
 <div class="card"><h3><a href="budget.html">Budget</a></h3><p class="small">Every line item for two adults with exact tax math and lower-cost Michelin alternatives.</p></div>
 <div class="card"><h3><a href="questions.html">Questions</a></h3><p class="small">{len(FR['questions'])} decisions tracked (research questions resolved; traveller choices ready).</p></div>
 <div class="card"><h3><a href="suggestions.html">Suggestions</a></h3><p class="small">{len(FR['suggestions'])} improvements tracked (9 implemented, remaining operational checks queued).</p></div>
@@ -930,12 +929,12 @@ def build_activities():
         ])
     return f"""
 <p class="lede">All {len(ACTS['activities'])} candidate activities verified on official venue/agency websites on 2026-11-26:
-exact winter/2027 hours, closure days (including The Met's Wednesday closure), out-of-state adult prices
+exact winter/2027 hours, closure days (including The Met's reported Wednesday closure, F-31), out-of-state adult prices
 for two, modelled travel times from Fairfield Central Park (538 W 58th St), and direct video/social reviews.</p>
 
 <div class="note"><strong>Free vs paid overview:</strong> Central Park, The High Line (Dec 1–Mar 31 winter
 07:00–20:00), Chelsea Market (07:00–22:00), and Brooklyn Bridge (24h) cost $0. Paid museum/harbor
-highlights: MoMA ($30 pp), The Met ($30 pp, <strong>closed Wednesdays</strong>), AMNH ($37 pp out-of-state),
+highlights: MoMA ($30 pp), The Met ($30 pp; hours and Wednesday closure unconfirmed, F-31), AMNH ($37 pp out-of-state),
 9/11 Museum ($24–$36 pp, last entry 18:00), Top of the Rock (from $42 pp), and Statue of Liberty ferry ($26 pp).</div>
 
 {table(
@@ -955,7 +954,7 @@ highlights: MoMA ($30 pp), The Met ($30 pp, <strong>closed Wednesdays</strong>),
 </ul></div>
 <div class="card"><h3>Can be decided on the day</h3>
 <ul class="tight">
-<li><strong>The Met Fifth Avenue</strong> — Sun–Tue &amp; Thu 10–17, Fri–Sat 10–21, <strong>closed Wednesdays</strong>.</li>
+<li><strong>The Met Fifth Avenue</strong> — official hours not confirmed on metmuseum.org (F-31). Secondary sites report Sun–Tue &amp; Thu 10–17, Fri–Sat 10–21, <strong>closed Wednesdays</strong>; confirm before booking.</li>
 <li><strong>Central Park, High Line, Brooklyn Bridge</strong> — free entry, no tickets.</li>
 <li><strong>Chelsea Market</strong> — free entry (07:00–22:00), pay each food vendor.</li>
 <li><strong>Broadway</strong> — choose show first on broadway.org; most shows are dark Mondays.</li>
@@ -1014,7 +1013,7 @@ engineered around actual museum closure days, winter hours, holiday crowds, and 
 
 <div class="note"><strong>Scheduling rules enforced:</strong>
 <ul class="tight">
-<li><strong>The Met is CLOSED every Wednesday</strong> — placed on <strong>Tue 16 Feb</strong> across both the 7-night and 4-night plans (never Wed 17 Feb!).</li>
+<li><strong>The Met: Wednesday closure reported by secondary sources, not yet confirmed on metmuseum.org (F-31)</strong> — placed on <strong>Tue 16 Feb</strong> across both the 7-night and 4-night plans (never Wed 17 Feb!).</li>
 <li><strong>9/11 Museum is open Wed–Mon (last entry 18:00; closed most Tuesdays)</strong> — scheduled <strong>Thu 18 Feb</strong> (or Wed 17 on 4-night).</li>
 <li><strong>Most Broadway shows are dark Monday</strong> — Mon 15 Feb arrival stays flexible.</li>
 <li><strong>Sunday-closed vs Sunday-open stars:</strong> Le Bernardin, Gabriel Kreuther, Jean-Georges, Atomix, Aquavit &amp; Dirt Candy close Sundays; <strong>EMP, Jungsik, Per Se, Sushi Sho, The Modern, Saga, Gramercy Tavern, Crown Shy &amp; Cote</strong> all serve Sundays.</li>
@@ -1296,7 +1295,7 @@ the few remaining third-party walls, and the automated integrity checks run on e
 
 <h3>Activities, Transit, Calendar, Climate &amp; Flights</h3>
 <ul class="tight">
-<li>{ext("https://www.moma.org/visit/", "MoMA")} · {ext("https://www.metmuseum.org/plan-your-visit", "The Met (Wed closed)")} · {ext("https://www.amnh.org/plan-your-visit", "AMNH ($37 out-of-state)")} · {ext("https://www.911memorial.org/visit/visit-museum-1", "9/11 Museum (last entry 18:00)")} · {ext("https://www.rockefellercenter.com/tickets/top-of-the-rock-observation-deck/", "Top of the Rock")} · {ext("https://www.nps.gov/stli/planyourvisit/hours.htm", "Statue of Liberty NPS Hours & Fees")} · {ext("https://www.nycgovparks.org/parks/central-park", "Central Park")} · {ext("https://www.thehighline.org/visit/", "High Line Winter Hours")} · {ext("https://www.chelseamarket.com/visit", "Chelsea Market")} · {ext("https://www.nyc.gov/html/dot/html/infrastructure/brooklyn-bridge.shtml", "Brooklyn Bridge DOT")} · {ext("https://www.broadway.org/", "Broadway League")}.</li>
+<li>{ext("https://www.moma.org/visit/", "MoMA")} · {ext("https://www.metmuseum.org/plan-your-visit", "The Met (hours: F-31)")} · {ext("https://www.amnh.org/plan-your-visit", "AMNH ($37 out-of-state)")} · {ext("https://www.911memorial.org/visit/visit-museum-1", "9/11 Museum (last entry 18:00)")} · {ext("https://www.rockefellercenter.com/tickets/top-of-the-rock-observation-deck/", "Top of the Rock")} · {ext("https://www.nps.gov/stli/planyourvisit/hours.htm", "Statue of Liberty NPS Hours & Fees")} · {ext("https://www.nycgovparks.org/parks/central-park", "Central Park")} · {ext("https://www.thehighline.org/visit/", "High Line Winter Hours")} · {ext("https://www.chelseamarket.com/visit", "Chelsea Market")} · {ext("https://www.nyc.gov/html/dot/html/infrastructure/brooklyn-bridge.shtml", "Brooklyn Bridge DOT")} · {ext("https://www.broadway.org/", "Broadway League")}.</li>
 <li>{ext("https://www.mta.info/fares-tolls/subway-bus", "MTA Fares ($3 base, $35 7-day cap)")} · {ext("https://www.opm.gov/policy-data-oversight/pay-leave/federal-holidays/", "OPM 2027 Federal Holidays")} · {ext("https://www.schools.nyc.gov/about-us/news/morning-bell/contentdetails/morning-bell/2026/04/21/2026-27-nycps-calendar-now-available", "NYCPS 2026–2027 Calendar")} · {ext("https://www.weather.gov/media/okx/Climate/CentralPark/nycnormals.pdf", "NWS Central Park 1991–2020 Normals")}.</li>
 <li>{ext("https://www.google.com/travel/flights?q=Flights%20to%20JFK%20from%20AMS%20on%202027-02-15%20through%202027-02-22", "Google Flights AMS–JFK")} · {ext("https://www.kayak.com/flights/AMS-NYC/2027-02-14/2027-02-23?sort=bestflight_a", "KAYAK AMS–NYC")}.</li>
 </ul>
