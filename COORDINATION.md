@@ -815,3 +815,17 @@ branch existed — PRs #1–#10 were merged/closed.
 - **GitHub Pages:** build `1405683018` for commit `1b1d6cf` reported `status: built` (`error: null`) at `2026-11-26T14:18:07Z`.
 - **Live site verification:** fetched back `https://kanlerxz87-cyber.github.io/NYFun1/docs/index.html`, `restaurants.html`, `activities.html`, and `flagged.html` (`200 OK`), confirming all 30 hour-verified starred venues, 21 priced/floor starred venues, 8-row structured Guide-listed table, 12 verified activities, 30 flags, and single clean `Source` columns across all tables.
 - Follow-up commit restores full `d9e88da` `COORDINATION.md` history alongside this session log and aligns dynamic activity count (`12`) and `F-06` deposit-floor note (`Per Se / César / Aquavit`).
+
+---
+
+## SESSION CLAIM — 2026-11-27 (UTC) — `arena-9fb67eb1` (branch `arena/9fb67eb1-nyfun1`)
+
+**Base:** `main` at `28315d8` (PR #24 merged). Branch name is fixed for this session; no other branch is created or pushed.
+
+**Discovery:** `gh pr list --state open` shows one open board PR not from this session: PR #16 (`arena/bd056789-nyfun1`, T15 audit refresh, touches `site_data/`, `docs/`, `build_site.py`). This session does **not** edit those files beyond its claimed scope and will log any conflict with #16 here.
+
+| Task ID | Task | Scope (files) | Owner | Status | Updated |
+|---|---|---|---|---|---|
+| S9F-1 | Repo review: re-read `COORDINATION.md`, `README.md`, `site_data/*.json`, and confirm the live Pages site and build still work | `audit_9fb67eb1/**`, `COORDINATION.md` | `arena-9fb67eb1` | in progress | 2026-11-27 |
+| S9F-2 | Independent official-source spot re-verification (2026-11-27) of hours, prices, and star/award claims; results logged, corrections only where an official source contradicts the data | `audit_9fb67eb1/verification_2026-11-27.json`, `COORDINATION.md` | `arena-9fb67eb1` | in progress | 2026-11-27 |
+| S9F-3 | Publish the re-verification and open irregularities on the Flagged page; open PR to `main`, merge without waiting, confirm Pages deploy | `audit_9fb67eb1/**`, `COORDINATION.md` | `arena-9fb67eb1` | unclaimed | 2026-11-27 |
