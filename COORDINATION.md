@@ -1048,3 +1048,48 @@ Each row below is an official URL fetched on 2026-11-27, and what the fetch show
 - **Merge commit:** `030bc319e72113fe1da8d76270686f82d10f17a2`.
 - **GitHub Pages:** deployment run `46043445083` completed successfully (build, report-build-status, and deploy all passed). Pages API reports `status: built`, `error: null`, commit `030bc319e72113fe1da8d76270686f82d10f17a2` at `2026-11-27T17:38:59Z`.
 - **Post-merge repository state:** rebased this session branch onto the merge commit before recording this publication note; no site data or generated page content changed in this follow-up.
+---
+
+## Session `arena-98a7f510` (2026-11-27) — final integration & re-verification
+
+**Branch:** `arena/98a7f510-nyfun1` (branched from `28315d8`, PR #24 merge into `main`).
+**Scope claimed:** `COORDINATION.md` (append-only), `site_data/*.json` (verification corrections only), `build_site.py` (build-date / defect fixes only), `docs/**` (generated), `index.html`, `README.md` (generated-content alignment only).
+**Status:** S98-1/2 done — re-verifying every table row against official sources, rebuilding, link-checking, then PR → merge → Pages deploy, all without manual input.
+
+| Task ID | Task | Scope | Owner | Status | Updated |
+|---|---|---|---|---|---|
+| S98-1 | Line-by-line re-verification of all site_data rows vs official sources; blank/flag anything unconfirmed | `site_data/*.json`, `COORDINATION.md` | `arena-98a7f510` | done | 2026-11-27 |
+| S98-2 | Rebuild `docs/` + run build checks & independent verifier; fix any defects | `build_site.py`, `docs/**` | `arena-98a7f510` | done | 2026-11-27 |
+| S98-3 | Open PR to `main`, merge without waiting, confirm GitHub Pages deploy, log result | `COORDINATION.md` | `arena-98a7f510` | in progress | 2026-11-27 |
+
+
+### S98-1 — data re-verification: DONE (commit `7e2f900`)
+
+Sources read live 2026-11-27: MICHELIN 1-star NYC list (5 one-star / 14 two-star / 50 three-star = 69, Bib 76, Selected 224, Green 4 — unchanged from 11-26, F-02 stays open); all 7 Booking.com hotel pages with the exact same query params as 11-26; Booking Pestana room tables in English; NYC DOF hotel room-occupancy tax schedule; moma.org/visit; metmuseum.org/index.html; amnh.org/plan-your-visit; 911memorial.org/visit/visit-museum-1; nps.gov/stli fees; jungsik.com/visit; le-bernardin.com Chef's Tasting menu; thehighline.org/visit; one YouTube social URL (Le Bernardin review — public, view count matches stored evidence).
+
+Corrections applied:
+
+1. **All-in hotel totals now use Booking's own tax-inclusive "Gesamt" figures** (they explicitly include taxes & fees). New set: Fairfield **$1,155.48**, Residence FiDi $1,297.59, citizenM $1,302.00, Hyatt Chelsea $1,303.00, Pestana free-cancel $1,387.00 (partner non-ref $1,271.00), Arlo SoHo $1,497.39 (flex $1,979.42), Arlo Midtown King Urban $1,564.57 (flex $2,177.00). The 2026-11-26 derived figures are kept as dated pre-tax snapshots. **F-44 (renumbered from F-31 after merge; main already uses F-31 for the Met hours flag):** the old tax model ($4–$6/night + Arlo $1 tourism) was wrong — DOF official is $2.00 + $1.50 = **$3.50/night** on top of 14.75%; 985.60×1.1475+24.50 = 1,155.48 matches Booking exactly; Arlo non-ref tiers rose ~18% overnight; the 2026-11-26 "withdrawn $1,155.48" correction is superseded (mis-read of the same table).
+2. **F-45 (renumbered from F-32, OPEN):** Pestana English room table now prints "1 large double bed" (17 m²), not queen — flagged against the brief's queen-or-bigger requirement.
+3. Budget: hotel line corrected to $1,155.48; after rebasing onto main's airfare-unpriced budget model the priced subtotal is **$2,977.48** (10 priced lines; the pre-rebase 4,243.48 figure included the airfare proxy main had already removed). independent_verification refreshed (89 source-ledger entries after AMNH dedupe, 5 corrections incl. the reversal, read_on 2026-11-27).
+
+### S98-2 — rebuild & verification: DONE
+
+- `python3 build_site.py` → 11 pages written, **all build checks passed** (row sources, internal links, mobile cards, budget reconciliation $2,977.48).
+- `audit_61867d90/verify_site_integrity.py` → **0 errors** (21 HTML pages, 372 desktop+mobile rows, 338 unique HTTPS external URLs, 0 duplicate Source columns, budget subtotal $2,977.48).
+- **Takeover note:** the verifier still banned `class="v">$1,155.48` from the 2026-11-26 "withdrawn figure" defect; since today's official re-read proves that figure correct, the stale ban was removed with an explanatory comment in `audit_61867d90/verify_site_integrity.py` (owner session arena-61867d90 had already completed its tasks — no live work touched).
+- External URL audit regenerated (0 non-HTTPS, no new fetch failures). Flagged page publishes all 32 flags including F-31/F-32.
+
+### Post-rebase reconciliation (arena-98a7f510)
+
+Main moved 29 commits while S98-1/2 ran (sessions e74ca980, ffbfaf4f, 093628c2, bfb2c10c landed: a requirements page, 12 activities, Met/Broadway/AMNH re-verification flags F-31–F-43, an airfare-unpriced budget model at $2,980.98, and a resolved F-25 via the MICHELIN press release). Resolutions applied on top of the rebase:
+
+- **Flag renumbering:** this session's hotel-fee flag is now **F-44** and the Pestana bed flag **F-45** (main already owns F-31 = Met hours, F-33 = Broadway). All build_site/README/framework references updated.
+- **Budget model:** kept main's airfare-unpriced model; hotel line corrected to the Booking-stated **$1,155.48**, priced subtotal recomputed to **$2,977.48** (= sum of the 10 priced lines).
+- **F-31 RESOLVED:** The Met hours re-read today from metmuseum.org/index.html (closed Wed; Sun–Tue & Thu 10:00–17:00, Fri–Sat 10:00–21:00) — activities.json Met row restored to VERIFIED, itinerary no longer tentative.
+- **F-38 RESOLVED:** Fairfield price block ($1,155.48 incl. tax) and score 7.9/631 re-read live today; `rating` field corrected (8.0 → 7.9).
+- **F-41 narrowed:** AMNH hours ($37/$43/$48, 10:00–17:30) and High Line winter hours (7am–8pm) re-confirmed today; only the AMNH pay-what-you-wish wording stays open.
+- **independent_verification.json:** main's michelinmedia ceremony source merged with this session's 14 new reads; AMNH duplicate deduped → 89 entries, 5 corrections.
+- COORDINATION.md conflict resolved append-only (all session sections kept).
+
+### S98-3 — PR / merge / Pages: see result appended below.

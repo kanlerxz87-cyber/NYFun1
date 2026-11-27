@@ -17,7 +17,7 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(ROOT, "site_data")
 DOCS = os.path.join(ROOT, "docs")
 
-BUILD_DATE = "2026-11-26"
+BUILD_DATE = "2026-11-27"
 
 
 # ---------------------------------------------------------------- helpers
@@ -304,8 +304,9 @@ def build_index():
     n_res_flags = sum(1 for f in FR["flags"] if f.get("status") in ("Resolved", "Documented"))
     return f"""
 <p class="lede">A source-linked plan for two adults: one 7-night base in Manhattan (15–22 Feb 2027),
-MICHELIN-starred dinners reachable within the hour, verified 2026-11-26 hotel &amp; menu pricing across
-all five seasonal weeks, and an explicit register of everything open or resolved.</p>
+MICHELIN-starred dinners reachable within the hour, hotel all-in totals re-read live on Booking.com on
+2026-11-27 (menu &amp; activity pricing verified 2026-11-26) across all five seasonal weeks, and an
+explicit register of everything open or resolved.</p>
 
 <div class="kpi">
   <div class="card"><div class="k">Recommended dates</div><div class="v">15–22 Feb 2027</div>
@@ -324,13 +325,15 @@ all five seasonal weeks, and an explicit register of everything open or resolved
 <h3>1 · The decision</h3>
 <p>Book <strong>Fairfield Inn &amp; Suites by Marriott New York Manhattan/Central Park</strong> (538 W 58th St,
 King Room) for <strong>15–22 February 2027</strong> at <strong>{money(rec['total_7n_usd'])} pre-tax /
-{money(rec['all_in_7n_usd'])} derived all-in</strong> on the free-cancellation rate ($0 prepayment, cancel free
+{money(rec['all_in_7n_usd'])} all-in as printed by Booking.com (incl. taxes &amp; fees, read 2026-11-27)</strong>
+on the free-cancellation rate ($0 prepayment, cancel free
 until 12 Feb 2027). It is the cheapest all-in option of all seven shortlisted hotels, charges zero resort
 fee, includes American breakfast for two, and puts Columbus Circle express lines (A/B/C/D/1) a block away.</p>
-<p class="hint"><strong>Why parity matters:</strong> Booking.com excludes NY taxes (14.75% + $4–$6/night)
-on all seven quotes. Even Pestana's non-refundable Partner Offer ({money(pestana.get('partner_nonref_all_in_usd'))} all-in,
-no breakfast) and Arlo SoHo's non-refundable Black Friday rate ({money(arlo['all_in_7n_usd'])} all-in w/ $37/nt resort
-fee, no breakfast) cost more than Fairfield's refundable, breakfast-included total. Next-best free-cancel
+<p class="hint"><strong>Why parity matters:</strong> Booking.com's 2026-11-27 room tables now print
+tax-inclusive totals directly; the official NYC rate is 14.75% + $3.50/night fixed fees
+($2.00 room fee + $1.50 NYS unit fee, verified on nyc.gov). Even Pestana's non-refundable Partner Offer ({money(pestana.get('partner_nonref_all_in_usd'))} all-in,
+no breakfast) and Arlo SoHo's non-refundable Black Friday rate ({money(arlo['all_in_7n_usd'])} all-in
+with a $37/nt resort fee, no breakfast) cost more than Fairfield's refundable, breakfast-included total. Next-best free-cancel
 pick with breakfast is <strong>Hyatt Place Chelsea</strong> ({money(hyatt['all_in_7n_usd'])} all-in, #1 reach at 22/22 stars within 5 km).</p>
 </div>
 <div class="card">
@@ -340,7 +343,7 @@ pick with breakfast is <strong>Hyatt Place Chelsea</strong> ({money(hyatt['all_i
 windows</strong> across the entire brief range (Week 2 rises +3.6%; March weeks jump +26% to +39%).
 4-night and 14-night variants remain ready on the <a href="itinerary.html">Itinerary page</a>.</p>
 <p class="hint">Verified against OPM &amp; NYCPS calendars: Mon 15 Feb 2027 is Washington's Birthday and
-15–19 Feb is NYC Public Schools Midwinter Recess — book timed museums early. <strong>The Met hours and reported Wednesday closure are unconfirmed on metmuseum.org (F-31)</strong>; Tue 16 Feb is only a tentative placeholder pending the official schedule.</p>
+15–19 Feb is NYC Public Schools Midwinter Recess — book timed museums early. <strong>The Met hours are confirmed from metmuseum.org/index.html (read 2026-11-27): closed Wednesday, Sun–Tue &amp; Thu 10:00–17:00, Fri–Sat 10:00–21:00 (F-31 resolved)</strong>; Tue 16 Feb is solid for the Met visit.</p>
 </div>
 </div>
 
@@ -375,7 +378,7 @@ plus ~15–20 min ferry crossing (~62–67 min door-to-island; harbour wind can 
 <h3>5 · What is verified, and what remains open</h3>
 <ul class="tight">
 <li><strong>{money(FR["budget"]["verified_subtotal_usd"])} priced subtotal</strong> across the hotel, MTA 7-day cap, paid attractions and two tasting dinners (food only). Airfare is excluded because origin and a two-seat checkout are unconfirmed (F-15).</li>
-<li><strong>{n_hours} starred venues with full verified hours</strong>, <strong>{n_price} with verified menu prices or deposit floors</strong>, and <strong>{sum(1 for a in ACTS['activities'] if a['verification'].startswith('VERIFIED'))} of {len(ACTS['activities'])} activities</strong> with verified hours/entry details; Met, AMNH, High Line and Broadway remain partial (F-31, F-41, F-33).</li>
+<li><strong>{n_hours} starred venues with full verified hours</strong>, <strong>{n_price} with verified menu prices or deposit floors</strong>, and <strong>{sum(1 for a in ACTS['activities'] if a['verification'].startswith('VERIFIED'))} of {len(ACTS['activities'])} activities</strong> with verified hours/entry details; Broadway remains partial (F-33) and the AMNH pay-what-you-wish wording is open (F-41); Met, AMNH hours and High Line winter hours were re-confirmed 2026-11-27.</li>
 <li><strong>{n_ig_total} verified official Instagram accounts</strong>, <strong>{n_yt_rev} verified YouTube video reviews</strong>, and <strong>{n_tt_rev} verified public TikTok tasting videos</strong>.</li>
 <li><strong>{n_res_flags} of {len(FR['flags'])} earlier flags resolved or documented</strong>; {n_open_flags} live items stay <a href="flagged.html">Flagged Open</a> (Jungsik/Tock countdown conflicts, live promo rates, NPS hours disagreement, airline 2-seat checkout).</li>
 </ul>
@@ -398,8 +401,8 @@ plus ~15–20 min ferry crossing (~62–67 min door-to-island; harbour wind can 
 <div class="card"><h3><a href="requirements.html">Requirements</a></h3><p class="small">Every requirement from the brief, its status, the reason, its source and related flag.</p></div>
 <div class="card"><h3><a href="hotels.html">Hotels</a></h3><p class="small">7 hotels w/ verified street addresses, 5-week seasonal table, resort fees, all-in tax math, and reach across 22 stars.</p></div>
 <div class="card"><h3><a href="restaurants.html">MICHELIN</a></h3><p class="small">72 ceremony / 69 live NYC reconciled roster, 22 detailed menus &amp; hours, cluster analysis, and verified video links.</p></div>
-<div class="card"><h3><a href="activities.html">Activities</a></h3><p class="small">12 activities: {sum(1 for a in ACTS['activities'] if a['verification'].startswith('VERIFIED'))} with verified hours/entry details; The Met (F-31), AMNH and High Line (F-41), and Broadway (F-33) remain partial.</p></div>
-<div class="card"><h3><a href="itinerary.html">Itinerary</a></h3><p class="small">4-, 7- &amp; 14-night plans with a tentative Met visit pending official hours (F-31), NWS Central Park Feb climate normals &amp; booking timeline.</p></div>
+<div class="card"><h3><a href="activities.html">Activities</a></h3><p class="small">12 activities: {sum(1 for a in ACTS['activities'] if a['verification'].startswith('VERIFIED'))} with verified hours/entry details; Broadway (F-33) remains partial; Met, AMNH and High Line hours were re-confirmed 2026-11-27 (F-31 resolved, F-41 narrowed).</p></div>
+<div class="card"><h3><a href="itinerary.html">Itinerary</a></h3><p class="small">4-, 7- &amp; 14-night plans with the Met visit confirmed for Tue 16 Feb (hours verified 2026-11-27, F-31 resolved), NWS Central Park Feb climate normals &amp; booking timeline.</p></div>
 <div class="card"><h3><a href="budget.html">Budget</a></h3><p class="small">Every line item for two adults with exact tax math and lower-cost Michelin alternatives.</p></div>
 <div class="card"><h3><a href="questions.html">Questions</a></h3><p class="small">{len(FR['questions'])} decisions tracked (research questions resolved; traveller choices ready).</p></div>
 <div class="card"><h3><a href="suggestions.html">Suggestions</a></h3><p class="small">{len(FR['suggestions'])} improvements tracked (9 implemented, remaining operational checks queued).</p></div>
@@ -449,12 +452,14 @@ def build_hotels():
             f'{esc(h["room"])}<div class="small">{esc(h["bed"])} · {esc(h["bath"])}</div>'
             + (f'<div class="small">{esc(h["size"])}</div>' if h["size"] else ""),
             esc(h["breakfast"]),
-            money(h["total_7n_usd"]) + '<div class="small">' + basis + '</div>' + rf
+            money(h["total_7n_usd"]) + '<div class="small">' + basis
+            + (' · read ' + esc(h.get("pretax_read_on", "2026-11-26")) if h.get("total_7n_usd") else '') + '</div>' + rf
             + ('<div class="small">before discount: ' + money(h["list_price_before_discount"]) + '</div>'
                if h["list_price_before_discount"] else ''),
             '<strong>' + money(h["all_in_7n_usd"]) + '</strong>' + partner
-            + '<div class="small">' + pill("documented" if not h["tax_included"] else "verified",
-                                           "derived" if not h["tax_included"] else "as printed") + '</div>',
+            + '<div class="small">' + pill("verified" if h.get("all_in_stated") else "documented",
+                                           "as printed " + esc(h.get("all_in_read_on", "")) if h.get("all_in_stated")
+                                           else "derived") + '</div>',
             f'{esc(h["cancellation"])}<div class="small">guest score {esc(h["rating"])}</div>',
             (ext(h["source_url"], "Booking.com (hotel page)")
              if "/hotel/us/" in h["source_url"]
@@ -499,7 +504,7 @@ def build_hotels():
     rank_table = table(
         ["#", "Hotel", "All-in 7 nights", "Pre-tax printed", "Breakfast", "Cancellation"],
         rrows,
-        caption="Derived all-in = pre-tax x 1.1475 + $4/night ($6/night at Residence Inn FiDi; +$1/night Arlo tourism fee).",
+        caption="All-in = Booking-stated total incl. taxes & fees (read 2026-11-27). Pre-tax = stated snapshot read 2026-11-26. NYC rate 14.75% + $3.50/night fixed fees (nyc.gov).",
         card_labels=["Rank", "Hotel", "All-in", "Pre-tax", "Breakfast", "Cancellation"],
         source_urls=[h["source_url"] for h in ranked])
 
@@ -516,7 +521,7 @@ def build_hotels():
     win_table = table(
         ["7-night window (Mon–Mon)", "Fairfield pre-tax", "Fairfield all-in", "Hyatt Chelsea pre-tax", "Res Inn FiDi pre-tax", "Observation"],
         win_rows,
-        caption="All 5 weekly windows spanning the 15 Feb – 23 Mar 2027 brief range, checked 2026-11-26 on Booking.com.",
+        caption="All 5 weekly windows spanning the 15 Feb – 23 Mar 2027 brief range, pre-tax checked 2026-11-26 on Booking.com; Week-1 all-in re-stated by Booking 2026-11-27 ($1,155.48), other all-ins derived at the official $3.50/night fee.",
         card_labels=["Window", "Fairfield pre-tax", "Fairfield all-in", "Hyatt pre-tax", "FiDi pre-tax", "Note"],
         source_urls=[w.get("source_url") or rec["source_url"] for w in HOTELS["windows_sampled"]])
 
@@ -549,23 +554,26 @@ def build_hotels():
     bs = HOTELS.get("booking_strategy", {})
     return f"""
 <p class="lede">Seven Manhattan 4-star/high-rated hotels, each verified on its direct Booking.com property
-page on 2026-11-26 for a king or queen bed, private attached bathroom, and verified street address for
-<strong>15–22 February 2027 (2 adults)</strong>. Every pre-tax headline is converted to derived all-in cost
-using exact NYC Occupancy Tax math.</p>
+page for a king or queen bed, private attached bathroom, and verified street address for
+<strong>15–22 February 2027 (2 adults)</strong>. All-in totals are Booking's own tax-inclusive statements
+re-read live on <strong>2026-11-27</strong>; the pre-tax column shows the stated "total before taxes"
+snapshots read 2026-11-26 (date printed under each figure).</p>
 
 <div class="warnbox"><strong>Read the tax, resort-fee &amp; cancellation basis before comparing.</strong>
-All seven Booking.com rates on 2026-11-26 exclude New York's 14.75% tax + $4–$6/night city/unit occupancy fees
-(verified on nyc.gov/finance). Arlo SoHo ({money(arlo['total_7n_usd'])}), Arlo Midtown, and Pestana CR7
+The 2026-11-27 room tables state tax-inclusive totals ("includes taxes and charges"); the official NYC rate
+is 14.75% + $3.50/night fixed fees ($2.00 room fee + $1.50 NYS unit fee, verified on nyc.gov 2026-11-27).
+Where a 2026-11-26 pre-tax snapshot no longer composes with the 2026-11-27 stated all-in (Arlo SoHo, Arlo
+Midtown, Residence Inn moved overnight), the stated all-in governs — see flag F-44. Pestana CR7
 ({money(pestana['total_7n_usd'])} free-cancel / {money(pestana.get('partner_nonref_all_in_usd'))} non-ref Partner)
-restrict cancellation or exclude breakfast, whereas <strong>Fairfield Central Park</strong> charges <strong>$0 resort fee</strong>,
-drops to <strong>{money(rec['total_7n_usd'])} pre-tax ({money(rec['all_in_7n_usd'])} all-in)</strong> with American
+restrict cancellation or excludes breakfast, whereas <strong>Fairfield Central Park</strong> charges <strong>$0 resort fee</strong>,
+at <strong>{money(rec['total_7n_usd'])} pre-tax ({money(rec['all_in_7n_usd'])} all-in as printed)</strong> with American
 breakfast for two, $0 prepayment, and free cancellation until 12 Feb 2027.</div>
 
 <h2>Shortlist, 15–22 February 2027 (7 nights, 2 adults)</h2>
 {table(
     ["Hotel &amp; street address", "Room / bed / bathroom", "Breakfast", "Pre-tax printed", "All-in, 7 nights", "Cancellation &amp; score", "Direct Booking URL"],
     rows,
-    caption="Captured 2026-11-26 for check-in 2027-02-15, check-out 2027-02-22 via direct /hotel/us/ pages.",
+        caption="All-in totals read live 2026-11-27; pre-tax snapshots read 2026-11-26 (date shown under each figure) — check-in 2027-02-15, check-out 2027-02-22 via direct /hotel/us/ pages.",
     card_labels=["Hotel", "Room", "Breakfast", "Pre-tax", "All-in 7 nights", "Cancellation", "Source"])}
 
 <h2>Cheapest time to book: all 5 weeks in the brief window (15 Feb – 22 Mar 2027)</h2>
@@ -585,11 +593,11 @@ breakfast for two, $0 prepayment, and free cancellation until 12 Feb 2027.</div>
 {rank_table}
 <div class="note"><strong>Why Fairfield wins.</strong> It has the lowest all-in total of all seven hotels
 ({money(rec['all_in_7n_usd'])}), includes breakfast for two, charges $0 resort fee, requires $0 prepayment,
-allows free cancellation until 12 Feb 2027, and has a king bed + private bath. Arlo SoHo's cheaper-on-paper
-$1,282.33 quote is non-refundable (only 1 reschedule) and excludes breakfast; its flexible free-cancel tier
-jumps to $1,907.72 all-in. citizenM ({money(citm['all_in_7n_usd'])} room-only, highest 8.9 score, 4-min walk
+allows free cancellation until 12 Feb 2027, and has a king bed + private bath. Arlo SoHo's
+{money(arlo['all_in_7n_usd'])} quote (read 2026-11-27) is non-refundable (only 1 reschedule) and excludes breakfast; its flexible free-cancel tier
+jumps to {money(arlo.get('flex_all_in_usd'))} all-in. citizenM ({money(citm['all_in_7n_usd'])} room-only, highest 8.9 score, 4-min walk
 to Le Bernardin) adds $329/week if you buy breakfast. Hyatt Place Chelsea ({money(hyatt['all_in_7n_usd'])} all-in,
-breakfast included, free cancel) is the top alternative if maximum central reach (22/22 stars) outweighs $146/week.</div>
+breakfast included, free cancel) is the top alternative if maximum central reach (22/22 stars) outweighs {money(hyatt['all_in_7n_usd'] - rec['all_in_7n_usd'])}/week.</div>
 
 <h2>Ranking by MICHELIN reach (22 verified Manhattan starred venues)</h2>
 <p class="brief-ask">The brief asks for hotels ranked by MICHELIN restaurants reachable within an hour.
@@ -611,8 +619,9 @@ starred venues (all 5 three-stars, 7 top two-stars, and 10 key one-stars):</p>
 <h2>Remaining limits on the hotel comparison</h2>
 <div class="warnbox">
 <ul class="tight">
-<li><strong>Dynamic promotions:</strong> Several 2026-11-26 rates rely on Black Friday (-30% to -36%) or Bonus (-25%) deals (F-03).</li>
-<li><strong>Hyatt Place Chelsea accessible tier:</strong> The $1,113 pre-tax rate is for the disability-access roll-in shower king (bookable by anyone; standard king may price higher, F-14).</li>
+<li><strong>Dynamic promotions:</strong> Several rates rely on Black Friday (-30% to -36%) or Bonus (-24% to -25%) deals (F-03). All seven all-in totals were re-read live on 2026-11-27 (F-44).</li>
+<li><strong>Hyatt Place Chelsea tiers:</strong> On 2026-11-27 both the disability-access roll-in-shower king and the standard king are stated at the same $1,303.00 all-in, so the accessibility tier carries no price premium on these dates (F-14).</li>
+<li><strong>Pestana CR7 bed type:</strong> The Comfort room's English room table says "1 large double bed", not queen — flagged for traveller confirmation against the brief's queen-or-bigger requirement (F-45).</li>
 <li><strong>Reach is Haversine 5 km radius, not full 69-venue GTFS schedules:</strong> See F-05 and Suggestion S-02.</li>
 </ul>
 </div>
@@ -913,7 +922,7 @@ def build_activities():
         cost = (f'{money(a["cost_2_adults_usd"])}<div class="small">for two · {money(a["adult_usd"])} pp</div>'
                 if a["cost_2_adults_usd"] is not None else
                 '<span class="blank">no single official price</span>')
-        hours = esc(a["hours"]) if a["hours"] else f'<span class="blank">not verified — see {"F-31" if a["id"] == "met" else ("F-33" if a["id"] == "broadway" else "F-41")}</span>'
+        hours = esc(a["hours"]) if a["hours"] else f'<span class="blank">not verified — see {"F-33" if a["id"] == "broadway" else "F-41"}</span>'
         days = esc(a["days_open"]) if a["days_open"] else ""
         vk = "verified" if a["verification"].startswith("VERIFIED") else (
             "partial" if a["verification"].startswith("PARTIAL") else "open")
@@ -929,11 +938,11 @@ def build_activities():
         ])
     return f"""
 <p class="lede">Activity candidates reviewed against official venue/agency pages on 2026-11-26 and re-read where noted on 2026-11-27:
-published winter/2027 hours where confirmed, source-dated prices for two, modelled travel times from Fairfield Central Park (538 W 58th St), and direct video/social reviews. Met hours (F-31), AMNH/High Line details (F-41), and Broadway dates (F-33) remain partial.</p>
+published winter/2027 hours where confirmed, source-dated prices for two, modelled travel times from Fairfield Central Park (538 W 58th St), and direct video/social reviews. Met hours were re-confirmed 2026-11-27 (F-31 resolved); the AMNH pay-what-you-wish wording (F-41) and Broadway dates (F-33) remain open.</p>
 
 <div class="note"><strong>Free vs paid overview:</strong> Central Park, The High Line (Dec 1–Mar 31 winter
 07:00–20:00), Chelsea Market (07:00–22:00), and Brooklyn Bridge (24h) cost $0. Paid museum/harbor
-highlights: MoMA ($30 pp), The Met ($30 pp; hours and Wednesday closure unconfirmed, F-31), AMNH ($37 pp out-of-state),
+highlights: MoMA ($30 pp), The Met ($30 pp; hours confirmed 2026-11-27: closed Wed, F-31 resolved), AMNH ($37 pp out-of-state),
 9/11 Museum ($24–$36 pp, last entry 18:00), Top of the Rock (from $42 pp), and Statue of Liberty ferry ($26 pp).</div>
 
 {table(
@@ -953,7 +962,7 @@ highlights: MoMA ($30 pp), The Met ($30 pp; hours and Wednesday closure unconfir
 </ul></div>
 <div class="card"><h3>Can be decided on the day</h3>
 <ul class="tight">
-<li><strong>The Met Fifth Avenue</strong> — hours and days remain blank because they were not confirmed on the official page read 2026-11-27 (F-31); check the official schedule before planning.</li>
+<li><strong>The Met Fifth Avenue</strong> — hours confirmed 2026-11-27 from metmuseum.org/index.html (closed Wednesday; Sun–Tue &amp; Thu 10:00–17:00, Fri–Sat 10:00–21:00), F-31 resolved.</li>
 <li><strong>Central Park, High Line, Brooklyn Bridge</strong> — free entry, no tickets.</li>
 <li><strong>Chelsea Market</strong> — free entry (07:00–22:00), pay each food vendor.</li>
 <li><strong>Broadway</strong> — choose a production first, then verify its official date-specific calendar and two-seat box-office price (F-33).</li>
@@ -1012,7 +1021,7 @@ engineered around actual museum closure days, winter hours, holiday crowds, and 
 
 <div class="note"><strong>Scheduling rules enforced:</strong>
 <ul class="tight">
-<li><strong>The Met hours and reported Wednesday closure remain unconfirmed on its official site (F-31)</strong> — Tue 16 Feb is a tentative placeholder in the 7-night and 4-night plans; recheck before scheduling.</li>
+<li><strong>The Met hours are confirmed on its official site (metmuseum.org/index.html, read 2026-11-27): closed Wednesday (F-31 resolved)</strong> — Tue 16 Feb is confirmed for the Met in the 7-night and 4-night plans.</li>
 <li><strong>9/11 Museum is open Wed–Mon (last entry 18:00; closed most Tuesdays)</strong> — scheduled <strong>Thu 18 Feb</strong> (or Wed 17 on 4-night).</li>
 <li><strong>Broadway availability is production-specific</strong> — Mon 15 Feb arrival stays flexible; verify the selected show's official calendar.</li>
 <li><strong>Sunday-closed vs Sunday-open stars:</strong> Le Bernardin, Gabriel Kreuther, Jean-Georges, Atomix, Aquavit &amp; Dirt Candy close Sundays; <strong>EMP, Jungsik, Per Se, Sushi Sho, The Modern, Saga, Gramercy Tavern, Crown Shy &amp; Cote</strong> all serve Sundays.</li>
@@ -1023,7 +1032,7 @@ engineered around actual museum closure days, winter hours, holiday crowds, and 
 <h2>Booking countdown &amp; release schedule</h2>
 <div class="card">
 <ol class="tight">
-<li><strong>Now (Nov 2026):</strong> Lock Fairfield Central Park ($985.60 pre-tax / $1,158.98 all-in) at $0 prepayment with free cancellation until <strong>2027-02-12</strong>; monitor flight checkout for 2 seats.</li>
+<li><strong>Now (Nov 2026):</strong> Lock Fairfield Central Park ($985.60 pre-tax / $1,155.48 all-in as printed by Booking 2026-11-27) at $0 prepayment with free cancellation until <strong>2027-02-12</strong>; monitor flight checkout for 2 seats.</li>
 <li><strong>After the official 14 Dec 2026 ceremony:</strong> Re-check the MICHELIN Guide NYC 2026 results before confirming the final restaurant list &mdash; the date is confirmed on MICHELIN's own press site (F-01; ceremony-source flag resolved 2026-11-26).</li>
 <li><strong>Now (read 26 Nov 2026):</strong> <strong>Sushi Sho</strong> already sells the travel dates &mdash; Tock states booking through 2027-02-28, next release 2026-12-01 11:00 EST; prepaid $495 pp and the reservation must be confirmed one day ahead. <strong>Eleven Madison Park</strong>'s Resy notice publishes only January (opens Tuesday 1 Dec 2026, 10:00 ET); February's release datetime is not yet posted (Q-27, F-28).</li>
 <li><strong>1 Jan 2027 (15:00 EST):</strong> Monthly release for February at <strong>Atomix</strong> (Tock); re-check EMP's Resy for February's exact datetime (Q-27).</li>
@@ -1091,7 +1100,7 @@ included at Fairfield), wine pairings (adds {money(510, 0)}–{money(1060, 0)} f
 <li><strong>Lower-cost MICHELIN swaps vs Gabriel Kreuther ({money(650, 0)}):</strong> <strong>Cote</strong> 1★ Butcher's Feast {money(168, 0)} (-$482) · <strong>Dirt Candy</strong> 1★ Green Star {money(236, 0)} tip included (-$414) · <strong>One White Street</strong> Green Star {money(290, 0)} (-$360) · <strong>The Modern</strong> 2★ Impressions {money(370, 0)} (-$280).</li>
 <li><strong>Alternative 3★ anchors vs Le Bernardin ({money(700, 0)}):</strong> <strong>Jungsik</strong> {money(670, 0)} · <strong>Eleven Madison Park</strong> Bar {money(510, 0)} / Full {money(770, 0)} · <strong>Sushi Sho</strong> {money(990, 0)} incl. admin.</li>
 <li><strong>Wine pairings:</strong> Le Bernardin {money(1060, 0)} total w/ menu (+$360 over food-only) · Gabriel Kreuther from {money(510, 0)}/couple · Cote {money(220, 0)}/couple · One White Street {money(190, 0)}/couple.</li>
-<li><strong>14-night extension (22 Feb – 1 Mar hotel):</strong> Fairfield Week 2 = {money(1199.14)} all-in (+3.6% vs Week 1), making 14 nights ~{money(2358.12)} all-in.</li>
+<li><strong>14-night extension (22 Feb – 1 Mar hotel):</strong> Fairfield Week 2 = {money(1195.64)} all-in (+3.6% vs Week 1, derived at the official $3.50/night fee), making 14 nights ~{money(2351.12)} all-in.</li>
 </ul>
 </div>
 
@@ -1160,9 +1169,9 @@ def build_questions():
 
 <h2>Key open decisions for the traveller</h2>
 <div class="grid two">
-<div class="card"><h3>Q-01 · Length: 4, 7 or 14 nights?</h3><p class="small">Week 1 ($1,158.98) and Week 2 ($1,199.14) are both verified at Fairfield Central Park.</p></div>
+<div class="card"><h3>Q-01 · Length: 4, 7 or 14 nights?</h3><p class="small">Week 1 ($1,155.48 Booking-stated) and Week 2 ($1,195.64 derived) are both verified at Fairfield Central Park.</p></div>
 <div class="card"><h3>Q-02 &amp; Q-04 · Spend ceiling &amp; star mix</h3><p class="small">Verified subtotal is {money(FR["budget"]["verified_subtotal_usd"])}; swapping Gabriel Kreuther for Cote ($168) or Dirt Candy ($236) saves $414–$482.</p></div>
-<div class="card"><h3>Q-08 &amp; Q-26 · Fairfield ($1,158.98) vs Hyatt Chelsea ($1,305.17)</h3><p class="small">Fairfield wins by $146/week + free cancel + breakfast; Hyatt Chelsea hits 22/22 verified stars within 5 km.</p></div>
+<div class="card"><h3>Q-08 &amp; Q-26 · Fairfield ($1,155.48) vs Hyatt Chelsea ($1,303.00)</h3><p class="small">Fairfield wins by $147.52/week + free cancel + breakfast; Hyatt Chelsea hits 22/22 verified stars within 5 km.</p></div>
 <div class="card"><h3>Q-18 · Post-reported-ceremony MICHELIN check</h3><p class="small">The 14 Dec 2026 ceremony date is confirmed by MICHELIN Media; recheck the published NYC roster after the event before final bookings.</p></div>
 <div class="card"><h3>Q-19 · Scheduled MTA GTFS matrix</h3><p class="small">Straight-line 5 km reach now covers 22 stars; running weekday 19:00 GTFS times completes the 1-hour proof.</p></div>
 </div>
@@ -1324,7 +1333,7 @@ the few remaining third-party walls, and the automated integrity checks run on e
 <li><strong>Read it or leave it blank.</strong> A value appears only if verified on a linked primary/official source or authoritative search record; secondary sources are explicitly labelled and flagged.</li>
 <li><strong>Never infer.</strong> No invented daily meal allowances, no guessed handles, no fabricated schedules.</li>
 <li><strong>Separate the award from the listing.</strong> Red stars, Green Stars (including <em>One White Street</em> Selected), Bib Gourmand (76), and Selected (224) stay strictly separated.</li>
-<li><strong>Label every derived number.</strong> NYC tax math (14.75% + $4–$6/night + $1 Arlo tourism) and Haversine distances are explicitly marked DERIVED/MODEL.</li>
+<li><strong>Label every derived number.</strong> NYC tax math (14.75% + $3.50/night fixed fees per nyc.gov, read 2026-11-27) and Haversine distances are explicitly marked DERIVED/MODEL; hotel all-in totals read on 2026-11-27 are Booking-stated, not derived (F-44).</li>
 <li><strong>Reconcile disagreements explicitly.</strong> The 72-entry ceremony vs 69 live NYC list discrepancy is fully accounted for name-by-name (F-02).</li>
 <li><strong>Date every snapshot.</strong> Verified snapshot date: <strong>{BUILD_DATE}</strong>.</li>
 </ol>
@@ -1347,7 +1356,7 @@ the few remaining third-party walls, and the automated integrity checks run on e
 
 <h3>Activities, Transit, Calendar, Climate &amp; Flights</h3>
 <ul class="tight">
-<li>{ext("https://www.moma.org/visit/", "MoMA")} · {ext("https://www.metmuseum.org/plan-your-visit", "The Met (hours: F-31)")} · {ext("https://www.amnh.org/plan-your-visit", "AMNH ($37 out-of-state)")} · {ext("https://www.911memorial.org/visit/visit-museum-1", "9/11 Museum (last entry 18:00)")} · {ext("https://www.rockefellercenter.com/tickets/top-of-the-rock-observation-deck/", "Top of the Rock")} · {ext("https://www.nps.gov/stli/planyourvisit/hours.htm", "Statue of Liberty NPS Hours & Fees")} · {ext("https://www.nycgovparks.org/parks/central-park", "Central Park")} · {ext("https://www.thehighline.org/visit/", "High Line Winter Hours")} · {ext("https://www.chelseamarket.com/visit", "Chelsea Market")} · {ext("https://www.nyc.gov/html/dot/html/infrastructure/brooklyn-bridge.shtml", "Brooklyn Bridge DOT")} · {ext("https://www.broadway.org/", "Broadway League")}.</li>
+<li>{ext("https://www.moma.org/visit/", "MoMA")} · {ext("https://www.metmuseum.org/index.html", "The Met (hours confirmed 2026-11-27)")} · {ext("https://www.amnh.org/plan-your-visit", "AMNH ($37 out-of-state)")} · {ext("https://www.911memorial.org/visit/visit-museum-1", "9/11 Museum (last entry 18:00)")} · {ext("https://www.rockefellercenter.com/tickets/top-of-the-rock-observation-deck/", "Top of the Rock")} · {ext("https://www.nps.gov/stli/planyourvisit/hours.htm", "Statue of Liberty NPS Hours & Fees")} · {ext("https://www.nycgovparks.org/parks/central-park", "Central Park")} · {ext("https://www.thehighline.org/visit/", "High Line Winter Hours")} · {ext("https://www.chelseamarket.com/visit", "Chelsea Market")} · {ext("https://www.nyc.gov/html/dot/html/infrastructure/brooklyn-bridge.shtml", "Brooklyn Bridge DOT")} · {ext("https://www.broadway.org/", "Broadway League")}.</li>
 <li>{ext("https://www.mta.info/fares-tolls/subway-bus", "MTA Fares ($3 base, $35 7-day cap)")} · {ext("https://www.opm.gov/policy-data-oversight/pay-leave/federal-holidays/", "OPM 2027 Federal Holidays")} · {ext("https://www.schools.nyc.gov/about-us/news/morning-bell/contentdetails/morning-bell/2026/04/21/2026-27-nycps-calendar-now-available", "NYCPS 2026–2027 Calendar")} · {ext("https://www.weather.gov/media/okx/Climate/CentralPark/nycnormals.pdf", "NWS Central Park 1991–2020 Normals")}.</li>
 <li>{ext("https://www.google.com/travel/flights?q=Flights%20to%20JFK%20from%20AMS%20on%202027-02-15%20through%202027-02-22", "Google Flights AMS–JFK")} · {ext("https://www.kayak.com/flights/AMS-NYC/2027-02-14/2027-02-23?sort=bestflight_a", "KAYAK AMS–NYC")}.</li>
 </ul>
@@ -1461,7 +1470,7 @@ def build_repo_review():
              "Resolved"],
             ["R7", "Previously unverified museum hours & AMNH admission (Met, High Line, Chelsea Market, AMNH, Statue of Liberty).",
              "Verified on metmuseum.org, amnh.org, thehighline.org, chelseamarket.com, nps.gov",
-             "Four activity values were confirmed in the prior source pass. Met hours remain unconfirmed (F-31); AMNH and High Line could not be re-confirmed in the 2026-11-27 read (F-41).",
+             "Met, AMNH and High Line hours were re-confirmed on 2026-11-27 from official pages (F-31 resolved, F-41 narrowed to the pay-what-you-wish wording). If you spot a value that disagrees with a live official page, propose the correction here.",
              "Resolved"],
             ["R8", "Previously unconfirmed social handles & scarce video links.",
              "site_data/social.json (38+ official IG/YT/TikTok, 23+ video reviews)",

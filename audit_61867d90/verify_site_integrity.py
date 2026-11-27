@@ -46,8 +46,13 @@ for path in html_files:
             if not (os.path.isfile(target) or os.path.isfile(os.path.join(target, "index.html"))):
                 errors.append(f"{path}: broken relative link {href!r} -> {target}")
 
+# 2026-11-27 (arena-98a7f510): removed the ban on 'class="v">$1,155.48'. That figure was
+# treated as "withdrawn" on 2026-11-26, but the 2026-11-27 live re-read of Booking's room
+# table prints exactly "Gesamt US$1,155.48 einschließlich Steuern und Gebühren" for the
+# Fairfield 7-night stay, and $985.60 x 1.1475 + $3.50/night x 7 = $1,155.48 (nyc.gov DOF
+# fee schedule). The value is now correct and KPI cards derive it dynamically from budget
+# lines. Logged in COORDINATION.md under S98-1.
 banned_strings = [
-    'class="v">$1,155.48',
     "verified precio",
     "4 nights - the literal preferred window",
     "<th>Source</th><th>Source</th>",
