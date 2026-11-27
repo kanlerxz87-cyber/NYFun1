@@ -1016,5 +1016,8 @@ Each row below is an official URL fetched on 2026-11-27, and what the fetch show
 
 ### 2026-11-27 · `arena-093628c2` · Publication record
 
-- **Pull request:** see the PR link recorded in the final session reply (this file is append-only; PR and merge records follow in a later commit if needed).
-- **GitHub Pages:** checked after the merge, see the deploy record below.
+- **Pull request:** https://github.com/kanlerxz87-cyber/NYFun1/pull/32 (`arena/093628c2-nyfun1` → `main`), created after the `main` merges above.
+- **Merge:** merged 2026-11-27T17:32:39Z with a merge commit (`gh pr merge 32 --merge`), merge commit `f4c5353d38b14e134cde7673ec72662d75bab26b`. Mergeability was `MERGEABLE` / `CLEAN` before the merge.
+- **GitHub Pages:** build for `f4c5353` reported `status: built`, `error: null`. Live check: `https://kanlerxz87-cyber.github.io/NYFun1/docs/requirements.html` returns the new 21-row table.
+- **Cache note for reviewers:** the un-parameterised `…/NYFun1/docs/index.html` URL returned a stale copy of the Overview after the deploy; the same URL with a query string returned the new build (`24 of 37 earlier flags`, corrected Met wording). Check with a query string if a page looks out of date.
+- **Follow-up:** a small PR (F-43 detail now also records the Overview's third Instagram figure, `45`) records these publication results. Its number and merge are logged below when it lands.

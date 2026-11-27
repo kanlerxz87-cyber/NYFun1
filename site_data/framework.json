@@ -772,7 +772,7 @@
       "id": "F-43",
       "severity": "LOW",
       "title": "Social-link counts differ between two summaries",
-      "detail": "The earlier requirements summary said '24 verified official Instagram accounts'. The coverage field in site_data/social.json counts 40 venues or activities with any verified official social account, 23 with a verified YouTube review, and 4 with verified TikTok videos. These measure different things (platform vs any platform), but the wording should be reconciled before counts are published. Unverified slots carry labelled search links only.",
+      "detail": "The earlier requirements summary said '24 verified official Instagram accounts'. The coverage field in site_data/social.json counts 40 venues or activities with any verified official social account, 23 with a verified YouTube review, and 4 with verified TikTok videos. The Overview page states a third figure, '45 verified official Instagram accounts'. These measure different things (platform vs any platform), but the three figures (24, 40, 45) should be reconciled before counts are published. Unverified slots carry labelled search links only.",
       "source": "https://www.instagram.com/lebernardinny/",
       "settle_by": "Recount verified accounts per platform from social.json and reword the summary to match.",
       "status": "Open"
