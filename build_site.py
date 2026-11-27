@@ -123,6 +123,7 @@ def table(headers, rows, caption=None, cls="", card_labels=None, source_urls=Non
 # ---------------------------------------------------------------- page shell
 NAV = [
     ("index.html", "Overview"),
+    ("requirements.html", "Requirements"),
     ("hotels.html", "Hotels"),
     ("restaurants.html", "MICHELIN"),
     ("activities.html", "Activities"),
@@ -396,6 +397,7 @@ plus ~15–20 min ferry crossing (~62–67 min door-to-island; harbour wind can 
 
 <h2>Where to go next</h2>
 <div class="grid three">
+<div class="card"><h3><a href="requirements.html">Requirements</a></h3><p class="small">Every requirement from the brief, its status (met or partial), the reason, the official source and the related flag.</p></div>
 <div class="card"><h3><a href="hotels.html">Hotels</a></h3><p class="small">7 hotels w/ verified street addresses, 5-week seasonal table, resort fees, all-in tax math, and reach across 22 stars.</p></div>
 <div class="card"><h3><a href="restaurants.html">MICHELIN</a></h3><p class="small">72 ceremony / 69 live NYC reconciled roster, 22 detailed menus &amp; hours, cluster analysis, and verified video links.</p></div>
 <div class="card"><h3><a href="activities.html">Activities</a></h3><p class="small">12 activities with verified 2026-11-26 hours (The Met hours unconfirmed, see F-31; High Line winter schedule), prices &amp; reviews.</p></div>
@@ -1193,6 +1195,43 @@ can be accepted or deferred cleanly.</div>
 """
 
 
+def build_requirements():
+    rq = FR["requirements_check"]
+    n_met = sum(1 for r in rq if r["status"] == "MET")
+    n_part = len(rq) - n_met
+    rows = []
+    for r in rq:
+        k = "verified" if r["status"] == "MET" else "partial"
+        flags = ", ".join(r["flags"]) if r["flags"] else "none"
+        rows.append([
+            "<strong>" + esc(r["requirement"]) + "</strong>",
+            pill(k, r["status"]),
+            esc(r["how"]),
+            '<a href="' + esc(r["page"]) + '">' + esc(r["page"]) + "</a>",
+            ext(r["source_url"], esc(r["source_label"])),
+            esc(flags),
+        ])
+    tbl = table(
+        ["Requirement from the brief", "Status", "How it is answered, and what is still missing",
+         "Where on the site", "Official source", "Related flags / questions"],
+        rows,
+        caption=f"All {len(rq)} requirements from the brief, checked on 2026-11-27 against the data on this site.",
+        card_labels=["Requirement", "Status", "How it is answered", "Where", "Official source", "Flags / questions"])
+    return f"""
+<p class="lede">Every requirement from the brief in one table. <strong>MET</strong> means the data on this site answers it
+from an official source read on or before 2026-11-27. <strong>PARTIAL</strong> means something is still missing or unconfirmed,
+and the flag or question in the last column says what. Nothing here is a new price or a new opinion.</p>
+
+<div class="kpi">
+ <div class="card"><div class="k">Requirements</div><div class="v">{len(rq)}</div></div>
+ <div class="card"><div class="k">Met</div><div class="v">{n_met}</div><div class="small">answered from an official source</div></div>
+ <div class="card"><div class="k">Partial</div><div class="v">{n_part}</div><div class="small">a decision or a re-check is still needed</div></div>
+</div>
+
+{tbl}
+"""
+
+
 def build_flagged():
     sev_kind = {"HIGH": "open", "MEDIUM": "partial", "LOW": "documented"}
     rows = []
@@ -1209,7 +1248,7 @@ def build_flagged():
             esc(f["settle_by"]),
         ])
     tbl = table(["Flag", "What happened", "Source", "Resolution / how to close"], rows,
-                caption=f"Complete audit ledger of all {len(FR['flags'])} flags tracked across 2026-11-25 and 2026-11-26.",
+                caption=f"Complete audit ledger of all {len(FR['flags'])} flags tracked across 2026-11-25, 2026-11-26 and 2026-11-27.",
                 card_labels=["Flag", "What happened", "Source", "Resolution"])
     n_open = sum(1 for f in FR["flags"] if f.get("status") == "Open")
     n_res = sum(1 for f in FR["flags"] if f.get("status") == "Resolved")
@@ -1597,6 +1636,7 @@ def main():
         "budget.html": layout("budget.html", "Budget", build_budget()),
         "questions.html": layout("questions.html", "Open questions", build_questions()),
         "suggestions.html": layout("suggestions.html", "Suggestions for improvement", build_suggestions()),
+        "requirements.html": layout("requirements.html", "Requirements check", build_requirements()),
         "flagged.html": layout("flagged.html", "Flagged for review", build_flagged()),
         "method.html": layout("method.html", "Method & sources", build_method()),
         "repo-review.html": layout("repo-review.html", "Repository review", build_repo_review()),

@@ -14,7 +14,7 @@ errors = []
 expected_html = {
     "index.html", "hotels.html", "restaurants.html", "activities.html",
     "itinerary.html", "budget.html", "questions.html", "suggestions.html",
-    "flagged.html", "method.html", "repo-review.html",
+    "flagged.html", "method.html", "repo-review.html", "requirements.html",
 }
 actual_html = {os.path.basename(p) for p in glob.glob(os.path.join(DOCS, "*.html"))}
 if actual_html != expected_html:

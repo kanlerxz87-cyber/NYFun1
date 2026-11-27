@@ -964,3 +964,57 @@ No other session holds a live claim on these files. Open PR #16 (`arena/bd056789
 - **GitHub Pages:** build `1409316566` for commit `253a0fc` reported `status: built`, `error: null`.
 - **Live check:** the merged `docs/activities.html` contains the F-31 Met wording and the Top of the Rock 11:10 PM last entry; `docs/flagged.html` on `main` contains the revised F-09 wording. (A cached fetch of the live flagged page briefly showed the pre-merge F-09 text. The committed file and the Pages build on `253a0fc` are correct.)
 - **Sandbox limit:** outbound access from this sandbox excludes `github.io`, so the live site was read through the fetch tool rather than curl.
+
+## SESSION CLAIM — 2026-11-27 (UTC) — `arena-093628c2` (branch `arena/093628c2-nyfun1`)
+
+**Branch & scope:** The workspace assigns one branch per session (`arena/093628c2-nyfun1`, based on `main` at `28315d8`). The `session-<id>/<task>` naming in the brief is not used because this session may only commit to its assigned branch. Scope is limited to the files listed below. `build.py`, `build_deepdive.py`, `content.py` and `deepdive/**` are untouched.
+
+**Parallel-session check:** `gh pr list --state open` at claim time shows one open PR, #16 (`arena/bd056789-nyfun1`, "T15: audit and refresh NYC 2027 planning site", opened 2026-11-26). It belongs to another session and was **not** merged, closed or edited. Its contents are not integrated here. No other live claims appear on the board.
+
+| Task ID | Task | Scope (files) | Owner | Status | Updated |
+|---|---|---|---|---|---|
+| S27-1 | Re-read official sources, correct wrong statements, log irregularities as flags | `site_data/activities.json`, `site_data/hotels.json`, `site_data/framework.json` (flags F-26, F-30, F-38 to F-43) | `arena-093628c2` | done | 2026-11-27 |
+| S27-2 | Requirements check page: every requirement in the brief → MET/PARTIAL → reason → official source → flag | `site_data/framework.json` (`requirements_check`, 21 items), `build_site.py` (new builder, nav, overview card), `docs/requirements.html` | `arena-093628c2` | done | 2026-11-27 |
+| S27-3 | Rebuild, run the integrity verifier, PR to `main`, merge, confirm GitHub Pages | `docs/**`, `README.md`, `audit_61867d90/verify_site_integrity.py` (page list only), `COORDINATION.md` | `arena-093628c2` | in progress | 2026-11-27 |
+
+### 2026-11-27 · `arena-093628c2` · Re-verification log (official sources, read on 2026-11-27)
+
+Each row below is an official URL fetched on 2026-11-27, and what the fetch showed against the site.
+
+| URL (official) | Read result | Outcome |
+|---|---|---|
+| guide.michelin.com/us/en/new-york-state/new-york/restaurants/all-starred | 3★ 5, 2★ 14, 1★ 50; Bib Gourmand 76; Selected 224; "NYC and surroundings: 1-48 of 69" | Confirmed (matches roster 5/14/50 = 69) |
+| guide.michelin.com/us/en/article/michelin-guide-ceremony | Fetch error | No data. Ceremony date stays open (F-01) |
+| mta.info/fares-tolls/subway-bus | $3 most riders; express $7.25; "As of January 1, 2026, you can no longer buy or refill a MetroCard"; cash on buses to stop in 2026, date TBA | Confirmed; MetroCard citation corrected (F-30); new flag F-42 |
+| mta.info/fares-tolls/subway-bus/tap-and-ride | $35 weekly subway and local bus cap for one card; $67 with express | Confirmed. This page does **not** contain the MetroCard sentence the old flag cited |
+| metmuseum.org/plan-your-visit (chunks 0–1) | Adult $30; NY State residents and NY/NJ/CT **students** pay what you wish; other adults $30. Hours block not in chunks 0–1 | Pay-what-you-wish rule **corrected** (F-39). Wednesday closure **not confirmed** (F-31) |
+| metmuseum.org/visit/met-fifth-avenue | Redirected to the plan-your-visit content; no hours block | No data (F-31) |
+| moma.org/visit/ | Mon–Thu, Sat, Sun 10:30–17:30; Fri 10:30–20:30; $30 adult; Uniqlo Friday free for NY State residents 17:30–20:30 | Confirmed |
+| nps.gov/stli/planyourvisit/hours.htm | Every day 9:00 AM–4:30 PM; last entrance into the statue 3:30 PM; Info Center 9:30–4:30 | Confirmed (matches 09:00–16:30 / 15:30). FAQ conflict stays open (F-26) |
+| 911memorial.org/visit/visit-museum-1 | Museum Wed–Mon and many Tuesdays 9 a.m.–7 p.m.; $24–$36 admission; last admission 60 min before close; Memorial 8 a.m.–8 p.m.; Free Admission Mon 5:30–7 p.m. | Confirmed; "normally closed Tuesdays" **corrected** (F-40) |
+| amnh.org/plan-your-visit and /plan-your-visit/hours | Navigation text only; no hours or admission block in fetched chunks | No data. AMNH hours, $37 price and pay-what-you-wish unconfirmed (F-41) |
+| thehighline.org/visit/ | Cookie-notice text only | No data. Winter hours unconfirmed (F-41) |
+| booking.com … fairfield-inn-suites … (15–22 Feb 2027, 2 adults, 1 room) — German locale | Guest score 7.9/10 from 631 reviews; "aktualisierte Preise für 2027" title; price block not in fetched chunk | Score **conflicts** with the recorded 8.0 (F-38). $985.60 not re-read |
+
+**Corrections and new flags recorded in `site_data/framework.json`:** F-30 (MetroCard citation corrected, detail rewritten), F-38 (Fairfield score and price), F-39 (Met pay-what-you-wish, corrected), F-40 (9/11 Tuesday wording, corrected), F-41 (AMNH and High Line not re-confirmed), F-42 (MTA bus cash end date), F-43 (social-link counts differ between two summaries). The Met hours gap was already flagged by `main` as F-31 and is not duplicated. Affected rows in `activities.json` and `hotels.json` now carry `PARTIAL` verification text or a dated note. AMNH and High Line rows are labelled `PARTIAL`. Nothing was filled in from memory.
+
+**Verification checks passed on this branch:** `python3 build_site.py` → `wrote 12 pages` / `all build checks passed`; `python3 audit_61867d90/verify_site_integrity.py` → `Verified 22 HTML pages, 383 desktop+mobile table rows, 337 unique HTTPS external URLs, 0 duplicate Source columns, and budget subtotal $4,246.98` / `ALL INDEPENDENT SITE INTEGRITY CHECKS PASSED (0 errors)`.
+
+**Not done in this session (stated plainly):**
+- The brief asks for a timed transit model (1 hour by subway or bus). That still uses straight-line distance (F-05). No GTFS timetable matrix was built.
+- Not every restaurant or activity has a verified YouTube, TikTok or Instagram link (see the requirements page for the counts).
+- The 1–2 week trip versus the 3-night preferred window needs your decision (Q-01).
+- Flight prices, the full set of 93 cited URLs and the 69-venue roster were not re-read in this session. They keep their 2026-11-26 dates.
+- Hotel prices are dynamic and change daily. A price is valid only on the day it is read.
+
+### 2026-11-27 · `arena-093628c2` · Merge-conflict log (protocol step 4)
+
+- **What happened:** While this session was working, `main` moved. Between `28315d8` and `253a0fc`, PRs #26–#30 landed from `arena-ffbfaf4f`, `arena-dd2c43b7`, `arena-9fb67eb1` and `arena-e74ca980`. They also re-verified the same official sources on 2026-11-27 and added flag F-31 (Met hours). A first `git rebase origin/main` stopped with conflicts in `COORDINATION.md`, `README.md`, `site_data/activities.json`, `site_data/framework.json` and four generated pages. The rebase was aborted and nothing was force-pushed.
+- **Note on the first push:** the branch was pushed once, before the conflict was noticed. That push contained only this session's single commit on the old base `28315d8`. It was superseded by the merge below and no other session's work was overwritten.
+- **Resolution:** this session merged `origin/main` (`git merge`, not rebase, so merged PR history is preserved). Conflicted files were taken from `main` in full, then this session's corrections were reapplied on top. Their F-31 (Met hours) is kept as the single Met-hours flag. Their board entries and verification log are kept. This session's flags use the next free IDs (F-38 to F-43). Generated `docs/` pages were regenerated from the merged data; they were not hand-merged.
+- **Other differences found in `main` and kept:** `main`'s `requirements_check` had 17 items with a stale "24 verified Instagram accounts" and 26 questions. It has been replaced with this session's 21-item list, which uses the same IDs as the data. `main`'s Met row said "NY residents pay-what-you-wish"; it now carries the official wording (F-39).
+
+### 2026-11-27 · `arena-093628c2` · Publication record
+
+- **Pull request:** see the PR link recorded in the final session reply (this file is append-only; PR and merge records follow in a later commit if needed).
+- **GitHub Pages:** checked after the merge, see the deploy record below.
