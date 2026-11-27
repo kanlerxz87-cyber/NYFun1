@@ -343,7 +343,7 @@ pick with breakfast is <strong>Hyatt Place Chelsea</strong> ({money(hyatt['all_i
 windows</strong> across the entire brief range (Week 2 rises +3.6%; March weeks jump +26% to +39%).
 4-night and 14-night variants remain ready on the <a href="itinerary.html">Itinerary page</a>.</p>
 <p class="hint">Verified against OPM &amp; NYCPS calendars: Mon 15 Feb 2027 is Washington's Birthday and
-15–19 Feb is NYC Public Schools Midwinter Recess — book timed museums early. <strong>The Met hours and reported Wednesday closure are unconfirmed on metmuseum.org (F-31)</strong>; Tue 16 Feb is only a tentative placeholder pending the official schedule.</p>
+15–19 Feb is NYC Public Schools Midwinter Recess — book timed museums early. <strong>The Met hours are confirmed from metmuseum.org/index.html (read 2026-11-27): closed Wednesday, Sun–Tue &amp; Thu 10:00–17:00, Fri–Sat 10:00–21:00 (F-31 resolved)</strong>; Tue 16 Feb is solid for the Met visit.</p>
 </div>
 </div>
 
@@ -378,7 +378,7 @@ plus ~15–20 min ferry crossing (~62–67 min door-to-island; harbour wind can 
 <h3>5 · What is verified, and what remains open</h3>
 <ul class="tight">
 <li><strong>{money(FR["budget"]["verified_subtotal_usd"])} priced subtotal</strong> across the hotel, MTA 7-day cap, paid attractions and two tasting dinners (food only). Airfare is excluded because origin and a two-seat checkout are unconfirmed (F-15).</li>
-<li><strong>{n_hours} starred venues with full verified hours</strong>, <strong>{n_price} with verified menu prices or deposit floors</strong>, and <strong>{sum(1 for a in ACTS['activities'] if a['verification'].startswith('VERIFIED'))} of {len(ACTS['activities'])} activities</strong> with verified hours/entry details; Met, AMNH, High Line and Broadway remain partial (F-31, F-41, F-33).</li>
+<li><strong>{n_hours} starred venues with full verified hours</strong>, <strong>{n_price} with verified menu prices or deposit floors</strong>, and <strong>{sum(1 for a in ACTS['activities'] if a['verification'].startswith('VERIFIED'))} of {len(ACTS['activities'])} activities</strong> with verified hours/entry details; Broadway remains partial (F-33) and the AMNH pay-what-you-wish wording is open (F-41); Met, AMNH hours and High Line winter hours were re-confirmed 2026-11-27.</li>
 <li><strong>{n_ig_total} verified official Instagram accounts</strong>, <strong>{n_yt_rev} verified YouTube video reviews</strong>, and <strong>{n_tt_rev} verified public TikTok tasting videos</strong>.</li>
 <li><strong>{n_res_flags} of {len(FR['flags'])} earlier flags resolved or documented</strong>; {n_open_flags} live items stay <a href="flagged.html">Flagged Open</a> (Jungsik/Tock countdown conflicts, live promo rates, NPS hours disagreement, airline 2-seat checkout).</li>
 </ul>
@@ -401,8 +401,8 @@ plus ~15–20 min ferry crossing (~62–67 min door-to-island; harbour wind can 
 <div class="card"><h3><a href="requirements.html">Requirements</a></h3><p class="small">Every requirement from the brief, its status, the reason, its source and related flag.</p></div>
 <div class="card"><h3><a href="hotels.html">Hotels</a></h3><p class="small">7 hotels w/ verified street addresses, 5-week seasonal table, resort fees, all-in tax math, and reach across 22 stars.</p></div>
 <div class="card"><h3><a href="restaurants.html">MICHELIN</a></h3><p class="small">72 ceremony / 69 live NYC reconciled roster, 22 detailed menus &amp; hours, cluster analysis, and verified video links.</p></div>
-<div class="card"><h3><a href="activities.html">Activities</a></h3><p class="small">12 activities: {sum(1 for a in ACTS['activities'] if a['verification'].startswith('VERIFIED'))} with verified hours/entry details; The Met (F-31), AMNH and High Line (F-41), and Broadway (F-33) remain partial.</p></div>
-<div class="card"><h3><a href="itinerary.html">Itinerary</a></h3><p class="small">4-, 7- &amp; 14-night plans with a tentative Met visit pending official hours (F-31), NWS Central Park Feb climate normals &amp; booking timeline.</p></div>
+<div class="card"><h3><a href="activities.html">Activities</a></h3><p class="small">12 activities: {sum(1 for a in ACTS['activities'] if a['verification'].startswith('VERIFIED'))} with verified hours/entry details; Broadway (F-33) remains partial; Met, AMNH and High Line hours were re-confirmed 2026-11-27 (F-31 resolved, F-41 narrowed).</p></div>
+<div class="card"><h3><a href="itinerary.html">Itinerary</a></h3><p class="small">4-, 7- &amp; 14-night plans with the Met visit confirmed for Tue 16 Feb (hours verified 2026-11-27, F-31 resolved), NWS Central Park Feb climate normals &amp; booking timeline.</p></div>
 <div class="card"><h3><a href="budget.html">Budget</a></h3><p class="small">Every line item for two adults with exact tax math and lower-cost Michelin alternatives.</p></div>
 <div class="card"><h3><a href="questions.html">Questions</a></h3><p class="small">{len(FR['questions'])} decisions tracked (research questions resolved; traveller choices ready).</p></div>
 <div class="card"><h3><a href="suggestions.html">Suggestions</a></h3><p class="small">{len(FR['suggestions'])} improvements tracked (9 implemented, remaining operational checks queued).</p></div>
@@ -563,7 +563,7 @@ snapshots read 2026-11-26 (date printed under each figure).</p>
 The 2026-11-27 room tables state tax-inclusive totals ("includes taxes and charges"); the official NYC rate
 is 14.75% + $3.50/night fixed fees ($2.00 room fee + $1.50 NYS unit fee, verified on nyc.gov 2026-11-27).
 Where a 2026-11-26 pre-tax snapshot no longer composes with the 2026-11-27 stated all-in (Arlo SoHo, Arlo
-Midtown, Residence Inn moved overnight), the stated all-in governs — see flag F-31. Pestana CR7
+Midtown, Residence Inn moved overnight), the stated all-in governs — see flag F-44. Pestana CR7
 ({money(pestana['total_7n_usd'])} free-cancel / {money(pestana.get('partner_nonref_all_in_usd'))} non-ref Partner)
 restrict cancellation or excludes breakfast, whereas <strong>Fairfield Central Park</strong> charges <strong>$0 resort fee</strong>,
 at <strong>{money(rec['total_7n_usd'])} pre-tax ({money(rec['all_in_7n_usd'])} all-in as printed)</strong> with American
@@ -619,9 +619,9 @@ starred venues (all 5 three-stars, 7 top two-stars, and 10 key one-stars):</p>
 <h2>Remaining limits on the hotel comparison</h2>
 <div class="warnbox">
 <ul class="tight">
-<li><strong>Dynamic promotions:</strong> Several rates rely on Black Friday (-30% to -36%) or Bonus (-24% to -25%) deals (F-03). All seven all-in totals were re-read live on 2026-11-27 (F-31).</li>
+<li><strong>Dynamic promotions:</strong> Several rates rely on Black Friday (-30% to -36%) or Bonus (-24% to -25%) deals (F-03). All seven all-in totals were re-read live on 2026-11-27 (F-44).</li>
 <li><strong>Hyatt Place Chelsea tiers:</strong> On 2026-11-27 both the disability-access roll-in-shower king and the standard king are stated at the same $1,303.00 all-in, so the accessibility tier carries no price premium on these dates (F-14).</li>
-<li><strong>Pestana CR7 bed type:</strong> The Comfort room's English room table says "1 large double bed", not queen — flagged for traveller confirmation against the brief's queen-or-bigger requirement (F-32).</li>
+<li><strong>Pestana CR7 bed type:</strong> The Comfort room's English room table says "1 large double bed", not queen — flagged for traveller confirmation against the brief's queen-or-bigger requirement (F-45).</li>
 <li><strong>Reach is Haversine 5 km radius, not full 69-venue GTFS schedules:</strong> See F-05 and Suggestion S-02.</li>
 </ul>
 </div>
@@ -922,7 +922,7 @@ def build_activities():
         cost = (f'{money(a["cost_2_adults_usd"])}<div class="small">for two · {money(a["adult_usd"])} pp</div>'
                 if a["cost_2_adults_usd"] is not None else
                 '<span class="blank">no single official price</span>')
-        hours = esc(a["hours"]) if a["hours"] else f'<span class="blank">not verified — see {"F-31" if a["id"] == "met" else ("F-33" if a["id"] == "broadway" else "F-41")}</span>'
+        hours = esc(a["hours"]) if a["hours"] else f'<span class="blank">not verified — see {"F-33" if a["id"] == "broadway" else "F-41"}</span>'
         days = esc(a["days_open"]) if a["days_open"] else ""
         vk = "verified" if a["verification"].startswith("VERIFIED") else (
             "partial" if a["verification"].startswith("PARTIAL") else "open")
@@ -938,11 +938,11 @@ def build_activities():
         ])
     return f"""
 <p class="lede">Activity candidates reviewed against official venue/agency pages on 2026-11-26 and re-read where noted on 2026-11-27:
-published winter/2027 hours where confirmed, source-dated prices for two, modelled travel times from Fairfield Central Park (538 W 58th St), and direct video/social reviews. Met hours (F-31), AMNH/High Line details (F-41), and Broadway dates (F-33) remain partial.</p>
+published winter/2027 hours where confirmed, source-dated prices for two, modelled travel times from Fairfield Central Park (538 W 58th St), and direct video/social reviews. Met hours were re-confirmed 2026-11-27 (F-31 resolved); the AMNH pay-what-you-wish wording (F-41) and Broadway dates (F-33) remain open.</p>
 
 <div class="note"><strong>Free vs paid overview:</strong> Central Park, The High Line (Dec 1–Mar 31 winter
 07:00–20:00), Chelsea Market (07:00–22:00), and Brooklyn Bridge (24h) cost $0. Paid museum/harbor
-highlights: MoMA ($30 pp), The Met ($30 pp; hours and Wednesday closure unconfirmed, F-31), AMNH ($37 pp out-of-state),
+highlights: MoMA ($30 pp), The Met ($30 pp; hours confirmed 2026-11-27: closed Wed, F-31 resolved), AMNH ($37 pp out-of-state),
 9/11 Museum ($24–$36 pp, last entry 18:00), Top of the Rock (from $42 pp), and Statue of Liberty ferry ($26 pp).</div>
 
 {table(
@@ -962,7 +962,7 @@ highlights: MoMA ($30 pp), The Met ($30 pp; hours and Wednesday closure unconfir
 </ul></div>
 <div class="card"><h3>Can be decided on the day</h3>
 <ul class="tight">
-<li><strong>The Met Fifth Avenue</strong> — hours and days remain blank because they were not confirmed on the official page read 2026-11-27 (F-31); check the official schedule before planning.</li>
+<li><strong>The Met Fifth Avenue</strong> — hours confirmed 2026-11-27 from metmuseum.org/index.html (closed Wednesday; Sun–Tue &amp; Thu 10:00–17:00, Fri–Sat 10:00–21:00), F-31 resolved.</li>
 <li><strong>Central Park, High Line, Brooklyn Bridge</strong> — free entry, no tickets.</li>
 <li><strong>Chelsea Market</strong> — free entry (07:00–22:00), pay each food vendor.</li>
 <li><strong>Broadway</strong> — choose a production first, then verify its official date-specific calendar and two-seat box-office price (F-33).</li>
@@ -1021,7 +1021,7 @@ engineered around actual museum closure days, winter hours, holiday crowds, and 
 
 <div class="note"><strong>Scheduling rules enforced:</strong>
 <ul class="tight">
-<li><strong>The Met hours and reported Wednesday closure remain unconfirmed on its official site (F-31)</strong> — Tue 16 Feb is a tentative placeholder in the 7-night and 4-night plans; recheck before scheduling.</li>
+<li><strong>The Met hours are confirmed on its official site (metmuseum.org/index.html, read 2026-11-27): closed Wednesday (F-31 resolved)</strong> — Tue 16 Feb is confirmed for the Met in the 7-night and 4-night plans.</li>
 <li><strong>9/11 Museum is open Wed–Mon (last entry 18:00; closed most Tuesdays)</strong> — scheduled <strong>Thu 18 Feb</strong> (or Wed 17 on 4-night).</li>
 <li><strong>Broadway availability is production-specific</strong> — Mon 15 Feb arrival stays flexible; verify the selected show's official calendar.</li>
 <li><strong>Sunday-closed vs Sunday-open stars:</strong> Le Bernardin, Gabriel Kreuther, Jean-Georges, Atomix, Aquavit &amp; Dirt Candy close Sundays; <strong>EMP, Jungsik, Per Se, Sushi Sho, The Modern, Saga, Gramercy Tavern, Crown Shy &amp; Cote</strong> all serve Sundays.</li>
@@ -1333,7 +1333,7 @@ the few remaining third-party walls, and the automated integrity checks run on e
 <li><strong>Read it or leave it blank.</strong> A value appears only if verified on a linked primary/official source or authoritative search record; secondary sources are explicitly labelled and flagged.</li>
 <li><strong>Never infer.</strong> No invented daily meal allowances, no guessed handles, no fabricated schedules.</li>
 <li><strong>Separate the award from the listing.</strong> Red stars, Green Stars (including <em>One White Street</em> Selected), Bib Gourmand (76), and Selected (224) stay strictly separated.</li>
-<li><strong>Label every derived number.</strong> NYC tax math (14.75% + $3.50/night fixed fees per nyc.gov, read 2026-11-27) and Haversine distances are explicitly marked DERIVED/MODEL; hotel all-in totals read on 2026-11-27 are Booking-stated, not derived (F-31).</li>
+<li><strong>Label every derived number.</strong> NYC tax math (14.75% + $3.50/night fixed fees per nyc.gov, read 2026-11-27) and Haversine distances are explicitly marked DERIVED/MODEL; hotel all-in totals read on 2026-11-27 are Booking-stated, not derived (F-44).</li>
 <li><strong>Reconcile disagreements explicitly.</strong> The 72-entry ceremony vs 69 live NYC list discrepancy is fully accounted for name-by-name (F-02).</li>
 <li><strong>Date every snapshot.</strong> Verified snapshot date: <strong>{BUILD_DATE}</strong>.</li>
 </ol>
@@ -1356,7 +1356,7 @@ the few remaining third-party walls, and the automated integrity checks run on e
 
 <h3>Activities, Transit, Calendar, Climate &amp; Flights</h3>
 <ul class="tight">
-<li>{ext("https://www.moma.org/visit/", "MoMA")} · {ext("https://www.metmuseum.org/plan-your-visit", "The Met (hours: F-31)")} · {ext("https://www.amnh.org/plan-your-visit", "AMNH ($37 out-of-state)")} · {ext("https://www.911memorial.org/visit/visit-museum-1", "9/11 Museum (last entry 18:00)")} · {ext("https://www.rockefellercenter.com/tickets/top-of-the-rock-observation-deck/", "Top of the Rock")} · {ext("https://www.nps.gov/stli/planyourvisit/hours.htm", "Statue of Liberty NPS Hours & Fees")} · {ext("https://www.nycgovparks.org/parks/central-park", "Central Park")} · {ext("https://www.thehighline.org/visit/", "High Line Winter Hours")} · {ext("https://www.chelseamarket.com/visit", "Chelsea Market")} · {ext("https://www.nyc.gov/html/dot/html/infrastructure/brooklyn-bridge.shtml", "Brooklyn Bridge DOT")} · {ext("https://www.broadway.org/", "Broadway League")}.</li>
+<li>{ext("https://www.moma.org/visit/", "MoMA")} · {ext("https://www.metmuseum.org/index.html", "The Met (hours confirmed 2026-11-27)")} · {ext("https://www.amnh.org/plan-your-visit", "AMNH ($37 out-of-state)")} · {ext("https://www.911memorial.org/visit/visit-museum-1", "9/11 Museum (last entry 18:00)")} · {ext("https://www.rockefellercenter.com/tickets/top-of-the-rock-observation-deck/", "Top of the Rock")} · {ext("https://www.nps.gov/stli/planyourvisit/hours.htm", "Statue of Liberty NPS Hours & Fees")} · {ext("https://www.nycgovparks.org/parks/central-park", "Central Park")} · {ext("https://www.thehighline.org/visit/", "High Line Winter Hours")} · {ext("https://www.chelseamarket.com/visit", "Chelsea Market")} · {ext("https://www.nyc.gov/html/dot/html/infrastructure/brooklyn-bridge.shtml", "Brooklyn Bridge DOT")} · {ext("https://www.broadway.org/", "Broadway League")}.</li>
 <li>{ext("https://www.mta.info/fares-tolls/subway-bus", "MTA Fares ($3 base, $35 7-day cap)")} · {ext("https://www.opm.gov/policy-data-oversight/pay-leave/federal-holidays/", "OPM 2027 Federal Holidays")} · {ext("https://www.schools.nyc.gov/about-us/news/morning-bell/contentdetails/morning-bell/2026/04/21/2026-27-nycps-calendar-now-available", "NYCPS 2026–2027 Calendar")} · {ext("https://www.weather.gov/media/okx/Climate/CentralPark/nycnormals.pdf", "NWS Central Park 1991–2020 Normals")}.</li>
 <li>{ext("https://www.google.com/travel/flights?q=Flights%20to%20JFK%20from%20AMS%20on%202027-02-15%20through%202027-02-22", "Google Flights AMS–JFK")} · {ext("https://www.kayak.com/flights/AMS-NYC/2027-02-14/2027-02-23?sort=bestflight_a", "KAYAK AMS–NYC")}.</li>
 </ul>
@@ -1470,7 +1470,7 @@ def build_repo_review():
              "Resolved"],
             ["R7", "Previously unverified museum hours & AMNH admission (Met, High Line, Chelsea Market, AMNH, Statue of Liberty).",
              "Verified on metmuseum.org, amnh.org, thehighline.org, chelseamarket.com, nps.gov",
-             "Four activity values were confirmed in the prior source pass. Met hours remain unconfirmed (F-31); AMNH and High Line could not be re-confirmed in the 2026-11-27 read (F-41).",
+             "Met, AMNH and High Line hours were re-confirmed on 2026-11-27 from official pages (F-31 resolved, F-41 narrowed to the pay-what-you-wish wording). If you spot a value that disagrees with a live official page, propose the correction here.",
              "Resolved"],
             ["R8", "Previously unconfirmed social handles & scarce video links.",
              "site_data/social.json (38+ official IG/YT/TikTok, 23+ video reviews)",

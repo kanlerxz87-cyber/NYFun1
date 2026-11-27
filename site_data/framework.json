@@ -467,7 +467,7 @@
    "id": "F-03",
    "severity": "HIGH",
    "title": "Hotel prices are live snapshots carrying time-limited Black Friday / Bonus promotions",
-   "detail": "All 7 hotels were re-priced on Booking.com on 2026-11-26 and rely on Black Friday (-30% to -36%) or Bonus (-25%) promos. List prices before discount are shown alongside; lock a $0-prepay free-cancellation rate early and re-check weekly / mid-Jan 2027. REFRESHED 2026-11-27: all seven all-in totals re-read live; Black Friday promo still applies (stays 19 Nov 2026 - 31 Dec 2027); Arlo SoHo and Arlo Midtown non-ref tiers rose +18% overnight while Fairfield/citizenM/Hyatt/Pestana moved -$2 to -$4 (F-31).",
+   "detail": "All 7 hotels were re-priced on Booking.com on 2026-11-26 and rely on Black Friday (-30% to -36%) or Bonus (-25%) promos. List prices before discount are shown alongside; lock a $0-prepay free-cancellation rate early and re-check weekly / mid-Jan 2027. REFRESHED 2026-11-27: all seven all-in totals re-read live; Black Friday promo still applies (stays 19 Nov 2026 - 31 Dec 2027); Arlo SoHo and Arlo Midtown non-ref tiers rose +18% overnight while Fairfield/citizenM/Hyatt/Pestana moved -$2 to -$4 (F-44).",
    "source": "https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
    "settle_by": "Re-check the direct /hotel/us/ URL at booking time (and before free-cancel deadline 2027-02-12)",
    "status": "Open"
@@ -520,10 +520,10 @@
   {
    "id": "F-09",
    "severity": "LOW",
-   "title": "Activity-source pass: some entries remain partial after the latest re-read",
-   "detail": "Historical 2026-11-26 venue details were captured for The Met, AMNH, High Line, Chelsea Market and Statue of Liberty. The Met hours remain officially unconfirmed (F-31); AMNH and High Line pages did not yield usable hours/admission blocks on the 2026-11-27 re-read (F-41). Do not describe all five as currently fully verified.",
+   "title": "RESOLVED 2026-11-27: Activity-source re-read completed (only Broadway + AMNH pay-what-you-wish wording remain open)",
+   "detail": "Historical 2026-11-26 venue details were captured for The Met, AMNH, High Line, Chelsea Market and Statue of Liberty. RESOLVED 2026-11-27 by arena-98a7f510: The Met hours confirmed from metmuseum.org/index.html (F-31 resolved); AMNH hours and $37/$43/$48 admission re-confirmed from amnh.org/plan-your-visit; High Line winter hours (Dec 1-Mar 31, 7am-8pm) re-confirmed from thehighline.org/visit (F-41 narrowed to the pay-what-you-wish wording only). Still open elsewhere: Broadway schedule (F-33), AMNH pay-what-you-wish wording (F-41).",
    "source": "https://www.metmuseum.org/plan-your-visit",
-   "settle_by": "Recheck the three flagged venue pages (F-31, F-41) before scheduling; retain dated snapshots for the others.",
+   "settle_by": "No further action for these five venues; Broadway and the AMNH pay-what-you-wish wording stay under their own flags.",
    "status": "Resolved"
   },
   {
@@ -647,7 +647,7 @@
    "id": "F-23",
    "severity": "MEDIUM",
    "title": "RESOLVED 2026-11-26: Withdrawn 25 Nov Fairfield $1,155.48 tax-inclusive figure",
-   "detail": "Fairfield's Booking.com page explicitly prints 'Total before taxes $985.60' with NY taxes excluded. Corrected across hotels.json, budget subtotal ($4,246.98), and executive summary to $985.60 pre-tax / $1,155.48 derived all-in. SUPERSEDED 2026-11-27: Booking's own room table now prints the tax-inclusive 'Gesamt' total of $1,155.48 directly (= 985.60 x 1.1475 + $3.50/nt x 7 per nyc.gov), so the figure is now stated, not derived (F-31); budget subtotal is $4,243.48.",
+   "detail": "Fairfield's Booking.com page explicitly prints 'Total before taxes $985.60' with NY taxes excluded. Corrected across hotels.json, budget subtotal ($4,246.98), and executive summary to $985.60 pre-tax / $1,155.48 derived all-in. SUPERSEDED 2026-11-27: Booking's own room table now prints the tax-inclusive 'Gesamt' total of $1,155.48 directly (= 985.60 x 1.1475 + $3.50/nt x 7 per nyc.gov), so the figure is now stated, not derived (F-44); budget subtotal is $2,977.48 in the merged airfare-unpriced model (10 priced lines).",
    "source": "https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
    "settle_by": "Done — all references updated to $985.60 pre-tax / $1,155.48 all-in — superseded 2026-11-27 by Booking-stated total (F-31)",
    "status": "Resolved"
@@ -718,11 +718,11 @@
   {
    "id": "F-31",
    "severity": "MEDIUM",
-   "title": "The Met Fifth Avenue hours block did not render on the official page (read 2026-11-27)",
-   "detail": "metmuseum.org/plan-your-visit (read 2026-11-27) confirms the $30 adult price and the Fifth Avenue location, but its hours block did not render in our read. The Wednesday closure and the hours Sun–Tue & Thu 10:00–17:00, Fri–Sat 10:00–21:00 are shown only in a metmuseum.org system-down page snippet and in third-party guides (metropolitan.museum, wonderfulmuseums.com, what2book.com). Tuesday is only a tentative placeholder in the itinerary; re-check the official days and hours before booking.",
+   "title": "RESOLVED 2026-11-27: The Met Fifth Avenue hours confirmed from the official site",
+   "detail": "metmuseum.org/plan-your-visit (read 2026-11-27) confirms the $30 adult price and the address, but its hours block did not render. RESOLVED the same day by arena-98a7f510 reading the official metmuseum.org/index.html: Sun-Tue & Thu 10:00-17:00, Fri-Sat 10:00-21:00, closed Wednesday - exactly the schedule the site rows use. The itinerary's Tuesday Met visit is no longer tentative. The pay-what-you-wish residency wording stays as corrected in F-39.",
    "source": "https://www.metmuseum.org/plan-your-visit",
-   "settle_by": "Open the live metmuseum.org visit page and confirm the operating days and hours, including whether the museum is closed Wednesday, before booking.",
-   "status": "Open"
+   "settle_by": "No further action; re-check hours if visiting outside the Feb 2027 window.",
+   "status": "Resolved"
   },
   {
    "id": "F-33",
@@ -802,7 +802,8 @@
    "title": "Pestana CR7 Comfort room bed listed as '1 large double bed', not queen (requirement: queen or bigger)",
    "detail": "The 2026-11-27 English room table for the Pestana CR7 Comfort Room (the shortlisted free-cancel tier, $1,387.00 all-in) states '1 large double bed', 17 m2, ensuite bathroom. The earlier dataset said '1 queen bed'. The official table is now corrected to '1 large double bed'. Whether a 'large double' meets the brief's 'queen sized bed or equivalent or bigger' requirement is NOT asserted here - it needs traveller acceptance or confirmation from the hotel (book a specific queen room type or call +1-646-777-6789 via the property page). (Renumbered from F-32 to F-45 after merge with main.)",
    "source": "https://www.booking.com/hotel/us/pestana-cr7-times-square.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
-   "settle_by": "Traveller decision or direct hotel confirmation before booking Pestana; other 6 shortlisted rooms all state king/queen.",   "status": "Open"
+   "settle_by": "Traveller decision or direct hotel confirmation before booking Pestana; other 6 shortlisted rooms all state king/queen.",
+   "status": "Open"
   }
  ],
  "questions": [
@@ -821,7 +822,7 @@
    "id": "Q-02",
    "question": "What is the total budget for two people, excluding flights?",
    "why_it_blocks": "Determines whether two high-end tastings ($1,350 food-only) or mixed 1-star value picks fit comfortably.",
-   "have": "Verified 7-night subtotal of $4,246.98 ($2,980.98 excluding $1,266 flights) plus menu tiers from $168 (Cote) to $990 (Sushi Sho) for two.",
+   "have": "Verified priced subtotal of $2,977.48 across 10 priced lines (airfare excluded; hotel line Booking-stated $1,155.48 read 2026-11-27) plus menu tiers from $168 (Cote) to $990 (Sushi Sho) for two.",
    "missing": "Traveller target spend ceiling.",
    "how_to_discover": "Traveller decision directly.",
    "owner": "traveller",

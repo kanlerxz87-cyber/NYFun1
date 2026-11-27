@@ -92,7 +92,7 @@ Everything the site renders lives in `site_data/`, one file per concern. Edit th
 ### Two fields to understand before editing
 
 - **`hours_status`** — `VERIFIED`, `PARTIAL` or `UNVERIFIED`. All 22 priority Manhattan starred venues and `One White Street` now carry verified hours; remaining roster-only rows stay clean without guessed hours.
-- **`all_in_7n_usd`** — Booking.com's own tax-inclusive total ("Gesamt / Includes taxes and charges") re-read live on **2026-11-27** for every hotel; the official NYC rate behind it is `14.75%` + `$3.50/night` fixed fees (`$2.00` room fee + `$1.50` NYS unit fee, nyc.gov). Fairfield Central Park (`$985.60` pre-tax -> **`$1,155.48`** stated all-in) wins on all-in parity, breakfast included, `$0` resort fee, and free cancellation until `2027-02-12`. Where a 2026-11-26 pre-tax snapshot no longer composes with the 2026-11-27 total (Arlo SoHo, Arlo Midtown, Residence Inn moved overnight), the stated total governs — flag F-31.
+- **`all_in_7n_usd`** — Booking.com's own tax-inclusive total ("Gesamt / Includes taxes and charges") re-read live on **2026-11-27** for every hotel; the official NYC rate behind it is `14.75%` + `$3.50/night` fixed fees (`$2.00` room fee + `$1.50` NYS unit fee, nyc.gov). Fairfield Central Park (`$985.60` pre-tax -> **`$1,155.48`** stated all-in) wins on all-in parity, breakfast included, `$0` resort fee, and free cancellation until `2027-02-12`. Where a 2026-11-26 pre-tax snapshot no longer composes with the 2026-11-27 total (Arlo SoHo, Arlo Midtown, Residence Inn moved overnight), the stated total governs — flag F-44.
 
 ---
 
