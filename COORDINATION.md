@@ -1054,13 +1054,13 @@ Each row below is an official URL fetched on 2026-11-27, and what the fetch show
 
 **Branch:** `arena/98a7f510-nyfun1` (branched from `28315d8`, PR #24 merge into `main`).
 **Scope claimed:** `COORDINATION.md` (append-only), `site_data/*.json` (verification corrections only), `build_site.py` (build-date / defect fixes only), `docs/**` (generated), `index.html`, `README.md` (generated-content alignment only).
-**Status:** S98-1/2 done — re-verifying every table row against official sources, rebuilding, link-checking, then PR → merge → Pages deploy, all without manual input.
+**Status:** DONE — S98-1/2/3 complete (PR #36 merged, Pages built) every table row against official sources, rebuilding, link-checking, then PR → merge → Pages deploy, all without manual input.
 
 | Task ID | Task | Scope | Owner | Status | Updated |
 |---|---|---|---|---|---|
 | S98-1 | Line-by-line re-verification of all site_data rows vs official sources; blank/flag anything unconfirmed | `site_data/*.json`, `COORDINATION.md` | `arena-98a7f510` | done | 2026-11-27 |
 | S98-2 | Rebuild `docs/` + run build checks & independent verifier; fix any defects | `build_site.py`, `docs/**` | `arena-98a7f510` | done | 2026-11-27 |
-| S98-3 | Open PR to `main`, merge without waiting, confirm GitHub Pages deploy, log result | `COORDINATION.md` | `arena-98a7f510` | in progress | 2026-11-27 |
+| S98-3 | Open PR to `main`, merge without waiting, confirm GitHub Pages deploy, log result | `COORDINATION.md` | `arena-98a7f510` | done | 2026-11-27 |
 
 
 ### S98-1 — data re-verification: DONE (commit `7e2f900`)
@@ -1092,4 +1092,10 @@ Main moved 29 commits while S98-1/2 ran (sessions e74ca980, ffbfaf4f, 093628c2, 
 - **independent_verification.json:** main's michelinmedia ceremony source merged with this session's 14 new reads; AMNH duplicate deduped → 89 entries, 5 corrections.
 - COORDINATION.md conflict resolved append-only (all session sections kept).
 
-### S98-3 — PR / merge / Pages: see result appended below.
+### S98-3 — PR / merge / Pages: DONE
+
+- **PR:** [#36](https://github.com/kanlerxz87-cyber/NYFun1/pull/36) `arena/98a7f510-nyfun1` → `main` ("Final integration: 2026-11-27 live re-verification of hotels/MICHELIN/attractions + rebuild (S98-1..3)").
+- **Merge:** MERGED 2026-11-27T18:16:47Z via `gh pr merge 36 --merge`, merge commit `1f27bea`.
+- **Pages:** `gh api repos/kanlerxz87-cyber/NYFun1/pages` → `status: built`, source `main:/`, https_enforced. Build for `1f27bea` completed 2026-11-27T18:17:16Z (`gh api .../pages/builds` → `built`, error none). Live site: `https://kanlerxz87-cyber.github.io/NYFun1/` (root redirect → `docs/`).
+- **Final verification on the merged tree:** `python3 build_site.py` → 12 pages, all build checks passed; `audit_61867d90/verify_site_integrity.py` → 0 errors (22 HTML pages, 400 rows, 341 HTTPS URLs, subtotal $2,977.48). Open PR #16 (`arena/bd056789-nyfun1`) left untouched for its owner.
+- All three S98 tasks closed. No manual input was used at any point.
