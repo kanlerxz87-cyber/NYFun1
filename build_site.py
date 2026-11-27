@@ -17,7 +17,7 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(ROOT, "site_data")
 DOCS = os.path.join(ROOT, "docs")
 
-BUILD_DATE = "2026-11-26"
+BUILD_DATE = "2026-11-27"
 
 
 # ---------------------------------------------------------------- helpers
@@ -304,8 +304,9 @@ def build_index():
     n_res_flags = sum(1 for f in FR["flags"] if f.get("status") in ("Resolved", "Documented"))
     return f"""
 <p class="lede">A source-linked plan for two adults: one 7-night base in Manhattan (15–22 Feb 2027),
-MICHELIN-starred dinners reachable within the hour, verified 2026-11-26 hotel &amp; menu pricing across
-all five seasonal weeks, and an explicit register of everything open or resolved.</p>
+MICHELIN-starred dinners reachable within the hour, hotel all-in totals re-read live on Booking.com on
+2026-11-27 (menu &amp; activity pricing verified 2026-11-26) across all five seasonal weeks, and an
+explicit register of everything open or resolved.</p>
 
 <div class="kpi">
   <div class="card"><div class="k">Recommended dates</div><div class="v">15–22 Feb 2027</div>
@@ -324,13 +325,15 @@ all five seasonal weeks, and an explicit register of everything open or resolved
 <h3>1 · The decision</h3>
 <p>Book <strong>Fairfield Inn &amp; Suites by Marriott New York Manhattan/Central Park</strong> (538 W 58th St,
 King Room) for <strong>15–22 February 2027</strong> at <strong>{money(rec['total_7n_usd'])} pre-tax /
-{money(rec['all_in_7n_usd'])} derived all-in</strong> on the free-cancellation rate ($0 prepayment, cancel free
+{money(rec['all_in_7n_usd'])} all-in as printed by Booking.com (incl. taxes &amp; fees, read 2026-11-27)</strong>
+on the free-cancellation rate ($0 prepayment, cancel free
 until 12 Feb 2027). It is the cheapest all-in option of all seven shortlisted hotels, charges zero resort
 fee, includes American breakfast for two, and puts Columbus Circle express lines (A/B/C/D/1) a block away.</p>
-<p class="hint"><strong>Why parity matters:</strong> Booking.com excludes NY taxes (14.75% + $4–$6/night)
-on all seven quotes. Even Pestana's non-refundable Partner Offer ({money(pestana.get('partner_nonref_all_in_usd'))} all-in,
-no breakfast) and Arlo SoHo's non-refundable Black Friday rate ({money(arlo['all_in_7n_usd'])} all-in w/ $37/nt resort
-fee, no breakfast) cost more than Fairfield's refundable, breakfast-included total. Next-best free-cancel
+<p class="hint"><strong>Why parity matters:</strong> Booking.com's 2026-11-27 room tables now print
+tax-inclusive totals directly; the official NYC rate is 14.75% + $3.50/night fixed fees
+($2.00 room fee + $1.50 NYS unit fee, verified on nyc.gov). Even Pestana's non-refundable Partner Offer ({money(pestana.get('partner_nonref_all_in_usd'))} all-in,
+no breakfast) and Arlo SoHo's non-refundable Black Friday rate ({money(arlo['all_in_7n_usd'])} all-in
+with a $37/nt resort fee, no breakfast) cost more than Fairfield's refundable, breakfast-included total. Next-best free-cancel
 pick with breakfast is <strong>Hyatt Place Chelsea</strong> ({money(hyatt['all_in_7n_usd'])} all-in, #1 reach at 22/22 stars within 5 km).</p>
 </div>
 <div class="card">
@@ -449,12 +452,14 @@ def build_hotels():
             f'{esc(h["room"])}<div class="small">{esc(h["bed"])} · {esc(h["bath"])}</div>'
             + (f'<div class="small">{esc(h["size"])}</div>' if h["size"] else ""),
             esc(h["breakfast"]),
-            money(h["total_7n_usd"]) + '<div class="small">' + basis + '</div>' + rf
+            money(h["total_7n_usd"]) + '<div class="small">' + basis
+            + (' · read ' + esc(h.get("pretax_read_on", "2026-11-26")) if h.get("total_7n_usd") else '') + '</div>' + rf
             + ('<div class="small">before discount: ' + money(h["list_price_before_discount"]) + '</div>'
                if h["list_price_before_discount"] else ''),
             '<strong>' + money(h["all_in_7n_usd"]) + '</strong>' + partner
-            + '<div class="small">' + pill("documented" if not h["tax_included"] else "verified",
-                                           "derived" if not h["tax_included"] else "as printed") + '</div>',
+            + '<div class="small">' + pill("verified" if h.get("all_in_stated") else "documented",
+                                           "as printed " + esc(h.get("all_in_read_on", "")) if h.get("all_in_stated")
+                                           else "derived") + '</div>',
             f'{esc(h["cancellation"])}<div class="small">guest score {esc(h["rating"])}</div>',
             (ext(h["source_url"], "Booking.com (hotel page)")
              if "/hotel/us/" in h["source_url"]
@@ -499,7 +504,7 @@ def build_hotels():
     rank_table = table(
         ["#", "Hotel", "All-in 7 nights", "Pre-tax printed", "Breakfast", "Cancellation"],
         rrows,
-        caption="Derived all-in = pre-tax x 1.1475 + $4/night ($6/night at Residence Inn FiDi; +$1/night Arlo tourism fee).",
+        caption="All-in = Booking-stated total incl. taxes & fees (read 2026-11-27). Pre-tax = stated snapshot read 2026-11-26. NYC rate 14.75% + $3.50/night fixed fees (nyc.gov).",
         card_labels=["Rank", "Hotel", "All-in", "Pre-tax", "Breakfast", "Cancellation"],
         source_urls=[h["source_url"] for h in ranked])
 
@@ -516,7 +521,7 @@ def build_hotels():
     win_table = table(
         ["7-night window (Mon–Mon)", "Fairfield pre-tax", "Fairfield all-in", "Hyatt Chelsea pre-tax", "Res Inn FiDi pre-tax", "Observation"],
         win_rows,
-        caption="All 5 weekly windows spanning the 15 Feb – 23 Mar 2027 brief range, checked 2026-11-26 on Booking.com.",
+        caption="All 5 weekly windows spanning the 15 Feb – 23 Mar 2027 brief range, pre-tax checked 2026-11-26 on Booking.com; Week-1 all-in re-stated by Booking 2026-11-27 ($1,155.48), other all-ins derived at the official $3.50/night fee.",
         card_labels=["Window", "Fairfield pre-tax", "Fairfield all-in", "Hyatt pre-tax", "FiDi pre-tax", "Note"],
         source_urls=[w.get("source_url") or rec["source_url"] for w in HOTELS["windows_sampled"]])
 
@@ -549,23 +554,26 @@ def build_hotels():
     bs = HOTELS.get("booking_strategy", {})
     return f"""
 <p class="lede">Seven Manhattan 4-star/high-rated hotels, each verified on its direct Booking.com property
-page on 2026-11-26 for a king or queen bed, private attached bathroom, and verified street address for
-<strong>15–22 February 2027 (2 adults)</strong>. Every pre-tax headline is converted to derived all-in cost
-using exact NYC Occupancy Tax math.</p>
+page for a king or queen bed, private attached bathroom, and verified street address for
+<strong>15–22 February 2027 (2 adults)</strong>. All-in totals are Booking's own tax-inclusive statements
+re-read live on <strong>2026-11-27</strong>; the pre-tax column shows the stated "total before taxes"
+snapshots read 2026-11-26 (date printed under each figure).</p>
 
 <div class="warnbox"><strong>Read the tax, resort-fee &amp; cancellation basis before comparing.</strong>
-All seven Booking.com rates on 2026-11-26 exclude New York's 14.75% tax + $4–$6/night city/unit occupancy fees
-(verified on nyc.gov/finance). Arlo SoHo ({money(arlo['total_7n_usd'])}), Arlo Midtown, and Pestana CR7
+The 2026-11-27 room tables state tax-inclusive totals ("includes taxes and charges"); the official NYC rate
+is 14.75% + $3.50/night fixed fees ($2.00 room fee + $1.50 NYS unit fee, verified on nyc.gov 2026-11-27).
+Where a 2026-11-26 pre-tax snapshot no longer composes with the 2026-11-27 stated all-in (Arlo SoHo, Arlo
+Midtown, Residence Inn moved overnight), the stated all-in governs — see flag F-31. Pestana CR7
 ({money(pestana['total_7n_usd'])} free-cancel / {money(pestana.get('partner_nonref_all_in_usd'))} non-ref Partner)
-restrict cancellation or exclude breakfast, whereas <strong>Fairfield Central Park</strong> charges <strong>$0 resort fee</strong>,
-drops to <strong>{money(rec['total_7n_usd'])} pre-tax ({money(rec['all_in_7n_usd'])} all-in)</strong> with American
+restrict cancellation or excludes breakfast, whereas <strong>Fairfield Central Park</strong> charges <strong>$0 resort fee</strong>,
+at <strong>{money(rec['total_7n_usd'])} pre-tax ({money(rec['all_in_7n_usd'])} all-in as printed)</strong> with American
 breakfast for two, $0 prepayment, and free cancellation until 12 Feb 2027.</div>
 
 <h2>Shortlist, 15–22 February 2027 (7 nights, 2 adults)</h2>
 {table(
     ["Hotel &amp; street address", "Room / bed / bathroom", "Breakfast", "Pre-tax printed", "All-in, 7 nights", "Cancellation &amp; score", "Direct Booking URL"],
     rows,
-    caption="Captured 2026-11-26 for check-in 2027-02-15, check-out 2027-02-22 via direct /hotel/us/ pages.",
+        caption="All-in totals read live 2026-11-27; pre-tax snapshots read 2026-11-26 (date shown under each figure) — check-in 2027-02-15, check-out 2027-02-22 via direct /hotel/us/ pages.",
     card_labels=["Hotel", "Room", "Breakfast", "Pre-tax", "All-in 7 nights", "Cancellation", "Source"])}
 
 <h2>Cheapest time to book: all 5 weeks in the brief window (15 Feb – 22 Mar 2027)</h2>
@@ -585,11 +593,11 @@ breakfast for two, $0 prepayment, and free cancellation until 12 Feb 2027.</div>
 {rank_table}
 <div class="note"><strong>Why Fairfield wins.</strong> It has the lowest all-in total of all seven hotels
 ({money(rec['all_in_7n_usd'])}), includes breakfast for two, charges $0 resort fee, requires $0 prepayment,
-allows free cancellation until 12 Feb 2027, and has a king bed + private bath. Arlo SoHo's cheaper-on-paper
-$1,282.33 quote is non-refundable (only 1 reschedule) and excludes breakfast; its flexible free-cancel tier
-jumps to $1,907.72 all-in. citizenM ({money(citm['all_in_7n_usd'])} room-only, highest 8.9 score, 4-min walk
+allows free cancellation until 12 Feb 2027, and has a king bed + private bath. Arlo SoHo's
+{money(arlo['all_in_7n_usd'])} quote (read 2026-11-27) is non-refundable (only 1 reschedule) and excludes breakfast; its flexible free-cancel tier
+jumps to {money(arlo.get('flex_all_in_usd'))} all-in. citizenM ({money(citm['all_in_7n_usd'])} room-only, highest 8.9 score, 4-min walk
 to Le Bernardin) adds $329/week if you buy breakfast. Hyatt Place Chelsea ({money(hyatt['all_in_7n_usd'])} all-in,
-breakfast included, free cancel) is the top alternative if maximum central reach (22/22 stars) outweighs $146/week.</div>
+breakfast included, free cancel) is the top alternative if maximum central reach (22/22 stars) outweighs {money(hyatt['all_in_7n_usd'] - rec['all_in_7n_usd'])}/week.</div>
 
 <h2>Ranking by MICHELIN reach (22 verified Manhattan starred venues)</h2>
 <p class="brief-ask">The brief asks for hotels ranked by MICHELIN restaurants reachable within an hour.
@@ -611,8 +619,9 @@ starred venues (all 5 three-stars, 7 top two-stars, and 10 key one-stars):</p>
 <h2>Remaining limits on the hotel comparison</h2>
 <div class="warnbox">
 <ul class="tight">
-<li><strong>Dynamic promotions:</strong> Several 2026-11-26 rates rely on Black Friday (-30% to -36%) or Bonus (-25%) deals (F-03).</li>
-<li><strong>Hyatt Place Chelsea accessible tier:</strong> The $1,113 pre-tax rate is for the disability-access roll-in shower king (bookable by anyone; standard king may price higher, F-14).</li>
+<li><strong>Dynamic promotions:</strong> Several rates rely on Black Friday (-30% to -36%) or Bonus (-24% to -25%) deals (F-03). All seven all-in totals were re-read live on 2026-11-27 (F-31).</li>
+<li><strong>Hyatt Place Chelsea tiers:</strong> On 2026-11-27 both the disability-access roll-in-shower king and the standard king are stated at the same $1,303.00 all-in, so the accessibility tier carries no price premium on these dates (F-14).</li>
+<li><strong>Pestana CR7 bed type:</strong> The Comfort room's English room table says "1 large double bed", not queen — flagged for traveller confirmation against the brief's queen-or-bigger requirement (F-32).</li>
 <li><strong>Reach is Haversine 5 km radius, not full 69-venue GTFS schedules:</strong> See F-05 and Suggestion S-02.</li>
 </ul>
 </div>
@@ -1023,7 +1032,7 @@ engineered around actual museum closure days, winter hours, holiday crowds, and 
 <h2>Booking countdown &amp; release schedule</h2>
 <div class="card">
 <ol class="tight">
-<li><strong>Now (Nov 2026):</strong> Lock Fairfield Central Park ($985.60 pre-tax / $1,158.98 all-in) at $0 prepayment with free cancellation until <strong>2027-02-12</strong>; monitor flight checkout for 2 seats.</li>
+<li><strong>Now (Nov 2026):</strong> Lock Fairfield Central Park ($985.60 pre-tax / $1,155.48 all-in as printed by Booking 2026-11-27) at $0 prepayment with free cancellation until <strong>2027-02-12</strong>; monitor flight checkout for 2 seats.</li>
 <li><strong>After the official 14 Dec 2026 ceremony:</strong> Re-check the MICHELIN Guide NYC 2026 results before confirming the final restaurant list &mdash; the date is confirmed on MICHELIN's own press site (F-01; ceremony-source flag resolved 2026-11-26).</li>
 <li><strong>Now (read 26 Nov 2026):</strong> <strong>Sushi Sho</strong> already sells the travel dates &mdash; Tock states booking through 2027-02-28, next release 2026-12-01 11:00 EST; prepaid $495 pp and the reservation must be confirmed one day ahead. <strong>Eleven Madison Park</strong>'s Resy notice publishes only January (opens Tuesday 1 Dec 2026, 10:00 ET); February's release datetime is not yet posted (Q-27, F-28).</li>
 <li><strong>1 Jan 2027 (15:00 EST):</strong> Monthly release for February at <strong>Atomix</strong> (Tock); re-check EMP's Resy for February's exact datetime (Q-27).</li>
@@ -1091,7 +1100,7 @@ included at Fairfield), wine pairings (adds {money(510, 0)}–{money(1060, 0)} f
 <li><strong>Lower-cost MICHELIN swaps vs Gabriel Kreuther ({money(650, 0)}):</strong> <strong>Cote</strong> 1★ Butcher's Feast {money(168, 0)} (-$482) · <strong>Dirt Candy</strong> 1★ Green Star {money(236, 0)} tip included (-$414) · <strong>One White Street</strong> Green Star {money(290, 0)} (-$360) · <strong>The Modern</strong> 2★ Impressions {money(370, 0)} (-$280).</li>
 <li><strong>Alternative 3★ anchors vs Le Bernardin ({money(700, 0)}):</strong> <strong>Jungsik</strong> {money(670, 0)} · <strong>Eleven Madison Park</strong> Bar {money(510, 0)} / Full {money(770, 0)} · <strong>Sushi Sho</strong> {money(990, 0)} incl. admin.</li>
 <li><strong>Wine pairings:</strong> Le Bernardin {money(1060, 0)} total w/ menu (+$360 over food-only) · Gabriel Kreuther from {money(510, 0)}/couple · Cote {money(220, 0)}/couple · One White Street {money(190, 0)}/couple.</li>
-<li><strong>14-night extension (22 Feb – 1 Mar hotel):</strong> Fairfield Week 2 = {money(1199.14)} all-in (+3.6% vs Week 1), making 14 nights ~{money(2358.12)} all-in.</li>
+<li><strong>14-night extension (22 Feb – 1 Mar hotel):</strong> Fairfield Week 2 = {money(1195.64)} all-in (+3.6% vs Week 1, derived at the official $3.50/night fee), making 14 nights ~{money(2351.12)} all-in.</li>
 </ul>
 </div>
 
@@ -1160,9 +1169,9 @@ def build_questions():
 
 <h2>Key open decisions for the traveller</h2>
 <div class="grid two">
-<div class="card"><h3>Q-01 · Length: 4, 7 or 14 nights?</h3><p class="small">Week 1 ($1,158.98) and Week 2 ($1,199.14) are both verified at Fairfield Central Park.</p></div>
+<div class="card"><h3>Q-01 · Length: 4, 7 or 14 nights?</h3><p class="small">Week 1 ($1,155.48 Booking-stated) and Week 2 ($1,195.64 derived) are both verified at Fairfield Central Park.</p></div>
 <div class="card"><h3>Q-02 &amp; Q-04 · Spend ceiling &amp; star mix</h3><p class="small">Verified subtotal is {money(FR["budget"]["verified_subtotal_usd"])}; swapping Gabriel Kreuther for Cote ($168) or Dirt Candy ($236) saves $414–$482.</p></div>
-<div class="card"><h3>Q-08 &amp; Q-26 · Fairfield ($1,158.98) vs Hyatt Chelsea ($1,305.17)</h3><p class="small">Fairfield wins by $146/week + free cancel + breakfast; Hyatt Chelsea hits 22/22 verified stars within 5 km.</p></div>
+<div class="card"><h3>Q-08 &amp; Q-26 · Fairfield ($1,155.48) vs Hyatt Chelsea ($1,303.00)</h3><p class="small">Fairfield wins by $147.52/week + free cancel + breakfast; Hyatt Chelsea hits 22/22 verified stars within 5 km.</p></div>
 <div class="card"><h3>Q-18 · Post-reported-ceremony MICHELIN check</h3><p class="small">The 14 Dec 2026 ceremony date is confirmed by MICHELIN Media; recheck the published NYC roster after the event before final bookings.</p></div>
 <div class="card"><h3>Q-19 · Scheduled MTA GTFS matrix</h3><p class="small">Straight-line 5 km reach now covers 22 stars; running weekday 19:00 GTFS times completes the 1-hour proof.</p></div>
 </div>
@@ -1324,7 +1333,7 @@ the few remaining third-party walls, and the automated integrity checks run on e
 <li><strong>Read it or leave it blank.</strong> A value appears only if verified on a linked primary/official source or authoritative search record; secondary sources are explicitly labelled and flagged.</li>
 <li><strong>Never infer.</strong> No invented daily meal allowances, no guessed handles, no fabricated schedules.</li>
 <li><strong>Separate the award from the listing.</strong> Red stars, Green Stars (including <em>One White Street</em> Selected), Bib Gourmand (76), and Selected (224) stay strictly separated.</li>
-<li><strong>Label every derived number.</strong> NYC tax math (14.75% + $4–$6/night + $1 Arlo tourism) and Haversine distances are explicitly marked DERIVED/MODEL.</li>
+<li><strong>Label every derived number.</strong> NYC tax math (14.75% + $3.50/night fixed fees per nyc.gov, read 2026-11-27) and Haversine distances are explicitly marked DERIVED/MODEL; hotel all-in totals read on 2026-11-27 are Booking-stated, not derived (F-31).</li>
 <li><strong>Reconcile disagreements explicitly.</strong> The 72-entry ceremony vs 69 live NYC list discrepancy is fully accounted for name-by-name (F-02).</li>
 <li><strong>Date every snapshot.</strong> Verified snapshot date: <strong>{BUILD_DATE}</strong>.</li>
 </ol>

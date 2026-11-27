@@ -1,7 +1,7 @@
 {
  "session": "arena-55eb819a",
- "read_on": "2026-11-26",
- "purpose": "Independent official-source audit ledger preserved after rebasing onto parallel upstream work. This file does not overwrite the richer upstream dataset; it records source reads and irregularities for manual review.",
+ "read_on": "2026-11-27",
+ "purpose": "Independent official-source audit ledger preserved after rebasing onto parallel upstream work. This file does not overwrite the richer upstream dataset; it records source reads and irregularities for manual review. Refresh pass 2026-11-27: hotel all-in totals switched from derived to Booking-stated; fee formula corrected (F-31); Pestana bed corrected to '1 large double bed' (F-32).",
  "official_sources": [
   {
    "publisher": "MICHELIN 2025 star article",
@@ -245,13 +245,6 @@
    "publisher": "Met Perspectives YouTube",
    "url": "https://www.metmuseum.org/perspectives/connections-greenhouse",
    "verified": "Official Met page links youtube.com/user/metmuseum.",
-   "kind": "official",
-   "read_on": "2026-11-26"
-  },
-  {
-   "publisher": "AMNH plan your visit",
-   "url": "https://www.amnh.org/plan-your-visit",
-   "verified": "Open daily 10:00–17:30; standard adult $37; NY State residents pay what you wish; holiday exceptions.",
    "kind": "official",
    "read_on": "2026-11-26"
   },
@@ -536,15 +529,106 @@
    "read_on": "2026-11-26"
   },
   {
-   "publisher": "MICHELIN Media official ceremony announcement",
-   "url": "https://michelinmedia.com/pages/blog/detail/article/c/a1479/",
-   "verified": "Official post dated 11 Aug 2026 states the 2026 Northeast Cities ceremony will take place the evening of 14 Dec at The Glasshouse; read directly 2026-11-27.",
+   "publisher": "NYC Department of Finance - Hotel room occupancy tax",
+   "url": "https://www.nyc.gov/site/finance/business/business-hotel-room-occupancy-tax.page",
+   "verified": "Tax structure: NYS+NYS/NYC sales taxes, NYC hotel room occupancy tax, NYS Hotel Unit Fee $1.50/unit/day; tiered daily room fee $2.00/day for rent $40+; combined fixed fees $3.50/night on top of the 14.75% rate.",
+   "kind": "official",
+   "read_on": "2026-11-27"
+  },
+  {
+   "publisher": "Booking.com - Fairfield Inn Central Park room table",
+   "url": "https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
+   "verified": "King Room 21 m2 private bath: original $1,640.18, Black Friday -$484.70, stated total $1,155.48 incl. tax; breakfast incl.; free cancel before 2027-02-12; $0 prepay; address 538 W 58th St.",
+   "kind": "official",
+   "read_on": "2026-11-27"
+  },
+  {
+   "publisher": "Booking.com - citizenM Times Square room table",
+   "url": "https://www.booking.com/hotel/us/citizenm-new-york-times-square-new-york.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
+   "verified": "King Room: stated total $1,302.00 incl. tax; breakfast $23.50 pp/night extra; free cancel before 2027-02-13; $0 prepay; private bath.",
+   "kind": "official",
+   "read_on": "2026-11-27"
+  },
+  {
+   "publisher": "Booking.com - Residence Inn FiDi room table",
+   "url": "https://www.booking.com/hotel/us/residence-inn-new-york-downtown-manhattan-financial-district.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
+   "verified": "Studio 1 King 24 m2 kitchen: original $1,717.29, bonus -$419.70, stated total $1,297.59 incl. tax; breakfast incl.; free cancel before 2027-02-13; $0 prepay.",
+   "kind": "official",
+   "read_on": "2026-11-27"
+  },
+  {
+   "publisher": "Booking.com - Hyatt Place Chelsea room table",
+   "url": "https://www.booking.com/hotel/us/hyatt-place-new-york-chelsea.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
+   "verified": "King Room 17 m2 (accessible and standard tiers): stated total $1,303.00 incl. tax; breakfast incl.; free cancel before 2027-02-13; $0 prepay; private bath.",
+   "kind": "official",
+   "read_on": "2026-11-27"
+  },
+  {
+   "publisher": "Booking.com - Arlo SoHo room table",
+   "url": "https://www.booking.com/hotel/us/arlo-soho.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
+   "verified": "Queen Room Courtyard View non-ref: original $2,425.20 - BF $839.97 - Booking pays $87.84 = $1,497.39 incl. tax; flex free-cancel tier $1,979.42; breakfast $20 pp/night; reschedule once by 2027-02-08.",
+   "kind": "official",
+   "read_on": "2026-11-27"
+  },
+  {
+   "publisher": "Booking.com - Arlo Midtown room table",
+   "url": "https://www.booking.com/hotel/us/arlo-midtown.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
+   "verified": "King Urban 15 m2 non-ref: original $2,390.77 - BF $826.20 = $1,564.57 incl. tax; flex free-cancel $2,177.00; breakfast-incl flex $2,538.00; breakfast $25 pp/night.",
+   "kind": "official",
+   "read_on": "2026-11-27"
+  },
+  {
+   "publisher": "Booking.com - Pestana CR7 room table (English)",
+   "url": "https://www.booking.com/hotel/us/pestana-cr7-times-square.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD&lang=en",
+   "verified": "Comfort Room '1 large double bed' 17 m2 ensuite: free-cancel tier (by 2027-01-25) $1,387.00 incl. tax; Partner Offer non-ref prepay $1,271.00; no breakfast.",
+   "kind": "official",
+   "read_on": "2026-11-27"
+  },
+  {
+   "publisher": "MICHELIN Guide NYC live 1-star filter",
+   "url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurants/1-star-michelin",
+   "verified": "Live counts: 3 Stars = 5, 2 Stars = 14, 1 Star = 50 (69 total), Bib Gourmand = 76, Selected = 224 - matches roster live_nyc_counts exactly.",
+   "kind": "official",
+   "read_on": "2026-11-27"
+  },
+  {
+   "publisher": "MoMA visit page",
+   "url": "https://www.moma.org/visit/",
+   "verified": "Adults $30; Mon-Thu 10:30-17:30, Fri 10:30-20:30, Sat-Sun 10:30-17:30; open every day except Thanksgiving and Christmas; UNIQLO Friday Nights free for NY State residents 17:30-20:30 with advance ticket.",
+   "kind": "official",
+   "read_on": "2026-11-27"
+  },
+  {
+   "publisher": "The Met homepage (hours block)",
+   "url": "https://www.metmuseum.org/index.html",
+   "verified": "Met Fifth Avenue: Sun-Tue and Thu 10 am-5 pm; Fri-Sat 10 am-9 pm; Closed Wednesday; closed Thanksgiving, Dec 25, Jan 1 and first Monday in May. Admission adults $30 (plan-your-visit).",
+   "kind": "official",
+   "read_on": "2026-11-27"
+  },
+  {
+   "publisher": "AMNH plan your visit",
+   "url": "https://www.amnh.org/plan-your-visit",
+   "verified": "Open daily 10 am-5:30 pm; closed Thanksgiving & Christmas; standard (out-of-state) Adult General Admission $37, +1 ticketed exhibition $43, all exhibitions $48; tickets on sale through June 30, 2027.",
+   "kind": "official",
+   "read_on": "2026-11-27"
+  },
+  {
+   "publisher": "9/11 Memorial Museum visit page",
+   "url": "https://www.911memorial.org/visit/visit-museum-1",
+   "verified": "Museum open Wed-Mon and many Tuesdays 9 a.m.-7 p.m.; admission $24-$36 (2 adults at top of range = $72); last admission 60 min before closing; Free Admission Mondays 5:30-7 p.m. (tickets released 7 a.m. ET Mondays); Memorial free daily 8 a.m.-8 p.m.; timed tickets in advance.",
+   "kind": "official",
+   "read_on": "2026-11-27"
+  },
+  {
+   "publisher": "NPS Statue of Liberty fees & passes",
+   "url": "https://www.nps.gov/stli/planyourvisit/fees.htm",
+   "verified": "Adult (13+) ferry $26.00 (2 adults = $52.00); pedestal/crown +$0.30; NPS charges no entrance fee - Statue City Cruises ferry ticket required; page last updated 2026-03-02.",
    "kind": "official",
    "read_on": "2026-11-27"
   }
  ],
  "corrections": [
-  "Fairfield’s Booking total is $985.60 before taxes, not a tax-inclusive $1,155.48; derived all-in is $1,158.98.",
+  "CORRECTED 2026-11-27: the earlier note 'Fairfield's Booking total is $985.60 before taxes, not a tax-inclusive $1,155.48' was wrong. Booking's room table (re-read 2026-11-27) prints 'Gesamt US$1,155.48 einschliesslich Steuern und Gebuhren' for 7 nights, and $985.60 x 1.1475 + $3.50/night x 7 = $1,155.48 exactly, using the official NYC DOF fixed fees ($2.00 room fee + $1.50 NYS unit fee = $3.50/night, nyc.gov). The figure is now carried as a Booking-stated total, not a derived one (flag F-31).",
   "All seven Booking shortlist headlines exclude tax/fees; Arlo SoHo and Arlo Midtown also exclude $1/night tourism fees, and Residence Inn FiDi excludes $6/night city tax rather than $4.",
   "The MICHELIN 2025 ceremony article contains 72 entries while the live NYC filtered pages show 69; both are official and the difference is flagged.",
   "High Line seasonal winter hours, Chelsea Market concourse hours, AMNH standard admission, Central Park hours/free access, NPS Statue hours, and OPM’s 15 Feb 2027 holiday were read from official pages.",
@@ -653,6 +737,10 @@
    "url": "https://www.booking.com/hotel/us/residence-inn-new-york-downtown-manhattan-financial-district.html",
    "status": "success",
    "note": "Residence Inn FiDi official Booking page."
-  }
+  },
+  "2026-11-27 (arena-98a7f510): Re-read all 7 Booking.com room tables live for 15-22 Feb 2027, 2 adults; every all-in total on the site now equals the page's own 'Gesamt / Includes taxes and charges' figure (F-31).",
+  "2026-11-27 (arena-98a7f510): MICHELIN live NYC filter re-counted (5/14/50 = 69 stars, 76 Bib, 224 Selected) - matches site_data/michelin_roster.json meta exactly.",
+  "2026-11-27 (arena-98a7f510): MoMA, Met (homepage hours block), AMNH, 9/11 Memorial and NPS Statue fees re-read from official pages; all published activity rows confirmed unchanged.",
+  "2026-11-27 (arena-98a7f510): NYC DOF hotel tax page read; fixed fees $3.50/night ($2.00 + $1.50) reconcile Booking's stated Fairfield total to the cent."
  ]
 }

@@ -1,24 +1,24 @@
 {
- "read_on": "2026-11-26",
- "basis": "Direct Booking.com property pages checked 2026-11-26 for check-in 2027-02-15, check-out 2027-02-22, 2 adults, 1 room, USD. All 7 shortlisted rooms verify a king or queen bed and private attached bathroom. 'all_in_7n_usd' applies the exact Booking.com tax formula verified against NYC Hotel Room Occupancy Tax rules (14.75% + $4/night city/unit fee; $6/night at Residence Inn FiDi; plus $1/night Arlo tourism fee). Reach is computed via Haversine distance across all 22 Manhattan starred venues with verified building coordinates.",
+ "read_on": "2026-11-27",
+ "basis": "All-in totals are Booking.com room-table statements ('Gesamt / Includes taxes and charges') re-read live on 2026-11-27 for check-in 2027-02-15, check-out 2027-02-22, 2 adults, 1 room, USD. Pre-tax headline figures are the stated 'Total before taxes' snapshots read 2026-11-26 and are labelled with their own read date; where the 2026-11-26 pre-tax snapshot no longer composes with the 2026-11-27 stated all-in (dynamic rate movement), the all-in governs (flag F-31). NYC fixed nightly fees verified on nyc.gov/DOF 2026-11-27: $2.00 room fee (rent $40+) + $1.50 NYS hotel unit fee = $3.50/night, on top of the 14.75% hotel occupancy tax rate. Reach is Haversine distance across the 22 Manhattan starred venues with verified coordinates.",
  "windows_sampled": [
   {
    "start": "2027-02-15",
    "end": "2027-02-22",
    "label": "Week 1 · Preferred & recommended (Mon-Mon, 7 nights)",
    "fairfield_pretax_usd": 985.6,
-   "fairfield_all_in_usd": 1158.98,
+   "fairfield_all_in_usd": 1155.48,
    "hyatt_chelsea_pretax_usd": 1113.0,
    "citizenm_ts_pretax_usd": 1113.0,
    "res_inn_fidi_pretax_usd": 1097.25,
-   "note": "Cheapest week across all 5 weekly windows in the 15 Feb - 23 Mar brief range; contains Presidents' Day / NYCPS Midwinter Recess."
+   "note": "Cheapest week across all 5 weekly windows in the 15 Feb - 23 Mar brief range; contains Presidents' Day / NYCPS Midwinter Recess. All-in re-stated from Booking's own total on 2026-11-27: $1,155.48."
   },
   {
    "start": "2027-02-22",
    "end": "2027-03-01",
    "label": "Week 2 · +1 week (Mon-Mon, 7 nights)",
    "fairfield_pretax_usd": 1020.6,
-   "fairfield_all_in_usd": 1199.14,
+   "fairfield_all_in_usd": 1195.64,
    "hyatt_chelsea_pretax_usd": 1226.0,
    "citizenm_ts_pretax_usd": 1288.0,
    "res_inn_fidi_pretax_usd": null,
@@ -29,7 +29,7 @@
    "end": "2027-03-08",
    "label": "Week 3 · Early March (Mon-Mon, 7 nights)",
    "fairfield_pretax_usd": 1366.0,
-   "fairfield_all_in_usd": 1595.49,
+   "fairfield_all_in_usd": 1591.98,
    "hyatt_chelsea_pretax_usd": 1419.0,
    "arlo_soho_pretax_usd": 1357.0,
    "pestana_pretax_usd": 1341.0,
@@ -41,7 +41,7 @@
    "end": "2027-03-15",
    "label": "Week 4 · Mid March (Mon-Mon, 7 nights)",
    "fairfield_pretax_usd": 1247.0,
-   "fairfield_all_in_usd": 1458.93,
+   "fairfield_all_in_usd": 1455.43,
    "hyatt_chelsea_pretax_usd": 1467.0,
    "arlo_soho_pretax_usd": 1355.0,
    "pestana_pretax_usd": 1372.0,
@@ -54,7 +54,7 @@
    "end": "2027-03-22",
    "label": "Week 5 · Late March (Mon-Mon, 7 nights)",
    "fairfield_pretax_usd": 1247.0,
-   "fairfield_all_in_usd": 1458.93,
+   "fairfield_all_in_usd": 1455.43,
    "hyatt_chelsea_pretax_usd": 1388.0,
    "arlo_soho_pretax_usd": 1341.0,
    "pestana_pretax_usd": 1382.0,
@@ -66,25 +66,25 @@
   {
    "window": "2027-02-15 to 2027-02-22",
    "pretax_usd": 985.6,
-   "all_in_usd": 1158.98,
+   "all_in_usd": 1155.48,
    "note": "Lowest (Mon-Mon)"
   },
   {
    "window": "2027-02-16 to 2027-02-23",
    "pretax_usd": 996.1,
-   "all_in_usd": 1171.02,
+   "all_in_usd": 1167.52,
    "note": "+$12.04 vs Mon-Mon"
   },
   {
    "window": "2027-02-17 to 2027-02-24",
    "pretax_usd": 996.1,
-   "all_in_usd": 1171.02,
+   "all_in_usd": 1167.52,
    "note": "+$12.04 vs Mon-Mon"
   },
   {
    "window": "2027-02-18 to 2027-02-25",
    "pretax_usd": 996.1,
-   "all_in_usd": 1171.02,
+   "all_in_usd": 1167.52,
    "note": "+$12.04 vs Mon-Mon"
   }
  ],
@@ -110,14 +110,14 @@
    "total_7n_usd": 985.6,
    "tax_included": false,
    "list_price_before_discount": 1408.0,
-   "discount_note": "Black Friday Deal (-30% off $1,408 list, valid stays 19 Nov 2026 - 31 Dec 2027); Booking excludes 14.75% tax + $4/night city fee (+$173.38). No resort fee.",
+   "discount_note": "Black Friday Deal (-30% off $1,408 pre-tax list, stays 19 Nov 2026 - 31 Dec 2027) as printed 2026-11-27: original all-in $1,640.18, discount -$484.70, stated total $1,155.48 incl. tax. Official fixed fees $3.50/night ($2.00 NYC room fee + $1.50 NYS unit fee, nyc.gov), not $4/night.",
    "source_url": "https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
    "lat": 40.77042,
    "lon": -73.98971,
    "coords_flag": null,
    "window": "2027-02-15 to 2027-02-22",
-   "all_in_7n_usd": 1158.98,
-   "all_in_basis": "DERIVED: $985.60 x 1.1475 (14.75% NY tax) + $28 ($4/night city tax). Breakfast included; $0 resort fee; free cancellation until 2027-02-12.",
+   "all_in_7n_usd": 1155.48,
+   "all_in_basis": "BOOKING-STATED total incl. taxes & fees: US$1,155.48 for 7 nights, room table read 2026-11-27 (original US$1,640.18 - Black Friday US$484.70). Reconciles exactly to the stated $985.60 pre-tax: 985.60 x 1.1475 + $3.50/night x 7 = 1,155.48 (fees per nyc.gov DOF: $2.00 NYC + $1.50 NYS). Breakfast included; $0 resort fee; free cancellation until 2027-02-12; $0 prepayment.",
    "reach": {
     "venues_with_coords": 22,
     "total_star_entries": 69,
@@ -126,7 +126,10 @@
     "nearest_three_star_km": 0.59,
     "nearest_three_star": "Per Se",
     "method": "Great-circle distance from 538 W 58th St (40.77042, -73.98971) to all 22 verified starred Manhattan venues. A/B/C/D/1 express access at 59 St-Columbus Circle puts Downtown venues (Jungsik, Saga) within ~30 min subway even beyond 5 km."
-   }
+   },
+   "all_in_read_on": "2026-11-27",
+   "all_in_stated": true,
+   "pretax_read_on": "2026-11-26"
   },
   {
    "id": "arlo-soho",
@@ -134,26 +137,26 @@
    "area": "SoHo / Hudson Square",
    "address": "231 Hudson Street, New York, NY 10013",
    "address_flag": null,
-   "room": "Queen Room Courtyard View",
+   "room": "Queen Room Courtyard View (non-refundable Black Friday tier)",
    "bed": "1 queen bed",
    "bath": "Private bathroom (per Booking.com room table)",
    "size": null,
-   "breakfast": "Not included",
-   "cancellation": "Non-refundable Black Friday Deal (reschedule once free until 2027-02-08); Flex free-cancel rate is $1,632 pre-tax ($1,907.72 all-in)",
+   "breakfast": "Not included ($20 per person per night, stated 2026-11-27)",
+   "cancellation": "Non-refundable Black Friday Deal (one free reschedule until 2027-02-08, online payment); Flex free-cancel tier $1,979.42 all-in with free cancellation until 2027-02-14 (both stated 2026-11-27)",
    "rating": "8.1/10 (Booking.com guest score)",
    "total_7n_usd": 1087.0,
    "tax_included": false,
    "resort_fee_included_in_total": true,
    "resort_fee_note": "Booking lists $37/night resort fee ($259) INSIDE the $1,087 rate; excludes 14.75% tax + $4/night city fee + $1/night tourism fee ($35 fixed fees).",
-   "list_price_before_discount": 1647.0,
-   "discount_note": "2026-11-26 Black Friday non-ref deal ($1,087 pre-tax); comparable free-cancel tier rises to $1,632 pre-tax.",
+   "list_price_before_discount": null,
+   "discount_note": "2026-11-27 stated components: original all-in $2,425.20 ($346.46 x 7), Black Friday -$839.97, Booking.com pays -$87.84, total $1,497.39 incl. tax. 2026-11-26 pre-tax snapshot $1,087.00 (list $1,647) superseded by overnight rate movement (F-31). Flex tier $1,979.42 all-in.",
    "source_url": "https://www.booking.com/hotel/us/arlo-soho.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
    "lat": 40.7244457,
    "lon": -74.008423,
    "coords_flag": null,
    "window": "2027-02-15 to 2027-02-22",
-   "all_in_7n_usd": 1282.33,
-   "all_in_basis": "DERIVED: $1,087.00 x 1.1475 + $35 ($4 city + $1 tourism/night). Resort fee ($37/night) included; flexible free-cancel rate is $1,907.72 all-in.",
+   "all_in_7n_usd": 1497.39,
+   "all_in_basis": "BOOKING-STATED total incl. taxes & fees: US$1,497.39 for 7 nights (Queen Room Courtyard View, non-refundable Black Friday tier), room table read 2026-11-27: original $2,425.20 - Black Friday $839.97 - Booking.com pays $87.84 = $1,497.39 (38% off). Flex free-cancel tier stated $1,979.42 all-in. The 2026-11-26 pre-tax snapshot $1,087.00 does NOT compose (implies $1,272.71) - the cheap tier moved overnight; the all-in governs (F-31).",
    "reach": {
     "venues_with_coords": 22,
     "total_star_entries": 69,
@@ -162,7 +165,11 @@
     "nearest_three_star_km": 0.64,
     "nearest_three_star": "Jungsik",
     "method": "Great-circle distance from 231 Hudson St (40.7244457, -74.0084230). Corrected from earlier bug that listed Le Bernardin (4.69 km uptown) instead of Jungsik (0.64 km in Tribeca)."
-   }
+   },
+   "all_in_read_on": "2026-11-27",
+   "all_in_stated": true,
+   "pretax_read_on": "2026-11-26",
+   "flex_all_in_usd": 1979.42
   },
   {
    "id": "residence-inn-fidi",
@@ -179,15 +186,15 @@
    "rating": "8.1/10 (Booking.com guest score, 727 reviews)",
    "total_7n_usd": 1097.25,
    "tax_included": false,
-   "list_price_before_discount": 1463.0,
-   "discount_note": "-25% Bonus Deal off $1,463 list; Booking states 14.75% tax + $6/night city/unit occupancy fees excluded (+$203.84). No resort fee.",
+   "list_price_before_discount": null,
+   "discount_note": "2026-11-27: Bonus discount -24%, original all-in $1,717.29 (=$245.33 x 7), stated total $1,297.59 incl. tax. Pre-tax 2026-11-26 snapshot $1,097.25 superseded by the rate move (F-31).",
    "source_url": "https://www.booking.com/hotel/us/residence-inn-new-york-downtown-manhattan-financial-district.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
    "lat": 40.707216,
    "lon": -74.006398,
    "coords_flag": null,
    "window": "2027-02-15 to 2027-02-22",
-   "all_in_7n_usd": 1301.09,
-   "all_in_basis": "DERIVED: $1,097.25 x 1.1475 + $42 ($6/night city/unit fees shown on Booking). Breakfast included.",
+   "all_in_7n_usd": 1297.59,
+   "all_in_basis": "BOOKING-STATED total incl. taxes & fees: US$1,297.59 for 7 nights (Studio, 1 King, kitchen), room table read 2026-11-27 (Bonus discount: original $1,717.29 - $419.70). Breakfast included; free cancellation until 2027-02-13; $0 prepayment. The 2026-11-26 pre-tax snapshot $1,097.25 composes to $1,283.60 - it predates an overnight rate move (+$12.20 implied pre-tax) and does NOT compose with the 2026-11-27 stated total; the all-in governs (F-31).",
    "reach": {
     "venues_with_coords": 22,
     "total_star_entries": 69,
@@ -196,7 +203,10 @@
     "nearest_three_star_km": 1.3,
     "nearest_three_star": "Jungsik",
     "method": "Great-circle distance from 215 Pearl St (40.707216, -74.006398). Steps (0.20 km) from 70 Pine St (2-star Saga & 1-star Crown Shy); uptown Midtown stars sit 6.0-7.2 km north."
-   }
+   },
+   "all_in_read_on": "2026-11-27",
+   "all_in_stated": true,
+   "pretax_read_on": "2026-11-26"
   },
   {
    "id": "hyatt-place-chelsea",
@@ -207,21 +217,21 @@
    "room": "King Room with Roll-In Shower - Disability Access",
    "bed": "1 king bed",
    "bath": "Private bathroom",
-   "size": null,
+   "size": "17 m2 (room table, read 2026-11-27)",
    "breakfast": "Included",
    "cancellation": "Free cancellation until 2027-02-13 ($0 prepayment)",
    "rating": "8.2/10 (Booking.com guest score, 12,789 reviews)",
    "total_7n_usd": 1113.0,
    "tax_included": false,
    "list_price_before_discount": null,
-   "discount_note": "Cheapest qualifying king room on these dates is the accessible roll-in shower room (bookable by anyone; standard king tier sits slightly higher). Excludes 14.75% tax + $4/night city tax.",
+   "discount_note": "2026-11-27 room table: accessible roll-in-shower king AND standard king both stated at $1,303.00 all-in for the week (breakfast included). Pre-tax $1,113.00 was the 2026-11-26 stated figure.",
    "source_url": "https://www.booking.com/hotel/us/hyatt-place-new-york-chelsea.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
    "lat": 40.74408,
    "lon": -73.994141,
    "coords_flag": null,
    "window": "2027-02-15 to 2027-02-22",
-   "all_in_7n_usd": 1305.17,
-   "all_in_basis": "DERIVED: $1,113.00 x 1.1475 + $28 ($4/night city tax). Breakfast included.",
+   "all_in_7n_usd": 1303.0,
+   "all_in_basis": "BOOKING-STATED total incl. taxes & fees: US$1,303.00 for 7 nights (King Room, 17 m2), room table read 2026-11-27. The 2026-11-26 pre-tax snapshot $1,113.00 composes to $1,301.67 (within $1.33 of the stated total; implied pre-tax $1,114.16). Breakfast included; free cancellation until 2027-02-13; $0 prepayment.",
    "reach": {
     "venues_with_coords": 22,
     "total_star_entries": 69,
@@ -230,7 +240,10 @@
     "nearest_three_star_km": 0.65,
     "nearest_three_star": "Eleven Madison Park",
     "method": "Great-circle distance from 140 W 24th St (40.744080, -73.994141). Central Chelsea placement reaches all 22 verified starred Manhattan venues within 5 km (0.37 km to Cote)."
-   }
+   },
+   "all_in_read_on": "2026-11-27",
+   "all_in_stated": true,
+   "pretax_read_on": "2026-11-26"
   },
   {
    "id": "citizenm-times-square",
@@ -248,14 +261,14 @@
    "total_7n_usd": 1113.0,
    "tax_included": false,
    "list_price_before_discount": null,
-   "discount_note": "2026-11-26 rate dropped slightly from $1,147 to $1,113 room-only ($1,722 with breakfast); excludes 14.75% tax + $4/night city fee.",
+   "discount_note": "2026-11-27 stated all-in $1,302.00 room-only (rate moved from the 2026-11-26 pre-tax $1,113.00 snapshot, which composed to $1,305.17 derived). Breakfast for two for the week = $329.00 ($23.50 x 2 x 7, stated rate x 2 adults x 7 nights).",
    "source_url": "https://www.booking.com/hotel/us/citizenm-new-york-times-square-new-york.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
    "lat": 40.7614,
    "lon": -73.9857,
    "coords_flag": null,
    "window": "2027-02-15 to 2027-02-22",
-   "all_in_7n_usd": 1305.17,
-   "all_in_basis": "DERIVED: $1,113.00 x 1.1475 + $28 ($4/night city tax). Breakfast extra ($329/week for two).",
+   "all_in_7n_usd": 1302.0,
+   "all_in_basis": "BOOKING-STATED total incl. taxes & fees: US$1,302.00 for 7 nights (King Room, room-only), room table read 2026-11-27. The 2026-11-26 pre-tax snapshot $1,113.00 composes to $1,301.67 (within $0.33). Breakfast extra at $23.50 pp/night (stated on the same table); free cancellation until 2027-02-13; $0 prepayment.",
    "reach": {
     "venues_with_coords": 22,
     "total_star_entries": 69,
@@ -264,7 +277,10 @@
     "nearest_three_star_km": 0.33,
     "nearest_three_star": "Le Bernardin",
     "method": "Great-circle distance from 218 W 50th St (40.7614, -73.9857). Only 0.33 km (~4 min walk) to Le Bernardin; 0.73 km to The Modern."
-   }
+   },
+   "all_in_read_on": "2026-11-27",
+   "all_in_stated": true,
+   "pretax_read_on": "2026-11-26"
   },
   {
    "id": "arlo-midtown",
@@ -277,21 +293,21 @@
    "bath": "Private bathroom (per Booking.com room table)",
    "size": "160 sq ft",
    "breakfast": "Not included ($25 per person per night)",
-   "cancellation": "Non-refundable Black Friday rate (reschedule once until 2027-02-08); Flex free-cancel $1,772 pre-tax",
+   "cancellation": "Non-refundable Black Friday rate (one free reschedule until 2027-02-08, online payment); Flex free-cancel tier $2,177.00 all-in stated 2026-11-27 (breakfast-included flex $2,538.00)",
    "rating": "8.4/10 (Booking.com guest score)",
    "total_7n_usd": 1171.0,
    "tax_included": false,
    "resort_fee_included_in_total": true,
    "resort_fee_note": "Booking includes $37/night resort fee ($259) inside the $1,171 total; excludes 14.75% tax + $4/night city tax + $1/night tourism fee.",
-   "list_price_before_discount": 1774.0,
-   "discount_note": "Black Friday -34% non-refundable rate; flexible free-cancel tier is $1,772 pre-tax.",
+   "list_price_before_discount": null,
+   "discount_note": "2026-11-27 stated components: original all-in $2,390.77 ($341.54 x 7), Black Friday -$826.20, total $1,564.57 incl. tax. 2026-11-26 pre-tax snapshot $1,171.00 (list $1,774) superseded (F-31). Breakfast $25 pp/night extra on the non-ref tier; breakfast-included flex $2,538.00.",
    "source_url": "https://www.booking.com/hotel/us/arlo-midtown.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
    "lat": 40.755789,
    "lon": -73.993788,
    "coords_flag": null,
    "window": "2027-02-15 to 2027-02-22",
-   "all_in_7n_usd": 1378.72,
-   "all_in_basis": "DERIVED: $1,171.00 x 1.1475 + $35 ($4 city + $1 tourism/night). Resort fee ($37/night) included.",
+   "all_in_7n_usd": 1564.57,
+   "all_in_basis": "BOOKING-STATED total incl. taxes & fees: US$1,564.57 for 7 nights (King Urban, 15 m2, non-refundable Black Friday tier), room table read 2026-11-27: original $2,390.77 - Black Friday $826.20 = $1,564.57 (35% off). Flex free-cancel tier stated $2,177.00 all-in. The 2026-11-26 pre-tax snapshot $1,171.00 does NOT compose (implies $1,368.32) - rate moved overnight; the all-in governs (F-31).",
    "reach": {
     "venues_with_coords": 22,
     "total_star_entries": 69,
@@ -300,7 +316,11 @@
     "nearest_three_star_km": 1.15,
     "nearest_three_star": "Sushi Sho",
     "method": "Great-circle distance from 351 W 38th St (40.755789, -73.993788). Ties Pestana CR7 on 20/22 stars and 5/5 three-stars within 5 km."
-   }
+   },
+   "all_in_read_on": "2026-11-27",
+   "all_in_stated": true,
+   "pretax_read_on": "2026-11-26",
+   "flex_all_in_usd": 2177.0
   },
   {
    "id": "pestana-cr7-times-square",
@@ -308,27 +328,27 @@
    "area": "Times Square / Garment District",
    "address": "338 West 39th Street, New York, NY 10018",
    "address_flag": null,
-   "room": "Comfort Room (Free-cancel tier; Partner non-ref $1,224.76 all-in)",
-   "bed": "1 queen bed",
+   "room": "Comfort Room (Free-cancel tier; Partner non-ref $1,271.00 all-in)",
+   "bed": "1 large double bed (English room table, read 2026-11-27 - see flag F-32)",
    "bath": "Attached bathroom (per room table)",
    "size": null,
    "breakfast": "Not included",
-   "cancellation": "Free cancellation until 2027-01-25 ($1,187 pre-tax = $1,390.08 all-in); Partner Offer non-refundable $1,224.76 all-in",
+   "cancellation": "Free cancellation until 2027-01-25 ($1,387.00 all-in stated 2026-11-27, $0 prepayment until 2027-01-23); Partner Offer non-refundable prepay $1,271.00 all-in",
    "rating": "8.6/10 (Booking.com guest score)",
    "total_7n_usd": 1187.0,
    "tax_included": false,
-   "partner_nonref_all_in_usd": 1224.76,
+   "partner_nonref_all_in_usd": 1271.0,
    "resort_fee_included_in_total": true,
    "resort_fee_note": "Direct Black Friday -36% rate ($1,187 pre-tax) includes $26/night resort fee and excludes 14.75% tax + $4/night city tax. Booking also surfaces a non-refundable Partner Offer at $1,073 base / $1,224.76 all-in (no breakfast).",
-   "list_price_before_discount": 1860.0,
-   "discount_note": "Compared on free-cancellation parity ($1,390.08 all-in). Even against the non-refundable Partner Offer ($1,224.76 all-in), Fairfield ($1,158.98 free-cancel + breakfast) stays $65.78 cheaper.",
+   "list_price_before_discount": null,
+   "discount_note": "2026-11-27 stated tiers: free-cancel $1,387.00; Partner non-ref prepay $1,271.00; non-ref+internet $1,373.00; Bonus free-cancel (by 2027-02-01) $1,426.95; Black Friday free-cancel (by 2027-02-08) $1,457.93 - all incl. tax. Pre-tax 2026-11-26 snapshot $1,187.00 composes to $1,386.67.",
    "source_url": "https://www.booking.com/hotel/us/pestana-cr7-times-square.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
    "lat": 40.755981,
    "lon": -73.99324,
    "coords_flag": null,
    "window": "2027-02-15 to 2027-02-22",
-   "all_in_7n_usd": 1390.08,
-   "all_in_basis": "DERIVED (free-cancel direct tier): $1,187.00 x 1.1475 + $28 ($4/night city fee); Partner non-refundable all-in quote is $1,224.76.",
+   "all_in_7n_usd": 1387.0,
+   "all_in_basis": "BOOKING-STATED total incl. taxes & fees: US$1,387.00 for 7 nights (Comfort Room, free-cancel tier, cancel by 2027-01-25), English room table read 2026-11-27. The 2026-11-26 pre-tax snapshot $1,187.00 composes to $1,386.67 (within $0.33). Partner Offer non-refundable stated $1,271.00 all-in. Breakfast not included.",
    "reach": {
     "venues_with_coords": 22,
     "total_star_entries": 69,
@@ -337,7 +357,10 @@
     "nearest_three_star_km": 1.11,
     "nearest_three_star": "Sushi Sho",
     "method": "Great-circle distance from 338 W 39th St (40.755981, -73.993240). All 5 three-star venues sit within 5 km (Sushi Sho 1.11 km, Le Bernardin 1.14 km)."
-   }
+   },
+   "all_in_read_on": "2026-11-27",
+   "all_in_stated": true,
+   "pretax_read_on": "2026-11-26"
   }
  ],
  "market_cross_checks": [
@@ -376,5 +399,7 @@
    "pretax_7n_usd": 1694.0,
    "note": "Outer-borough baseline; dearer and farther from Midtown dining."
   }
- ]
+ ],
+ "windows_basis": "Pre-tax columns are stated Booking snapshots read 2026-11-26. Derived all-in = pre-tax x 1.1475 + $3.50/night x 7 (NYC DOF fixed fees $2.00 + $1.50, nyc.gov read 2026-11-27), except Week 1 which is Booking's stated total read 2026-11-27 ($1,155.48).",
+ "shifted_basis": "All-in = pre-tax x 1.1475 + $3.50/night x 7 (official NYC DOF fixed fees), read 2026-11-26 pre-tax / recomputed 2026-11-27; Week 1 equals Booking's stated $1,155.48 total read 2026-11-27."
 }

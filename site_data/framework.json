@@ -270,10 +270,10 @@
   "lines": [
    {
     "item": "Hotel - Fairfield Inn & Suites Manhattan/Central Park, King Room, 7 nights",
-    "usd": 1158.98,
-    "kind": "DERIVED from Booking quote",
+    "usd": 1155.48,
+    "kind": "VERIFIED (Booking-stated total incl. taxes & fees, read 2026-11-27)",
     "source": "https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
-    "note": "2026-11-26 Black Friday rate $985.60 pre-tax (-30% off $1,408) x 1.1475 NY tax + $28 ($4/nt city tax) = $1,158.98 all-in. Free cancellation until 2027-02-12, $0 prepayment, American breakfast included."
+    "note": "Booking.com room table states 'Gesamt US$1,155.48 einschließlich Steuern und Gebühren' for 7 nights (check-in 2027-02-15, check-out 2027-02-22, 2 adults), read 2026-11-27: original $1,640.18 - Black Friday $484.70. Reconciles exactly to the $985.60 pre-tax snapshot x 1.1475 + $3.50/night x 7 (official NYC DOF fixed fees $2.00 room + $1.50 NYS unit, nyc.gov read 2026-11-27). Free cancellation until 2027-02-12, $0 prepayment, American breakfast included."
    },
    {
     "item": "Flights — excluded pending origin and two-seat checkout",
@@ -348,8 +348,8 @@
     "note": "Hospitality varies by party preference (hotel breakfast is included). Left unestimated rather than inventing an allowance."
    }
   ],
-  "verified_subtotal_usd": 2980.98,
-  "verified_subtotal_note": "Sum of priced lines: derived hotel all-in, doubled Google Flights 1-adult fare, MTA cap, official attraction prices/floors/ranges, and two exact tasting-menu totals. Not a full trip budget.",
+  "verified_subtotal_usd": 2977.48,
+  "verified_subtotal_note": "Sum of priced lines: Booking-stated hotel all-in (read 2026-11-27), MTA cap, official attraction prices/floors/ranges, and two exact tasting-menu totals. Airfare is NOT priced (two-seat origin total unconfirmed). Not a full trip budget.",
   "unpriced_lines": 1
  },
  "itineraries": [
@@ -433,12 +433,12 @@
     {
      "date": "Week 1 (15-22 Feb)",
      "day": "Core",
-     "plan": "As the 7-night plan above ($1,158.98 all-in at Fairfield Central Park)."
+     "plan": "As the 7-night plan above ($1,155.48 all-in at Fairfield Central Park)."
     },
     {
      "date": "Week 2 (22 Feb - 1 Mar)",
      "day": "Depth",
-     "plan": "Fairfield Week 2 priced at $1,020.60 pre-tax (~$1,199.14 all-in, +3.6% vs Week 1 — combined 14-night hotel ~$2,358.12 all-in). Ideal for Brooklyn stars (Aska 2-star, Francie 1-star), Queens (Meju), Broadway matinee, and relaxed museum pacing."
+     "plan": "Fairfield Week 2 priced at $1,020.60 pre-tax (~$1,195.64 all-in, +3.6% vs Week 1 — combined 14-night hotel ~$2,351.12 all-in). Ideal for Brooklyn stars (Aska 2-star, Francie 1-star), Queens (Meju), Broadway matinee, and relaxed museum pacing."
     }
    ],
    "note": "Both Week 1 and Week 2 hotel quotes are now verified on Booking.com for Fairfield Central Park."
@@ -467,7 +467,7 @@
    "id": "F-03",
    "severity": "HIGH",
    "title": "Hotel prices are live snapshots carrying time-limited Black Friday / Bonus promotions",
-   "detail": "All 7 hotels were re-priced on Booking.com on 2026-11-26 and rely on Black Friday (-30% to -36%) or Bonus (-25%) promos. List prices before discount are shown alongside; lock a $0-prepay free-cancellation rate early and re-check weekly / mid-Jan 2027.",
+   "detail": "All 7 hotels were re-priced on Booking.com on 2026-11-26 and rely on Black Friday (-30% to -36%) or Bonus (-25%) promos. List prices before discount are shown alongside; lock a $0-prepay free-cancellation rate early and re-check weekly / mid-Jan 2027. REFRESHED 2026-11-27: all seven all-in totals re-read live; Black Friday promo still applies (stays 19 Nov 2026 - 31 Dec 2027); Arlo SoHo and Arlo Midtown non-ref tiers rose +18% overnight while Fairfield/citizenM/Hyatt/Pestana moved -$2 to -$4 (F-31).",
    "source": "https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
    "settle_by": "Re-check the direct /hotel/us/ URL at booking time (and before free-cancel deadline 2027-02-12)",
    "status": "Open"
@@ -548,7 +548,7 @@
    "id": "F-12",
    "severity": "LOW",
    "title": "RESOLVED 2026-11-26: All 5 weekly Mon-Mon windows (15 Feb - 22 Mar 2027) & shifted starts priced",
-   "detail": "Priced all 5 weeks across the 15 Feb - 23 Mar brief window plus Feb 16/17/18 shifted starts: Week 1 (15-22 Feb, $985.60 pre-tax / $1,158.98 all-in at Fairfield) is the lowest of the entire 5-week period; March jumps +26% to +39%.",
+   "detail": "Priced all 5 weeks across the 15 Feb - 23 Mar brief window plus Feb 16/17/18 shifted starts: Week 1 (15-22 Feb, $985.60 pre-tax / $1,155.48 Booking-stated all-in at Fairfield, re-read 2026-11-27) is the lowest of the entire 5-week period; March pre-tax jumps +26% to +39%. Derived all-ins recomputed 2026-11-27 at the official $3.50/night fixed fee (was $4/night - see F-31).",
    "source": "https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
    "settle_by": "Done — full 5-week table published on Hotels page",
    "status": "Resolved"
@@ -566,7 +566,7 @@
    "id": "F-14",
    "severity": "LOW",
    "title": "Hyatt Place Chelsea cheapest room tier is disability-accessible",
-   "detail": "At Hyatt Place Chelsea ($1,113 pre-tax) the lowest qualifying king room on Booking.com is the Roll-In Shower Disability Access tier. Bookable by anyone; standard king tier may cost more.",
+   "detail": "At Hyatt Place Chelsea the lowest qualifying king room on 2026-11-26 was the Roll-In Shower Disability Access tier at $1,113 pre-tax. REFRESHED 2026-11-27: accessible roll-in-shower king AND standard king are both stated at $1,303.00 all-in for the week, so the accessibility tier no longer carries a price premium on these dates.",
    "source": "https://www.booking.com/hotel/us/hyatt-place-new-york-chelsea.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
    "settle_by": "Confirm standard vs accessible king rate at checkout if switching to Hyatt Place",
    "status": "Documented"
@@ -593,7 +593,7 @@
    "id": "F-17",
    "severity": "HIGH",
    "title": "Pre-tax vs all-in hotel totals + resort fees + cancellation parity flip visual rankings",
-   "detail": "On 2026-11-26, all 7 Booking.com hotel headlines exclude taxes; Arlo SoHo ($1,087) and Pestana Partner ($1,224.76 all-in) restrict cancellation and exclude breakfast ($25-$30 pp), while Fairfield ($985.60 pre-tax = $1,158.98 all-in) includes American breakfast, $0 resort fee, $0 prepay and free cancellation until 2027-02-12.",
+   "detail": "On 2026-11-26 all 7 Booking.com hotel headlines excluded taxes; on the 2026-11-27 re-read the room tables state tax-inclusive totals (F-31). Arlo SoHo ($1,497.39 all-in, non-ref) and Pestana Partner ($1,271.00 all-in) restrict cancellation and exclude breakfast ($20-$25 pp), while Fairfield ($985.60 pre-tax = $1,155.48 stated all-in) includes American breakfast, $0 resort fee, $0 prepay and free cancellation until 2027-02-12.",
    "source": "https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
    "settle_by": "Compare hotels strictly on the derived all-in column plus breakfast/cancellation parity",
    "status": "Documented"
@@ -647,9 +647,9 @@
    "id": "F-23",
    "severity": "MEDIUM",
    "title": "RESOLVED 2026-11-26: Withdrawn 25 Nov Fairfield $1,155.48 tax-inclusive figure",
-   "detail": "Fairfield's Booking.com page explicitly prints 'Total before taxes $985.60' with NY taxes excluded. Corrected across hotels.json, budget subtotal ($4,246.98), and executive summary to $985.60 pre-tax / $1,158.98 derived all-in.",
+   "detail": "Fairfield's Booking.com page explicitly prints 'Total before taxes $985.60' with NY taxes excluded. Corrected across hotels.json, budget subtotal ($4,246.98), and executive summary to $985.60 pre-tax / $1,155.48 derived all-in. SUPERSEDED 2026-11-27: Booking's own room table now prints the tax-inclusive 'Gesamt' total of $1,155.48 directly (= 985.60 x 1.1475 + $3.50/nt x 7 per nyc.gov), so the figure is now stated, not derived (F-31); budget subtotal is $4,243.48.",
    "source": "https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
-   "settle_by": "Done — all references updated to $985.60 pre-tax / $1,158.98 all-in",
+   "settle_by": "Done — all references updated to $985.60 pre-tax / $1,155.48 all-in — superseded 2026-11-27 by Booking-stated total (F-31)",
    "status": "Resolved"
   },
   {
@@ -736,11 +736,11 @@
   {
    "id": "F-38",
    "severity": "MEDIUM",
-   "title": "Fairfield Inn Central Park guest score and live 7-night price not re-confirmed on 2026-11-27",
-   "detail": "The German-locale Booking.com page for the 15-22 Feb 2027 search (2 adults, 1 room) shows a guest score of 7.9/10 from 631 reviews; the site records 8.0/10 (read 2026-11-26). The price block did not appear in the fetched chunk, so the $985.60 pre-tax total was not re-read on 2026-11-27. Booking.com prices are dynamic and change daily.",
+   "title": "RESOLVED 2026-11-27: Fairfield guest score and live 7-night price re-confirmed",
+   "detail": "arena-98a7f510 re-read the Booking.com page on 2026-11-27 (English locale, 15-22 Feb 2027, 2 adults, 1 room, USD): stated total $1,155.48 incl. taxes and fees (King Room 21 m2, breakfast included, free cancellation before 2027-02-12, $0 prepay) and guest score 7.9/10 from 631 reviews. The site's guest score was corrected from 8.0 to 7.9 with read date 2026-11-27. Prices remain dynamic (F-03) - re-read immediately before booking.",
    "source": "https://www.booking.com/hotel/us/fairfield-inn-suites-by-marriott-new-york-manhattan-central-park.html",
-   "settle_by": "Open the English Booking.com page for 15-22 Feb 2027, 2 adults, 1 room, USD; record the price block, score and cancellation terms the same day; repeat before any booking.",
-   "status": "Open"
+   "settle_by": "No further action before booking beyond the routine pre-booking re-read (F-03).",
+   "status": "Resolved"
   },
   {
    "id": "F-39",
@@ -763,10 +763,10 @@
   {
    "id": "F-41",
    "severity": "MEDIUM",
-   "title": "AMNH and High Line hours, prices and pay-what-you-wish not re-confirmed on 2026-11-27",
-   "detail": "The 2026-11-27 reads of amnh.org/plan-your-visit and amnh.org/plan-your-visit/hours returned navigation text only, with no hours or admission block in the fetched chunks. thehighline.org/visit returned cookie-notice text only. The $37 out-of-state AMNH admission, AMNH hours, and High Line winter hours (07:00-20:00) remain as read on 2026-11-26 and are now labelled PARTIAL. The AMNH pay-what-you-wish wording ('NY/NJ/CT residents') has the same form as the Met wording corrected in F-39, so it is treated as unverified.",
-   "source": "https://www.amnh.org/plan-your-visit/hours",
-   "settle_by": "Open amnh.org/plan-your-visit (admissions and hours) and thehighline.org/visit (winter hours) and update those rows before the trip.",
+   "title": "AMNH pay-what-you-wish wording still unverified (hours and admission re-confirmed 2026-11-27)",
+   "detail": "PARTIALLY RESOLVED 2026-11-27 by arena-98a7f510: amnh.org/plan-your-visit re-read successfully (hours 10:00-17:30; out-of-state admission $37 / $43 / $48 tiers) and thehighline.org/visit re-read successfully (Dec 1 - Mar 31: 7am-8pm, Rail Yard Preserve closes at dusk) - both match the site rows, which are restored to VERIFIED for hours and prices. REMAINS OPEN: the AMNH pay-what-you-wish residency wording ('NY/NJ/CT residents' style, same form as the Met wording corrected in F-39) was not captured in the re-read and is still treated as unverified.",
+   "source": "https://www.amnh.org/plan-your-visit",
+   "settle_by": "Re-read the AMNH admission page for the pay-what-you-wish residency wording before relying on it; hours and priced tiers are confirmed.",
    "status": "Open"
   },
   {
@@ -786,6 +786,23 @@
    "source": "https://www.instagram.com/lebernardinny/",
    "settle_by": "Recount verified accounts per platform from social.json and reword the summary to match.",
    "status": "Open"
+  },
+  {
+   "id": "F-44",
+   "severity": "MEDIUM",
+   "title": "2026-11-27 live re-read: Booking states tax-inclusive totals; $4-$6/night fee formula corrected to official $3.50/night",
+   "detail": "Room tables re-read live on 2026-11-27 for all 7 hotels now print 'Gesamt / Includes taxes and charges' totals (Fairfield $1,155.48, Residence Inn $1,297.59, citizenM $1,302.00, Hyatt $1,303.00, Pestana free-cancel $1,387.00, Arlo SoHo $1,497.39, Arlo Midtown King Urban $1,564.57). The previous derived formula used $4-$6/night fixed fees; the official NYC DOF hotel tax page (read 2026-11-27) shows the fixed fees are $2.00/night (room fee, rent $40+) + $1.50/night (NYS hotel unit fee) = $3.50/night on top of the 14.75% rate. Proof: $985.60 x 1.1475 + $3.50 x 7 = $1,155.48 exactly matches Booking's stated total. Budget hotel line corrected to $1,155.48; priced subtotal $2,977.48 (airfare-unpriced model); week 2-5 derived all-ins recomputed at $3.50/night. Arlo SoHo (+$215.06) and Arlo Midtown (+$185.85) non-ref tiers moved overnight; Residence Inn implied pre-tax +$12.20 - pre-tax snapshots keep their 2026-11-26 read date and the stated all-in governs. This supersedes the earlier 'withdrawn $1,155.48' correction note in independent_verification.json. (Renumbered from F-31 to F-44 after merge: main already uses F-31 for the Met hours flag.)",
+   "source": "https://www.nyc.gov/site/finance/business/business-hotel-room-occupancy-tax.page",
+   "settle_by": "Re-read each Booking room table immediately before booking; prices remain dynamic (F-03).",
+   "status": "Resolved"
+  },
+  {
+   "id": "F-45",
+   "severity": "MEDIUM",
+   "title": "Pestana CR7 Comfort room bed listed as '1 large double bed', not queen (requirement: queen or bigger)",
+   "detail": "The 2026-11-27 English room table for the Pestana CR7 Comfort Room (the shortlisted free-cancel tier, $1,387.00 all-in) states '1 large double bed', 17 m2, ensuite bathroom. The earlier dataset said '1 queen bed'. The official table is now corrected to '1 large double bed'. Whether a 'large double' meets the brief's 'queen sized bed or equivalent or bigger' requirement is NOT asserted here - it needs traveller acceptance or confirmation from the hotel (book a specific queen room type or call +1-646-777-6789 via the property page). (Renumbered from F-32 to F-45 after merge with main.)",
+   "source": "https://www.booking.com/hotel/us/pestana-cr7-times-square.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
+   "settle_by": "Traveller decision or direct hotel confirmation before booking Pestana; other 6 shortlisted rooms all state king/queen.",   "status": "Open"
   }
  ],
  "questions": [
@@ -793,7 +810,7 @@
    "id": "Q-01",
    "question": "Does the trip run 4 nights, 7 nights or 14 nights?",
    "why_it_blocks": "Hotel cost, the number of MICHELIN dinners affordable, and museum pacing change with trip length.",
-   "have": "Verified 7-night ($1,158.98 all-in), 14-night (Week 1 + Week 2 ~$2,358 all-in) and 4-night plans at Fairfield.",
+   "have": "Verified 7-night ($1,155.48 Booking-stated all-in), 14-night (Week 1 + Week 2 ~$2,351 all-in) and 4-night plans at Fairfield.",
    "missing": "Traveller's leave allowance and preferred trip length.",
    "how_to_discover": "Traveller decision directly; all three itinerary variants are ready.",
    "owner": "traveller",
@@ -869,10 +886,10 @@
   {
    "id": "Q-08",
    "question": "How important is boutique neighborhood feel (Chelsea / SoHo) vs price & breakfast?",
-   "why_it_blocks": "Fairfield Central Park ($1,158.98 all-in w/ breakfast) beats Hyatt Place Chelsea ($1,305.17 w/ breakfast, 22/22 stars <=5 km) by $146/week.",
+   "why_it_blocks": "Fairfield Central Park ($1,155.48 all-in w/ breakfast) beats Hyatt Place Chelsea ($1,303.00 w/ breakfast, 22/22 stars <=5 km) by $147.52/week.",
    "have": "Full address, reach out of 22 stars, and all-in cost for all 7 hotels.",
    "missing": "Traveller preference between lowest all-in cost vs Chelsea/SoHo neighborhood vibe.",
-   "how_to_discover": "Traveller choice between #1 Fairfield ($1,158.98) and #4 Hyatt Place Chelsea ($1,305.17, highest reach 22/22).",
+   "how_to_discover": "Traveller choice between #1 Fairfield ($1,155.48) and #4 Hyatt Place Chelsea ($1,303.00, highest reach 22/22).",
    "owner": "traveller",
    "blocks": "Hotel choice",
    "status": "Open"
@@ -1067,9 +1084,9 @@
   {
    "id": "Q-26",
    "question": "Should hotels rank on all-in cost + breakfast/free-cancellation parity, or pre-tax headline?",
-   "why_it_blocks": "Fairfield wins decisively on free-cancel + breakfast + all-in ($1,158.98), while Hyatt Chelsea wins pure 5 km reach (22/22, $1,305.17 all-in).",
+   "why_it_blocks": "Fairfield wins decisively on free-cancel + breakfast + all-in ($1,155.48), while Hyatt Chelsea wins pure 5 km reach (22/22, $1,303.00 all-in).",
    "have": "Both columns and cancellation/breakfast parity verified for all 7 hotels.",
-   "missing": "Traveller choice between saving $146/week (Fairfield) vs peak Chelsea central reach (Hyatt Place Chelsea).",
+   "missing": "Traveller choice between saving $147.52/week (Fairfield) vs peak Chelsea central reach (Hyatt Place Chelsea).",
    "how_to_discover": "Decision directly from the Hotels comparison tables.",
    "owner": "traveller",
    "blocks": "Presentation",
