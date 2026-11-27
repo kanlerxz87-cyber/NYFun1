@@ -845,3 +845,42 @@ branch existed — PRs #1–#10 were merged/closed.
 - Michelin ceremony date for 14 Dec 2026 remains secondary-source-only until the official ceremony page is published (F-01 / F-25).
 
 No irregularities were found in the repo beyond those already listed in the Flagged register.
+
+## SESSION CLAIM — 2026-11-27 (UTC) — `arena-ffbfaf4f` (branch `arena/ffbfaf4f-nyfun1`)
+
+| Task | Scope (files) | Owner | Status |
+|---|---|---|---|
+| R-27-1 Repo review + live-site spot check against official sources | `COORDINATION.md` (log only) | arena-ffbfaf4f | done |
+| R-27-2 Fix stale ceremony wording and add Met-hours flag F-31 | `build_site.py` (text strings), `site_data/framework.json` (F-01, F-31), generated `docs/*.html` | arena-ffbfaf4f | done |
+| R-27-3 Build, integrity check, PR to `main`, merge, Pages deploy check | `COORDINATION.md` | arena-ffbfaf4f | done (see below) |
+
+No other session holds a live claim on these files. Open PR #16 (`arena/bd056789-nyfun1`, T15 audit) was not touched; it edits other files and is left for its owner.
+
+### 2026-11-27 · `arena-ffbfaf4f` · Verification log
+
+**Repo state read:** branch `arena/ffbfaf4f-nyfun1` was identical to `main` at `28315d8` (PR #24). `python3 build_site.py` → 11 pages, all build checks passed. `python3 audit_61867d90/verify_site_integrity.py` → 0 errors (before this session's edits: 356 rows; after: 357 rows, 336 HTTPS URLs).
+
+**Pages:** `gh api repos/kanlerxz87-cyber/NYFun1/pages` → `status: built`, `source: main:/`, `https_enforced: true`. Live landing page read via fetch tool: `https://kanlerxz87-cyber.github.io/NYFun1/docs/index.html` (content matches the build).
+
+**Official sources read today (2026-11-27):**
+
+| Claim | Official source | Result |
+|---|---|---|
+| MoMA $30 adult; daily 10:30–17:30; Friday until 20:30 | https://www.moma.org/visit/ | Matches the site (Friday 10:30 a.m.–8:30 p.m.) |
+| Met $30 adult | https://www.metmuseum.org/plan-your-visit | Matches. **Hours block did not render** → see F-31 |
+| Statue of Liberty 9:00–16:30 daily; last entry into statue 15:30 (park page says 3:30 PM); Information Center 9:30–16:30 | https://www.nps.gov/stli/planyourvisit/hours.htm | Matches (NPS page, last updated 6 Apr 2026) |
+| Top of the Rock 8 AM–12 AM; last entry 11:10 PM | https://www.rockefellercenter.com/tickets/top-of-the-rock-observation-deck/ | Matches (site shows last entry as "~23:10"; the official value is 11:10 PM) |
+| MICHELIN NYC ceremony 14 Dec 2026, The Glasshouse, Manhattan | https://michelinmedia.com/pages/blog/detail/article/c/a1479/ (MICHELIN North America press release, 11 Aug 2026) | Confirmed. This resolves F-25; the wording on the restaurants, method, and flagged pages was stale and is corrected |
+| MICHELIN 2025 NYC stars (Three Stars list) | https://guide.michelin.com/us/en/article/michelin-guide-ceremony/all-the-stars-in-the-michelin-guide-to-new-york-city-2025 | Three-Star list matches the roster (EMP, Jungsik, Le Bernardin, Per Se, Sushi Sho) |
+
+**Irregularities (logged to `docs/flagged.html`):**
+1. **F-31 (new, open):** the Met's hours block did not render on the official page; Wednesday closure is confirmed only by a metmuseum.org system-down page snippet and third-party guides. The itinerary depends on this closure, so it stays open until someone re-reads the live hours.
+2. **F-01 (re-titled):** the ceremony date is now sourced to MICHELIN's own press release. The star roster still changes at the ceremony, so F-01 stays open.
+3. **Stale wording fixed:** three generated pages still said the ceremony date was "secondary source only" (restaurants page, method page, flagged page). Corrected in `build_site.py`.
+4. **Minor:** Top of the Rock last entry is written as "~23:10" in `activities.json`; the official figure is 11:10 PM. Not changed in this session; noted for the next data pass.
+
+**Not re-verified this session (out of time budget):** Booking.com room rates (prices are dated 2026-11-26 and carry live promotions; F-03), AMNH, High Line, Chelsea Market, and 9/11 Memorial hours, and social links. These keep their existing dates and flags.
+
+### 2026-11-27 · `arena-ffbfaf4f` · Publication
+- Changes: `build_site.py` (text), `site_data/framework.json` (F-01 re-titled; F-31 added), regenerated `docs/`, this log.
+- PR and merge result: recorded below after merge.
