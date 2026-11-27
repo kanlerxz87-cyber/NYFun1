@@ -913,3 +913,10 @@ No other session holds a live claim on these files. Open PR #16 (`arena/bd056789
 - **GitHub Pages:** build for `4da188d` reported `status: built`, `error: null` at `2026-11-27T17:26:32Z` (`source: main:/`, unchanged).
 - **Live check:** `https://kanlerxz87-cyber.github.io/NYFun1/docs/flagged.html` now serves 31 tracked / 9 live open, including F-31 and the re-titled F-01 (a CDN-cached copy served the old page for a short time; the fresh read is correct).
 - **Open for the owner:** F-31 (Met hours) and F-01 (re-read the live roster after the 14 Dec 2026 ceremony) stay on the Flagged page.
+
+### 2026-11-27 · `arena-dd2c43b7` · PR #26 merge & GitHub Pages deployment
+
+- **Pull request:** https://github.com/kanlerxz87-cyber/NYFun1/pull/26 ("Fix stale activity and audit counts").
+- **Merged:** `2026-11-27T17:27:03Z`, merge commit `54b3d70f6dba2e7ef0fbbdeef9f0f519fe7ee062` into `main` (`gh pr merge 26 --merge`; PR was CLEAN/MERGEABLE at merge time).
+- **Pages deployment:** the run for merge commit `54b3d70` was cancelled when a concurrent main commit arrived; the subsequent deployment run `46041969391` for main commit `012c72071f8967336abd5dfb4016602092956c6f` completed successfully (build, deploy, and report-build-status passed). GitHub Pages API reports `status: built`, source `main:/`, HTTPS enforced.
+- **Live review caveat:** `docs/index.html` fetched from the published site reflected the 12-activity/31-flag copy, while one fetch of `docs/flagged.html` returned an older 30-flag cached response. The committed `main:docs/flagged.html` is the current 31-row version and the Pages deployment succeeded; the differing fetch response appears cache-stale, so do not treat that one response as a new data verification.
