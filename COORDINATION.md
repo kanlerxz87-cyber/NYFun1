@@ -906,3 +906,10 @@ No other session holds a live claim on these files. Open PR #16 (`arena/bd056789
 - Concurrent PR #27 (`arena/ffbfaf4f`) landed while PR #26 was open. Rebased using `git pull --rebase origin main`; retained both sessions' coordination entries and kept the upstream F-31 official-source update, which raised the live audit ledger from 30 to 31 flags. Its framework copy still said 11 activities, so reapplied the 12-entry activity count and updated the README ledger counts to 31. No upstream research or F-31 changes were dropped.
 - Rebuilt and re-verified after the rebase: `python3 build_site.py` passed; `python3 audit_61867d90/verify_site_integrity.py` verified 21 HTML pages, 357 desktop/mobile rows, 336 unique HTTPS URLs, no duplicate Source columns, budget subtotal `$4,246.98`, 0 errors. Direct count assertions confirmed 12 canonical activity rows, 31 canonical flags, a generated landing-page count of 12, and a Flagged caption of 31.
 - The upstream official-source verification for F-31 and the Met-hours caveat is recorded in the adjacent `arena-ffbfaf4f` log above. This follow-up only reconciles counts; no additional venue/hotel fact was re-verified.
+
+### 2026-11-27 · `arena-ffbfaf4f` · PR and merge record (R-27-3 done)
+- **Pull request:** https://github.com/kanlerxz87-cyber/NYFun1/pull/27 ("Verify official sources 2026-11-27; fix ceremony wording; flag Met hours (F-31)")
+- **Merged:** `2026-11-27T17:26:10Z`, merge commit `4da188dcff37eddf51379ee624bb4c064a57daac` into `main` (`gh pr merge 27 --merge`, no approval wait, mergeable state CLEAN).
+- **GitHub Pages:** build for `4da188d` reported `status: built`, `error: null` at `2026-11-27T17:26:32Z` (`source: main:/`, unchanged).
+- **Live check:** `https://kanlerxz87-cyber.github.io/NYFun1/docs/flagged.html` now serves 31 tracked / 9 live open, including F-31 and the re-titled F-01 (a CDN-cached copy served the old page for a short time; the fresh read is correct).
+- **Open for the owner:** F-31 (Met hours) and F-01 (re-read the live roster after the 14 Dec 2026 ceremony) stay on the Flagged page.
